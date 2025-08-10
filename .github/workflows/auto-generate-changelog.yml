@@ -21,4 +21,6 @@ jobs:
           REPO_NAME: 'netcookies/isulewTools'
           ACCESS_TOKEN: ${{secrets.PAT}}
           REGENERATE_COUNT: -1
+          PATH: 'CHANGELOG.md'
+          COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
           TYPE: 'feat:New Features,fix:Bug Fixes,perf:Performance Improvements,refactor:Refactors,build:Build System,docs:Documentation Changes,chore:Chores,other:Other Changes'
