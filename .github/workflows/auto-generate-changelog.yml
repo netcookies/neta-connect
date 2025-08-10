@@ -1,4 +1,4 @@
-name: Release APK
+name: Auto generate changelog
 
 on:
   push:
