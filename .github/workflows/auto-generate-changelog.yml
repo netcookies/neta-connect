@@ -21,4 +21,4 @@ jobs:
           REPO_NAME: 'netcookies/isulewTools'
           ACCESS_TOKEN: ${{secrets.PAT}}
           REGENERATE_COUNT: -1
-          TYPE: 'feat::sparkles:New Features,fix::bug:Bug Fixes,perf::zap:Performance Improvements,refactor::recycle:Refactors,build::construction_worker:Build System,ci::construction_worker:Build System,docs::memo:Documentation Changes,chore::wrench:Chores,other::flying_saucer:Other Changes'
+          TYPE: 'feat:New Features,fix:Bug Fixes,perf:Performance Improvements,refactor:Refactors,build:Build System,docs:Documentation Changes,chore:Chores,other:Other Changes'
