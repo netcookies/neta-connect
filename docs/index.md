@@ -1,31 +1,32 @@
-# Project Introduction
+# 项目简介
+哪吒互联 是一个专为哪吒车机设计（部分兼容原生安卓或其他车机）的实用工具集，核心通过无障碍服务实现蓝牙自动化、悬浮窗管理及日志监控。
 
-This project is designed to provide a comprehensive solution for connecting and managing various network resources. It aims to simplify the integration process and enhance user experience.
+# 主要功能
+- **前台应用监控与蓝牙自动开关**：服务实时检测当前应用，根据白/黑名单自动切换蓝牙开关。
+- **规则包名自定义配置**：支持在界面灵活设置触发蓝牙操作的包名，所有配置自动持久保存。
+- **悬浮车窗信息展示**：可拖动、缩放的悬浮窗，提供持续车信息显示，窗口位置/大小/透明度均支持记忆。
+- **日志与监控标签管理**：支持实时日志查看，并可按需自定义标签分组，便于数据监控和问题排查。
+- **设备重启自动启动服务**：开机广播保障主服务常驻后台，稳定性高，无需用户干预。
+- **免 Root 权限**：仅依赖系统和无障碍权限，功能强大且安全可靠。
+- **现代化 UI 配置**：全部设置与状态均可在 Jetpack Compose 构建的界面中实时查看和修改。
 
-## Changelog
-
-- **Version 1.0.0**: Initial release with core features.
-- **Version 1.1.0**: Added new functionalities and improved performance.
-
-## Getting Started
-
-To get started with this project, please follow the installation instructions below:
-
-1. Clone the repository:
+# 安装方法
+1. 克隆本仓库：
    ```bash
-   git clone https://github.com/netcookies/neta-connect.git
+   git clone https://github.com/netcookies/isulewTools.git
+   cd isulewTools
    ```
-2. Navigate into the project directory:
-   ```bash
-   cd neta-connect
-   ```
-3. Install the required dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the application:
-   ```bash
-   npm start
-   ```
+2. 使用 Android Studio 或命令行进行构建。
+3. 安装 APK 至安卓设备。
 
-For detailed documentation, refer to the [README.md](README.md) file.
+# 使用说明
+1. 首次打开应用，根据提示赋予所需权限（无障碍、蓝牙等）。
+2. 在设置界面自定义“蓝牙自动开关”包名规则。
+3. 悬浮窗可自由拖动、调整大小，所有更改自动保存。
+4. 可在日志与标签管理页实时查看系统数据，便于问题诊断。
+5. 无需 Root 或后台特殊操作，设备重启后服务自动保活。
+
+# 参与贡献
+欢迎任何形式的贡献！Fork 本仓库并提交 Pull Request。
+
+[![GitHub corner badge](https://user-images.githubusercontent.com/674621/34725471-3d03a0f0-f526-11e7-95b9-49c36d925e5d.png)](https://github.com/netcookies/neta-connect)
