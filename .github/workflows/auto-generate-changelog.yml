@@ -7,20 +7,40 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  changelog:
     runs-on: ubuntu-latest
     if: "contains(github.event.head_commit.message, 'ci: Bump Version')"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          token: ${{ secrets.PAT }}
+          repository: 'netcookies/isulewTools'
 
-      - uses: BobAnkh/auto-generate-changelog@v1.2.5
+      - name: Generate Changelog
+        uses: smichard/conventional_changelog@2.0.0
         with:
-          REPO_NAME: 'netcookies/isulewTools'
-          ACCESS_TOKEN: ${{secrets.PAT}}
-          REGENERATE_COUNT: -1
-          PATH: 'CHANGELOG.md'
-          COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
-          TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+      
+      - name: Checkout public repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+          repository: 'netcookies/neta-connect'
+          path: 'neta-connect'
+          
+      - name: Change Workdir
+        run: |
+          cd "${{ github.workspace }}/neta-connect/"
+          cp -r "${{ github.workspace }}/CHANGELOG.md" "${{ github.workspace }}/neta-connect/"
+
+      - name: Set Git User Info
+        run: |
+          git config user.name 'GitHub Actions Bot'
+          git config user.email 'actions@github.com'
+  
+      - name: Commit Changelog
+        run: |
+          git add CHANGELOG.md
+          git commit -m "docs: :robot: changelog file generated" || echo "No changes to commit"
+          git push
