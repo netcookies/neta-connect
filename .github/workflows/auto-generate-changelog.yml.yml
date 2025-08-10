@@ -1,0 +1,24 @@
+name: Release APK
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, 'ci: Bump Version')"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: BobAnkh/auto-generate-changelog@v1.2.5
+        with:
+          REPO_NAME: 'netcookies/isulewTools'
+          ACCESS_TOKEN: ${{secrets.PAT}}
+          REGENERATE_COUNT: -1
+          TYPE: 'feat::sparkles:New Features,fix::bug:Bug Fixes,perf::zap:Performance Improvements,refactor::recycle:Refactors,build::construction_worker:Build System,ci::construction_worker:Build System,docs::memo:Documentation Changes,chore::wrench:Chores,other::flying_saucer:Other Changes'
