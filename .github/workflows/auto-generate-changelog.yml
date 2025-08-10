@@ -35,7 +35,7 @@ jobs:
           cp -r "${{ github.workspace }}/CHANGELOG.md" "${{ github.workspace }}/neta-connect/"
           git config user.name 'GitHub Actions Bot'
           git config user.email 'actions@github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/neta-connect.git
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/netcookies/neta-connect.git
           git add CHANGELOG.md
           git commit -m "docs: :robot: changelog file generated" || echo "No changes to commit"
           git push origin
