@@ -29,18 +29,13 @@ jobs:
           repository: 'netcookies/neta-connect'
           path: 'neta-connect'
           
-      - name: Change Workdir
+      - name: Change Workdir && Config Git && Commit Changelog
         run: |
           cd "${{ github.workspace }}/neta-connect/"
           cp -r "${{ github.workspace }}/CHANGELOG.md" "${{ github.workspace }}/neta-connect/"
-
-      - name: Set Git User Info
-        run: |
           git config user.name 'GitHub Actions Bot'
           git config user.email 'actions@github.com'
-  
-      - name: Commit Changelog
-        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/neta-connect.git
           git add CHANGELOG.md
           git commit -m "docs: :robot: changelog file generated" || echo "No changes to commit"
-          git push
+          git push origin
