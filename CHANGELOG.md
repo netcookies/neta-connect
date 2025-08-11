@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## v1.2.0 (2025-08-11)
 
 ### Feature
+- 兼容安卓 11 [`5930f7f`](https://github.com/netcookies/isulewTools/commit/5930f7f)
 - 单例初始化放在onServiceConnected里 [`c0c4bec`](https://github.com/netcookies/isulewTools/commit/c0c4bec)
 - 新增跟车距离 [`68437d9`](https://github.com/netcookies/isulewTools/commit/68437d9)
 - 新增跟车距离 [`a5d6e28`](https://github.com/netcookies/isulewTools/commit/a5d6e28)
@@ -31,6 +32,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 重构安装的 fun [`118ebe3`](https://github.com/netcookies/isulewTools/commit/118ebe3)
 
 ### Other
+- Bump Version [`7e3016e`](https://github.com/netcookies/isulewTools/commit/7e3016e)
 - Bump Version [`a4a1ca0`](https://github.com/netcookies/isulewTools/commit/a4a1ca0)
 - todo: 快速上手 [`fbef7e6`](https://github.com/netcookies/isulewTools/commit/fbef7e6)
 - Bump Version [`9e81bdf`](https://github.com/netcookies/isulewTools/commit/9e81bdf)
