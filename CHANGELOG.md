@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.2.1 (2025-08-11)
+
+### Bug Fixes
+- 下载地址走github加速 [`01a0713`](https://github.com/netcookies/isulewTools/commit/01a0713)
+- 添加“请立即接管车辆”classname进悬浮窗白名单 [`a187958`](https://github.com/netcookies/isulewTools/commit/a187958)
+- 添加“请立即接管车辆”classname进悬浮窗白名单 [`ed264ac`](https://github.com/netcookies/isulewTools/commit/ed264ac)
+
+### Other
+- Bump Version [`3c68694`](https://github.com/netcookies/isulewTools/commit/3c68694)
+
 ## v1.2.0 (2025-08-11)
 
 ### Feature
