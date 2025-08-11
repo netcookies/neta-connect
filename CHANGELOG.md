@@ -6,10 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## v1.2.0 (2025-08-11)
 
+### Feature
+- 添加个不透明的状态栏背景 [`b79617a`](https://github.com/netcookies/isulewTools/commit/b79617a)
+
+### Bug Fixes
+- 背景美化，颜控！ [`24130a3`](https://github.com/netcookies/isulewTools/commit/24130a3)
+- 添加手势软件和哪吒美式到悬浮窗白名单 [`cfad0cc`](https://github.com/netcookies/isulewTools/commit/cfad0cc)
+- 修复方控开关无效 [`24f5233`](https://github.com/netcookies/isulewTools/commit/24f5233)
+- 完善检查更新的点击逻辑 [`48f9a3d`](https://github.com/netcookies/isulewTools/commit/48f9a3d)
+- 界面优化 [`db00e4c`](https://github.com/netcookies/isulewTools/commit/db00e4c)
+
 ### Documentation
 - :robot: changelog file generated [`76543d6`](https://github.com/netcookies/isulewTools/commit/76543d6)
 
+### Test
+- 检查更新功能测试通过 [`50bec59`](https://github.com/netcookies/isulewTools/commit/50bec59)
+
+### Refactor
+- 重构安装的 fun [`118ebe3`](https://github.com/netcookies/isulewTools/commit/118ebe3)
+
 ### Other
+- Bump Version [`9e81bdf`](https://github.com/netcookies/isulewTools/commit/9e81bdf)
 - Bump Version [`ed46cfc`](https://github.com/netcookies/isulewTools/commit/ed46cfc)
 
 ## v1.1.9 (2025-08-11)
