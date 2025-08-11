@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.2.2 (2025-08-12)
+
+### Feature
+- 新增白名单fun，统一维护 [`f870a52`](https://github.com/netcookies/isulewTools/commit/f870a52)
+- 压缩代码，减小包的体积 [`d4c7fa2`](https://github.com/netcookies/isulewTools/commit/d4c7fa2)
+
+### Bug Fixes
+- 修复部分 emoji 显示错误 [`2f6ec0d`](https://github.com/netcookies/isulewTools/commit/2f6ec0d)
+
+### Build
+- 优化编译文件 [`4af1d52`](https://github.com/netcookies/isulewTools/commit/4af1d52)
+- 优化编译文件 [`45dd787`](https://github.com/netcookies/isulewTools/commit/45dd787)
+
+### Style
+- 对齐 switch [`de87d54`](https://github.com/netcookies/isulewTools/commit/de87d54)
+
+### Other
+- Bump Version [`e95207b`](https://github.com/netcookies/isulewTools/commit/e95207b)
+
 ## v1.2.1 (2025-08-11)
 
 ### Bug Fixes
