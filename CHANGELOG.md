@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.2.3 (2025-08-14)
+
+### Feature
+- 修复安装器的权限问题 [`eb0d0ac`](https://github.com/netcookies/isulewTools/commit/eb0d0ac)
+- 优化log [`d7faad0`](https://github.com/netcookies/isulewTools/commit/d7faad0)
+- 实现日志上传功能 [`cc98290`](https://github.com/netcookies/isulewTools/commit/cc98290)
+- 实现日志上传功能 [`09ecd08`](https://github.com/netcookies/isulewTools/commit/09ecd08)
+
+### Bug Fixes
+- 完善日志逻辑 [`dd60bc1`](https://github.com/netcookies/isulewTools/commit/dd60bc1)
+- 完善日志上传功能 [`eecdb4e`](https://github.com/netcookies/isulewTools/commit/eecdb4e)
+- 回退安装方式的实现 [`1cd3443`](https://github.com/netcookies/isulewTools/commit/1cd3443)
+
+### Test
+- 尝试指定系统installer [`88433dc`](https://github.com/netcookies/isulewTools/commit/88433dc)
+- 测试构造的安装器 [`d8705e7`](https://github.com/netcookies/isulewTools/commit/d8705e7)
+
+### Build
+- 删除无用的测试代码 [`03fa8c9`](https://github.com/netcookies/isulewTools/commit/03fa8c9)
+- 删除无用的测试代码 [`49b4c1e`](https://github.com/netcookies/isulewTools/commit/49b4c1e)
+- format code [`4af7c1b`](https://github.com/netcookies/isulewTools/commit/4af7c1b)
+
+### Other
+- Bump Version [`56b9c33`](https://github.com/netcookies/isulewTools/commit/56b9c33)
+
 ## v1.2.2 (2025-08-12)
 
 ### Feature
