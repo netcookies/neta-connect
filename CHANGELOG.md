@@ -4,6 +4,49 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## Unreleased changes
+
+### Other
+- Merge pull request #2 [`cbcce14`](https://github.com/netcookies/isulewTools/commit/cbcce14)
+
+## v1.2.5 (2025-08-18)
+
+### Feature
+- 增加方形悬浮窗 [`c6b6c5a`](https://github.com/netcookies/isulewTools/commit/c6b6c5a)
+- 适配黑夜与白天的颜色 [`792fec7`](https://github.com/netcookies/isulewTools/commit/792fec7)
+- 字体大小微调 [`882515f`](https://github.com/netcookies/isulewTools/commit/882515f)
+- 字符资源化 [`eec7f6e`](https://github.com/netcookies/isulewTools/commit/eec7f6e)
+- ui全部重构完成 TODO: 电池图标 适配 adb root [`d439e7d`](https://github.com/netcookies/isulewTools/commit/d439e7d)
+- 完成列表业务逻辑绑定 [`4eea4cd`](https://github.com/netcookies/isulewTools/commit/4eea4cd)
+- 完成列表业务逻辑绑定 [`4b89158`](https://github.com/netcookies/isulewTools/commit/4b89158)
+- 完成关于页面 [`16d5a1e`](https://github.com/netcookies/isulewTools/commit/16d5a1e)
+- 重构 ui [`77011ec`](https://github.com/netcookies/isulewTools/commit/77011ec)
+- 重构 ui [`487bc2d`](https://github.com/netcookies/isulewTools/commit/487bc2d)
+
+### Bug Fixes
+- 完善悬浮窗按需显示的逻辑 [`55efc3b`](https://github.com/netcookies/isulewTools/commit/55efc3b)
+- 增强颜色对比度 [`d0a33f6`](https://github.com/netcookies/isulewTools/commit/d0a33f6)
+- 修复亮屏启动顺序上下逻辑 [`03d7699`](https://github.com/netcookies/isulewTools/commit/03d7699)
+
+### Documentation
+- 更新文字说明 [`3b84cf8`](https://github.com/netcookies/isulewTools/commit/3b84cf8)
+
+### Build
+- 颜色整理 [`690a04e`](https://github.com/netcookies/isulewTools/commit/690a04e)
+- Color.White替换 [`90989a1`](https://github.com/netcookies/isulewTools/commit/90989a1)
+- theme的颜色替换(fix) [`0650116`](https://github.com/netcookies/isulewTools/commit/0650116)
+- theme的颜色替换 [`f5a1c9f`](https://github.com/netcookies/isulewTools/commit/f5a1c9f)
+- theme的字体引用完成 [`816d4c2`](https://github.com/netcookies/isulewTools/commit/816d4c2)
+- 整理theme [`31b753a`](https://github.com/netcookies/isulewTools/commit/31b753a)
+- config cache enabled [`b17e467`](https://github.com/netcookies/isulewTools/commit/b17e467)
+- 修复悬浮窗权限检测 TODO: About 页面联系人 [`15283dc`](https://github.com/netcookies/isulewTools/commit/15283dc)
+- 修复完所有页面逻辑。修复 monitorLabelMap -> monitorList [`bc5b23f`](https://github.com/netcookies/isulewTools/commit/bc5b23f)
+- 引导页修复完成 [`7da2bd0`](https://github.com/netcookies/isulewTools/commit/7da2bd0)
+- 代码整理 [`655eef5`](https://github.com/netcookies/isulewTools/commit/655eef5)
+
+### Other
+- Bump Version [`9f0260c`](https://github.com/netcookies/isulewTools/commit/9f0260c)
+
 ## v1.2.3 (2025-08-14)
 
 ### Feature
