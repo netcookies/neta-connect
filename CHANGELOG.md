@@ -4,9 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## Unreleased changes
+## v1.2.6 (2025-08-20)
+
+### Bug Fixes
+- 删除无用变量 [`4398aa8`](https://github.com/netcookies/isulewTools/commit/4398aa8)
+- 弹出窗口过大，导致按钮无法显示 [`f6924de`](https://github.com/netcookies/isulewTools/commit/f6924de)
 
 ### Other
+- Bump Version [`54862f4`](https://github.com/netcookies/isulewTools/commit/54862f4)
+- Bump sdk version [`b84dcea`](https://github.com/netcookies/isulewTools/commit/b84dcea)
+- Bump sdk version [`eebd81f`](https://github.com/netcookies/isulewTools/commit/eebd81f)
+- Bump gradle version [`b554871`](https://github.com/netcookies/isulewTools/commit/b554871)
 - Merge pull request #2 [`cbcce14`](https://github.com/netcookies/isulewTools/commit/cbcce14)
 
 ## v1.2.5 (2025-08-18)
