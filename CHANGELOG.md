@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.2.7 (2025-08-20)
+
+### Feature
+- 添加shizuku工具类和 root 工具类 [`191b5df`](https://github.com/netcookies/isulewTools/commit/191b5df)
+- 添加root调用方法 [`6b392d7`](https://github.com/netcookies/isulewTools/commit/6b392d7)
+
+### Bug Fixes
+- 按需显示为30也时隐藏 [`9d98771`](https://github.com/netcookies/isulewTools/commit/9d98771)
+- 按需显示为 0 时隐藏 [`4f9e57b`](https://github.com/netcookies/isulewTools/commit/4f9e57b)
+- 去除无用的Emoji [`7612a0b`](https://github.com/netcookies/isulewTools/commit/7612a0b)
+
+### Other
+- Bump Version [`ef5f64b`](https://github.com/netcookies/isulewTools/commit/ef5f64b)
+
 ## v1.2.6 (2025-08-20)
 
 ### Bug Fixes
