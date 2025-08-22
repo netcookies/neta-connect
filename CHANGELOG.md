@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.2.9 (2025-08-22)
+
+### Feature
+- 添加获取电量测试 [`eaa2bb4`](https://github.com/netcookies/isulewTools/commit/eaa2bb4)
+- 添加反射调用car service工具类 [`c6a2b6c`](https://github.com/netcookies/isulewTools/commit/c6a2b6c)
+
+### Bug Fixes
+- 速度不会按需显示 [`e345b9f`](https://github.com/netcookies/isulewTools/commit/e345b9f)
+
+### Other
+- Bump Version [`182b3f9`](https://github.com/netcookies/isulewTools/commit/182b3f9)
+
 ## v1.2.8 (2025-08-22)
 
 ### Feature
