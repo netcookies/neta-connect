@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.2.8 (2025-08-22)
+
+### Feature
+- 增加悬浮窗字体透明度调整 [`3474a4d`](https://github.com/netcookies/isulewTools/commit/3474a4d)
+- 适配shizuku [`760af8f`](https://github.com/netcookies/isulewTools/commit/760af8f)
+- 添加实验性功能 [`ee01655`](https://github.com/netcookies/isulewTools/commit/ee01655)
+
+### Bug Fixes
+- 修复滚动问题 [`d53d986`](https://github.com/netcookies/isulewTools/commit/d53d986)
+- 完善适配日志 [`f2c432d`](https://github.com/netcookies/isulewTools/commit/f2c432d)
+- 修复圆角 [`7d80e7b`](https://github.com/netcookies/isulewTools/commit/7d80e7b)
+
+### Other
+- Bump Version [`37feca9`](https://github.com/netcookies/isulewTools/commit/37feca9)
+
 ## v1.2.7 (2025-08-20)
 
 ### Feature
