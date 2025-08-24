@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.3.0 (2025-08-24)
+
+### Bug Fixes
+- 优化悬浮窗数据的匹配效率 [`fa53594`](https://github.com/netcookies/isulewTools/commit/fa53594)
+- update toast display issue [`030ed18`](https://github.com/netcookies/isulewTools/commit/030ed18)
+- update toast display issue [`69ddf6b`](https://github.com/netcookies/isulewTools/commit/69ddf6b)
+- update toast display issue [`49c3f33`](https://github.com/netcookies/isulewTools/commit/49c3f33)
+
+### Other
+- Bump Version [`33c52f9`](https://github.com/netcookies/isulewTools/commit/33c52f9)
+- Bump [`e56432d`](https://github.com/netcookies/isulewTools/commit/e56432d)
+- Bump Gradle Version [`c7758c6`](https://github.com/netcookies/isulewTools/commit/c7758c6)
+
 ## v1.2.9 (2025-08-22)
 
 ### Feature
