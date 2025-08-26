@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.3.3 (2025-08-26)
+
+### Bug Fixes
+- 修复空指针问题 [`dfd9834`](https://github.com/netcookies/isulewTools/commit/dfd9834)
+
+### Test
+- 测试蓝牙功能(shizuku) [`51960bc`](https://github.com/netcookies/isulewTools/commit/51960bc)
+
+### Other
+- Bump Version [`22d9cee`](https://github.com/netcookies/isulewTools/commit/22d9cee)
+
 ## v1.3.2 (2025-08-26)
 
 ### Feature
