@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.3.2 (2025-08-26)
+
+### Feature
+- 亮屏后后台检测一次更新 [`d9a7ccc`](https://github.com/netcookies/isulewTools/commit/d9a7ccc)
+- 日志类重构 [`2a5768b`](https://github.com/netcookies/isulewTools/commit/2a5768b)
+- 清理代码。完善后端服务逻辑。 [`e5b3f8f`](https://github.com/netcookies/isulewTools/commit/e5b3f8f)
+- 完善Shizuku 权限和校验机制。添加Shizuku 日志、蓝牙AIDL 服务 [`2b112d9`](https://github.com/netcookies/isulewTools/commit/2b112d9)
+- 添加User Service [`56c5806`](https://github.com/netcookies/isulewTools/commit/56c5806)
+- 增加shizuku反射调用设置的BtService和WlanService [`3501387`](https://github.com/netcookies/isulewTools/commit/3501387)
+
+### Bug Fixes
+- 时距有时会为 0 [`e84ec08`](https://github.com/netcookies/isulewTools/commit/e84ec08)
+- 清理冗余的日志，移至debug [`094bdaa`](https://github.com/netcookies/isulewTools/commit/094bdaa)
+- 清理日志工具类的调用 [`186797a`](https://github.com/netcookies/isulewTools/commit/186797a)
+- 没有异常信息时会多输出一个 Null [`0822ff6`](https://github.com/netcookies/isulewTools/commit/0822ff6)
+- remove redundant qualifier name [`8f08884`](https://github.com/netcookies/isulewTools/commit/8f08884)
+- Shizuku User Service [`d1c3b30`](https://github.com/netcookies/isulewTools/commit/d1c3b30)
+- Shizuku User Service [`5a34fd3`](https://github.com/netcookies/isulewTools/commit/5a34fd3)
+- 安装完成显示toast [`bfed3a6`](https://github.com/netcookies/isulewTools/commit/bfed3a6)
+- 优化使用kotlin的协程替换thread [`36ea8df`](https://github.com/netcookies/isulewTools/commit/36ea8df)
+
+### Build
+- 合并代码 [`04317ca`](https://github.com/netcookies/isulewTools/commit/04317ca)
+
+### Other
+- Bump Version [`f7e9d77`](https://github.com/netcookies/isulewTools/commit/f7e9d77)
+
 ## v1.3.1 (2025-08-25)
 
 ### Bug Fixes
