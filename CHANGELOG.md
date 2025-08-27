@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.3.5 (2025-08-27)
+
+### Feature
+- 增加更新日志的按钮 [`cbd72f9`](https://github.com/netcookies/isulewTools/commit/cbd72f9)
+- 跨版本升级返回多版本日志 [`d9a0736`](https://github.com/netcookies/isulewTools/commit/d9a0736)
+- 苹果圆角 [`4a73a4a`](https://github.com/netcookies/isulewTools/commit/4a73a4a)
+- 悬浮窗支持加载和保存样式 [`226967f`](https://github.com/netcookies/isulewTools/commit/226967f)
+
+### Bug Fixes
+- 移除无用的import [`1ac3f72`](https://github.com/netcookies/isulewTools/commit/1ac3f72)
+
+### Other
+- Bump Version [`05ab471`](https://github.com/netcookies/isulewTools/commit/05ab471)
+
 ## v1.3.4 (2025-08-26)
 
 ### Bug Fixes
