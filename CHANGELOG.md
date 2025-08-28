@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.3.6 (2025-08-28)
+
+### Feature
+- 新增车辆属性清单 [`3911632`](https://github.com/netcookies/isulewTools/commit/3911632)
+
+### Bug Fixes
+- 更新权限 [`59d97ca`](https://github.com/netcookies/isulewTools/commit/59d97ca)
+- 更新内容设置最小宽度 [`edf4155`](https://github.com/netcookies/isulewTools/commit/edf4155)
+- 悬浮窗太小时缩在一起的问题 [`8614a13`](https://github.com/netcookies/isulewTools/commit/8614a13)
+
+### Test
+- 电量测试 [`43e71eb`](https://github.com/netcookies/isulewTools/commit/43e71eb)
+
+### Other
+- Bump Version [`993b8c9`](https://github.com/netcookies/isulewTools/commit/993b8c9)
+
 ## v1.3.5 (2025-08-27)
 
 ### Feature
