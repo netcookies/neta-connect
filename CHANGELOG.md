@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.3.7 (2025-08-28)
+
+### Test
+- 更新电量测试 [`5070710`](https://github.com/netcookies/isulewTools/commit/5070710)
+
+### Other
+- Bump Version [`7bfd26f`](https://github.com/netcookies/isulewTools/commit/7bfd26f)
+
 ## v1.3.6 (2025-08-28)
 
 ### Feature
