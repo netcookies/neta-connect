@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## Unreleased changes
+
+### Build
+- Code Cleanup [`b79a345`](https://github.com/netcookies/isulewTools/commit/b79a345)
+
+## v1.3.8 (2025-08-30)
+
+### Feature
+- 增加常用车辆属性的便捷方法 [`a093ff2`](https://github.com/netcookies/isulewTools/commit/a093ff2)
+- 单独实现car service [`bfe542f`](https://github.com/netcookies/isulewTools/commit/bfe542f)
+- 兼容跳转多种无障碍管理器，完善提示信息 [`0d47fac`](https://github.com/netcookies/isulewTools/commit/0d47fac)
+
+### Bug Fixes
+- area config [`ced211c`](https://github.com/netcookies/isulewTools/commit/ced211c)
+- 修复序列化问题 [`208ff52`](https://github.com/netcookies/isulewTools/commit/208ff52)
+- 日志页面的字体太小 [`7ce3933`](https://github.com/netcookies/isulewTools/commit/7ce3933)
+- 尝试修复byte 数组转换问题 [`de1f655`](https://github.com/netcookies/isulewTools/commit/de1f655)
+- 尝试修复byte 数组转换问题 [`65571a7`](https://github.com/netcookies/isulewTools/commit/65571a7)
+
+### Test
+- 添加调用读取常用车辆属性的实验性功能 [`213e0b0`](https://github.com/netcookies/isulewTools/commit/213e0b0)
+
+### Other
+- Bump Version [`5451ef5`](https://github.com/netcookies/isulewTools/commit/5451ef5)
+
 ## v1.3.7 (2025-08-28)
 
 ### Test
