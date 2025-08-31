@@ -6,8 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Other
+- Bump Version [`93e63de`](https://github.com/netcookies/isulewTools/commit/93e63de)
+
+## v1.3.9 (2025-08-31)
+
+### Feature
+- 支持多区域属性 [`354836c`](https://github.com/netcookies/isulewTools/commit/354836c)
+
+### Bug Fixes
+- 处理混合属性类型 [`422a247`](https://github.com/netcookies/isulewTools/commit/422a247)
+- 跳过混合属性类型 [`e02e38c`](https://github.com/netcookies/isulewTools/commit/e02e38c)
+- 增强混合属性类型 [`816f13e`](https://github.com/netcookies/isulewTools/commit/816f13e)
+- 增强代码调试 [`37b0031`](https://github.com/netcookies/isulewTools/commit/37b0031)
+- 显示Shizuku是否 root [`42f7096`](https://github.com/netcookies/isulewTools/commit/42f7096)
+- 每次切回主画面都提权改为只调用一次 [`961e48d`](https://github.com/netcookies/isulewTools/commit/961e48d)
+
+### Test
+- 更新新的测试方法 [`b06aca9`](https://github.com/netcookies/isulewTools/commit/b06aca9)
+- 添加CarPropertyConfig.kt的dump [`eef0530`](https://github.com/netcookies/isulewTools/commit/eef0530)
+
 ### Build
 - Code Cleanup [`b79a345`](https://github.com/netcookies/isulewTools/commit/b79a345)
+
+### Other
+- Bump Version [`0ccac83`](https://github.com/netcookies/isulewTools/commit/0ccac83)
 
 ## v1.3.8 (2025-08-30)
 
