@@ -4,9 +4,44 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## Unreleased changes
+## v1.4.0 (2025-09-03)
+
+### Feature
+- 新增车辆状态页（测试中） cleanup: 去除旧的无用的代码 [`0885912`](https://github.com/netcookies/isulewTools/commit/0885912)
+- CarLanManager reversion [`7aa74f7`](https://github.com/netcookies/isulewTools/commit/7aa74f7)
+- CommonProxy reversion [`0b8a42a`](https://github.com/netcookies/isulewTools/commit/0b8a42a)
+- 添加车辆状态页 [`74a34d5`](https://github.com/netcookies/isulewTools/commit/74a34d5)
+- 添加车机属性测试页 [`aaaf062`](https://github.com/netcookies/isulewTools/commit/aaaf062)
+- 添加vehicleProxy [`0a63696`](https://github.com/netcookies/isulewTools/commit/0a63696)
+- carlan代码集成（root可调用） [`63e4ddb`](https://github.com/netcookies/isulewTools/commit/63e4ddb)
+- 添加CarLanService [`0f77f68`](https://github.com/netcookies/isulewTools/commit/0f77f68)
+
+### Bug Fixes
+- CarLanManager typo [`3ab0edd`](https://github.com/netcookies/isulewTools/commit/3ab0edd)
+- 无障碍服务就不用进到页面去再开关了。直接不让用 :) [`44cfc19`](https://github.com/netcookies/isulewTools/commit/44cfc19)
+- hidl server反射无法获取的问题 [`fedc764`](https://github.com/netcookies/isulewTools/commit/fedc764)
+- 减小更新窗口 [`7bef014`](https://github.com/netcookies/isulewTools/commit/7bef014)
+- 修复调用多种无障碍管理器 [`39341d6`](https://github.com/netcookies/isulewTools/commit/39341d6)
+- cleanup code [`30f8c37`](https://github.com/netcookies/isulewTools/commit/30f8c37)
+- 移除掉无用import [`783981b`](https://github.com/netcookies/isulewTools/commit/783981b)
+- 修复 flow 调用 [`62b2688`](https://github.com/netcookies/isulewTools/commit/62b2688)
+- 采用反射的方式获取车辆属性 [`8d7a472`](https://github.com/netcookies/isulewTools/commit/8d7a472)
+- 遇到不支持属性直接关闭订阅 [`bc8ce32`](https://github.com/netcookies/isulewTools/commit/bc8ce32)
+
+### Documentation
+- 规范命名 [`b41403b`](https://github.com/netcookies/isulewTools/commit/b41403b)
+- 完善代码 [`fe98dd1`](https://github.com/netcookies/isulewTools/commit/fe98dd1)
+
+### Build
+- 移除HwServiceManager [`ad1d8b2`](https://github.com/netcookies/isulewTools/commit/ad1d8b2)
+- cleanup code [`6b6dedc`](https://github.com/netcookies/isulewTools/commit/6b6dedc)
+- 添加CarLanManager [`b2611ca`](https://github.com/netcookies/isulewTools/commit/b2611ca)
+- 添加CommonProxy [`e2b9809`](https://github.com/netcookies/isulewTools/commit/e2b9809)
+- 添加stub service [`b74a6bc`](https://github.com/netcookies/isulewTools/commit/b74a6bc)
+- 添加stub [`d61b7d9`](https://github.com/netcookies/isulewTools/commit/d61b7d9)
 
 ### Other
+- Bump Version [`bd4ab50`](https://github.com/netcookies/isulewTools/commit/bd4ab50)
 - Bump Version [`93e63de`](https://github.com/netcookies/isulewTools/commit/93e63de)
 
 ## v1.3.9 (2025-08-31)
