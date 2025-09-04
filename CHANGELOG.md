@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## v1.4.0 (2025-09-03)
+## v1.4.0 (2025-09-04)
 
 ### Feature
 - 新增车辆状态页（测试中） cleanup: 去除旧的无用的代码 [`0885912`](https://github.com/netcookies/isulewTools/commit/0885912)
@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 添加CarLanService [`0f77f68`](https://github.com/netcookies/isulewTools/commit/0f77f68)
 
 ### Bug Fixes
+- 优化悬浮窗开关逻辑 [`76779a4`](https://github.com/netcookies/isulewTools/commit/76779a4)
 - CarLanManager typo [`3ab0edd`](https://github.com/netcookies/isulewTools/commit/3ab0edd)
 - 无障碍服务就不用进到页面去再开关了。直接不让用 :) [`44cfc19`](https://github.com/netcookies/isulewTools/commit/44cfc19)
 - hidl server反射无法获取的问题 [`fedc764`](https://github.com/netcookies/isulewTools/commit/fedc764)
@@ -41,6 +42,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 添加stub [`d61b7d9`](https://github.com/netcookies/isulewTools/commit/d61b7d9)
 
 ### Other
+- Bump Version [`f3a090d`](https://github.com/netcookies/isulewTools/commit/f3a090d)
 - Bump Version [`bd4ab50`](https://github.com/netcookies/isulewTools/commit/bd4ab50)
 - Bump Version [`93e63de`](https://github.com/netcookies/isulewTools/commit/93e63de)
 
