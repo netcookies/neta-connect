@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.4.1 (2025-09-06)
+
+### Feature
+- 添加CarLanBridge [`edc6225`](https://github.com/netcookies/isulewTools/commit/edc6225)
+
+### Bug Fixes
+- 实现shizuku user service [`e6d4b6e`](https://github.com/netcookies/isulewTools/commit/e6d4b6e)
+- NPE [`a6c16a7`](https://github.com/netcookies/isulewTools/commit/a6c16a7)
+- 完善CarLanBridge [`4ba4537`](https://github.com/netcookies/isulewTools/commit/4ba4537)
+
+### Test
+- 完善测试vehicle proxy逻辑 [`820d9e9`](https://github.com/netcookies/isulewTools/commit/820d9e9)
+
+### Build
+- 升级版本，添加parcelize [`3623148`](https://github.com/netcookies/isulewTools/commit/3623148)
+
+### Style
+- cleanup code [`dffffa5`](https://github.com/netcookies/isulewTools/commit/dffffa5)
+
+### Other
+- Bump Version [`f2b3e19`](https://github.com/netcookies/isulewTools/commit/f2b3e19)
+
 ## v1.4.0 (2025-09-04)
 
 ### Feature
