@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.4.2 (2025-09-06)
+
+### Bug Fixes
+- 紧急修复下载地址错误 [`5a874d9`](https://github.com/netcookies/isulewTools/commit/5a874d9)
+- 紧急修复下载地址错误 [`ef2f58a`](https://github.com/netcookies/isulewTools/commit/ef2f58a)
+
+### Other
+- Bump Version [`5bfc49d`](https://github.com/netcookies/isulewTools/commit/5bfc49d)
+
 ## v1.4.1 (2025-09-06)
 
 ### Feature
