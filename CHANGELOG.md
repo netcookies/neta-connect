@@ -4,6 +4,49 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.4.4 (2025-09-10)
+
+### Feature
+- 添加property测试 [`7c44a99`](https://github.com/netcookies/isulewTools/commit/7c44a99)
+- 动态代理注册回调无效，改用dexmaker [`aa59738`](https://github.com/netcookies/isulewTools/commit/aa59738)
+
+### Bug Fixes
+- 完善vhal模块 [`9302ec0`](https://github.com/netcookies/isulewTools/commit/9302ec0)
+- 适配Shizuku UserService [`d3a63f9`](https://github.com/netcookies/isulewTools/commit/d3a63f9)
+- shizuku 没权限时跳过部分初始化 [`82987a7`](https://github.com/netcookies/isulewTools/commit/82987a7)
+- 修复拿铁美式跳转错误 [`491cf4a`](https://github.com/netcookies/isulewTools/commit/491cf4a)
+- 修复启动速度慢 [`3ce3e0b`](https://github.com/netcookies/isulewTools/commit/3ce3e0b)
+- 默认隐藏语音图标 [`7bd15d2`](https://github.com/netcookies/isulewTools/commit/7bd15d2)
+- 无障碍判断加上对应子服务是否启动 [`dea4f04`](https://github.com/netcookies/isulewTools/commit/dea4f04)
+- User Service 日志修复 [`dfd425f`](https://github.com/netcookies/isulewTools/commit/dfd425f)
+
+### Build
+- add property modules [`d9c33af`](https://github.com/netcookies/isulewTools/commit/d9c33af)
+- add property modules [`d61d53b`](https://github.com/netcookies/isulewTools/commit/d61d53b)
+- 统一viewmodel管理 [`726f87e`](https://github.com/netcookies/isulewTools/commit/726f87e)
+- 提供统一的无障碍服务编排 [`de448bd`](https://github.com/netcookies/isulewTools/commit/de448bd)
+- 修复调用错误 [`99de7df`](https://github.com/netcookies/isulewTools/commit/99de7df)
+- 修复变异错误 [`8ab771c`](https://github.com/netcookies/isulewTools/commit/8ab771c)
+- 添加dexmaker [`d209fec`](https://github.com/netcookies/isulewTools/commit/d209fec)
+- 加入proxy的debug信息 [`b8ec864`](https://github.com/netcookies/isulewTools/commit/b8ec864)
+- change agp version to stable [`e09ac0a`](https://github.com/netcookies/isulewTools/commit/e09ac0a)
+
+### Chore
+- remove build/manifest; keep aidl/kt/res; README retained per review (#4) [`6363235`](https://github.com/netcookies/isulewTools/commit/6363235)
+
+### Other
+- Bump Version [`60bc7b1`](https://github.com/netcookies/isulewTools/commit/60bc7b1)
+- Merge branch 'main' of https://github.com/netcookies/isulewTools [`a0962b4`](https://github.com/netcookies/isulewTools/commit/a0962b4)
+- Merge pull request #4 from netcookies/copilot/add-vhal-reflection-bridge [`411f05c`](https://github.com/netcookies/isulewTools/commit/411f05c)
+- Complete VHAL reflection bridge implementation [`6da1dc3`](https://github.com/netcookies/isulewTools/commit/6da1dc3)
+- Add AIDL interfaces and core reflection components [`a333487`](https://github.com/netcookies/isulewTools/commit/a333487)
+- Initial commit for VHAL bridge planning [`25b2809`](https://github.com/netcookies/isulewTools/commit/25b2809)
+- Initial plan [`3a22fbe`](https://github.com/netcookies/isulewTools/commit/3a22fbe)
+- Merge pull request #3 from netcookies/copilot/add-vhal-bridge-reflection-service [`ba21b3a`](https://github.com/netcookies/isulewTools/commit/ba21b3a)
+- Initial plan [`98088f4`](https://github.com/netcookies/isulewTools/commit/98088f4)
+- code: cleanup [`353f6f8`](https://github.com/netcookies/isulewTools/commit/353f6f8)
+- test：分组绑定messagetyps [`32e3ff1`](https://github.com/netcookies/isulewTools/commit/32e3ff1)
+
 ## v1.4.3 (2025-09-06)
 
 ### Documentation
