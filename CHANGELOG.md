@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.4.7 (2025-09-11)
+
+### Feature
+- 日志写入文件，方便 shizuku 进程调试 [`afe4e53`](https://github.com/netcookies/isulewTools/commit/afe4e53)
+
+### Bug Fixes
+- 修复反射方法错误 [`35818c5`](https://github.com/netcookies/isulewTools/commit/35818c5)
+- 修复方控问题 [`0ec8d6b`](https://github.com/netcookies/isulewTools/commit/0ec8d6b)
+
+### Other
+- Bump Version [`a74e140`](https://github.com/netcookies/isulewTools/commit/a74e140)
+
 ## v1.4.6 (2025-09-11)
 
 ### Bug Fixes
