@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.5.2 (2025-09-13)
+
+### Bug Fixes
+- 对齐 aidl [`dedc376`](https://github.com/netcookies/isulewTools/commit/dedc376)
+- 添加unuse tag [`f04e9c5`](https://github.com/netcookies/isulewTools/commit/f04e9c5)
+- 添加缺失的常量 [`ed9614c`](https://github.com/netcookies/isulewTools/commit/ed9614c)
+- 事件流窗口的背景色问题 [`7240db8`](https://github.com/netcookies/isulewTools/commit/7240db8)
+- 黑夜模式字体颜色问题 [`d9ebf83`](https://github.com/netcookies/isulewTools/commit/d9ebf83)
+
 ## v1.5.1 (2025-09-12)
 
 ### Bug Fixes
