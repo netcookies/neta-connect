@@ -29,4 +29,4 @@
 # 参与贡献
 欢迎任何形式的贡献！Fork 本仓库并提交 Pull Request。
 
-[![GitHub corner badge](https://user-images.githubusercontent.com/674621/34725471-3d03a0f0-f526-11e7-95b9-49c36d925e5d.png)](https://github.com/netcookies/neta-connect)
+[👉 开始使用](/docs/intro)
