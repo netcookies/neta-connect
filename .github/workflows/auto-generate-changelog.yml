@@ -56,7 +56,7 @@ jobs:
           cp ../CHANGELOG.md docs/changelog.md
           npm install
           npm run build
-          rm changelog.md
+          rm -f docs/changelog.md
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
