@@ -10,33 +10,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 更新车辆属性卡片布局 [`c098bd9`](https://github.com/netcookies/isulewTools/commit/c098bd9)
 - 修复因传入错误 id 导致的崩溃。只在vhal 连接状态变化时更新状态值。回退到单 dex 模式 [`854a5a7`](https://github.com/netcookies/isulewTools/commit/854a5a7)
 
-### Other
-- Bump Version [`12600d4`](https://github.com/netcookies/isulewTools/commit/12600d4)
-
 ## v1.5.0 (2025-09-11)
 
 ### Bug Fixes
 - 修复bridge连接问题 [`6513e1c`](https://github.com/netcookies/isulewTools/commit/6513e1c)
 - 修复安装权限检测 [`789dc45`](https://github.com/netcookies/isulewTools/commit/789dc45)
 
-### Other
-- Bump Version [`10c4df5`](https://github.com/netcookies/isulewTools/commit/10c4df5)
-
 ## v1.4.9 (2025-09-11)
 
 ### Bug Fixes
 - 增加读取和写入的覆盖类型 [`5ae6840`](https://github.com/netcookies/isulewTools/commit/5ae6840)
 
-### Other
-- Bump Version [`ceb1844`](https://github.com/netcookies/isulewTools/commit/ceb1844)
-
 ## v1.4.8 (2025-09-11)
 
 ### Bug Fixes
 - 完善车辆状态测试 UI [`92a53a3`](https://github.com/netcookies/isulewTools/commit/92a53a3)
-
-### Other
-- Bump Version [`487f5b0`](https://github.com/netcookies/isulewTools/commit/487f5b0)
 
 ## v1.4.7 (2025-09-11)
 
@@ -47,25 +35,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 修复反射方法错误 [`35818c5`](https://github.com/netcookies/isulewTools/commit/35818c5)
 - 修复方控问题 [`0ec8d6b`](https://github.com/netcookies/isulewTools/commit/0ec8d6b)
 
-### Other
-- Bump Version [`a74e140`](https://github.com/netcookies/isulewTools/commit/a74e140)
-
 ## v1.4.6 (2025-09-11)
 
 ### Bug Fixes
 - 测试界面修复 [`55d36f1`](https://github.com/netcookies/isulewTools/commit/55d36f1)
 - 小 bug 修复 [`2a2eda9`](https://github.com/netcookies/isulewTools/commit/2a2eda9)
 
-### Other
-- Bump Version [`c6002c7`](https://github.com/netcookies/isulewTools/commit/c6002c7)
-
 ## v1.4.5 (2025-09-10)
 
 ### Bug Fixes
 - 更新窗口错误时无法关闭的问题 [`98a167a`](https://github.com/netcookies/isulewTools/commit/98a167a)
-
-### Other
-- Bump Version [`d923c92`](https://github.com/netcookies/isulewTools/commit/d923c92)
 
 ## v1.4.4 (2025-09-10)
 
@@ -98,7 +77,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - remove build/manifest; keep aidl/kt/res; README retained per review (#4) [`6363235`](https://github.com/netcookies/isulewTools/commit/6363235)
 
 ### Other
-- Bump Version [`60bc7b1`](https://github.com/netcookies/isulewTools/commit/60bc7b1)
 - Merge branch 'main' of https://github.com/netcookies/isulewTools [`a0962b4`](https://github.com/netcookies/isulewTools/commit/a0962b4)
 - Merge pull request #4 from netcookies/copilot/add-vhal-reflection-bridge [`411f05c`](https://github.com/netcookies/isulewTools/commit/411f05c)
 - Complete VHAL reflection bridge implementation [`6da1dc3`](https://github.com/netcookies/isulewTools/commit/6da1dc3)
@@ -115,17 +93,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Documentation
 - 添加调试信息，可以不更新 [`15c613a`](https://github.com/netcookies/isulewTools/commit/15c613a)
 
-### Other
-- Bump Version [`2095f38`](https://github.com/netcookies/isulewTools/commit/2095f38)
-
 ## v1.4.2 (2025-09-06)
 
 ### Bug Fixes
 - 紧急修复下载地址错误 [`5a874d9`](https://github.com/netcookies/isulewTools/commit/5a874d9)
 - 紧急修复下载地址错误 [`ef2f58a`](https://github.com/netcookies/isulewTools/commit/ef2f58a)
-
-### Other
-- Bump Version [`5bfc49d`](https://github.com/netcookies/isulewTools/commit/5bfc49d)
 
 ## v1.4.1 (2025-09-06)
 
@@ -145,9 +117,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Style
 - cleanup code [`dffffa5`](https://github.com/netcookies/isulewTools/commit/dffffa5)
-
-### Other
-- Bump Version [`f2b3e19`](https://github.com/netcookies/isulewTools/commit/f2b3e19)
 
 ## v1.4.0 (2025-09-04)
 
@@ -187,9 +156,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 添加stub [`d61b7d9`](https://github.com/netcookies/isulewTools/commit/d61b7d9)
 
 ### Other
-- Bump Version [`f3a090d`](https://github.com/netcookies/isulewTools/commit/f3a090d)
-- Bump Version [`bd4ab50`](https://github.com/netcookies/isulewTools/commit/bd4ab50)
-- Bump Version [`93e63de`](https://github.com/netcookies/isulewTools/commit/93e63de)
 
 ## v1.3.9 (2025-08-31)
 
@@ -211,9 +177,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Build
 - Code Cleanup [`b79a345`](https://github.com/netcookies/isulewTools/commit/b79a345)
 
-### Other
-- Bump Version [`0ccac83`](https://github.com/netcookies/isulewTools/commit/0ccac83)
-
 ## v1.3.8 (2025-08-30)
 
 ### Feature
@@ -231,16 +194,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Test
 - 添加调用读取常用车辆属性的实验性功能 [`213e0b0`](https://github.com/netcookies/isulewTools/commit/213e0b0)
 
-### Other
-- Bump Version [`5451ef5`](https://github.com/netcookies/isulewTools/commit/5451ef5)
-
 ## v1.3.7 (2025-08-28)
 
 ### Test
 - 更新电量测试 [`5070710`](https://github.com/netcookies/isulewTools/commit/5070710)
-
-### Other
-- Bump Version [`7bfd26f`](https://github.com/netcookies/isulewTools/commit/7bfd26f)
 
 ## v1.3.6 (2025-08-28)
 
@@ -255,9 +212,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Test
 - 电量测试 [`43e71eb`](https://github.com/netcookies/isulewTools/commit/43e71eb)
 
-### Other
-- Bump Version [`993b8c9`](https://github.com/netcookies/isulewTools/commit/993b8c9)
-
 ## v1.3.5 (2025-08-27)
 
 ### Feature
@@ -269,16 +223,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Bug Fixes
 - 移除无用的import [`1ac3f72`](https://github.com/netcookies/isulewTools/commit/1ac3f72)
 
-### Other
-- Bump Version [`05ab471`](https://github.com/netcookies/isulewTools/commit/05ab471)
-
 ## v1.3.4 (2025-08-26)
 
 ### Bug Fixes
 - 修复自动更新问题 [`1f2f209`](https://github.com/netcookies/isulewTools/commit/1f2f209)
-
-### Other
-- Bump Version [`fdb6a75`](https://github.com/netcookies/isulewTools/commit/fdb6a75)
 
 ## v1.3.3 (2025-08-26)
 
@@ -287,9 +235,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Test
 - 测试蓝牙功能(shizuku) [`51960bc`](https://github.com/netcookies/isulewTools/commit/51960bc)
-
-### Other
-- Bump Version [`22d9cee`](https://github.com/netcookies/isulewTools/commit/22d9cee)
 
 ## v1.3.2 (2025-08-26)
 
@@ -315,9 +260,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Build
 - 合并代码 [`04317ca`](https://github.com/netcookies/isulewTools/commit/04317ca)
 
-### Other
-- Bump Version [`f7e9d77`](https://github.com/netcookies/isulewTools/commit/f7e9d77)
-
 ## v1.3.1 (2025-08-25)
 
 ### Bug Fixes
@@ -325,9 +267,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Build
 - 整理代码 [`3a7b2d5`](https://github.com/netcookies/isulewTools/commit/3a7b2d5)
-
-### Other
-- Bump Version [`cfda0d2`](https://github.com/netcookies/isulewTools/commit/cfda0d2)
 
 ## v1.3.0 (2025-08-24)
 
@@ -338,7 +277,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - update toast display issue [`49c3f33`](https://github.com/netcookies/isulewTools/commit/49c3f33)
 
 ### Other
-- Bump Version [`33c52f9`](https://github.com/netcookies/isulewTools/commit/33c52f9)
 - Bump [`e56432d`](https://github.com/netcookies/isulewTools/commit/e56432d)
 - Bump Gradle Version [`c7758c6`](https://github.com/netcookies/isulewTools/commit/c7758c6)
 
@@ -350,9 +288,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Bug Fixes
 - 速度不会按需显示 [`e345b9f`](https://github.com/netcookies/isulewTools/commit/e345b9f)
-
-### Other
-- Bump Version [`182b3f9`](https://github.com/netcookies/isulewTools/commit/182b3f9)
 
 ## v1.2.8 (2025-08-22)
 
@@ -366,9 +301,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 完善适配日志 [`f2c432d`](https://github.com/netcookies/isulewTools/commit/f2c432d)
 - 修复圆角 [`7d80e7b`](https://github.com/netcookies/isulewTools/commit/7d80e7b)
 
-### Other
-- Bump Version [`37feca9`](https://github.com/netcookies/isulewTools/commit/37feca9)
-
 ## v1.2.7 (2025-08-20)
 
 ### Feature
@@ -380,9 +312,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 按需显示为 0 时隐藏 [`4f9e57b`](https://github.com/netcookies/isulewTools/commit/4f9e57b)
 - 去除无用的Emoji [`7612a0b`](https://github.com/netcookies/isulewTools/commit/7612a0b)
 
-### Other
-- Bump Version [`ef5f64b`](https://github.com/netcookies/isulewTools/commit/ef5f64b)
-
 ## v1.2.6 (2025-08-20)
 
 ### Bug Fixes
@@ -390,7 +319,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 弹出窗口过大，导致按钮无法显示 [`f6924de`](https://github.com/netcookies/isulewTools/commit/f6924de)
 
 ### Other
-- Bump Version [`54862f4`](https://github.com/netcookies/isulewTools/commit/54862f4)
 - Bump sdk version [`b84dcea`](https://github.com/netcookies/isulewTools/commit/b84dcea)
 - Bump sdk version [`eebd81f`](https://github.com/netcookies/isulewTools/commit/eebd81f)
 - Bump gradle version [`b554871`](https://github.com/netcookies/isulewTools/commit/b554871)
@@ -431,9 +359,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 引导页修复完成 [`7da2bd0`](https://github.com/netcookies/isulewTools/commit/7da2bd0)
 - 代码整理 [`655eef5`](https://github.com/netcookies/isulewTools/commit/655eef5)
 
-### Other
-- Bump Version [`9f0260c`](https://github.com/netcookies/isulewTools/commit/9f0260c)
-
 ## v1.2.3 (2025-08-14)
 
 ### Feature
@@ -456,9 +381,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 删除无用的测试代码 [`49b4c1e`](https://github.com/netcookies/isulewTools/commit/49b4c1e)
 - format code [`4af7c1b`](https://github.com/netcookies/isulewTools/commit/4af7c1b)
 
-### Other
-- Bump Version [`56b9c33`](https://github.com/netcookies/isulewTools/commit/56b9c33)
-
 ## v1.2.2 (2025-08-12)
 
 ### Feature
@@ -475,18 +397,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Style
 - 对齐 switch [`de87d54`](https://github.com/netcookies/isulewTools/commit/de87d54)
 
-### Other
-- Bump Version [`e95207b`](https://github.com/netcookies/isulewTools/commit/e95207b)
-
 ## v1.2.1 (2025-08-11)
 
 ### Bug Fixes
 - 下载地址走github加速 [`01a0713`](https://github.com/netcookies/isulewTools/commit/01a0713)
 - 添加“请立即接管车辆”classname进悬浮窗白名单 [`a187958`](https://github.com/netcookies/isulewTools/commit/a187958)
 - 添加“请立即接管车辆”classname进悬浮窗白名单 [`ed264ac`](https://github.com/netcookies/isulewTools/commit/ed264ac)
-
-### Other
-- Bump Version [`3c68694`](https://github.com/netcookies/isulewTools/commit/3c68694)
 
 ## v1.2.0 (2025-08-11)
 
@@ -516,20 +432,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 重构安装的 fun [`118ebe3`](https://github.com/netcookies/isulewTools/commit/118ebe3)
 
 ### Other
-- Bump Version [`7e3016e`](https://github.com/netcookies/isulewTools/commit/7e3016e)
-- Bump Version [`a4a1ca0`](https://github.com/netcookies/isulewTools/commit/a4a1ca0)
 - todo: 快速上手 [`fbef7e6`](https://github.com/netcookies/isulewTools/commit/fbef7e6)
-- Bump Version [`9e81bdf`](https://github.com/netcookies/isulewTools/commit/9e81bdf)
-- Bump Version [`ed46cfc`](https://github.com/netcookies/isulewTools/commit/ed46cfc)
 
 ## v1.1.9 (2025-08-11)
 
 ### Continuous Integration
 - update release.yml [`b98752e`](https://github.com/netcookies/isulewTools/commit/b98752e)
 - Update release.yml [`020cbcf`](https://github.com/netcookies/isulewTools/commit/020cbcf)
-
-### Other
-- Bump Version [`b413b82`](https://github.com/netcookies/isulewTools/commit/b413b82)
 
 ## v1.1.8 (2025-08-11)
 
@@ -546,17 +455,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Build
 - 新增依赖库解析Markdown/Release Notes [`aaa43ea`](https://github.com/netcookies/isulewTools/commit/aaa43ea)
 
-### Other
-- Bump Version [`1f02cf1`](https://github.com/netcookies/isulewTools/commit/1f02cf1)
-
 ## v1.1.7 (2025-08-10)
 
 ### Continuous Integration
 - 完善公开仓 CHANGELOG 生成 [`32535dd`](https://github.com/netcookies/isulewTools/commit/32535dd)
 
 ### Other
-- Bump Version [`65e4e94`](https://github.com/netcookies/isulewTools/commit/65e4e94)
-- Bump Version [`da03542`](https://github.com/netcookies/isulewTools/commit/da03542)
 
 ## v1.1.6 (2025-08-10)
 
@@ -573,9 +477,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 优化界面 [`780d13d`](https://github.com/netcookies/isulewTools/commit/780d13d)
 
 ### Other
-- Bump Version [`57887fa`](https://github.com/netcookies/isulewTools/commit/57887fa)
 - Merge remote-tracking branch 'origin/main' [`0703736`](https://github.com/netcookies/isulewTools/commit/0703736)
-- Bump Version [`730528f`](https://github.com/netcookies/isulewTools/commit/730528f)
 
 ## v1.1.5 (2025-08-10)
 
@@ -587,8 +489,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - update release action [`47eb5e1`](https://github.com/netcookies/isulewTools/commit/47eb5e1)
 
 ### Other
-- Bump Version [`05f6e3f`](https://github.com/netcookies/isulewTools/commit/05f6e3f)
-- Bump Version [`8e5ee83`](https://github.com/netcookies/isulewTools/commit/8e5ee83)
 
 ## v1.1.4 (2025-08-10)
 
@@ -602,18 +502,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - update release action [`5c2776a`](https://github.com/netcookies/isulewTools/commit/5c2776a)
 
 ### Other
-- Bump Version [`bf0a066`](https://github.com/netcookies/isulewTools/commit/bf0a066)
-- Bump Version [`84fda01`](https://github.com/netcookies/isulewTools/commit/84fda01)
-- Bump Version [`108af64`](https://github.com/netcookies/isulewTools/commit/108af64)
-- Bump Version [`8629dee`](https://github.com/netcookies/isulewTools/commit/8629dee)
-- Bump Version [`d9f1266`](https://github.com/netcookies/isulewTools/commit/d9f1266)
-- Bump Version [`55250e2`](https://github.com/netcookies/isulewTools/commit/55250e2)
-- Bump Version [`af0ac60`](https://github.com/netcookies/isulewTools/commit/af0ac60)
-- Bump Version [`723bae3`](https://github.com/netcookies/isulewTools/commit/723bae3)
-- Bump Version [`cda3ebe`](https://github.com/netcookies/isulewTools/commit/cda3ebe)
-- Bump Version [`7f1b9d1`](https://github.com/netcookies/isulewTools/commit/7f1b9d1)
-- Bump Version [`3052be0`](https://github.com/netcookies/isulewTools/commit/3052be0)
-- Bump Version [`8f9153a`](https://github.com/netcookies/isulewTools/commit/8f9153a)
 
 ## v1.1.3 (2025-08-10)
 
@@ -632,16 +520,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - update changelog for main [skip ci] [`8400766`](https://github.com/netcookies/isulewTools/commit/8400766)
 
 ### Other
-- Bump Version [`4ef2c1f`](https://github.com/netcookies/isulewTools/commit/4ef2c1f)
-- Bump Version [`b0976cb`](https://github.com/netcookies/isulewTools/commit/b0976cb)
-- Bump Version [`b731103`](https://github.com/netcookies/isulewTools/commit/b731103)
-- Bump Version [`41c9c9d`](https://github.com/netcookies/isulewTools/commit/41c9c9d)
 - update yml [`3dffade`](https://github.com/netcookies/isulewTools/commit/3dffade)
 - Del CHANGELOG [`3e2ca09`](https://github.com/netcookies/isulewTools/commit/3e2ca09)
-- Bump Version [`4429aa7`](https://github.com/netcookies/isulewTools/commit/4429aa7)
-- Bump Version [`cd3b5f0`](https://github.com/netcookies/isulewTools/commit/cd3b5f0)
-- Bump Version [`ce8827a`](https://github.com/netcookies/isulewTools/commit/ce8827a)
-- Bump Version [`1b5075b`](https://github.com/netcookies/isulewTools/commit/1b5075b)
 - Changelog [`1eee60c`](https://github.com/netcookies/isulewTools/commit/1eee60c)
 - Merged [`e4a12cf`](https://github.com/netcookies/isulewTools/commit/e4a12cf)
 
@@ -717,7 +597,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 隐藏悬浮窗权限问题 [`ee08cd5`](https://github.com/netcookies/isulewTools/commit/ee08cd5)
 
 ### Other
-- Bump Version [`c61f7ea`](https://github.com/netcookies/isulewTools/commit/c61f7ea)
 - Merged [`2fd05e9`](https://github.com/netcookies/isulewTools/commit/2fd05e9)
 - Bump sdk to 36 [`896ec89`](https://github.com/netcookies/isulewTools/commit/896ec89)
 
@@ -747,18 +626,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - update changelog for main [`738c268`](https://github.com/netcookies/isulewTools/commit/738c268)
 
 ### Other
-- Bump Version [`623d52c`](https://github.com/netcookies/isulewTools/commit/623d52c)
-- Bump Version [`7068e78`](https://github.com/netcookies/isulewTools/commit/7068e78)
-- Bump Version [`26dcc5e`](https://github.com/netcookies/isulewTools/commit/26dcc5e)
-- Bump Version [`a48ef09`](https://github.com/netcookies/isulewTools/commit/a48ef09)
-- Bump Version [`3b32849`](https://github.com/netcookies/isulewTools/commit/3b32849)
-- Bump Version [`2cc2432`](https://github.com/netcookies/isulewTools/commit/2cc2432)
 - Update release.yml [`25c690a`](https://github.com/netcookies/isulewTools/commit/25c690a)
-- Bump Version [`ee4cd5a`](https://github.com/netcookies/isulewTools/commit/ee4cd5a)
-- Bump Version [`8faa1fd`](https://github.com/netcookies/isulewTools/commit/8faa1fd)
-- Bump Version [`055bec7`](https://github.com/netcookies/isulewTools/commit/055bec7)
-- Bump Version [`c465892`](https://github.com/netcookies/isulewTools/commit/c465892)
-- Bump Version [`4ecfbb7`](https://github.com/netcookies/isulewTools/commit/4ecfbb7)
 - Merge pull request #1 from netcookies/copilot/fix-0f139135-3750-46bd-9428-c4c3a497d786 [`0b65d7e`](https://github.com/netcookies/isulewTools/commit/0b65d7e)
 - Initial plan [`268c994`](https://github.com/netcookies/isulewTools/commit/268c994)
 - Fix: Update FloatCarInfoWindow.kt [`00cd556`](https://github.com/netcookies/isulewTools/commit/00cd556)
@@ -792,7 +660,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 添加保存拖动后的位置。 feat: 监控前台包名，若为弹窗页签的包名，滑动下桌上角隐藏语音小图标 [`f4cf58c`](https://github.com/netcookies/isulewTools/commit/f4cf58c)
 
 ### Documentation
-- Bump Versions [`07faadc`](https://github.com/netcookies/isulewTools/commit/07faadc)
 - 增加MIT LICENSE [`127a264`](https://github.com/netcookies/isulewTools/commit/127a264)
 - 增加README feat: 增加Release流程 [`c83052b`](https://github.com/netcookies/isulewTools/commit/c83052b)
 
@@ -848,15 +715,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 添加亮屏自启动功能。 [`0c0dd5e`](https://github.com/netcookies/isulewTools/commit/0c0dd5e)
 - 移除launcher ready事件。无效 [`fccd41f`](https://github.com/netcookies/isulewTools/commit/fccd41f)
 - Bug fixs.更改日志输出路径。 [`0a88f89`](https://github.com/netcookies/isulewTools/commit/0a88f89)
-- Bump Version.添加权限检测。 [`03108a0`](https://github.com/netcookies/isulewTools/commit/03108a0)
-- Bump Version.添加亮屏、launcher ready事件。 [`23934db`](https://github.com/netcookies/isulewTools/commit/23934db)
-- Bump Version.添加日志抓取 [`f42bda7`](https://github.com/netcookies/isulewTools/commit/f42bda7)
-- Bump Version.修复亮屏时蓝牙导致的wifi开关无法打开 [`56746d4`](https://github.com/netcookies/isulewTools/commit/56746d4)
-- Bump Version. FIX: default set override though is empty by manual [`4a22bbd`](https://github.com/netcookies/isulewTools/commit/4a22bbd)
 - version 0.1.5基本可用，等待弹窗车机测试 [`fccee3c`](https://github.com/netcookies/isulewTools/commit/fccee3c)
 - version 0.1.5基本可用，等待弹窗车机测试 [`b6ccd76`](https://github.com/netcookies/isulewTools/commit/b6ccd76)
 - Adust TabRow margin bottom [`481453d`](https://github.com/netcookies/isulewTools/commit/481453d)
-- Bump Version [`4d01c9e`](https://github.com/netcookies/isulewTools/commit/4d01c9e)
 - 测试跳过usb功能。完善日志 [`ac9e2be`](https://github.com/netcookies/isulewTools/commit/ac9e2be)
 - Remove release directory from Git and ignore it [`0c86f95`](https://github.com/netcookies/isulewTools/commit/0c86f95)
 - Add usb handler tab [`738cd8f`](https://github.com/netcookies/isulewTools/commit/738cd8f)
