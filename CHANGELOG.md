@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.5.1 (2025-09-12)
+
+### Bug Fixes
+- 更新车辆属性卡片布局 [`c098bd9`](https://github.com/netcookies/isulewTools/commit/c098bd9)
+- 修复因传入错误 id 导致的崩溃。只在vhal 连接状态变化时更新状态值。回退到单 dex 模式 [`854a5a7`](https://github.com/netcookies/isulewTools/commit/854a5a7)
+
+### Other
+- Bump Version [`12600d4`](https://github.com/netcookies/isulewTools/commit/12600d4)
+
 ## v1.5.0 (2025-09-11)
 
 ### Bug Fixes
