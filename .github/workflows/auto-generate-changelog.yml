@@ -33,9 +33,32 @@ jobs:
         run: |
           cd "${{ github.workspace }}/neta-connect/"
           cp -r "${{ github.workspace }}/CHANGELOG.md" "${{ github.workspace }}/neta-connect/"
+          perl -0777 -i -pe 's/^### Other[ \t]*\r?\n- Bump Version.*\r?\n[ \t]*\r?\n//mg' CHANGELOG.md
+          perl -i -pe 's/^- Bump Version.*\r?\n//mg' CHANGELOG.md
           git config user.name 'GitHub Actions Bot'
           git config user.email 'actions@github.com'
           git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/netcookies/neta-connect.git
           git add CHANGELOG.md
           git commit -m "docs: :robot: changelog file generated" || echo "No changes to commit"
           git push origin
+
+  build-deploy:
+    runs-on: ubuntu-latest
+    needs: changelog
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: |
+          cd site
+          cp ../CHANGELOG.md changelog.md
+          npm install
+          npm run build
+          rm changelog.md
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site/build
+          cname: neta.nznd.org

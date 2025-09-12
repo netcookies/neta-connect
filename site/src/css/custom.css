@@ -1,0 +1,23 @@
+:root {
+  --ifm-color-primary: #00897b; /* 主色调 (青绿色，可改) */
+  --ifm-color-primary-dark: #00695c;
+  --ifm-color-primary-darker: #004d40;
+  --ifm-color-primary-light: #26a69a;
+  --ifm-color-primary-lighter: #4db6ac;
+}
+
+.navbar__title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.hero--primary {
+  background: linear-gradient(90deg, #00897b, #4db6ac);
+  color: white;
+}
+
+.footer {
+  background-color: #004d40;
+  color: #eee;
+}
+

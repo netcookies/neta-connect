@@ -1,0 +1,13 @@
+{
+  "name": "neta-connect-website",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "deploy": "docusaurus deploy"
+  },
+  "dependencies": {
+    "@docusaurus/core": "latest",
+    "@docusaurus/preset-classic": "latest"
+  }
+}
