@@ -53,7 +53,7 @@ jobs:
           node-version: 18
       - run: |
           cd site
-          cp ../CHANGELOG.md changelog.md
+          cp ../CHANGELOG.md docs/changelog.md
           npm install
           npm run build
           rm changelog.md
