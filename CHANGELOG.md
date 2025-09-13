@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.5.4 (2025-09-14)
+
+### Bug Fixes
+- 修复亮屏启动（测试通过） [`255e379`](https://github.com/netcookies/isulewTools/commit/255e379)
+- 修复亮屏启动 [`5a12b12`](https://github.com/netcookies/isulewTools/commit/5a12b12)
+- 修复亮屏启动 [`8dd96b2`](https://github.com/netcookies/isulewTools/commit/8dd96b2)
+
 ## v1.5.3 (2025-09-13)
 
 ### Feature
