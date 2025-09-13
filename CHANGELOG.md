@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.5.3 (2025-09-13)
+
+### Feature
+- 重构类型转换逻辑 [`b1561d4`](https://github.com/netcookies/isulewTools/commit/b1561d4)
+- 处理mixed type [`1ee989c`](https://github.com/netcookies/isulewTools/commit/1ee989c)
+
+### Bug Fixes
+- 修正 UI 显示错误 [`27796d5`](https://github.com/netcookies/isulewTools/commit/27796d5)
+- 修复包名错误 [`b0b9584`](https://github.com/netcookies/isulewTools/commit/b0b9584)
+
+### Build
+- code cleanup [`7781bd2`](https://github.com/netcookies/isulewTools/commit/7781bd2)
+- 合并mixed type code [`337dbf9`](https://github.com/netcookies/isulewTools/commit/337dbf9)
+
+### Other
+- fix：对齐property type todo: mix type [`c6721ad`](https://github.com/netcookies/isulewTools/commit/c6721ad)
+- fix：修复订阅 flag问题 [`c31d9a7`](https://github.com/netcookies/isulewTools/commit/c31d9a7)
+
 ## v1.5.2 (2025-09-13)
 
 ### Bug Fixes
