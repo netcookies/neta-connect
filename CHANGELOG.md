@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.5.5 (2025-09-15)
+
+### Feature
+- Shizuku每次更新授权一次 [`129675c`](https://github.com/netcookies/isulewTools/commit/129675c)
+- 无障碍判断该用 kotlin 的状态驱动 [`b1047a1`](https://github.com/netcookies/isulewTools/commit/b1047a1)
+- 安装器注册成独立的安装器，其他程序可以调用。 [`3e9c627`](https://github.com/netcookies/isulewTools/commit/3e9c627)
+- 去除外部存储权限依赖。 [`c589172`](https://github.com/netcookies/isulewTools/commit/c589172)
+
+### Bug Fixes
+- remove unused fun [`7722e48`](https://github.com/netcookies/isulewTools/commit/7722e48)
+
+### Build
+- code cleanup [`ace3da2`](https://github.com/netcookies/isulewTools/commit/ace3da2)
+
 ## v1.5.4 (2025-09-14)
 
 ### Bug Fixes
