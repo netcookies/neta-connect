@@ -4,6 +4,39 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.5.6 (2025-09-17)
+
+### Feature
+- 车辆属性订阅可以用啦！🎉 [`8fbc81c`](https://github.com/netcookies/isulewTools/commit/8fbc81c)
+- 切换 tab 时保存界面上的车辆状态值 [`66d20ac`](https://github.com/netcookies/isulewTools/commit/66d20ac)
+- property 属性采用dump car_service 方式获取。效率提升 1000 倍！ [`8383589`](https://github.com/netcookies/isulewTools/commit/8383589)
+
+### Bug Fixes
+- 增强版的读取和写入 field [`d5d357d`](https://github.com/netcookies/isulewTools/commit/d5d357d)
+- 讲property包添加入白名单 [`0e4f9d8`](https://github.com/netcookies/isulewTools/commit/0e4f9d8)
+- 尝试修复订阅 flags = 0错误 [`99059d2`](https://github.com/netcookies/isulewTools/commit/99059d2)
+- 测试模式改为静态检测 [`0378b1b`](https://github.com/netcookies/isulewTools/commit/0378b1b)
+- 修改悬浮窗默认值为关闭 [`1fe6c6b`](https://github.com/netcookies/isulewTools/commit/1fe6c6b)
+- 悬浮窗兜底策略修复 [`a058ad1`](https://github.com/netcookies/isulewTools/commit/a058ad1)
+- 修复 getPropConfigs 签名错误 [`bce3723`](https://github.com/netcookies/isulewTools/commit/bce3723)
+- 修复 getPropConfigs 签名错误 [`a0c9b92`](https://github.com/netcookies/isulewTools/commit/a0c9b92)
+- 加入 changemode 调试信息 [`c873bf8`](https://github.com/netcookies/isulewTools/commit/c873bf8)
+- 悬浮窗加一个兜底，免得掉下来 [`fcf3700`](https://github.com/netcookies/isulewTools/commit/fcf3700)
+
+### Test
+- 单元测试通过 [`e51b810`](https://github.com/netcookies/isulewTools/commit/e51b810)
+- 采用模版驱动的方式实现匹配 [`56e0a63`](https://github.com/netcookies/isulewTools/commit/56e0a63)
+- 更新测试用例 [`7f501ee`](https://github.com/netcookies/isulewTools/commit/7f501ee)
+- 更新测试用例 [`0979c70`](https://github.com/netcookies/isulewTools/commit/0979c70)
+- 添加单元测试方法 [`82a5b71`](https://github.com/netcookies/isulewTools/commit/82a5b71)
+- 添加单元测试方法 [`84dff5c`](https://github.com/netcookies/isulewTools/commit/84dff5c)
+
+### Build
+- 适配CarStatusTab [`ba37f74`](https://github.com/netcookies/isulewTools/commit/ba37f74)
+- 适配CarStatusTab [`91214de`](https://github.com/netcookies/isulewTools/commit/91214de)
+- 适配CarStatusViewModel [`6b3d1d3`](https://github.com/netcookies/isulewTools/commit/6b3d1d3)
+- code cleanup [`124bc21`](https://github.com/netcookies/isulewTools/commit/124bc21)
+
 ## v1.5.5 (2025-09-15)
 
 ### Feature
