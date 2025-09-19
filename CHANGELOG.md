@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.5.7 (2025-09-19)
+
+### Feature
+- 电量颜色参考 ios 风格 [`5b24846`](https://github.com/netcookies/isulewTools/commit/5b24846)
+- 重构添加电池显示 [`ad71fbe`](https://github.com/netcookies/isulewTools/commit/ad71fbe)
+- 事件流加上名字 [`f7e0aca`](https://github.com/netcookies/isulewTools/commit/f7e0aca)
+- 实现动态切换悬浮窗数据源，vhal 有权限时会自动切到 VHAL，否则切回日志 [`e963a5d`](https://github.com/netcookies/isulewTools/commit/e963a5d)
+- 加入电量图标 [`fbede01`](https://github.com/netcookies/isulewTools/commit/fbede01)
+- 添加悬浮窗数据源 [`dd42362`](https://github.com/netcookies/isulewTools/commit/dd42362)
+- 将PilotData抽象成接口 [`aa6f438`](https://github.com/netcookies/isulewTools/commit/aa6f438)
+- 添加行的状态 Chip，方便后期调试 [`99d7af6`](https://github.com/netcookies/isulewTools/commit/99d7af6)
+
+### Performance Improvements
+- 适配行的悬浮窗数据源 [`88eb002`](https://github.com/netcookies/isulewTools/commit/88eb002)
+
+### Build
+- Cleanup Code [`791cfc6`](https://github.com/netcookies/isulewTools/commit/791cfc6)
+
 ## v1.5.6 (2025-09-17)
 
 ### Feature
