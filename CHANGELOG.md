@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.5.8 (2025-09-21)
+
+### Feature
+- 添加多媒体卡片功能（ui 还没完成） [`3bb94ba`](https://github.com/netcookies/isulewTools/commit/3bb94ba)
+
+### Bug Fixes
+- 修复Vhal 悬浮窗 [`0a53655`](https://github.com/netcookies/isulewTools/commit/0a53655)
+- vhal binder 断开提示 [`66f7ffc`](https://github.com/netcookies/isulewTools/commit/66f7ffc)
+
+### Performance Improvements
+- 反馈改成按钮，增大日志显示范围 [`4e3136c`](https://github.com/netcookies/isulewTools/commit/4e3136c)
+- 日志样式美化 [`38b4eae`](https://github.com/netcookies/isulewTools/commit/38b4eae)
+- 优化日志性能 [`ab81105`](https://github.com/netcookies/isulewTools/commit/ab81105)
+- 添加accCode = 3 提速和accCode = 7 不可用两种状态 [`5d7c442`](https://github.com/netcookies/isulewTools/commit/5d7c442)
+
+### Test
+- 添加媒体卡片测试 [`880414b`](https://github.com/netcookies/isulewTools/commit/880414b)
+- 实验性功能加入测试按钮 [`51d907b`](https://github.com/netcookies/isulewTools/commit/51d907b)
+
+### Build
+- 升级lib [`c83920e`](https://github.com/netcookies/isulewTools/commit/c83920e)
+
 ## v1.5.7 (2025-09-19)
 
 ### Feature
