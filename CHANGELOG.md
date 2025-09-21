@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.5.9 (2025-09-21)
+
+### Feature
+- 日志过滤功能 [`e9c5286`](https://github.com/netcookies/isulewTools/commit/e9c5286)
+
+### Bug Fixes
+- 补齐两种悬浮窗状态 [`cb18370`](https://github.com/netcookies/isulewTools/commit/cb18370)
+
+### Performance Improvements
+- 日志倒序并自动滚动 [`dfb9624`](https://github.com/netcookies/isulewTools/commit/dfb9624)
+
 ## v1.5.8 (2025-09-21)
 
 ### Feature
