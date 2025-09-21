@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.6.0 (2025-09-22)
+
+### Bug Fixes
+- 修补中文名缺失问题 [`527a281`](https://github.com/netcookies/isulewTools/commit/527a281)
+- 修补参数问题 [`6749ea8`](https://github.com/netcookies/isulewTools/commit/6749ea8)
+
+### Performance Improvements
+- 事件倒序与自动滚动 [`0139dfc`](https://github.com/netcookies/isulewTools/commit/0139dfc)
+- vhal 默认自动重连 [`8ab2609`](https://github.com/netcookies/isulewTools/commit/8ab2609)
+- 事件分类 [`7703b09`](https://github.com/netcookies/isulewTools/commit/7703b09)
+- 添加中文显示 [`348ea11`](https://github.com/netcookies/isulewTools/commit/348ea11)
+- 时间格式添加毫秒 [`5b02aba`](https://github.com/netcookies/isulewTools/commit/5b02aba)
+- 优化 acc 和 lcc枚举值 [`391be1c`](https://github.com/netcookies/isulewTools/commit/391be1c)
+- 去除赞赏二维码 [`e447e63`](https://github.com/netcookies/isulewTools/commit/e447e63)
+
+### Test
+- adas state for test [`df3f711`](https://github.com/netcookies/isulewTools/commit/df3f711)
+
+### Build
+- code cleanup [`cef6b90`](https://github.com/netcookies/isulewTools/commit/cef6b90)
+- 移除多余的图片和字符 [`677c60c`](https://github.com/netcookies/isulewTools/commit/677c60c)
+
 ## v1.5.9 (2025-09-21)
 
 ### Feature
