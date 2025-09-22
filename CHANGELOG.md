@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.6.1 (2025-09-22)
+
+### Bug Fixes
+- 修复悬浮窗显示，如果有发现触发紫色背景的请报告到群里@我 [`026d629`](https://github.com/netcookies/isulewTools/commit/026d629)
+- 移除枚举值，改用常量 [`dcc941f`](https://github.com/netcookies/isulewTools/commit/dcc941f)
+- 移除枚举值，改用常量 [`66f8445`](https://github.com/netcookies/isulewTools/commit/66f8445)
+
+### Performance Improvements
+- 事件窗口优化 [`1b3906e`](https://github.com/netcookies/isulewTools/commit/1b3906e)
+
+### Test
+- 媒体卡片绑定测试 [`2e2edc4`](https://github.com/netcookies/isulewTools/commit/2e2edc4)
+
 ## v1.6.0 (2025-09-22)
 
 ### Bug Fixes
