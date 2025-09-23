@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.6.2 (2025-09-24)
+
+### Feature
+- 提供统一的订阅池管理。为后续功能做准备 [`fcf1c44`](https://github.com/netcookies/isulewTools/commit/fcf1c44)
+- 订阅持久化 [`be92271`](https://github.com/netcookies/isulewTools/commit/be92271)
+
+### Bug Fixes
+- 已订阅的属性置顶显示 [`827e506`](https://github.com/netcookies/isulewTools/commit/827e506)
+- 修复事件流颜色 [`f626301`](https://github.com/netcookies/isulewTools/commit/f626301)
+
+### Performance Improvements
+- 优化交互逻辑 [`7304bc0`](https://github.com/netcookies/isulewTools/commit/7304bc0)
+- 禁止状态 [`dd8ec3b`](https://github.com/netcookies/isulewTools/commit/dd8ec3b)
+- 写入时显示示例 [`66bcf2c`](https://github.com/netcookies/isulewTools/commit/66bcf2c)
+- UI颜色优化 [`6110843`](https://github.com/netcookies/isulewTools/commit/6110843)
+- 统一速度的颜色 [`f35e46c`](https://github.com/netcookies/isulewTools/commit/f35e46c)
+- 添加跟车、暂停的颜色 [`d432be2`](https://github.com/netcookies/isulewTools/commit/d432be2)
+
+### Test
+- 增加测试模式 [`5b35c49`](https://github.com/netcookies/isulewTools/commit/5b35c49)
+
+### Build
+- code clean up [`1cf88c0`](https://github.com/netcookies/isulewTools/commit/1cf88c0)
+
+### Refactor
+- 重构车辆状态 UI [`f7e69a0`](https://github.com/netcookies/isulewTools/commit/f7e69a0)
+
 ## v1.6.1 (2025-09-22)
 
 ### Bug Fixes
