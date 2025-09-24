@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.6.3 (2025-09-24)
+
+### Feature
+- 增加取消全部订阅按钮 fix: 修复高度问题 [`2801a0a`](https://github.com/netcookies/isulewTools/commit/2801a0a)
+
+### Bug Fixes
+- 修复viewModel初始化问题 [`3f8f8bf`](https://github.com/netcookies/isulewTools/commit/3f8f8bf)
+- 修复写入的结果值总是true [`a8ebabb`](https://github.com/netcookies/isulewTools/commit/a8ebabb)
+- 2801a0a feat: 增加取消全部订阅按钮 fix: 修复高度问题 [`2801a0a`](https://github.com/netcookies/isulewTools/commit/2801a0a)
+
+### Performance Improvements
+- 回显居中显示 [`f3376ea`](https://github.com/netcookies/isulewTools/commit/f3376ea)
+- 统一按钮样式 [`fcbb2f0`](https://github.com/netcookies/isulewTools/commit/fcbb2f0)
+- 统一按钮样式 [`9abc0ef`](https://github.com/netcookies/isulewTools/commit/9abc0ef)
+- 优化回显效果 [`014da0a`](https://github.com/netcookies/isulewTools/commit/014da0a)
+
 ## v1.6.2 (2025-09-24)
 
 ### Feature
