@@ -4,6 +4,50 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.6.4 (2025-09-28)
+
+### Feature
+- 添加安装和卸载美式的按钮 [`ad4b506`](https://github.com/netcookies/isulewTools/commit/ad4b506)
+- 实现属性数据也分页懒加载 fix: 修复置顶、过滤、订阅等无法显示 [`cfc5599`](https://github.com/netcookies/isulewTools/commit/cfc5599)
+- 添加以表盘 perf: 合并数据库 build: 添加文档 [`3a6468c`](https://github.com/netcookies/isulewTools/commit/3a6468c)
+- 小组件功能初版 [`3e0ffdf`](https://github.com/netcookies/isulewTools/commit/3e0ffdf)
+
+### Bug Fixes
+- cfc5599 feat: 实现属性数据也分页懒加载 fix: 修复置顶、过滤、订阅等无法显示 [`cfc5599`](https://github.com/netcookies/isulewTools/commit/cfc5599)
+- 修复属性列表缓存加载问题 [`3d9d663`](https://github.com/netcookies/isulewTools/commit/3d9d663)
+- 修复数据源绑定问题 [`31d495a`](https://github.com/netcookies/isulewTools/commit/31d495a)
+- 修复数据源绑定问题 [`32d5fd3`](https://github.com/netcookies/isulewTools/commit/32d5fd3)
+- 修复数据源绑定问题 [`337179e`](https://github.com/netcookies/isulewTools/commit/337179e)
+- 0dc37d1 perf: 支持颜色选择器 fix: 属性数据源保存问题 [`0dc37d1`](https://github.com/netcookies/isulewTools/commit/0dc37d1)
+- 数据库升级错误 [`3c4719f`](https://github.com/netcookies/isulewTools/commit/3c4719f)
+
+### Performance Improvements
+- 每页显示 25 条数据，重连按钮图标改成文字 [`0c4f647`](https://github.com/netcookies/isulewTools/commit/0c4f647)
+- 优化电池小组件 [`ca20e2d`](https://github.com/netcookies/isulewTools/commit/ca20e2d)
+- 优化弹窗 [`011f905`](https://github.com/netcookies/isulewTools/commit/011f905)
+- 3a6468c feat: 添加以表盘 perf: 合并数据库 build: 添加文档 [`3a6468c`](https://github.com/netcookies/isulewTools/commit/3a6468c)
+- 更新gitignore [`5f87a53`](https://github.com/netcookies/isulewTools/commit/5f87a53)
+- 支持颜色选择器 fix: 属性数据源保存问题 [`0dc37d1`](https://github.com/netcookies/isulewTools/commit/0dc37d1)
+- 统一按钮样式 [`9ebfe3a`](https://github.com/netcookies/isulewTools/commit/9ebfe3a)
+- 统一按钮样式 [`5a6d993`](https://github.com/netcookies/isulewTools/commit/5a6d993)
+- 清理无用的context [`e19f35e`](https://github.com/netcookies/isulewTools/commit/e19f35e)
+- 完善数据绑定逻辑 [`7ef832f`](https://github.com/netcookies/isulewTools/commit/7ef832f)
+- 调整数据源 key [`33f4452`](https://github.com/netcookies/isulewTools/commit/33f4452)
+- 完成主要功能框架 [`c5f50af`](https://github.com/netcookies/isulewTools/commit/c5f50af)
+- 添加LCC 暂停时，手动加速的状态 [`36b5da9`](https://github.com/netcookies/isulewTools/commit/36b5da9)
+- 补齐PropertySubscriptionService的参数 [`c0589e2`](https://github.com/netcookies/isulewTools/commit/c0589e2)
+- 由AppServices全局持有PropertySubscriptionService [`c38d272`](https://github.com/netcookies/isulewTools/commit/c38d272)
+
+### Build
+- update gitignore [`e121791`](https://github.com/netcookies/isulewTools/commit/e121791)
+- 3a6468c feat: 添加以表盘 perf: 合并数据库 build: 添加文档 [`3a6468c`](https://github.com/netcookies/isulewTools/commit/3a6468c)
+- idea stuff [`28e72a0`](https://github.com/netcookies/isulewTools/commit/28e72a0)
+
+### Other
+- debug: 增加临时调试日志 [`361620c`](https://github.com/netcookies/isulewTools/commit/361620c)
+- Merge branch 'main' of https://github.com/netcookies/isulewTools [`cd1692e`](https://github.com/netcookies/isulewTools/commit/cd1692e)
+- Merge pull request #6 [`64ef41c`](https://github.com/netcookies/isulewTools/commit/64ef41c)
+
 ## v1.6.3 (2025-09-24)
 
 ### Feature
