@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.6.6 (2025-09-29)
+
+### Feature
+- 由AppService统一持有数据库实例 feat: 被小组件引用的属性禁止取消订阅 [`fbda6ef`](https://github.com/netcookies/isulewTools/commit/fbda6ef)
+- 添加数据引用功能 [`096f710`](https://github.com/netcookies/isulewTools/commit/096f710)
+
+### Bug Fixes
+- 修复被引用无法点击 [`ab403d8`](https://github.com/netcookies/isulewTools/commit/ab403d8)
+- 修复去重：开功能的无限循环 [`a1598df`](https://github.com/netcookies/isulewTools/commit/a1598df)
+- 恢复误删除的代码 [`0b63e12`](https://github.com/netcookies/isulewTools/commit/0b63e12)
+- 修复数据库升级错误 [`399db27`](https://github.com/netcookies/isulewTools/commit/399db27)
+
+### Performance Improvements
+- 移除重连按钮，需要重连的话点右上角状态栏图标。 [`f530a2d`](https://github.com/netcookies/isulewTools/commit/f530a2d)
+- 移除重连按钮，需要重连的话点右上角状态栏图标。 [`ff752a2`](https://github.com/netcookies/isulewTools/commit/ff752a2)
+- 移除去重模式，现在去重已经没有意义 [`85b975b`](https://github.com/netcookies/isulewTools/commit/85b975b)
+- 小组件支持必填项 [`bbecad2`](https://github.com/netcookies/isulewTools/commit/bbecad2)
+- 按钮样式优化 [`3db8e74`](https://github.com/netcookies/isulewTools/commit/3db8e74)
+- 按钮布局优化 [`6b1cd5f`](https://github.com/netcookies/isulewTools/commit/6b1cd5f)
+- 车辆属性列表高度优化 [`b5d7bbf`](https://github.com/netcookies/isulewTools/commit/b5d7bbf)
+- 将和无障碍无关的服务从无障碍中解耦 [`751dd38`](https://github.com/netcookies/isulewTools/commit/751dd38)
+
+### Build
+- 移除Jetifier [`6fe27a4`](https://github.com/netcookies/isulewTools/commit/6fe27a4)
+
+### Other
+
 ## v1.6.4 (2025-09-28)
 
 ### Feature
