@@ -4,6 +4,52 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.6.8 (2025-10-01)
+
+### Feature
+- 添加SliderSetting.kt [`169ab75`](https://github.com/netcookies/isulewTools/commit/169ab75)
+- 完成小组件悬浮窗后端功能 [`a7b05b8`](https://github.com/netcookies/isulewTools/commit/a7b05b8)
+- 悬浮窗服务合并 [`3c8bdcc`](https://github.com/netcookies/isulewTools/commit/3c8bdcc)
+- 添加 Mock config [`4d8b160`](https://github.com/netcookies/isulewTools/commit/4d8b160)
+- 添加 Mock config [`7dfbe60`](https://github.com/netcookies/isulewTools/commit/7dfbe60)
+- 添加 Mock 数据供测试 [`ed7802a`](https://github.com/netcookies/isulewTools/commit/ed7802a)
+
+### Bug Fixes
+- 修复拖动协程错误 [`a974bfd`](https://github.com/netcookies/isulewTools/commit/a974bfd)
+- 移除没用的方法 [`dd3131a`](https://github.com/netcookies/isulewTools/commit/dd3131a)
+- 悬浮窗开关逻辑错误 [`986e1fa`](https://github.com/netcookies/isulewTools/commit/986e1fa)
+- 修复放大后圆角不圆的问题 [`6002d89`](https://github.com/netcookies/isulewTools/commit/6002d89)
+- 修复小组件编辑后，引用消失 [`22e2621`](https://github.com/netcookies/isulewTools/commit/22e2621)
+- 修复去重功能 [`07e8b2e`](https://github.com/netcookies/isulewTools/commit/07e8b2e)
+
+### Performance Improvements
+- 完善小组件悬浮窗逻辑 [`80d9c00`](https://github.com/netcookies/isulewTools/commit/80d9c00)
+- 悬浮窗开关持久化 [`9566099`](https://github.com/netcookies/isulewTools/commit/9566099)
+- 组件小浮窗拖动位置持久化 [`6c66cc8`](https://github.com/netcookies/isulewTools/commit/6c66cc8)
+- 添加小组件悬浮窗开关持久化 [`7f11bfc`](https://github.com/netcookies/isulewTools/commit/7f11bfc)
+- 优化智驾悬浮窗页面的 UI [`630fad5`](https://github.com/netcookies/isulewTools/commit/630fad5)
+- 缩放和透明度，显示两位小数 [`e94f110`](https://github.com/netcookies/isulewTools/commit/e94f110)
+- 创建小组件时赋予默认值 [`b8a4a5e`](https://github.com/netcookies/isulewTools/commit/b8a4a5e)
+- 优化电池配置 [`e8a9717`](https://github.com/netcookies/isulewTools/commit/e8a9717)
+- 增加透明度和缩放两种类型 [`769390b`](https://github.com/netcookies/isulewTools/commit/769390b)
+- 完善修改逻辑 [`7a9c59e`](https://github.com/netcookies/isulewTools/commit/7a9c59e)
+- 实现拖动 [`35f09e2`](https://github.com/netcookies/isulewTools/commit/35f09e2)
+- 适配小组件悬浮窗的开启和隐藏命令 [`5c4f2ad`](https://github.com/netcookies/isulewTools/commit/5c4f2ad)
+- 补齐mock数据 [`908053a`](https://github.com/netcookies/isulewTools/commit/908053a)
+- 适配原智驾悬浮窗服务 [`3a3d7c7`](https://github.com/netcookies/isulewTools/commit/3a3d7c7)
+- 添加应用加载屏 [`6bb06b2`](https://github.com/netcookies/isulewTools/commit/6bb06b2)
+- 确保进入车辆属性页时属性已加载 [`747aef9`](https://github.com/netcookies/isulewTools/commit/747aef9)
+- 调整服务和viewmodel的初始化顺序 [`09a30e6`](https://github.com/netcookies/isulewTools/commit/09a30e6)
+- 添加电池预览 [`49b2c14`](https://github.com/netcookies/isulewTools/commit/49b2c14)
+- 完善小组件页面 [`a1ad6f5`](https://github.com/netcookies/isulewTools/commit/a1ad6f5)
+- 完善小组件页面 [`8fad485`](https://github.com/netcookies/isulewTools/commit/8fad485)
+- 完善电池小组件 [`aefb484`](https://github.com/netcookies/isulewTools/commit/aefb484)
+
+### Build
+- 包位置调整 [`67c0a28`](https://github.com/netcookies/isulewTools/commit/67c0a28)
+
+### Other
+
 ## v1.6.6 (2025-09-29)
 
 ### Feature
