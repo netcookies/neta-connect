@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.6.9 (2025-10-02)
+
+### Feature
+- 记忆仪表盘和悬浮窗选项 [`7d44013`](https://github.com/netcookies/isulewTools/commit/7d44013)
+- 被引用不再实时计算，改用持久化实现 [`f93c259`](https://github.com/netcookies/isulewTools/commit/f93c259)
+- 移除智驾悬浮窗里的电池 [`40fea21`](https://github.com/netcookies/isulewTools/commit/40fea21)
+
+### Bug Fixes
+- 添加线程锁，修复重复显示悬浮窗的 bug [`9a549ef`](https://github.com/netcookies/isulewTools/commit/9a549ef)
+- 主动推送流，而不是悬浮窗被动获取 [`20e1a35`](https://github.com/netcookies/isulewTools/commit/20e1a35)
+
+### Performance Improvements
+- 去重持久化。且当去重切换时互联小组件引用关系。 [`1a40a9e`](https://github.com/netcookies/isulewTools/commit/1a40a9e)
+- LogService 等待 Shizuku 上线。 [`5e01287`](https://github.com/netcookies/isulewTools/commit/5e01287)
+- Shizuku就绪时立即重连Vhal [`4368959`](https://github.com/netcookies/isulewTools/commit/4368959)
+
 ## v1.6.8 (2025-10-01)
 
 ### Feature
