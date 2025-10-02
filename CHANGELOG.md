@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.7.0 (2025-10-02)
+
+### Feature
+- 数据库升级时会清空小组件！ BREAKING CHANGE: 数据库升级时会清空小组件！ [`0e47893`](https://github.com/netcookies/isulewTools/commit/0e47893)
+- 智驾改用统一的车辆属性订阅 [`15e4027`](https://github.com/netcookies/isulewTools/commit/15e4027)
+
+### Bug Fixes
+- 修复智驾悬浮窗数据引用问题 [`9434878`](https://github.com/netcookies/isulewTools/commit/9434878)
+- 修复保存后再拖动设置还原的问题 [`543ad54`](https://github.com/netcookies/isulewTools/commit/543ad54)
+
+### Test
+- mock 智驾数据 [`c486372`](https://github.com/netcookies/isulewTools/commit/c486372)
+
 ## v1.6.9 (2025-10-02)
 
 ### Feature
