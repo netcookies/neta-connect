@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.7.1 (2025-10-03)
+
+### Feature
+- 方控支持关闭 [`0de0240`](https://github.com/netcookies/isulewTools/commit/0de0240)
+- 添加个按钮示例 [`2300fe1`](https://github.com/netcookies/isulewTools/commit/2300fe1)
+- 添加胎压监测小组件 @原想s1160 [`623501a`](https://github.com/netcookies/isulewTools/commit/623501a)
+- 添加胎压监测小组件 @原想s1160 [`261f009`](https://github.com/netcookies/isulewTools/commit/261f009)
+- 每个订阅独立协程，确保某个订阅出问题不会影响到其他协程 [`0dc744b`](https://github.com/netcookies/isulewTools/commit/0dc744b)
+- 解耦小组件配置的调用 [`1fb578a`](https://github.com/netcookies/isulewTools/commit/1fb578a)
+- 从widget抽象出flow函数 [`0bdc569`](https://github.com/netcookies/isulewTools/commit/0bdc569)
+
+### Bug Fixes
+- flow 类型错误 [`5013a3b`](https://github.com/netcookies/isulewTools/commit/5013a3b)
+- 添加调试日志 [`bed7399`](https://github.com/netcookies/isulewTools/commit/bed7399)
+
+### Performance Improvements
+- 优化订阅服务 [`044d017`](https://github.com/netcookies/isulewTools/commit/044d017)
+
+### Build
+- add lint [`4c77b5c`](https://github.com/netcookies/isulewTools/commit/4c77b5c)
+
 ## v1.7.0 (2025-10-02)
 
 ### Feature
