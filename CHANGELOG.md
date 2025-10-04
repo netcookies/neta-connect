@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.7.3 (2025-10-04)
+
+### Test
+- AI 添加了几个小组件供大家测试 [`a7e5fd0`](https://github.com/netcookies/isulewTools/commit/a7e5fd0)
+- AI 添加了几个小组件供大家测试 [`ee6ef34`](https://github.com/netcookies/isulewTools/commit/ee6ef34)
+
 ## v1.7.2 (2025-10-04)
 
 ### Bug Fixes
