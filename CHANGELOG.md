@@ -4,6 +4,89 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.7.4 (2025-10-14)
+
+### Feature
+- 彻底移除shizuku [`36b86ce`](https://github.com/netcookies/isulewTools/commit/36b86ce)
+- vhal 服务适配特权服务 [`45d53b7`](https://github.com/netcookies/isulewTools/commit/45d53b7)
+- 特权服务静默安装 [`c943254`](https://github.com/netcookies/isulewTools/commit/c943254)
+- 特权服务静默安装 [`b22b59c`](https://github.com/netcookies/isulewTools/commit/b22b59c)
+- 特权服务静默安装 [`51d56bc`](https://github.com/netcookies/isulewTools/commit/51d56bc)
+- 特权服务静默安装 [`73642ae`](https://github.com/netcookies/isulewTools/commit/73642ae)
+- 特权服务静默安装 [`afa01bf`](https://github.com/netcookies/isulewTools/commit/afa01bf)
+- 添加IBinder、IInterface包装方法 [`7be908f`](https://github.com/netcookies/isulewTools/commit/7be908f)
+- 无障碍自动保活 [`60de296`](https://github.com/netcookies/isulewTools/commit/60de296)
+- 自动提权迁移到特权服务 [`8b1c394`](https://github.com/netcookies/isulewTools/commit/8b1c394)
+- 开始迁移安装和授权服务 [`8b94751`](https://github.com/netcookies/isulewTools/commit/8b94751)
+- 开始迁移 shizuku 服务 [`6ca1d16`](https://github.com/netcookies/isulewTools/commit/6ca1d16)
+- 采用 DER 生成密钥 [`dda5971`](https://github.com/netcookies/isulewTools/commit/dda5971)
+- 采用 DER 生成密钥 [`dcd2a6f`](https://github.com/netcookies/isulewTools/commit/dcd2a6f)
+
+### Bug Fixes
+- 悬浮窗数据源切换错误 [`7422d0b`](https://github.com/netcookies/isulewTools/commit/7422d0b)
+- 初始化错误 [`eebd188`](https://github.com/netcookies/isulewTools/commit/eebd188)
+- 编译警告 [`755dd38`](https://github.com/netcookies/isulewTools/commit/755dd38)
+- 优化订阅数据日志到事件流 [`5f7cfd0`](https://github.com/netcookies/isulewTools/commit/5f7cfd0)
+- remoteLogger 单例初始化错误的问题 [`f1e76c3`](https://github.com/netcookies/isulewTools/commit/f1e76c3)
+- 修复 vhal 初始化问题 [`a1daee7`](https://github.com/netcookies/isulewTools/commit/a1daee7)
+- 日志过高的问题 [`3705312`](https://github.com/netcookies/isulewTools/commit/3705312)
+- 悬浮窗补齐参数 [`f48639a`](https://github.com/netcookies/isulewTools/commit/f48639a)
+- 修复安装权限问题 [`a4c73e6`](https://github.com/netcookies/isulewTools/commit/a4c73e6)
+- manifest.xml [`589eac3`](https://github.com/netcookies/isulewTools/commit/589eac3)
+- 修复静默安装方法 [`fd6ba8b`](https://github.com/netcookies/isulewTools/commit/fd6ba8b)
+- 修复美式下载链接 [`30b094c`](https://github.com/netcookies/isulewTools/commit/30b094c)
+- 修复特权服务重连问题 [`2a9673a`](https://github.com/netcookies/isulewTools/commit/2a9673a)
+- 修复特权服务问题 [`b384106`](https://github.com/netcookies/isulewTools/commit/b384106)
+- 修复安装问题 [`6e4972e`](https://github.com/netcookies/isulewTools/commit/6e4972e)
+- 修复特权服务协程问题 [`4c10f12`](https://github.com/netcookies/isulewTools/commit/4c10f12)
+- 修复返回值判断错误 [`9999706`](https://github.com/netcookies/isulewTools/commit/9999706)
+- 优化特权服务 [`fef3470`](https://github.com/netcookies/isulewTools/commit/fef3470)
+
+### Performance Improvements
+- 添加是否adb auth 过，防止美式挂了 [`97a0409`](https://github.com/netcookies/isulewTools/commit/97a0409)
+- 增加sampleRate的输入 [`3de2cf8`](https://github.com/netcookies/isulewTools/commit/3de2cf8)
+- 优化vhal管理器 [`9e5fcf4`](https://github.com/netcookies/isulewTools/commit/9e5fcf4)
+- cleanup code [`d56a02d`](https://github.com/netcookies/isulewTools/commit/d56a02d)
+- 完善AnyBinderProxy [`edd540c`](https://github.com/netcookies/isulewTools/commit/edd540c)
+- 调整包结构 [`ab96c8f`](https://github.com/netcookies/isulewTools/commit/ab96c8f)
+- 归集一部分常量 [`28fa798`](https://github.com/netcookies/isulewTools/commit/28fa798)
+- 防止adb多次启动 [`367417c`](https://github.com/netcookies/isulewTools/commit/367417c)
+- 防止多次启动 [`62761c8`](https://github.com/netcookies/isulewTools/commit/62761c8)
+- 防止多次启动 [`233dd31`](https://github.com/netcookies/isulewTools/commit/233dd31)
+- 清理无用的媒体功能 [`48b6074`](https://github.com/netcookies/isulewTools/commit/48b6074)
+
+### Test
+- 添加日志断点 [`22edb8c`](https://github.com/netcookies/isulewTools/commit/22edb8c)
+- 测试安装服务 [`c637e9d`](https://github.com/netcookies/isulewTools/commit/c637e9d)
+- 日志迁移完毕，开始测试 [`de40c52`](https://github.com/netcookies/isulewTools/commit/de40c52)
+- 日志迁移完毕，开始测试 [`3522635`](https://github.com/netcookies/isulewTools/commit/3522635)
+
+### Build
+- 优化gradle [`302d301`](https://github.com/netcookies/isulewTools/commit/302d301)
+- 添加Stub [`9e47142`](https://github.com/netcookies/isulewTools/commit/9e47142)
+- 添加Stub [`a476c1b`](https://github.com/netcookies/isulewTools/commit/a476c1b)
+- 添加Stub [`45efc2d`](https://github.com/netcookies/isulewTools/commit/45efc2d)
+- 适配特权服务 [`a1f8141`](https://github.com/netcookies/isulewTools/commit/a1f8141)
+- 适配特权服务 [`cb9720d`](https://github.com/netcookies/isulewTools/commit/cb9720d)
+- 适配特权服务 [`dfa4a78`](https://github.com/netcookies/isulewTools/commit/dfa4a78)
+- 适配特权服务 [`57a9ce2`](https://github.com/netcookies/isulewTools/commit/57a9ce2)
+- 适配特权服务 [`0748d99`](https://github.com/netcookies/isulewTools/commit/0748d99)
+- 适配特权服务 [`4bea3b9`](https://github.com/netcookies/isulewTools/commit/4bea3b9)
+- 适配特权服务 [`5183e82`](https://github.com/netcookies/isulewTools/commit/5183e82)
+- 适配特权服务 [`cee7156`](https://github.com/netcookies/isulewTools/commit/cee7156)
+- 适配特权服务 [`5f0e6ed`](https://github.com/netcookies/isulewTools/commit/5f0e6ed)
+- 开始适配美式提供的超级特权服务 [`ee5746d`](https://github.com/netcookies/isulewTools/commit/ee5746d)
+- 开始适配美式提供的超级特权服务 [`bd62229`](https://github.com/netcookies/isulewTools/commit/bd62229)
+
+### Other
+- Merge pull request #7 from netcookies/super-privileged [`a4b26d2`](https://github.com/netcookies/isulewTools/commit/a4b26d2)
+- pear: 完善无障碍服务的健康机制 [`54f3607`](https://github.com/netcookies/isulewTools/commit/54f3607)
+- pear: 完善无障碍服务的健康机制 [`9c8ce00`](https://github.com/netcookies/isulewTools/commit/9c8ce00)
+- pear: 解耦各项日志子服务 [`92f2568`](https://github.com/netcookies/isulewTools/commit/92f2568)
+- pear: 解耦各项特权子服务 [`42c9ee9`](https://github.com/netcookies/isulewTools/commit/42c9ee9)
+- 防止疯狂点击重连 [`d8d328a`](https://github.com/netcookies/isulewTools/commit/d8d328a)
+- pref: 优化初始化速度 [`2c8fc67`](https://github.com/netcookies/isulewTools/commit/2c8fc67)
+
 ## v1.7.3 (2025-10-04)
 
 ### Test
