@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.7.5 (2025-10-14)
+
+### Feature
+- 增加高级设置页签，将重启、安装卸载美式、实验性功能迁移到这个页 [`bbea527`](https://github.com/netcookies/isulewTools/commit/bbea527)
+- 增加折叠侧边栏按钮 [`29d336c`](https://github.com/netcookies/isulewTools/commit/29d336c)
+
 ## v1.7.4 (2025-10-14)
 
 ### Feature
