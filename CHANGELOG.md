@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.7.6 (2025-10-16)
+
+### Bug Fixes
+- 修复无障碍服务健康监测 [`a1b3218`](https://github.com/netcookies/isulewTools/commit/a1b3218)
+- 修复 adb stream 锁死问题 [`a005a97`](https://github.com/netcookies/isulewTools/commit/a005a97)
+- 修复过过早调用日志实例的问题 [`070f606`](https://github.com/netcookies/isulewTools/commit/070f606)
+
+### Performance Improvements
+- 完善 adb 重连机制 [`77a1544`](https://github.com/netcookies/isulewTools/commit/77a1544)
+- 优化启动检查 [`16235f4`](https://github.com/netcookies/isulewTools/commit/16235f4)
+- 优化启动流程 [`5e3173b`](https://github.com/netcookies/isulewTools/commit/5e3173b)
+
+### Refactor
+- 重构 adb 模块，放弃import，太坑了 [`44df5b1`](https://github.com/netcookies/isulewTools/commit/44df5b1)
+
 ## v1.7.5 (2025-10-14)
 
 ### Feature
