@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.7.7 (2025-10-17)
+
+### Feature
+- 实现 ContainProvider 传递特权服务 [`d36bacc`](https://github.com/netcookies/isulewTools/commit/d36bacc)
+
+### Bug Fixes
+- 缓存启动脚本用于手动触发重连 [`5554ef0`](https://github.com/netcookies/isulewTools/commit/5554ef0)
+- 重试失败后重置isStarting [`c23dffe`](https://github.com/netcookies/isulewTools/commit/c23dffe)
+- 修复悬浮窗数据源切换导致的不断重启订阅问题 [`b68dd74`](https://github.com/netcookies/isulewTools/commit/b68dd74)
+- 修复悬浮窗数据源切换错误 [`559ad7e`](https://github.com/netcookies/isulewTools/commit/559ad7e)
+
+### Performance Improvements
+- 现在无障碍和特权服务不再阻碍用户进入主页面 [`efe8f4f`](https://github.com/netcookies/isulewTools/commit/efe8f4f)
+
 ## v1.7.6 (2025-10-16)
 
 ### Bug Fixes
