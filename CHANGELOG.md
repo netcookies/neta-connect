@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.7.8 (2025-10-17)
+
+### Feature
+- 修复app_process闪退问题 [`a845717`](https://github.com/netcookies/isulewTools/commit/a845717)
+- 实现通知机制提升重启后特权服务的获取速度 [`7805f87`](https://github.com/netcookies/isulewTools/commit/7805f87)
+- 实现 JNI 服务端 [`ea871d2`](https://github.com/netcookies/isulewTools/commit/ea871d2)
+
+### Bug Fixes
+- 修复无障碍的自动恢复 [`4b42bc1`](https://github.com/netcookies/isulewTools/commit/4b42bc1)
+
+### Other
+- fix：确保不要误杀进程 [`1e651c5`](https://github.com/netcookies/isulewTools/commit/1e651c5)
+
 ## v1.7.7 (2025-10-17)
 
 ### Feature
