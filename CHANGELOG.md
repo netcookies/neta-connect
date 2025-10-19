@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.7.9 (2025-10-19)
+
+### Feature
+- 添加悬浮窗数据源模式切换按钮 [`2195ad5`](https://github.com/netcookies/isulewTools/commit/2195ad5)
+- 添加无障碍模式按钮 [`668ed65`](https://github.com/netcookies/isulewTools/commit/668ed65)
+- 添加麦克风功能测试 - 实验性功能 [`0bf84e7`](https://github.com/netcookies/isulewTools/commit/0bf84e7)
+- 添加雷石麦克风 sdk [`8c45690`](https://github.com/netcookies/isulewTools/commit/8c45690)
+
+### Bug Fixes
+- 无障碍跳转问题 [`ffe361f`](https://github.com/netcookies/isulewTools/commit/ffe361f)
+
+### Performance Improvements
+- 麦克风调试添加冻结系统应用，避免闪退 [`316c3c4`](https://github.com/netcookies/isulewTools/commit/316c3c4)
+- 翻译车辆属性 [`74da707`](https://github.com/netcookies/isulewTools/commit/74da707)
+
+### Test
+- 尝试通过冻结，接管麦克风服务 [`b288ecb`](https://github.com/netcookies/isulewTools/commit/b288ecb)
+- 调整实验性功能：监测安装包 [`868c997`](https://github.com/netcookies/isulewTools/commit/868c997)
+
+### Refactor
+- 梳理特权服务包结构 [`fba108f`](https://github.com/netcookies/isulewTools/commit/fba108f)
+- 梳理特权服务包结构 [`bcb0e21`](https://github.com/netcookies/isulewTools/commit/bcb0e21)
+
 ## v1.7.8 (2025-10-17)
 
 ### Feature
