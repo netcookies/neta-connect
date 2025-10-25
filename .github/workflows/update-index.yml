@@ -17,11 +17,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Update lastUpdated timestamp
+      - name: Update generatedAt timestamp
         run: |
-          # 更新 index.json 中的 lastUpdated 字段
+          # 更新 index.json 中的 generatedAt 字段
           TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          sed -i "s/\"lastUpdated\": \".*\"/\"lastUpdated\": \"$TIMESTAMP\"/" widgets/index.json
+          sed -i "s/\"generatedAt\": \".*\"/\"generatedAt\": \"$TIMESTAMP\"/" widgets/index.json
 
           # 检查是否有变化
           if git diff --quiet widgets/index.json; then
