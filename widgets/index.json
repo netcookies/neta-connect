@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-25T00:00:00Z",
+  "widgets": [
+    {
+      "id": "battery_widget",
+      "displayName": "电池小组件",
+      "description": "显示车辆电池电量、续航里程等信息",
+      "author": "官方",
+      "category": "系统信息",
+      "icon": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/battery-widget/icon.png",
+      "status": "BETA",
+      "minAppVersion": "1.7.9",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-01-25",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/battery-widget/1.0.0/battery-widget.jar",
+          "fileSize": 11264,
+          "sha256": "1e1a816fb6f0459d03c04d83d56663b6a6a0d8828edf0cdfbd142a15188e93eb",
+          "changelog": "- 初始版本\n- 支持显示电池电量\n- 支持显示续航里程"
+        }
+      ]
+    }
+  ]
+}
