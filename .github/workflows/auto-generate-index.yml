@@ -120,19 +120,18 @@ jobs:
                 VERSIONS_JSON+=","
               fi
 
-              VERSIONS_JSON+=$(cat <<JSON_VERSION
-
-              {
-                "version": "$version",
-                "releaseDate": "$RELEASE_DATE",
-                "downloadUrl": "$DOWNLOAD_URL",
-                "changelog": "版本 $version",
-                "minAppVersion": "$MIN_APP_VERSION",
-                "fileSize": $FILE_SIZE,
-                "sha256": "$SHA256"
-              }
-JSON_VERSION
-)
+              VERSIONS_JSON+=$(cat <<-JSON_VERSION
+		{
+		  "version": "$version",
+		  "releaseDate": "$RELEASE_DATE",
+		  "downloadUrl": "$DOWNLOAD_URL",
+		  "changelog": "版本 $version",
+		  "minAppVersion": "$MIN_APP_VERSION",
+		  "fileSize": $FILE_SIZE,
+		  "sha256": "$SHA256"
+		}
+		JSON_VERSION
+              )
             done
 
             VERSIONS_JSON+="]"
@@ -150,21 +149,21 @@ JSON_VERSION
               echo "," >> "$INDEX_FILE"
             fi
 
-            cat >> "$INDEX_FILE" << WIDGET_JSON
-              {
-                "id": "$WIDGET_ID",
-                "displayName": "$DISPLAY_NAME",
-                "description": "$DESCRIPTION",
-                "author": "$AUTHOR",
-                "category": "$CATEGORY",
-                "icon": null,
-                "color": null,
-                "minAppVersion": "$MIN_APP_VERSION",
-                "latestVersion": "$LATEST_VERSION",
-                "status": "STABLE",
-                "versions": $VERSIONS_JSON
-              }
-WIDGET_JSON
+            cat >> "$INDEX_FILE" <<-WIDGET_JSON
+		{
+		  "id": "$WIDGET_ID",
+		  "displayName": "$DISPLAY_NAME",
+		  "description": "$DESCRIPTION",
+		  "author": "$AUTHOR",
+		  "category": "$CATEGORY",
+		  "icon": null,
+		  "color": null,
+		  "minAppVersion": "$MIN_APP_VERSION",
+		  "latestVersion": "$LATEST_VERSION",
+		  "status": "STABLE",
+		  "versions": $VERSIONS_JSON
+		}
+		WIDGET_JSON
 
           done
 
