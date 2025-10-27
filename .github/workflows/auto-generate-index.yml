@@ -20,7 +20,6 @@ jobs:
 
       - name: Generate index.json
         run: |
-          #!/bin/bash
           set -e
 
           WIDGETS_DIR="widgets"
