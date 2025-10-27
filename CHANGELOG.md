@@ -4,6 +4,92 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.8.0 (2025-10-27)
+
+### Feature
+- 完善小组件发布流程 [`cd3a036`](https://github.com/netcookies/isulewTools/commit/cd3a036)
+- 透明度、缩放自动注入 [`b245231`](https://github.com/netcookies/isulewTools/commit/b245231)
+- 添加高级功能 - 日志状态查看功能 [`d6deec5`](https://github.com/netcookies/isulewTools/commit/d6deec5)
+- 新增辅助小工具 [`864ca90`](https://github.com/netcookies/isulewTools/commit/864ca90)
+- 新增辅助小工具 [`bdb0d1e`](https://github.com/netcookies/isulewTools/commit/bdb0d1e)
+- 完成小组件商店功能 [`f426b06`](https://github.com/netcookies/isulewTools/commit/f426b06)
+- 小组件商店: 业务逻辑与测试UI完成 [`7301eec`](https://github.com/netcookies/isulewTools/commit/7301eec)
+- 小组件商店: 业务逻辑与测试UI完成 [`eefd08f`](https://github.com/netcookies/isulewTools/commit/eefd08f)
+- 音量只能 15 [`3952dc0`](https://github.com/netcookies/isulewTools/commit/3952dc0)
+- 添加麦克风 jni 模块 [`e03ff0d`](https://github.com/netcookies/isulewTools/commit/e03ff0d)
+- 日志支持暂停和扫码分享 [`ea9567e`](https://github.com/netcookies/isulewTools/commit/ea9567e)
+- log统一调用入口 [`900d791`](https://github.com/netcookies/isulewTools/commit/900d791)
+- 实现系统级悬浮窗（可覆盖状态栏） [`d168a7a`](https://github.com/netcookies/isulewTools/commit/d168a7a)
+- 实现参考线逻辑 [`7548ff8`](https://github.com/netcookies/isulewTools/commit/7548ff8)
+- 实现参考线逻辑 [`b69b287`](https://github.com/netcookies/isulewTools/commit/b69b287)
+- 添加小组件按需显示功能 [`2786b43`](https://github.com/netcookies/isulewTools/commit/2786b43)
+- 高级设置添加结束应用的按钮 [`5629876`](https://github.com/netcookies/isulewTools/commit/5629876)
+
+### Bug Fixes
+- 小组件不可以再被拖出仪表盘 [`a49d1f7`](https://github.com/netcookies/isulewTools/commit/a49d1f7)
+- 修复按需显示的选择应用弹窗 [`0f57f0c`](https://github.com/netcookies/isulewTools/commit/0f57f0c)
+- 仪表盘页面小组件消失 [`90914ec`](https://github.com/netcookies/isulewTools/commit/90914ec)
+- 修复缺少的函数参数 [`9d26b59`](https://github.com/netcookies/isulewTools/commit/9d26b59)
+- 修复缺少的函数参数 [`631080c`](https://github.com/netcookies/isulewTools/commit/631080c)
+- viewModel用到时才初始化 [`627fcdc`](https://github.com/netcookies/isulewTools/commit/627fcdc)
+- 档位调节 [`7bf3470`](https://github.com/netcookies/isulewTools/commit/7bf3470)
+- 麦克风事件分发 [`7f76abc`](https://github.com/netcookies/isulewTools/commit/7f76abc)
+- 对齐麦克风电量事件，移除没必要的轮询 [`4209567`](https://github.com/netcookies/isulewTools/commit/4209567)
+- 麦克风状态检测 [`06aff95`](https://github.com/netcookies/isulewTools/commit/06aff95)
+- 修复小组件闪烁问题 [`d319cf6`](https://github.com/netcookies/isulewTools/commit/d319cf6)
+- add annotation [`2608b77`](https://github.com/netcookies/isulewTools/commit/2608b77)
+- 移除掉服务端空实现的代码 [`1fc2790`](https://github.com/netcookies/isulewTools/commit/1fc2790)
+- 修复麦克风 aidl 错误 [`6088f18`](https://github.com/netcookies/isulewTools/commit/6088f18)
+- 复现雷石麦克风初始化逻辑 [`d88e529`](https://github.com/netcookies/isulewTools/commit/d88e529)
+- 修复小组件初始化时序问题 [`a78f134`](https://github.com/netcookies/isulewTools/commit/a78f134)
+- 修复按需显示的逻辑 [`de3c94d`](https://github.com/netcookies/isulewTools/commit/de3c94d)
+- 修复按需显示包名弹窗列表 [`659d8a6`](https://github.com/netcookies/isulewTools/commit/659d8a6)
+- 修复 root 进程日志回调问题 [`1d3e850`](https://github.com/netcookies/isulewTools/commit/1d3e850)
+
+### Performance Improvements
+- 优化onSecondary\onError颜色 [`6ec1f8d`](https://github.com/netcookies/isulewTools/commit/6ec1f8d)
+- fix redundant package [`a48a243`](https://github.com/netcookies/isulewTools/commit/a48a243)
+- TopStatusBar 优化 [`b9aec7f`](https://github.com/netcookies/isulewTools/commit/b9aec7f)
+- 修复多余的 padding(视觉上) [`7a527b0`](https://github.com/netcookies/isulewTools/commit/7a527b0)
+- 手动触发麦克风系统检查 [`737bd64`](https://github.com/netcookies/isulewTools/commit/737bd64)
+- 优化特权日志初始化顺序 [`9d579a7`](https://github.com/netcookies/isulewTools/commit/9d579a7)
+- 完善授权检测逻辑 [`8bf03f0`](https://github.com/netcookies/isulewTools/commit/8bf03f0)
+- 调整黑夜主题的颜色，使文字更易可见 [`ca31f40`](https://github.com/netcookies/isulewTools/commit/ca31f40)
+- 优化按钮布局逻辑 [`720a259`](https://github.com/netcookies/isulewTools/commit/720a259)
+- 优化小组件管理页面 UI [`3fd8593`](https://github.com/netcookies/isulewTools/commit/3fd8593)
+
+### Test
+- 增加麦克风调试日志 [`c5bc778`](https://github.com/netcookies/isulewTools/commit/c5bc778)
+- 初始化检测 [`c9f36cc`](https://github.com/netcookies/isulewTools/commit/c9f36cc)
+- 尝试用 root 进程启动loopback [`33a9a4a`](https://github.com/netcookies/isulewTools/commit/33a9a4a)
+- 注释掉 AudioTrack/Record 做测试 [`a2bc186`](https://github.com/netcookies/isulewTools/commit/a2bc186)
+- 修复mic初始化错误 [`33d7b36`](https://github.com/netcookies/isulewTools/commit/33d7b36)
+- 测试 UI 的优化 [`a5c9567`](https://github.com/netcookies/isulewTools/commit/a5c9567)
+- 换一种方式绑定麦克风服务 [`80688f3`](https://github.com/netcookies/isulewTools/commit/80688f3)
+- 测试混响配置 [`906a20c`](https://github.com/netcookies/isulewTools/commit/906a20c)
+- 完善麦克风测试逻辑 [`ae8f653`](https://github.com/netcookies/isulewTools/commit/ae8f653)
+- 完善麦克风测试逻辑 [`73cb271`](https://github.com/netcookies/isulewTools/commit/73cb271)
+- 完善麦克风测试逻辑 [`89e6df2`](https://github.com/netcookies/isulewTools/commit/89e6df2)
+
+### Build
+- 完善小组件发布流程 [`c8a38a7`](https://github.com/netcookies/isulewTools/commit/c8a38a7)
+- 移除掉无用的调试步骤 [`314463b`](https://github.com/netcookies/isulewTools/commit/314463b)
+- 移除没用的 stub，清理无法使用的功能（系统层级悬浮窗口） [`2aa8b42`](https://github.com/netcookies/isulewTools/commit/2aa8b42)
+- 添加 agent 配置 [`551340c`](https://github.com/netcookies/isulewTools/commit/551340c)
+- 排除掉无用的文件 [`05ea81c`](https://github.com/netcookies/isulewTools/commit/05ea81c)
+
+### Style
+- 小组件页面优化 [`560f115`](https://github.com/netcookies/isulewTools/commit/560f115)
+- 对齐上边距 [`ca8133c`](https://github.com/netcookies/isulewTools/commit/ca8133c)
+
+### Refactor
+- 重构弹窗 UI [`7872d0b`](https://github.com/netcookies/isulewTools/commit/7872d0b)
+
+### Other
+- Merge branch 'main' of https://github.com/netcookies/isulewTools [`e3740bf`](https://github.com/netcookies/isulewTools/commit/e3740bf)
+- Merge pull request #8 from netcookies/widget-remote [`863d397`](https://github.com/netcookies/isulewTools/commit/863d397)
+- branch init [`e21c899`](https://github.com/netcookies/isulewTools/commit/e21c899)
+
 ## v1.7.9 (2025-10-19)
 
 ### Feature
