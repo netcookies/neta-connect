@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.8.1 (2025-10-27)
+
+### Bug Fixes
+- 修复应用商店插件无法安装问题 [`e7ae14a`](https://github.com/netcookies/isulewTools/commit/e7ae14a)
+- 修复应用商店插件无法安装问题 [`baa708a`](https://github.com/netcookies/isulewTools/commit/baa708a)
+- 小组件自动化发布脚本错误 [`980b8cc`](https://github.com/netcookies/isulewTools/commit/980b8cc)
+
+### Build
+- 更新混淆规则 [`aef910c`](https://github.com/netcookies/isulewTools/commit/aef910c)
+
 ## v1.8.0 (2025-10-27)
 
 ### Feature
