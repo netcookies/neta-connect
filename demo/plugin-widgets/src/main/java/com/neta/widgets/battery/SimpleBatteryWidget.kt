@@ -1,7 +1,13 @@
 package com.neta.widgets.battery
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BatteryChargingFull
@@ -11,6 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
@@ -95,6 +103,58 @@ fun SimpleBatteryWidgetContent(config: WidgetConfig) {
             text = "${batteryLevel.toInt()}%",
             color = Color.White,
             fontSize = (16 * scale).sp  // 文字也跟随缩放
+        )
+    }
+}
+
+// 预览示例
+@Preview
+@Composable
+fun SimpleBatteryWidgetPreview() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFFF2F2F7)) // iOS 风格背景色
+            .padding(32.dp),
+        verticalArrangement = Arrangement.spacedBy(24.dp)
+    ) {
+        Text("不同电量状态", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+
+        // 不同电量
+        SimpleBatteryWidgetContent(
+            WidgetConfig(params = mapOf("batteryLevel" to 100f, "color" to "#66BB6A"))
+        )
+        SimpleBatteryWidgetContent(
+            WidgetConfig(params = mapOf("batteryLevel" to 75f, "color" to "#66BB6A"))
+        )
+        SimpleBatteryWidgetContent(
+            WidgetConfig(params = mapOf("batteryLevel" to 50f, "color" to "#FFA726"))
+        )
+        SimpleBatteryWidgetContent(
+            WidgetConfig(params = mapOf("batteryLevel" to 25f, "color" to "#EF5350"))
+        )
+        SimpleBatteryWidgetContent(
+            WidgetConfig(params = mapOf("batteryLevel" to 10f, "color" to "#F44336"))
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("不同缩放", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+
+        SimpleBatteryWidgetContent(
+            WidgetConfig(params = mapOf("batteryLevel" to 66f, "color" to "#42A5F5", "scale" to 1.5f))
+        )
+        SimpleBatteryWidgetContent(
+            WidgetConfig(params = mapOf("batteryLevel" to 66f, "color" to "#42A5F5", "scale" to 0.8f))
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("不同透明度", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+
+        SimpleBatteryWidgetContent(
+            WidgetConfig(params = mapOf("batteryLevel" to 88f, "color" to "#AB47BC", "alpha" to 1f))
+        )
+        SimpleBatteryWidgetContent(
+            WidgetConfig(params = mapOf("batteryLevel" to 88f, "color" to "#AB47BC", "alpha" to 0.5f))
         )
     }
 }

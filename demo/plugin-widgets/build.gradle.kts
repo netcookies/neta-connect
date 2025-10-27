@@ -156,6 +156,7 @@ dependencies {
     // 只依赖必要的编译时依赖
     // 运行时会使用主 App 的 ClassLoader,所以这里用 compileOnly
     compileOnly("androidx.compose.ui:ui:1.9.4")
+    compileOnly("androidx.compose.ui:ui-tooling-preview:1.9.4")  // Preview 注解支持
     compileOnly("androidx.compose.material3:material3:1.4.0")
     compileOnly("androidx.compose.ui:ui-graphics:1.9.4")
     compileOnly("androidx.compose.foundation:foundation:1.9.4")

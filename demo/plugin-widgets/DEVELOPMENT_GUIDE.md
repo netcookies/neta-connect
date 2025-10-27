@@ -310,6 +310,81 @@ fun SpeedometerWidgetContent(config: WidgetConfig) {
 1. 在参数中接收静态值
 2. 或在主应用中创建辅助工具类供动态小组件调用
 
+### 添加 Compose Preview 预览
+
+为了方便在 Android Studio 中预览小组件效果，你可以添加 `@Preview` 注解：
+
+```kotlin
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Text
+import androidx.compose.ui.text.font.FontWeight
+
+@Preview
+@Composable
+fun SpeedometerWidgetPreview() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFFF2F2F7))  // 背景色
+            .padding(32.dp),
+        verticalArrangement = Arrangement.spacedBy(24.dp)
+    ) {
+        Text("不同速度状态", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+
+        // 不同速度值
+        SpeedometerWidgetContent(
+            WidgetConfig(params = mapOf("maxSpeed" to 120, "color" to "#2196F3"))
+        )
+        SpeedometerWidgetContent(
+            WidgetConfig(params = mapOf("maxSpeed" to 180, "color" to "#FF5722"))
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("不同缩放", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+
+        SpeedometerWidgetContent(
+            WidgetConfig(params = mapOf("maxSpeed" to 120, "scale" to 1.5f))
+        )
+        SpeedometerWidgetContent(
+            WidgetConfig(params = mapOf("maxSpeed" to 120, "scale" to 0.8f))
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("不同透明度", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+
+        SpeedometerWidgetContent(
+            WidgetConfig(params = mapOf("maxSpeed" to 120, "alpha" to 1f))
+        )
+        SpeedometerWidgetContent(
+            WidgetConfig(params = mapOf("maxSpeed" to 120, "alpha" to 0.5f))
+        )
+    }
+}
+```
+
+**预览示例的好处：**
+
+- ✅ 在 Android Studio 中实时预览 UI
+- ✅ 快速测试不同参数组合
+- ✅ 无需运行应用即可查看效果
+- ✅ 支持交互式预览（Interactive Mode）
+
+**添加预览依赖：**
+
+确保在 `build.gradle.kts` 中添加了预览支持：
+
+```kotlin
+dependencies {
+    compileOnly("androidx.compose.ui:ui-tooling-preview:1.9.4")  // Preview 注解支持
+    // ... 其他依赖
+}
+```
+
+**示例参考：**
+
+可以查看 `SimpleBatteryWidget.kt` 中的预览示例：`SimpleBatteryWidgetPreview()`
+
 ---
 
 ## ⚙️ 配置构建脚本
