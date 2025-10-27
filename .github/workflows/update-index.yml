@@ -1,11 +1,9 @@
-name: Update Widget Index
+name: Update Widget Index (Manual Timestamp Update)
+
+# 注意：这个工作流主要用于手动更新时间戳
+# 自动生成 index.json 请参考 auto-generate-index.yml
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'widgets/index.json'
   workflow_dispatch:
 
 jobs:
