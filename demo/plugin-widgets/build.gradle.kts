@@ -1,6 +1,8 @@
 import java.io.FileOutputStream
+import java.util.jar.Attributes
 import java.util.jar.JarEntry
 import java.util.jar.JarOutputStream
+import java.util.jar.Manifest
 
 plugins {
     id("com.android.library")
@@ -72,8 +74,13 @@ abstract class CreateWidgetJarTask : DefaultTask() {
             if (!dexFile.exists()) throw GradleException("D8 failed to generate classes.dex")
             println("DEX generated at: ${dexFile.absolutePath}")
 
+            // 创建 MANIFEST.MF
+            val manifest = Manifest()
+            manifest.mainAttributes[Attributes.Name.MANIFEST_VERSION] = "1.0"
+            manifest.mainAttributes[Attributes.Name("Plugin-Class")] = "com.neta.widgets.battery.BatteryWidgetPlugin"
+            
             // 打包到 JAR
-            JarOutputStream(FileOutputStream(outputJarFile)).use { jarOut ->
+            JarOutputStream(FileOutputStream(outputJarFile), manifest).use { jarOut ->
                 val entry = JarEntry("classes.dex")
                 jarOut.putNextEntry(entry)
                 dexFile.inputStream().use { it.copyTo(jarOut) }

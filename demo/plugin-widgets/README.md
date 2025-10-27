@@ -61,7 +61,7 @@ class BatteryWidgetPlugin : WidgetPlugin {
 
 - 必须实现 `WidgetPlugin` 接口
 - `id` 用于管理（文件名、数据库记录）
-- `pluginClass` 必须是完整的类名路径
+- `pluginClass` 字段用于 metadata，但**加载时不使用**（从 MANIFEST.MF 自动读取）
 
 ### 2. SimpleBatteryWidget.kt - 小组件实现
 
@@ -140,6 +140,23 @@ adb push plugin-widgets/build/outputs/widget/debug/widget-battery-demo.jar \
 ---
 
 ## ⚙️ 技术细节
+
+### JAR 自描述机制（MANIFEST.MF）
+
+每个编译的 JAR 文件都包含 `META-INF/MANIFEST.MF`，自动声明插件类：
+
+```
+Manifest-Version: 1.0
+Plugin-Class: com.neta.widgets.battery.BatteryWidgetPlugin
+```
+
+**优点：**
+- ✅ **零配置**：构建时自动生成，无需手动维护
+- ✅ **自描述**：JAR 文件知道自己的入口类
+- ✅ **标准化**：遵循 Java JAR 规范
+- ✅ **防出错**：不需要猜测类名或传递参数
+
+加载器（`WidgetLoader`）会自动读取 `Plugin-Class` 并加载对应的类，无需外部提供类名。
 
 ### 依赖管理
 
@@ -248,9 +265,10 @@ fun SimpleBatteryWidgetContent(config: WidgetConfig) {
 
 **可能原因：**
 
-1. 插件类路径错误 - 检查 `pluginClass` 是否正确
-2. 依赖版本不匹配 - 确保使用与主应用相同的库版本
-3. 缺少必需参数 - 系统会自动注入 scale 和 alpha
+1. **MANIFEST.MF 缺失或错误** - 检查 JAR 是否包含正确的 MANIFEST.MF
+2. **插件类不存在** - `Plugin-Class` 指向的类必须存在于 JAR 中
+3. 依赖版本不匹配 - 确保使用与主应用相同的库版本
+4. 缺少必需参数 - 系统会自动注入 scale 和 alpha
 
 **解决方法：**
 
@@ -258,9 +276,21 @@ fun SimpleBatteryWidgetContent(config: WidgetConfig) {
 # 查看日志
 adb logcat | grep WidgetLoader
 
+# 检查 MANIFEST.MF 内容
+unzip -p widget-battery-demo.jar META-INF/MANIFEST.MF
+
 # 检查 JAR 内容
 unzip -l widget-battery-demo.jar
 ```
+
+**检查 MANIFEST.MF：**
+```bash
+$ unzip -p widget-battery-demo.jar META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Plugin-Class: com.neta.widgets.battery.BatteryWidgetPlugin
+```
+
+如果 `Plugin-Class` 缺失或错误，重新编译 JAR。
 
 ### 编译错误
 
