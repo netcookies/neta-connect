@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.8.2 (2025-10-28)
+
+### Feature
+- 示例插件添加预览示例 [`dfcc8e2`](https://github.com/netcookies/isulewTools/commit/dfcc8e2)
+
+### Bug Fixes
+- 修复ci脚本编译错误 [`caf1d83`](https://github.com/netcookies/isulewTools/commit/caf1d83)
+
+### Performance Improvements
+- 更新示例小组件版本 [`57032d1`](https://github.com/netcookies/isulewTools/commit/57032d1)
+- 电池字体完善 [`3f51644`](https://github.com/netcookies/isulewTools/commit/3f51644)
+
+### Other
+- doc: 文档更新 [`bc153f2`](https://github.com/netcookies/isulewTools/commit/bc153f2)
+
 ## v1.8.1 (2025-10-27)
 
 ### Bug Fixes
