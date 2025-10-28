@@ -16,6 +16,5 @@ data class WidgetPluginMetadata(
     val version: String,
     val author: String,
     val description: String,
-    val minAppVersion: String,
-    val pluginClass: String
+    val minAppVersion: String
 )

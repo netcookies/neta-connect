@@ -4,7 +4,6 @@
   "description": "显示电池电量的小组件(示例)",
   "author": "官方",
   "category": "示例",
-  "pluginClass": "com.neta.widgets.battery.BatteryWidgetPlugin",
   "minAppVersion": "1.7.9",
   "permissions": [],
   "screenshots": [],

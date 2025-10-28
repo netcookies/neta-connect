@@ -16,11 +16,10 @@ class BatteryWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-battery-demo",
-            version = "1.0.0",
+            version = "1.0.1",
             author = "官方",
             description = "显示电池电量的小组件(示例)",
-            minAppVersion = "1.7.9",
-            pluginClass = "com.neta.widgets.battery.BatteryWidgetPlugin"
+            minAppVersion = "1.7.9"
         )
     }
 }

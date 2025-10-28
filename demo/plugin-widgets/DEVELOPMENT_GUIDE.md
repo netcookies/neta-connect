@@ -105,8 +105,7 @@ class SpeedometerWidgetPlugin : WidgetPlugin {
             version = "1.0.0",                      // 版本号
             author = "你的名字",                     // 作者
             description = "显示车速的小组件",        // 描述
-            minAppVersion = "1.7.9",                // 最低应用版本
-            pluginClass = "com.neta.widgets.speedometer.SpeedometerWidgetPlugin"
+            minAppVersion = "1.7.9"                 // 最低应用版本
         )
     }
 }
@@ -121,7 +120,6 @@ class SpeedometerWidgetPlugin : WidgetPlugin {
 | `author`        | 开发者名称                            | `官方` / `你的名字`                                          |
 | `description`   | 功能描述，显示在商店中                      | `显示车速的小组件`                                             |
 | `minAppVersion` | 最低支持的主应用版本                       | `1.7.9`                                                |
-| `pluginClass`   | 插件类的完整路径（用于 metadata，加载时从 MANIFEST 读取） | `com.neta.widgets.speedometer.SpeedometerWidgetPlugin` |
 
 ---
 
@@ -391,16 +389,22 @@ dependencies {
 
 ### 0. MANIFEST.MF 自动生成
 
-**重要变更：** 从 v1.8.0 开始，JAR 文件使用 MANIFEST.MF 自描述机制。
+**重要变更：** 从 v1.8.0 开始，JAR 文件使用 MANIFEST.MF 自描述机制，并且**完全自动化**。
 
-`build.gradle.kts` 中的 `CreateWidgetJarTask` 会自动创建 MANIFEST.MF：
+`build.gradle.kts` 中的 `CreateWidgetJarTask` 会：
+1. **自动扫描源代码**查找实现 `WidgetPlugin` 的类
+2. 提取完整的类路径（包名 + 类名）
+3. 自动写入 MANIFEST.MF
 
 ```kotlin
+// 自动查找实现 WidgetPlugin 接口的类
+val pluginClassName = findPluginClass()
+println("🔍 Detected plugin class: $pluginClassName")
+
 // 创建 MANIFEST.MF
 val manifest = Manifest()
 manifest.mainAttributes[Attributes.Name.MANIFEST_VERSION] = "1.0"
-manifest.mainAttributes[Attributes.Name("Plugin-Class")] =
-    "com.neta.widgets.speedometer.SpeedometerWidgetPlugin"  // 修改为你的类
+manifest.mainAttributes[Attributes.Name("Plugin-Class")] = pluginClassName
 
 // 打包到 JAR（自动包含 MANIFEST）
 JarOutputStream(FileOutputStream(outputJarFile), manifest).use { jarOut ->
@@ -408,11 +412,14 @@ JarOutputStream(FileOutputStream(outputJarFile), manifest).use { jarOut ->
 }
 ```
 
-**你需要修改：**
-1. `Plugin-Class` 的值改为你的插件类完整路径
-2. 确保类名与实际类一致
+**你无需做任何事！** 只要：
+1. ✅ 创建一个实现 `WidgetPlugin` 的类
+2. ✅ 在 `getMetadata()` 中使用 `this::class.qualifiedName!!`
+3. ✅ 运行 Gradle 构建任务
 
 **优点：**
+- ✅ 零手动配置，自动检测插件类
+- ✅ 插件类重命名/移动时无需修改构建脚本
 - ✅ JAR 自己声明入口类，无需外部配置
 - ✅ 加载时自动读取，不会出错
 - ✅ 符合 Java 标准

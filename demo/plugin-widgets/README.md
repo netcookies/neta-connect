@@ -50,8 +50,7 @@ class BatteryWidgetPlugin : WidgetPlugin {
             version = "1.0.0",                  // 版本号
             author = "官方",                    // 作者
             description = "显示电池电量的小组件(动态版)",
-            minAppVersion = "1.7.9",            // 最低应用版本
-            pluginClass = "com.neta.widgets.battery.BatteryWidgetPlugin"
+            minAppVersion = "1.7.9"             // 最低应用版本
         )
     }
 }
@@ -61,7 +60,7 @@ class BatteryWidgetPlugin : WidgetPlugin {
 
 - 必须实现 `WidgetPlugin` 接口
 - `id` 用于管理（文件名、数据库记录）
-- `pluginClass` 字段用于 metadata，但**加载时不使用**（从 MANIFEST.MF 自动读取）
+- 插件类名从 JAR 的 MANIFEST.MF 自动读取（由构建脚本自动生成）
 
 ### 2. SimpleBatteryWidget.kt - 小组件实现
 
@@ -151,8 +150,9 @@ Plugin-Class: com.neta.widgets.battery.BatteryWidgetPlugin
 ```
 
 **优点：**
-- ✅ **零配置**：构建时自动生成，无需手动维护
+- ✅ **零配置**：构建时自动扫描源代码，无需手动维护
 - ✅ **自描述**：JAR 文件知道自己的入口类
+- ✅ **自适应**：重命名或移动类时无需修改构建脚本
 - ✅ **标准化**：遵循 Java JAR 规范
 - ✅ **防出错**：不需要猜测类名或传递参数
 

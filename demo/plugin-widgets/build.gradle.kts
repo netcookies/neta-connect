@@ -27,6 +27,42 @@ abstract class CreateWidgetJarTask : DefaultTask() {
     @get:OutputDirectory
     abstract val tempDexDir: DirectoryProperty
 
+    @get:InputDirectory
+    abstract val sourceDir: DirectoryProperty
+
+    /**
+     * 自动查找实现 WidgetPlugin 接口的类
+     */
+    private fun findPluginClass(): String {
+        val sourceDirFile = sourceDir.get().asFile
+        if (!sourceDirFile.exists()) {
+            throw GradleException("Source directory not found: $sourceDirFile")
+        }
+
+        // 遍历所有 .kt 文件
+        sourceDirFile.walkTopDown()
+            .filter { it.isFile && it.extension == "kt" }
+            .forEach { file ->
+                val content = file.readText()
+
+                // 查找实现 WidgetPlugin 的类
+                val classMatch = Regex("""class\s+(\w+)\s*:\s*WidgetPlugin""").find(content)
+                if (classMatch != null) {
+                    val className = classMatch.groupValues[1]
+
+                    // 提取包名
+                    val packageMatch = Regex("""package\s+([\w.]+)""").find(content)
+                    val packageName = packageMatch?.groupValues?.get(1)
+
+                    if (packageName != null) {
+                        return "$packageName.$className"
+                    }
+                }
+            }
+
+        throw GradleException("No class implementing WidgetPlugin found in $sourceDirFile")
+    }
+
     @TaskAction
     fun createJar() {
         try {
@@ -74,10 +110,14 @@ abstract class CreateWidgetJarTask : DefaultTask() {
             if (!dexFile.exists()) throw GradleException("D8 failed to generate classes.dex")
             println("DEX generated at: ${dexFile.absolutePath}")
 
+            // 自动查找实现 WidgetPlugin 接口的类
+            val pluginClassName = findPluginClass()
+            println("🔍 Detected plugin class: $pluginClassName")
+
             // 创建 MANIFEST.MF
             val manifest = Manifest()
             manifest.mainAttributes[Attributes.Name.MANIFEST_VERSION] = "1.0"
-            manifest.mainAttributes[Attributes.Name("Plugin-Class")] = "com.neta.widgets.battery.BatteryWidgetPlugin"
+            manifest.mainAttributes[Attributes.Name("Plugin-Class")] = pluginClassName
             
             // 打包到 JAR
             JarOutputStream(FileOutputStream(outputJarFile), manifest).use { jarOut ->
@@ -135,6 +175,7 @@ android.buildTypes.forEach { buildType ->
         val generatedDir = layout.buildDirectory.dir("outputs/widget/${variantName}")
         outputJar.set(layout.file(generatedDir.map { it.asFile.resolve("widget-battery-demo.jar") }))
         tempDexDir.set(layout.buildDirectory.dir("tmp/widget-dex/${variantName}"))
+        sourceDir.set(layout.projectDirectory.dir("src/main/java"))
         minApi.set("30")
     }
 
