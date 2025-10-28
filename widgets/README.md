@@ -52,7 +52,7 @@
 最简单的方式是复制 `plugin-widgets` 模块作为起点：
 
 ```bash
-# 在主项目 isulewTools 中
+# 在哪吒互联主项目中
 cp -r plugin-widgets widget-speedometer
 cd widget-speedometer
 ```
@@ -114,8 +114,7 @@ class SpeedometerWidgetPlugin : WidgetPlugin {
             version = "1.0.0",
             author = "你的名字",
             description = "显示车速的小组件",
-            minAppVersion = "1.7.9",
-            pluginClass = "com.neta.widgets.speedometer.SpeedometerWidgetPlugin"  // 完整路径
+            minAppVersion = "1.7.9"           // 最低应用版本
         )
     }
 }
@@ -130,7 +129,8 @@ class SpeedometerWidgetPlugin : WidgetPlugin {
 | `author` | 开发者名称 | `官方` / `你的名字` |
 | `description` | 功能描述 | `显示车速的小组件` |
 | `minAppVersion` | 最低支持的主应用版本 | `1.7.9` |
-| `pluginClass` | 插件类的完整路径 | `com.neta.widgets.speedometer.SpeedometerWidgetPlugin` |
+
+**注意**: 插件类路径由构建脚本自动生成到 JAR 的 MANIFEST.MF 中，无需手动配置。
 
 ### 定义小组件规格
 
@@ -298,7 +298,8 @@ adb logcat | grep -E "WidgetLoader|WidgetManager"
 ```
 ✓ 注册动态小组件: speedometer-widget v1.0.0
   原始 type='speedometer_widget' → 自动前缀 type='dynamic_speedometer_widget'
-  displayName='车速表', pluginClass=com.neta.widgets.speedometer.SpeedometerWidgetPlugin
+  displayName='车速表'
+  Plugin-Class: com.neta.widgets.speedometer.SpeedometerWidgetPlugin (from MANIFEST.MF)
 ```
 
 ---
@@ -347,8 +348,7 @@ class BatteryWidgetPlugin : WidgetPlugin {
             version = "1.0.0",
             author = "官方",
             description = "显示电池电量的小组件(示例)",
-            minAppVersion = "1.7.9",
-            pluginClass = "com.neta.widgets.battery.BatteryWidgetPlugin"
+            minAppVersion = "1.7.9"
         )
     }
 }
@@ -606,7 +606,7 @@ unzip -l your-widget.jar
 
 - **快速发布**: [QUICKSTART.md](./QUICKSTART.md)
 - **索引 URL**: `https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/index.json`
-- **主应用仓库**: [isulewTools](https://github.com/yourusername/isulewTools)
+- **主应用仓库**: [哪吒互联](https://github.com/netcookies/isulewTools)
 - **问题反馈**: [GitHub Issues](https://github.com/netcookies/neta-connect/issues)
 
 ---
@@ -644,7 +644,6 @@ widgets/
   "description": "显示电池电量的示例小组件",
   "author": "官方",
   "category": "示例",
-  "pluginClass": "com.neta.widgets.battery.BatteryWidgetPlugin",
   "minAppVersion": "1.7.9",
   "permissions": [],
   "screenshots": [],
@@ -662,16 +661,17 @@ widgets/
 | `description` | string | ✅ | 功能描述 |
 | `author` | string | ✅ | 作者名称 |
 | `category` | string | ✅ | 分类（如：系统信息、生活服务、示例等） |
-| `pluginClass` | string | ✅ | 插件类的完整路径 |
 | `minAppVersion` | string | ✅ | 最低支持的应用版本 |
 | `permissions` | array | ❌ | 所需权限列表（可选） |
 | `screenshots` | array | ❌ | 截图 URL 列表（可选） |
 | `repository` | string | ❌ | 源代码仓库地址 |
 | `supportUrl` | string | ❌ | 问题反馈地址 |
 
+**注意**: 插件类路径无需在 metadata.json 中配置，它会由构建脚本自动生成到 JAR 的 MANIFEST.MF 中。
+
 ### 自动生成
 
-如果使用 isulewTools 项目的 CI/CD 工作流，`metadata.json` 会在首次部署时自动生成：
+如果使用哪吒互联项目的 CI/CD 工作流，`metadata.json` 会在首次部署时自动生成：
 
 1. **提取元数据**：从 `BatteryWidgetPlugin.kt` 和 `SimpleBatteryWidget.kt` 中提取
 2. **自动创建**：如果 `metadata.json` 不存在，则自动创建
@@ -693,7 +693,6 @@ cat > metadata.json << 'EOF'
   "description": "功能描述",
   "author": "你的名字",
   "category": "分类",
-  "pluginClass": "com.neta.widgets.yourpackage.YourWidgetPlugin",
   "minAppVersion": "1.7.9",
   "permissions": [],
   "screenshots": [],
@@ -711,7 +710,7 @@ git push
 ### 注意事项
 
 - ✅ `id` 必须与代码中的 `WidgetPluginMetadata.id` 一致
-- ✅ `pluginClass` 必须是完整的类路径
 - ✅ JSON 格式必须正确（使用 `jq` 或在线工具验证）
 - ✅ `category` 建议使用统一的分类名称
+- ✅ 插件类路径会自动从 JAR 的 MANIFEST.MF 读取，无需在 metadata.json 中配置
 - ⚠️ 修改 `metadata.json` 后记得提交到仓库

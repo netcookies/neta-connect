@@ -77,6 +77,7 @@ shasum -a 256 widgets/battery-widget/1.0.0/battery-widget.jar
 - `downloadUrl`: GitHub Raw 下载链接，格式为 `https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/{widget_id}/{version}/{文件名}.jar`
 - `fileSize`: JAR 文件的字节大小
 - `sha256`: 文件的 SHA256 校验和（可选，建议填写）
+- `latestVersion`: **注意**: 这个字段由 CI 自动生成脚本计算，无需手动维护！只需创建新版本目录和 metadata.json，CI 会自动找到最新版本号并更新 index.json
 
 ### 5. 提交并推送
 
@@ -100,13 +101,24 @@ mkdir -p widgets/battery-widget/1.0.1
 cp /path/to/battery-widget.jar widgets/battery-widget/1.0.1/
 ```
 
-### 2. 更新 index.json
+### 2. 更新 metadata.json 和版本目录
 
-在 `versions` 数组**开头**添加新版本（保持倒序）：
+**重要**: 你只需要创建新版本目录并放入 JAR 文件，`latestVersion` 会由 CI 自动计算更新！
+
+1. 创建新版本目录：`widgets/battery-widget/1.0.1/`
+2. 放入新版本的 JAR 文件
+3. 提交并推送
+
+CI 会自动：
+- 扫描所有版本目录
+- 找到最新的版本号（使用语义化版本排序）
+- 更新 `index.json` 中的 `latestVersion` 字段
+
+如果你想手动更新 `index.json`（不推荐，但允许），在 `versions` 数组**开头**添加新版本（保持倒序）：
 
 ```json
 {
-  "latestVersion": "1.0.1",  // 更新最新版本号
+  "latestVersion": "1.0.1",  // CI 会自动计算此值
   "versions": [
     {
       "version": "1.0.1",  // 新版本放在最前面
