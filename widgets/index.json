@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-10-28T02:00:32Z",
+  "generatedAt": "2025-10-28T02:51:07Z",
   "widgets": [
     {
       "id": "widget-battery-demo",
@@ -11,7 +11,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.7.9",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.0.1",
       "status": "STABLE",
       "versions": [
         {
