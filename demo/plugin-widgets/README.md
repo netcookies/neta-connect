@@ -226,7 +226,7 @@ fun SimpleBatteryWidgetContent(config: WidgetConfig) {
 2. **修改包名和类名**
     - 修改 `namespace` 为你的包名
     - 重命名 `BatteryWidgetPlugin` 为 `YourWidgetPlugin`
-    - 更新 `pluginClass` 路径
+   - 插件类路径会由构建脚本自动检测并写入 MANIFEST.MF
 
 3. **实现你的小组件**
     - 定义 `paramSchema`（只需定义你自己的参数）

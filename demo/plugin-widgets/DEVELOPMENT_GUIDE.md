@@ -509,7 +509,8 @@ adb logcat | grep -E "WidgetLoader|WidgetManager"
 ```
 ✓ 注册动态小组件: speedometer_widget v1.0.0
   原始 type='speedometer_widget' → 自动前缀 type='dynamic_speedometer_widget'
-  displayName='车速表', pluginClass=com.neta.widgets.speedometer.SpeedometerWidgetPlugin
+  displayName='车速表'
+  Plugin-Class: com.neta.widgets.speedometer.SpeedometerWidgetPlugin (from MANIFEST.MF)
 ```
 
 ---
@@ -639,7 +640,7 @@ fun SafeWidget(config: WidgetConfig) {
 
 发布前确保：
 
-- [ ] `pluginClass` 路径完全正确
+- [ ] 插件类正确实现了 `WidgetPlugin` 接口（构建脚本会自动检测并写入 MANIFEST.MF）
 - [ ] 所有参数都有合理的默认值
 - [ ] 应用了 scale 和 alpha 到 UI
 - [ ] 使用 `compileOnly` 声明依赖
@@ -658,7 +659,7 @@ fun SafeWidget(config: WidgetConfig) {
 **A:** 检查以下几点：
 
 1. JAR 是否成功加载（查看日志）
-2. `pluginClass` 路径是否正确
+2. MANIFEST.MF 中的 Plugin-Class 是否正确（使用 `unzip -p your.jar META-INF/MANIFEST.MF` 查看）
 3. scale 和 alpha 是否被正确应用
 4. 是否有编译错误（查看 Logcat）
 
