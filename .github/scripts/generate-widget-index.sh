@@ -45,15 +45,11 @@ for widget_dir in "$WIDGETS_DIR"/*; do
   DESCRIPTION=$(jq -r '.description' "$metadata_file")
   AUTHOR=$(jq -r '.author' "$metadata_file")
   CATEGORY=$(jq -r '.category' "$metadata_file")
-  PLUGIN_CLASS=$(jq -r '.pluginClass' "$metadata_file")
   MIN_APP_VERSION=$(jq -r '.minAppVersion' "$metadata_file")
 
-  # 扫描所有版本目录
-  VERSIONS_JSON="["
-  FIRST_VERSION=true
-  LATEST_VERSION=""
+  # 第一步：收集所有有效的版本号
+  declare -a valid_versions=()
 
-  # 获取所有版本目录并排序（降序）
   for version_dir in "$widget_dir"/*; do
     if [ ! -d "$version_dir" ]; then
       continue
@@ -74,7 +70,40 @@ for widget_dir in "$WIDGETS_DIR"/*; do
       continue
     fi
 
-    echo "  ✓ 找到版本: $version"
+    valid_versions+=("$version")
+  done
+
+  # 对版本号进行排序(降序)，找到最新版本
+  LATEST_VERSION=""
+  if [ ${#valid_versions[@]} -gt 0 ]; then
+    LATEST_VERSION=$(printf '%s\n' "${valid_versions[@]}" | sort -V -r | head -1)
+    echo "  🔝 最新版本: $LATEST_VERSION"
+  fi
+
+  # 第二步：处理每个版本的详细信息
+  VERSIONS_JSON="["
+  FIRST_VERSION=true
+
+  for version_dir in "$widget_dir"/*; do
+    if [ ! -d "$version_dir" ]; then
+      continue
+    fi
+
+    version=$(basename "$version_dir")
+
+    # 检查是否是有效的版本号格式（x.y.z）
+    if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+      continue
+    fi
+
+    # 查找 JAR 文件
+    jar_file=$(find "$version_dir" -name "*.jar" -type f | head -1)
+
+    if [ -z "$jar_file" ]; then
+      continue
+    fi
+
+    echo "  ✓ 处理版本: $version"
 
     # 获取文件信息
     FILE_SIZE=$(stat -f%z "$jar_file" 2>/dev/null || stat -c%s "$jar_file" 2>/dev/null)
@@ -85,11 +114,6 @@ for widget_dir in "$WIDGETS_DIR"/*; do
 
     # 获取当前日期作为发布日期
     RELEASE_DATE=$(date -u +"%Y-%m-%d")
-
-    # 记录最新版本（第一个扫描到的就是最新的，因为我们会排序）
-    if [ -z "$LATEST_VERSION" ]; then
-      LATEST_VERSION="$version"
-    fi
 
     # 添加版本信息
     if [ "$FIRST_VERSION" = true ]; then
@@ -150,8 +174,12 @@ cat >> "$INDEX_FILE" << 'EOF'
 }
 EOF
 
-# 替换时间戳
-sed -i "s/TIMESTAMP_PLACEHOLDER/$TIMESTAMP/" "$INDEX_FILE"
+# 替换时间戳 (兼容 macOS 和 Linux)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sed -i "" "s/TIMESTAMP_PLACEHOLDER/$TIMESTAMP/" "$INDEX_FILE"
+else
+  sed -i "s/TIMESTAMP_PLACEHOLDER/$TIMESTAMP/" "$INDEX_FILE"
+fi
 
 # 格式化 JSON（如果 jq 可用）
 if command -v jq &> /dev/null; then
