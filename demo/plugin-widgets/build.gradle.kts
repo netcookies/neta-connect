@@ -74,19 +74,29 @@ abstract class CreateWidgetJarTask : DefaultTask() {
             if (tempDexDirFile.exists()) tempDexDirFile.deleteRecursively()
             tempDexDirFile.mkdirs()
 
-            // 收集 class 文件
+            // 收集 class 文件（只包含 widget 自己的代码，排除第三方库）
             val classFiles = mutableListOf<String>()
+            val allowedPackages = listOf("com/neta/widgets")  // 只打包这些包下的类
+
             classDirs.forEach { dir ->
                 if (dir.exists()) {
                     dir.walkTopDown()
                         .filter { it.isFile && it.extension == "class" }
-                        .forEach {
-                            classFiles.add(it.absolutePath)
-                            println("Including class: ${it.name}")
+                        .forEach { file ->
+                            // 检查文件路径是否在允许的包下
+                            val relativePath = file.relativeTo(dir).path
+                            val shouldInclude = allowedPackages.any { relativePath.startsWith(it) }
+
+                            if (shouldInclude) {
+                                classFiles.add(file.absolutePath)
+                                println("✅ Including class: ${file.name} (${relativePath})")
+                            } else {
+                                println("⏭️  Skipping class: ${file.name} (${relativePath})")
+                            }
                         }
                 }
             }
-            if (classFiles.isEmpty()) throw GradleException("No .class files found in $classDirs")
+            if (classFiles.isEmpty()) throw GradleException("No .class files found in $classDirs matching allowed packages: $allowedPackages")
 
             // D8 生成 dex
             val androidJarFile = androidJar.get().asFile
@@ -194,13 +204,16 @@ android.buildTypes.forEach { buildType ->
 }
 
 dependencies {
-    // 只依赖必要的编译时依赖
-    // 运行时会使用主 App 的 ClassLoader,所以这里用 compileOnly
-    compileOnly("androidx.compose.ui:ui:1.9.4")
-    compileOnly("androidx.compose.ui:ui-tooling-preview:1.9.4")  // Preview 注解支持
-    compileOnly("androidx.compose.material3:material3:1.4.0")
-    compileOnly("androidx.compose.ui:ui-graphics:1.9.4")
-    compileOnly("androidx.compose.foundation:foundation:1.9.4")
-    compileOnly("androidx.compose.material:material-icons-extended:1.7.8")
-    compileOnly("androidx.core:core-ktx:1.17.0")
+    // Widget API - 使用 compileOnly，运行时由主 App 提供
+    compileOnly(project(":widget-api"))
+
+    // Compose 依赖 - 支持预览，打包时会被过滤
+    implementation("androidx.compose.ui:ui:1.9.4")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.9.4")
+    implementation("androidx.compose.ui:ui-tooling:1.9.4")
+    implementation("androidx.compose.material3:material3:1.4.0")
+    implementation("androidx.compose.ui:ui-graphics:1.9.4")
+    implementation("androidx.compose.foundation:foundation:1.9.4")
+    implementation("androidx.compose.material:material-icons-extended:1.7.8")
+    implementation("androidx.core:core-ktx:1.17.0")
 }
