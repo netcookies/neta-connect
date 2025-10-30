@@ -50,6 +50,8 @@ object SimpleBatteryWidgetSpec : WidgetSpec(
             label = "电量(%)",
             type = WidgetParamType.FLOAT,
             defaultValue = 75f,
+            options = null,        // ← 显式指定
+            required = false,      // ← 显式指定
             description = "显示的电池电量百分比"
         ),
         WidgetParamDesc(
@@ -57,6 +59,8 @@ object SimpleBatteryWidgetSpec : WidgetSpec(
             label = "颜色",
             type = WidgetParamType.STRING,
             defaultValue = "#66BB6A",
+            options = null,        // ← 显式指定
+            required = false,      // ← 显式指定
             description = "电池背景颜色（十六进制）"
         )
     ),

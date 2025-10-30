@@ -72,7 +72,7 @@ open class WidgetSpec(
 /**
  * Widget参数描述/schema
  */
-data class WidgetParamDesc(
+data class WidgetParamDesc @JvmOverloads constructor(
     val key: String,                     // 参数唯一key
     val label: String,                   // 显示标签
     val type: WidgetParamType,           // 类型
