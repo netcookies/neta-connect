@@ -112,8 +112,25 @@ for widget_dir in "$WIDGETS_DIR"/*; do
     # 构建下载 URL
     DOWNLOAD_URL="https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/$widget_name/$version/$(basename "$jar_file")"
 
-    # 获取当前日期作为发布日期
-    RELEASE_DATE=$(date -u +"%Y-%m-%d")
+    # 从git历史获取真实的发布日期（JAR文件首次提交的日期）
+    RELEASE_DATE=$(git log --format=%aI --diff-filter=A -- "$jar_file" | tail -1 | cut -d'T' -f1)
+    # 如果git历史中没有找到（比如新文件未提交），使用当前日期
+    if [ -z "$RELEASE_DATE" ]; then
+      RELEASE_DATE=$(date -u +"%Y-%m-%d")
+    fi
+
+    # 检查版本目录下是否有version.json，优先使用版本特定的minAppVersion
+    VERSION_METADATA="$version_dir/version.json"
+    if [ -f "$VERSION_METADATA" ] && jq empty "$VERSION_METADATA" 2>/dev/null; then
+      VERSION_MIN_APP=$(jq -r '.minAppVersion // empty' "$VERSION_METADATA")
+      if [ -n "$VERSION_MIN_APP" ] && [ "$VERSION_MIN_APP" != "null" ]; then
+        VERSION_SPECIFIC_MIN_APP="$VERSION_MIN_APP"
+      else
+        VERSION_SPECIFIC_MIN_APP="$MIN_APP_VERSION"
+      fi
+    else
+      VERSION_SPECIFIC_MIN_APP="$MIN_APP_VERSION"
+    fi
 
     # 添加版本信息
     if [ "$FIRST_VERSION" = true ]; then
@@ -128,7 +145,7 @@ for widget_dir in "$WIDGETS_DIR"/*; do
       "releaseDate": "'"$RELEASE_DATE"'",
       "downloadUrl": "'"$DOWNLOAD_URL"'",
       "changelog": "版本 '"$version"'",
-      "minAppVersion": "'"$MIN_APP_VERSION"'",
+      "minAppVersion": "'"$VERSION_SPECIFIC_MIN_APP"'",
       "fileSize": '"$FILE_SIZE"',
       "sha256": "'"$SHA256"'"
     }'
