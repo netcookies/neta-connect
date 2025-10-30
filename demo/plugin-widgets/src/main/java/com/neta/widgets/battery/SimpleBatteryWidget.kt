@@ -22,10 +22,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
-import com.neta.isulewtools.widget.WidgetConfig
-import com.neta.isulewtools.widget.WidgetParamDesc
-import com.neta.isulewtools.widget.WidgetParamType
-import com.neta.isulewtools.widget.WidgetSpec
+import com.neta.isulewtools.api.widget.WidgetConfig
+import com.neta.isulewtools.api.widget.WidgetParamDesc
+import com.neta.isulewtools.api.widget.WidgetParamType
+import com.neta.isulewtools.api.widget.WidgetSpec
 
 /**
  * 简化版电池小组件 - 动态加载示例

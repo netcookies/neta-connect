@@ -203,6 +203,7 @@ android.buildTypes.forEach { buildType ->
     println("✅ Registered task: create${variantCapped}WidgetJar")
 }
 
+//noinspection UseTomlInstead
 dependencies {
     // Widget API - 使用 compileOnly，运行时由主 App 提供
     compileOnly(project(":widget-api"))

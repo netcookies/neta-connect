@@ -1,6 +1,6 @@
-package com.neta.isulewtools.widget.plugin
+package com.neta.isulewtools.api.widget.plugin
 
-import com.neta.isulewtools.widget.WidgetSpec
+import com.neta.isulewtools.api.widget.WidgetSpec
 
 /**
  * 小组件插件接口

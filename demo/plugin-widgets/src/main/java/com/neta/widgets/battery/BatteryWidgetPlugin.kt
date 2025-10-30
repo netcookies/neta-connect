@@ -1,8 +1,8 @@
 package com.neta.widgets.battery
 
-import com.neta.isulewtools.widget.WidgetSpec
-import com.neta.isulewtools.widget.plugin.WidgetPlugin
-import com.neta.isulewtools.widget.plugin.WidgetPluginMetadata
+import com.neta.isulewtools.api.widget.WidgetSpec
+import com.neta.isulewtools.api.widget.plugin.WidgetPlugin
+import com.neta.isulewtools.api.widget.plugin.WidgetPluginMetadata
 
 /**
  * 电池小组件插件
@@ -16,10 +16,10 @@ class BatteryWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-battery-demo",
-            version = "1.0.2",
+            version = "1.0.3",
             author = "官方",
             description = "显示电池电量的小组件(示例)",
-            minAppVersion = "1.7.9"
+            minAppVersion = "1.8.2"
         )
     }
 }

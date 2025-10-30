@@ -1,7 +1,7 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.plugin.compose")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -10,6 +10,7 @@ android {
 
     defaultConfig {
         minSdk = 30
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     compileOptions {
@@ -29,8 +30,12 @@ android {
 }
 
 dependencies {
+    // 使用 BOM 确保与主 App 的 Compose 版本一致（关键！）
+    // 这对动态加载的插件架构至关重要
+    api(platform(libs.androidx.compose.bom))
+
     // 只包含 API 定义所需的最小依赖
-    api("androidx.compose.runtime:runtime:1.9.4")
-    api("androidx.compose.ui:ui-graphics:1.9.4")
-    api("androidx.compose.ui:ui:1.9.4")  // 需要 ImageVector
+    api(libs.androidx.compose.runtime)
+    api(libs.androidx.ui.graphics)
+    api(libs.androidx.ui)
 }

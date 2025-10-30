@@ -1,4 +1,4 @@
-package com.neta.isulewtools.widget
+package com.neta.isulewtools.api.widget
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
