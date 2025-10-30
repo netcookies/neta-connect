@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-10-30T03:57:13Z",
+  "generatedAt": "2025-10-30T07:20:15Z",
   "widgets": [
     {
       "id": "widget-battery-demo",
@@ -11,7 +11,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.2",
-      "latestVersion": "1.0.3",
+      "latestVersion": "1.0.4",
       "status": "STABLE",
       "versions": [
         {
@@ -49,6 +49,15 @@
           "minAppVersion": "1.8.2",
           "fileSize": 10378,
           "sha256": "cae5040d13abe0e311f80df8757ddaf94fec2e30e0cd7bd20cca246f1dbc2b79"
+        },
+        {
+          "version": "1.0.4",
+          "releaseDate": "2025-10-30",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.4/widget-battery-demo.jar",
+          "changelog": "版本 1.0.4",
+          "minAppVersion": "1.8.2",
+          "fileSize": 10382,
+          "sha256": "28cf97d52908263236980ef541df29fb8b7abeeb6832f5942f5ef21a32c2dde9"
         }
       ]
     }
