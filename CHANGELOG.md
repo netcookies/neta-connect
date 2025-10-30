@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.8.3 (2025-10-31)
+
+### Bug Fixes
+- 修复混淆导致的依赖缺失问题 [`e55bc36`](https://github.com/netcookies/isulewTools/commit/e55bc36)
+- 预览编译错误 [`defe90e`](https://github.com/netcookies/isulewTools/commit/defe90e)
+
+### Performance Improvements
+- 换一种判断模拟器的方式 [`29aa9fc`](https://github.com/netcookies/isulewTools/commit/29aa9fc)
+- 优化小组件架构，减少插件 jar 包大小 [`5c51914`](https://github.com/netcookies/isulewTools/commit/5c51914)
+
+### Test
+- 升级示例小程序的版本 [`41e1dbd`](https://github.com/netcookies/isulewTools/commit/41e1dbd)
+
+### Build
+- 优化编译配置 [`54db09e`](https://github.com/netcookies/isulewTools/commit/54db09e)
+
+### Other
+- plugin: 显示指定插件默认参数 [`ad58d72`](https://github.com/netcookies/isulewTools/commit/ad58d72)
+
 ## v1.8.2 (2025-10-28)
 
 ### Feature
