@@ -84,7 +84,7 @@ data class WidgetParamDesc @JvmOverloads constructor(
 )
 
 enum class WidgetParamType {
-    COLOR, FLOAT, INT, STRING, ENUM, DATA_SOURCE, BOOL, SCALE, ALPHA, DIVIDER, ICON
+    COLOR, FLOAT, INT, STRING, ENUM, DATA_SOURCE, BOOL, SCALE, ALPHA, DIVIDER, ICON, VEHICLE_PROPERTY, VHAL_PROPERTY
 }
 
 /**
@@ -92,6 +92,14 @@ enum class WidgetParamType {
  */
 data class WidgetConfig(
     val params: Map<String, Any?> = emptyMap()
+)
+
+/**
+ * VHAL 属性（包含属性ID和区域ID）
+ */
+data class VhalProperty(
+    val propertyId: Int,
+    val areaId: Int
 )
 
 enum class ContainerType {
