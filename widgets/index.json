@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-11-02T13:32:14Z",
+  "generatedAt": "2025-11-02T16:59:06Z",
   "widgets": [
     {
       "id": "widget-battery-demo",
@@ -75,7 +75,7 @@
           "changelog": "版本 1.0.6",
           "minAppVersion": "1.8.3",
           "fileSize": 10400,
-          "sha256": "b9bbc4346038235e7ef290d7cc4cf0a52e2ea51126a950517ee90c440eaf37c2"
+          "sha256": "b3c70bedd8e08f5e766d3cc651e1f228d641581328785ecf46d5c19a09fa6051"
         }
       ]
     }
