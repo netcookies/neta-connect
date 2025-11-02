@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.8.4 (2025-11-03)
+
+### Feature
+- 添加 vhal 属性的配置类型 [`1fcbba4`](https://github.com/netcookies/isulewTools/commit/1fcbba4)
+
+### Bug Fixes
+- 按钮可正常缩放 [`926daa4`](https://github.com/netcookies/isulewTools/commit/926daa4)
+- 辅助编辑工具选择小组件切换时，高亮效果能正常切换 [`51b5e00`](https://github.com/netcookies/isulewTools/commit/51b5e00)
+- 辅助编辑工具无法选中开关和按钮的问题 [`3e94492`](https://github.com/netcookies/isulewTools/commit/3e94492)
+- 修复开关和按钮无法拖动的问题 [`2f90d42`](https://github.com/netcookies/isulewTools/commit/2f90d42)
+
+### Performance Improvements
+- 完善车辆属性 id 的选择 [`b46f3cb`](https://github.com/netcookies/isulewTools/commit/b46f3cb)
+- 点击保存支持自动滚动到错误提示 [`6ec8b2b`](https://github.com/netcookies/isulewTools/commit/6ec8b2b)
+- 确认INT\FLOAT可以正确转换 [`d769923`](https://github.com/netcookies/isulewTools/commit/d769923)
+- 属性支持根据其他属性动态显示，如方形时才显示边角弧度 [`7841577`](https://github.com/netcookies/isulewTools/commit/7841577)
+- 添加图标选择器 [`bf08465`](https://github.com/netcookies/isulewTools/commit/bf08465)
+- 提供图标列表 [`a96e54d`](https://github.com/netcookies/isulewTools/commit/a96e54d)
+- 优化button [`87ac5a9`](https://github.com/netcookies/isulewTools/commit/87ac5a9)
+- 小组件创建和编辑空间布局调整 [`3e3e1b4`](https://github.com/netcookies/isulewTools/commit/3e3e1b4)
+- 小组件创建和编辑节目标题更醒目 [`09db576`](https://github.com/netcookies/isulewTools/commit/09db576)
+- 将getAlpha()和getScale()移至widget-api [`ffd22b2`](https://github.com/netcookies/isulewTools/commit/ffd22b2)
+- 优化SegmentedButtonRow视觉表现 [`4e70065`](https://github.com/netcookies/isulewTools/commit/4e70065)
+
 ## v1.8.3 (2025-10-31)
 
 ### Bug Fixes
