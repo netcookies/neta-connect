@@ -83,7 +83,7 @@ data class WidgetParamDesc @JvmOverloads constructor(
 )
 
 enum class WidgetParamType {
-    COLOR, FLOAT, INT, STRING, ENUM, DATA_SOURCE, BOOL, SCALE, ALPHA,
+    COLOR, FLOAT, INT, STRING, ENUM, DATA_SOURCE, BOOL, SCALE, ALPHA, DIVIDER, ICON
 }
 
 /**

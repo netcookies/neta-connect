@@ -26,6 +26,8 @@ import com.neta.isulewtools.api.widget.WidgetConfig
 import com.neta.isulewtools.api.widget.WidgetParamDesc
 import com.neta.isulewtools.api.widget.WidgetParamType
 import com.neta.isulewtools.api.widget.WidgetSpec
+import com.neta.isulewtools.api.widget.getAlpha
+import com.neta.isulewtools.api.widget.getScale
 
 /**
  * 简化版电池小组件 - 动态加载示例
@@ -81,8 +83,8 @@ fun SimpleBatteryWidgetContent(config: WidgetConfig) {
     val colorStr = config.params["color"]?.toString() ?: "#66BB6A"
 
     // 读取自动注入的 scale 和 alpha 参数
-    val scale = (config.params["scale"] as? Number)?.toFloat() ?: 1f
-    val alpha = (config.params["alpha"] as? Number)?.toFloat() ?: 1f
+    val scale = config.getScale()
+    val alpha = config.getAlpha()
 
     // 简化的颜色解析
     val color = try {

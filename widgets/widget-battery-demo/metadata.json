@@ -4,7 +4,7 @@
   "description": "显示电池电量的小组件(示例)",
   "author": "官方",
   "category": "示例",
-  "minAppVersion": "1.8.2",
+  "minAppVersion": "1.8.3",
   "permissions": [],
   "screenshots": [],
   "repository": "https://github.com/netcookies/neta-connect",
