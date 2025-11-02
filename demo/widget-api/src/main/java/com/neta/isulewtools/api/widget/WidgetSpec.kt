@@ -79,7 +79,8 @@ data class WidgetParamDesc @JvmOverloads constructor(
     val defaultValue: Any? = null,       // 默认值
     val options: List<Any>? = null,       // 可选项（下拉枚举等）
     val required: Boolean = false, // 新增必填字段标识
-    val description: String? = null
+    val description: String? = null,
+    val visibleWhen: Pair<String, Any>? = null  // 条件显示：当指定参数等于指定值时才显示
 )
 
 enum class WidgetParamType {
