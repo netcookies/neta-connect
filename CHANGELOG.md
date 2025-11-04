@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.8.6 (2025-11-05)
+
+### Feature
+- 合并速度指示器、油表指示器为弧形仪表盘 [`51b3883`](https://github.com/netcookies/isulewTools/commit/51b3883)
+
+### Bug Fixes
+- 修复车辆属性 areaId 只有 0的问题 [`bf1a84b`](https://github.com/netcookies/isulewTools/commit/bf1a84b)
+
+### Performance Improvements
+- 完善弧形仪表盘等组件 [`1c67941`](https://github.com/netcookies/isulewTools/commit/1c67941)
+- 完善刻度表现 [`ff296d0`](https://github.com/netcookies/isulewTools/commit/ff296d0)
+- 电池默认颜色白色还是更好看 [`613c92c`](https://github.com/netcookies/isulewTools/commit/613c92c)
+
+### Refactor
+- 重构油量小组件 [`55ef7cc`](https://github.com/netcookies/isulewTools/commit/55ef7cc)
+- 重构时间小组件 [`d5f3f15`](https://github.com/netcookies/isulewTools/commit/d5f3f15)
+
 ## v1.8.5 (2025-11-04)
 
 ### Feature
