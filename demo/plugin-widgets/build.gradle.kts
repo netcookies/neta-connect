@@ -3,6 +3,7 @@ import java.util.jar.Attributes
 import java.util.jar.JarEntry
 import java.util.jar.JarOutputStream
 import java.util.jar.Manifest
+import java.util.zip.ZipFile
 
 plugins {
     id("com.android.library")
@@ -29,6 +30,9 @@ abstract class CreateWidgetJarTask : DefaultTask() {
 
     @get:InputDirectory
     abstract val sourceDir: DirectoryProperty
+
+    @get:Classpath
+    abstract val compileClasspath: ConfigurableFileCollection
 
     /**
      * 自动查找实现 WidgetPlugin 接口的类
@@ -61,6 +65,100 @@ abstract class CreateWidgetJarTask : DefaultTask() {
             }
 
         throw GradleException("No class implementing WidgetPlugin found in $sourceDirFile")
+    }
+
+    /**
+     * 扫描插件源码中使用的 Material Icons
+     * @return icon 路径列表，格式: Icons.Default.BatteryChargingFull
+     */
+    private fun findUsedIcons(): List<String> {
+        val sourceDirFile = sourceDir.get().asFile
+        if (!sourceDirFile.exists()) {
+            println("⚠️  Source directory not found: $sourceDirFile")
+            return emptyList()
+        }
+
+        val icons = mutableSetOf<String>()
+
+        // 匹配所有 Icons.* 变体
+        val iconsRegex = Regex("""Icons\.([A-Za-z]+(?:\.[A-Za-z]+)*)\.([A-Za-z]+)""")
+
+        sourceDirFile.walkTopDown()
+            .filter { it.isFile && it.extension == "kt" }
+            .forEach { file ->
+                val content = file.readText()
+                iconsRegex.findAll(content).forEach { match ->
+                    // match.value: Icons.Default.BatteryChargingFull
+                    // match.groupValues[1]: Default 或 AutoMirrored.Filled
+                    // match.groupValues[2]: BatteryChargingFull
+                    icons.add(match.value)
+                }
+            }
+
+        return icons.sorted()
+    }
+
+    /**
+     * 从 Compose 依赖中提取 icon class 文件
+     * @param icons icon 路径列表
+     * @return 提取的 class 文件列表
+     */
+    private fun extractIconClasses(icons: List<String>): List<File> {
+        if (icons.isEmpty()) return emptyList()
+
+        val extractedClasses = mutableListOf<File>()
+        val tempIconDir = File(tempDexDir.get().asFile.parentFile, "icon-classes")
+        tempIconDir.mkdirs()
+
+        // 从 classpath 中查找 material-icons-extended JAR
+        val iconsJarFile = compileClasspath.files.find {
+            it.name.contains("material-icons-extended") && it.extension == "jar"
+        }
+
+        if (iconsJarFile == null) {
+            println("⚠️  material-icons-extended JAR not found in classpath, skipping icon extraction")
+            return emptyList()
+        }
+
+        println("📦 Found Material Icons JAR: ${iconsJarFile.name}")
+
+        // 使用 ZipFile 提取 class 文件
+        ZipFile(iconsJarFile).use { zip ->
+            icons.forEach { iconPath ->
+                // 解析 icon 路径: Icons.Default.BatteryChargingFull
+                val parts = iconPath.split(".")
+                val variant = parts.dropLast(1).drop(1).joinToString(".")
+                    .lowercase() // Default → filled, AutoMirrored.Filled → automirrored.filled
+                val iconName = parts.last()
+
+                // 映射到包路径
+                val packagePath = when {
+                    variant == "default" -> "filled"
+                    variant.contains("automirrored") -> "automirrored/${variant.substringAfter("automirrored.")}"
+                    else -> variant
+                }
+
+                // Material Icons 只需要 IconKt.class（Kotlin 顶层扩展属性）
+                val className = "${iconName}Kt.class"
+                val entryPath = "androidx/compose/material/icons/$packagePath/$className"
+                val entry = zip.getEntry(entryPath)
+
+                if (entry != null) {
+                    val targetFile = File(tempIconDir, className)
+                    zip.getInputStream(entry).use { input ->
+                        targetFile.outputStream().use { output ->
+                            input.copyTo(output)
+                        }
+                    }
+                    extractedClasses.add(targetFile)
+                    println("   ✅ Extracted: $entryPath")
+                } else {
+                    println("   ⚠️  Not found: $entryPath")
+                }
+            }
+        }
+
+        return extractedClasses
     }
 
     @TaskAction
@@ -97,6 +195,21 @@ abstract class CreateWidgetJarTask : DefaultTask() {
                 }
             }
             if (classFiles.isEmpty()) throw GradleException("No .class files found in $classDirs matching allowed packages: $allowedPackages")
+
+            // 扫描并提取 Material Icons
+            val usedIcons = findUsedIcons()
+            if (usedIcons.isNotEmpty()) {
+                println("🎨 Found ${usedIcons.size} Material Icon(s) in source:")
+                usedIcons.forEach { println("   - $it") }
+
+                val iconClasses = extractIconClasses(usedIcons)
+                if (iconClasses.isNotEmpty()) {
+                    println("📦 Extracted ${iconClasses.size} icon class file(s)")
+                    classFiles.addAll(iconClasses.map { it.absolutePath })
+                }
+            } else {
+                println("ℹ️  No Material Icons found in source")
+            }
 
             // D8 生成 dex
             val androidJarFile = androidJar.get().asFile
@@ -181,6 +294,28 @@ android.buildTypes.forEach { buildType ->
 
         val sdkDir = android.sdkDirectory.path
         androidJar.set(File(File(sdkDir, "platforms/android-${android.compileSdk}"), "android.jar"))
+
+        // 只包含外部依赖的 JAR（排除项目依赖避免 variant 歧义）
+        // 同时请求 jar 和 android-classes-jar 类型以覆盖所有情况
+        compileClasspath.from(
+            configurations.getByName("${variantName}CompileClasspath").incoming
+                .artifactView {
+                    attributes {
+                        attribute(
+                            Attribute.of("artifactType", String::class.java),
+                            "android-classes-jar"
+                        )
+                    }
+                    componentFilter { it is ModuleComponentIdentifier }
+                }.artifacts.artifactFiles,
+            configurations.getByName("${variantName}CompileClasspath").incoming
+                .artifactView {
+                    attributes {
+                        attribute(Attribute.of("artifactType", String::class.java), "jar")
+                    }
+                    componentFilter { it is ModuleComponentIdentifier }
+                }.artifacts.artifactFiles
+        )
 
         val generatedDir = layout.buildDirectory.dir("outputs/widget/${variantName}")
         outputJar.set(layout.file(generatedDir.map { it.asFile.resolve("widget-battery-demo.jar") }))
