@@ -112,7 +112,14 @@ fun String.toColorOrDefault(defaultColor: Color = Color.White): Color {
             8 -> colorStr.toLong(16)      // #AARRGGBB
             else -> return defaultColor
         }
-        Color(colorLong.toULong())
+        // 显式解析 ARGB 分量以确保使用正确的 sRGB 颜色空间
+        // 避免 Color(ULong) 构造函数可能导致的无效颜色空间索引
+        Color(
+            alpha = ((colorLong shr 24) and 0xFF) / 255f,
+            red = ((colorLong shr 16) and 0xFF) / 255f,
+            green = ((colorLong shr 8) and 0xFF) / 255f,
+            blue = (colorLong and 0xFF) / 255f
+        )
     } catch (_: Exception) {
         defaultColor
     }
