@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.8.5 (2025-11-04)
+
+### Feature
+- 采用新的 color picker [`8b02423`](https://github.com/netcookies/isulewTools/commit/8b02423)
+
+### Bug Fixes
+- 修复颜色解析错误 [`6881916`](https://github.com/netcookies/isulewTools/commit/6881916)
+- 添加mic jni 文件到.gitignore [`f078eaf`](https://github.com/netcookies/isulewTools/commit/f078eaf)
+
+### Performance Improvements
+- 优化电池配色 [`a089381`](https://github.com/netcookies/isulewTools/commit/a089381)
+- 完善字体和图标大小 [`28bc327`](https://github.com/netcookies/isulewTools/commit/28bc327)
+
+### Test
+- 升级动态小组件示例 [`786ab90`](https://github.com/netcookies/isulewTools/commit/786ab90)
+- 测试小组件升级版本，编译脚本自带需要的图标 [`77e9eef`](https://github.com/netcookies/isulewTools/commit/77e9eef)
+
+### Build
+- 减少包大小，优化Compose混淆规则，插件的 icons 由其 jar 包自己持有 [`49637da`](https://github.com/netcookies/isulewTools/commit/49637da)
+- 减少包大小，优化Compose混淆规则，插件的 icons 由其 jar 包自己持有 [`07feb61`](https://github.com/netcookies/isulewTools/commit/07feb61)
+- 移除ARM 和 X86的 JNI 支持，减少包的大小 [`95af655`](https://github.com/netcookies/isulewTools/commit/95af655)
+- update depends [`7a569a3`](https://github.com/netcookies/isulewTools/commit/7a569a3)
+
+### Refactor
+- 所有小组件默认值统一管理，更好配置 [`82b6272`](https://github.com/netcookies/isulewTools/commit/82b6272)
+- 重构电池小组件 [`cdd7f6c`](https://github.com/netcookies/isulewTools/commit/cdd7f6c)
+- 重构按钮小组件 [`321d2ef`](https://github.com/netcookies/isulewTools/commit/321d2ef)
+
 ## v1.8.4 (2025-11-03)
 
 ### Feature
