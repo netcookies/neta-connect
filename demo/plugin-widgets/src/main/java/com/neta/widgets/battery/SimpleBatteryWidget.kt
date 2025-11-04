@@ -21,13 +21,30 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.graphics.toColorInt
 import com.neta.isulewtools.api.widget.WidgetConfig
 import com.neta.isulewtools.api.widget.WidgetParamDesc
 import com.neta.isulewtools.api.widget.WidgetParamType
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.getAlpha
 import com.neta.isulewtools.api.widget.getScale
+import com.neta.isulewtools.api.widget.toColorOrDefault
+import com.neta.isulewtools.api.widget.toHexString
+
+/**
+ * SimpleBatteryWidget 默认值常量
+ * 所有默认颜色和参数统一定义在这里，便于维护和复用
+ */
+object SimpleBatteryWidgetDefaults {
+    // 颜色常量（Color 对象是单一数据源）
+    val COLOR = Color(0xFF66BB6A)
+
+    // 其他默认值
+    const val BATTERY_LEVEL = 75f
+    const val TEXT_COLOR = "#FFFFFF"
+    const val WIDTH = 100
+    const val HEIGHT = 40
+    const val FONT_SIZE = 16
+}
 
 /**
  * 简化版电池小组件 - 动态加载示例
@@ -51,14 +68,14 @@ object SimpleBatteryWidgetSpec : WidgetSpec(
             key = "batteryLevel",
             label = "电量(%)",
             type = WidgetParamType.FLOAT,
-            defaultValue = 75f,
+            defaultValue = SimpleBatteryWidgetDefaults.BATTERY_LEVEL,
             description = "显示的电池电量百分比"
         ),
         WidgetParamDesc(
             key = "color",
             label = "颜色",
             type = WidgetParamType.STRING,
-            defaultValue = "#66BB6A",
+            defaultValue = SimpleBatteryWidgetDefaults.COLOR.toHexString(),
             description = "电池背景颜色（十六进制）"
         )
     ),
@@ -79,24 +96,24 @@ object SimpleBatteryWidgetSpec : WidgetSpec(
 @Composable
 fun SimpleBatteryWidgetContent(config: WidgetConfig) {
     // 读取自定义参数
-    val batteryLevel = (config.params["batteryLevel"] as? Number)?.toFloat() ?: 75f
-    val colorStr = config.params["color"]?.toString() ?: "#66BB6A"
+    val batteryLevel = (config.params["batteryLevel"] as? Number)?.toFloat()
+        ?: SimpleBatteryWidgetDefaults.BATTERY_LEVEL
+    val colorStr =
+        config.params["color"]?.toString() ?: SimpleBatteryWidgetDefaults.COLOR.toHexString()
 
     // 读取自动注入的 scale 和 alpha 参数
     val scale = config.getScale()
     val alpha = config.getAlpha()
 
-    // 简化的颜色解析
-    val color = try {
-        val colorInt = colorStr.toColorInt()
-        Color(colorInt)
-    } catch (e: Exception) {
-        Color(0xFF66BB6A)
-    }
+    // 使用新的颜色转换API
+    val color = colorStr.toColorOrDefault(SimpleBatteryWidgetDefaults.COLOR)
 
     Box(
         modifier = Modifier
-            .size((100 * scale).dp, (40 * scale).dp)  // 应用缩放到尺寸
+            .size(
+                (SimpleBatteryWidgetDefaults.WIDTH * scale).dp,
+                (SimpleBatteryWidgetDefaults.HEIGHT * scale).dp
+            )  // 应用缩放到尺寸
             .background(color)
             .graphicsLayer(alpha = alpha),  // 应用透明度
         contentAlignment = Alignment.Center
@@ -104,7 +121,7 @@ fun SimpleBatteryWidgetContent(config: WidgetConfig) {
         Text(
             text = "${batteryLevel.toInt()}%",
             color = Color.White,
-            fontSize = (16 * scale).sp  // 文字也跟随缩放
+            fontSize = (SimpleBatteryWidgetDefaults.FONT_SIZE * scale).sp  // 文字也跟随缩放
         )
     }
 }

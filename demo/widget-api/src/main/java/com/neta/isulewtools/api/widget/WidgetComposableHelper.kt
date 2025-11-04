@@ -1,6 +1,7 @@
 package com.neta.isulewtools.api.widget
 
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 
 /**
@@ -71,4 +72,69 @@ fun Modifier.applyWidgetTransform(config: WidgetConfig): Modifier {
  */
 fun Modifier.applyWidgetAlpha(config: WidgetConfig): Modifier {
     return this.graphicsLayer(alpha = config.getAlpha())
+}
+
+/**
+ * 从 WidgetConfig 中安全获取颜色值
+ *
+ * 使用示例：
+ * ```
+ * val fillColor = config.getColor("fillColor", Color.Green)
+ * val bgColor = config.getColor("backgroundColor")  // 默认 Color.White
+ * ```
+ *
+ * @param key 参数键
+ * @param defaultColor 默认颜色（当解析失败或值不存在时使用），默认为 Color.White
+ * @return Color 对象
+ */
+fun WidgetConfig.getColor(key: String, defaultColor: Color = Color.White): Color {
+    val colorStr = params[key]?.toString() ?: return defaultColor
+    return colorStr.toColorOrDefault(defaultColor)
+}
+
+/**
+ * 将颜色字符串（#AARRGGBB 或 #RRGGBB）转换为 Color
+ *
+ * 使用示例：
+ * ```
+ * val color1 = "#FF5733".toColorOrDefault()
+ * val color2 = "#80FF5733".toColorOrDefault(Color.Red)
+ * ```
+ *
+ * @param defaultColor 默认颜色（当解析失败时使用），默认为 Color.White
+ * @return Color 对象
+ */
+fun String.toColorOrDefault(defaultColor: Color = Color.White): Color {
+    return try {
+        val colorStr = this.removePrefix("#")
+        val colorLong = when (colorStr.length) {
+            6 -> "FF$colorStr".toLong(16) // #RRGGBB -> #FFRRGGBB
+            8 -> colorStr.toLong(16)      // #AARRGGBB
+            else -> return defaultColor
+        }
+        Color(colorLong.toULong())
+    } catch (_: Exception) {
+        defaultColor
+    }
+}
+
+/**
+ * 将 Color 转换为十六进制字符串（格式：#AARRGGBB）
+ *
+ * 使用示例：
+ * ```
+ * val hexString = Color.Red.toHexString()  // "#FFFF0000"
+ * val hexString2 = Color(0x80FF5733).toHexString()  // "#80FF5733"
+ * ```
+ *
+ * @return 十六进制颜色字符串，格式为 #AARRGGBB
+ */
+fun Color.toHexString(): String {
+    return String.format(
+        "#%02x%02x%02x%02x",
+        (this.alpha * 255).toInt(),
+        (this.red * 255).toInt(),
+        (this.green * 255).toInt(),
+        (this.blue * 255).toInt()
+    )
 }
