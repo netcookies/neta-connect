@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-11-04T19:00:26Z",
+  "generatedAt": "2025-11-05T00:59:11Z",
   "widgets": [
     {
       "id": "widget-battery-demo",
@@ -94,6 +94,29 @@
           "minAppVersion": "1.8.3",
           "fileSize": 35434,
           "sha256": "c2517f62ddf9e7980dc68968e39668d132f4b69cdaf8291d607e86816b5e2238"
+        }
+      ]
+    },
+    {
+      "id": "widget-tire-pressure",
+      "displayName": "胎压监测",
+      "description": "显示四轮胎压和温度的监测小组件",
+      "author": "官方",
+      "category": "示例",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.3",
+      "latestVersion": "1.0.1",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.1",
+          "releaseDate": "2025-11-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.0.1/widget-tire-pressure.jar",
+          "changelog": "版本 1.0.1",
+          "minAppVersion": "1.8.3",
+          "fileSize": 29986,
+          "sha256": "e0020bba03c8f9b18a1079e7ddb8aaa54c1171c5067087ee0a33fd34b4f26fe6"
         }
       ]
     }
