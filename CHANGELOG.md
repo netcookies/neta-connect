@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.8.7 (2025-11-05)
+
+### Feature
+- 数据源支持注入，并提供各种类型的便捷函数简化插件编写 [`fcb319e`](https://github.com/netcookies/isulewTools/commit/fcb319e)
+
+### Build
+- 测试构建脚本 [`257458c`](https://github.com/netcookies/isulewTools/commit/257458c)
+- 发布小组件 [`081d9ed`](https://github.com/netcookies/isulewTools/commit/081d9ed)
+
 ## v1.8.6 (2025-11-05)
 
 ### Feature
