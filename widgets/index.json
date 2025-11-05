@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-11-05T03:04:40Z",
+  "generatedAt": "2025-11-05T10:46:41Z",
   "widgets": [
     {
       "id": "widget-battery-demo",
@@ -120,7 +120,7 @@
           "changelog": "版本 1.1.1",
           "minAppVersion": "1.8.3",
           "fileSize": 12506,
-          "sha256": "7ff9065cfc63b44dea7f84f3796c4936f59ee358310772a558a273c2fbcabab1"
+          "sha256": "6c9fb5f70b7ce465717ed6dcdd9dbfbaeee70374fa0f7f651eb84062740588b1"
         }
       ]
     },
@@ -132,8 +132,8 @@
       "category": "示例",
       "icon": null,
       "color": null,
-      "minAppVersion": "1.8.3",
-      "latestVersion": "1.0.3",
+      "minAppVersion": "1.8.8",
+      "latestVersion": "1.0.4",
       "status": "STABLE",
       "versions": [
         {
@@ -141,7 +141,7 @@
           "releaseDate": "2025-11-05",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.0.1/widget-tire-pressure.jar",
           "changelog": "版本 1.0.1",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.8",
           "fileSize": 29986,
           "sha256": "e0020bba03c8f9b18a1079e7ddb8aaa54c1171c5067087ee0a33fd34b4f26fe6"
         },
@@ -150,7 +150,7 @@
           "releaseDate": "2025-11-05",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.0.2/widget-tire-pressure.jar",
           "changelog": "版本 1.0.2",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.8",
           "fileSize": 29986,
           "sha256": "2ce03d665d149f6bd4af1d788eef326232f3d3c4999391e77797e8afc1b7ed50"
         },
@@ -159,9 +159,18 @@
           "releaseDate": "2025-11-05",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.0.3/widget-tire-pressure.jar",
           "changelog": "版本 1.0.3",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.8",
           "fileSize": 30397,
           "sha256": "2c7b2d816a80a9417e1c6b2faf5c2236938037171b640e1bfefaca8d623d5ee8"
+        },
+        {
+          "version": "1.0.4",
+          "releaseDate": "2025-11-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.0.4/widget-tire-pressure.jar",
+          "changelog": "版本 1.0.4",
+          "minAppVersion": "1.8.8",
+          "fileSize": 29905,
+          "sha256": "5832a18e1ffd3880b6a4987d141c0a8caa05394b95d40736ca3c15c41e595570"
         }
       ]
     }
