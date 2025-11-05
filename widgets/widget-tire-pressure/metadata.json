@@ -4,7 +4,7 @@
   "description": "显示四轮胎压和温度的监测小组件",
   "author": "官方",
   "category": "示例",
-  "minAppVersion": "1.8.3",
+  "minAppVersion": "1.8.8",
   "permissions": [],
   "screenshots": [],
   "repository": "https://github.com/netcookies/neta-connect",
