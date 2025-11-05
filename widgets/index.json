@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-11-05T01:18:08Z",
+  "generatedAt": "2025-11-05T03:03:33Z",
   "widgets": [
     {
       "id": "widget-battery-demo",
@@ -124,7 +124,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.3",
-      "latestVersion": "1.0.2",
+      "latestVersion": "1.0.3",
       "status": "STABLE",
       "versions": [
         {
@@ -144,6 +144,15 @@
           "minAppVersion": "1.8.3",
           "fileSize": 29986,
           "sha256": "2ce03d665d149f6bd4af1d788eef326232f3d3c4999391e77797e8afc1b7ed50"
+        },
+        {
+          "version": "1.0.3",
+          "releaseDate": "2025-11-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.0.3/widget-tire-pressure.jar",
+          "changelog": "版本 1.0.3",
+          "minAppVersion": "1.8.3",
+          "fileSize": 30397,
+          "sha256": "2c7b2d816a80a9417e1c6b2faf5c2236938037171b640e1bfefaca8d623d5ee8"
         }
       ]
     }
