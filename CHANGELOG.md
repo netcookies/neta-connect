@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.8.8 (2025-11-05)
+
+### Feature
+- 添加备份和载入小组件配置的功能 [`2a8ede3`](https://github.com/netcookies/isulewTools/commit/2a8ede3)
+- 添加备份和载入小组件配置的功能 [`9236345`](https://github.com/netcookies/isulewTools/commit/9236345)
+- 辅助编辑工具增加步进调整按钮，移动更加精细。辅助编辑器状态不再持久化 [`c76aa2f`](https://github.com/netcookies/isulewTools/commit/c76aa2f)
+
+### Bug Fixes
+- 辅助编辑工具不再强制显示通知栏 [`de9ebd7`](https://github.com/netcookies/isulewTools/commit/de9ebd7)
+- 修复胎压换算问题 [`dabdfda`](https://github.com/netcookies/isulewTools/commit/dabdfda)
+
 ## v1.8.7 (2025-11-05)
 
 ### Feature
