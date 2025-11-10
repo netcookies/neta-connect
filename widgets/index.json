@@ -1,7 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-11-05T10:46:41Z",
+  "generatedAt": "2025-11-10T17:59:20Z",
   "widgets": [
+    {
+      "id": "widget-battery",
+      "displayName": "电池",
+      "description": "iOS 风格的电池显示小组件",
+      "author": "官方",
+      "category": "通用",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-11-10",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.0/widget-battery.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 24110,
+          "sha256": "4a75fe9fa245e798f1e4d17300d640ee66fea414d33d7dd959321f562cf41b2f"
+        }
+      ]
+    },
     {
       "id": "widget-battery-demo",
       "displayName": "电池(示例)",
@@ -121,6 +144,29 @@
           "minAppVersion": "1.8.3",
           "fileSize": 12506,
           "sha256": "6c9fb5f70b7ce465717ed6dcdd9dbfbaeee70374fa0f7f651eb84062740588b1"
+        }
+      ]
+    },
+    {
+      "id": "widget-progress-bar",
+      "displayName": "进度条",
+      "description": "可横向或纵向显示的进度条小组件",
+      "author": "官方",
+      "category": "通用",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-11-10",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-progress-bar/1.0.0/widget-progress-bar.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 19415,
+          "sha256": "66aaa77fa7c8913f9147e2ac6f2fe070fcae57e9a1089be7adab9f16d86c9cbe"
         }
       ]
     },
