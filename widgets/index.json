@@ -1,7 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-11-10T17:59:20Z",
+  "generatedAt": "2025-11-10T18:00:25Z",
   "widgets": [
+    {
+      "id": "widget-arc-gauge",
+      "displayName": "弧形仪表盘",
+      "description": "弧形仪表盘样式的数值显示小组件",
+      "author": "官方",
+      "category": "车机",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-11-10",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-arc-gauge/1.0.0/widget-arc-gauge.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 26529,
+          "sha256": "4bf6978d427d19f8ed629dece1ddee0039d8d5a8362fc5f0df70d63319e9ab3f"
+        }
+      ]
+    },
     {
       "id": "widget-battery",
       "displayName": "电池",
@@ -33,8 +56,8 @@
       "category": "示例",
       "icon": null,
       "color": null,
-      "minAppVersion": "1.8.3",
-      "latestVersion": "1.1.1",
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.1.3",
       "status": "STABLE",
       "versions": [
         {
@@ -42,7 +65,7 @@
           "releaseDate": "2025-10-27",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.0/widget-battery-demo.jar",
           "changelog": "版本 1.0.0",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 16224,
           "sha256": "31ff5e7e04f8ecfa929fd5b7be4045b2fefd2ab691170d5ea61ef41dba4e3189"
         },
@@ -51,7 +74,7 @@
           "releaseDate": "2025-10-28",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.1/widget-battery-demo.jar",
           "changelog": "版本 1.0.1",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 16095,
           "sha256": "96e6cf408b53e19417bf5af20d67a8deb7a5a167c1ba86ea9b73ffd59809a5d4"
         },
@@ -60,7 +83,7 @@
           "releaseDate": "2025-10-28",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.2/widget-battery-demo.jar",
           "changelog": "版本 1.0.2",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 10384,
           "sha256": "bc38fb67311621f506bb8904c558a2bf475cb28507bd4a405c18b87a4b84d814"
         },
@@ -69,7 +92,7 @@
           "releaseDate": "2025-10-30",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.3/widget-battery-demo.jar",
           "changelog": "版本 1.0.3",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 10378,
           "sha256": "cae5040d13abe0e311f80df8757ddaf94fec2e30e0cd7bd20cca246f1dbc2b79"
         },
@@ -78,7 +101,7 @@
           "releaseDate": "2025-10-30",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.4/widget-battery-demo.jar",
           "changelog": "版本 1.0.4",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 10382,
           "sha256": "28cf97d52908263236980ef541df29fb8b7abeeb6832f5942f5ef21a32c2dde9"
         },
@@ -87,7 +110,7 @@
           "releaseDate": "2025-10-30",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.5/widget-battery-demo.jar",
           "changelog": "版本 1.0.5",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 10381,
           "sha256": "d79b44eb81be1bd95a4746ba68d28d37f90464103ec2974306590bde2c14a8d5"
         },
@@ -96,7 +119,7 @@
           "releaseDate": "2025-11-02",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.6/widget-battery-demo.jar",
           "changelog": "版本 1.0.6",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 10400,
           "sha256": "b3c70bedd8e08f5e766d3cc651e1f228d641581328785ecf46d5c19a09fa6051"
         },
@@ -105,7 +128,7 @@
           "releaseDate": "2025-11-04",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.7/widget-battery-demo.jar",
           "changelog": "版本 1.0.7",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 12267,
           "sha256": "453ef0c7fd329cee66bafa85fa9a7555b97a821c0a8c8d12a0ef49a5dd200508"
         },
@@ -114,7 +137,7 @@
           "releaseDate": "2025-11-04",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.8/widget-battery-demo.jar",
           "changelog": "版本 1.0.8",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 35434,
           "sha256": "c2517f62ddf9e7980dc68968e39668d132f4b69cdaf8291d607e86816b5e2238"
         },
@@ -123,7 +146,7 @@
           "releaseDate": "2025-11-05",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.0.9/widget-battery-demo.jar",
           "changelog": "版本 1.0.9",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 12586,
           "sha256": "136a8b42fef7569d17356e8e97d19640c9cbfa8f61cb6e50f117fb51f4dd8598"
         },
@@ -132,7 +155,7 @@
           "releaseDate": "2025-11-05",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.1.0/widget-battery-demo.jar",
           "changelog": "版本 1.1.0",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 12582,
           "sha256": "b66fc9c3c4859e52a5121bd6be5e9358c117354337a8761dbdfececd5147c4ae"
         },
@@ -141,9 +164,18 @@
           "releaseDate": "2025-11-05",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.1.1/widget-battery-demo.jar",
           "changelog": "版本 1.1.1",
-          "minAppVersion": "1.8.3",
+          "minAppVersion": "1.8.9",
           "fileSize": 12506,
           "sha256": "6c9fb5f70b7ce465717ed6dcdd9dbfbaeee70374fa0f7f651eb84062740588b1"
+        },
+        {
+          "version": "1.1.3",
+          "releaseDate": "2025-11-10",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.1.3/widget-battery-demo.jar",
+          "changelog": "版本 1.1.3",
+          "minAppVersion": "1.8.9",
+          "fileSize": 12827,
+          "sha256": "9ebe90f58117134cc29040b110c33f01bb07e6325aa4d3d00208f0f452de4e2f"
         }
       ]
     },
