@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-11-10T18:00:25Z",
+  "generatedAt": "2025-11-10T18:00:59Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -199,6 +199,29 @@
           "minAppVersion": "1.8.9",
           "fileSize": 19415,
           "sha256": "66aaa77fa7c8913f9147e2ac6f2fe070fcae57e9a1089be7adab9f16d86c9cbe"
+        }
+      ]
+    },
+    {
+      "id": "widget-temperature",
+      "displayName": "温度计",
+      "description": "温度计样式的数值显示小组件",
+      "author": "官方",
+      "category": "通用",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-11-10",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-temperature/1.0.0/widget-temperature.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 20867,
+          "sha256": "b8ca746cfd50aca4e6221aeb9d3000fc3eb813e23baba539a479b70e63465c0c"
         }
       ]
     },
