@@ -81,7 +81,75 @@ data class WidgetParamDesc @JvmOverloads constructor(
     val required: Boolean = false, // 新增必填字段标识
     val description: String? = null,
     val visibleWhen: Pair<String, Any>? = null  // 条件显示：当指定参数等于指定值时才显示
-)
+) {
+    companion object {
+        /**
+         * 创建 DIVIDER 类型的参数描述
+         * DIVIDER 只用于 UI 分组显示,会自动生成唯一的 key
+         *
+         * 使用示例:
+         * ```
+         * WidgetParamDesc.divider("基础外观")
+         * ```
+         */
+        fun divider(label: String): WidgetParamDesc {
+            return WidgetParamDesc(
+                key = "divider_${label.hashCode()}", // 自动生成唯一 key
+                label = label,
+                type = WidgetParamType.DIVIDER
+            )
+        }
+
+        /**
+         * 使用 DSL 构建参数列表
+         *
+         * 使用示例:
+         * ```
+         * paramSchema = WidgetParamDesc.buildParams {
+         *     group("基础外观") {
+         *         +WidgetParamDesc(P.TEXT.key, "文字", WidgetParamType.STRING, P.TEXT.default)
+         *         +WidgetParamDesc(P.COLOR.key, "颜色", WidgetParamType.COLOR, P.COLOR.default.toHexString())
+         *     }
+         *
+         *     group("点击事件") {
+         *         +WidgetParamDesc(P.CLICK_PROPERTY, "车辆属性", WidgetParamType.VHAL_PROPERTY, null)
+         *     }
+         * }
+         * ```
+         */
+        fun buildParams(block: ParamListBuilder.() -> Unit): List<WidgetParamDesc> {
+            return ParamListBuilder().apply(block).build()
+        }
+    }
+}
+
+/**
+ * 参数列表构建器
+ * 提供语义化的 DSL 来构建 paramSchema
+ */
+class ParamListBuilder {
+    private val params = mutableListOf<WidgetParamDesc>()
+
+    /**
+     * 创建一个参数分组
+     * @param label 分组标题
+     * @param block 分组内的参数定义
+     */
+    fun group(label: String, block: ParamListBuilder.() -> Unit) {
+        params.add(WidgetParamDesc.divider(label))
+        block()
+    }
+
+    /**
+     * 添加参数的操作符重载
+     * 使用 +WidgetParamDesc(...) 的语法添加参数
+     */
+    operator fun WidgetParamDesc.unaryPlus() {
+        params.add(this)
+    }
+
+    internal fun build(): List<WidgetParamDesc> = params.toList()
+}
 
 enum class WidgetParamType {
     COLOR, FLOAT, INT, STRING, ENUM, DATA_SOURCE, BOOL, SCALE, ALPHA, DIVIDER, ICON, VEHICLE_PROPERTY, VHAL_PROPERTY
@@ -117,10 +185,12 @@ val containerNameMap = mapOf(
  */
 enum class WidgetVisibilityMode {
     ALWAYS_SHOW,        // 总是显示
-    SHOW_ON_PACKAGES    // 按需显示（根据包名列表）
+    SHOW_ON_PACKAGES,   // 按需显示（根据包名列表）
+    NEVER_SHOW          // 禁止显示
 }
 
 val visibilityModeNameMap = mapOf(
     WidgetVisibilityMode.ALWAYS_SHOW to "总是显示",
-    WidgetVisibilityMode.SHOW_ON_PACKAGES to "按需显示"
+    WidgetVisibilityMode.SHOW_ON_PACKAGES to "按需显示",
+    WidgetVisibilityMode.NEVER_SHOW to "禁止显示"
 )

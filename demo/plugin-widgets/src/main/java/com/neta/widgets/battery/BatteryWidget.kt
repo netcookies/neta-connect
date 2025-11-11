@@ -1,0 +1,399 @@
+package com.neta.widgets.battery
+
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.BatteryChargingFull
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Rect
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.DrawScope
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.neta.isulewtools.api.widget.ParamDef
+import com.neta.isulewtools.api.widget.WidgetConfig
+import com.neta.isulewtools.api.widget.WidgetFont
+import com.neta.isulewtools.api.widget.WidgetParamDesc
+import com.neta.isulewtools.api.widget.WidgetParamType
+import com.neta.isulewtools.api.widget.WidgetSpec
+import com.neta.isulewtools.api.widget.getAlpha
+import com.neta.isulewtools.api.widget.getDataSourceFloat
+import com.neta.isulewtools.api.widget.getParam
+import com.neta.isulewtools.api.widget.getScale
+import com.neta.isulewtools.api.widget.rememberWidgetFontFamily
+import com.neta.isulewtools.api.widget.toHexString
+
+/**
+ * BatteryWidget 的 WidgetSpec 注册示例
+ */
+object BatteryWidgetSpec : WidgetSpec(
+    type = "battery_widget",
+    displayName = "电池",
+    paramSchema = WidgetParamDesc.buildParams {
+        +WidgetParamDesc(
+            key = P.COLOR.key,
+            label = "电池填充色",
+            type = WidgetParamType.COLOR,
+            defaultValue = P.COLOR.default.toHexString()
+        )
+        // scale 和 alpha 会自动注入，无需手动定义
+        +WidgetParamDesc(
+            key = P.BACKGROUND_COLOR.key,
+            label = "背景色",
+            type = WidgetParamType.COLOR,
+            defaultValue = P.BACKGROUND_COLOR.default.toHexString()
+        )
+        +WidgetParamDesc(
+            key = P.TEXT_COLOR.key,
+            label = "字体颜色",
+            type = WidgetParamType.COLOR,
+            defaultValue = P.TEXT_COLOR.default.toHexString()
+        )
+        +WidgetParamDesc(
+            key = P.SHOW_TEXT.key,
+            label = "显示数值",
+            type = WidgetParamType.BOOL,
+            defaultValue = P.SHOW_TEXT.default
+        )
+        +WidgetParamDesc(
+            key = P.FIXED_FILL_COLOR.key,
+            label = "固定填充色",
+            type = WidgetParamType.BOOL,
+            defaultValue = P.FIXED_FILL_COLOR.default
+        )
+        +WidgetParamDesc(
+            key = P.DATASOURCE,
+            label = "属性数据源",
+            type = WidgetParamType.DATA_SOURCE,
+            defaultValue = null,
+            options = emptyList(), // 后续动态赋值
+            required = true
+        )
+    },
+    contentComposable = {
+        BatteryWidgetContent(it)
+    },
+    color = Color(0xFF66BB6A),
+    icon = Icons.Default.BatteryChargingFull
+) {
+    /**
+     * 参数定义对象（使用 ParamDef）
+     */
+    object P {
+        val COLOR = ParamDef("color", Color(0xFF53CC59))
+        val BACKGROUND_COLOR = ParamDef("backgroundColor", Color(0xFFABAAAA))
+        val TEXT_COLOR = ParamDef("textColor", Color(0xFFFFFFFF))
+        val SHOW_TEXT = ParamDef("showText", true)
+        val FIXED_FILL_COLOR = ParamDef("fixedFillColor", false)
+
+        // 数据源参数只定义 key,不使用 ParamDef
+        const val DATASOURCE = "datasource"
+    }
+}
+
+@Composable
+fun BatteryWidgetContent(config: WidgetConfig) {
+    // 使用 getParam 方法读取参数
+    val fillColor = config.getParam(BatteryWidgetSpec.P.COLOR)
+    val backgroundColor = config.getParam(BatteryWidgetSpec.P.BACKGROUND_COLOR)
+    val textColor = config.getParam(BatteryWidgetSpec.P.TEXT_COLOR)
+    val showText = config.getParam(BatteryWidgetSpec.P.SHOW_TEXT)
+    val fixedFillColor = config.getParam(BatteryWidgetSpec.P.FIXED_FILL_COLOR)
+
+    // 使用辅助函数获取自动注入的参数
+    val scale = config.getScale()
+    val alpha = config.getAlpha()
+
+    // 从注入的数据中读取电池电量
+    val batteryLevel = config.getDataSourceFloat(BatteryWidgetSpec.P.DATASOURCE, 0f)
+    AppleStyleBatteryIndicator(
+        batteryLevel = batteryLevel,
+        scale = scale,
+        alpha = alpha,
+        showText = showText,
+        fillColor = fillColor,
+        backgroundColor = backgroundColor,
+        textColor = textColor,
+        fixedFillColor = fixedFillColor
+    )
+}
+
+@Composable
+fun AppleStyleBatteryIndicator(
+    batteryLevel: Float, // 0~100
+    modifier: Modifier = Modifier,
+    scale: Float = 1f,
+    alpha: Float = 1f,
+    showText: Boolean = true,
+    fillColor: Color = BatteryWidgetSpec.P.COLOR.default, // iOS 绿色
+    backgroundColor: Color = BatteryWidgetSpec.P.BACKGROUND_COLOR.default,
+    textColor: Color = BatteryWidgetSpec.P.TEXT_COLOR.default,
+    fixedFillColor: Boolean = false,
+    width: Dp = 49.dp, // 更接近苹果比例
+    height: Dp = 21.dp
+) {
+    val fillPercent = batteryLevel.coerceIn(0f, 100f) / 100f
+
+    // iOS 原生配色
+    val adaptiveColor = if (fixedFillColor) fillColor else when {
+        batteryLevel > 20f -> BatteryWidgetSpec.P.COLOR.default // iOS 绿色
+        batteryLevel > 10f -> Color(0xFFFFCC00) // iOS 黄色
+        else -> Color(0xFFFF3B30)              // iOS 红色
+    }
+
+    // 加载字体
+    val fontFamily = rememberWidgetFontFamily(WidgetFont.MONTSERRAT_BOLD, FontWeight.Bold)
+
+    Box(
+        modifier = modifier
+            .width(width * scale)
+            .height(height * scale)
+    ) {
+        Canvas(
+            modifier = Modifier
+                .matchParentSize()
+                .graphicsLayer(alpha = alpha)
+        ) {
+            // 电池主体区域（减去电池头的宽度）
+            val tipWidth = (2.25.dp.toPx()) * scale // 减小到原来的一半
+            val tipGap = (0.75.dp.toPx()) * scale // 相应减小间隙
+            val bodyWidth = size.width - tipWidth - tipGap
+            val bodyRect = Rect(0f, 0f, bodyWidth, size.height)
+
+            // 主体圆角半径
+            val bodyCornerRadius = (4.5.dp.toPx()) * scale
+
+            // 电量填充（无内边距，苹果最新风格）
+            if (fillPercent > 0) {
+                if (fillPercent < 0.1f) {
+                    // 低电量反转模式：先绘制满电填充，再从右侧覆盖背景色
+                    drawBatteryFill(
+                        bodyRect = bodyRect,
+                        fillPercent = 1.0f,
+                        fillColor = adaptiveColor,
+                        cornerRadius = bodyCornerRadius,
+                        fromLeft = true
+                    )
+                    drawBatteryFill(
+                        bodyRect = bodyRect,
+                        fillPercent = 1.0f - fillPercent,
+                        fillColor = backgroundColor,
+                        cornerRadius = bodyCornerRadius,
+                        fromLeft = false
+                    )
+                } else {
+                    // 正常模式：先绘制背景，再从左侧填充
+                    drawBatteryFill(
+                        bodyRect = bodyRect,
+                        fillPercent = 1.0f,
+                        fillColor = backgroundColor,
+                        cornerRadius = bodyCornerRadius,
+                        fromLeft = true
+                    )
+                    drawBatteryFill(
+                        bodyRect = bodyRect,
+                        fillPercent = fillPercent,
+                        fillColor = adaptiveColor,
+                        cornerRadius = bodyCornerRadius,
+                        fromLeft = true
+                    )
+                }
+            }
+
+            // 电池凸起（头部）- 采用苹果最新风格，使用背景色
+            val tipHeight = size.height * 0.4f // 约 40% 高度
+            val tipTop = (size.height - tipHeight) / 2
+            val tipCornerRadius = (1.5.dp.toPx()) * scale
+
+            drawRoundRect(
+                color = backgroundColor, // 使用半透明背景色，更接近苹果风格
+                topLeft = Offset(bodyWidth + tipGap, tipTop),
+                size = Size(tipWidth, tipHeight),
+                cornerRadius = CornerRadius(tipCornerRadius, tipCornerRadius)
+            )
+        }
+
+        // 百分比文字
+        if (showText) {
+            Text(
+                text = "${batteryLevel.toInt()}",
+                style = TextStyle(
+                    color = textColor,
+                    fontSize = (14 * scale).sp,
+                    fontWeight = FontWeight.Medium, // iOS 使用 Medium 字重
+                    fontFamily = fontFamily,
+                    letterSpacing = (-0.2).sp // 更紧凑的字间距
+                ),
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .offset(x = (-2).dp * scale) // 略微向左偏移，因为电池头占据右侧空间
+            )
+        }
+    }
+}
+
+/**
+ * 绘制电池填充
+ * @param bodyRect 电池主体区域
+ * @param fillPercent 填充百分比 (0.0 ~ 1.0)
+ * @param fillColor 填充颜色
+ * @param cornerRadius 圆角半径
+ * @param fromLeft true: 从左到右填充, false: 从右到左填充
+ */
+private fun DrawScope.drawBatteryFill(
+    bodyRect: Rect,
+    fillPercent: Float,
+    fillColor: Color,
+    cornerRadius: Float,
+    fromLeft: Boolean = true
+) {
+    val fillWidth = bodyRect.width * fillPercent
+    val fillHeight = bodyRect.height
+
+    if (fillWidth <= 0) return
+
+    if (fillPercent > 0.92f) {
+        // 接近满电：标准圆角矩形（左右都圆角）
+        val left = if (fromLeft) bodyRect.left else bodyRect.right - fillWidth
+        drawRoundRect(
+            color = fillColor,
+            topLeft = Offset(left, bodyRect.top),
+            size = Size(fillWidth, fillHeight),
+            cornerRadius = CornerRadius(cornerRadius, cornerRadius)
+        )
+    } else {
+        // 常规填充：单侧圆角
+        // 当宽度太小时，动态限制圆角半径避免绘制异常
+        val actualRadius = minOf(cornerRadius, fillWidth / 2, fillHeight / 2)
+
+        val path = Path().apply {
+            if (fromLeft) {
+                // 从左到右：只有左侧圆角
+                moveTo(bodyRect.left + actualRadius, bodyRect.top)
+                lineTo(bodyRect.left + fillWidth, bodyRect.top)
+                lineTo(bodyRect.left + fillWidth, bodyRect.bottom)
+                lineTo(bodyRect.left + actualRadius, bodyRect.bottom)
+
+                // 左下圆角
+                arcTo(
+                    rect = Rect(
+                        left = bodyRect.left,
+                        top = bodyRect.bottom - actualRadius * 2,
+                        right = bodyRect.left + actualRadius * 2,
+                        bottom = bodyRect.bottom
+                    ),
+                    startAngleDegrees = 90f,
+                    sweepAngleDegrees = 90f,
+                    forceMoveTo = false
+                )
+
+                lineTo(bodyRect.left, bodyRect.top + actualRadius)
+
+                // 左上圆角
+                arcTo(
+                    rect = Rect(
+                        left = bodyRect.left,
+                        top = bodyRect.top,
+                        right = bodyRect.left + actualRadius * 2,
+                        bottom = bodyRect.top + actualRadius * 2
+                    ),
+                    startAngleDegrees = 180f,
+                    sweepAngleDegrees = 90f,
+                    forceMoveTo = false
+                )
+            } else {
+                // 从右到左：只有右侧圆角
+                moveTo(bodyRect.right - actualRadius, bodyRect.top)
+                lineTo(bodyRect.right - fillWidth, bodyRect.top)
+                lineTo(bodyRect.right - fillWidth, bodyRect.bottom)
+                lineTo(bodyRect.right - actualRadius, bodyRect.bottom)
+
+                // 右下圆角
+                arcTo(
+                    rect = Rect(
+                        left = bodyRect.right - actualRadius * 2,
+                        top = bodyRect.bottom - actualRadius * 2,
+                        right = bodyRect.right,
+                        bottom = bodyRect.bottom
+                    ),
+                    startAngleDegrees = 0f,
+                    sweepAngleDegrees = 90f,
+                    forceMoveTo = false
+                )
+
+                lineTo(bodyRect.right, bodyRect.top + actualRadius)
+
+                // 右上圆角
+                arcTo(
+                    rect = Rect(
+                        left = bodyRect.right - actualRadius * 2,
+                        top = bodyRect.top,
+                        right = bodyRect.right,
+                        bottom = bodyRect.top + actualRadius * 2
+                    ),
+                    startAngleDegrees = 270f,
+                    sweepAngleDegrees = 90f,
+                    forceMoveTo = false
+                )
+            }
+
+            close()
+        }
+        drawPath(path = path, color = fillColor)
+    }
+}
+
+// 预览示例
+@Preview
+@Composable
+fun BatteryPreview() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFFF2F2F7)) // iOS 背景色
+            .padding(32.dp),
+        verticalArrangement = Arrangement.spacedBy(24.dp)
+    ) {
+        Text("不同电量状态", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+
+        AppleStyleBatteryIndicator(batteryLevel = 100f)
+        AppleStyleBatteryIndicator(batteryLevel = 94f)
+        AppleStyleBatteryIndicator(batteryLevel = 75f)
+        AppleStyleBatteryIndicator(batteryLevel = 50f)
+        AppleStyleBatteryIndicator(batteryLevel = 25f)
+        AppleStyleBatteryIndicator(batteryLevel = 19f)
+        AppleStyleBatteryIndicator(batteryLevel = 6f)
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("不同缩放", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+
+        AppleStyleBatteryIndicator(batteryLevel = 66f, scale = 1.5f)
+        AppleStyleBatteryIndicator(batteryLevel = 66f, scale = 0.8f)
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("不显示文字", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+
+        AppleStyleBatteryIndicator(batteryLevel = 88f, showText = false)
+    }
+}

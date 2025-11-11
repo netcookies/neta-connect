@@ -1,26 +1,26 @@
-package com.neta.widgets.battery
+package com.neta.widgets.arcgauge
 
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.plugin.WidgetPlugin
 import com.neta.isulewtools.api.widget.plugin.WidgetPluginMetadata
 
 /**
- * 电池小组件插件
+ * 弧形仪表盘小组件插件
  * 这是一个独立编译的插件模块，可以被动态加载
  */
-class BatteryWidgetPlugin : WidgetPlugin {
+class ArcGaugeWidgetPlugin : WidgetPlugin {
     override fun getSpec(): WidgetSpec {
-        return BatteryWidgetSpec
+        return ArcGaugeWidgetSpec
     }
 
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
-            id = "widget-battery",
+            id = "widget-arc-gauge",
             version = "1.0.2",
             author = "官方",
-            description = "iOS 风格的电池显示小组件",
+            description = "弧形仪表盘样式的数值显示小组件",
             minAppVersion = "1.8.9",
-            category = "通用"
+            category = "车机"
         )
     }
 }

@@ -1,4 +1,4 @@
-package com.neta.widgets.battery
+package com.neta.widgets.batterydemo
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -21,30 +21,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.neta.isulewtools.api.widget.ParamDef
 import com.neta.isulewtools.api.widget.WidgetConfig
+import com.neta.isulewtools.api.widget.WidgetFont
 import com.neta.isulewtools.api.widget.WidgetParamDesc
 import com.neta.isulewtools.api.widget.WidgetParamType
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.getAlpha
+import com.neta.isulewtools.api.widget.getParam
 import com.neta.isulewtools.api.widget.getScale
-import com.neta.isulewtools.api.widget.toColorOrDefault
+import com.neta.isulewtools.api.widget.rememberWidgetFontFamily
 import com.neta.isulewtools.api.widget.toHexString
-
-/**
- * SimpleBatteryWidget 默认值常量
- * 所有默认颜色和参数统一定义在这里，便于维护和复用
- */
-object SimpleBatteryWidgetDefaults {
-    // 颜色常量（Color 对象是单一数据源）
-    val COLOR = Color(0xFF66BB6A)
-
-    // 其他默认值
-    const val BATTERY_LEVEL = 75f
-    const val TEXT_COLOR = "#FFFFFF"
-    const val WIDTH = 100
-    const val HEIGHT = 40
-    const val FONT_SIZE = 16
-}
 
 /**
  * 简化版电池小组件 - 动态加载示例
@@ -58,61 +45,78 @@ object SimpleBatteryWidgetDefaults {
  * 注意：不需要手动添加 scale 和 alpha 参数！
  * 这两个参数会由 WidgetSpec 构造函数自动注入到 paramSchema 中
  */
-object SimpleBatteryWidgetSpec : WidgetSpec(
-    type = "battery_widget",  // 系统会自动添加 "dynamic_" 前缀变为 "dynamic_battery_widget"
+object BatteryDemoWidgetSpec : WidgetSpec(
+    type = "battery_demo_widget",  // 系统会自动添加 "dynamic_" 前缀变为 "dynamic_battery_demo_widget"
     displayName = "电池(示例)",
     paramSchema = listOf(
         // 只需定义小组件特有的参数
         // scale 和 alpha 会自动注入！
         WidgetParamDesc(
-            key = "batteryLevel",
+            key = P.BATTERY_LEVEL.key,
             label = "电量(%)",
             type = WidgetParamType.FLOAT,
-            defaultValue = SimpleBatteryWidgetDefaults.BATTERY_LEVEL,
+            defaultValue = P.BATTERY_LEVEL.default,
             description = "显示的电池电量百分比"
         ),
         WidgetParamDesc(
-            key = "color",
+            key = P.COLOR.key,
             label = "颜色",
             type = WidgetParamType.STRING,
-            defaultValue = SimpleBatteryWidgetDefaults.COLOR.toHexString(),
+            defaultValue = P.COLOR.default.toHexString(),
             description = "电池背景颜色（十六进制）"
         )
     ),
     contentComposable = {
-        SimpleBatteryWidgetContent(it)
+        BatteryDemoWidgetContent(it)
     },
     color = Color(0xFF66BB6A),
     icon = Icons.Default.BatteryChargingFull
-)
+) {
+    /**
+     * 参数定义
+     */
+    object P {
+        val BATTERY_LEVEL = ParamDef("batteryLevel", 75f)
+        val COLOR = ParamDef("color", Color(0xFF66BB6A))
+
+        // 非参数常量
+        const val TEXT_COLOR = "#FFFFFF"
+        const val WIDTH = 100
+        const val HEIGHT = 40
+        const val FONT_SIZE = 16
+    }
+}
 
 /**
  * 电池小组件内容
  *
- * 演示如何使用自动注入的 scale 和 alpha 参数：
+ * 演示如何在动态小组件中使用自定义字体：
  * - 从 config.params 中读取 scale 和 alpha
  * - 使用 graphicsLayer 应用变换效果
+ * - 使用 rememberWidgetFontFamily 加载主应用字体
  */
 @Composable
-fun SimpleBatteryWidgetContent(config: WidgetConfig) {
+fun BatteryDemoWidgetContent(config: WidgetConfig) {
     // 读取自定义参数
-    val batteryLevel = (config.params["batteryLevel"] as? Number)?.toFloat()
-        ?: SimpleBatteryWidgetDefaults.BATTERY_LEVEL
-    val colorStr =
-        config.params["color"]?.toString() ?: SimpleBatteryWidgetDefaults.COLOR.toHexString()
+    val batteryLevel = config.getParam(BatteryDemoWidgetSpec.P.BATTERY_LEVEL)
+    val color = config.getParam(BatteryDemoWidgetSpec.P.COLOR)
 
     // 读取自动注入的 scale 和 alpha 参数
     val scale = config.getScale()
     val alpha = config.getAlpha()
 
-    // 使用新的颜色转换API
-    val color = colorStr.toColorOrDefault(SimpleBatteryWidgetDefaults.COLOR)
+    // ✨ 加载主应用字体（动态小组件字体使用示例）
+    // 不需要手动获取 context，rememberWidgetFontFamily 会自动处理
+    val fontFamily = rememberWidgetFontFamily(
+        font = WidgetFont.MONTSERRAT_BOLD,
+        weight = FontWeight.Bold
+    )
 
     Box(
         modifier = Modifier
             .size(
-                (SimpleBatteryWidgetDefaults.WIDTH * scale).dp,
-                (SimpleBatteryWidgetDefaults.HEIGHT * scale).dp
+                (BatteryDemoWidgetSpec.P.WIDTH * scale).dp,
+                (BatteryDemoWidgetSpec.P.HEIGHT * scale).dp
             )  // 应用缩放到尺寸
             .background(color)
             .graphicsLayer(alpha = alpha),  // 应用透明度
@@ -121,7 +125,8 @@ fun SimpleBatteryWidgetContent(config: WidgetConfig) {
         Text(
             text = "${batteryLevel.toInt()}%",
             color = Color.White,
-            fontSize = (SimpleBatteryWidgetDefaults.FONT_SIZE * scale).sp  // 文字也跟随缩放
+            fontSize = (BatteryDemoWidgetSpec.P.FONT_SIZE * scale).sp,  // 文字也跟随缩放
+            fontFamily = fontFamily  // 使用自定义字体
         )
     }
 }
@@ -129,7 +134,7 @@ fun SimpleBatteryWidgetContent(config: WidgetConfig) {
 // 预览示例
 @Preview
 @Composable
-fun SimpleBatteryWidgetPreview() {
+fun BatteryDemoWidgetPreview() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -140,40 +145,58 @@ fun SimpleBatteryWidgetPreview() {
         Text("不同电量状态", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
 
         // 不同电量
-        SimpleBatteryWidgetContent(
+        BatteryDemoWidgetContent(
             WidgetConfig(params = mapOf("batteryLevel" to 100f, "color" to "#66BB6A"))
         )
-        SimpleBatteryWidgetContent(
+        BatteryDemoWidgetContent(
             WidgetConfig(params = mapOf("batteryLevel" to 75f, "color" to "#66BB6A"))
         )
-        SimpleBatteryWidgetContent(
+        BatteryDemoWidgetContent(
             WidgetConfig(params = mapOf("batteryLevel" to 50f, "color" to "#FFA726"))
         )
-        SimpleBatteryWidgetContent(
+        BatteryDemoWidgetContent(
             WidgetConfig(params = mapOf("batteryLevel" to 25f, "color" to "#EF5350"))
         )
-        SimpleBatteryWidgetContent(
+        BatteryDemoWidgetContent(
             WidgetConfig(params = mapOf("batteryLevel" to 10f, "color" to "#F44336"))
         )
 
         Spacer(modifier = Modifier.height(16.dp))
         Text("不同缩放", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
 
-        SimpleBatteryWidgetContent(
-            WidgetConfig(params = mapOf("batteryLevel" to 66f, "color" to "#42A5F5", "scale" to 1.5f))
+        BatteryDemoWidgetContent(
+            WidgetConfig(
+                params = mapOf(
+                    "batteryLevel" to 66f,
+                    "color" to "#42A5F5",
+                    "scale" to 1.5f
+                )
+            )
         )
-        SimpleBatteryWidgetContent(
-            WidgetConfig(params = mapOf("batteryLevel" to 66f, "color" to "#42A5F5", "scale" to 0.8f))
+        BatteryDemoWidgetContent(
+            WidgetConfig(
+                params = mapOf(
+                    "batteryLevel" to 66f,
+                    "color" to "#42A5F5",
+                    "scale" to 0.8f
+                )
+            )
         )
 
         Spacer(modifier = Modifier.height(16.dp))
         Text("不同透明度", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
 
-        SimpleBatteryWidgetContent(
+        BatteryDemoWidgetContent(
             WidgetConfig(params = mapOf("batteryLevel" to 88f, "color" to "#AB47BC", "alpha" to 1f))
         )
-        SimpleBatteryWidgetContent(
-            WidgetConfig(params = mapOf("batteryLevel" to 88f, "color" to "#AB47BC", "alpha" to 0.5f))
+        BatteryDemoWidgetContent(
+            WidgetConfig(
+                params = mapOf(
+                    "batteryLevel" to 88f,
+                    "color" to "#AB47BC",
+                    "alpha" to 0.5f
+                )
+            )
         )
     }
 }

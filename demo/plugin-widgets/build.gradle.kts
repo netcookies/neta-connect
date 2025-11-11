@@ -34,10 +34,25 @@ abstract class CreateWidgetJarTask : DefaultTask() {
     @get:Classpath
     abstract val compileClasspath: ConfigurableFileCollection
 
+    @get:Input
+    abstract val widgetPackagePath: Property<String>
+
     /**
-     * 自动查找实现 WidgetPlugin 接口的类
+     * 插件元数据
      */
-    private fun findPluginClass(): String {
+    data class PluginInfo(
+        val fullClassName: String,
+        val id: String?,
+        val version: String?,
+        val author: String?,
+        val description: String?,
+        val minAppVersion: String?
+    )
+
+    /**
+     * 自动查找实现 WidgetPlugin 接口的类并提取元数据
+     */
+    private fun findPluginInfo(): PluginInfo {
         val sourceDirFile = sourceDir.get().asFile
         if (!sourceDirFile.exists()) {
             throw GradleException("Source directory not found: $sourceDirFile")
@@ -59,7 +74,31 @@ abstract class CreateWidgetJarTask : DefaultTask() {
                     val packageName = packageMatch?.groupValues?.get(1)
 
                     if (packageName != null) {
-                        return "$packageName.$className"
+                        val fullClassName = "$packageName.$className"
+
+                        // 提取 WidgetPluginMetadata 中的字段
+                        val id = Regex("""id\s*=\s*"([^"]+)"""").find(content)?.groupValues?.get(1)
+                        val version =
+                            Regex("""version\s*=\s*"([^"]+)"""").find(content)?.groupValues?.get(1)
+                        val author =
+                            Regex("""author\s*=\s*"([^"]+)"""").find(content)?.groupValues?.get(1)
+                        val description =
+                            Regex("""description\s*=\s*"([^"]+)"""").find(content)?.groupValues?.get(
+                                1
+                            )
+                        val minAppVersion =
+                            Regex("""minAppVersion\s*=\s*"([^"]+)"""").find(content)?.groupValues?.get(
+                                1
+                            )
+
+                        return PluginInfo(
+                            fullClassName = fullClassName,
+                            id = id,
+                            version = version,
+                            author = author,
+                            description = description,
+                            minAppVersion = minAppVersion
+                        )
                     }
                 }
             }
@@ -172,29 +211,28 @@ abstract class CreateWidgetJarTask : DefaultTask() {
             if (tempDexDirFile.exists()) tempDexDirFile.deleteRecursively()
             tempDexDirFile.mkdirs()
 
-            // 收集 class 文件（只包含 widget 自己的代码，排除第三方库）
+            // 收集 class 文件（只包含当前 widget 的代码）
             val classFiles = mutableListOf<String>()
-            val allowedPackages = listOf("com/neta/widgets")  // 只打包这些包下的类
+            val targetPackagePath = widgetPackagePath.get()
+            println("📦 Filtering classes for package: $targetPackagePath")
 
             classDirs.forEach { dir ->
                 if (dir.exists()) {
                     dir.walkTopDown()
                         .filter { it.isFile && it.extension == "class" }
                         .forEach { file ->
-                            // 检查文件路径是否在允许的包下
+                            // 检查文件路径是否在目标 widget 的包下
                             val relativePath = file.relativeTo(dir).path
-                            val shouldInclude = allowedPackages.any { relativePath.startsWith(it) }
+                            val shouldInclude = relativePath.startsWith(targetPackagePath)
 
                             if (shouldInclude) {
                                 classFiles.add(file.absolutePath)
-                                println("✅ Including class: ${file.name} (${relativePath})")
-                            } else {
-                                println("⏭️  Skipping class: ${file.name} (${relativePath})")
+                                println("✅ Including class: ${file.name}")
                             }
                         }
                 }
             }
-            if (classFiles.isEmpty()) throw GradleException("No .class files found in $classDirs matching allowed packages: $allowedPackages")
+            if (classFiles.isEmpty()) throw GradleException("No .class files found in $classDirs for package: $targetPackagePath")
 
             // 扫描并提取 Material Icons
             val usedIcons = findUsedIcons()
@@ -233,14 +271,32 @@ abstract class CreateWidgetJarTask : DefaultTask() {
             if (!dexFile.exists()) throw GradleException("D8 failed to generate classes.dex")
             println("DEX generated at: ${dexFile.absolutePath}")
 
-            // 自动查找实现 WidgetPlugin 接口的类
-            val pluginClassName = findPluginClass()
-            println("🔍 Detected plugin class: $pluginClassName")
+            // 自动查找实现 WidgetPlugin 接口的类并提取元数据
+            val pluginInfo = findPluginInfo()
+            println("🔍 Detected plugin: ${pluginInfo.fullClassName}")
+            println("   ID: ${pluginInfo.id}")
+            println("   Version: ${pluginInfo.version}")
+            println("   MinAppVersion: ${pluginInfo.minAppVersion}")
 
             // 创建 MANIFEST.MF
             val manifest = Manifest()
             manifest.mainAttributes[Attributes.Name.MANIFEST_VERSION] = "1.0"
-            manifest.mainAttributes[Attributes.Name("Plugin-Class")] = pluginClassName
+            manifest.mainAttributes[Attributes.Name("Plugin-Class")] = pluginInfo.fullClassName
+
+            // 写入插件元数据
+            pluginInfo.id?.let { manifest.mainAttributes[Attributes.Name("Plugin-ID")] = it }
+            pluginInfo.version?.let {
+                manifest.mainAttributes[Attributes.Name("Plugin-Version")] = it
+            }
+            pluginInfo.author?.let {
+                manifest.mainAttributes[Attributes.Name("Plugin-Author")] = it
+            }
+            pluginInfo.description?.let {
+                manifest.mainAttributes[Attributes.Name("Plugin-Description")] = it
+            }
+            pluginInfo.minAppVersion?.let {
+                manifest.mainAttributes[Attributes.Name("Min-App-Version")] = it
+            }
             
             // 打包到 JAR
             JarOutputStream(FileOutputStream(outputJarFile), manifest).use { jarOut ->
@@ -282,60 +338,116 @@ android {
     }
 }
 
+// 扫描所有 widget 组件
+data class WidgetInfo(
+    val name: String,
+    val id: String,
+    val packagePath: String,
+    val sourceDir: File
+)
+
+fun discoverWidgets(): List<WidgetInfo> {
+    val widgets = mutableListOf<WidgetInfo>()
+    val widgetsBaseDir = layout.projectDirectory.dir("src/main/java/com/neta/widgets").asFile
+
+    if (!widgetsBaseDir.exists()) {
+        println("⚠️  Widgets directory not found: $widgetsBaseDir")
+        return emptyList()
+    }
+
+    widgetsBaseDir.listFiles()?.filter { it.isDirectory }?.forEach { widgetDir ->
+        val widgetName = widgetDir.name
+
+        // 查找 WidgetPlugin 文件
+        widgetDir.walkTopDown()
+            .filter { it.isFile && it.extension == "kt" && it.name.endsWith("WidgetPlugin.kt") }
+            .forEach { pluginFile ->
+                val content = pluginFile.readText()
+
+                val classMatch = Regex("""class\s+(\w+)\s*:\s*WidgetPlugin""").find(content)
+                val idMatch = Regex("""id\s*=\s*"([^"]+)"""").find(content)
+
+                if (classMatch != null && idMatch != null) {
+                    val widgetId = idMatch.groupValues[1]
+                    val packagePath = "com/neta/widgets/$widgetName"
+
+                    widgets.add(WidgetInfo(widgetName, widgetId, packagePath, widgetDir))
+                    println("🎯 Discovered widget: $widgetName (id: $widgetId)")
+                }
+            }
+    }
+
+    return widgets
+}
+
+val discoveredWidgets = discoverWidgets()
+
 android.buildTypes.forEach { buildType ->
     val variantName = buildType.name
     val variantCapped = variantName.replaceFirstChar { it.uppercaseChar() }
 
-    val jarTask = tasks.register<CreateWidgetJarTask>("create${variantCapped}WidgetJar") {
-        classDirs.from(
-            layout.buildDirectory.dir("intermediates/javac/${variantName}/compile${variantCapped}JavaWithJavac/classes"),
-            layout.buildDirectory.dir("tmp/kotlin-classes/${variantName}")
-        )
+    // 为每个 widget 创建独立的 JAR 任务
+    val widgetJarTasks = discoveredWidgets.map { widget ->
+        tasks.register<CreateWidgetJarTask>("create${variantCapped}${widget.name.replaceFirstChar { it.uppercaseChar() }}WidgetJar") {
+            classDirs.from(
+                layout.buildDirectory.dir("intermediates/javac/${variantName}/compile${variantCapped}JavaWithJavac/classes"),
+                layout.buildDirectory.dir("tmp/kotlin-classes/${variantName}")
+            )
 
-        val sdkDir = android.sdkDirectory.path
-        androidJar.set(File(File(sdkDir, "platforms/android-${android.compileSdk}"), "android.jar"))
+            val sdkDir = android.sdkDirectory.path
+            androidJar.set(
+                File(
+                    File(sdkDir, "platforms/android-${android.compileSdk}"),
+                    "android.jar"
+                )
+            )
 
-        // 只包含外部依赖的 JAR（排除项目依赖避免 variant 歧义）
-        // 同时请求 jar 和 android-classes-jar 类型以覆盖所有情况
-        compileClasspath.from(
-            configurations.getByName("${variantName}CompileClasspath").incoming
-                .artifactView {
-                    attributes {
-                        attribute(
-                            Attribute.of("artifactType", String::class.java),
-                            "android-classes-jar"
-                        )
-                    }
-                    componentFilter { it is ModuleComponentIdentifier }
-                }.artifacts.artifactFiles,
-            configurations.getByName("${variantName}CompileClasspath").incoming
-                .artifactView {
-                    attributes {
-                        attribute(Attribute.of("artifactType", String::class.java), "jar")
-                    }
-                    componentFilter { it is ModuleComponentIdentifier }
-                }.artifacts.artifactFiles
-        )
+            compileClasspath.from(
+                configurations.getByName("${variantName}CompileClasspath").incoming
+                    .artifactView {
+                        attributes {
+                            attribute(
+                                Attribute.of("artifactType", String::class.java),
+                                "android-classes-jar"
+                            )
+                        }
+                        componentFilter { it is ModuleComponentIdentifier }
+                    }.artifacts.artifactFiles,
+                configurations.getByName("${variantName}CompileClasspath").incoming
+                    .artifactView {
+                        attributes {
+                            attribute(Attribute.of("artifactType", String::class.java), "jar")
+                        }
+                        componentFilter { it is ModuleComponentIdentifier }
+                    }.artifacts.artifactFiles
+            )
 
-        val generatedDir = layout.buildDirectory.dir("outputs/widget/${variantName}")
-        outputJar.set(layout.file(generatedDir.map { it.asFile.resolve("widget-battery-demo.jar") }))
-        tempDexDir.set(layout.buildDirectory.dir("tmp/widget-dex/${variantName}"))
-        sourceDir.set(layout.projectDirectory.dir("src/main/java"))
-        minApi.set("30")
+            val generatedDir = layout.buildDirectory.dir("outputs/widget/${variantName}")
+            outputJar.set(layout.file(generatedDir.map { it.asFile.resolve("${widget.id}.jar") }))
+            tempDexDir.set(layout.buildDirectory.dir("tmp/widget-dex/${variantName}/${widget.name}"))
+            sourceDir.set(widget.sourceDir)
+            widgetPackagePath.set(widget.packagePath)
+            minApi.set("30")
+
+            dependsOn(
+                tasks.named("compile${variantCapped}JavaWithJavac"),
+                tasks.named("compile${variantCapped}Kotlin")
+            )
+
+            println("✅ Registered task: create${variantCapped}${widget.name.replaceFirstChar { it.uppercaseChar() }}WidgetJar -> ${widget.id}.jar")
+        }
     }
 
-    jarTask.configure {
-        dependsOn(
-            tasks.named("compile${variantCapped}JavaWithJavac"),
-            tasks.named("compile${variantCapped}Kotlin")
-        )
+    // 创建聚合任务，一次性构建所有 widget
+    val aggregateTask = tasks.register("create${variantCapped}WidgetJar") {
+        dependsOn(widgetJarTasks)
+        group = "widget"
+        description = "Build all widget JARs for $variantName variant"
     }
 
     tasks.named("assemble").configure {
-        dependsOn(jarTask)
+        dependsOn(aggregateTask)
     }
-
-    println("✅ Registered task: create${variantCapped}WidgetJar")
 }
 
 //noinspection UseTomlInstead

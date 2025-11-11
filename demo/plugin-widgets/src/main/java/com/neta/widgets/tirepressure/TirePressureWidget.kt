@@ -24,6 +24,7 @@ import androidx.compose.ui.geometry.RoundRect
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
@@ -32,33 +33,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.neta.isulewtools.api.widget.ParamDef
 import com.neta.isulewtools.api.widget.WidgetConfig
 import com.neta.isulewtools.api.widget.WidgetParamDesc
 import com.neta.isulewtools.api.widget.WidgetParamType
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.getAlpha
-import com.neta.isulewtools.api.widget.getColor
+import com.neta.isulewtools.api.widget.getDataSourceFloatArray
+import com.neta.isulewtools.api.widget.getDataSourceIntArray
+import com.neta.isulewtools.api.widget.getParam
 import com.neta.isulewtools.api.widget.getScale
 import com.neta.isulewtools.api.widget.toHexString
-
-/**
- * TirePressureWidget 默认值常量
- */
-object TirePressureWidgetDefaults {
-    // 颜色常量
-    val PRESSURE_COLOR = Color(0xFF00D4FF)  // 青色发光效果
-    val TEMP_COLOR = Color(0xFF8AB4F8)      // 淡蓝色温度
-    val BACKGROUND_COLOR = Color(0xFF0A0E27) // 深色背景
-    val CAR_COLOR = Color(0xFF1E3A5F)       // 车辆轮廓颜色
-    val TIRE_COLOR = Color(0xFF2C4A6E)      // 轮胎颜色
-
-    // 默认值
-    const val SHOW_PRESSURE_UNIT = true
-    const val SHOW_TEMP_UNIT = true
-    const val PRESSURE_UNIT = "bar"
-    val WIDTH = 280.dp
-    val HEIGHT = 180.dp
-}
 
 /**
  * 胎压温度监测小组件
@@ -67,95 +52,124 @@ object TirePressureWidgetDefaults {
 object TirePressureWidgetSpec : WidgetSpec(
     type = "tire_pressure_widget",
     displayName = "胎压监测",
-    paramSchema = listOf(
-        WidgetParamDesc(
-            key = "pressureColor",
+    paramSchema = WidgetParamDesc.buildParams {
+        +WidgetParamDesc(
+            key = P.PRESSURE_COLOR.key,
             label = "胎压颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = TirePressureWidgetDefaults.PRESSURE_COLOR.toHexString()
-        ),
-        WidgetParamDesc(
-            key = "tempColor",
+            defaultValue = P.PRESSURE_COLOR.default.toHexString()
+        )
+        +WidgetParamDesc(
+            key = P.TEMP_COLOR.key,
             label = "温度颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = TirePressureWidgetDefaults.TEMP_COLOR.toHexString()
-        ),
-        WidgetParamDesc(
-            key = "showPressureUnit",
+            defaultValue = P.TEMP_COLOR.default.toHexString()
+        )
+        +WidgetParamDesc(
+            key = P.BACKGROUND_COLOR.key,
+            label = "背景颜色",
+            type = WidgetParamType.COLOR,
+            defaultValue = P.BACKGROUND_COLOR.default.toHexString()
+        )
+        +WidgetParamDesc(
+            key = P.SHOW_PRESSURE_UNIT.key,
             label = "显示胎压单位",
             type = WidgetParamType.BOOL,
-            defaultValue = TirePressureWidgetDefaults.SHOW_PRESSURE_UNIT
-        ),
-        WidgetParamDesc(
-            key = "showTempUnit",
+            defaultValue = P.SHOW_PRESSURE_UNIT.default
+        )
+        +WidgetParamDesc(
+            key = P.SHOW_TEMP_UNIT.key,
             label = "显示温度单位",
             type = WidgetParamType.BOOL,
-            defaultValue = TirePressureWidgetDefaults.SHOW_TEMP_UNIT
-        ),
-        WidgetParamDesc(
-            key = "pressureUnit",
+            defaultValue = P.SHOW_TEMP_UNIT.default
+        )
+        +WidgetParamDesc(
+            key = P.PRESSURE_UNIT.key,
             label = "胎压单位",
             type = WidgetParamType.ENUM,
-            defaultValue = TirePressureWidgetDefaults.PRESSURE_UNIT,
+            defaultValue = P.PRESSURE_UNIT.default,
             options = listOf("bar", "kPa", "psi")
-        ),
-        WidgetParamDesc(
-            key = "pressureDataSource",
+        )
+        +WidgetParamDesc(
+            key = P.PRESSURE_DATA_SOURCE,
             label = "胎压数据源",
             type = WidgetParamType.DATA_SOURCE,
             defaultValue = null,
             options = emptyList(),
             required = true
-        ),
-        WidgetParamDesc(
-            key = "temperatureDataSource",
+        )
+        +WidgetParamDesc(
+            key = P.TEMPERATURE_DATA_SOURCE,
             label = "温度数据源",
             type = WidgetParamType.DATA_SOURCE,
             defaultValue = null,
             options = emptyList(),
             required = true
-        ),
-    ),
+        )
+    },
     contentComposable = {
         TirePressureWidgetContent(it)
     },
     color = Color(0xFF00BCD4),
     icon = Icons.Default.TireRepair
-)
+) {
+    /**
+     * 参数定义对象（使用 ParamDef）
+     */
+    object P {
+        val PRESSURE_COLOR = ParamDef("pressureColor", Color(0xFF00D4FF))
+        val TEMP_COLOR = ParamDef("tempColor", Color(0xFF8AB4F8))
+        val BACKGROUND_COLOR = ParamDef("backgroundColor", Color(0xFF0A0E27))
+        val SHOW_PRESSURE_UNIT = ParamDef("showPressureUnit", true)
+        val SHOW_TEMP_UNIT = ParamDef("showTempUnit", true)
+        val PRESSURE_UNIT = ParamDef("pressureUnit", "bar")
+
+        // 数据源参数只定义 key,不使用 ParamDef
+        const val PRESSURE_DATA_SOURCE = "pressureDataSource"
+        const val TEMPERATURE_DATA_SOURCE = "temperatureDataSource"
+
+        // 其他默认值（不是参数）
+        val CAR_COLOR = Color(0xFF1E3A5F)
+        val TIRE_COLOR = Color(0xFF2C4A6E)
+        val WIDTH = 280.dp
+        val HEIGHT = 180.dp
+    }
+}
 
 @Composable
 fun TirePressureWidgetContent(config: WidgetConfig) {
-    // 解析颜色参数
-    val pressureColor = config.getColor("pressureColor", TirePressureWidgetDefaults.PRESSURE_COLOR)
-    val tempColor = config.getColor("tempColor", TirePressureWidgetDefaults.TEMP_COLOR)
+    // 使用 getParam 读取参数
+    val pressureColor = config.getParam(TirePressureWidgetSpec.P.PRESSURE_COLOR)
+    val tempColor = config.getParam(TirePressureWidgetSpec.P.TEMP_COLOR)
+    val backgroundColor = config.getParam(TirePressureWidgetSpec.P.BACKGROUND_COLOR)
+    val showPressureUnit = config.getParam(TirePressureWidgetSpec.P.SHOW_PRESSURE_UNIT)
+    val showTempUnit = config.getParam(TirePressureWidgetSpec.P.SHOW_TEMP_UNIT)
+    val pressureUnit = config.getParam(TirePressureWidgetSpec.P.PRESSURE_UNIT)
 
     // 使用辅助函数获取自动注入的参数
     val scale = config.getScale()
     val alpha = config.getAlpha()
 
-    val showPressureUnit = (config.params["showPressureUnit"] as? Boolean)
-        ?: TirePressureWidgetDefaults.SHOW_PRESSURE_UNIT
-    val showTempUnit = (config.params["showTempUnit"] as? Boolean)
-        ?: TirePressureWidgetDefaults.SHOW_TEMP_UNIT
-    val pressureUnit = config.params["pressureUnit"]?.toString()
-        ?: TirePressureWidgetDefaults.PRESSURE_UNIT
-
-    // 解析胎压和温度数据
-    // 支持两种方式：
-    // 1. 直接传入数组值（用于测试/预览）: "pressureValues": "2.6,2.6,2.6,2.6"
-    // 2. 通过数据源获取（实际运行时由主应用注入）
-    val pressureValuesStr = config.params["pressureValues"]?.toString()
-    val temperatureValuesStr = config.params["temperatureValues"]?.toString()
-
-    val pressureValues = pressureValuesStr?.split(",")
-        ?.mapNotNull { it.trim().toFloatOrNull() }
+    // 从 config 获取注入的数据源值
+    // 注意：数据由主 app 在运行时通过数据源订阅后注入到 params 中
+    // 插件本身不直接访问数据源，因为数据获取函数在主 app 中
+    // 胎压数据：FLOAT_VEC 类型，直接获取 FloatArray
+    // 注意：VHAL 中的胎压数据以 0.01 bar 为单位存储（220f = 2.20 bar），需要除以 100
+    val pressureArray =
+        config.getDataSourceFloatArray(TirePressureWidgetSpec.P.PRESSURE_DATA_SOURCE)
         ?.takeIf { it.size == 4 }
+        ?.map { it / 100f }  // 除以 100 得到实际 bar 值
         ?: listOf(2.6f, 2.6f, 2.6f, 2.6f) // 默认值
 
-    val temperatureValues = temperatureValuesStr?.split(",")
-        ?.mapNotNull { it.trim().toFloatOrNull() }
+    // 温度数据：INT32_VEC 类型，获取 IntArray（温度为整数）
+    val temperatureArray =
+        config.getDataSourceIntArray(TirePressureWidgetSpec.P.TEMPERATURE_DATA_SOURCE)
         ?.takeIf { it.size == 4 }
-        ?: listOf(22f, 22f, 22f, 22f) // 默认值
+        ?: intArrayOf(22, 22, 22, 22) // 默认值
+
+    // 转换为 List 以便后续使用
+    val pressureValues = pressureArray // 已经是 List<Float>
+    val temperatureValues = temperatureArray.toList() // 保持为 List<Int>
 
     val tireData = TireData(
         frontLeft = TirePressureTemp(pressureValues[0], temperatureValues[0]),
@@ -172,11 +186,12 @@ fun TirePressureWidgetContent(config: WidgetConfig) {
         showTempUnit = showTempUnit,
         pressureUnit = pressureUnit,
         pressureColor = pressureColor,
-        tempColor = tempColor
+        tempColor = tempColor,
+        backgroundColor = backgroundColor
     )
 }
 
-data class TirePressureTemp(val pressure: Float = 2.6f, val temperature: Float = 22f)
+data class TirePressureTemp(val pressure: Float = 2.6f, val temperature: Int = 22)
 data class TireData(
     val frontLeft: TirePressureTemp = TirePressureTemp(),
     val frontRight: TirePressureTemp = TirePressureTemp(),
@@ -190,11 +205,12 @@ fun CarTirePressureIndicator(
     modifier: Modifier = Modifier,
     scale: Float = 1f,
     alpha: Float = 1f,
-    showPressureUnit: Boolean = TirePressureWidgetDefaults.SHOW_PRESSURE_UNIT,
-    showTempUnit: Boolean = TirePressureWidgetDefaults.SHOW_TEMP_UNIT,
-    pressureUnit: String = TirePressureWidgetDefaults.PRESSURE_UNIT,
-    pressureColor: Color = TirePressureWidgetDefaults.PRESSURE_COLOR,
-    tempColor: Color = TirePressureWidgetDefaults.TEMP_COLOR,
+    showPressureUnit: Boolean = TirePressureWidgetSpec.P.SHOW_PRESSURE_UNIT.default,
+    showTempUnit: Boolean = TirePressureWidgetSpec.P.SHOW_TEMP_UNIT.default,
+    pressureUnit: String = TirePressureWidgetSpec.P.PRESSURE_UNIT.default,
+    pressureColor: Color = TirePressureWidgetSpec.P.PRESSURE_COLOR.default,
+    tempColor: Color = TirePressureWidgetSpec.P.TEMP_COLOR.default,
+    backgroundColor: Color = TirePressureWidgetSpec.P.BACKGROUND_COLOR.default,
     width: Float = 280f,
     height: Float = 180f
 ) {
@@ -221,7 +237,7 @@ fun CarTirePressureIndicator(
         modifier = modifier
             .width((width * scale).dp)
             .height((height * scale).dp)
-            .background(TirePressureWidgetDefaults.BACKGROUND_COLOR)
+            .background(backgroundColor)
             .graphicsLayer {
                 this.alpha = alpha
             }
@@ -297,7 +313,7 @@ fun CarTirePressureIndicator(
 private fun BoxScope.TireInfoDisplay(
     position: Alignment,
     pressure: Float,
-    temperature: Float,
+    temperature: Int,
     showPressureUnit: Boolean,
     showTempUnit: Boolean,
     pressureUnitText: String,
@@ -326,7 +342,7 @@ private fun BoxScope.TireInfoDisplay(
                     color = pressureColor,
                     fontSize = (24 * scale).sp,
                     fontWeight = FontWeight.Bold,
-                    shadow = androidx.compose.ui.graphics.Shadow(
+                    shadow = Shadow(
                         color = pressureColor.copy(alpha = 0.6f),
                         offset = Offset(0f, 0f),
                         blurRadius = 8f
@@ -353,7 +369,7 @@ private fun BoxScope.TireInfoDisplay(
             verticalAlignment = Alignment.Bottom
         ) {
             Text(
-                text = "%.0f".format(temperature),
+                text = temperature.toString(),
                 style = TextStyle(
                     color = tempColor,
                     fontSize = (14 * scale).sp,
@@ -379,8 +395,8 @@ private fun BoxScope.TireInfoDisplay(
  * 绘制车辆俯视图
  */
 private fun DrawScope.drawCarTopView(scale: Float) {
-    val carColor = TirePressureWidgetDefaults.CAR_COLOR
-    val tireColor = TirePressureWidgetDefaults.TIRE_COLOR
+    val carColor = TirePressureWidgetSpec.P.CAR_COLOR
+    val tireColor = TirePressureWidgetSpec.P.TIRE_COLOR
 
     val centerX = size.width / 2
     val centerY = size.height / 2
@@ -466,10 +482,10 @@ fun TirePressureWidgetPreview() {
         )
         CarTirePressureIndicator(
             tireData = TireData(
-                frontLeft = TirePressureTemp(2.6f, 22f),
-                frontRight = TirePressureTemp(2.6f, 23f),
-                rearLeft = TirePressureTemp(2.6f, 22f),
-                rearRight = TirePressureTemp(2.6f, 22f)
+                frontLeft = TirePressureTemp(2.6f, 22),
+                frontRight = TirePressureTemp(2.6f, 23),
+                rearLeft = TirePressureTemp(2.6f, 22),
+                rearRight = TirePressureTemp(2.6f, 22)
             )
         )
 
@@ -481,10 +497,10 @@ fun TirePressureWidgetPreview() {
         )
         CarTirePressureIndicator(
             tireData = TireData(
-                frontLeft = TirePressureTemp(2.4f, 22f),
-                frontRight = TirePressureTemp(2.5f, 25f),
-                rearLeft = TirePressureTemp(2.7f, 24f),
-                rearRight = TirePressureTemp(2.3f, 23f)
+                frontLeft = TirePressureTemp(2.4f, 22),
+                frontRight = TirePressureTemp(2.5f, 25),
+                rearLeft = TirePressureTemp(2.7f, 24),
+                rearRight = TirePressureTemp(2.3f, 23)
             )
         )
 

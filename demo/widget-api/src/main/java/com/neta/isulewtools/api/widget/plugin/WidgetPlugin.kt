@@ -26,8 +26,22 @@ data class WidgetPluginMetadata(
     val version: String,         // 版本号,如 "1.0.0"
     val author: String,          // 作者
     val description: String,     // 描述
-    val minAppVersion: String    // 最低支持的 App 版本
-)
+    val minAppVersion: String,   // 最低支持的 App 版本
+    val category: String = "车机" // 分类,如 "车机"、"示例" 等，默认为 "车机"
+) {
+    /**
+     * 兼容旧版本（5 参数构造函数）
+     * 用于加载旧版本 JAR 文件时的向后兼容
+     */
+    @Deprecated("Use primary constructor with category parameter", level = DeprecationLevel.HIDDEN)
+    constructor(
+        id: String,
+        version: String,
+        author: String,
+        description: String,
+        minAppVersion: String
+    ) : this(id, version, author, description, minAppVersion, "车机")
+}
 
 /**
  * 插件加载来源
