@@ -4,9 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## v1.8.9 (2025-11-11)
+## v1.8.9 (2025-11-12)
 
 ### Feature
+- 小组件颜色可配置白天黑夜不同颜色 [`a635717`](https://github.com/netcookies/isulewTools/commit/a635717)
+- 添加小组件禁用功能（总是显示｜按需显示｜禁止显示） [`ad64368`](https://github.com/netcookies/isulewTools/commit/ad64368)
 - 添加本地加载功能，供开发者测试用 [`6310e1f`](https://github.com/netcookies/isulewTools/commit/6310e1f)
 - 添加小组件最低版本要求检查 [`0bd4587`](https://github.com/netcookies/isulewTools/commit/0bd4587)
 - 小组件api支持自定义字体加载 [`c15fda7`](https://github.com/netcookies/isulewTools/commit/c15fda7)
@@ -14,9 +16,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 智驾悬浮窗和小组件统一采用json备份在Download/neta_connect目录下，卸载程序不会清空 [`4dea75e`](https://github.com/netcookies/isulewTools/commit/4dea75e)
 
 ### Bug Fixes
+- 修改保存小组件会正确更新属性引用 [`89efe79`](https://github.com/netcookies/isulewTools/commit/89efe79)
+- 修复属性订阅类型转换问题（胎压胎温无法显示） [`60552ea`](https://github.com/netcookies/isulewTools/commit/60552ea)
 - ci脚本环境变量错误 [`c1d1c13`](https://github.com/netcookies/isulewTools/commit/c1d1c13)
 
 ### Performance Improvements
+- 小组件的基础设置也参与滚动 [`a859f34`](https://github.com/netcookies/isulewTools/commit/a859f34)
 - 优化import [`59ca9ad`](https://github.com/netcookies/isulewTools/commit/59ca9ad)
 - 优化import [`8f5f693`](https://github.com/netcookies/isulewTools/commit/8f5f693)
 - 下电太久后，尝试恢复特权服务 [`04daabd`](https://github.com/netcookies/isulewTools/commit/04daabd)
