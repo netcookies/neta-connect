@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.9.0 (2025-11-12)
+
+### Bug Fixes
+- 修复INT、FLOAT、STRING 类型小组件配置渲染丢失 [`06fcf18`](https://github.com/netcookies/isulewTools/commit/06fcf18)
+- 修复小组件在后台无法随主题变化颜色 [`bfb81e4`](https://github.com/netcookies/isulewTools/commit/bfb81e4)
+
+### Performance Improvements
+- ci脚本环境变量优化 [`c303bb3`](https://github.com/netcookies/isulewTools/commit/c303bb3)
+- ci脚本环境变量优化 [`293784c`](https://github.com/netcookies/isulewTools/commit/293784c)
+
+### Test
+- 测试雷石麦克风采用socket + iptables方式 [`964d5a9`](https://github.com/netcookies/isulewTools/commit/964d5a9)
+- 测试雷石麦克风采用socket + iptables方式 [`d44a37d`](https://github.com/netcookies/isulewTools/commit/d44a37d)
+
 ## v1.8.9 (2025-11-12)
 
 ### Feature
