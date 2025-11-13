@@ -4,6 +4,35 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.9.1 (2025-11-13)
+
+### Feature
+- 添加背景文字 [`846202f`](https://github.com/netcookies/isulewTools/commit/846202f)
+- 添加 AppSwitch UI 控件 [`02754eb`](https://github.com/netcookies/isulewTools/commit/02754eb)
+- 添加小组件拖动排序逻辑 [`ab5aca2`](https://github.com/netcookies/isulewTools/commit/ab5aca2)
+
+### Bug Fixes
+- 修复背景大小没有应用缩放的问题 [`38e15d5`](https://github.com/netcookies/isulewTools/commit/38e15d5)
+- 修复注册小组件版本号再数据库时硬编码为 1.0.0 的问题 [`c7969eb`](https://github.com/netcookies/isulewTools/commit/c7969eb)
+- 用 ss 替换 lsof 查询监听进程 [`a815796`](https://github.com/netcookies/isulewTools/commit/a815796)
+
+### Performance Improvements
+- 应 pan 总要求，车辆属性显示中文名称、英文名称、10进制 ID [`b8d638f`](https://github.com/netcookies/isulewTools/commit/b8d638f)
+- 小组件开关支持透明度 [`57d5b45`](https://github.com/netcookies/isulewTools/commit/57d5b45)
+- 小组件开关支持缩放 [`069a688`](https://github.com/netcookies/isulewTools/commit/069a688)
+- 所有的开关适配新的开关组件 [`4ee85e2`](https://github.com/netcookies/isulewTools/commit/4ee85e2)
+- 所有的开关适配新的开关组件 [`2f9b2c9`](https://github.com/netcookies/isulewTools/commit/2f9b2c9)
+- 优化日志页筛选功能 [`c8d3f2f`](https://github.com/netcookies/isulewTools/commit/c8d3f2f)
+- 优化车辆状态 tab 布局 [`ae337ac`](https://github.com/netcookies/isulewTools/commit/ae337ac)
+- 事件流筛选弹窗颜色优化 [`bd38010`](https://github.com/netcookies/isulewTools/commit/bd38010)
+- 事件流筛选弹窗颜色优化 [`fe3652a`](https://github.com/netcookies/isulewTools/commit/fe3652a)
+- 指针增加 0.6透明度，日期和周字体增大 40% [`855a748`](https://github.com/netcookies/isulewTools/commit/855a748)
+- 弧形仪表盘小组件的默认最大值从 100 -> 220，需要调整的可以在最大值处设置 [`fdbd5c7`](https://github.com/netcookies/isulewTools/commit/fdbd5c7)
+
+### Refactor
+- 重构内置的开关小组件 [`7b86f71`](https://github.com/netcookies/isulewTools/commit/7b86f71)
+- 重构事件流显示，提供筛选等控制功能 [`31e49a4`](https://github.com/netcookies/isulewTools/commit/31e49a4)
+
 ## v1.9.0 (2025-11-12)
 
 ### Bug Fixes
