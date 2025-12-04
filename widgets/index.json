@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-04T17:54:07Z",
+  "generatedAt": "2025-12-04T17:55:26Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -253,6 +253,29 @@
           "minAppVersion": "1.8.9",
           "fileSize": 13132,
           "sha256": "5cd41d685b2dfaab00355ffc6b97ab0e07c765c7f0e0ef733bd6e58b563387d0"
+        }
+      ]
+    },
+    {
+      "id": "widget-info-chart",
+      "displayName": "信息卡片",
+      "description": "信息卡片，显示实时数值、趋势指示器和统计信息",
+      "author": "官方",
+      "category": "图表",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-12-04",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-chart/1.0.0/widget-info-chart.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 36753,
+          "sha256": "b2cd31e60c430604725d1bbb010a0fd60994d829ba460b30621e71b658bddad7"
         }
       ]
     },
