@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-04T17:53:40Z",
+  "generatedAt": "2025-12-04T17:54:07Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -116,7 +116,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.1.5",
+      "latestVersion": "1.1.6",
       "status": "STABLE",
       "versions": [
         {
@@ -244,6 +244,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 13082,
           "sha256": "a2bf2428356c23394def6a1d654917e5eaa92e96efd09aff97a4154f9c9e5f82"
+        },
+        {
+          "version": "1.1.6",
+          "releaseDate": "2025-12-04",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.1.6/widget-battery-demo.jar",
+          "changelog": "版本 1.1.6",
+          "minAppVersion": "1.8.9",
+          "fileSize": 13132,
+          "sha256": "5cd41d685b2dfaab00355ffc6b97ab0e07c765c7f0e0ef733bd6e58b563387d0"
         }
       ]
     },
@@ -320,7 +329,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.2",
+      "latestVersion": "1.0.4",
       "status": "STABLE",
       "versions": [
         {
@@ -340,6 +349,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 21846,
           "sha256": "b9eed6f02cc9e50cb8caaa85096594a32d925acad89c5e458b4de6e0a098953c"
+        },
+        {
+          "version": "1.0.4",
+          "releaseDate": "2025-12-04",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-temperature/1.0.4/widget-temperature.jar",
+          "changelog": "版本 1.0.4",
+          "minAppVersion": "1.8.9",
+          "fileSize": 22070,
+          "sha256": "4f2a40e668f989fa8766b961da2ffd6d0b084e81c21e8e65c4f0bcf8498ebd4a"
         }
       ]
     },
