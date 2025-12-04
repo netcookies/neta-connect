@@ -10,13 +10,14 @@ import androidx.compose.ui.graphics.vector.ImageVector
  * 注意：所有小组件自动强制支持 scale（缩放）和 alpha（透明度）参数
  * 如果 paramSchema 中未包含这两个参数，构造函数会自动注入
  */
-open class WidgetSpec(
+open class WidgetSpec @JvmOverloads constructor(
     val type: String,                    // 类型唯一标识
     val displayName: String,             // UI名称
     paramSchema: List<WidgetParamDesc>,  // 参数schema，定义配置表单字段
     val contentComposable: @Composable (WidgetConfig) -> Unit, // Widget内容渲染入口
     val color: Color = Color(0xFF6200EE),        // Widget类型颜色（用于卡片背景）
-    val icon: ImageVector? = null                 // Widget类型图标
+    val icon: ImageVector? = null,                 // Widget类型图标
+    val recommendedGrid: Pair<Int, Int>? = null  // 推荐网格大小: (gridWidth, gridHeight)，用于仪表盘默认网格
 ) {
     // 自动注入 scale 和 alpha 参数（如果不存在）
     val paramSchema: List<WidgetParamDesc> = ensureRequiredParams(paramSchema)
@@ -72,7 +73,7 @@ open class WidgetSpec(
 /**
  * Widget参数描述/schema
  */
-data class WidgetParamDesc @JvmOverloads constructor(
+data class WidgetParamDesc(
     val key: String,                     // 参数唯一key
     val label: String,                   // 显示标签
     val type: WidgetParamType,           // 类型
@@ -80,8 +81,23 @@ data class WidgetParamDesc @JvmOverloads constructor(
     val options: List<Any>? = null,       // 可选项（下拉枚举等）
     val required: Boolean = false, // 新增必填字段标识
     val description: String? = null,
-    val visibleWhen: Pair<String, Any>? = null  // 条件显示：当指定参数等于指定值时才显示
+    val visibleWhen: Pair<String, Any>? = null,  // 单条件显示：当指定参数等于指定值时才显示
+    val visibleWhenAll: List<Pair<String, Any>>? = null  // 多条件显示：当所有指定参数都等于对应值时才显示（AND逻辑）
 ) {
+    /**
+     * 向后兼容的构造函数（不带 visibleWhenAll 参数）
+     */
+    @JvmOverloads
+    constructor(
+        key: String,
+        label: String,
+        type: WidgetParamType,
+        defaultValue: Any? = null,
+        options: List<Any>? = null,
+        required: Boolean = false,
+        description: String? = null,
+        visibleWhen: Pair<String, Any>? = null
+    ) : this(key, label, type, defaultValue, options, required, description, visibleWhen, null)
     companion object {
         /**
          * 创建 DIVIDER 类型的参数描述
@@ -152,7 +168,7 @@ class ParamListBuilder {
 }
 
 enum class WidgetParamType {
-    COLOR, FLOAT, INT, STRING, ENUM, DATA_SOURCE, BOOL, SCALE, ALPHA, DIVIDER, ICON, VEHICLE_PROPERTY, VHAL_PROPERTY
+    COLOR, FLOAT, INT, STRING, ENUM, DATA_SOURCE, BOOL, SCALE, ALPHA, DIVIDER, ICON, VHAL_PROPERTY
 }
 
 /**
@@ -178,6 +194,11 @@ enum class ContainerType {
 val containerNameMap = mapOf(
     ContainerType.DASHBOARD to "仪表盘",
     ContainerType.FLOATING_WINDOW to "悬浮窗"
+)
+
+val containerDescriptionMap = mapOf(
+    ContainerType.DASHBOARD to "网格布局的仪表盘容器",
+    ContainerType.FLOATING_WINDOW to "独立悬浮的窗口容器"
 )
 
 /**

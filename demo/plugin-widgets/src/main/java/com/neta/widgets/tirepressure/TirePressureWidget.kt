@@ -52,43 +52,50 @@ import com.neta.isulewtools.api.widget.toHexString
 object TirePressureWidgetSpec : WidgetSpec(
     type = "tire_pressure_widget",
     displayName = "胎压监测",
+    recommendedGrid = Pair(3, 2),
     paramSchema = WidgetParamDesc.buildParams {
         +WidgetParamDesc(
             key = P.PRESSURE_COLOR.key,
             label = "胎压颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.PRESSURE_COLOR.default.toHexString()
+            defaultValue = P.PRESSURE_COLOR.default.toHexString(),
+            description = "胎压数值的显示颜色"
         )
         +WidgetParamDesc(
             key = P.TEMP_COLOR.key,
             label = "温度颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.TEMP_COLOR.default.toHexString()
+            defaultValue = P.TEMP_COLOR.default.toHexString(),
+            description = "温度数值的显示颜色"
         )
         +WidgetParamDesc(
             key = P.BACKGROUND_COLOR.key,
             label = "背景颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.BACKGROUND_COLOR.default.toHexString()
+            defaultValue = P.BACKGROUND_COLOR.default.toHexString(),
+            description = "组件的背景颜色"
         )
         +WidgetParamDesc(
             key = P.SHOW_PRESSURE_UNIT.key,
             label = "显示胎压单位",
             type = WidgetParamType.BOOL,
-            defaultValue = P.SHOW_PRESSURE_UNIT.default
+            defaultValue = P.SHOW_PRESSURE_UNIT.default,
+            description = "显示胎压值的单位(bar/kPa/psi)"
         )
         +WidgetParamDesc(
             key = P.SHOW_TEMP_UNIT.key,
             label = "显示温度单位",
             type = WidgetParamType.BOOL,
-            defaultValue = P.SHOW_TEMP_UNIT.default
+            defaultValue = P.SHOW_TEMP_UNIT.default,
+            description = "显示温度值的单位(℃)"
         )
         +WidgetParamDesc(
             key = P.PRESSURE_UNIT.key,
             label = "胎压单位",
             type = WidgetParamType.ENUM,
             defaultValue = P.PRESSURE_UNIT.default,
-            options = listOf("bar", "kPa", "psi")
+            options = listOf("bar", "kPa", "psi"),
+            description = "胎压显示的单位制"
         )
         +WidgetParamDesc(
             key = P.PRESSURE_DATA_SOURCE,
@@ -96,7 +103,8 @@ object TirePressureWidgetSpec : WidgetSpec(
             type = WidgetParamType.DATA_SOURCE,
             defaultValue = null,
             options = emptyList(),
-            required = true
+            required = true,
+            description = "四轮胎压数据源(数组格式:左前/右前/左后/右后)"
         )
         +WidgetParamDesc(
             key = P.TEMPERATURE_DATA_SOURCE,
@@ -104,7 +112,8 @@ object TirePressureWidgetSpec : WidgetSpec(
             type = WidgetParamType.DATA_SOURCE,
             defaultValue = null,
             options = emptyList(),
-            required = true
+            required = true,
+            description = "四轮温度数据源(数组格式:左前/右前/左后/右后)"
         )
     },
     contentComposable = {

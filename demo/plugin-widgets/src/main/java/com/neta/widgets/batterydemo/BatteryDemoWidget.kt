@@ -48,6 +48,7 @@ import com.neta.isulewtools.api.widget.toHexString
 object BatteryDemoWidgetSpec : WidgetSpec(
     type = "battery_demo_widget",  // 系统会自动添加 "dynamic_" 前缀变为 "dynamic_battery_demo_widget"
     displayName = "电池(示例)",
+    recommendedGrid = Pair(2, 1),
     paramSchema = listOf(
         // 只需定义小组件特有的参数
         // scale 和 alpha 会自动注入！

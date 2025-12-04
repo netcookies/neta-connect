@@ -606,3 +606,118 @@ fun rememberWidgetFontFamily(
         }
     }
 }
+
+// ===============================
+// 图表数据扩展函数
+// ===============================
+
+/**
+ * 从 WidgetConfig 中获取图表历史数据点列表
+ *
+ * 图表数据由 app 层的 ChartDataManager 管理，通过 DataSourceInjector 注入到 config 中。
+ * 数据注入键名规则：{dataSourceKey}ChartData
+ *
+ * 使用示例：
+ * ```
+ * @Composable
+ * fun LineChartContent(config: WidgetConfig) {
+ *     val chartData = config.getChartData("datasource")
+ *
+ *     Canvas(modifier = Modifier.fillMaxSize()) {
+ *         chartData.forEachIndexed { index, point ->
+ *             // 绘制数据点
+ *             val x = index * spacing
+ *             val y = height - (point.value * height / maxValue)
+ *             // ...
+ *         }
+ *     }
+ * }
+ * ```
+ *
+ * @param dataSourceKey 数据源参数键（与 WidgetParamType.DATA_SOURCE 参数对应）
+ * @return 数据点列表（时间戳 + 数值）
+ */
+fun WidgetConfig.getChartData(dataSourceKey: String): List<com.neta.isulewtools.api.widget.chart.ChartDataPoint> {
+    return (params["${dataSourceKey}ChartData"] as? List<*>)
+        ?.filterIsInstance<com.neta.isulewtools.api.widget.chart.ChartDataPoint>()
+        ?: emptyList()
+}
+
+/**
+ * 从 WidgetConfig 中获取图表数据配置
+ *
+ * 图表配置由 app 层根据小组件参数构造，包含缓冲大小、更新间隔、Y轴范围等信息。
+ * 数据注入键名规则：{dataSourceKey}ChartConfig
+ *
+ * 使用示例：
+ * ```
+ * @Composable
+ * fun BarChartContent(config: WidgetConfig) {
+ *     val chartConfig = config.getChartConfig("datasource")
+ *     val autoScale = chartConfig?.autoScale ?: true
+ *     val maxPoints = chartConfig?.maxDataPoints ?: 100
+ *
+ *     // 使用配置信息...
+ * }
+ * ```
+ *
+ * @param dataSourceKey 数据源参数键
+ * @return 图表配置对象，如果不存在则返回 null
+ */
+fun WidgetConfig.getChartConfig(dataSourceKey: String): com.neta.isulewtools.api.widget.chart.ChartDataConfig? {
+    return params["${dataSourceKey}ChartConfig"] as? com.neta.isulewtools.api.widget.chart.ChartDataConfig
+}
+
+/**
+ * 获取最新的图表数据点值（便捷方法）
+ *
+ * 等价于 `getChartData(key).lastOrNull()?.value`
+ *
+ * 使用示例：
+ * ```
+ * @Composable
+ * fun InfoCardContent(config: WidgetConfig) {
+ *     val latestValue = config.getLatestChartValue("datasource") ?: 0f
+ *     Text(text = "%.1f".format(latestValue))
+ * }
+ * ```
+ *
+ * @param dataSourceKey 数据源参数键
+ * @return 最新数据点的值，如果没有数据则返回 null
+ */
+fun WidgetConfig.getLatestChartValue(dataSourceKey: String): Float? {
+    return getChartData(dataSourceKey).lastOrNull()?.value
+}
+
+/**
+ * 获取图表数据的值域范围（最小值和最大值）
+ *
+ * 用于自动计算 Y 轴范围或归一化数据值。
+ *
+ * 使用示例：
+ * ```
+ * @Composable
+ * fun LineChartContent(config: WidgetConfig) {
+ *     val chartData = config.getChartData("datasource")
+ *     val (minY, maxY) = config.getChartValueRange("datasource") ?: (0f to 100f)
+ *
+ *     Canvas(modifier = Modifier.fillMaxSize()) {
+ *         chartData.forEach { point ->
+ *             val normalizedValue = (point.value - minY) / (maxY - minY)
+ *             val y = height * (1f - normalizedValue)
+ *             // 绘制...
+ *         }
+ *     }
+ * }
+ * ```
+ *
+ * @param dataSourceKey 数据源参数键
+ * @return 值域范围 (最小值, 最大值)，如果没有数据则返回 null
+ */
+fun WidgetConfig.getChartValueRange(dataSourceKey: String): Pair<Float, Float>? {
+    val data = getChartData(dataSourceKey)
+    if (data.isEmpty()) return null
+    val min = data.minOf { it.value }
+    val max = data.maxOf { it.value }
+    return min to max
+}

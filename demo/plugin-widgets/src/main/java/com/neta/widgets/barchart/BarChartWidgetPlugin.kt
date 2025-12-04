@@ -1,26 +1,27 @@
-package com.neta.widgets.battery
+package com.neta.widgets.barchart
 
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.plugin.WidgetPlugin
 import com.neta.isulewtools.api.widget.plugin.WidgetPluginMetadata
 
 /**
- * 电池小组件插件
- * 这是一个独立编译的插件模块，可以被动态加载
+ * 柱状图小组件插件
+ *
+ * 动态加载的插件，显示实时数据的柱状图。
  */
-class BatteryWidgetPlugin : WidgetPlugin {
+class BarChartWidgetPlugin : WidgetPlugin {
     override fun getSpec(): WidgetSpec {
-        return BatteryWidgetSpec
+        return BarChartWidgetSpec
     }
 
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
-            id = "widget-battery",
-            version = "1.0.4",
+            id = "widget-bar-chart",
+            version = "1.0.0",
             author = "官方",
-            description = "iOS 风格的电池显示小组件",
+            description = "柱状图，显示实时数据趋势，支持最多96个柱子",
             minAppVersion = "1.8.9",
-            category = "通用"
+            category = "图表"
         )
     }
 }

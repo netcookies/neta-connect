@@ -15,9 +15,24 @@ package com.neta.isulewtools.api.widget
  * }
  * ```
  */
-enum class WidgetFont(val resourceName: String) {
+enum class WidgetFont(val resourceName: String, val displayName: String) {
     /**
-     * Montserrat Bold 字体
+     * Montserrat Regular 字体 - 英文/数字 Normal 字重
      */
-    MONTSERRAT_BOLD("montserrat_bold")
+    MONTSERRAT_REGULAR("montserrat_regular", "Montserrat Regular"),
+
+    /**
+     * Montserrat Medium 字体 - 英文/数字 Medium 字重
+     */
+    MONTSERRAT_MEDIUM("montserrat_medium", "Montserrat Medium"),
+
+    /**
+     * Montserrat Bold 字体 - 英文/数字 Bold 字重
+     */
+    MONTSERRAT_BOLD("montserrat_bold", "Montserrat Bold"),
+
+    /**
+     * 纳米萌文仿宋 - 中文字体
+     */
+    NANO_MYONG_WEN_FANGSONG("nano_myong_wen_fangsong", "纳米萌文仿宋")
 }

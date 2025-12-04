@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocalGasStation
 import androidx.compose.material3.Text
@@ -52,84 +53,113 @@ import com.neta.isulewtools.api.widget.toHexString
 object ArcGaugeWidgetSpec : WidgetSpec(
     type = "arc_gauge_widget",
     displayName = "弧形仪表盘",
+    recommendedGrid = Pair(2, 2),
     paramSchema = WidgetParamDesc.buildParams {
         +WidgetParamDesc(
             key = P.FULL_COLOR.key,
             label = "高值颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.FULL_COLOR.default.toHexString()
+            defaultValue = P.FULL_COLOR.default.toHexString(),
+            description = "数值超过50%时的指针和弧线颜色"
         )
         +WidgetParamDesc(
             key = P.MEDIUM_COLOR.key,
             label = "中等值颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.MEDIUM_COLOR.default.toHexString()
+            defaultValue = P.MEDIUM_COLOR.default.toHexString(),
+            description = "数值在20-50%时的指针和弧线颜色"
         )
         +WidgetParamDesc(
             key = P.LOW_COLOR.key,
             label = "低值颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.LOW_COLOR.default.toHexString()
+            defaultValue = P.LOW_COLOR.default.toHexString(),
+            description = "数值低于20%时的指针和弧线颜色"
         )
         +WidgetParamDesc(
             key = P.ARC_COLOR.key,
             label = "弧线颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.ARC_COLOR.default.toHexString()
+            defaultValue = P.ARC_COLOR.default.toHexString(),
+            description = "仪表盘背景弧线的颜色"
         )
         +WidgetParamDesc(
             key = P.TEXT_COLOR.key,
             label = "文字颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.TEXT_COLOR.default.toHexString()
+            defaultValue = P.TEXT_COLOR.default.toHexString(),
+            description = "中心数值和文字的颜色"
+        )
+        +WidgetParamDesc(
+            key = P.SHOW_BACKGROUND.key,
+            label = "显示背景",
+            type = WidgetParamType.BOOL,
+            defaultValue = P.SHOW_BACKGROUND.default,
+            description = "是否显示圆角矩形背景"
+        )
+        +WidgetParamDesc(
+            key = P.BG_COLOR.key,
+            label = "背景颜色",
+            type = WidgetParamType.COLOR,
+            defaultValue = P.BG_COLOR.default.toHexString(),
+            description = "背景颜色",
+            visibleWhen = P.SHOW_BACKGROUND.key to true
         )
         +WidgetParamDesc(
             key = P.SHOW_TEXT.key,
             label = "显示文字",
             type = WidgetParamType.BOOL,
-            defaultValue = P.SHOW_TEXT.default
+            defaultValue = P.SHOW_TEXT.default,
+            description = "显示中心的数值和描述"
         )
         +WidgetParamDesc(
             key = P.SHOW_PERCENTAGE.key,
             label = "显示百分比",
             type = WidgetParamType.BOOL,
-            defaultValue = P.SHOW_PERCENTAGE.default
+            defaultValue = P.SHOW_PERCENTAGE.default,
+            description = "显示百分比而不是实际数值"
         )
         +WidgetParamDesc(
             key = P.MIN_VALUE.key,
             label = "最小值",
             type = WidgetParamType.FLOAT,
-            defaultValue = P.MIN_VALUE.default
+            defaultValue = P.MIN_VALUE.default,
+            description = "仪表盘的最小刻度值"
         )
         +WidgetParamDesc(
             key = P.MAX_VALUE.key,
             label = "最大值",
             type = WidgetParamType.FLOAT,
-            defaultValue = P.MAX_VALUE.default
+            defaultValue = P.MAX_VALUE.default,
+            description = "仪表盘的最大刻度值"
         )
         +WidgetParamDesc(
             key = P.OPTIMAL_RANGE_LOW.key,
             label = "推荐区间下限",
             type = WidgetParamType.FLOAT,
-            defaultValue = P.OPTIMAL_RANGE_LOW.default
+            defaultValue = P.OPTIMAL_RANGE_LOW.default,
+            description = "推荐范围的起始值"
         )
         +WidgetParamDesc(
             key = P.OPTIMAL_RANGE_HIGH.key,
             label = "推荐区间上限",
             type = WidgetParamType.FLOAT,
-            defaultValue = P.OPTIMAL_RANGE_HIGH.default
+            defaultValue = P.OPTIMAL_RANGE_HIGH.default,
+            description = "推荐范围的结束值"
         )
         +WidgetParamDesc(
             key = P.UNIT.key,
             label = "单位文字",
             type = WidgetParamType.STRING,
-            defaultValue = P.UNIT.default
+            defaultValue = P.UNIT.default,
+            description = "数值的单位(如km/h、L等)"
         )
         +WidgetParamDesc(
             key = P.DESCRIPTION.key,
             label = "描述文字",
             type = WidgetParamType.STRING,
-            defaultValue = P.DESCRIPTION.default
+            defaultValue = P.DESCRIPTION.default,
+            description = "显示在仪表盘下方的说明文字"
         )
         +WidgetParamDesc(
             key = P.DATASOURCE,
@@ -137,7 +167,8 @@ object ArcGaugeWidgetSpec : WidgetSpec(
             type = WidgetParamType.DATA_SOURCE,
             defaultValue = null,
             options = emptyList(),
-            required = true
+            required = true,
+            description = "仪表盘显示值的数据来源"
         )
     },
     contentComposable = {
@@ -155,10 +186,12 @@ object ArcGaugeWidgetSpec : WidgetSpec(
         val LOW_COLOR = ParamDef("lowColor", Color(0xFFFF3B30))
         val ARC_COLOR = ParamDef("arcColor", Color(0xFFDDDDDD))
         val TEXT_COLOR = ParamDef("textColor", Color.Black)
+        val SHOW_BACKGROUND = ParamDef("showBackground", false)
+        val BG_COLOR = ParamDef("bgColor", Color(0xFF263238))
         val SHOW_TEXT = ParamDef("showText", true)
         val SHOW_PERCENTAGE = ParamDef("showPercentage", false)
         val MIN_VALUE = ParamDef("minValue", 0f)
-        val MAX_VALUE = ParamDef("maxValue", 100f)
+        val MAX_VALUE = ParamDef("maxValue", 220f)
         val OPTIMAL_RANGE_LOW = ParamDef("optimalRangeLow", 20f)
         val OPTIMAL_RANGE_HIGH = ParamDef("optimalRangeHigh", 80f)
         val UNIT = ParamDef("unit", "L/100km")
@@ -180,6 +213,8 @@ fun ArcGaugeWidgetContent(config: WidgetConfig) {
     val lowColor = config.getParam(ArcGaugeWidgetSpec.P.LOW_COLOR)
     val arcColor = config.getParam(ArcGaugeWidgetSpec.P.ARC_COLOR)
     val textColor = config.getParam(ArcGaugeWidgetSpec.P.TEXT_COLOR)
+    val showBackground = config.getParam(ArcGaugeWidgetSpec.P.SHOW_BACKGROUND)
+    val bgColor = config.getParam(ArcGaugeWidgetSpec.P.BG_COLOR)
     val showText = config.getParam(ArcGaugeWidgetSpec.P.SHOW_TEXT)
     val showPercentage = config.getParam(ArcGaugeWidgetSpec.P.SHOW_PERCENTAGE)
     val minValue = config.getParam(ArcGaugeWidgetSpec.P.MIN_VALUE)
@@ -206,6 +241,8 @@ fun ArcGaugeWidgetContent(config: WidgetConfig) {
         lowColor = lowColor,
         arcColor = arcColor,
         textColor = textColor,
+        showBackground = showBackground,
+        bgColor = bgColor,
         showText = showText,
         showPercentage = showPercentage,
         optimalRangeLow = optimalRangeLow,
@@ -228,6 +265,8 @@ fun ArcGaugeIndicator(
     lowColor: Color = ArcGaugeWidgetSpec.P.LOW_COLOR.default,
     arcColor: Color = ArcGaugeWidgetSpec.P.ARC_COLOR.default,
     textColor: Color = ArcGaugeWidgetSpec.P.TEXT_COLOR.default,
+    showBackground: Boolean = ArcGaugeWidgetSpec.P.SHOW_BACKGROUND.default,
+    bgColor: Color = ArcGaugeWidgetSpec.P.BG_COLOR.default,
     showText: Boolean = ArcGaugeWidgetSpec.P.SHOW_TEXT.default,
     showPercentage: Boolean = ArcGaugeWidgetSpec.P.SHOW_PERCENTAGE.default,
     optimalRangeLow: Float = ArcGaugeWidgetSpec.P.OPTIMAL_RANGE_LOW.default,
@@ -284,12 +323,20 @@ fun ArcGaugeIndicator(
 
     Box(
         modifier = modifier
-            .size(size * scale),
+            .size(size * scale)
+            .then(
+                if (showBackground) {
+                    Modifier.background(bgColor, RoundedCornerShape((12 * scale).dp))
+                } else {
+                    Modifier
+                }
+            )
+            .padding(if (showBackground) (8 * scale).dp else 0.dp),
         contentAlignment = Alignment.Center
     ) {
         Canvas(
             modifier = Modifier
-                .size(size * scale)
+                .fillMaxSize()
                 .graphicsLayer(alpha = alpha)
         ) {
             val centerX = this.size.width / 2

@@ -16,7 +16,7 @@ class ArcGaugeWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-arc-gauge",
-            version = "1.0.2",
+            version = "1.0.5",
             author = "官方",
             description = "弧形仪表盘样式的数值显示小组件",
             minAppVersion = "1.8.9",

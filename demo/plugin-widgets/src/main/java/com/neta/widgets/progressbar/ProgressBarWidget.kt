@@ -45,43 +45,50 @@ import com.neta.isulewtools.api.widget.toHexString
 object ProgressBarWidgetSpec : WidgetSpec(
     type = "progress_bar_widget",
     displayName = "进度条",
+    recommendedGrid = Pair(2, 1),
     paramSchema = WidgetParamDesc.buildParams {
         +WidgetParamDesc(
             key = P.ORIENTATION.key,
             label = "方向",
             type = WidgetParamType.ENUM,
             defaultValue = P.ORIENTATION.default,
-            options = listOf("横向", "纵向")
+            options = listOf("横向", "纵向"),
+            description = "进度条的显示方向"
         )
         +WidgetParamDesc(
             key = P.PROGRESS_COLOR.key,
             label = "进度颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.PROGRESS_COLOR.default.toHexString()
+            defaultValue = P.PROGRESS_COLOR.default.toHexString(),
+            description = "已完成进度部分的颜色"
         )
         +WidgetParamDesc(
             key = P.BACKGROUND_COLOR.key,
             label = "背景色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.BACKGROUND_COLOR.default.toHexString()
+            defaultValue = P.BACKGROUND_COLOR.default.toHexString(),
+            description = "未完成进度部分的颜色"
         )
         +WidgetParamDesc(
             key = P.TEXT_COLOR.key,
             label = "文字颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.TEXT_COLOR.default.toHexString()
+            defaultValue = P.TEXT_COLOR.default.toHexString(),
+            description = "百分比文字的颜色"
         )
         +WidgetParamDesc(
             key = P.CORNER_RADIUS.key,
             label = "圆角(dp)",
             type = WidgetParamType.FLOAT,
-            defaultValue = P.CORNER_RADIUS.default
+            defaultValue = P.CORNER_RADIUS.default,
+            description = "进度条的圆角程度"
         )
         +WidgetParamDesc(
             key = P.SHOW_TEXT.key,
             label = "显示百分比",
             type = WidgetParamType.BOOL,
-            defaultValue = P.SHOW_TEXT.default
+            defaultValue = P.SHOW_TEXT.default,
+            description = "显示百分比数字"
         )
         +WidgetParamDesc(
             key = P.DATASOURCE,
@@ -89,7 +96,8 @@ object ProgressBarWidgetSpec : WidgetSpec(
             type = WidgetParamType.DATA_SOURCE,
             defaultValue = null,
             options = emptyList(),
-            required = true
+            required = true,
+            description = "进度值的数据来源(0-100)"
         )
     },
     contentComposable = {
@@ -102,7 +110,7 @@ object ProgressBarWidgetSpec : WidgetSpec(
      * 参数定义
      */
     object P {
-        val ORIENTATION = ParamDef("orientation", "horizontal")
+        val ORIENTATION = ParamDef("orientation", "横向")
         val PROGRESS_COLOR = ParamDef("progressColor", Color(0xFF34C759))
         val BACKGROUND_COLOR = ParamDef("backgroundColor", Color(0xFFDDDDDD))
         val TEXT_COLOR = ParamDef("textColor", Color.White)
@@ -250,10 +258,10 @@ fun ProgressBarPreview() {
         Row(
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            ProgressBarIndicator(progress = 25f, orientation = "vertical")
-            ProgressBarIndicator(progress = 50f, orientation = "vertical")
-            ProgressBarIndicator(progress = 75f, orientation = "vertical")
-            ProgressBarIndicator(progress = 100f, orientation = "vertical")
+            ProgressBarIndicator(progress = 25f, orientation = "纵向")
+            ProgressBarIndicator(progress = 50f, orientation = "纵向")
+            ProgressBarIndicator(progress = 75f, orientation = "纵向")
+            ProgressBarIndicator(progress = 100f, orientation = "纵向")
         }
 
         Spacer(modifier = Modifier.height(16.dp))

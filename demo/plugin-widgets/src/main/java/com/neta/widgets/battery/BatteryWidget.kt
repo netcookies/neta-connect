@@ -50,37 +50,43 @@ import com.neta.isulewtools.api.widget.toHexString
 object BatteryWidgetSpec : WidgetSpec(
     type = "battery_widget",
     displayName = "电池",
+    recommendedGrid = Pair(1, 1),
     paramSchema = WidgetParamDesc.buildParams {
         +WidgetParamDesc(
             key = P.COLOR.key,
             label = "电池填充色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.COLOR.default.toHexString()
+            defaultValue = P.COLOR.default.toHexString(),
+            description = "电量填充部分的颜色"
         )
         // scale 和 alpha 会自动注入，无需手动定义
         +WidgetParamDesc(
             key = P.BACKGROUND_COLOR.key,
             label = "背景色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.BACKGROUND_COLOR.default.toHexString()
+            defaultValue = P.BACKGROUND_COLOR.default.toHexString(),
+            description = "电池外壳的背景颜色"
         )
         +WidgetParamDesc(
             key = P.TEXT_COLOR.key,
             label = "字体颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.TEXT_COLOR.default.toHexString()
+            defaultValue = P.TEXT_COLOR.default.toHexString(),
+            description = "电量数值的文字颜色"
         )
         +WidgetParamDesc(
             key = P.SHOW_TEXT.key,
             label = "显示数值",
             type = WidgetParamType.BOOL,
-            defaultValue = P.SHOW_TEXT.default
+            defaultValue = P.SHOW_TEXT.default,
+            description = "显示电量百分比数值"
         )
         +WidgetParamDesc(
             key = P.FIXED_FILL_COLOR.key,
             label = "固定填充色",
             type = WidgetParamType.BOOL,
-            defaultValue = P.FIXED_FILL_COLOR.default
+            defaultValue = P.FIXED_FILL_COLOR.default,
+            description = "关闭后电量低时自动变为黄色/红色"
         )
         +WidgetParamDesc(
             key = P.DATASOURCE,
@@ -88,7 +94,8 @@ object BatteryWidgetSpec : WidgetSpec(
             type = WidgetParamType.DATA_SOURCE,
             defaultValue = null,
             options = emptyList(), // 后续动态赋值
-            required = true
+            required = true,
+            description = "电池电量的数据来源(0-100)"
         )
     },
     contentComposable = {

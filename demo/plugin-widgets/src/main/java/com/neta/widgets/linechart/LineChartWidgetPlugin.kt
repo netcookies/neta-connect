@@ -1,26 +1,27 @@
-package com.neta.widgets.battery
+package com.neta.widgets.linechart
 
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.plugin.WidgetPlugin
 import com.neta.isulewtools.api.widget.plugin.WidgetPluginMetadata
 
 /**
- * 电池小组件插件
- * 这是一个独立编译的插件模块，可以被动态加载
+ * 折线图小组件插件
+ *
+ * 动态加载的插件，显示实时数据的折线图。
  */
-class BatteryWidgetPlugin : WidgetPlugin {
+class LineChartWidgetPlugin : WidgetPlugin {
     override fun getSpec(): WidgetSpec {
-        return BatteryWidgetSpec
+        return LineChartWidgetSpec
     }
 
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
-            id = "widget-battery",
-            version = "1.0.4",
+            id = "widget-line-chart",
+            version = "1.0.0",
             author = "官方",
-            description = "iOS 风格的电池显示小组件",
+            description = "折线图，显示实时数据趋势，支持平滑曲线和区域填充",
             minAppVersion = "1.8.9",
-            category = "通用"
+            category = "图表"
         )
     }
 }

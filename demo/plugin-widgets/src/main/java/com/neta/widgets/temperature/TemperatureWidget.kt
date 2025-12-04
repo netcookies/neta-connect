@@ -45,60 +45,70 @@ import com.neta.isulewtools.api.widget.toHexString
 object TemperatureWidgetSpec : WidgetSpec(
     type = "temperature_widget",
     displayName = "温度计",
+    recommendedGrid = Pair(1, 2),
     paramSchema = WidgetParamDesc.buildParams {
         +WidgetParamDesc(
             key = P.MIN_TEMP.key,
             label = "最低温度(℃)",
             type = WidgetParamType.INT,
-            defaultValue = P.MIN_TEMP.default.toInt()
+            defaultValue = P.MIN_TEMP.default.toInt(),
+            description = "温度计显示的最小刻度值"
         )
         +WidgetParamDesc(
             key = P.MAX_TEMP.key,
             label = "最高温度(℃)",
             type = WidgetParamType.INT,
-            defaultValue = P.MAX_TEMP.default.toInt()
+            defaultValue = P.MAX_TEMP.default.toInt(),
+            description = "温度计显示的最大刻度值"
         )
         +WidgetParamDesc(
             key = P.COLD_COLOR.key,
             label = "低温颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.COLD_COLOR.default.toHexString()
+            defaultValue = P.COLD_COLOR.default.toHexString(),
+            description = "低于10℃时的填充颜色"
         )
         +WidgetParamDesc(
             key = P.NORMAL_COLOR.key,
             label = "常温颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.NORMAL_COLOR.default.toHexString()
+            defaultValue = P.NORMAL_COLOR.default.toHexString(),
+            description = "10-30℃时的填充颜色"
         )
         +WidgetParamDesc(
             key = P.HOT_COLOR.key,
             label = "高温颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.HOT_COLOR.default.toHexString()
+            defaultValue = P.HOT_COLOR.default.toHexString(),
+            description = "高于30℃时的填充颜色"
         )
         +WidgetParamDesc(
             key = P.BORDER_COLOR.key,
             label = "边框颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.BORDER_COLOR.default.toHexString()
+            defaultValue = P.BORDER_COLOR.default.toHexString(),
+            description = "温度计外框的颜色"
         )
         +WidgetParamDesc(
             key = P.BACKGROUND_COLOR.key,
             label = "背景色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.BACKGROUND_COLOR.default.toHexString()
+            defaultValue = P.BACKGROUND_COLOR.default.toHexString(),
+            description = "温度计内部的背景颜色"
         )
         +WidgetParamDesc(
             key = P.TEXT_COLOR.key,
             label = "文字颜色",
             type = WidgetParamType.COLOR,
-            defaultValue = P.TEXT_COLOR.default.toHexString()
+            defaultValue = P.TEXT_COLOR.default.toHexString(),
+            description = "温度数值的文字颜色"
         )
         +WidgetParamDesc(
             key = P.SHOW_TEXT.key,
             label = "显示数值",
             type = WidgetParamType.BOOL,
-            defaultValue = P.SHOW_TEXT.default
+            defaultValue = P.SHOW_TEXT.default,
+            description = "显示温度数字"
         )
         +WidgetParamDesc(
             key = P.DATASOURCE,
@@ -106,7 +116,8 @@ object TemperatureWidgetSpec : WidgetSpec(
             type = WidgetParamType.DATA_SOURCE,
             defaultValue = null,
             options = emptyList(),
-            required = true
+            required = true,
+            description = "温度值的数据来源"
         )
     },
     contentComposable = {
