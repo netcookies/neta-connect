@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-04T17:53:00Z",
+  "generatedAt": "2025-12-04T17:53:40Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -11,7 +11,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.2",
+      "latestVersion": "1.0.5",
       "status": "STABLE",
       "versions": [
         {
@@ -31,6 +31,38 @@
           "minAppVersion": "1.8.9",
           "fileSize": 27664,
           "sha256": "5724f8b98240a8b17033ce185ca86b44f78b7c000ba5670f43953212d54ae5d7"
+        },
+        {
+          "version": "1.0.5",
+          "releaseDate": "2025-12-04",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-arc-gauge/1.0.5/widget-arc-gauge.jar",
+          "changelog": "版本 1.0.5",
+          "minAppVersion": "1.8.9",
+          "fileSize": 28843,
+          "sha256": "7ca712e2551d0e77e4bb9fe4f7e0e6cfa34b4ebf600f43c2983f39027e3380f5"
+        }
+      ]
+    },
+    {
+      "id": "widget-bar-chart",
+      "displayName": "柱状图",
+      "description": "柱状图，显示实时数据趋势，支持最多96个柱子",
+      "author": "官方",
+      "category": "图表",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-12-04",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-bar-chart/1.0.0/widget-bar-chart.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 31608,
+          "sha256": "1fd95bc2375b3525bb5dd5541f6ce4aad86dd26d366814ad04982ecdff96de53"
         }
       ]
     },
@@ -43,7 +75,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.2",
+      "latestVersion": "1.0.4",
       "status": "STABLE",
       "versions": [
         {
@@ -63,6 +95,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 24892,
           "sha256": "5e7e80426297cf4b92384797285964e31d89921fe87f645123de8e1fa1658c9e"
+        },
+        {
+          "version": "1.0.4",
+          "releaseDate": "2025-12-04",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.4/widget-battery.jar",
+          "changelog": "版本 1.0.4",
+          "minAppVersion": "1.8.9",
+          "fileSize": 25119,
+          "sha256": "c7630e608e0c686632a076c7453fa85e18053e58b5cf77ed75e7078649900d11"
         }
       ]
     },
@@ -238,7 +279,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.2",
+      "latestVersion": "1.0.4",
       "status": "STABLE",
       "versions": [
         {
@@ -258,6 +299,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 20485,
           "sha256": "d2306a0f88a73380a3950471df267c8a7f21864a70f7aeb7ca513fd27c37d318"
+        },
+        {
+          "version": "1.0.4",
+          "releaseDate": "2025-12-04",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-progress-bar/1.0.4/widget-progress-bar.jar",
+          "changelog": "版本 1.0.4",
+          "minAppVersion": "1.8.9",
+          "fileSize": 20668,
+          "sha256": "e80f666a8c731be3e33d44f5cf7fe6ea337ecc3f38676b6f15aa68048f5566ab"
         }
       ]
     },
