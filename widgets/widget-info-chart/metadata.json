@@ -1,0 +1,12 @@
+{
+  "id": "widget-info-chart",
+  "displayName": "信息卡片",
+  "description": "信息卡片，显示实时数值、趋势指示器和统计信息",
+  "author": "官方",
+  "category": "图表",
+  "minAppVersion": "1.8.9",
+  "permissions": [],
+  "screenshots": [],
+  "repository": "https://github.com/netcookies/neta-connect",
+  "supportUrl": "https://github.com/netcookies/neta-connect/issues"
+}
