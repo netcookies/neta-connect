@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-04T17:52:23Z",
+  "generatedAt": "2025-12-04T17:53:00Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -203,6 +203,29 @@
           "minAppVersion": "1.8.9",
           "fileSize": 13082,
           "sha256": "a2bf2428356c23394def6a1d654917e5eaa92e96efd09aff97a4154f9c9e5f82"
+        }
+      ]
+    },
+    {
+      "id": "widget-line-chart",
+      "displayName": "折线图",
+      "description": "折线图，显示实时数据趋势，支持平滑曲线和区域填充",
+      "author": "官方",
+      "category": "图表",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-12-04",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-line-chart/1.0.0/widget-line-chart.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 35541,
+          "sha256": "e0ec57ba4be17c17630da9d759380005633d439f492ae1012a62fc2a99024356"
         }
       ]
     },
