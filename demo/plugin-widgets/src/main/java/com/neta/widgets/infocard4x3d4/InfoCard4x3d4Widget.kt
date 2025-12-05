@@ -351,7 +351,7 @@ fun InfoCard4x3d4Display(
             .height(InfoCard4x3d4WidgetSpec.P.HEIGHT * scale)
             .graphicsLayer(alpha = alpha)
             .background(background, RoundedCornerShape((16 * scale).dp))
-            .padding((20 * scale).dp)
+            .padding((16 * scale).dp)
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -380,8 +380,6 @@ fun InfoCard4x3d4Display(
                 )
             }
 
-            Spacer(modifier = Modifier.height((16 * scale).dp))
-
             // 中间：2x2网格显示4个信息
             Column(
                 modifier = Modifier.weight(1f),
@@ -396,7 +394,6 @@ fun InfoCard4x3d4Display(
                         info1Label, info1Value, info1Unit, info1Decimals, textColor, scale,
                         modifier = Modifier.weight(1f)
                     )
-                    Spacer(modifier = Modifier.width((8 * scale).dp))
                     InfoItem(
                         info2Label, info2Value, info2Unit, info2Decimals, textColor, scale,
                         modifier = Modifier.weight(1f)
@@ -412,7 +409,6 @@ fun InfoCard4x3d4Display(
                         info3Label, info3Value, info3Unit, info3Decimals, textColor, scale,
                         modifier = Modifier.weight(1f)
                     )
-                    Spacer(modifier = Modifier.width((8 * scale).dp))
                     InfoItem(
                         info4Label, info4Value, info4Unit, info4Decimals, textColor, scale,
                         modifier = Modifier.weight(1f)

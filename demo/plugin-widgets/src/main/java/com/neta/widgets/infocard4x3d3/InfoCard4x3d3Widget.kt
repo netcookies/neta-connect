@@ -294,7 +294,7 @@ fun InfoCard4x3d3Display(
             .height(InfoCard4x3d3WidgetSpec.P.HEIGHT * scale)
             .graphicsLayer(alpha = alpha)
             .background(background, RoundedCornerShape((16 * scale).dp))
-            .padding((20 * scale).dp)
+            .padding((16 * scale).dp)
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
