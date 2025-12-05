@@ -3,6 +3,7 @@ package com.neta.isulewtools.api.widget.icons
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.automirrored.filled.BatteryUnknown
 import androidx.compose.material.icons.automirrored.filled.Chat
 import androidx.compose.material.icons.automirrored.filled.Help
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
@@ -18,10 +19,16 @@ import androidx.compose.material.icons.automirrored.filled.ViewList
 import androidx.compose.material.icons.automirrored.filled.VolumeDown
 import androidx.compose.material.icons.automirrored.filled.VolumeMute
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
+import androidx.compose.material.icons.automirrored.outlined.TrendingDown
+import androidx.compose.material.icons.automirrored.outlined.TrendingFlat
+import androidx.compose.material.icons.automirrored.outlined.TrendingUp
+import androidx.compose.material.icons.filled.AcUnit
 import androidx.compose.material.icons.filled.AccessTime
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AddCircle
+import androidx.compose.material.icons.filled.Alarm
+import androidx.compose.material.icons.filled.AlarmOn
 import androidx.compose.material.icons.filled.Analytics
 import androidx.compose.material.icons.filled.Apps
 import androidx.compose.material.icons.filled.ArrowDownward
@@ -29,6 +36,8 @@ import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Assessment
 import androidx.compose.material.icons.filled.AttachFile
 import androidx.compose.material.icons.filled.BarChart
+import androidx.compose.material.icons.filled.BatteryChargingFull
+import androidx.compose.material.icons.filled.BatteryFull
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.BookmarkBorder
 import androidx.compose.material.icons.filled.Build
@@ -43,16 +52,20 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.filled.CloudUpload
 import androidx.compose.material.icons.filled.Create
-import androidx.compose.material.icons.filled.Dashboard
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.DeviceThermostat
+import androidx.compose.material.icons.filled.DirectionsCar
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.ElectricCar
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Error
+import androidx.compose.material.icons.filled.EvStation
 import androidx.compose.material.icons.filled.Event
+import androidx.compose.material.icons.filled.Explore
 import androidx.compose.material.icons.filled.Extension
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Favorite
@@ -60,6 +73,10 @@ import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.Folder
+import androidx.compose.material.icons.filled.Garage
+import androidx.compose.material.icons.filled.GpsFixed
+import androidx.compose.material.icons.filled.GpsNotFixed
+import androidx.compose.material.icons.filled.GpsOff
 import androidx.compose.material.icons.filled.Group
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Image
@@ -68,24 +85,32 @@ import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Lightbulb
+import androidx.compose.material.icons.filled.LocalGasStation
+import androidx.compose.material.icons.filled.LocalShipping
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.LockOpen
+import androidx.compose.material.icons.filled.Map
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material.icons.filled.MoreHoriz
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.MyLocation
+import androidx.compose.material.icons.filled.Navigation
+import androidx.compose.material.icons.filled.NearMe
 import androidx.compose.material.icons.filled.NightsStay
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.Opacity
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.PowerSettingsNew
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material.icons.filled.RemoveCircle
+import androidx.compose.material.icons.filled.Route
 import androidx.compose.material.icons.filled.Save
 import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material.icons.filled.Search
@@ -97,14 +122,23 @@ import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material.icons.filled.Stop
+import androidx.compose.material.icons.filled.Straighten
+import androidx.compose.material.icons.filled.Thermostat
 import androidx.compose.material.icons.filled.ThumbDown
 import androidx.compose.material.icons.filled.ThumbUp
+import androidx.compose.material.icons.filled.Timer
+import androidx.compose.material.icons.filled.TimerOff
+import androidx.compose.material.icons.filled.TwoWheeler
 import androidx.compose.material.icons.filled.ViewModule
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material.icons.filled.WaterDrop
+import androidx.compose.material.icons.filled.WbCloudy
 import androidx.compose.material.icons.filled.WbSunny
 import androidx.compose.material.icons.filled.Widgets
+import androidx.compose.material.icons.outlined.Analytics
+import androidx.compose.material.icons.outlined.Dashboard
 import androidx.compose.ui.graphics.vector.ImageVector
 
 /**
@@ -217,7 +251,7 @@ object MaterialIconsProvider {
             "List" to Icons.AutoMirrored.Filled.List,
             "ViewList" to Icons.AutoMirrored.Filled.ViewList,
             "ViewModule" to Icons.Default.ViewModule,
-            "Dashboard" to Icons.Default.Dashboard,
+            "Dashboard" to Icons.Outlined.Dashboard,
 
             // 图表相关
             "ShowChart" to Icons.AutoMirrored.Filled.ShowChart,
@@ -246,7 +280,51 @@ object MaterialIconsProvider {
             "CalendarToday" to Icons.Default.CalendarToday,
             "Apps" to Icons.Default.Apps,
             "Widgets" to Icons.Default.Widgets,
-            "Extension" to Icons.Default.Extension
+            "Extension" to Icons.Default.Extension,
+            "Analytics" to Icons.Outlined.Analytics,
+            "TrendingUp" to Icons.AutoMirrored.Outlined.TrendingUp,
+            "TrendingDown" to Icons.AutoMirrored.Outlined.TrendingDown,
+            "TrendingFlat" to Icons.AutoMirrored.Outlined.TrendingFlat,
+
+            // 车辆相关
+            "DirectionsCar" to Icons.Default.DirectionsCar,
+            "ElectricCar" to Icons.Default.ElectricCar,
+            "TwoWheeler" to Icons.Default.TwoWheeler,
+            "LocalShipping" to Icons.Default.LocalShipping,
+            "Garage" to Icons.Default.Garage,
+            "LocalGasStation" to Icons.Default.LocalGasStation,
+            "EvStation" to Icons.Default.EvStation,
+
+            // 电池/电量相关
+            "BatteryFull" to Icons.Default.BatteryFull,
+            "BatteryChargingFull" to Icons.Default.BatteryChargingFull,
+            "BatteryUnknown" to Icons.AutoMirrored.Filled.BatteryUnknown,
+            "PowerSettingsNew" to Icons.Default.PowerSettingsNew,
+
+            // 温度/气候相关
+            "Thermostat" to Icons.Default.Thermostat,
+            "DeviceThermostat" to Icons.Default.DeviceThermostat,
+            "AcUnit" to Icons.Default.AcUnit,
+            "WbCloudy" to Icons.Default.WbCloudy,
+            "WaterDrop" to Icons.Default.WaterDrop,
+            "Opacity" to Icons.Default.Opacity,
+
+            // GPS/导航相关
+            "GpsFixed" to Icons.Default.GpsFixed,
+            "GpsNotFixed" to Icons.Default.GpsNotFixed,
+            "GpsOff" to Icons.Default.GpsOff,
+            "Navigation" to Icons.Default.Navigation,
+            "NearMe" to Icons.Default.NearMe,
+            "Map" to Icons.Default.Map,
+            "Route" to Icons.Default.Route,
+            "Explore" to Icons.Default.Explore,
+            "Straighten" to Icons.Default.Straighten,
+
+            // 时间计时相关
+            "Timer" to Icons.Default.Timer,
+            "TimerOff" to Icons.Default.TimerOff,
+            "Alarm" to Icons.Default.Alarm,
+            "AlarmOn" to Icons.Default.AlarmOn,
         ).sortedBy { it.first }
     }
 

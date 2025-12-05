@@ -17,7 +17,7 @@ class LineChartWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-line-chart",
-            version = "1.0.1",
+            version = "1.0.2",
             author = "官方",
             description = "折线图，显示实时数据趋势，支持平滑曲线和区域填充",
             minAppVersion = "1.8.9",
