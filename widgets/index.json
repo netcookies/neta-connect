@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-05T10:45:41Z",
+  "generatedAt": "2025-12-05T11:40:06Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -297,7 +297,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.0.1",
       "status": "STABLE",
       "versions": [
         {
@@ -308,6 +308,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 24326,
           "sha256": "66d851c893660166ef9c846e0386aadadff3579a3b6abfe16296f0ef5f5c59b2"
+        },
+        {
+          "version": "1.0.1",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d3/1.0.1/widget-info-card-4x3d3.jar",
+          "changelog": "版本 1.0.1",
+          "minAppVersion": "1.8.9",
+          "fileSize": 24325,
+          "sha256": "218317b5432017c2c6ecea6d5f55837ca859a83af0c155df6a67e86880fc00f1"
         }
       ]
     },
@@ -343,7 +352,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.2",
+      "latestVersion": "1.0.3",
       "status": "STABLE",
       "versions": [
         {
@@ -372,6 +381,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 31205,
           "sha256": "0034a309847de5480f44a4c70022280656a165c2da7af6825db52a0cb0586069"
+        },
+        {
+          "version": "1.0.3",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-chart/1.0.3/widget-info-chart.jar",
+          "changelog": "版本 1.0.3",
+          "minAppVersion": "1.8.9",
+          "fileSize": 31204,
+          "sha256": "727174e7aaf40f82b97f6f74d973545d26ef0cf216c109d199f14f75946a17f5"
         }
       ]
     },
@@ -384,7 +402,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.1",
+      "latestVersion": "1.0.2",
       "status": "STABLE",
       "versions": [
         {
@@ -404,6 +422,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 32706,
           "sha256": "27e850d2633046dedf2929c186bb62e06b26853696a91925ead88e7527d85d4d"
+        },
+        {
+          "version": "1.0.2",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-line-chart/1.0.2/widget-line-chart.jar",
+          "changelog": "版本 1.0.2",
+          "minAppVersion": "1.8.9",
+          "fileSize": 32705,
+          "sha256": "2f6dc707e3d87b40a3a7e8e379fc6e8833bee7283684bf0e5398771c40c37104"
         }
       ]
     },
@@ -553,7 +580,7 @@
           "changelog": "版本 1.0.9",
           "minAppVersion": "1.8.9",
           "fileSize": 31232,
-          "sha256": "474bbdea93c45c4ec3e397a41acb7faa55313903bfc2c07704be21de13b93f2d"
+          "sha256": "afb1c4f5f834c21e4b529dae62de7698b5a970afe690e8732c92365017c9dee1"
         }
       ]
     }
