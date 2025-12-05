@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-05T11:40:06Z",
+  "generatedAt": "2025-12-05T11:41:33Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -52,7 +52,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.1",
+      "latestVersion": "1.0.2",
       "status": "STABLE",
       "versions": [
         {
@@ -72,6 +72,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 29686,
           "sha256": "6242e88da7ddf26af15350e0bb3d203d3bec4390773df39d68e211316784dff4"
+        },
+        {
+          "version": "1.0.2",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-bar-chart/1.0.2/widget-bar-chart.jar",
+          "changelog": "版本 1.0.2",
+          "minAppVersion": "1.8.9",
+          "fileSize": 29687,
+          "sha256": "c172bc513c587a11bace5c2c2f9b00ba515593c9cb3ace2faf3f7abc1b3b7ccf"
         }
       ]
     },
@@ -112,7 +121,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "1.8.9",
           "fileSize": 25119,
-          "sha256": "63ce655dd05ca529c5458f574b40196ba57ae04e4c249aa4060cdd179b75cc9a"
+          "sha256": "8061ba5812f18677d2b61fd06f7df4d248ae5c6a5e11bb73e6fe5eff685d5e8c"
         }
       ]
     },
@@ -261,7 +270,7 @@
           "changelog": "版本 1.1.6",
           "minAppVersion": "1.8.9",
           "fileSize": 13132,
-          "sha256": "ceb898ce18e4fc6797ae7d858f7e1c0125d37a161f799f06fe19a75b97fa7a41"
+          "sha256": "2a4ef86a7d456fbccc6cb4796a57d657197fbf75f2f17d0b5a08bb490c5de764"
         }
       ]
     },
@@ -274,7 +283,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.0.1",
       "status": "STABLE",
       "versions": [
         {
@@ -285,6 +294,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 22720,
           "sha256": "adf2f80279629238f77e295f5ce966babf144d0bef1066374a1a0b423f40e4ec"
+        },
+        {
+          "version": "1.0.1",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x2d2/1.0.1/widget-info-card-4x2d2.jar",
+          "changelog": "版本 1.0.1",
+          "minAppVersion": "1.8.9",
+          "fileSize": 22722,
+          "sha256": "02526874055d88bb3d69c107304a50e535fe433582b144552d03e11fe4cfa597"
         }
       ]
     },
@@ -329,7 +347,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.0.1",
       "status": "STABLE",
       "versions": [
         {
@@ -340,6 +358,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 25382,
           "sha256": "7921b65106b0deed169254f0f123fad5602d691f9ae32573d54c69fb37fefbb9"
+        },
+        {
+          "version": "1.0.1",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d4/1.0.1/widget-info-card-4x3d4.jar",
+          "changelog": "版本 1.0.1",
+          "minAppVersion": "1.8.9",
+          "fileSize": 25383,
+          "sha256": "f99c45de7bcac6f3feb56d3a06f19f46fdaeac594cf5d78de788dc26909c4c99"
         }
       ]
     },
@@ -471,7 +498,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "1.8.9",
           "fileSize": 20668,
-          "sha256": "defb1fb0205c762b86e85b1eea8ecdf148c80cc736321de3591204bdf7b4c96b"
+          "sha256": "10df420717bf0327c4ae2f07bc4189a995caab20ffd40dcb23041ec430d6019b"
         }
       ]
     },
@@ -512,7 +539,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "1.8.9",
           "fileSize": 22070,
-          "sha256": "2f8a2e98a05d0cebace27e826d49bb313787e0722055f9d1cccebe0b7c9a4481"
+          "sha256": "f584161b8e76e1cc9ac63d604d7a1e207ddf5a94a866220a87990800b0ff1089"
         }
       ]
     },
