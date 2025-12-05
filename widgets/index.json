@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-05T00:37:46Z",
+  "generatedAt": "2025-12-05T10:43:37Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -39,7 +39,7 @@
           "changelog": "版本 1.0.5",
           "minAppVersion": "1.8.9",
           "fileSize": 28843,
-          "sha256": "7ca712e2551d0e77e4bb9fe4f7e0e6cfa34b4ebf600f43c2983f39027e3380f5"
+          "sha256": "9ccac8cd3863ff3f32e95e686f5c47a10c9980b109f8122bba55839f499dee48"
         }
       ]
     },
@@ -52,7 +52,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.0.1",
       "status": "STABLE",
       "versions": [
         {
@@ -63,6 +63,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 31608,
           "sha256": "1fd95bc2375b3525bb5dd5541f6ce4aad86dd26d366814ad04982ecdff96de53"
+        },
+        {
+          "version": "1.0.1",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-bar-chart/1.0.1/widget-bar-chart.jar",
+          "changelog": "版本 1.0.1",
+          "minAppVersion": "1.8.9",
+          "fileSize": 29686,
+          "sha256": "6242e88da7ddf26af15350e0bb3d203d3bec4390773df39d68e211316784dff4"
         }
       ]
     },
@@ -297,7 +306,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.0.1",
       "status": "STABLE",
       "versions": [
         {
@@ -308,6 +317,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 35541,
           "sha256": "e0ec57ba4be17c17630da9d759380005633d439f492ae1012a62fc2a99024356"
+        },
+        {
+          "version": "1.0.1",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-line-chart/1.0.1/widget-line-chart.jar",
+          "changelog": "版本 1.0.1",
+          "minAppVersion": "1.8.9",
+          "fileSize": 32706,
+          "sha256": "27e850d2633046dedf2929c186bb62e06b26853696a91925ead88e7527d85d4d"
         }
       ]
     },
@@ -348,7 +366,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "1.8.9",
           "fileSize": 20668,
-          "sha256": "e80f666a8c731be3e33d44f5cf7fe6ea337ecc3f38676b6f15aa68048f5566ab"
+          "sha256": "defb1fb0205c762b86e85b1eea8ecdf148c80cc736321de3591204bdf7b4c96b"
         }
       ]
     },
