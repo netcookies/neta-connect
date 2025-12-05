@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-05T10:43:37Z",
+  "generatedAt": "2025-12-05T10:45:41Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -112,7 +112,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "1.8.9",
           "fileSize": 25119,
-          "sha256": "c7630e608e0c686632a076c7453fa85e18053e58b5cf77ed75e7078649900d11"
+          "sha256": "63ce655dd05ca529c5458f574b40196ba57ae04e4c249aa4060cdd179b75cc9a"
         }
       ]
     },
@@ -261,7 +261,76 @@
           "changelog": "版本 1.1.6",
           "minAppVersion": "1.8.9",
           "fileSize": 13132,
-          "sha256": "5cd41d685b2dfaab00355ffc6b97ab0e07c765c7f0e0ef733bd6e58b563387d0"
+          "sha256": "ceb898ce18e4fc6797ae7d858f7e1c0125d37a161f799f06fe19a75b97fa7a41"
+        }
+      ]
+    },
+    {
+      "id": "widget-info-card-4x2d2",
+      "displayName": "信息卡片(4x2-2项)",
+      "description": "信息卡片(4x2)，横向显示2个大数值",
+      "author": "官方",
+      "category": "信息",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x2d2/1.0.0/widget-info-card-4x2d2.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 22720,
+          "sha256": "adf2f80279629238f77e295f5ce966babf144d0bef1066374a1a0b423f40e4ec"
+        }
+      ]
+    },
+    {
+      "id": "widget-info-card-4x3d3",
+      "displayName": "信息卡片(4x3-3项)",
+      "description": "信息卡片(4x3)，显示1个大数值和2个小信息",
+      "author": "官方",
+      "category": "信息",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d3/1.0.0/widget-info-card-4x3d3.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 24326,
+          "sha256": "66d851c893660166ef9c846e0386aadadff3579a3b6abfe16296f0ef5f5c59b2"
+        }
+      ]
+    },
+    {
+      "id": "widget-info-card-4x3d4",
+      "displayName": "信息卡片(4x3-4项)",
+      "description": "信息卡片(4x3)，以2x2网格显示4个信息",
+      "author": "官方",
+      "category": "信息",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d4/1.0.0/widget-info-card-4x3d4.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 25382,
+          "sha256": "7921b65106b0deed169254f0f123fad5602d691f9ae32573d54c69fb37fefbb9"
         }
       ]
     },
@@ -274,7 +343,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.1",
+      "latestVersion": "1.0.2",
       "status": "STABLE",
       "versions": [
         {
@@ -294,6 +363,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 36826,
           "sha256": "d242a7267da5f657a592901e69b1c9b720f80eb7476355b3a9f456aa8241e15f"
+        },
+        {
+          "version": "1.0.2",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-chart/1.0.2/widget-info-chart.jar",
+          "changelog": "版本 1.0.2",
+          "minAppVersion": "1.8.9",
+          "fileSize": 31205,
+          "sha256": "0034a309847de5480f44a4c70022280656a165c2da7af6825db52a0cb0586069"
         }
       ]
     },
@@ -407,7 +485,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "1.8.9",
           "fileSize": 22070,
-          "sha256": "4f2a40e668f989fa8766b961da2ffd6d0b084e81c21e8e65c4f0bcf8498ebd4a"
+          "sha256": "2f8a2e98a05d0cebace27e826d49bb313787e0722055f9d1cccebe0b7c9a4481"
         }
       ]
     },
@@ -475,7 +553,7 @@
           "changelog": "版本 1.0.9",
           "minAppVersion": "1.8.9",
           "fileSize": 31232,
-          "sha256": "eb245ff0b548e67d17ad12c5d1c22c15c8fa5519aa9cb6e43677b70f3d4b3417"
+          "sha256": "474bbdea93c45c4ec3e397a41acb7faa55313903bfc2c07704be21de13b93f2d"
         }
       ]
     }
