@@ -1,0 +1,12 @@
+{
+  "id": "widget-info-card-4x3d4",
+  "displayName": "信息卡片(4x3-4项)",
+  "description": "信息卡片(4x3)，以2x2网格显示4个信息",
+  "author": "官方",
+  "category": "信息",
+  "minAppVersion": "1.8.9",
+  "permissions": [],
+  "screenshots": [],
+  "repository": "https://github.com/netcookies/neta-connect",
+  "supportUrl": "https://github.com/netcookies/neta-connect/issues"
+}
