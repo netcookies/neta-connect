@@ -11,10 +11,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BarChart
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -38,6 +40,7 @@ import com.neta.isulewtools.api.widget.getAlpha
 import com.neta.isulewtools.api.widget.getChartData
 import com.neta.isulewtools.api.widget.getParam
 import com.neta.isulewtools.api.widget.getScale
+import com.neta.isulewtools.api.widget.icons.MaterialIconsProvider
 import com.neta.isulewtools.api.widget.toHexString
 import kotlin.random.Random
 
@@ -102,6 +105,13 @@ object BarChartWidgetSpec : WidgetSpec(
                 type = WidgetParamType.STRING,
                 defaultValue = P.TITLE.default,
                 description = "图表标题"
+            )
+            +WidgetParamDesc(
+                key = P.ICON.key,
+                label = "图标",
+                type = WidgetParamType.ICON,
+                defaultValue = P.ICON.default,
+                description = "图表图标"
             )
             +WidgetParamDesc(
                 key = P.UNIT.key,
@@ -225,6 +235,7 @@ object BarChartWidgetSpec : WidgetSpec(
 
         // 显示设置
         val TITLE = ParamDef("title", "数据趋势")
+        val ICON = ParamDef("icon", "BarChart")
         val UNIT = ParamDef("unit", "")
         val DECIMALS = ParamDef("decimals", 1)
         val SHOW_CURRENT_VALUE = ParamDef("showCurrentValue", true)
@@ -252,12 +263,13 @@ object BarChartWidgetSpec : WidgetSpec(
 }
 
 /**
- * 柱状图内容
+ * 柱状图内容（Widget 入口）
  */
 @Composable
 fun BarChartWidgetContent(config: WidgetConfig) {
     // 读取配置参数
     val title = config.getParam(BarChartWidgetSpec.P.TITLE)
+    val icon = config.getParam(BarChartWidgetSpec.P.ICON)
     val unit = config.getParam(BarChartWidgetSpec.P.UNIT)
     val decimals = config.getParam(BarChartWidgetSpec.P.DECIMALS)
     val showCurrentValue = config.getParam(BarChartWidgetSpec.P.SHOW_CURRENT_VALUE)
@@ -281,6 +293,54 @@ fun BarChartWidgetContent(config: WidgetConfig) {
 
     // 获取图表数据
     val chartData = config.getChartData(BarChartWidgetSpec.P.DATASOURCE)
+
+    // 调用独立的 UI 组件
+    BarChartDisplay(
+        title = title,
+        iconName = icon,
+        unit = unit,
+        decimals = decimals,
+        showCurrentValue = showCurrentValue,
+        showGrid = showGrid,
+        chartData = chartData,
+        barCount = barCount,
+        barSpacing = barSpacing,
+        barColor = barColor,
+        bgColor = bgColor,
+        textColor = textColor,
+        gridColor = gridColor,
+        autoScale = autoScale,
+        manualMinValue = manualMinValue,
+        manualMaxValue = manualMaxValue,
+        scale = scale,
+        alpha = alpha
+    )
+}
+
+/**
+ * 柱状图显示组件（独立的 UI 组件，可复用于 Content 和 Preview）
+ */
+@Composable
+fun BarChartDisplay(
+    title: String,
+    iconName: String,
+    unit: String,
+    decimals: Int,
+    showCurrentValue: Boolean,
+    showGrid: Boolean,
+    chartData: List<ChartDataPoint>,
+    barCount: Int,
+    barSpacing: Float,
+    barColor: Color,
+    bgColor: Color,
+    textColor: Color,
+    gridColor: Color,
+    autoScale: Boolean,
+    manualMinValue: Float,
+    manualMaxValue: Float,
+    scale: Float = 1f,
+    alpha: Float = 1f
+) {
     val currentValue = chartData.lastOrNull()?.value ?: 0f
 
     // 获取最近的N个数据点
@@ -303,7 +363,6 @@ fun BarChartWidgetContent(config: WidgetConfig) {
     // 预计算缩放后的值
     val scaledPadding = 12.dp * scale
     val scaledTitleSize = 16.sp * scale
-    val scaledValueSize = 18.sp * scale
 
     Box(
         modifier = Modifier
@@ -316,7 +375,7 @@ fun BarChartWidgetContent(config: WidgetConfig) {
         Column(
             modifier = Modifier.matchParentSize()
         ) {
-            // 标题行
+            // 第一行：标题和图标
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -329,19 +388,47 @@ fun BarChartWidgetContent(config: WidgetConfig) {
                     fontWeight = FontWeight.Medium
                 )
 
-                if (showCurrentValue) {
+                // 图标
+                val iconVector =
+                    MaterialIconsProvider.getIconByName(iconName) ?: Icons.Filled.BarChart
+                Icon(
+                    imageVector = iconVector,
+                    contentDescription = null,
+                    tint = barColor,
+                    modifier = Modifier.size((24 * scale).dp)
+                )
+            }
+
+            Spacer(modifier = Modifier.height((4 * scale).dp))
+
+            // 第二行：大字体显示数据+单位
+            if (showCurrentValue) {
+                Row(
+                    verticalAlignment = Alignment.Bottom
+                ) {
                     Text(
-                        text = "%.${decimals}f$unit".format(currentValue),
-                        fontSize = scaledValueSize,
+                        text = "%.${decimals}f".format(currentValue),
+                        fontSize = (32 * scale).sp,
                         color = textColor,
                         fontWeight = FontWeight.Bold
                     )
+                    if (unit.isNotEmpty()) {
+                        Text(
+                            text = unit,
+                            fontSize = (18 * scale).sp,
+                            color = textColor.copy(alpha = 0.8f),
+                            modifier = Modifier.padding(
+                                start = (4 * scale).dp,
+                                bottom = (2 * scale).dp
+                            )
+                        )
+                    }
                 }
             }
 
-            Spacer(modifier = Modifier.height(8.dp * scale))
+            Spacer(modifier = Modifier.height((8 * scale).dp))
 
-            // 柱状图
+            // 下半部分：柱状图
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -398,7 +485,7 @@ fun BarChartWidgetContent(config: WidgetConfig) {
 }
 
 /**
- * Preview - 柱状图预览
+ * Preview - 柱状图预览（直接使用 BarChartDisplay）
  */
 @Preview
 @Composable
@@ -433,12 +520,24 @@ fun BarChartPreview() {
                 .width(550.dp)
                 .height(200.dp)
         ) {
-            BarChartPreviewCard(
+            BarChartDisplay(
                 title = "速度变化",
+                iconName = "Speed",
                 unit = "km/h",
+                decimals = 1,
+                showCurrentValue = true,
+                showGrid = true,
                 chartData = mockChartData1,
                 barCount = 24,
-                showGrid = true
+                barSpacing = 0.2f,
+                barColor = Color(0xFF2196F3),
+                bgColor = Color(0xFF263238),
+                textColor = Color.White,
+                gridColor = Color(0x33FFFFFF),
+                autoScale = true,
+                manualMinValue = 0f,
+                manualMaxValue = 100f,
+                scale = 1.375f // 550dp / 400dp
             )
         }
 
@@ -448,128 +547,25 @@ fun BarChartPreview() {
                 .width(550.dp)
                 .height(200.dp)
         ) {
-            BarChartPreviewCard(
+            BarChartDisplay(
                 title = "功率输出",
+                iconName = "Lightbulb",
                 unit = "kW",
+                decimals = 1,
+                showCurrentValue = true,
+                showGrid = true,
                 chartData = mockChartData2,
                 barCount = 48,
-                showGrid = true,
-                barColor = Color(0xFFFF9800)
+                barSpacing = 0.2f,
+                barColor = Color(0xFFFF9800),
+                bgColor = Color(0xFF263238),
+                textColor = Color.White,
+                gridColor = Color(0x33FFFFFF),
+                autoScale = true,
+                manualMinValue = 0f,
+                manualMaxValue = 100f,
+                scale = 1.375f
             )
-        }
-    }
-}
-
-@Composable
-private fun BarChartPreviewCard(
-    title: String,
-    unit: String,
-    chartData: List<ChartDataPoint>,
-    barCount: Int,
-    showGrid: Boolean,
-    barColor: Color = Color(0xFF2196F3)
-) {
-    val bgColor = Color(0xFF263238)
-    val textColor = Color.White
-    val gridColor = Color(0x33FFFFFF)
-    val currentValue = chartData.lastOrNull()?.value ?: 0f
-    val decimals = 1
-
-    // 获取最近的N个数据点
-    val displayData = chartData.takeLast(barCount)
-
-    // 计算Y轴范围
-    val minValue = displayData.minOfOrNull { it.value } ?: 0f
-    val maxValue = displayData.maxOfOrNull { it.value } ?: 100f
-    val padding = (maxValue - minValue) * 0.1f
-    val yMin = minValue - padding
-    val yMax = maxValue + padding
-
-    Box(
-        modifier = Modifier
-            .width(550.dp)
-            .height(200.dp)
-            .background(bgColor, RoundedCornerShape(12.dp))
-            .padding(12.dp)
-    ) {
-        Column(
-            modifier = Modifier.matchParentSize()
-        ) {
-            // 标题行
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = title,
-                    fontSize = 14.sp,
-                    color = textColor.copy(alpha = 0.7f),
-                    fontWeight = FontWeight.Medium
-                )
-
-                Text(
-                    text = "%.${decimals}f$unit".format(currentValue),
-                    fontSize = 16.sp,
-                    color = textColor,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            // 柱状图
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-            ) {
-                Canvas(modifier = Modifier.fillMaxSize()) {
-                    val canvasWidth = size.width
-                    val canvasHeight = size.height
-
-                    if (displayData.isEmpty()) return@Canvas
-
-                    // 绘制网格线
-                    if (showGrid) {
-                        val gridLineCount = 5
-                        for (i in 0 until gridLineCount) {
-                            val y = canvasHeight * (i.toFloat() / (gridLineCount - 1))
-                            drawLine(
-                                color = gridColor,
-                                start = Offset(0f, y),
-                                end = Offset(canvasWidth, y),
-                                strokeWidth = 1f
-                            )
-                        }
-                    }
-
-                    // 计算柱子宽度
-                    val totalBars = displayData.size.coerceAtLeast(1)
-                    val barWidth = canvasWidth / totalBars
-                    val spacing = barWidth * 0.2f
-                    val effectiveBarWidth = barWidth - spacing
-
-                    // 绘制柱子
-                    displayData.forEachIndexed { index, dataPoint ->
-                        val normalizedValue = if (yMax > yMin) {
-                            ((dataPoint.value - yMin) / (yMax - yMin)).coerceIn(0f, 1f)
-                        } else {
-                            0f
-                        }
-
-                        val barHeight = canvasHeight * normalizedValue
-                        val x = index * barWidth + spacing / 2
-                        val y = canvasHeight - barHeight
-
-                        drawRect(
-                            color = barColor,
-                            topLeft = Offset(x, y),
-                            size = Size(effectiveBarWidth, barHeight)
-                        )
-                    }
-                }
-            }
         }
     }
 }

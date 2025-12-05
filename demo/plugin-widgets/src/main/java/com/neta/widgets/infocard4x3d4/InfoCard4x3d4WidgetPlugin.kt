@@ -1,27 +1,25 @@
-package com.neta.widgets.linechart
+package com.neta.widgets.infocard4x3d4
 
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.plugin.WidgetPlugin
 import com.neta.isulewtools.api.widget.plugin.WidgetPluginMetadata
 
 /**
- * 折线图小组件插件
- *
- * 动态加载的插件，显示实时数据的折线图。
+ * 信息卡片小组件插件 (4x3, 4个信息)
  */
-class LineChartWidgetPlugin : WidgetPlugin {
+class InfoCard4x3d4WidgetPlugin : WidgetPlugin {
     override fun getSpec(): WidgetSpec {
-        return LineChartWidgetSpec
+        return InfoCard4x3d4WidgetSpec
     }
 
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
-            id = "widget-line-chart",
-            version = "1.0.1",
+            id = "widget-info-card-4x3d4",
+            version = "1.0.0",
             author = "官方",
-            description = "折线图，显示实时数据趋势，支持平滑曲线和区域填充",
+            description = "信息卡片(4x3)，以2x2网格显示4个信息",
             minAppVersion = "1.8.9",
-            category = "图表"
+            category = "信息"
         )
     }
 }

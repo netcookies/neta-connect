@@ -18,9 +18,7 @@ import androidx.compose.material.icons.automirrored.outlined.TrendingDown
 import androidx.compose.material.icons.automirrored.outlined.TrendingFlat
 import androidx.compose.material.icons.automirrored.outlined.TrendingUp
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -42,6 +40,7 @@ import com.neta.isulewtools.api.widget.getAlpha
 import com.neta.isulewtools.api.widget.getChartData
 import com.neta.isulewtools.api.widget.getParam
 import com.neta.isulewtools.api.widget.getScale
+import com.neta.isulewtools.api.widget.icons.MaterialIconsProvider
 import com.neta.isulewtools.api.widget.toHexString
 
 /**
@@ -249,12 +248,13 @@ object InfoChartWidgetSpec : WidgetSpec(
 }
 
 /**
- * 信息卡片内容
+ * 信息卡片内容（Widget 入口）
  */
 @Composable
 fun InfoChartWidgetContent(config: WidgetConfig) {
     // 读取配置参数
     val title = config.getParam(InfoChartWidgetSpec.P.TITLE)
+    val icon = config.getParam(InfoChartWidgetSpec.P.ICON)
     val unit = config.getParam(InfoChartWidgetSpec.P.UNIT)
     val decimals = config.getParam(InfoChartWidgetSpec.P.DECIMALS)
     val showTrend = config.getParam(InfoChartWidgetSpec.P.SHOW_TREND)
@@ -274,6 +274,56 @@ fun InfoChartWidgetContent(config: WidgetConfig) {
 
     // 获取图表数据
     val chartData = config.getChartData(InfoChartWidgetSpec.P.DATASOURCE)
+
+    // 应用缩放和透明度
+    val scale = config.getScale()
+    val alpha = config.getAlpha()
+
+    // 调用独立的 UI 组件
+    InfoChartDisplay(
+        title = title,
+        iconName = icon,
+        unit = unit,
+        decimals = decimals,
+        showTrend = showTrend,
+        showMinMax = showMinMax,
+        showAverage = showAverage,
+        chartData = chartData,
+        bgColor = bgColor,
+        valueColor = valueColor,
+        fontSize = fontSize,
+        enableWarning = enableWarning,
+        warningMin = warningMin,
+        warningMax = warningMax,
+        warningColor = warningColor,
+        scale = scale,
+        alpha = alpha
+    )
+}
+
+/**
+ * 信息卡片显示组件（独立的 UI 组件，可复用于 Content 和 Preview）
+ */
+@Composable
+fun InfoChartDisplay(
+    title: String,
+    iconName: String,
+    unit: String,
+    decimals: Int,
+    showTrend: Boolean,
+    showMinMax: Boolean,
+    showAverage: Boolean,
+    chartData: List<ChartDataPoint>,
+    bgColor: Color,
+    valueColor: Color,
+    fontSize: Float,
+    enableWarning: Boolean,
+    warningMin: Float,
+    warningMax: Float,
+    warningColor: Color,
+    scale: Float = 1f,
+    alpha: Float = 1f
+) {
     val currentValue = chartData.lastOrNull()?.value ?: 0f
 
     // 计算统计值
@@ -304,12 +354,6 @@ fun InfoChartWidgetContent(config: WidgetConfig) {
     // 检查是否需要警告
     val isWarning = enableWarning && (currentValue < warningMin || currentValue > warningMax)
     val displayColor = if (isWarning) warningColor else valueColor
-
-    // 应用缩放和透明度
-    val scale = config.getScale()
-    val alpha = config.getAlpha()
-
-    // 渲染卡片
     Box(
         modifier = Modifier
             .width(InfoChartWidgetSpec.P.WIDTH * scale)
@@ -334,13 +378,8 @@ fun InfoChartWidgetContent(config: WidgetConfig) {
                     color = valueColor.copy(alpha = 0.7f)
                 )
 
-                // 图标（使用配置的图标或默认图标）
-                val iconVector = remember(config.getParam(InfoChartWidgetSpec.P.ICON)) {
-                    // 这里可以根据 icon 参数选择不同的图标
-                    // 暂时使用默认图标
-                    Icons.Outlined.Info
-                }
-
+                // 图标
+                val iconVector = MaterialIconsProvider.getIconByName(iconName) ?: Icons.Default.Info
                 Icon(
                     imageVector = iconVector,
                     contentDescription = null,
@@ -447,7 +486,7 @@ fun TrendIndicator(trend: Float, scale: Float = 1f) {
 }
 
 /**
- * Preview - 信息卡片预览
+ * Preview - 信息卡片预览（直接使用 InfoChartDisplay）
  */
 @Preview
 @Composable
@@ -475,14 +514,22 @@ fun InfoChartPreview() {
                 .width(200.dp)
                 .height(200.dp)
         ) {
-            InfoChartPreviewCard(
+            InfoChartDisplay(
                 title = "车速",
+                iconName = "Speed",
                 unit = "km/h",
-                currentValue = 80f,
+                decimals = 1,
+                showTrend = true,
+                showMinMax = true,
+                showAverage = false,
                 chartData = mockChartData,
-                minValue = 50f,
-                maxValue = 95f,
-                avgValue = 72.5f
+                bgColor = Color(0xFF263238),
+                valueColor = Color.White,
+                fontSize = 48f,
+                enableWarning = false,
+                warningMin = 0f,
+                warningMax = 100f,
+                warningColor = Color(0xFFF44336)
             )
         }
 
@@ -492,117 +539,23 @@ fun InfoChartPreview() {
                 .width(200.dp)
                 .height(200.dp)
         ) {
-            InfoChartPreviewCard(
+            InfoChartDisplay(
                 title = "电池温度",
+                iconName = "Warning",
                 unit = "°C",
-                currentValue = 105f,
+                decimals = 1,
+                showTrend = true,
+                showMinMax = true,
+                showAverage = false,
                 chartData = mockChartData.map { it.copy(value = it.value + 30f) },
-                minValue = 85f,
-                maxValue = 110f,
-                avgValue = 95f,
-                isWarning = true
+                bgColor = Color(0xFF263238),
+                valueColor = Color(0xFFF44336),
+                fontSize = 48f,
+                enableWarning = true,
+                warningMin = 0f,
+                warningMax = 100f,
+                warningColor = Color(0xFFF44336)
             )
-        }
-    }
-}
-
-@Composable
-private fun InfoChartPreviewCard(
-    title: String,
-    unit: String,
-    currentValue: Float,
-    chartData: List<ChartDataPoint>,
-    minValue: Float,
-    maxValue: Float,
-    avgValue: Float,
-    isWarning: Boolean = false
-) {
-    val bgColor = Color(0xFF263238)
-    val valueColor = if (isWarning) Color(0xFFF44336) else Color.White
-    val decimals = 1
-
-    // 计算趋势
-    val trend = if (chartData.size >= 2) {
-        val recentData = chartData.takeLast(10)
-        val first = recentData.first().value
-        val last = recentData.last().value
-        if (first != 0f) ((last - first) / first * 100).coerceIn(-100f, 100f) else 0f
-    } else 0f
-
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(bgColor, RoundedCornerShape(12.dp))
-            .padding(16.dp)
-    ) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.SpaceBetween
-        ) {
-            // 标题行
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.titleMedium,
-                    color = Color.White.copy(alpha = 0.7f)
-                )
-
-                Icon(
-                    imageVector = Icons.Outlined.Info,
-                    contentDescription = null,
-                    tint = valueColor,
-                    modifier = Modifier.size(24.dp)
-                )
-            }
-
-            // 主数值
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = "%.${decimals}f".format(currentValue),
-                    fontSize = 48.sp,
-                    color = valueColor,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-
-            // 底部信息
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.Bottom
-            ) {
-                Column {
-                    Text(
-                        text = "最小: %.${decimals}f".format(minValue),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = Color.White.copy(alpha = 0.6f)
-                    )
-                    Text(
-                        text = "最大: %.${decimals}f".format(maxValue),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = Color.White.copy(alpha = 0.6f)
-                    )
-                }
-
-                Column(horizontalAlignment = Alignment.End) {
-                    Text(
-                        text = unit,
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = Color.White.copy(alpha = 0.8f),
-                        fontWeight = FontWeight.Medium
-                    )
-                    TrendIndicator(trend = trend)
-                }
-            }
         }
     }
 }

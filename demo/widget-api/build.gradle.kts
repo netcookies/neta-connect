@@ -38,4 +38,7 @@ dependencies {
     api(libs.androidx.compose.runtime)
     api(libs.androidx.ui.graphics)
     api(libs.androidx.ui)
+
+    // Material Icons - 用于 MaterialIconsProvider
+    api(libs.androidx.compose.material.icons.extended)
 }

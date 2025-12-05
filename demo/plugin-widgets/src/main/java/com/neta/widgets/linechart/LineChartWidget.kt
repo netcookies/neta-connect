@@ -11,10 +11,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ShowChart
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -41,6 +43,7 @@ import com.neta.isulewtools.api.widget.getAlpha
 import com.neta.isulewtools.api.widget.getChartData
 import com.neta.isulewtools.api.widget.getParam
 import com.neta.isulewtools.api.widget.getScale
+import com.neta.isulewtools.api.widget.icons.MaterialIconsProvider
 import com.neta.isulewtools.api.widget.toHexString
 
 /**
@@ -106,6 +109,13 @@ object LineChartWidgetSpec : WidgetSpec(
                 type = WidgetParamType.STRING,
                 defaultValue = P.TITLE.default,
                 description = "图表标题"
+            )
+            +WidgetParamDesc(
+                key = P.ICON.key,
+                label = "图标",
+                type = WidgetParamType.ICON,
+                defaultValue = P.ICON.default,
+                description = "图表图标"
             )
             +WidgetParamDesc(
                 key = P.UNIT.key,
@@ -251,6 +261,7 @@ object LineChartWidgetSpec : WidgetSpec(
 
         // 显示设置
         val TITLE = ParamDef("title", "数据趋势")
+        val ICON = ParamDef("icon", "ShowChart")
         val UNIT = ParamDef("unit", "")
         val DECIMALS = ParamDef("decimals", 1)
         val SHOW_CURRENT_VALUE = ParamDef("showCurrentValue", true)
@@ -281,12 +292,13 @@ object LineChartWidgetSpec : WidgetSpec(
 }
 
 /**
- * 折线图内容
+ * 折线图内容（Widget 入口）
  */
 @Composable
 fun LineChartWidgetContent(config: WidgetConfig) {
     // 读取配置参数
     val title = config.getParam(LineChartWidgetSpec.P.TITLE)
+    val icon = config.getParam(LineChartWidgetSpec.P.ICON)
     val unit = config.getParam(LineChartWidgetSpec.P.UNIT)
     val decimals = config.getParam(LineChartWidgetSpec.P.DECIMALS)
     val showCurrentValue = config.getParam(LineChartWidgetSpec.P.SHOW_CURRENT_VALUE)
@@ -313,6 +325,60 @@ fun LineChartWidgetContent(config: WidgetConfig) {
 
     // 获取图表数据
     val chartData = config.getChartData(LineChartWidgetSpec.P.DATASOURCE)
+
+    // 调用独立的 UI 组件
+    LineChartDisplay(
+        title = title,
+        iconName = icon,
+        unit = unit,
+        decimals = decimals,
+        showCurrentValue = showCurrentValue,
+        showGrid = showGrid,
+        showPoints = showPoints,
+        chartData = chartData,
+        lineWidth = lineWidth,
+        lineColor = lineColor,
+        smoothCurve = smoothCurve,
+        fillArea = fillArea,
+        fillColor = fillColor,
+        bgColor = bgColor,
+        textColor = textColor,
+        gridColor = gridColor,
+        autoScale = autoScale,
+        manualMinValue = manualMinValue,
+        manualMaxValue = manualMaxValue,
+        scale = scale,
+        alpha = alpha
+    )
+}
+
+/**
+ * 折线图显示组件（独立的 UI 组件，可复用于 Content 和 Preview）
+ */
+@Composable
+fun LineChartDisplay(
+    title: String,
+    iconName: String,
+    unit: String,
+    decimals: Int,
+    showCurrentValue: Boolean,
+    showGrid: Boolean,
+    showPoints: Boolean,
+    chartData: List<ChartDataPoint>,
+    lineWidth: Float,
+    lineColor: Color,
+    smoothCurve: Boolean,
+    fillArea: Boolean,
+    fillColor: Color,
+    bgColor: Color,
+    textColor: Color,
+    gridColor: Color,
+    autoScale: Boolean,
+    manualMinValue: Float,
+    manualMaxValue: Float,
+    scale: Float = 1f,
+    alpha: Float = 1f
+) {
     val currentValue = chartData.lastOrNull()?.value ?: 0f
 
     // 计算Y轴范围
@@ -330,7 +396,6 @@ fun LineChartWidgetContent(config: WidgetConfig) {
     // 预计算缩放后的值
     val scaledPadding = 12.dp * scale
     val scaledTitleSize = 16.sp * scale
-    val scaledValueSize = 18.sp * scale
     val scaledLineWidth = lineWidth * scale
 
     Box(
@@ -344,7 +409,7 @@ fun LineChartWidgetContent(config: WidgetConfig) {
         Column(
             modifier = Modifier.matchParentSize()
         ) {
-            // 标题行
+            // 第一行：标题和图标
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -357,19 +422,47 @@ fun LineChartWidgetContent(config: WidgetConfig) {
                     fontWeight = FontWeight.Medium
                 )
 
-                if (showCurrentValue) {
+                // 图标
+                val iconVector = MaterialIconsProvider.getIconByName(iconName)
+                    ?: Icons.AutoMirrored.Filled.ShowChart
+                Icon(
+                    imageVector = iconVector,
+                    contentDescription = null,
+                    tint = lineColor,
+                    modifier = Modifier.size((24 * scale).dp)
+                )
+            }
+
+            Spacer(modifier = Modifier.height((4 * scale).dp))
+
+            // 第二行：大字体显示数据+单位
+            if (showCurrentValue) {
+                Row(
+                    verticalAlignment = Alignment.Bottom
+                ) {
                     Text(
-                        text = "%.${decimals}f$unit".format(currentValue),
-                        fontSize = scaledValueSize,
+                        text = "%.${decimals}f".format(currentValue),
+                        fontSize = (32 * scale).sp,
                         color = textColor,
                         fontWeight = FontWeight.Bold
                     )
+                    if (unit.isNotEmpty()) {
+                        Text(
+                            text = unit,
+                            fontSize = (18 * scale).sp,
+                            color = textColor.copy(alpha = 0.8f),
+                            modifier = Modifier.padding(
+                                start = (4 * scale).dp,
+                                bottom = (2 * scale).dp
+                            )
+                        )
+                    }
                 }
             }
 
-            Spacer(modifier = Modifier.height(8.dp * scale))
+            Spacer(modifier = Modifier.height((8 * scale).dp))
 
-            // 折线图
+            // 下半部分：折线图
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -492,7 +585,7 @@ private fun Path.drawSmoothPath(points: List<Offset>) {
 }
 
 /**
- * Preview - 折线图预览
+ * Preview - 折线图预览（直接使用 LineChartDisplay）
  */
 @Preview
 @Composable
@@ -528,15 +621,27 @@ fun LineChartPreview() {
                 .width(550.dp)
                 .height(200.dp)
         ) {
-            LineChartPreviewCard(
+            LineChartDisplay(
                 title = "电池电压",
+                iconName = "ShowChart",
                 unit = "V",
+                decimals = 1,
+                showCurrentValue = true,
+                showGrid = true,
+                showPoints = false,
                 chartData = mockChartData1,
+                lineWidth = 2f,
                 lineColor = Color(0xFF4CAF50),
-                fillColor = Color(0x334CAF50),
                 smoothCurve = true,
                 fillArea = true,
-                showPoints = false
+                fillColor = Color(0x334CAF50),
+                bgColor = Color(0xFF263238),
+                textColor = Color.White,
+                gridColor = Color(0x33FFFFFF),
+                autoScale = true,
+                manualMinValue = 0f,
+                manualMaxValue = 100f,
+                scale = 1.375f // 550dp / 400dp
             )
         }
 
@@ -546,167 +651,28 @@ fun LineChartPreview() {
                 .width(550.dp)
                 .height(200.dp)
         ) {
-            LineChartPreviewCard(
+            LineChartDisplay(
                 title = "功率趋势",
+                iconName = "TrendingUp",
                 unit = "kW",
+                decimals = 1,
+                showCurrentValue = true,
+                showGrid = true,
+                showPoints = true,
                 chartData = mockChartData2,
+                lineWidth = 2f,
                 lineColor = Color(0xFFFF9800),
-                fillColor = Color(0x00000000),
                 smoothCurve = false,
                 fillArea = false,
-                showPoints = true
+                fillColor = Color(0x00000000),
+                bgColor = Color(0xFF263238),
+                textColor = Color.White,
+                gridColor = Color(0x33FFFFFF),
+                autoScale = true,
+                manualMinValue = 0f,
+                manualMaxValue = 100f,
+                scale = 1.375f
             )
-        }
-    }
-}
-
-@Composable
-private fun LineChartPreviewCard(
-    title: String,
-    unit: String,
-    chartData: List<ChartDataPoint>,
-    lineColor: Color,
-    fillColor: Color,
-    smoothCurve: Boolean,
-    fillArea: Boolean,
-    showPoints: Boolean
-) {
-    val bgColor = Color(0xFF263238)
-    val textColor = Color.White
-    val gridColor = Color(0x33FFFFFF)
-    val currentValue = chartData.lastOrNull()?.value ?: 0f
-    val decimals = 1
-    val lineWidth = 2f
-
-    // 计算Y轴范围
-    val minValue = chartData.minOfOrNull { it.value } ?: 0f
-    val maxValue = chartData.maxOfOrNull { it.value } ?: 100f
-    val padding = (maxValue - minValue) * 0.1f
-    val yMin = minValue - padding
-    val yMax = maxValue + padding
-
-    Box(
-        modifier = Modifier
-            .width(550.dp)
-            .height(200.dp)
-            .background(bgColor, RoundedCornerShape(12.dp))
-            .padding(12.dp)
-    ) {
-        Column(
-            modifier = Modifier.matchParentSize()
-        ) {
-            // 标题行
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = title,
-                    fontSize = 14.sp,
-                    color = textColor.copy(alpha = 0.7f),
-                    fontWeight = FontWeight.Medium
-                )
-
-                Text(
-                    text = "%.${decimals}f$unit".format(currentValue),
-                    fontSize = 16.sp,
-                    color = textColor,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            // 折线图
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-            ) {
-                Canvas(modifier = Modifier.fillMaxSize()) {
-                    val canvasWidth = size.width
-                    val canvasHeight = size.height
-
-                    if (chartData.isEmpty()) return@Canvas
-
-                    // 绘制网格线
-                    val gridLineCount = 5
-                    for (i in 0 until gridLineCount) {
-                        val y = canvasHeight * (i.toFloat() / (gridLineCount - 1))
-                        drawLine(
-                            color = gridColor,
-                            start = Offset(0f, y),
-                            end = Offset(canvasWidth, y),
-                            strokeWidth = 1f
-                        )
-                    }
-
-                    // 计算数据点坐标
-                    val points = chartData.mapIndexed { index, dataPoint ->
-                        val x =
-                            canvasWidth * (index.toFloat() / (chartData.size - 1).coerceAtLeast(1))
-                        val normalizedValue = if (yMax > yMin) {
-                            ((dataPoint.value - yMin) / (yMax - yMin)).coerceIn(0f, 1f)
-                        } else {
-                            0f
-                        }
-                        val y = canvasHeight * (1f - normalizedValue)
-                        Offset(x, y)
-                    }
-
-                    // 绘制填充区域
-                    if (fillArea && points.size >= 2 && fillColor.alpha > 0f) {
-                        val fillPath = Path().apply {
-                            moveTo(points.first().x, canvasHeight)
-                            lineTo(points.first().x, points.first().y)
-
-                            if (smoothCurve) {
-                                drawSmoothPath(points)
-                            } else {
-                                points.forEach { lineTo(it.x, it.y) }
-                            }
-
-                            lineTo(points.last().x, canvasHeight)
-                            close()
-                        }
-                        drawPath(fillPath, fillColor)
-                    }
-
-                    // 绘制线条
-                    if (points.size >= 2) {
-                        val linePath = Path().apply {
-                            moveTo(points.first().x, points.first().y)
-
-                            if (smoothCurve) {
-                                drawSmoothPath(points)
-                            } else {
-                                points.forEach { lineTo(it.x, it.y) }
-                            }
-                        }
-                        drawPath(
-                            path = linePath,
-                            color = lineColor,
-                            style = Stroke(
-                                width = lineWidth,
-                                cap = StrokeCap.Round,
-                                join = StrokeJoin.Round
-                            )
-                        )
-                    }
-
-                    // 绘制数据点
-                    if (showPoints) {
-                        points.forEach { point ->
-                            drawCircle(
-                                color = lineColor,
-                                radius = lineWidth * 1.5f,
-                                center = point
-                            )
-                        }
-                    }
-                }
-            }
         }
     }
 }
