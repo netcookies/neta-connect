@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-05T11:42:16Z",
+  "generatedAt": "2025-12-05T17:55:12Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -315,7 +315,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.1",
+      "latestVersion": "1.0.2",
       "status": "STABLE",
       "versions": [
         {
@@ -335,6 +335,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 24325,
           "sha256": "218317b5432017c2c6ecea6d5f55837ca859a83af0c155df6a67e86880fc00f1"
+        },
+        {
+          "version": "1.0.2",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d3/1.0.2/widget-info-card-4x3d3.jar",
+          "changelog": "版本 1.0.2",
+          "minAppVersion": "1.8.9",
+          "fileSize": 24313,
+          "sha256": "fa1c70986f3b60a9a1adeda379a19d70877430a1a890eb66a0076107da03afb5"
         }
       ]
     },
@@ -347,7 +356,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.1",
+      "latestVersion": "1.0.2",
       "status": "STABLE",
       "versions": [
         {
@@ -367,6 +376,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 25383,
           "sha256": "f99c45de7bcac6f3feb56d3a06f19f46fdaeac594cf5d78de788dc26909c4c99"
+        },
+        {
+          "version": "1.0.2",
+          "releaseDate": "2025-12-05",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d4/1.0.2/widget-info-card-4x3d4.jar",
+          "changelog": "版本 1.0.2",
+          "minAppVersion": "1.8.9",
+          "fileSize": 25273,
+          "sha256": "7bee414ffc946e0ab0039d564fc53ca50b7a2fe535860ad451faf8383d3dc13b"
         }
       ]
     },
