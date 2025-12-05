@@ -17,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.TrendingDown
 import androidx.compose.material.icons.automirrored.outlined.TrendingFlat
 import androidx.compose.material.icons.automirrored.outlined.TrendingUp
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -60,7 +61,7 @@ object InfoChartWidgetSpec : WidgetSpec(
     type = "info_chart",
     displayName = "信息卡片",
     recommendedGrid = Pair(2, 2),
-    icon = Icons.Outlined.Info,
+    icon = Icons.Default.Info,
     color = Color(0xFF4CAF50),
 
     paramSchema = WidgetParamDesc.buildParams {

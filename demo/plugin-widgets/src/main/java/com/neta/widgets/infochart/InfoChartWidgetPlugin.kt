@@ -17,7 +17,7 @@ class InfoChartWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-info-chart",
-            version = "1.0.0",
+            version = "1.0.1",
             author = "官方",
             description = "信息卡片，显示实时数值、趋势指示器和统计信息",
             minAppVersion = "1.8.9",
