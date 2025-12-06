@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-06T05:12:39Z",
+  "generatedAt": "2025-12-06T05:13:33Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -343,7 +343,7 @@
           "changelog": "版本 1.0.2",
           "minAppVersion": "1.8.9",
           "fileSize": 24313,
-          "sha256": "d57b91e38b45d765e7185d851c6f188ee31af8e595774f7dea3d4580061a15d0"
+          "sha256": "76c4ee671d2ce6b9d707b07a2992cfb86447d8e02392e9376ca927d0fc10bedd"
         }
       ]
     },
@@ -475,7 +475,7 @@
           "changelog": "版本 1.0.2",
           "minAppVersion": "1.8.9",
           "fileSize": 32705,
-          "sha256": "2f6dc707e3d87b40a3a7e8e379fc6e8833bee7283684bf0e5398771c40c37104"
+          "sha256": "7f0c4c9fad788df0995a78fafc83550b86737b18649bc5bd5b3c515c26b1f08d"
         }
       ]
     },
