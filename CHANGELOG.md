@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.9.3 (2025-12-07)
+
+### Bug Fixes
+- 修复历史数据造成的小组件数据显示重复的问题 [`57d0d86a`](https://github.com/netcookies/isulewTools/commit/57d0d86a)
+
 ## v1.9.2 (2025-12-06)
 
 ### Feature
