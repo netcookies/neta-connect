@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-08T06:47:51Z",
+  "generatedAt": "2025-12-08T08:44:51Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -11,7 +11,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.5",
+      "latestVersion": "1.0.6",
       "status": "STABLE",
       "versions": [
         {
@@ -40,6 +40,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 28843,
           "sha256": "f6845315dac27b4940a2f36df77484bcca2d5597ff7890069b7da027f39b609f"
+        },
+        {
+          "version": "1.0.6",
+          "releaseDate": "2025-12-08",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-arc-gauge/1.0.6/widget-arc-gauge.jar",
+          "changelog": "版本 1.0.6",
+          "minAppVersion": "1.8.9",
+          "fileSize": 28900,
+          "sha256": "3e79193ee2cf1ffba5ac262732cea12e77ab36124b5d6c0dafbd48cc9966bd0c"
         }
       ]
     },
@@ -93,7 +102,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.4",
+      "latestVersion": "1.0.6",
       "status": "STABLE",
       "versions": [
         {
@@ -122,6 +131,24 @@
           "minAppVersion": "1.8.9",
           "fileSize": 25119,
           "sha256": "5f772c25c7ef583fad9a95a340aa9ae1ecef974a0cd91426cbb85ed71f66a7c9"
+        },
+        {
+          "version": "1.0.5",
+          "releaseDate": "2025-12-08",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.5/widget-battery.jar",
+          "changelog": "版本 1.0.5",
+          "minAppVersion": "1.8.9",
+          "fileSize": 28029,
+          "sha256": "26299aee196a85d8f62bf0167cc177e6700d6389475d4925984485838d0fda72"
+        },
+        {
+          "version": "1.0.6",
+          "releaseDate": "2025-12-08",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.6/widget-battery.jar",
+          "changelog": "版本 1.0.6",
+          "minAppVersion": "1.8.9",
+          "fileSize": 27701,
+          "sha256": "f5ee6384189a507837619ba4b48788ab291a426457cf6a8ad5f73d0e9213dd8b"
         }
       ]
     },
@@ -311,7 +338,7 @@
           "changelog": "版本 1.0.2",
           "minAppVersion": "1.8.9",
           "fileSize": 22886,
-          "sha256": "6c251bbbf8ff3236e2f72224fba3320571fac9d96930c5f542f3bcce36e88160"
+          "sha256": "0471f26a1a16a983315f7a7fe5afd40e6c31489560a816c9b7d57165c3ee152a"
         }
       ]
     },
@@ -361,7 +388,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "1.8.9",
           "fileSize": 23705,
-          "sha256": "01ac70941ef7ad349f47107e207cc7e7fcde16243f9eadab885904b167602c19"
+          "sha256": "4c76d8302d5ed35ad1e4d4aba3e710b31446f53b2fe33935b0509cb29b64eff9"
         }
       ]
     },
@@ -411,7 +438,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "1.8.9",
           "fileSize": 25150,
-          "sha256": "e76834da10e3568314d3a394f03d8716e4b04bd147d892bbeb36245b4738146a"
+          "sha256": "00e4684d84a954458cae2466e17335e1a978d22c3bd66ccc97c9300e11f18241"
         }
       ]
     },
@@ -593,7 +620,7 @@
           "changelog": "版本 1.0.5",
           "minAppVersion": "1.8.9",
           "fileSize": 22106,
-          "sha256": "04d82a0fe018ed71494893815370fbf87b1a3f6b450eade7f49dc1b495661575"
+          "sha256": "a9b6206f8505e0e0ee6281a6526b21c81395807282d09e023132e1c735d9106b"
         }
       ]
     },
