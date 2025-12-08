@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-08T17:37:44Z",
+  "generatedAt": "2025-12-08T17:39:52Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -48,7 +48,7 @@
           "changelog": "版本 1.0.6",
           "minAppVersion": "1.8.9",
           "fileSize": 28900,
-          "sha256": "56fa2a1541f375d168d0b8a21672f0b869fc4955c89b56097a567a75e4d291ed"
+          "sha256": "3babb87c2a4f371e22814bfe3f5051f78b3be17111386ad4471daabe485f26a8"
         }
       ]
     },
@@ -89,7 +89,7 @@
           "changelog": "版本 1.0.2",
           "minAppVersion": "1.8.9",
           "fileSize": 29687,
-          "sha256": "66afbb5219d63f2bdd39a6a77a22b23dfcdc0abf72c67b8aa2ec1e224919ddad"
+          "sha256": "d5646be797787f93cf393b8a60630d76c435104a019dc51efc3e88f90912f7a0"
         }
       ]
     },
@@ -148,7 +148,7 @@
           "changelog": "版本 1.0.6",
           "minAppVersion": "1.8.9",
           "fileSize": 27701,
-          "sha256": "f5ee6384189a507837619ba4b48788ab291a426457cf6a8ad5f73d0e9213dd8b"
+          "sha256": "6f2da936bf42c6b34b9dbb9e894903d53330746efed37ed207e236384499a8d0"
         }
       ]
     },
@@ -297,7 +297,7 @@
           "changelog": "版本 1.1.6",
           "minAppVersion": "1.8.9",
           "fileSize": 13132,
-          "sha256": "7fed1e039472f83dc7270aa38bfafe678e2a5c7da25935b23ff5573ed44c3f27"
+          "sha256": "c65cde5ef2b971cf129e406ca81a2828dbab5b309e7421cb6e6953ad03a4d6bd"
         }
       ]
     },
@@ -338,7 +338,7 @@
           "changelog": "版本 1.0.2",
           "minAppVersion": "1.8.9",
           "fileSize": 22886,
-          "sha256": "0471f26a1a16a983315f7a7fe5afd40e6c31489560a816c9b7d57165c3ee152a"
+          "sha256": "b8a5fbc7cfaf1f7593299ef587aa8f06c5c77c10d5fc7bd9ffb462fbf2bef880"
         }
       ]
     },
@@ -438,7 +438,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "1.8.9",
           "fileSize": 25150,
-          "sha256": "00e4684d84a954458cae2466e17335e1a978d22c3bd66ccc97c9300e11f18241"
+          "sha256": "fc5f6854e2150c1cc77068543194b5f0b72d6b258b937e9f18abb3ad135aa5e6"
         }
       ]
     },
@@ -488,7 +488,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "1.8.9",
           "fileSize": 31204,
-          "sha256": "8e0e1439bc818b9ba61cc64aa9a24d93734163cd596422781f825e452d1a67d6"
+          "sha256": "5903982d07f0521ad6df3842955647af230eca15e3fbdcc274954d8fc193bee1"
         }
       ]
     },
@@ -529,7 +529,7 @@
           "changelog": "版本 1.0.2",
           "minAppVersion": "1.8.9",
           "fileSize": 32705,
-          "sha256": "32d12ccbeb2e7f118a53626307b4c3b556046d79da64480372e86519f75e268f"
+          "sha256": "9a67a58fd930d18a8d1a9a626b1f85e07f2b131c60193356a27ee9da0dc97c16"
         }
       ]
     },
@@ -570,7 +570,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "1.8.9",
           "fileSize": 20668,
-          "sha256": "ffd54fce3e8c4099d7bda6f16867f0e223b2821d2df4855bbae103d38b816b46"
+          "sha256": "200c7237519fce53596e903717b3162c6d359289fcc379e7df4209f500a548ad"
         }
       ]
     },
@@ -697,7 +697,7 @@
           "changelog": "版本 1.1.0",
           "minAppVersion": "1.8.9",
           "fileSize": 31251,
-          "sha256": "963f6f5766bcca2b5cd290e395592b2db83253840fbdf4cd38ff29be99518604"
+          "sha256": "127b2dc968133e5978a1fc5f8163c99766a4a031b3a65168b26378f11d8143fd"
         }
       ]
     }
