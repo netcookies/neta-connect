@@ -162,10 +162,10 @@ object ArcGaugeWidgetSpec : WidgetSpec(
             description = "显示在仪表盘下方的说明文字"
         )
         +WidgetParamDesc(
-            key = P.DATASOURCE,
+            key = P.DATASOURCE.key,
             label = "数据源",
             type = WidgetParamType.DATA_SOURCE,
-            defaultValue = null,
+            defaultValue = P.DATASOURCE.default,
             options = emptyList(),
             required = true,
             description = "仪表盘显示值的数据来源"
@@ -197,8 +197,8 @@ object ArcGaugeWidgetSpec : WidgetSpec(
         val UNIT = ParamDef("unit", "L/100km")
         val DESCRIPTION = ParamDef("description", "百公里耗油量")
 
-        // 数据源参数只定义 key
-        const val DATASOURCE = "datasource"
+        // 数据源参数（使用 ParamDef，default 为默认属性名）
+        val DATASOURCE = ParamDef("datasource", "HZ_RESET_AVG_ENERGY")
 
         // 非参数常量
         val SIZE = 150.dp
@@ -228,7 +228,7 @@ fun ArcGaugeWidgetContent(config: WidgetConfig) {
     val alpha = config.getAlpha()
 
     // 从注入的数据中读取值
-    val rawValue = config.getDataSourceFloat(ArcGaugeWidgetSpec.P.DATASOURCE, minValue)
+    val rawValue = config.getDataSourceFloat(ArcGaugeWidgetSpec.P.DATASOURCE.key, minValue)
 
     ArcGaugeIndicator(
         value = rawValue,

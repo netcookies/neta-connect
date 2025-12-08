@@ -33,7 +33,7 @@ import com.neta.isulewtools.api.widget.WidgetParamDesc
 import com.neta.isulewtools.api.widget.WidgetParamType
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.getAlpha
-import com.neta.isulewtools.api.widget.getDataSourceFloat
+import com.neta.isulewtools.api.widget.getDataSourceWithDisplay
 import com.neta.isulewtools.api.widget.getParam
 import com.neta.isulewtools.api.widget.getScale
 import com.neta.isulewtools.api.widget.icons.MaterialIconsProvider
@@ -229,26 +229,38 @@ fun InfoCard4x3d3WidgetContent(config: WidgetConfig) {
     val scale = config.getScale()
     val alpha = config.getAlpha()
 
-    // 获取数据
-    val mainValue = config.getDataSourceFloat(InfoCard4x3d3WidgetSpec.P.DATASOURCE, 0f)
-    val info2Value = config.getDataSourceFloat(InfoCard4x3d3WidgetSpec.P.INFO2_DATASOURCE, 0f)
-    val info3Value = config.getDataSourceFloat(InfoCard4x3d3WidgetSpec.P.INFO3_DATASOURCE, 0f)
+    // 获取数据（支持数值和字符串类型）
+    val (mainValue, mainDisplay) = config.getDataSourceWithDisplay(
+        InfoCard4x3d3WidgetSpec.P.DATASOURCE,
+        decimals = decimals,
+        defaultValue = "—"
+    )
+    val (info2Value, info2Display) = config.getDataSourceWithDisplay(
+        InfoCard4x3d3WidgetSpec.P.INFO2_DATASOURCE,
+        decimals = info2Decimals,
+        defaultValue = "—"
+    )
+    val (info3Value, info3Display) = config.getDataSourceWithDisplay(
+        InfoCard4x3d3WidgetSpec.P.INFO3_DATASOURCE,
+        decimals = info3Decimals,
+        defaultValue = "—"
+    )
 
     // 调用独立的Display组件
     InfoCard4x3d3Display(
         title = title,
         iconName = icon,
         mainValue = mainValue,
+        mainDisplay = mainDisplay,
         unit = unit,
-        decimals = decimals,
         info2Label = info2Label,
         info2Value = info2Value,
+        info2Display = info2Display,
         info2Unit = info2Unit,
-        info2Decimals = info2Decimals,
         info3Label = info3Label,
         info3Value = info3Value,
+        info3Display = info3Display,
         info3Unit = info3Unit,
-        info3Decimals = info3Decimals,
         bgColor = bgColor,
         bgColor2 = bgColor2,
         textColor = textColor,
@@ -264,17 +276,17 @@ fun InfoCard4x3d3WidgetContent(config: WidgetConfig) {
 fun InfoCard4x3d3Display(
     title: String,
     iconName: String,
-    mainValue: Float,
+    mainValue: Float?,         // 主数值用于计算（字符串时为 null）
+    mainDisplay: String,       // 主数值格式化文本用于显示
     unit: String,
-    decimals: Int,
     info2Label: String,
-    info2Value: Float,
+    info2Value: Float?,        // 数值用于计算（字符串时为 null）
+    info2Display: String,      // 格式化文本用于显示
     info2Unit: String,
-    info2Decimals: Int,
     info3Label: String,
-    info3Value: Float,
+    info3Value: Float?,        // 数值用于计算（字符串时为 null）
+    info3Display: String,      // 格式化文本用于显示
     info3Unit: String,
-    info3Decimals: Int,
     bgColor: Color,
     bgColor2: Color,
     textColor: Color,
@@ -328,7 +340,7 @@ fun InfoCard4x3d3Display(
                 verticalAlignment = Alignment.Bottom
             ) {
                 Text(
-                    text = "%.${decimals}f".format(mainValue),
+                    text = mainDisplay,
                     fontSize = (80 * scale).sp,
                     color = textColor,
                     fontWeight = FontWeight.Bold
@@ -363,7 +375,7 @@ fun InfoCard4x3d3Display(
                     Spacer(modifier = Modifier.height((4 * scale).dp))
                     Row(verticalAlignment = Alignment.Bottom) {
                         Text(
-                            text = "%.${info2Decimals}f".format(info2Value),
+                            text = info2Display,
                             fontSize = (32 * scale).sp,
                             color = textColor,
                             fontWeight = FontWeight.Bold
@@ -395,7 +407,7 @@ fun InfoCard4x3d3Display(
                     Spacer(modifier = Modifier.height((4 * scale).dp))
                     Row(verticalAlignment = Alignment.Bottom) {
                         Text(
-                            text = "%.${info3Decimals}f".format(info3Value),
+                            text = info3Display,
                             fontSize = (32 * scale).sp,
                             color = textColor,
                             fontWeight = FontWeight.Bold
@@ -435,16 +447,16 @@ fun InfoCard4x3d3Preview() {
             title = "电池状态",
             iconName = "Info",
             mainValue = 78f,
+            mainDisplay = "78",
             unit = "%",
-            decimals = 0,
             info2Label = "SOH健康度",
             info2Value = 95f,
+            info2Display = "95",
             info2Unit = "%",
-            info2Decimals = 0,
             info3Label = "温度",
             info3Value = 28f,
+            info3Display = "28",
             info3Unit = "°C",
-            info3Decimals = 0,
             bgColor = Color(0xFF4CAF50),
             bgColor2 = Color(0xFF66BB6A),
             textColor = Color.White

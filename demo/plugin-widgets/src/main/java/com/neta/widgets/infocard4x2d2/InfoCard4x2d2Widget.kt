@@ -33,7 +33,7 @@ import com.neta.isulewtools.api.widget.WidgetParamDesc
 import com.neta.isulewtools.api.widget.WidgetParamType
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.getAlpha
-import com.neta.isulewtools.api.widget.getDataSourceFloat
+import com.neta.isulewtools.api.widget.getDataSourceWithDisplay
 import com.neta.isulewtools.api.widget.getParam
 import com.neta.isulewtools.api.widget.getScale
 import com.neta.isulewtools.api.widget.icons.MaterialIconsProvider
@@ -199,9 +199,17 @@ fun InfoCard4x2d2WidgetContent(config: WidgetConfig) {
     val scale = config.getScale()
     val alpha = config.getAlpha()
 
-    // 获取数据
-    val info1Value = config.getDataSourceFloat(InfoCard4x2d2WidgetSpec.P.INFO1_DATASOURCE, 0f)
-    val info2Value = config.getDataSourceFloat(InfoCard4x2d2WidgetSpec.P.INFO2_DATASOURCE, 0f)
+    // 获取数据（支持数值和字符串类型）
+    val (info1Value, info1Display) = config.getDataSourceWithDisplay(
+        InfoCard4x2d2WidgetSpec.P.INFO1_DATASOURCE,
+        decimals = info1Decimals,
+        defaultValue = "—"
+    )
+    val (info2Value, info2Display) = config.getDataSourceWithDisplay(
+        InfoCard4x2d2WidgetSpec.P.INFO2_DATASOURCE,
+        decimals = info2Decimals,
+        defaultValue = "—"
+    )
 
     // 调用独立的Display组件
     InfoCard4x2d2Display(
@@ -209,12 +217,12 @@ fun InfoCard4x2d2WidgetContent(config: WidgetConfig) {
         iconName = icon,
         info1Label = info1Label,
         info1Value = info1Value,
+        info1Display = info1Display,
         info1Unit = info1Unit,
-        info1Decimals = info1Decimals,
         info2Label = info2Label,
         info2Value = info2Value,
+        info2Display = info2Display,
         info2Unit = info2Unit,
-        info2Decimals = info2Decimals,
         bgColor = bgColor,
         bgColor2 = bgColor2,
         textColor = textColor,
@@ -231,13 +239,13 @@ fun InfoCard4x2d2Display(
     title: String,
     iconName: String,
     info1Label: String,
-    info1Value: Float,
+    info1Value: Float?,         // 数值用于计算（字符串时为 null）
+    info1Display: String,       // 格式化文本用于显示
     info1Unit: String,
-    info1Decimals: Int,
     info2Label: String,
-    info2Value: Float,
+    info2Value: Float?,         // 数值用于计算（字符串时为 null）
+    info2Display: String,       // 格式化文本用于显示
     info2Unit: String,
-    info2Decimals: Int,
     bgColor: Color,
     bgColor2: Color,
     textColor: Color,
@@ -302,7 +310,7 @@ fun InfoCard4x2d2Display(
                     modifier = Modifier.weight(1f)
                 ) {
                     Text(
-                        text = "%.${info1Decimals}f".format(info1Value),
+                        text = info1Display,
                         fontSize = (48 * scale).sp,
                         color = textColor,
                         fontWeight = FontWeight.Bold
@@ -321,7 +329,7 @@ fun InfoCard4x2d2Display(
                     modifier = Modifier.weight(1f)
                 ) {
                     Text(
-                        text = "%.${info2Decimals}f".format(info2Value),
+                        text = info2Display,
                         fontSize = (48 * scale).sp,
                         color = textColor,
                         fontWeight = FontWeight.Bold
@@ -356,12 +364,12 @@ fun InfoCard4x2d2Preview() {
             iconName = "Analytics",
             info1Label = "能耗",
             info1Value = 15.8f,
+            info1Display = "15.8",
             info1Unit = "kWh/100km",
-            info1Decimals = 1,
             info2Label = "瞬时功率",
             info2Value = 28.4f,
+            info2Display = "28.4",
             info2Unit = "kW",
-            info2Decimals = 1,
             bgColor = Color(0xFFE91E63),
             bgColor2 = Color(0xFFF06292),
             textColor = Color.White

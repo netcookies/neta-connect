@@ -39,6 +39,7 @@ import com.neta.isulewtools.api.widget.WidgetParamType
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.getAlpha
 import com.neta.isulewtools.api.widget.getDataSourceFloat
+import com.neta.isulewtools.api.widget.getDataSourceInt
 import com.neta.isulewtools.api.widget.getParam
 import com.neta.isulewtools.api.widget.getScale
 import com.neta.isulewtools.api.widget.rememberWidgetFontFamily
@@ -89,13 +90,38 @@ object BatteryWidgetSpec : WidgetSpec(
             description = "关闭后电量低时自动变为黄色/红色"
         )
         +WidgetParamDesc(
-            key = P.DATASOURCE,
+            key = P.HEIGHT.key,
+            label = "高度",
+            type = WidgetParamType.FLOAT,
+            defaultValue = P.HEIGHT.default,
+            description = "电池指示器的高度 (单位: dp)"
+        )
+        +WidgetParamDesc(
+            key = P.DATASOURCE.key,
             label = "属性数据源",
             type = WidgetParamType.DATA_SOURCE,
-            defaultValue = null,
+            defaultValue = P.DATASOURCE.default,
             options = emptyList(), // 后续动态赋值
             required = true,
             description = "电池电量的数据来源(0-100)"
+        )
+        +WidgetParamDesc(
+            key = P.CHARGING_STATUS.key,
+            label = "充电状态数据源",
+            type = WidgetParamType.DATA_SOURCE,
+            defaultValue = P.CHARGING_STATUS.default,
+            options = emptyList(),
+            required = false,
+            description = "充电状态 (1=慢充, 2=快充, 4=边充边加热)"
+        )
+        +WidgetParamDesc(
+            key = P.RANGE_EXTENDER_MODE.key,
+            label = "增程模式数据源",
+            type = WidgetParamType.DATA_SOURCE,
+            defaultValue = P.RANGE_EXTENDER_MODE.default,
+            options = emptyList(),
+            required = false,
+            description = "发动机转速 (>0 表示增程器已启动)"
         )
     },
     contentComposable = {
@@ -113,9 +139,12 @@ object BatteryWidgetSpec : WidgetSpec(
         val TEXT_COLOR = ParamDef("textColor", Color(0xFFFFFFFF))
         val SHOW_TEXT = ParamDef("showText", true)
         val FIXED_FILL_COLOR = ParamDef("fixedFillColor", false)
+        val HEIGHT = ParamDef("height", 21f)
 
-        // 数据源参数只定义 key,不使用 ParamDef
-        const val DATASOURCE = "datasource"
+        // 数据源参数（使用 ParamDef，default 为默认属性名）
+        val DATASOURCE = ParamDef("datasource", "HZ_STATE_CHARGE")
+        val CHARGING_STATUS = ParamDef("chargingStatus", "HZ_CHARGE_STATE")
+        val RANGE_EXTENDER_MODE = ParamDef("rangeExtenderMode", "HZ_ENGINE_SPEED")
     }
 }
 
@@ -127,13 +156,22 @@ fun BatteryWidgetContent(config: WidgetConfig) {
     val textColor = config.getParam(BatteryWidgetSpec.P.TEXT_COLOR)
     val showText = config.getParam(BatteryWidgetSpec.P.SHOW_TEXT)
     val fixedFillColor = config.getParam(BatteryWidgetSpec.P.FIXED_FILL_COLOR)
+    val height = config.getParam(BatteryWidgetSpec.P.HEIGHT)
 
     // 使用辅助函数获取自动注入的参数
     val scale = config.getScale()
     val alpha = config.getAlpha()
 
     // 从注入的数据中读取电池电量
-    val batteryLevel = config.getDataSourceFloat(BatteryWidgetSpec.P.DATASOURCE, 0f)
+    val batteryLevel = config.getDataSourceFloat(BatteryWidgetSpec.P.DATASOURCE.key, 0f)
+
+    // 充电状态枚举：0=正常, 1=慢速充电, 2=快速充电, 3=加热, 4=边充边加热, 5=保温, 6=充电停止, 7=充电器故障, 8=充电完成
+    // 只有 1(慢速)、2(快速)、4(边充边加热) 时显示充电图标
+    val chargingStatus = config.getDataSourceInt(BatteryWidgetSpec.P.CHARGING_STATUS.key, 0)
+    val isCharging = chargingStatus in listOf(1, 2, 4)
+
+    val isRangeExtenderMode = config.getDataSourceFloat(BatteryWidgetSpec.P.RANGE_EXTENDER_MODE.key, 0f) > 0f
+
     AppleStyleBatteryIndicator(
         batteryLevel = batteryLevel,
         scale = scale,
@@ -142,7 +180,10 @@ fun BatteryWidgetContent(config: WidgetConfig) {
         fillColor = fillColor,
         backgroundColor = backgroundColor,
         textColor = textColor,
-        fixedFillColor = fixedFillColor
+        fixedFillColor = fixedFillColor,
+        height = height.dp,
+        isCharging = isCharging,
+        isRangeExtenderMode = isRangeExtenderMode
     )
 }
 
@@ -158,7 +199,9 @@ fun AppleStyleBatteryIndicator(
     textColor: Color = BatteryWidgetSpec.P.TEXT_COLOR.default,
     fixedFillColor: Boolean = false,
     width: Dp = 49.dp, // 更接近苹果比例
-    height: Dp = 21.dp
+    height: Dp = 21.dp,
+    isCharging: Boolean = false,
+    isRangeExtenderMode: Boolean = false
 ) {
     val fillPercent = batteryLevel.coerceIn(0f, 100f) / 100f
 
@@ -193,8 +236,9 @@ fun AppleStyleBatteryIndicator(
 
             // 电量填充（无内边距，苹果最新风格）
             if (fillPercent > 0) {
-                if (fillPercent < 0.1f) {
+                if (fillPercent <= 0.15f) {
                     // 低电量反转模式：先绘制满电填充，再从右侧覆盖背景色
+                    // 使用 <= 0.15f (15%) 以确保 1-15% 都保持左侧完整圆角
                     drawBatteryFill(
                         bodyRect = bodyRect,
                         fillPercent = 1.0f,
@@ -239,23 +283,51 @@ fun AppleStyleBatteryIndicator(
                 size = Size(tipWidth, tipHeight),
                 cornerRadius = CornerRadius(tipCornerRadius, tipCornerRadius)
             )
+
+            // 增程模式指示器 - 在电池主体周围绘制一个细边框
+            if (isRangeExtenderMode) {
+                val borderWidth = (1.5.dp.toPx()) * scale
+                drawRoundRect(
+                    color = adaptiveColor,
+                    topLeft = Offset(0f, 0f),
+                    size = Size(bodyWidth, size.height),
+                    cornerRadius = CornerRadius(bodyCornerRadius, bodyCornerRadius),
+                    style = androidx.compose.ui.graphics.drawscope.Stroke(width = borderWidth)
+                )
+            }
         }
 
-        // 百分比文字
+        // 百分比文字和充电图标
         if (showText) {
-            Text(
-                text = "${batteryLevel.toInt()}",
-                style = TextStyle(
-                    color = textColor,
-                    fontSize = (14 * scale).sp,
-                    fontWeight = FontWeight.Medium, // iOS 使用 Medium 字重
-                    fontFamily = fontFamily,
-                    letterSpacing = (-0.2).sp // 更紧凑的字间距
-                ),
+            androidx.compose.foundation.layout.Row(
                 modifier = Modifier
                     .align(Alignment.Center)
-                    .offset(x = (-2).dp * scale) // 略微向左偏移，因为电池头占据右侧空间
-            )
+                    .offset(x = (-2).dp * scale),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "${batteryLevel.toInt()}",
+                    style = TextStyle(
+                        color = textColor,
+                        fontSize = (14 * scale).sp,
+                        fontWeight = FontWeight.Medium, // iOS 使用 Medium 字重
+                        fontFamily = fontFamily,
+                        letterSpacing = (-0.2).sp // 更紧凑的字间距
+                    )
+                )
+                // 显示充电图标
+                if (isCharging) {
+                    Text(
+                        text = "⚡",
+                        style = TextStyle(
+                            color = textColor,
+                            fontSize = (10 * scale).sp
+                        ),
+                        modifier = Modifier.offset(x = 1.dp * scale)
+                    )
+                }
+            }
         }
     }
 }
@@ -390,7 +462,7 @@ fun BatteryPreview() {
         AppleStyleBatteryIndicator(batteryLevel = 50f)
         AppleStyleBatteryIndicator(batteryLevel = 25f)
         AppleStyleBatteryIndicator(batteryLevel = 19f)
-        AppleStyleBatteryIndicator(batteryLevel = 6f)
+        AppleStyleBatteryIndicator(batteryLevel = 15f)
 
         Spacer(modifier = Modifier.height(16.dp))
         Text("不同缩放", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)

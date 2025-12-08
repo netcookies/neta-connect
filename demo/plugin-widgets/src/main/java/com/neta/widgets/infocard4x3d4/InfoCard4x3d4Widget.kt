@@ -33,7 +33,7 @@ import com.neta.isulewtools.api.widget.WidgetParamDesc
 import com.neta.isulewtools.api.widget.WidgetParamType
 import com.neta.isulewtools.api.widget.WidgetSpec
 import com.neta.isulewtools.api.widget.getAlpha
-import com.neta.isulewtools.api.widget.getDataSourceFloat
+import com.neta.isulewtools.api.widget.getDataSourceWithDisplay
 import com.neta.isulewtools.api.widget.getParam
 import com.neta.isulewtools.api.widget.getScale
 import com.neta.isulewtools.api.widget.icons.MaterialIconsProvider
@@ -275,11 +275,27 @@ fun InfoCard4x3d4WidgetContent(config: WidgetConfig) {
     val scale = config.getScale()
     val alpha = config.getAlpha()
 
-    // 获取数据
-    val info1Value = config.getDataSourceFloat(InfoCard4x3d4WidgetSpec.P.INFO1_DATASOURCE, 0f)
-    val info2Value = config.getDataSourceFloat(InfoCard4x3d4WidgetSpec.P.INFO2_DATASOURCE, 0f)
-    val info3Value = config.getDataSourceFloat(InfoCard4x3d4WidgetSpec.P.INFO3_DATASOURCE, 0f)
-    val info4Value = config.getDataSourceFloat(InfoCard4x3d4WidgetSpec.P.INFO4_DATASOURCE, 0f)
+    // 获取数据（支持数值和字符串类型）
+    val (info1Value, info1Display) = config.getDataSourceWithDisplay(
+        InfoCard4x3d4WidgetSpec.P.INFO1_DATASOURCE,
+        decimals = info1Decimals,
+        defaultValue = "—"
+    )
+    val (info2Value, info2Display) = config.getDataSourceWithDisplay(
+        InfoCard4x3d4WidgetSpec.P.INFO2_DATASOURCE,
+        decimals = info2Decimals,
+        defaultValue = "—"
+    )
+    val (info3Value, info3Display) = config.getDataSourceWithDisplay(
+        InfoCard4x3d4WidgetSpec.P.INFO3_DATASOURCE,
+        decimals = info3Decimals,
+        defaultValue = "—"
+    )
+    val (info4Value, info4Display) = config.getDataSourceWithDisplay(
+        InfoCard4x3d4WidgetSpec.P.INFO4_DATASOURCE,
+        decimals = info4Decimals,
+        defaultValue = "—"
+    )
 
     // 调用独立的Display组件
     InfoCard4x3d4Display(
@@ -287,20 +303,20 @@ fun InfoCard4x3d4WidgetContent(config: WidgetConfig) {
         iconName = icon,
         info1Label = info1Label,
         info1Value = info1Value,
+        info1Display = info1Display,
         info1Unit = info1Unit,
-        info1Decimals = info1Decimals,
         info2Label = info2Label,
         info2Value = info2Value,
+        info2Display = info2Display,
         info2Unit = info2Unit,
-        info2Decimals = info2Decimals,
         info3Label = info3Label,
         info3Value = info3Value,
+        info3Display = info3Display,
         info3Unit = info3Unit,
-        info3Decimals = info3Decimals,
         info4Label = info4Label,
         info4Value = info4Value,
+        info4Display = info4Display,
         info4Unit = info4Unit,
-        info4Decimals = info4Decimals,
         bgColor = bgColor,
         bgColor2 = bgColor2,
         textColor = textColor,
@@ -317,21 +333,21 @@ fun InfoCard4x3d4Display(
     title: String,
     iconName: String,
     info1Label: String,
-    info1Value: Float,
+    info1Value: Float?,        // 数值用于计算（字符串时为 null）
+    info1Display: String,      // 格式化文本用于显示
     info1Unit: String,
-    info1Decimals: Int,
     info2Label: String,
-    info2Value: Float,
+    info2Value: Float?,        // 数值用于计算（字符串时为 null）
+    info2Display: String,      // 格式化文本用于显示
     info2Unit: String,
-    info2Decimals: Int,
     info3Label: String,
-    info3Value: Float,
+    info3Value: Float?,        // 数值用于计算（字符串时为 null）
+    info3Display: String,      // 格式化文本用于显示
     info3Unit: String,
-    info3Decimals: Int,
     info4Label: String,
-    info4Value: Float,
+    info4Value: Float?,        // 数值用于计算（字符串时为 null）
+    info4Display: String,      // 格式化文本用于显示
     info4Unit: String,
-    info4Decimals: Int,
     bgColor: Color,
     bgColor2: Color,
     textColor: Color,
@@ -391,11 +407,11 @@ fun InfoCard4x3d4Display(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     InfoItem(
-                        info1Label, info1Value, info1Unit, info1Decimals, textColor, scale,
+                        info1Label, info1Display, info1Unit, textColor, scale,
                         modifier = Modifier.weight(1f)
                     )
                     InfoItem(
-                        info2Label, info2Value, info2Unit, info2Decimals, textColor, scale,
+                        info2Label, info2Display, info2Unit, textColor, scale,
                         modifier = Modifier.weight(1f)
                     )
                 }
@@ -406,11 +422,11 @@ fun InfoCard4x3d4Display(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     InfoItem(
-                        info3Label, info3Value, info3Unit, info3Decimals, textColor, scale,
+                        info3Label, info3Display, info3Unit, textColor, scale,
                         modifier = Modifier.weight(1f)
                     )
                     InfoItem(
-                        info4Label, info4Value, info4Unit, info4Decimals, textColor, scale,
+                        info4Label, info4Display, info4Unit, textColor, scale,
                         modifier = Modifier.weight(1f)
                     )
                 }
@@ -423,9 +439,8 @@ fun InfoCard4x3d4Display(
 @Composable
 private fun InfoItem(
     label: String,
-    value: Float,
+    display: String,      // 格式化后的显示文本
     unit: String,
-    decimals: Int,
     textColor: Color,
     scale: Float,
     modifier: Modifier = Modifier
@@ -441,7 +456,7 @@ private fun InfoItem(
         )
         Spacer(modifier = Modifier.height((8 * scale).dp))
         Text(
-            text = "%.${decimals}f".format(value),
+            text = display,
             fontSize = (48 * scale).sp,
             color = textColor,
             fontWeight = FontWeight.Bold
@@ -473,20 +488,20 @@ fun InfoCard4x3d4Preview() {
             iconName = "Dashboard",
             info1Label = "转速",
             info1Value = 3250f,
+            info1Display = "3250",
             info1Unit = "rpm",
-            info1Decimals = 0,
             info2Label = "扭距",
             info2Value = 185f,
+            info2Display = "185",
             info2Unit = "N·m",
-            info2Decimals = 0,
             info3Label = "温度",
             info3Value = 65f,
+            info3Display = "65",
             info3Unit = "°C",
-            info3Decimals = 0,
             info4Label = "功率",
             info4Value = 35.2f,
+            info4Display = "35.2",
             info4Unit = "kW",
-            info4Decimals = 1,
             bgColor = Color(0xFF7B1FA2),
             bgColor2 = Color(0xFF9C27B0),
             textColor = Color.White

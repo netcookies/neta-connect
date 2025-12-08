@@ -793,6 +793,83 @@ adb logcat | grep -E "WidgetLoader|WidgetManager"
 
 ---
 
+## 📌 数据源架构（重要更新 - 2025-12-08）
+
+**架构重构说明：**
+
+从 v1.9.3 开始，数据源订阅管理经过了重大架构重构，统一了默认数据源和手动数据源的处理逻辑。
+
+**核心变更：**
+
+1. **默认值注入机制**
+   - ✅ 默认数据源在小组件创建时自动转换为 `SubscribedProperty` 并保存到 `config.params`
+   - ✅ 默认值从 `"HZ_STATE_CHARGE"` 字符串格式转换为 `SubscribedProperty(propertyId, areaId)`
+   - ✅ 统一存储格式，缓存系统能正确识别所有引用关系
+
+2. **订阅创建时机**
+   - 在 `WidgetCreateScreen` 保存时：批量创建默认数据源的订阅
+   - 在 `WidgetConfigEditor` 选择时：立即创建手动选择数据源的订阅
+   - 确保所有数据源在使用前都已订阅
+
+3. **引用计数管理**
+   - 添加小组件：创建数据源引用
+   - 更新小组件：移除旧引用→添加新引用→检查订阅状态
+   - 删除小组件：移除引用→检查是否还有其他引用→取消订阅（如无引用）
+
+4. **数据库一致性**
+   - 引用关系存储在 `PropertyReference` 表
+   - `_widgetReferences` 缓存现在能正确显示所有引用（包括默认数据源）
+   - UI 显示统一：车辆数据标签页和订阅管理都能正确显示引用信息
+
+**对插件开发的影响：**
+
+```kotlin
+// ✅ 正确的数据源参数定义（不需要修改）
+object P {
+    const val DATASOURCE = "datasource"
+}
+
+paramSchema = WidgetParamDesc.buildParams {
+    +WidgetParamDesc(
+        key = P.DATASOURCE,
+        label = "数据源",
+        type = WidgetParamType.DATA_SOURCE,
+        defaultValue = "HZ_STATE_CHARGE@0",  // 格式: 属性名@areaId
+        required = true
+    )
+}
+
+// ✅ 在 Composable 中读取（不需要修改）
+@Composable
+fun MyWidgetContent(config: WidgetConfig) {
+    val value = config.getDataSourceFloat(P.DATASOURCE, 0f)
+    // 使用 value
+}
+```
+
+**重要提示：**
+
+- 📝 插件开发者**无需修改现有代码**，系统会自动处理数据源转换
+- ✅ 默认值格式保持不变：`"属性名@areaId"`（例如：`"HZ_STATE_CHARGE@0"`）
+- ✅ 数据源读取API保持不变：继续使用 `getDataSourceFloat()` 等扩展函数
+- ⚠️ 确保默认值格式正确，否则无法自动创建订阅
+
+**调试检查：**
+
+如果遇到数据源相关问题，可以检查以下日志：
+
+```bash
+adb logcat | grep -E "WidgetCreate|PropertySubscriptionService"
+```
+
+预期日志：
+```
+WidgetCreate: Created subscription for default: HZ_STATE_CHARGE (559941152 @ 0)
+PropertySubscriptionService: Adding reference: 559941152-0 from widget:xxx
+```
+
+---
+
 ## 🚀 高级主题
 
 ### 1. 自动注入的 scale 和 alpha

@@ -111,10 +111,10 @@ object TemperatureWidgetSpec : WidgetSpec(
             description = "显示温度数字"
         )
         +WidgetParamDesc(
-            key = P.DATASOURCE,
+            key = P.DATASOURCE.key,
             label = "温度数据源",
             type = WidgetParamType.DATA_SOURCE,
-            defaultValue = null,
+            defaultValue = P.DATASOURCE.default,
             options = emptyList(),
             required = true,
             description = "温度值的数据来源"
@@ -140,8 +140,8 @@ object TemperatureWidgetSpec : WidgetSpec(
         val TEXT_COLOR = ParamDef("textColor", Color.Black)
         val SHOW_TEXT = ParamDef("showText", true)
 
-        // 数据源参数只定义 key,不使用 ParamDef
-        const val DATASOURCE = "datasource"
+        // 数据源参数（使用 ParamDef，default 为默认属性名）
+        val DATASOURCE = ParamDef("datasource", "HZ_INSIDE_TEMP")
 
         // 其他默认值（不是参数）
         val WIDTH = 40.dp
@@ -165,7 +165,7 @@ fun TemperatureWidgetContent(config: WidgetConfig) {
     val alpha = config.getAlpha()
 
     // 从注入的数据中读取温度值
-    val temperature = config.getDataSourceFloat(TemperatureWidgetSpec.P.DATASOURCE, 20f)
+    val temperature = config.getDataSourceFloat(TemperatureWidgetSpec.P.DATASOURCE.key, 20f)
 
     TemperatureIndicator(
         temperature = temperature,

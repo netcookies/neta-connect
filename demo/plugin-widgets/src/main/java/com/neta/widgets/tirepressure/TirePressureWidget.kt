@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.TireRepair
 import androidx.compose.material3.Text
@@ -98,19 +99,19 @@ object TirePressureWidgetSpec : WidgetSpec(
             description = "胎压显示的单位制"
         )
         +WidgetParamDesc(
-            key = P.PRESSURE_DATA_SOURCE,
+            key = P.PRESSURE_DATA_SOURCE.key,
             label = "胎压数据源",
             type = WidgetParamType.DATA_SOURCE,
-            defaultValue = null,
+            defaultValue = P.PRESSURE_DATA_SOURCE.default,
             options = emptyList(),
             required = true,
             description = "四轮胎压数据源(数组格式:左前/右前/左后/右后)"
         )
         +WidgetParamDesc(
-            key = P.TEMPERATURE_DATA_SOURCE,
+            key = P.TEMPERATURE_DATA_SOURCE.key,
             label = "温度数据源",
             type = WidgetParamType.DATA_SOURCE,
-            defaultValue = null,
+            defaultValue = P.TEMPERATURE_DATA_SOURCE.default,
             options = emptyList(),
             required = true,
             description = "四轮温度数据源(数组格式:左前/右前/左后/右后)"
@@ -133,9 +134,9 @@ object TirePressureWidgetSpec : WidgetSpec(
         val SHOW_TEMP_UNIT = ParamDef("showTempUnit", true)
         val PRESSURE_UNIT = ParamDef("pressureUnit", "bar")
 
-        // 数据源参数只定义 key,不使用 ParamDef
-        const val PRESSURE_DATA_SOURCE = "pressureDataSource"
-        const val TEMPERATURE_DATA_SOURCE = "temperatureDataSource"
+        // 数据源参数（使用 ParamDef，default 为默认属性名）
+        val PRESSURE_DATA_SOURCE = ParamDef("pressureDataSource", "HZ_BDCS4_TYRE_PRESSURE")
+        val TEMPERATURE_DATA_SOURCE = ParamDef("temperatureDataSource", "HZ_BDCS4_TYRE_TEMPERATURE")
 
         // 其他默认值（不是参数）
         val CAR_COLOR = Color(0xFF1E3A5F)
@@ -165,14 +166,14 @@ fun TirePressureWidgetContent(config: WidgetConfig) {
     // 胎压数据：FLOAT_VEC 类型，直接获取 FloatArray
     // 注意：VHAL 中的胎压数据以 0.01 bar 为单位存储（220f = 2.20 bar），需要除以 100
     val pressureArray =
-        config.getDataSourceFloatArray(TirePressureWidgetSpec.P.PRESSURE_DATA_SOURCE)
+        config.getDataSourceFloatArray(TirePressureWidgetSpec.P.PRESSURE_DATA_SOURCE.key)
         ?.takeIf { it.size == 4 }
         ?.map { it / 100f }  // 除以 100 得到实际 bar 值
         ?: listOf(2.6f, 2.6f, 2.6f, 2.6f) // 默认值
 
     // 温度数据：INT32_VEC 类型，获取 IntArray（温度为整数）
     val temperatureArray =
-        config.getDataSourceIntArray(TirePressureWidgetSpec.P.TEMPERATURE_DATA_SOURCE)
+        config.getDataSourceIntArray(TirePressureWidgetSpec.P.TEMPERATURE_DATA_SOURCE.key)
         ?.takeIf { it.size == 4 }
         ?: intArrayOf(22, 22, 22, 22) // 默认值
 
@@ -246,10 +247,11 @@ fun CarTirePressureIndicator(
         modifier = modifier
             .width((width * scale).dp)
             .height((height * scale).dp)
-            .background(backgroundColor)
             .graphicsLayer {
                 this.alpha = alpha
             }
+            .background(backgroundColor, RoundedCornerShape((16 * scale).dp))
+            .padding((16 * scale).dp)
     ) {
         // 绘制车辆轮廓和轮胎
         Canvas(
@@ -351,11 +353,6 @@ private fun BoxScope.TireInfoDisplay(
                     color = pressureColor,
                     fontSize = (24 * scale).sp,
                     fontWeight = FontWeight.Bold,
-                    shadow = Shadow(
-                        color = pressureColor.copy(alpha = 0.6f),
-                        offset = Offset(0f, 0f),
-                        blurRadius = 8f
-                    )
                 )
             )
             if (showPressureUnit) {

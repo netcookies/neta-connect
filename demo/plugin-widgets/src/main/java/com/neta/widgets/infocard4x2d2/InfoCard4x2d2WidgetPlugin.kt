@@ -15,7 +15,7 @@ class InfoCard4x2d2WidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-info-card-4x2d2",
-            version = "1.0.1",
+            version = "1.0.2",
             author = "官方",
             description = "信息卡片(4x2)，横向显示2个大数值",
             minAppVersion = "1.8.9",
