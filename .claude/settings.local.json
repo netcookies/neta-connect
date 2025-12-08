@@ -4,7 +4,10 @@
       "Bash(python3:*)",
       "Bash(chmod:*)",
       "Bash(bash:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "mcp__Android_Studio__list_directory_tree",
+      "Bash(tree:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

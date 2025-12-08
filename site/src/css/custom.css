@@ -21,3 +21,28 @@
   color: #eee;
 }
 
+/* 将TOC从右侧移到左侧 */
+.docPage {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.theme-doc-toc-desktop {
+  order: -1;
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: var(--ifm-spacing-horizontal);
+}
+
+.theme-doc-markdown {
+  margin-left: var(--doc-sidebar-width);
+}
+
+/* 响应式布局调整 */
+@media (max-width: 996px) {
+  .theme-doc-markdown {
+    margin-left: 0;
+  }
+}
+
