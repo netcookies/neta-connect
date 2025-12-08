@@ -206,7 +206,9 @@ fun AppleStyleBatteryIndicator(
     val fillPercent = batteryLevel.coerceIn(0f, 100f) / 100f
 
     // iOS 原生配色
-    val adaptiveColor = if (fixedFillColor) fillColor else when {
+    val adaptiveColor = when {
+        isRangeExtenderMode -> Color(0xFFFF9500) // 增程模式：iOS 橙色
+        fixedFillColor -> fillColor
         batteryLevel > 20f -> BatteryWidgetSpec.P.COLOR.default // iOS 绿色
         batteryLevel > 10f -> Color(0xFFFFCC00) // iOS 黄色
         else -> Color(0xFFFF3B30)              // iOS 红色
@@ -243,31 +245,33 @@ fun AppleStyleBatteryIndicator(
                         bodyRect = bodyRect,
                         fillPercent = 1.0f,
                         fillColor = adaptiveColor,
-                        cornerRadius = bodyCornerRadius,
-                        fromLeft = true
+                        cornerRadius = bodyCornerRadius
                     )
+                    // 从右侧覆盖：使用 scale(-1f, 1f) 水平翻转实现
+                    drawContext.canvas.save()
+                    drawContext.canvas.translate(bodyRect.center.x, 0f)
+                    drawContext.canvas.scale(-1f, 1f)
+                    drawContext.canvas.translate(-bodyRect.center.x, 0f)
                     drawBatteryFill(
                         bodyRect = bodyRect,
                         fillPercent = 1.0f - fillPercent,
                         fillColor = backgroundColor,
-                        cornerRadius = bodyCornerRadius,
-                        fromLeft = false
+                        cornerRadius = bodyCornerRadius
                     )
+                    drawContext.canvas.restore()
                 } else {
                     // 正常模式：先绘制背景，再从左侧填充
                     drawBatteryFill(
                         bodyRect = bodyRect,
                         fillPercent = 1.0f,
                         fillColor = backgroundColor,
-                        cornerRadius = bodyCornerRadius,
-                        fromLeft = true
+                        cornerRadius = bodyCornerRadius
                     )
                     drawBatteryFill(
                         bodyRect = bodyRect,
                         fillPercent = fillPercent,
                         fillColor = adaptiveColor,
-                        cornerRadius = bodyCornerRadius,
-                        fromLeft = true
+                        cornerRadius = bodyCornerRadius
                     )
                 }
             }
@@ -283,18 +287,6 @@ fun AppleStyleBatteryIndicator(
                 size = Size(tipWidth, tipHeight),
                 cornerRadius = CornerRadius(tipCornerRadius, tipCornerRadius)
             )
-
-            // 增程模式指示器 - 在电池主体周围绘制一个细边框
-            if (isRangeExtenderMode) {
-                val borderWidth = (1.5.dp.toPx()) * scale
-                drawRoundRect(
-                    color = adaptiveColor,
-                    topLeft = Offset(0f, 0f),
-                    size = Size(bodyWidth, size.height),
-                    cornerRadius = CornerRadius(bodyCornerRadius, bodyCornerRadius),
-                    style = androidx.compose.ui.graphics.drawscope.Stroke(width = borderWidth)
-                )
-            }
         }
 
         // 百分比文字和充电图标
@@ -333,19 +325,17 @@ fun AppleStyleBatteryIndicator(
 }
 
 /**
- * 绘制电池填充
+ * 绘制电池填充（从左到右）
  * @param bodyRect 电池主体区域
  * @param fillPercent 填充百分比 (0.0 ~ 1.0)
  * @param fillColor 填充颜色
  * @param cornerRadius 圆角半径
- * @param fromLeft true: 从左到右填充, false: 从右到左填充
  */
 private fun DrawScope.drawBatteryFill(
     bodyRect: Rect,
     fillPercent: Float,
     fillColor: Color,
-    cornerRadius: Float,
-    fromLeft: Boolean = true
+    cornerRadius: Float
 ) {
     val fillWidth = bodyRect.width * fillPercent
     val fillHeight = bodyRect.height
@@ -354,88 +344,51 @@ private fun DrawScope.drawBatteryFill(
 
     if (fillPercent > 0.92f) {
         // 接近满电：标准圆角矩形（左右都圆角）
-        val left = if (fromLeft) bodyRect.left else bodyRect.right - fillWidth
         drawRoundRect(
             color = fillColor,
-            topLeft = Offset(left, bodyRect.top),
+            topLeft = Offset(bodyRect.left, bodyRect.top),
             size = Size(fillWidth, fillHeight),
             cornerRadius = CornerRadius(cornerRadius, cornerRadius)
         )
     } else {
-        // 常规填充：单侧圆角
+        // 常规填充：单侧圆角（左侧圆角）
         // 当宽度太小时，动态限制圆角半径避免绘制异常
         val actualRadius = minOf(cornerRadius, fillWidth / 2, fillHeight / 2)
 
         val path = Path().apply {
-            if (fromLeft) {
-                // 从左到右：只有左侧圆角
-                moveTo(bodyRect.left + actualRadius, bodyRect.top)
-                lineTo(bodyRect.left + fillWidth, bodyRect.top)
-                lineTo(bodyRect.left + fillWidth, bodyRect.bottom)
-                lineTo(bodyRect.left + actualRadius, bodyRect.bottom)
+            // 从左到右：只有左侧圆角
+            moveTo(bodyRect.left + actualRadius, bodyRect.top)
+            lineTo(bodyRect.left + fillWidth, bodyRect.top)
+            lineTo(bodyRect.left + fillWidth, bodyRect.bottom)
+            lineTo(bodyRect.left + actualRadius, bodyRect.bottom)
 
-                // 左下圆角
-                arcTo(
-                    rect = Rect(
-                        left = bodyRect.left,
-                        top = bodyRect.bottom - actualRadius * 2,
-                        right = bodyRect.left + actualRadius * 2,
-                        bottom = bodyRect.bottom
-                    ),
-                    startAngleDegrees = 90f,
-                    sweepAngleDegrees = 90f,
-                    forceMoveTo = false
-                )
+            // 左下圆角
+            arcTo(
+                rect = Rect(
+                    left = bodyRect.left,
+                    top = bodyRect.bottom - actualRadius * 2,
+                    right = bodyRect.left + actualRadius * 2,
+                    bottom = bodyRect.bottom
+                ),
+                startAngleDegrees = 90f,
+                sweepAngleDegrees = 90f,
+                forceMoveTo = false
+            )
 
-                lineTo(bodyRect.left, bodyRect.top + actualRadius)
+            lineTo(bodyRect.left, bodyRect.top + actualRadius)
 
-                // 左上圆角
-                arcTo(
-                    rect = Rect(
-                        left = bodyRect.left,
-                        top = bodyRect.top,
-                        right = bodyRect.left + actualRadius * 2,
-                        bottom = bodyRect.top + actualRadius * 2
-                    ),
-                    startAngleDegrees = 180f,
-                    sweepAngleDegrees = 90f,
-                    forceMoveTo = false
-                )
-            } else {
-                // 从右到左：只有右侧圆角
-                moveTo(bodyRect.right - actualRadius, bodyRect.top)
-                lineTo(bodyRect.right - fillWidth, bodyRect.top)
-                lineTo(bodyRect.right - fillWidth, bodyRect.bottom)
-                lineTo(bodyRect.right - actualRadius, bodyRect.bottom)
-
-                // 右下圆角
-                arcTo(
-                    rect = Rect(
-                        left = bodyRect.right - actualRadius * 2,
-                        top = bodyRect.bottom - actualRadius * 2,
-                        right = bodyRect.right,
-                        bottom = bodyRect.bottom
-                    ),
-                    startAngleDegrees = 0f,
-                    sweepAngleDegrees = 90f,
-                    forceMoveTo = false
-                )
-
-                lineTo(bodyRect.right, bodyRect.top + actualRadius)
-
-                // 右上圆角
-                arcTo(
-                    rect = Rect(
-                        left = bodyRect.right - actualRadius * 2,
-                        top = bodyRect.top,
-                        right = bodyRect.right,
-                        bottom = bodyRect.top + actualRadius * 2
-                    ),
-                    startAngleDegrees = 270f,
-                    sweepAngleDegrees = 90f,
-                    forceMoveTo = false
-                )
-            }
+            // 左上圆角
+            arcTo(
+                rect = Rect(
+                    left = bodyRect.left,
+                    top = bodyRect.top,
+                    right = bodyRect.left + actualRadius * 2,
+                    bottom = bodyRect.top + actualRadius * 2
+                ),
+                startAngleDegrees = 180f,
+                sweepAngleDegrees = 90f,
+                forceMoveTo = false
+            )
 
             close()
         }
@@ -462,7 +415,7 @@ fun BatteryPreview() {
         AppleStyleBatteryIndicator(batteryLevel = 50f)
         AppleStyleBatteryIndicator(batteryLevel = 25f)
         AppleStyleBatteryIndicator(batteryLevel = 19f)
-        AppleStyleBatteryIndicator(batteryLevel = 15f)
+        AppleStyleBatteryIndicator(batteryLevel = 16f)
 
         Spacer(modifier = Modifier.height(16.dp))
         Text("不同缩放", fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
