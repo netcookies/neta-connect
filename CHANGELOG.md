@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.9.5 (2025-12-09)
+
+### Feature
+- 实现座舱ID中文名称显示 [`5a88eb41`](https://github.com/netcookies/isulewTools/commit/5a88eb41)
+- 添加车辆属性的有效与无效过滤开关 [`ff593156`](https://github.com/netcookies/isulewTools/commit/ff593156)
+
+### Bug Fixes
+- fix deprecate fun [`a7ef34ce`](https://github.com/netcookies/isulewTools/commit/a7ef34ce)
+- 修复小组件升级或启动时不注入默认数据源 [`2a98aa5e`](https://github.com/netcookies/isulewTools/commit/2a98aa5e)
+- 修复小组件升级或启动时不注入默认数据源 [`b26fc312`](https://github.com/netcookies/isulewTools/commit/b26fc312)
+
+### Performance Improvements
+- 优化基础设施 [`48e55191`](https://github.com/netcookies/isulewTools/commit/48e55191)
+
+### Test
+- 添加实验性功能 [`ae587da8`](https://github.com/netcookies/isulewTools/commit/ae587da8)
+
 ## v1.9.4 (2025-12-08)
 
 ### Feature
