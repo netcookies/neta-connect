@@ -3,7 +3,8 @@
     "allow": [
       "Bash(python3:*)",
       "Bash(chmod:*)",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
