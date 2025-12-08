@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-06T05:14:07Z",
+  "generatedAt": "2025-12-08T06:46:34Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -80,7 +80,7 @@
           "changelog": "版本 1.0.2",
           "minAppVersion": "1.8.9",
           "fileSize": 29687,
-          "sha256": "0542370731ac5affd5bb42494097c0bc252d2e622e9a593d67c9ef1a179644d9"
+          "sha256": "f440de73908d4e9c235eb119e3dab9dc7e322dc9ca4e5404298257be534d68ef"
         }
       ]
     },
@@ -270,7 +270,7 @@
           "changelog": "版本 1.1.6",
           "minAppVersion": "1.8.9",
           "fileSize": 13132,
-          "sha256": "e9012ccf78f007fbb85b1e1330d9945c1d4e60cf9a16c5310470de7e843c28e5"
+          "sha256": "cfaf3dd0690acc191791140e85367a127b2e031b89a867ba7221d0d0a121221f"
         }
       ]
     },
@@ -315,7 +315,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.2",
+      "latestVersion": "1.0.3",
       "status": "STABLE",
       "versions": [
         {
@@ -344,6 +344,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 24313,
           "sha256": "76c4ee671d2ce6b9d707b07a2992cfb86447d8e02392e9376ca927d0fc10bedd"
+        },
+        {
+          "version": "1.0.3",
+          "releaseDate": "2025-12-08",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d3/1.0.3/widget-info-card-4x3d3.jar",
+          "changelog": "版本 1.0.3",
+          "minAppVersion": "1.8.9",
+          "fileSize": 23705,
+          "sha256": "01ac70941ef7ad349f47107e207cc7e7fcde16243f9eadab885904b167602c19"
         }
       ]
     },
@@ -356,7 +365,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.2",
+      "latestVersion": "1.0.3",
       "status": "STABLE",
       "versions": [
         {
@@ -385,6 +394,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 25273,
           "sha256": "f35abf580ba996a8242d825e2325dfb865695d62fb558993adad47e57a72ea49"
+        },
+        {
+          "version": "1.0.3",
+          "releaseDate": "2025-12-08",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d4/1.0.3/widget-info-card-4x3d4.jar",
+          "changelog": "版本 1.0.3",
+          "minAppVersion": "1.8.9",
+          "fileSize": 25150,
+          "sha256": "e76834da10e3568314d3a394f03d8716e4b04bd147d892bbeb36245b4738146a"
         }
       ]
     },
@@ -475,7 +493,7 @@
           "changelog": "版本 1.0.2",
           "minAppVersion": "1.8.9",
           "fileSize": 32705,
-          "sha256": "7f0c4c9fad788df0995a78fafc83550b86737b18649bc5bd5b3c515c26b1f08d"
+          "sha256": "187c1ec21963eeadf5f3cf095bc9fb143a90a38df6621a906b04dd16a17a9232"
         }
       ]
     },
@@ -516,7 +534,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "1.8.9",
           "fileSize": 20668,
-          "sha256": "e212eee0d06c075ffcfb8662ca3cfdff72b4b4b30df96be05ec632f9e03299b2"
+          "sha256": "b7794658feb6d7f5979bce9ebf648cd44bb12c79e0571b07b2ae5d3f1579dc2d"
         }
       ]
     },
@@ -529,7 +547,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.4",
+      "latestVersion": "1.0.5",
       "status": "STABLE",
       "versions": [
         {
@@ -558,6 +576,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 22070,
           "sha256": "582b0cccab2b19fa14e8e186df64f589ebdc422d47048971c2a1ed908d09b89a"
+        },
+        {
+          "version": "1.0.5",
+          "releaseDate": "2025-12-08",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-temperature/1.0.5/widget-temperature.jar",
+          "changelog": "版本 1.0.5",
+          "minAppVersion": "1.8.9",
+          "fileSize": 22106,
+          "sha256": "04d82a0fe018ed71494893815370fbf87b1a3f6b450eade7f49dc1b495661575"
         }
       ]
     },
@@ -570,7 +597,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.9",
+      "latestVersion": "1.1.0",
       "status": "STABLE",
       "versions": [
         {
@@ -626,6 +653,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 31232,
           "sha256": "7ff622e64c20cf2a4976e81da4378c0ac476cbf459a33cbbf4158ebae0c2415e"
+        },
+        {
+          "version": "1.1.0",
+          "releaseDate": "2025-12-08",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.1.0/widget-tire-pressure.jar",
+          "changelog": "版本 1.1.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 31251,
+          "sha256": "1ca42d65b860cafe8d73ab74b95cecc6bee29b0d7e8ec6f5c6692619fc219d6c"
         }
       ]
     }
