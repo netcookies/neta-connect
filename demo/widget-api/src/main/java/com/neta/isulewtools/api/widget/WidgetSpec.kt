@@ -179,7 +179,7 @@ data class WidgetConfig(
 )
 
 /**
- * VHAL 属性（包含属性ID和区域ID）
+ * VHAL 属性（包含属性ID和座舱ID）
  */
 data class VhalProperty(
     val propertyId: Int,
