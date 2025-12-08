@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.9.4 (2025-12-08)
+
+### Feature
+- 小组件系统支持数据源默认值自动注入 [`3b6e46f8`](https://github.com/netcookies/isulewTools/commit/3b6e46f8)
+
+### Bug Fixes
+- 修复电池小组件低电量时绘制错误 [`24c0d0d3`](https://github.com/netcookies/isulewTools/commit/24c0d0d3)
+
+### Performance Improvements
+- 小组件备份和载入代码优化 [`00a261d1`](https://github.com/netcookies/isulewTools/commit/00a261d1)
+- 小组件和智驾悬浮窗的备份目录调整，目前的路径结构如下 // Download 目录结构： // neta_connect/ - JAR 插件手动加载目录 // neta_connect/widgets/ - 小组件配置备份 // neta_connect/adas/ - ADAS 悬浮窗配置备份 // neta_connect/custom_data_sources/- 自定义数据源备份 // neta_connect/themes/ - 主题包备份 [`dc97fcca`](https://github.com/netcookies/isulewTools/commit/dc97fcca)
+
 ## v1.9.3 (2025-12-07)
 
 ### Bug Fixes
