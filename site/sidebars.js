@@ -10,6 +10,8 @@ module.exports = {
     'features',
     'install',
     'usage',
+    'widget-store',
+    'plugin-development',
     'faq',
     'changelog'
   ],
