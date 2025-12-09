@@ -32,23 +32,17 @@
 
 ### 5分钟创建第一个插件
 
-1. **复制模板模块**
+1. **fork 或 直接git clone**
 
 ```bash
-# 在哪吒互联主项目中
-cp -r plugin-widgets widget-mywidget
-cd widget-mywidget
+git clone https://github.com/netcookies/neta-connect
 ```
 
-2. **修改配置**
+2. **开发文档和demo: 可以让AI学习，也可以自己阅读
 
-编辑 `build.gradle.kts`:
-
-```kotlin
-android {
-    namespace = "com.neta.widgets.mywidget"  // 修改命名空间
-    compileSdk = 36
-}
+```bash
+demo/plugin-widgets // 小组件商店里发布的官方小组件的源码
+demo/widget-api // 哪吒互联的小组件API，所有能用的API都在这，文档不一定最新，但是这一定是最新的
 ```
 
 3. **实现插件**
@@ -339,8 +333,8 @@ git push
 
 本文档是快速入门版本，完整的开发指南请参考：
 
-- **详细开发指南**: [demo/plugin-widgets/DEVELOPMENT_GUIDE.md](https://github.com/netcookies/isulewTools/blob/main/demo/plugin-widgets/DEVELOPMENT_GUIDE.md)
-- **插件系统说明**: [plugin-widgets/README.md](https://github.com/netcookies/isulewTools/blob/main/plugin-widgets/README.md)
+- **详细开发指南**: [demo/plugin-widgets/DEVELOPMENT_GUIDE.md](https://github.com/netcookies/neta-connect/blob/main/demo/plugin-widgets/DEVELOPMENT_GUIDE.md)
+- **插件系统说明**: [plugin-widgets/README.md](https://github.com/netcookies/neta-connect/blob/main/demo/plugin-widgets/README.md)
 - **小组件仓库**: [widgets/README.md](https://github.com/netcookies/neta-connect/blob/main/widgets/README.md)
 
 完整指南包含：
