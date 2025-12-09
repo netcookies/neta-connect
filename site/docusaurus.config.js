@@ -82,7 +82,7 @@ const config = {
         },
         {
           href: 'https://github.com/netcookies/neta-connect/releases',
-          label: 'v1.9.2',
+          label: '{{VERSION}}',
           position: 'right',
           className: 'header-github-release',
         },

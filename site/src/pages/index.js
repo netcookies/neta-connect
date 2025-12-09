@@ -17,7 +17,7 @@ function HomepageHeader() {
              target="_blank"
              rel="noopener noreferrer"
              className={styles.badge}>
-            📦 Latest: v1.9.2
+            📦 Latest: {{VERSION}}
           </a>
         </div>
         <div className={styles.buttons}>
