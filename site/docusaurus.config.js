@@ -33,6 +33,15 @@ const config = {
   ],
 
   themeConfig: {
+    // 搜索配置 - Algolia DocSearch
+    algolia: {
+      appId: 'YOUR_APP_ID', // 需要申请 Algolia DocSearch
+      apiKey: 'YOUR_SEARCH_API_KEY',
+      indexName: 'neta-connect',
+      contextualSearch: true,
+      searchParameters: {},
+      searchPagePath: 'search',
+    },
     navbar: {
       title: '哪吒互联',
       logo: {
@@ -91,10 +100,6 @@ const config = {
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
-        },
-        {
-          type: 'localeDropdown',
-          position: 'right',
         },
       ],
     },
