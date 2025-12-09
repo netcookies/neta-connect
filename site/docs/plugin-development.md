@@ -394,9 +394,9 @@ fun MyWidgetContent(config: WidgetConfig) {
 
 如果遇到开发问题：
 
-- **GitHub Issues**: [提交问题](https://github.com/netcookies/isulewTools/issues)
-- **完整文档**: [DEVELOPMENT_GUIDE.md](https://github.com/netcookies/isulewTools/blob/main/demo/plugin-widgets/DEVELOPMENT_GUIDE.md)
-- **示例代码**: [plugin-widgets](https://github.com/netcookies/isulewTools/tree/main/plugin-widgets)
+- **GitHub Issues**: [提交问题](https://github.com/netcookies/neta-connect/issues)
+- **完整文档**: [DEVELOPMENT_GUIDE.md](https://github.com/netcookies/neta-connect/blob/main/demo/plugin-widgets/DEVELOPMENT_GUIDE.md)
+- **示例代码**: [plugin-widgets](https://github.com/netcookies/neta-connect/tree/main/demo/plugin-widgets)
 
 ---
 
