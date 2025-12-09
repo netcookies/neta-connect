@@ -77,7 +77,8 @@ jobs:
           sed -i "s/Latest: v1.9.2/Latest: $VERSION/g" src/pages/index.js
 
           # 替换 intro.md 中的版本号（如果存在）
-          find i18n docs -name "intro.md" -type f -exec sed -i "s/v1.9.2/$VERSION/g" {} \;
+          [ -d i18n ] && find i18n -name "intro.md" -type f -exec sed -i "s/v1.9.2/$VERSION/g" {} \; || true
+          find docs -name "intro.md" -type f -exec sed -i "s/v1.9.2/$VERSION/g" {} \; || true
 
           npm install
           npm run build
