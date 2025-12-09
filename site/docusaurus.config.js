@@ -35,12 +35,13 @@ const config = {
   themeConfig: {
     // 搜索配置 - Algolia DocSearch
     algolia: {
-      appId: 'YOUR_APP_ID', // 需要申请 Algolia DocSearch
-      apiKey: 'YOUR_SEARCH_API_KEY',
-      indexName: 'neta-connect',
+      appId: '11K4P1TV3H',
+      apiKey: '6cfcbf536592b7756dad022b0b73846a',
+      indexName: 'Neta-connect docs',
       contextualSearch: true,
       searchParameters: {},
       searchPagePath: 'search',
+      // askAi: 'YOUR_ALGOLIA_ASSISTANT_ID', // 可选：AI 助手功能
     },
     navbar: {
       title: '哪吒互联',
