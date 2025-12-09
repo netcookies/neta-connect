@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## Unreleased changes
+
+### Bug Fixes
+- 修复数据源选择器遗漏全局属性的问题并优化排序 [`c19463ff`](https://github.com/netcookies/isulewTools/commit/c19463ff)
+
 ## v1.9.5 (2025-12-09)
 
 ### Feature
