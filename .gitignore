@@ -27,3 +27,9 @@ Gemfile.lock
 
 # Widget development
 # JAR 文件直接存储在仓库中，不需要忽略
+
+# Docusaurus
+site/.docusaurus/
+site/build/
+site/node_modules/
+site/package-lock.json
