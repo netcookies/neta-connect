@@ -23,7 +23,7 @@ const config = {
       'classic',
       ({
         docs: {
-          sidebarPath: false, // 禁用左侧sidebar
+          sidebarPath: false, // 禁用左侧sidebar，使用topnav导航
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
