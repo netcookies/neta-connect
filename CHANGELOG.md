@@ -4,10 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## Unreleased changes
+## v1.9.6 (2025-12-09)
+
+### Feature
+- 侧边栏和设置-其他功能增加一个全屏切换按钮 [`f50b395f`](https://github.com/netcookies/isulewTools/commit/f50b395f)
+- 侧边栏增加一个全屏切换按钮 [`11673820`](https://github.com/netcookies/isulewTools/commit/11673820)
+- 全屏控制功能 [`8c20b590`](https://github.com/netcookies/isulewTools/commit/8c20b590)
 
 ### Bug Fixes
 - 修复数据源选择器遗漏全局属性的问题并优化排序 [`c19463ff`](https://github.com/netcookies/isulewTools/commit/c19463ff)
+
+### Other
 
 ## v1.9.5 (2025-12-09)
 
