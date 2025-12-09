@@ -21,6 +21,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Test
 - 添加实验性功能 [`ae587da8`](https://github.com/netcookies/isulewTools/commit/ae587da8)
 
+### Other
+
 ## v1.9.4 (2025-12-08)
 
 ### Feature
