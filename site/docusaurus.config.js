@@ -75,11 +75,11 @@ const config = {
           label: 'FAQ',
           position: 'left',
         },
-        // {
-        //   to: '/docs/changelog',
-        //   label: '更新日志',
-        //   position: 'left',
-        // },
+        {
+          to: '/docs/changelog',
+          label: '更新日志',
+          position: 'left',
+        },
         {
           href: 'https://github.com/netcookies/neta-connect/releases',
           label: 'v1.9.2',
