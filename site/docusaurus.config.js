@@ -4,7 +4,7 @@
 const config = {
   title: '哪吒互联',
   tagline: '哪吒互联工具 - 适用于哪吒汽车的手车互联增强工具',
-  favicon: 'img/logo.png',
+  favicon: 'img/logo.webp',
 
   url: 'https://neta.nznd.org', // 你的 GitHub Pages 域名
   baseUrl: '/',           // 仓库名
@@ -37,7 +37,7 @@ const config = {
       title: '哪吒互联',
       logo: {
         alt: '哪吒互联 Logo',
-        src: 'img/logo.png',
+        src: 'img/logo.webp',
       },
       items: [
         {
@@ -75,10 +75,22 @@ const config = {
           label: 'FAQ',
           position: 'left',
         },
+        // {
+        //   to: '/docs/changelog',
+        //   label: '更新日志',
+        //   position: 'left',
+        // },
         {
-          to: '/docs/changelog',
-          label: '更新日志',
-          position: 'left',
+          href: 'https://github.com/netcookies/neta-connect/releases',
+          label: 'v1.9.2',
+          position: 'right',
+          className: 'header-github-release',
+        },
+        {
+          href: 'https://github.com/netcookies/neta-connect',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
         {
           type: 'localeDropdown',

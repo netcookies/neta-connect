@@ -68,15 +68,14 @@
 - UI/UX统一化
 - ViewModel规范化
 
-详细更新内容请查看 [更新日志](/docs/changelog)
+详细更新内容请查看 [GitHub Releases](https://github.com/netcookies/neta-connect/releases)
 
 ## 开源协议
 
-本项目采用 [MIT License](https://github.com/netcookies/isulewTools/blob/main/LICENSE) 开源协议。
+本项目采用 [MIT License](https://github.com/netcookies/neta-connect/blob/main/LICENSE) 开源协议。
 
 ## 相关链接
 
-- **主应用仓库**: [netcookies/isulewTools](https://github.com/netcookies/isulewTools)
-- **小组件仓库**: [netcookies/neta-connect](https://github.com/netcookies/neta-connect)
-- **问题反馈**: [GitHub Issues](https://github.com/netcookies/isulewTools/issues)
+- **项目仓库**: [netcookies/neta-connect](https://github.com/netcookies/neta-connect)
+- **问题反馈**: [GitHub Issues](https://github.com/netcookies/neta-connect/issues)
 - **官方文档**: [https://neta.nznd.org](https://neta.nznd.org)

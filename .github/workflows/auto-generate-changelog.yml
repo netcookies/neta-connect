@@ -47,16 +47,42 @@ jobs:
     needs: changelog
     steps:
       - uses: actions/checkout@v3
+
+      - name: Get latest release version
+        id: get_version
+        run: |
+          LATEST_VERSION=$(curl -s https://api.github.com/repos/netcookies/neta-connect/releases/latest | jq -r '.tag_name')
+          echo "version=$LATEST_VERSION" >> $GITHUB_OUTPUT
+          echo "Latest version: $LATEST_VERSION"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: |
+
+      - name: Build site with version replacement
+        run: |
           cd site
+          # 复制changelog
           cp ../CHANGELOG.md docs/changelog.md
+
+          # 替换版本号占位符
+          VERSION="${{ steps.get_version.outputs.version }}"
+          echo "Replacing version with: $VERSION"
+
+          # 替换 docusaurus.config.js 中的版本号
+          sed -i "s/label: 'v1.9.2'/label: '$VERSION'/g" docusaurus.config.js
+
+          # 替换 index.js 中的版本号
+          sed -i "s/Latest: v1.9.2/Latest: $VERSION/g" src/pages/index.js
+
+          # 替换 intro.md 中的版本号（如果存在）
+          find i18n docs -name "intro.md" -type f -exec sed -i "s/v1.9.2/$VERSION/g" {} \;
+
           npm install
           npm run build
           rm -f docs/changelog.md
+
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
