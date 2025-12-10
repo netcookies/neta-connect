@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.9.7 (2025-12-10)
+
+### Feature
+- 实现指南针小组件 [`8b33a44e`](https://github.com/netcookies/isulewTools/commit/8b33a44e)
+
+### Bug Fixes
+- 修复拖拽时的预览框同步问题 [`f2a9284f`](https://github.com/netcookies/isulewTools/commit/f2a9284f)
+- 修复小组件缩放大小计算错误 [`283730fc`](https://github.com/netcookies/isulewTools/commit/283730fc)
+- 修复仪表盘小组件缩放后的拖动问题 [`776a1197`](https://github.com/netcookies/isulewTools/commit/776a1197)
+
+### Performance Improvements
+- 指南针在北±22°或南±22° 显示度数必然 [`c0c2adf4`](https://github.com/netcookies/isulewTools/commit/c0c2adf4)
+
+### Refactor
+- 重构仪表盘拖动逻辑 [`8c4183a2`](https://github.com/netcookies/isulewTools/commit/8c4183a2)
+
 ## v1.9.6 (2025-12-09)
 
 ### Feature
