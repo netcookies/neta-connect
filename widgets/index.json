@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-08T17:39:52Z",
+  "generatedAt": "2025-12-10T05:30:39Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -633,7 +633,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.1.0",
+      "latestVersion": "1.1.1",
       "status": "STABLE",
       "versions": [
         {
@@ -698,6 +698,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 31251,
           "sha256": "127b2dc968133e5978a1fc5f8163c99766a4a031b3a65168b26378f11d8143fd"
+        },
+        {
+          "version": "1.1.1",
+          "releaseDate": "2025-12-10",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.1.1/widget-tire-pressure.jar",
+          "changelog": "版本 1.1.1",
+          "minAppVersion": "1.8.9",
+          "fileSize": 31183,
+          "sha256": "ea4cc7173d61eb57177f3a7e3f6a0a3ffa62128394e26d837f85bc34f57a97e9"
         }
       ]
     }
