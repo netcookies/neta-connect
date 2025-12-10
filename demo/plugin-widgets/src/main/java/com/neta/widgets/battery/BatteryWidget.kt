@@ -51,7 +51,7 @@ import com.neta.isulewtools.api.widget.toHexString
 object BatteryWidgetSpec : WidgetSpec(
     type = "battery_widget",
     displayName = "电池",
-    recommendedGrid = Pair(1, 1),
+    recommendedGrid = Pair(2, 1),
     paramSchema = WidgetParamDesc.buildParams {
         +WidgetParamDesc(
             key = P.COLOR.key,

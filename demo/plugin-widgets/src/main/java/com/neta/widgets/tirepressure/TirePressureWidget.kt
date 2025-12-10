@@ -431,7 +431,7 @@ private fun DrawScope.drawCarTopView(scale: Float) {
 
     // 轮胎尺寸
     val tireWidth = 16.dp.toPx() * scale
-    val tireHeight = 28.dp.toPx() * scale
+    val tireHeight = 20.dp.toPx() * scale
     val tireRadius = 4.dp.toPx() * scale
 
     // 轮胎位置偏移
@@ -496,27 +496,12 @@ fun TirePressureWidgetPreview() {
         )
 
         Text(
-            "胎压监测 - 不同胎压",
-            fontSize = 16.sp,
-            fontWeight = FontWeight.SemiBold,
-            color = Color.White
-        )
-        CarTirePressureIndicator(
-            tireData = TireData(
-                frontLeft = TirePressureTemp(2.4f, 22),
-                frontRight = TirePressureTemp(2.5f, 25),
-                rearLeft = TirePressureTemp(2.7f, 24),
-                rearRight = TirePressureTemp(2.3f, 23)
-            )
-        )
-
-        Text(
             "胎压监测 - 不同缩放",
             fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold,
             color = Color.White
         )
-        Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+        Column {
             CarTirePressureIndicator(
                 tireData = TireData(),
                 scale = 0.8f
