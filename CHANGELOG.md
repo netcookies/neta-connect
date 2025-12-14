@@ -4,6 +4,42 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.9.8 (2025-12-14)
+
+### Feature
+- 实现歌词滚动显示 [`3a1e41b2`](https://github.com/netcookies/isulewTools/commit/3a1e41b2)
+- 实现歌词获取功能 [`0ca672dc`](https://github.com/netcookies/isulewTools/commit/0ca672dc)
+- 完善媒体控制卡片的权限问题 [`830dea83`](https://github.com/netcookies/isulewTools/commit/830dea83)
+- 媒体服务 [`f06d47c9`](https://github.com/netcookies/isulewTools/commit/f06d47c9)
+- 调用哪吒地图原厂的AirAutoSDK获取地图数据 [`5bcd47f7`](https://github.com/netcookies/isulewTools/commit/5bcd47f7)
+- 初版红绿灯小组件 [`2c9fccf4`](https://github.com/netcookies/isulewTools/commit/2c9fccf4)
+- 添加媒体控制卡片 [`a9a874f9`](https://github.com/netcookies/isulewTools/commit/a9a874f9)
+
+### Bug Fixes
+- 修复包名错误 [`dd29a678`](https://github.com/netcookies/isulewTools/commit/dd29a678)
+- 修复多个自定义数据源公式竞态问题 [`e52d34de`](https://github.com/netcookies/isulewTools/commit/e52d34de)
+- 小组件还原时如果有新参数不会新增到数据库的问题 [`09f91a6b`](https://github.com/netcookies/isulewTools/commit/09f91a6b)
+- 指南针优化 [`2cbcdf8a`](https://github.com/netcookies/isulewTools/commit/2cbcdf8a)
+- 轮胎小组件修复 [`7a08f590`](https://github.com/netcookies/isulewTools/commit/7a08f590)
+
+### Performance Improvements
+- 添加 MediaNotificationListenerService [`4acb9d59`](https://github.com/netcookies/isulewTools/commit/4acb9d59)
+- 添加 STUB [`71085de0`](https://github.com/netcookies/isulewTools/commit/71085de0)
+- 优化媒体控制卡片布局 [`297d85a4`](https://github.com/netcookies/isulewTools/commit/297d85a4)
+- 数字时钟支持农历和公历日期的显示 [`766e7443`](https://github.com/netcookies/isulewTools/commit/766e7443)
+- 统一内置小组件字体 [`10bdc837`](https://github.com/netcookies/isulewTools/commit/10bdc837)
+- 添加从地库出来定位的恢复机制 [`8e09be02`](https://github.com/netcookies/isulewTools/commit/8e09be02)
+- 添加从地库出来定位的恢复机制 [`89bcce9b`](https://github.com/netcookies/isulewTools/commit/89bcce9b)
+- 添加从地库出来定位的恢复机制 [`63171809`](https://github.com/netcookies/isulewTools/commit/63171809)
+
+### Test
+- 每 15秒刷新一次路经，测试是否有红绿灯数据 [`6d2d9b1e`](https://github.com/netcookies/isulewTools/commit/6d2d9b1e)
+- 实验性功能 - 红绿灯（还在科研中） [`d96458d2`](https://github.com/netcookies/isulewTools/commit/d96458d2)
+
+### Build
+- 清理实验性功能 [`66c5a487`](https://github.com/netcookies/isulewTools/commit/66c5a487)
+- code clean up [`04a17118`](https://github.com/netcookies/isulewTools/commit/04a17118)
+
 ## v1.9.7 (2025-12-10)
 
 ### Feature
