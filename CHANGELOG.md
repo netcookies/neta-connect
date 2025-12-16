@@ -4,6 +4,41 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.9.9 (2025-12-17)
+
+### Feature
+- 添加媒体控制小组件简约模式 & 修复线程问题 [`a37d9962`](https://github.com/netcookies/isulewTools/commit/a37d9962)
+
+### Bug Fixes
+- 修复 jni 文件丢失的问题 [`019f13a7`](https://github.com/netcookies/isulewTools/commit/019f13a7)
+- 修复农历日期错误 [`00c1e985`](https://github.com/netcookies/isulewTools/commit/00c1e985)
+- 适配 QQ 音乐 2.9 [`d723c5a1`](https://github.com/netcookies/isulewTools/commit/d723c5a1)
+- 修复歌词自动切换无效的问题 [`597e611d`](https://github.com/netcookies/isulewTools/commit/597e611d)
+- 修复红绿灯数据源切换错误，现在用全局单例持有VHAL、红绿灯的数据源实例 [`d371d3e1`](https://github.com/netcookies/isulewTools/commit/d371d3e1)
+- 修复红绿灯实时数据闪退 [`150ae979`](https://github.com/netcookies/isulewTools/commit/150ae979)
+
+### Performance Improvements
+- 优化兜底设计和日志输出 [`1c07b960`](https://github.com/netcookies/isulewTools/commit/1c07b960)
+- 优化封面下载逻辑, 以及播放状态检测 [`3e96251b`](https://github.com/netcookies/isulewTools/commit/3e96251b)
+- 优化混淆白名单 [`6161a2d5`](https://github.com/netcookies/isulewTools/commit/6161a2d5)
+- 优化gitignore [`70bf4334`](https://github.com/netcookies/isulewTools/commit/70bf4334)
+- 优化哪吒 L 模式下的默认宽度 [`a80871ca`](https://github.com/netcookies/isulewTools/commit/a80871ca)
+- 同应用全屏切换时的防抖 [`66f304b6`](https://github.com/netcookies/isulewTools/commit/66f304b6)
+- 主题管理页面的卡片列表高度统一 [`8151b80d`](https://github.com/netcookies/isulewTools/commit/8151b80d)
+- 点击控制界面跳转到音乐软件 [`70b52c93`](https://github.com/netcookies/isulewTools/commit/70b52c93)
+- 适配车机自带的网易云和 QQ 音乐 [`09f864f5`](https://github.com/netcookies/isulewTools/commit/09f864f5)
+- 优化哪吒 L 媒体控制卡片大小 [`630ba4e8`](https://github.com/netcookies/isulewTools/commit/630ba4e8)
+- 将美式移出内置按需显示白名单 [`32b76c62`](https://github.com/netcookies/isulewTools/commit/32b76c62)
+
+### Build
+- 清理日志 [`c8ac4596`](https://github.com/netcookies/isulewTools/commit/c8ac4596)
+
+### Refactor
+- 重构QQMusicDataSourceV29为WebApiMusicDataSource [`78a3705e`](https://github.com/netcookies/isulewTools/commit/78a3705e)
+- 重构特权服务包结构 [`c174a475`](https://github.com/netcookies/isulewTools/commit/c174a475)
+- QQ 音乐车机版 tmd，V2.7和V2.9有两套逻辑 [`e2a22243`](https://github.com/netcookies/isulewTools/commit/e2a22243)
+- 适配车机原版 app重构歌词、媒体会话 [`05a6454c`](https://github.com/netcookies/isulewTools/commit/05a6454c)
+
 ## v1.9.8 (2025-12-14)
 
 ### Feature
