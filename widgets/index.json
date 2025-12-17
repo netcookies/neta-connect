@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-17T16:44:48Z",
+  "generatedAt": "2025-12-17T16:46:28Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -310,7 +310,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.0.2",
       "status": "STABLE",
       "versions": [
         {
@@ -321,6 +321,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 18152,
           "sha256": "6e5bfc7194a5d3264a7266e4e446ab48543863a92f46cc81cc48e06e49de08e5"
+        },
+        {
+          "version": "1.0.2",
+          "releaseDate": "2025-12-17",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-gear/1.0.2/widget-gear.jar",
+          "changelog": "版本 1.0.2",
+          "minAppVersion": "1.8.9",
+          "fileSize": 18187,
+          "sha256": "50f0a930fb2afdc4b7ea9d9b9807042818ee6ebb46d461681ea2b119142d4bc6"
         }
       ]
     },
