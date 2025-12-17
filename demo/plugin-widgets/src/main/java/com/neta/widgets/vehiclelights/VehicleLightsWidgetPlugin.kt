@@ -16,7 +16,7 @@ class VehicleLightsWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-vehicle-lights",
-            version = "1.0.0",
+            version = "1.0.2",
             author = "官方",
             description = "显示车辆各种灯光状态的小组件",
             minAppVersion = "1.8.9",

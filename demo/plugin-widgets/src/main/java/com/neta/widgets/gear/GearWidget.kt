@@ -95,10 +95,10 @@ object GearWidgetSpec : WidgetSpec(
             description = "是否显示S档（运动档）"
         )
         +WidgetParamDesc(
-            key = P.DATASOURCE,
+            key = P.DATASOURCE.key,
             label = "档位数据源",
             type = WidgetParamType.DATA_SOURCE,
-            defaultValue = "557844012",
+            defaultValue = P.DATASOURCE.default,
             options = emptyList(),
             required = true,
             description = "档位值的数据来源(1-P, 2-R, 3-N, 4-D, 5-S)"
@@ -123,7 +123,7 @@ object GearWidgetSpec : WidgetSpec(
         val SHOW_S_GEAR = ParamDef("showSGear", true)
 
         // 数据源参数只定义 key
-        const val DATASOURCE = "datasource"
+        val DATASOURCE = ParamDef("datasource", "HZ_GEAR_STATUS")
 
         // 档位颜色映射（彩色模式）
         val GEAR_COLORS = mapOf(
@@ -150,7 +150,7 @@ fun GearWidgetContent(config: WidgetConfig) {
     val alpha = config.getAlpha()
 
     // 从数据源读取档位值
-    val gearValue = config.getDataSourceInt(GearWidgetSpec.P.DATASOURCE, 0)
+    val gearValue = config.getDataSourceInt(GearWidgetSpec.P.DATASOURCE.key, 1)
 
     GearIndicator(
         gearValue = gearValue,
@@ -225,7 +225,7 @@ fun GearIndicator(
                         text = gear,
                         style = TextStyle(
                             color = finalTextColor,
-                            fontSize = (height.value * 0.4f * scale).sp,
+                            fontSize = (height.value * 0.8f * scale).sp,
                             fontWeight = if (isActive) FontWeight.Bold else FontWeight.Normal
                         )
                     )

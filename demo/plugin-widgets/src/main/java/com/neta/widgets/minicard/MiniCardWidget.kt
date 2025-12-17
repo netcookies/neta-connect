@@ -186,8 +186,8 @@ object MiniCardWidgetSpec : WidgetSpec(
 ) {
     object P {
         // 数据
-        val VALUE_DATASOURCE = ParamDef("value_datasource", "557844019")
-        val PROGRESS_DATASOURCE = ParamDef("progress_datasource", "559941152")
+        val VALUE_DATASOURCE = ParamDef("value_datasource", "HZ_RESIDUAL_ODOMETER")
+        val PROGRESS_DATASOURCE = ParamDef("progress_datasource", "HZ_STATE_CHARGE")
         val DECIMALS = ParamDef("decimals", 0)
         val UNIT = ParamDef("unit", "km")
 
@@ -198,7 +198,7 @@ object MiniCardWidgetSpec : WidgetSpec(
 
         // 样式
         val WIDTH = ParamDef("width", 200)
-        val HEIGHT = ParamDef("height", 120)
+        val HEIGHT = ParamDef("height", 100)
         val BG_COLOR = ParamDef("bgColor", Color(0xFF1E1E1E))
         val CORNER_RADIUS = ParamDef("cornerRadius", 16)
         val TEXT_COLOR = ParamDef("textColor", Color(0xFFFFFFFF))
@@ -331,7 +331,7 @@ fun MiniCardDisplay(
                     imageVector = iconVector,
                     contentDescription = null,
                     tint = iconColor,
-                    modifier = Modifier.size((36 * scale).dp)
+                    modifier = Modifier.size((30 * scale).dp)
                 )
 
                 // 右侧：数值和单位
@@ -341,9 +341,9 @@ fun MiniCardDisplay(
                 ) {
                     Text(
                         text = value,
-                        fontSize = (36 * scale).sp,
+                        fontSize = (32 * scale).sp,
                         color = textColor,
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.Normal,
                         lineHeight = (36 * scale).sp
                     )
 
@@ -351,7 +351,7 @@ fun MiniCardDisplay(
 
                     Text(
                         text = unit,
-                        fontSize = (36 * scale).sp,
+                        fontSize = (30 * scale).sp,
                         color = unitColor,
                         lineHeight = (36 * scale).sp
                     )
@@ -404,14 +404,14 @@ fun MiniCardPreview() {
 
         // 高进度样式（红色）
         MiniCardDisplay(
-            value = "89",
-            unit = "%",
+            value = "88899",
+            unit = "km",
             iconName = "BatteryChargingFull",
             iconColor = Color(0xFFEF5350),
             showProgress = true,
             progressValue = 0.89f,
-            width = 160,
-            height = 90,
+            width = 200,
+            height = 100,
             bgColor = Color(0xFF1E1E1E),
             cornerRadius = 16,
             textColor = Color.White,

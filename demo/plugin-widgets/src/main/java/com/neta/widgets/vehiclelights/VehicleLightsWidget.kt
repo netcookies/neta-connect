@@ -1,18 +1,23 @@
 package com.neta.widgets.vehiclelights
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lightbulb
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.DrawScope
-import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.tooling.preview.Preview
@@ -34,7 +39,7 @@ import com.neta.isulewtools.api.widget.toHexString
 object VehicleLightsWidgetSpec : WidgetSpec(
     type = "vehicle_lights_widget",
     displayName = "车辆灯光",
-    recommendedGrid = Pair(2, 1),
+    recommendedGrid = Pair(3, 1),
     paramSchema = WidgetParamDesc.buildParams {
         // 整体尺寸
         +WidgetParamDesc(
@@ -142,31 +147,6 @@ object VehicleLightsWidgetSpec : WidgetSpec(
             required = true,
             description = "雾灯状态数据源"
         )
-
-        // 示宽灯配置
-        +WidgetParamDesc(
-            key = P.SHOW_POSITION_LIGHT.key,
-            label = "显示示宽灯",
-            type = WidgetParamType.BOOL,
-            defaultValue = P.SHOW_POSITION_LIGHT.default,
-            description = "是否显示示宽灯"
-        )
-        +WidgetParamDesc(
-            key = P.POSITION_LIGHT_COLOR.key,
-            label = "示宽灯颜色",
-            type = WidgetParamType.COLOR,
-            defaultValue = P.POSITION_LIGHT_COLOR.default.toHexString(),
-            description = "示宽灯的颜色"
-        )
-        +WidgetParamDesc(
-            key = P.POSITION_LIGHT_DATASOURCE.key,
-            label = "示宽灯数据源",
-            type = WidgetParamType.DATA_SOURCE,
-            defaultValue = P.POSITION_LIGHT_DATASOURCE.default,
-            options = emptyList(),
-            required = true,
-            description = "示宽灯状态数据源"
-        )
     },
     contentComposable = {
         VehicleLightsWidgetContent(it)
@@ -179,32 +159,27 @@ object VehicleLightsWidgetSpec : WidgetSpec(
      */
     object P {
         // 尺寸
-        val WIDTH = ParamDef("width", 280f)
-        val HEIGHT = ParamDef("height", 120f)
+        val WIDTH = ParamDef("width", 600f)
+        val HEIGHT = ParamDef("height", 200f)
 
         // 背景
-        val BACKGROUND_COLOR = ParamDef("backgroundColor", Color(0xFF2C2C2E))
+        val BACKGROUND_COLOR = ParamDef("backgroundColor", Color(0xFF121623))
         val CORNER_RADIUS = ParamDef("cornerRadius", 16f)
 
         // 远光灯
         val SHOW_HIGH_BEAM = ParamDef("showHighBeam", true)
-        val HIGH_BEAM_COLOR = ParamDef("highBeamColor", Color(0xFF4FC3F7))
-        val HIGH_BEAM_DATASOURCE = ParamDef("highBeamDatasource", "557843761")
+        val HIGH_BEAM_COLOR = ParamDef("highBeamColor", Color(0xFF486DDE))
+        val HIGH_BEAM_DATASOURCE = ParamDef("highBeamDatasource", "HZ_HIGHT_BEAN_STATUS")
 
         // 近光灯
         val SHOW_LOW_BEAM = ParamDef("showLowBeam", true)
-        val LOW_BEAM_COLOR = ParamDef("lowBeamColor", Color(0xFF81D4FA))
-        val LOW_BEAM_DATASOURCE = ParamDef("lowBeamDatasource", "557843760")
+        val LOW_BEAM_COLOR = ParamDef("lowBeamColor", Color(0xFF88FF00))
+        val LOW_BEAM_DATASOURCE = ParamDef("lowBeamDatasource", "HZ_LOW_BEAN_STATUS")
 
         // 雾灯
         val SHOW_FOG_LIGHT = ParamDef("showFogLight", true)
         val FOG_LIGHT_COLOR = ParamDef("fogLightColor", Color(0xFFFFC107))
-        val FOG_LIGHT_DATASOURCE = ParamDef("fogLightDatasource", "557843759")
-
-        // 示宽灯
-        val SHOW_POSITION_LIGHT = ParamDef("showPositionLight", true)
-        val POSITION_LIGHT_COLOR = ParamDef("positionLightColor", Color(0xFFFF9800))
-        val POSITION_LIGHT_DATASOURCE = ParamDef("positionLightDatasource", "557843762")
+        val FOG_LIGHT_DATASOURCE = ParamDef("fogLightDatasource", "HZ_REAR_FOG_LAMP_ON")
     }
 }
 
@@ -240,12 +215,6 @@ fun VehicleLightsWidgetContent(config: WidgetConfig) {
     val fogLightState =
         config.getDataSourceInt(VehicleLightsWidgetSpec.P.FOG_LIGHT_DATASOURCE.key, 0) == 1
 
-    // 示宽灯
-    val showPositionLight = config.getParam(VehicleLightsWidgetSpec.P.SHOW_POSITION_LIGHT)
-    val positionLightColor = config.getParam(VehicleLightsWidgetSpec.P.POSITION_LIGHT_COLOR)
-    val positionLightState =
-        config.getDataSourceInt(VehicleLightsWidgetSpec.P.POSITION_LIGHT_DATASOURCE.key, 0) == 1
-
     VehicleLightsIndicator(
         width = width,
         height = height,
@@ -261,10 +230,7 @@ fun VehicleLightsWidgetContent(config: WidgetConfig) {
         lowBeamState = lowBeamState,
         showFogLight = showFogLight,
         fogLightColor = fogLightColor,
-        fogLightState = fogLightState,
-        showPositionLight = showPositionLight,
-        positionLightColor = positionLightColor,
-        positionLightState = positionLightState
+        fogLightState = fogLightState
     )
 }
 
@@ -284,185 +250,110 @@ fun VehicleLightsIndicator(
     lowBeamState: Boolean = false,
     showFogLight: Boolean = true,
     fogLightColor: Color = Color(0xFFFFC107),
-    fogLightState: Boolean = false,
-    showPositionLight: Boolean = true,
-    positionLightColor: Color = Color(0xFFFF9800),
-    positionLightState: Boolean = false
+    fogLightState: Boolean = false
 ) {
+    val lightSize = 180
     Box(
         modifier = Modifier
-            .width((width * scale).dp)
-            .height((height * scale).dp)
+            .size(width = (width * scale).dp, height = (height * scale).dp)
+            .clip(RoundedCornerShape((cornerRadius * scale).dp))
+            .background(backgroundColor)
+            .graphicsLayer(alpha = alpha),
+        contentAlignment = Alignment.Center
     ) {
-        Canvas(
-            modifier = Modifier
-                .matchParentSize()
-                .graphicsLayer(alpha = alpha)
+        Row(
+            modifier = Modifier.padding((10 * scale).dp),
+            horizontalArrangement = Arrangement.spacedBy((10 * scale).dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            // 绘制背景圆角矩形
-            drawRoundRect(
-                color = backgroundColor,
-                size = size,
-                cornerRadius = androidx.compose.ui.geometry.CornerRadius(
-                    cornerRadius.dp.toPx() * scale,
-                    cornerRadius.dp.toPx() * scale
+            if (showHighBeam) {
+                HighBeamLight(
+                    color = highBeamColor,
+                    isOn = highBeamState,
+                    size = (lightSize * scale).dp
                 )
-            )
-
-            // 计算需要显示的灯光数量和布局
-            val lights = mutableListOf<LightInfo>()
-            if (showHighBeam) lights.add(LightInfo("远光", highBeamColor, highBeamState))
-            if (showLowBeam) lights.add(LightInfo("近光", lowBeamColor, lowBeamState))
-            if (showFogLight) lights.add(LightInfo("雾灯", fogLightColor, fogLightState))
-            if (showPositionLight) lights.add(
-                LightInfo(
-                    "示宽",
-                    positionLightColor,
-                    positionLightState
+            }
+            if (showLowBeam) {
+                LowBeamLight(
+                    color = lowBeamColor,
+                    isOn = lowBeamState,
+                    size = (lightSize * scale).dp
                 )
-            )
-
-            if (lights.isNotEmpty()) {
-                // 计算布局参数（排成一排）
-                val padding = 20f * scale
-                val spacing = 16f * scale
-                val availableWidth = size.width - padding * 2
-                val availableHeight = size.height - padding * 2
-
-                // 计算每个灯的尺寸（所有灯排成一排，高度一致）
-                val lightSize = minOf(
-                    availableHeight,
-                    (availableWidth - spacing * (lights.size - 1)) / lights.size
+            }
+            if (showFogLight) {
+                FogLight(
+                    color = fogLightColor,
+                    isOn = fogLightState,
+                    size = (lightSize * scale).dp
                 )
-
-                // 计算起始X位置，使灯光居中
-                val totalWidth = lightSize * lights.size + spacing * (lights.size - 1)
-                val startX = (size.width - totalWidth) / 2
-
-                // 绘制灯光（排成一排）
-                lights.forEachIndexed { index, light ->
-                    val x = startX + index * (lightSize + spacing) + lightSize / 2
-                    val y = size.height / 2
-
-                    when (light.name) {
-                        "远光" -> drawHighBeamLight(
-                            center = Offset(x, y),
-                            size = lightSize,
-                            color = light.color,
-                            isOn = light.isOn
-                        )
-
-                        "近光" -> drawLowBeamLight(
-                            center = Offset(x, y),
-                            size = lightSize,
-                            color = light.color,
-                            isOn = light.isOn
-                        )
-
-                        "雾灯" -> drawFogLight(
-                            center = Offset(x, y),
-                            size = lightSize,
-                            color = light.color,
-                            isOn = light.isOn
-                        )
-
-                        "示宽" -> drawPositionLight(
-                            center = Offset(x, y),
-                            size = lightSize,
-                            color = light.color,
-                            isOn = light.isOn
-                        )
-                    }
-                }
             }
         }
     }
 }
 
-/**
- * 灯光信息数据类
- */
-private data class LightInfo(
-    val name: String,
-    val color: Color,
-    val isOn: Boolean
-)
+// ===== 独立的灯光组件 =====
 
 /**
- * 绘制示宽灯图标
- * 一比一还原 SVG: indicators-indicator-svgrepo-com (1).svg
+ * 远光灯组件
  */
-private fun DrawScope.drawPositionLight(
-    center: Offset,
-    size: Float,
+@Composable
+fun HighBeamLight(
     color: Color,
-    isOn: Boolean
+    isOn: Boolean,
+    size: androidx.compose.ui.unit.Dp,
+    modifier: Modifier = Modifier
 ) {
-    val lightColor = if (isOn) color else color.copy(alpha = 0.3f)
-
-    // SVG viewBox: 511.573 x 511.573
-    val svgScale = size / 400f * 0.648f
-    val strokeWidth = 8.533f * svgScale
-
-    // 中间两条竖线
-    // 第一条线 x=228.76, y从156.653到345.52
-    val line1X = center.x - 25.6f * svgScale
-    val lineY1 = center.y - 94.4f * svgScale
-    val lineY2 = center.y + 94.4f * svgScale
-
-    drawLine(
-        color = lightColor,
-        start = Offset(line1X, lineY1),
-        end = Offset(line1X, lineY2),
-        strokeWidth = strokeWidth,
-        cap = androidx.compose.ui.graphics.StrokeCap.Round
-    )
-
-    // 第二条线 x=279.96
-    val line2X = center.x + 25.6f * svgScale
-    drawLine(
-        color = lightColor,
-        start = Offset(line2X, lineY1),
-        end = Offset(line2X, lineY2),
-        strokeWidth = strokeWidth,
-        cap = androidx.compose.ui.graphics.StrokeCap.Round
-    )
-
-    // 左箭头路径（根据SVG path）
-    val leftArrowPath = Path().apply {
-        val baseX = center.x - 150f * svgScale
-        val arrowY = 51.2f * svgScale
-
-        // 箭头尖端
-        moveTo(baseX - 85.333f * svgScale, center.y)
-        // 上边
-        lineTo(baseX, center.y - arrowY)
-        lineTo(baseX, center.y - arrowY + 13.653f * svgScale)
-        lineTo(baseX + 85.333f * svgScale, center.y - arrowY + 13.653f * svgScale)
-        lineTo(baseX + 85.333f * svgScale, center.y + arrowY - 13.653f * svgScale)
-        lineTo(baseX, center.y + arrowY - 13.653f * svgScale)
-        lineTo(baseX, center.y + arrowY)
-        close()
+    Canvas(modifier = modifier.size(size)) {
+        drawHighBeamLight(
+            center = Offset(this.size.width / 2, this.size.height / 2),
+            size = this.size.width,
+            color = color,
+            isOn = isOn
+        )
     }
-
-    // 右箭头路径（镜像）
-    val rightArrowPath = Path().apply {
-        val baseX = center.x + 150f * svgScale
-        val arrowY = 51.2f * svgScale
-
-        moveTo(baseX + 85.333f * svgScale, center.y)
-        lineTo(baseX, center.y - arrowY)
-        lineTo(baseX, center.y - arrowY + 13.653f * svgScale)
-        lineTo(baseX - 85.333f * svgScale, center.y - arrowY + 13.653f * svgScale)
-        lineTo(baseX - 85.333f * svgScale, center.y + arrowY - 13.653f * svgScale)
-        lineTo(baseX, center.y + arrowY - 13.653f * svgScale)
-        lineTo(baseX, center.y + arrowY)
-        close()
-    }
-
-    drawPath(path = leftArrowPath, color = lightColor, style = Fill)
-    drawPath(path = rightArrowPath, color = lightColor, style = Fill)
 }
+
+/**
+ * 近光灯组件
+ */
+@Composable
+fun LowBeamLight(
+    color: Color,
+    isOn: Boolean,
+    size: androidx.compose.ui.unit.Dp,
+    modifier: Modifier = Modifier
+) {
+    Canvas(modifier = modifier.size(size)) {
+        drawLowBeamLight(
+            center = Offset(this.size.width / 2, this.size.height / 2),
+            size = this.size.width,
+            color = color,
+            isOn = isOn
+        )
+    }
+}
+
+/**
+ * 雾灯组件
+ */
+@Composable
+fun FogLight(
+    color: Color,
+    isOn: Boolean,
+    size: androidx.compose.ui.unit.Dp,
+    modifier: Modifier = Modifier
+) {
+    Canvas(modifier = modifier.size(size)) {
+        drawFogLight(
+            center = Offset(this.size.width / 2, this.size.height / 2),
+            size = this.size.width,
+            color = color,
+            isOn = isOn
+        )
+    }
+}
+
+// ===== 绘制函数（内部使用）=====
 
 /**
  * 绘制远光灯图标
@@ -671,17 +562,24 @@ private fun DrawScope.drawFogLight(
 }
 
 // 预览示例
-@Preview
+@Preview(showBackground = true, backgroundColor = 0xFF1C1C1E)
 @Composable
 fun VehicleLightsPreview() {
-    VehicleLightsIndicator(
-        width = 280f,
-        height = 120f,
-        backgroundColor = Color(0xFF2C2C2E),
-        cornerRadius = 16f,
-        highBeamState = true,
-        lowBeamState = true,
-        fogLightState = false,
-        positionLightState = true
-    )
+    Box(
+        modifier = Modifier
+            .size(1000.dp, 800.dp)
+            .background(Color(0xFF1C1C1E)),
+        contentAlignment = Alignment.Center
+    ) {
+        VehicleLightsIndicator(
+            width = 600f,
+            height = 200f,
+            scale = 1f,
+            backgroundColor = Color(0xFF2C2C2E),
+            cornerRadius = 16f,
+            highBeamState = true,
+            lowBeamState = true,
+            fogLightState = false
+        )
+    }
 }
