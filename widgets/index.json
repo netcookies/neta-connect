@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-10T05:30:39Z",
+  "generatedAt": "2025-12-17T11:37:35Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -302,6 +302,29 @@
       ]
     },
     {
+      "id": "widget-gear",
+      "displayName": "档位显示",
+      "description": "横向显示汽车档位(P/R/N/D/S)，当前档位高亮显示",
+      "author": "官方",
+      "category": "车辆信息",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-12-17",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-gear/1.0.0/widget-gear.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 18152,
+          "sha256": "6e5bfc7194a5d3264a7266e4e446ab48543863a92f46cc81cc48e06e49de08e5"
+        }
+      ]
+    },
+    {
       "id": "widget-info-card-4x2d2",
       "displayName": "信息卡片(4x2-2项)",
       "description": "信息卡片(4x2)，横向显示2个大数值",
@@ -534,6 +557,29 @@
       ]
     },
     {
+      "id": "widget-mini-card",
+      "displayName": "迷你数值卡片",
+      "description": "迷你数值卡片，紧凑显示单一指标，支持图标、数值、单位和进度条",
+      "author": "官方",
+      "category": "信息",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-12-17",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-mini-card/1.0.0/widget-mini-card.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 21539,
+          "sha256": "0052d2f3308664c0b78b61fedc0dbcd037cb442c8881a204f106a8aa943d99ff"
+        }
+      ]
+    },
+    {
       "id": "widget-progress-bar",
       "displayName": "进度条",
       "description": "可横向或纵向显示的进度条小组件",
@@ -707,6 +753,29 @@
           "minAppVersion": "1.8.9",
           "fileSize": 31183,
           "sha256": "ea4cc7173d61eb57177f3a7e3f6a0a3ffa62128394e26d837f85bc34f57a97e9"
+        }
+      ]
+    },
+    {
+      "id": "widget-vehicle-lights",
+      "displayName": "车辆灯光",
+      "description": "显示车辆各种灯光状态的小组件",
+      "author": "官方",
+      "category": "车辆",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "1.8.9",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2025-12-17",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-vehicle-lights/1.0.0/widget-vehicle-lights.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "1.8.9",
+          "fileSize": 26870,
+          "sha256": "dd7c2bfa099d4a6b75efb71bece3df7a037991378a9d11b04014b6c9f4df4743"
         }
       ]
     }
