@@ -1,0 +1,12 @@
+{
+  "id": "widget-mini-card",
+  "displayName": "迷你数值卡片",
+  "description": "迷你数值卡片，紧凑显示单一指标，支持图标、数值、单位和进度条",
+  "author": "官方",
+  "category": "信息",
+  "minAppVersion": "1.8.9",
+  "permissions": [],
+  "screenshots": [],
+  "repository": "https://github.com/netcookies/neta-connect",
+  "supportUrl": "https://github.com/netcookies/neta-connect/issues"
+}
