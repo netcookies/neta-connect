@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-17T11:37:35Z",
+  "generatedAt": "2025-12-17T16:44:48Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -565,7 +565,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.0.2",
       "status": "STABLE",
       "versions": [
         {
@@ -576,6 +576,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 21539,
           "sha256": "0052d2f3308664c0b78b61fedc0dbcd037cb442c8881a204f106a8aa943d99ff"
+        },
+        {
+          "version": "1.0.2",
+          "releaseDate": "2025-12-17",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-mini-card/1.0.2/widget-mini-card.jar",
+          "changelog": "版本 1.0.2",
+          "minAppVersion": "1.8.9",
+          "fileSize": 21714,
+          "sha256": "4cce6c2ed0cab1ef568a83411a54815887b126e75937b4852aae794bc67741c2"
         }
       ]
     },
@@ -765,7 +774,7 @@
       "icon": null,
       "color": null,
       "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.0.2",
       "status": "STABLE",
       "versions": [
         {
@@ -776,6 +785,15 @@
           "minAppVersion": "1.8.9",
           "fileSize": 26870,
           "sha256": "dd7c2bfa099d4a6b75efb71bece3df7a037991378a9d11b04014b6c9f4df4743"
+        },
+        {
+          "version": "1.0.2",
+          "releaseDate": "2025-12-17",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-vehicle-lights/1.0.2/widget-vehicle-lights.jar",
+          "changelog": "版本 1.0.2",
+          "minAppVersion": "1.8.9",
+          "fileSize": 25405,
+          "sha256": "f7a9719a3b07ac9e87578ead45cdf0cf7fd24edf49f35f42b9c3a40e72f8cd2f"
         }
       ]
     }
