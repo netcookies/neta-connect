@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v2.0.0 (2025-12-18)
+
+### Feature
+- 添加 Guardian 应用悬浮窗强制隐藏功能 [`f6e3d949`](https://github.com/netcookies/isulewTools/commit/f6e3d949)
+- 新增高德地图路线规划和红绿灯解析功能 [`7b3c8c41`](https://github.com/netcookies/isulewTools/commit/7b3c8c41)
+- 新增档位显示、迷你数值卡片、车辆灯光小组件 [`dd003607`](https://github.com/netcookies/isulewTools/commit/dd003607)
+- 添加悬浮窗小组件锁定按钮，同时辅助编辑功能会同步状态到悬浮小组件的锁定状态 [`aafcc215`](https://github.com/netcookies/isulewTools/commit/aafcc215)
+
+### Performance Improvements
+- 优化档位显示、迷你数值卡片、车辆灯光小组件 [`404a800f`](https://github.com/netcookies/isulewTools/commit/404a800f)
+- 优化 snackbar 表现 [`7a42e149`](https://github.com/netcookies/isulewTools/commit/7a42e149)
+- 优化 QQ 音乐歌词的滚动逻辑，现在应该不会因为网络延迟而导致不同步了 [`fb7f05fe`](https://github.com/netcookies/isulewTools/commit/fb7f05fe)
+
+### Refactor
+- 更新 AirAutoSDK 移除后的配置文件 [`70ad1f93`](https://github.com/netcookies/isulewTools/commit/70ad1f93)
+- 移除 AirAutoSDK 模块及紧密耦合的辅助类 [`d27a8877`](https://github.com/netcookies/isulewTools/commit/d27a8877)
+
 ## v1.9.9 (2025-12-17)
 
 ### Feature
