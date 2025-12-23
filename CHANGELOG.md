@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v2.0.1 (2025-12-23)
+
+### Feature
+- 统一内部坐标系为WGS84并修复红绿灯数据回调问题 [`d5e5fa0d`](https://github.com/netcookies/isulewTools/commit/d5e5fa0d)
+- 颜色选择器添加哪吒主题预设颜色 [`d976829c`](https://github.com/netcookies/isulewTools/commit/d976829c)
+- 媒体控制小组件简约布局添加标题控件大小配置 [`bcc49d4f`](https://github.com/netcookies/isulewTools/commit/bcc49d4f)
+
+### Bug Fixes
+- 修复外部控制(车载按键/通知栏/蓝牙)播放状态不更新UI [`902e5383`](https://github.com/netcookies/isulewTools/commit/902e5383)
+- 修复WebAPI播放/暂停状态不更新UI的问题 [`b0f4bc26`](https://github.com/netcookies/isulewTools/commit/b0f4bc26)
+- 修复FSM暂停→播放场景不自动切换歌词的问题 [`f2e1ae6a`](https://github.com/netcookies/isulewTools/commit/f2e1ae6a)
+- 修复方控关闭失效问题 [`e559bb2f`](https://github.com/netcookies/isulewTools/commit/e559bb2f)
+
+### Performance Improvements
+- 移出没用变量 [`005e5b7e`](https://github.com/netcookies/isulewTools/commit/005e5b7e)
+- 优化布局 [`7d01d1d2`](https://github.com/netcookies/isulewTools/commit/7d01d1d2)
+- 主题管理页面的卡片添加一个标签占位符 [`1d5769ea`](https://github.com/netcookies/isulewTools/commit/1d5769ea)
+
+### Build
+- 更新gitignore [`ffe6a1f6`](https://github.com/netcookies/isulewTools/commit/ffe6a1f6)
+
+### Refactor
+- 实现完整FSM状态机模型并修复QQ音乐数据源切换问题 [`28294342`](https://github.com/netcookies/isulewTools/commit/28294342)
+- 红绿灯数据系统迁移到AIDL架构并修复数据源问题 [`cd8bfcee`](https://github.com/netcookies/isulewTools/commit/cd8bfcee)
+- 内置的 QQ 音乐车机版统一使用网络 API 下载歌词和封面 [`70f81ad4`](https://github.com/netcookies/isulewTools/commit/70f81ad4)
+
+### Other
+
 ## v2.0.0 (2025-12-18)
 
 ### Feature
