@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v2.0.2 (2025-12-25)
+
+### Feature
+- 静态注册美式的乾坤守护广播接收器 [`62a98ca4`](https://github.com/netcookies/isulewTools/commit/62a98ca4)
+- 静态注册美式的乾坤守护广播接收器 [`7c97e0a1`](https://github.com/netcookies/isulewTools/commit/7c97e0a1)
+- 开启乾坤守护时隐藏悬浮窗 [`41633ca9`](https://github.com/netcookies/isulewTools/commit/41633ca9)
+
+### Bug Fixes
+- compile warning [`5fa6458a`](https://github.com/netcookies/isulewTools/commit/5fa6458a)
+- 尝试修复 ADAS 竞态导致多个浮窗问题 [`f81ea38b`](https://github.com/netcookies/isulewTools/commit/f81ea38b)
+- 修复方控全局关闭无效的问题 [`b35fa971`](https://github.com/netcookies/isulewTools/commit/b35fa971)
+- 修复方控全局关闭无效的问题 [`1b98c920`](https://github.com/netcookies/isulewTools/commit/1b98c920)
+
+### Build
+- update libs [`7fa44444`](https://github.com/netcookies/isulewTools/commit/7fa44444)
+
+### Refactor
+- 替换0x0日志服务为奔佬的 [`6a4778f6`](https://github.com/netcookies/isulewTools/commit/6a4778f6)
+
+### Other
+- remove: 移出无用的配置 [`20c5f005`](https://github.com/netcookies/isulewTools/commit/20c5f005)
+- remove: 移出无用的配置 [`876dc7a2`](https://github.com/netcookies/isulewTools/commit/876dc7a2)
+- remove: 移出无用的配置 [`a78aaa45`](https://github.com/netcookies/isulewTools/commit/a78aaa45)
+
 ## v2.0.1 (2025-12-23)
 
 ### Feature
