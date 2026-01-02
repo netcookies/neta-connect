@@ -1,0 +1,52 @@
+{
+    "id": "netaconnect.app.sub",
+    "name": "哪吒互联脚本订阅",
+    "description": "该订阅兼容BoxJs",
+    "author": "@Isulew",
+    "icon": "https://avatars.githubusercontent.com/u/224964",
+    "repo": "https://github.com/netcookies/neta-connect",
+    "apps": [
+        {
+            "id": "Neta Vehicle",
+            "name": "哪吒汽车",
+            "keys": [
+                "@netavehicle.token",
+                "@netavehicle.car_ip"
+            ],
+            "descs_html": [
+                "<h4 align=\"center\">使用说明</h4>",
+                "<p>1. 配置 MITM 拦截哪吒汽车 API 请求</p>",
+                "<p>2. 扫描车机应用二维码完成配对</p>",
+                "<p>3. 之后 Token 将自动同步到车机</p>",
+                "<br>",
+                "<p>详细配置请查看<a href=\"https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/netaVehicle.js\">脚本注释</a></p>"
+            ],
+            "settings": [
+                {
+                    "id": "@netavehicle.car_ip",
+                    "name": "车机 IP 地址",
+                    "val": "",
+                    "type": "text",
+                    "desc": "扫码配对后自动保存，无需手动填写"
+                },
+                {
+                    "id": "@netavehicle.token",
+                    "name": "当前 Token",
+                    "val": "",
+                    "type": "textarea",
+                    "desc": "自动从 API 拦截获取，每次更新后自动同步到车机",
+                    "autoGrow": true,
+                    "rows": 3
+                }
+            ],
+            "script": "https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/netaVehicle.js",
+            "author": "@netcookies",
+            "repo": "https://github.com/netcookies/neta-connect",
+            "icons": [
+                "https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/logo.png",
+                "https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/logo.png"
+            ]
+        }
+    ],
+    "task": []
+}

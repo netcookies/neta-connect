@@ -1,0 +1,9 @@
+#!name=🚗 哪吒汽车 [获取Token]
+#!desc=获取Token用。\n打开哪吒汽车App。
+#!category=tools
+
+[Script]
+哪吒汽车[获取Token] = type=http-request,pattern=^https:\/\/appapi-pki\.chehezhi\.cn:18443\/pivot\/veh-status\/vehicle-status-control\/1\.0\/getAppVehicleData,debug=0,script-path=https://raw.githubusercontent.com/netcookies/Neta-Vehicle/refs/heads/main/scripts/netaVehicle.js
+
+[MITM]
+hostname = %APPEND% appapi-pki.chehezhi.cn:18443
