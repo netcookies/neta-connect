@@ -4,6 +4,60 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v2.0.3 (2026-01-02)
+
+### Feature
+- 添加工作流取消功能和修复签到成功判断 [`0e05f44f`](https://github.com/netcookies/isulewTools/commit/0e05f44f)
+- 实现 AlarmManager 精确定时调度 [`91095893`](https://github.com/netcookies/isulewTools/commit/91095893)
+- 添加调度频率支持 [`2ad70c59`](https://github.com/netcookies/isulewTools/commit/2ad70c59)
+- 在工作流配置页面显示调度描述文本 [`37348738`](https://github.com/netcookies/isulewTools/commit/37348738)
+- 完善工作流配置和API集成 [`6cc11c86`](https://github.com/netcookies/isulewTools/commit/6cc11c86)
+- 优化工作流执行体验 [`c8fa3697`](https://github.com/netcookies/isulewTools/commit/c8fa3697)
+- 优化工作流配置页面 UI [`540e79ec`](https://github.com/netcookies/isulewTools/commit/540e79ec)
+- 实现工作流 DSL 配置框架 [`b27b2280`](https://github.com/netcookies/isulewTools/commit/b27b2280)
+- 锁定模式禁止删除 & 使用 AppSegmentedControl 替换全局开关 [`874619d9`](https://github.com/netcookies/isulewTools/commit/874619d9)
+- 完成工作流管理页面 UX 改进 [`399a4108`](https://github.com/netcookies/isulewTools/commit/399a4108)
+- WorkflowCard 改造为双层结构,添加底部信息栏 [`ef64de62`](https://github.com/netcookies/isulewTools/commit/ef64de62)
+- 对齐 WorkflowGridContent 和 WidgetGridContent UI 设计 [`f9b6cdc8`](https://github.com/netcookies/isulewTools/commit/f9b6cdc8)
+- 实现工作流配置页面和导航功能 [`99430cfa`](https://github.com/netcookies/isulewTools/commit/99430cfa)
+- 实现工作流执行结果通知功能 [`6a19ebb6`](https://github.com/netcookies/isulewTools/commit/6a19ebb6)
+- 实现工作流手动执行功能 [`64dac239`](https://github.com/netcookies/isulewTools/commit/64dac239)
+- 完成 WorkManager 任务调度功能 [`ba8933aa`](https://github.com/netcookies/isulewTools/commit/ba8933aa)
+- 在 MainApplication 中注册工作流 [`fc85c1fe`](https://github.com/netcookies/isulewTools/commit/fc85c1fe)
+- 实现哪吒签到配置 UI 页面 [`ff50f2fa`](https://github.com/netcookies/isulewTools/commit/ff50f2fa)
+- 实现哪吒签到 Worker 和工作流类 [`fece376f`](https://github.com/netcookies/isulewTools/commit/fece376f)
+- 添加 Token 加密存储支持 [`64b12910`](https://github.com/netcookies/isulewTools/commit/64b12910)
+- 实现工作流UI界面（阶段三） [`aec132f5`](https://github.com/netcookies/isulewTools/commit/aec132f5)
+- 实现工作流框架核心（阶段五） [`2cd0e093`](https://github.com/netcookies/isulewTools/commit/2cd0e093)
+- 媒体控制小组件添加默认播放软件配置 [`d167a6ea`](https://github.com/netcookies/isulewTools/commit/d167a6ea)
+- 添加按需隐藏显示模式并统一命名 [`0cf3353b`](https://github.com/netcookies/isulewTools/commit/0cf3353b)
+- 添加系统特权服务访问器并优化 AppServices [`8a61a4cb`](https://github.com/netcookies/isulewTools/commit/8a61a4cb)
+
+### Bug Fixes
+- 移除电池约束以提高定时准确性 [`91213db8`](https://github.com/netcookies/isulewTools/commit/91213db8)
+- 修复定时调度时间和重试逻辑问题 [`5cd8decb`](https://github.com/netcookies/isulewTools/commit/5cd8decb)
+- 修复工作流编辑保存无效的问题 [`a50d5c70`](https://github.com/netcookies/isulewTools/commit/a50d5c70)
+- 锁定状态下删除按钮改为禁用而非隐藏 [`b3376d2a`](https://github.com/netcookies/isulewTools/commit/b3376d2a)
+- 添加缺失的 ColumnScope 导入 [`818153ee`](https://github.com/netcookies/isulewTools/commit/818153ee)
+- 注册数据库迁移 MIGRATION_13_14 [`836e3147`](https://github.com/netcookies/isulewTools/commit/836e3147)
+- 使用双队列 FIFO 架构修复 Snackbar 自动消失问题 [`e6f5faba`](https://github.com/netcookies/isulewTools/commit/e6f5faba)
+- 修复 ADAS 显示模式逻辑不一致问题 [`a4bd51f7`](https://github.com/netcookies/isulewTools/commit/a4bd51f7)
+- 添加 HIDE_ON_PACKAGES 显示模式颜色 [`3ada4da3`](https://github.com/netcookies/isulewTools/commit/3ada4da3)
+- 修复全屏应用切换卡顿和不完整的问题 [`20ea502d`](https://github.com/netcookies/isulewTools/commit/20ea502d)
+
+### Performance Improvements
+- 优化表达歧义 [`f1e97c13`](https://github.com/netcookies/isulewTools/commit/f1e97c13)
+- 优化冗余代码 [`8cb3cc75`](https://github.com/netcookies/isulewTools/commit/8cb3cc75)
+
+### Chore
+- 添加 Retrofit 和 WorkManager 依赖 [`614f99de`](https://github.com/netcookies/isulewTools/commit/614f99de)
+
+### Refactor
+- 统一管理 AlarmManager 和 WorkManager [`a4e19263`](https://github.com/netcookies/isulewTools/commit/a4e19263)
+- 统一管理工作流注册，参考小组件模式 [`81222228`](https://github.com/netcookies/isulewTools/commit/81222228)
+- 重构 ADAS 浮窗为被动响应模式，修复多实例 bug [`320c1c79`](https://github.com/netcookies/isulewTools/commit/320c1c79)
+- 优化 CoreOrchestrator 代码质量 [`d1521f25`](https://github.com/netcookies/isulewTools/commit/d1521f25)
+
 ## v2.0.2 (2025-12-25)
 
 ### Feature
