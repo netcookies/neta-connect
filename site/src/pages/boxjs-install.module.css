@@ -263,7 +263,7 @@
   }
 
   .header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .header p {
@@ -272,6 +272,7 @@
 
   .toolSelector {
     gap: 0.3rem;
+    padding: 0.3rem;
   }
 
   .toolButton {
@@ -284,23 +285,147 @@
   }
 
   .installCard {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .cardHeader {
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cardHeader .icon {
+    font-size: 2.5rem;
+  }
+
+  .cardHeader h3 {
+    font-size: 1.5rem;
+  }
+
+  .installSection {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .installSection h4 {
+    font-size: 1.1rem;
   }
 
   .buttonGroup {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   .installButton {
     min-width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .copyButton {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .codeBlock {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .codeBlock code {
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+
+  .steps {
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .steps li {
+    margin: 0.8rem 0;
+  }
+
+  .helpSection {
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
   }
 
   .helpLinks {
     flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .helpLinks a {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* 更小的屏幕适配 */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem 0.3rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .toolButton {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .toolIcon {
+    font-size: 1.3rem;
+  }
+
+  .installCard {
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .cardHeader h3 {
+    font-size: 1.3rem;
+  }
+
+  .installSection {
+    padding: 0.8rem;
+  }
+
+  .installSection h4 {
+    font-size: 1rem;
+  }
+
+  .installButton,
+  .copyButton,
+  .visitButton {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .codeBlock {
+    font-size: 0.7rem;
+    padding: 0.6rem;
+  }
+
+  .steps {
+    font-size: 0.85rem;
+    padding-left: 1rem;
+  }
+
+  .steps code {
+    font-size: 0.8rem;
+    word-break: break-all;
   }
 }
