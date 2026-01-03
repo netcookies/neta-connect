@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-boxjs-guide" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">BoxJS 自动抓取 Token 教程 | 哪吒互联</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://neta.nznd.org/docs/boxjs-guide"><meta data-rh="true" property="og:locale" content="zh"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="BoxJS 自动抓取 Token 教程 | 哪吒互联"><meta data-rh="true" name="description" content="本教程将指导你如何使用 BoxJS + 代理工具自动抓取哪吒汽车 Token 并同步到车机。"><meta data-rh="true" property="og:description" content="本教程将指导你如何使用 BoxJS + 代理工具自动抓取哪吒汽车 Token 并同步到车机。"><link data-rh="true" rel="icon" href="/img/logo.webp"><link data-rh="true" rel="canonical" href="https://neta.nznd.org/docs/boxjs-guide"><link data-rh="true" rel="alternate" href="https://neta.nznd.org/docs/boxjs-guide" hreflang="zh"><link data-rh="true" rel="alternate" href="https://neta.nznd.org/en/docs/boxjs-guide" hreflang="en"><link data-rh="true" rel="alternate" href="https://neta.nznd.org/docs/boxjs-guide" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://11K4P1TV3H-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="哪吒互联" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.92647a6e.css">
+<script src="/assets/js/runtime~main.b6ae564b.js" defer="defer"></script>
+<script src="/assets/js/main.35acfa0e.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.webp" alt="哪吒互联 Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.webp" alt="哪吒互联 Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">哪吒互联</b></a><a class="navbar__item navbar__link" href="/docs/intro">介绍</a><a class="navbar__item navbar__link" href="/docs/features">功能特性</a><a class="navbar__item navbar__link" href="/docs/install">安装指南</a><a class="navbar__item navbar__link" href="/docs/usage">使用教程</a><a class="navbar__item navbar__link header-boxjs-link" href="/boxjs-install">BoxJS 安装</a><a class="navbar__item navbar__link" href="/docs/widget-store">小组件商店</a><a class="navbar__item navbar__link" href="/docs/plugin-development">插件开发</a><a class="navbar__item navbar__link" href="/docs/faq">FAQ</a><a class="navbar__item navbar__link" href="/docs/changelog">更新日志</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/netcookies/neta-connect/releases" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-github-release">v2.0.3<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://github.com/netcookies/neta-connect" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-github-link" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>BoxJS 自动抓取 Token 教程</h1></header>
+<p>本教程将指导你如何使用 BoxJS + 代理工具自动抓取哪吒汽车 Token 并同步到车机。</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-什么是-boxjs">📖 什么是 BoxJS？<a href="#-什么是-boxjs" class="hash-link" aria-label="📖 什么是 BoxJS？的直接链接" title="📖 什么是 BoxJS？的直接链接" translate="no">​</a></h2>
+<p><strong>BoxJS</strong> 是一款运行在 Surge、Quantumult X、Loon、Shadowrocket、Stash 等代理工具中的脚本管理工具，提供可视化的配置界面。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="主要功能">主要功能<a href="#主要功能" class="hash-link" aria-label="主要功能的直接链接" title="主要功能的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">📦 管理和配置各种脚本</li>
+<li class="">🎛️ 可视化配置参数</li>
+<li class="">📊 查看脚本运行日志</li>
+<li class="">🔄 自动同步数据</li>
+</ul>
+<p>在哪吒互联项目中，BoxJS 用于<strong>自动拦截哪吒汽车 App 的 API 请求，获取 Token 并自动同步到车机</strong>，无需手动复制粘贴。</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-快速开始一键安装">🚀 快速开始：一键安装<a href="#-快速开始一键安装" class="hash-link" aria-label="🚀 快速开始：一键安装的直接链接" title="🚀 快速开始：一键安装的直接链接" translate="no">​</a></h2>
+<p>我们为你准备了<strong>一键安装页面</strong>，根据你使用的代理工具自动显示对应的安装步骤：</p>
+<p>👉 <a class="" href="/boxjs-install"><strong>点击前往一键安装页面</strong></a></p>
+<p>支持的代理工具：</p>
+<ul>
+<li class="">🌊 <strong>Surge</strong> - iOS/macOS 全能代理工具</li>
+<li class="">❌ <strong>Quantumult X</strong> - iOS 强大的网络工具</li>
+<li class="">🎈 <strong>Loon</strong> - iOS 网络调试工具</li>
+<li class="">📦 <strong>Stash</strong> - iOS/macOS 代理工具</li>
+<li class="">🚀 <strong>Shadowrocket</strong> - iOS 轻量级代理工具</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-详细教程">📚 详细教程<a href="#-详细教程" class="hash-link" aria-label="📚 详细教程的直接链接" title="📚 详细教程的直接链接" translate="no">​</a></h2>
+<p>如果你想了解更详细的安装和配置过程，请继续阅读以下内容。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="第一步安装-boxjs">第一步：安装 BoxJS<a href="#第一步安装-boxjs" class="hash-link" aria-label="第一步：安装 BoxJS的直接链接" title="第一步：安装 BoxJS的直接链接" translate="no">​</a></h3>
+<p>根据你使用的代理工具选择对应的安装方法。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="surge-安装">Surge 安装<a href="#surge-安装" class="hash-link" aria-label="Surge 安装的直接链接" title="Surge 安装的直接链接" translate="no">​</a></h4>
+<p><strong>一键安装（推荐）：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">surge://install-module?url=https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.surge.sgmodule</span><br></span></code></pre></div></div>
+<p><strong>手动安装：</strong></p>
+<ol>
+<li class="">打开 Surge App</li>
+<li class="">进入 <strong>首页 &gt; 模块 &gt; 安装新模块</strong></li>
+<li class="">粘贴模块地址并安装</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="quantumult-x-安装">Quantumult X 安装<a href="#quantumult-x-安装" class="hash-link" aria-label="Quantumult X 安装的直接链接" title="Quantumult X 安装的直接链接" translate="no">​</a></h4>
+<p><strong>一键安装（推荐）：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">quantumult-x://add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Fchavyleung%2Fscripts%2Fmaster%2Fbox%2Frewrite%2Fboxjs.rewrite.quanx.conf%22%5D%7D</span><br></span></code></pre></div></div>
+<p><strong>手动安装：</strong></p>
+<ol>
+<li class="">打开 Quantumult X App</li>
+<li class="">进入 <strong>风车 &gt; 重写 &gt; 引用</strong></li>
+<li class="">点击右上角 &quot;+&quot; 添加引用</li>
+<li class="">粘贴地址：<!-- -->
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="loon-安装">Loon 安装<a href="#loon-安装" class="hash-link" aria-label="Loon 安装的直接链接" title="Loon 安装的直接链接" translate="no">​</a></h4>
+<p><strong>一键安装：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">loon://import?plugin=https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin</span><br></span></code></pre></div></div>
+<p><strong>手动安装：</strong></p>
+<ol>
+<li class="">打开 Loon App</li>
+<li class="">进入 <strong>配置 &gt; 插件</strong></li>
+<li class="">点击右上角 &quot;+&quot; 添加插件</li>
+<li class="">粘贴插件地址并保存</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="stash-安装">Stash 安装<a href="#stash-安装" class="hash-link" aria-label="Stash 安装的直接链接" title="Stash 安装的直接链接" translate="no">​</a></h4>
+<p><strong>一键安装：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">stash://install-override?url=https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.stash.stoverride</span><br></span></code></pre></div></div>
+<p><strong>手动安装：</strong></p>
+<ol>
+<li class="">打开 Stash App</li>
+<li class="">进入 <strong>覆写 &gt; 安装覆写</strong></li>
+<li class="">粘贴覆写地址并安装</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="访问-boxjs">访问 BoxJS<a href="#访问-boxjs" class="hash-link" aria-label="访问 BoxJS的直接链接" title="访问 BoxJS的直接链接" translate="no">​</a></h4>
+<p>安装完成后，可以通过以下任意地址访问 BoxJS 管理界面：</p>
+<ul>
+<li class="">🌐 <a href="http://boxjs.com" target="_blank" rel="noopener noreferrer" class="">http://boxjs.com</a> （推荐）</li>
+<li class="">🌐 <a href="http://boxjs.net" target="_blank" rel="noopener noreferrer" class="">http://boxjs.net</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="第二步安装哪吒互联脚本">第二步：安装哪吒互联脚本<a href="#第二步安装哪吒互联脚本" class="hash-link" aria-label="第二步：安装哪吒互联脚本的直接链接" title="第二步：安装哪吒互联脚本的直接链接" translate="no">​</a></h3>
+<p>安装脚本后，代理工具会自动拦截哪吒汽车 App 的 API 请求并提取 Token。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="surge--shadowrocket">Surge / Shadowrocket<a href="#surge--shadowrocket" class="hash-link" aria-label="Surge / Shadowrocket的直接链接" title="Surge / Shadowrocket的直接链接" translate="no">​</a></h4>
+<p><strong>一键安装：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">surge://install-module?url=https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.sgmodule</span><br></span></code></pre></div></div>
+<p><strong>手动安装：</strong></p>
+<ol>
+<li class="">进入 <strong>模块</strong> 页面</li>
+<li class="">点击右上角 &quot;+&quot; 添加模块</li>
+<li class="">粘贴地址：<!-- -->
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.sgmodule</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="quantumult-x">Quantumult X<a href="#quantumult-x" class="hash-link" aria-label="Quantumult X的直接链接" title="Quantumult X的直接链接" translate="no">​</a></h4>
+<p><strong>手动安装：</strong></p>
+<ol>
+<li class="">进入 <strong>风车 &gt; 重写 &gt; 引用</strong></li>
+<li class="">点击右上角 &quot;+&quot; 添加引用</li>
+<li class="">粘贴地址：<!-- -->
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.conf</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="loon">Loon<a href="#loon" class="hash-link" aria-label="Loon的直接链接" title="Loon的直接链接" translate="no">​</a></h4>
+<p><strong>手动安装：</strong></p>
+<ol>
+<li class="">进入 <strong>配置 &gt; 插件</strong></li>
+<li class="">点击右上角 &quot;+&quot; 添加插件</li>
+<li class="">粘贴地址：<!-- -->
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.plugin</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="stash">Stash<a href="#stash" class="hash-link" aria-label="Stash的直接链接" title="Stash的直接链接" translate="no">​</a></h4>
+<p><strong>一键安装：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">stash://install-override?url=https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.stoverride</span><br></span></code></pre></div></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="第三步配置-mitm">第三步：配置 MITM<a href="#第三步配置-mitm" class="hash-link" aria-label="第三步：配置 MITM的直接链接" title="第三步：配置 MITM的直接链接" translate="no">​</a></h3>
+<p><strong>重要</strong>：必须启用 MITM（中间人攻击）并信任证书，否则无法拦截 HTTPS 请求。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="安装和信任证书">安装和信任证书<a href="#安装和信任证书" class="hash-link" aria-label="安装和信任证书的直接链接" title="安装和信任证书的直接链接" translate="no">​</a></h4>
+<ol>
+<li class="">在代理工具中进入 <strong>MITM</strong> 设置</li>
+<li class="">开启 <strong>MITM 开关</strong></li>
+<li class="">点击 <strong>生成  新的 CA 证书</strong>（如果没有）</li>
+<li class="">点击 <strong>安装证书</strong></li>
+<li class="">前往系统设置信任证书：</li>
+</ol>
+<p><strong>iOS 设备：</strong></p>
+<ol>
+<li class="">设置 &gt; 通用 &gt; VPN与设备管理</li>
+<li class="">找到刚安装的证书并信任</li>
+<li class="">设置 &gt; 通用 &gt; 关于本机 &gt; 证书信任设置</li>
+<li class="">开启对应证书的完全信任</li>
+</ol>
+<p><strong>macOS 设备：</strong></p>
+<ol>
+<li class="">打开&quot;钥匙串访问&quot;应用</li>
+<li class="">找到代理工具的证书</li>
+<li class="">双击证书 &gt; 信任 &gt; 设置为&quot;始终信任&quot;</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="添加主机名">添加主机名<a href="#添加主机名" class="hash-link" aria-label="添加主机名的直接链接" title="添加主机名的直接链接" translate="no">​</a></h4>
+<p>确保 MITM 主机名列表中包含：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">appapi-pki.chehezhi.cn:18443</span><br></span></code></pre></div></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="第四步导入哪吒互联订阅">第四步：导入哪吒互联订阅<a href="#第四步导入哪吒互联订阅" class="hash-link" aria-label="第四步：导入哪吒互联订阅的直接链接" title="第四步：导入哪吒互联订阅的直接链接" translate="no">​</a></h3>
+<p>通过 BoxJS 订阅，可以更方便地管理脚本配置。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="操作步骤">操作步骤<a href="#操作步骤" class="hash-link" aria-label="操作步骤的直接链接" title="操作步 骤的直接链接" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p><strong>打开 BoxJS 管理界面</strong></p>
+<ul>
+<li class="">在浏览器中访问 <a href="http://boxjs.com" target="_blank" rel="noopener noreferrer" class="">http://boxjs.com</a></li>
+</ul>
+</li>
+<li class="">
+<p><strong>进入订阅管理</strong></p>
+<ul>
+<li class="">点击底部导航栏的 <strong>&quot;订阅&quot;</strong> 图标</li>
+</ul>
+</li>
+<li class="">
+<p><strong>添加订阅</strong></p>
+<ul>
+<li class="">点击右上角的 <strong>&quot;+&quot;</strong> 按钮</li>
+<li class="">粘贴订阅地址：<!-- -->
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">https://raw.githubusercontent.com/netcookies/neta-connect/main/boxjs.json</span><br></span></code></pre></div></div>
+</li>
+<li class="">点击 <strong>&quot;保存&quot;</strong></li>
+</ul>
+</li>
+<li class="">
+<p><strong>确认订阅成功</strong></p>
+<ul>
+<li class="">回到 <strong>&quot;应用&quot;</strong> 页面</li>
+<li class="">应该能看到 <strong>&quot;哪吒汽车&quot;</strong> 应用</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-第五步配对车机并抓取-token">🎯 第五步：配对车机并抓取 Token<a href="#-第五步配对车机并抓取-token" class="hash-link" aria-label="🎯 第五步：配对车机并抓取 Token的直接链接" title="🎯 第五步：配对车机并抓取 Token的直接链接" translate="no">​</a></h2>
+<p>完成以上配置后，即可开始抓取 Token 并自动同步到车机。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-配对车机">1. 配对车机<a href="#1-配对车机" class="hash-link" aria-label="1. 配对 车机的直接链接" title="1. 配对车机的直接链接" translate="no">​</a></h3>
+<p>首次使用需要先配对车机，让 BoxJS 知道将 Token 发送到哪里。</p>
+<p><strong>车机端操作：</strong></p>
+<ol>
+<li class="">启动 <strong>哪吒互联 App</strong>（车机）</li>
+<li class="">进入 <strong>&quot;工作流&quot;</strong> 选项卡</li>
+<li class="">创建或编辑 <strong>&quot;任意哪吒签到工作流&quot;</strong></li>
+<li class="">点击 <strong>&quot;token输入框边上的二维码图标&quot;</strong></li>
+</ol>
+<p><strong>手机端操作：</strong></p>
+<ol>
+<li class=""><strong>开启代理</strong>
+<ul>
+<li class="">确保代理工具（Surge/Quantumult X 等）已开启</li>
+<li class="">确保 MITM 功能已启用</li>
+</ul>
+</li>
+<li class="">打开微信或其他二维码扫码 <strong>&quot;车机二维码&quot;</strong></li>
+</ol>
+<p><strong>第一次扫码：</strong></p>
+<ul>
+<li class="">BoxJS 会自动保存车机 IP 地址</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-抓取-token">2. 抓取 Token<a href="#2-抓取-token" class="hash-link" aria-label="2. 抓取 Token的直接链接" title="2. 抓取 Token的直接链接" translate="no">​</a></h3>
+<p>配对完成后，每次哪吒汽车 App 请求 API 时会自动抓取 Token。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="操作步骤-1">操作步骤<a href="#操作步骤-1" class="hash-link" aria-label="操作步骤的直接链接" title="操作步骤的直接链接" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p><strong>开启代理</strong></p>
+<ul>
+<li class="">确保代理工具（Surge/Quantumult X 等）已开启</li>
+<li class="">确保 MITM 功能已启用</li>
+</ul>
+</li>
+<li class="">
+<p><strong>打开哪吒汽车 App</strong></p>
+<ul>
+<li class="">打开官方哪吒汽车 App</li>
+<li class="">进入车辆详情页面</li>
+<li class="">App 会自动请求车辆数据</li>
+</ul>
+</li>
+<li class="">
+<p><strong>自动抓取和同步</strong></p>
+<ul>
+<li class="">脚本会自动拦截 API 请求</li>
+<li class="">提取 <code>Authorization</code> header 中的 Token</li>
+<li class="">与之前保存的 Token 比对</li>
+<li class="">如果 Token 发生变化：<!-- -->
+<ul>
+<li class="">自动保存新 Token 到 BoxJS</li>
+<li class="">自动发送 Token 到车机（如果已配对）</li>
+<li class="">显示通知 <strong>&quot;Token 已更新并同步到车机&quot;</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-查看日志">3. 查看日志<a href="#3-查看日志" class="hash-link" aria-label="3. 查看日志的直接链接" title="3. 查看日志的直接链接" translate="no">​</a></h3>
+<p>在 BoxJS 中查看脚本运行日志：</p>
+<ol>
+<li class="">打开 <a href="http://boxjs.com" target="_blank" rel="noopener noreferrer" class="">http://boxjs.com</a></li>
+<li class="">进入 <strong>&quot;哪吒汽车&quot;</strong> 应用</li>
+<li class="">点击 <strong>&quot;日志&quot;</strong> 标签</li>
+<li class="">查看 Token 更新记录</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-工作原理">🔍 工作原理<a href="#-工作原理" class="hash-link" aria-label="🔍 工作原理的直接链接" title="🔍 工作原理的直接链接" translate="no">​</a></h2>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">┌──────────────┐      ①请求API       ┌──────────────┐</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">│  哪吒汽车App  │ ──────────────────&gt; │  哪吒服务器   │</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">└──────────────┘                     └──────────────┘</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      ↓ ②拦截请求</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">┌──────────────┐</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">│  代理工具脚本  │</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">│ (netaVehicle) │</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">└──────────────┘</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      ↓ ③提取Token</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">┌──────────────┐</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">│    BoxJS     │ ← 保存Token</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">└──────────────┘</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">      ↓ ④自动同步</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">┌──────────────┐</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">│ 哪吒互联车机  │ ← 接收Token</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">└──────────────┘</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="工作流程">工作流程<a href="#工作流程" class="hash-link" aria-label="工作流程的直接链接" title="工作流程的直接链接" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>拦截请求</strong>: 代理工具拦截哪吒汽车 App 的 HTTPS 请求</li>
+<li class=""><strong>提取 Token</strong>: 脚本从请求头的 <code>Authorization</code> 字段提取 Token</li>
+<li class=""><strong>保存到 BoxJS</strong>: 将 Token 保存到 BoxJS 的持久化存储中</li>
+<li class=""><strong>同步到车机</strong>: 通过 HTTP POST 请求发送 Token 到车机（端口 9339）</li>
+<li class=""><strong>车机应用</strong>: 车机接收 Token 后自动更新，无需手动输入</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-配置说明">⚙️ 配置说明<a href="#️-配置说明" class="hash-link" aria-label="⚙️ 配置说明的直接链接" title="⚙️ 配置说明的直接链接" translate="no">​</a></h2>
+<p>在 BoxJS 的 <strong>&quot;哪吒汽车&quot;</strong> 应用中，有两个配置项：</p>
+<table><thead><tr><th>配置项</th><th>说明</th><th>获取方式</th></tr></thead><tbody><tr><td><strong>车机 IP 地址</strong></td><td>车机在局域网的 IP 地址</td><td>✅ 自动（扫码配对）</td></tr><tr><td><strong>当前 Token</strong></td><td>哪吒汽车 API 的访问令牌</td><td>✅ 自动（API 拦截）</td></tr></tbody></table>
+<blockquote>
+<p><strong>提示</strong>: 这两个配置项都是自动获取，无需手动填写。</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-常见问题">🆘 常见问题<a href="#-常见问题" class="hash-link" aria-label="🆘 常见问题的直接链接" title="🆘 常见问题的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="q1-脚本没有触发">Q1: 脚本没有触发？<a href="#q1-脚本没有触发" class="hash-link" aria-label="Q1: 脚本没有触发？的直接链接" title="Q1: 脚本没有触发？的直接链接" translate="no">​</a></h3>
+<p><strong>可能原因：</strong></p>
+<ul>
+<li class="">❌ MITM 未开启或证书未信任</li>
+<li class="">❌ 代理工具未开启</li>
+<li class="">❌ 脚本配置错误</li>
+</ul>
+<p><strong>解决方法：</strong></p>
+<ol>
+<li class="">检查 MITM 是否开启</li>
+<li class="">检查证书是否已信任</li>
+<li class="">在代理工具的日志中查看是否有拦截记录</li>
+<li class="">重新安装模块或手动配置脚本</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="q2-token-抓取成功但未同步到车机">Q2: Token 抓取成功但未同步到车机？<a href="#q2-token-抓取成功但未同步到车机" class="hash-link" aria-label="Q2: Token 抓取成功但未同步到车机？的直接链接" title="Q2: Token 抓取成功但未同步到车机？的直接链接" translate="no">​</a></h3>
+<p><strong>可能原因：</strong></p>
+<ul>
+<li class="">❌ 车机未配对或 IP 地址错误</li>
+<li class="">❌ 车机未开启或不在同一局域网</li>
+<li class="">❌ 车机防火墙阻止了端口 9339</li>
+</ul>
+<p><strong>解决方法：</strong></p>
+<ol>
+<li class="">重新扫码配对车机</li>
+<li class="">确保手机和车机在同一 Wi-Fi 网络</li>
+<li class="">在车机上检查 &quot;Token 同步设置&quot; 是否开启</li>
+<li class="">查看 BoxJS 日志中的错误信息</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="q3-如何手动查看当前-token">Q3: 如何手动查看当前 Token？<a href="#q3-如何手动查看当前-token" class="hash-link" aria-label="Q3: 如何手动查看当前 Token？的直接链接" title="Q3: 如何手动查看当前 Token？的直接链接" translate="no">​</a></h3>
+<p>在 BoxJS 中查看：</p>
+<ol>
+<li class="">打开 <a href="http://boxjs.com" target="_blank" rel="noopener noreferrer" class="">http://boxjs.com</a></li>
+<li class="">进入 <strong>&quot;哪吒汽车&quot;</strong> 应用</li>
+<li class="">查看 <strong>&quot;当前 Token&quot;</strong> 配置项</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="q4-token-多久会过期">Q4: Token 多久会过期？<a href="#q4-token-多久会过期" class="hash-link" aria-label="Q4: Token 多久会过期？的直接链接" title="Q4: Token 多久会过期？的直接链接" translate="no">​</a></h3>
+<p>哪吒汽车的 Token 有效期通常为 <strong>30 天</strong>。脚本会在 Token 更新时自动同步，无需担心过期问题。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="q5-能否在多个车机上使用">Q5: 能否在多个车机上使用？<a href="#q5-能否在多个车机上使用" class="hash-link" aria-label="Q5: 能否在多个车机上使用？的直接链接" title="Q5: 能否在多个车机上使用？的直接链接" translate="no">​</a></h3>
+<p>可以。但每次只能配对一个车机。如果需要切换车机：</p>
+<ol>
+<li class="">在新车机上生成配对二维码</li>
+<li class="">在 BoxJS 中重新扫码配对</li>
+<li class="">Token 会自动同步到新车机</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="q6-为什么需要-mitm-证书">Q6: 为什么需要 MITM 证书？<a href="#q6-为什么需要-mitm-证书" class="hash-link" aria-label="Q6: 为什么需要 MITM 证书？的直接链接" title="Q6: 为什么需要 MITM 证书？的直接链接" translate="no">​</a></h3>
+<p>MITM（中间人攻击）是代理工具拦截 HTTPS 请求的必要技术。通过安装和信任证书，代理工具可以：</p>
+<ul>
+<li class="">解密 HTTPS 流量</li>
+<li class="">读取请求头中的 Token</li>
+<li class="">将 Token 传递给脚本处理</li>
+</ul>
+<p><strong>安全说明</strong>：证书仅在你的设备上使用，不会泄露给第三方。</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-使用技巧">📝 使用技巧<a href="#-使用技巧" class="hash-link" aria-label="📝 使用技巧的直接链接" title="📝 使用技巧的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="自动化程度最高的使用方式">自动化程度最高的使用方式<a href="#自动化程度最高的使用方式" class="hash-link" aria-label="自动化程度最高的使用方式的直接链接" title="自动化程度最高的使用方式的直接链接" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>一次配置，长期使用</strong></p>
+<ul>
+<li class="">完成初次配置后，无需再次操作</li>
+<li class="">Token 会在过期前自动更新</li>
+</ul>
+</li>
+<li class="">
+<p><strong>无感知同步</strong></p>
+<ul>
+<li class="">只要打开哪吒汽车 App 查看车辆数据</li>
+<li class="">Token 就会自动同步到车机</li>
+</ul>
+</li>
+<li class="">
+<p><strong>多设备支持</strong></p>
+<ul>
+<li class="">同一个 BoxJS 账号可以在多个设备上使用</li>
+<li class="">Token 会自动同步到所有设备</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-相关链接">📚 相关链接<a href="#-相关链接" class="hash-link" aria-label="📚 相关链接的直接链接" title="📚 相关链接的直接链接" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>一键安装页面</strong>: <a class="" href="/boxjs-install">点击前往</a></li>
+<li class=""><strong>BoxJS 官方文档</strong>: <a href="https://docs.boxjs.app" target="_blank" rel="noopener noreferrer" class="">https://docs.boxjs.app</a></li>
+<li class=""><strong>BoxJS GitHub</strong>: <a href="https://github.com/chavyleung/scripts" target="_blank" rel="noopener noreferrer" class="">https://github.com/chavyleung/scripts</a></li>
+<li class=""><strong>哪吒互联项目</strong>: <a href="https://github.com/netcookies/neta-connect" target="_blank" rel="noopener noreferrer" class="">https://github.com/netcookies/neta-connect</a></li>
+<li class=""><strong>脚本源码</strong>: <a href="https://github.com/netcookies/neta-connect/blob/main/scripts/netaVehicle.js" target="_blank" rel="noopener noreferrer" class="">netaVehicle.js</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-总结">🎯 总结<a href="#-总结" class="hash-link" aria-label="🎯 总结的直接链接" title="🎯 总结的直接链接" translate="no">​</a></h2>
+<p>通过 BoxJS + 代理工具，你可以：</p>
+<p>✅ <strong>自动抓取</strong> 哪吒汽车 App 的 Token
+✅ <strong>自动同步</strong> Token 到车机，无需手动输入
+✅ <strong>持久化保存</strong> Token，防止丢失
+✅ <strong>可视化管理</strong> 配置和日志</p>
+<p>享受便捷的车机互联体验吧！🚗</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-什么是-boxjs" class="table-of-contents__link toc-highlight">📖 什么是 BoxJS？</a><ul><li><a href="#主要功能" class="table-of-contents__link toc-highlight">主要功能</a></li></ul></li><li><a href="#-快速开始一键安装" class="table-of-contents__link toc-highlight">🚀 快速开始：一键安装</a></li><li><a href="#-详细教程" class="table-of-contents__link toc-highlight">📚 详细教程</a><ul><li><a href="#第一步安装-boxjs" class="table-of-contents__link toc-highlight">第一步：安装 BoxJS</a></li><li><a href="#第二步安装哪吒互联脚本" class="table-of-contents__link toc-highlight">第二步：安装哪吒互联脚本</a></li><li><a href="#第三步配置-mitm" class="table-of-contents__link toc-highlight">第三步：配置 MITM</a></li><li><a href="#第四步导入哪吒互联订阅" class="table-of-contents__link toc-highlight">第四步：导入哪吒互联订阅</a></li></ul></li><li><a href="#-第五步配对车机并抓取-token" class="table-of-contents__link toc-highlight">🎯 第五步：配对车机并抓取 Token</a><ul><li><a href="#1-配对车机" class="table-of-contents__link toc-highlight">1. 配对车机</a></li><li><a href="#2-抓取-token" class="table-of-contents__link toc-highlight">2. 抓取 Token</a></li><li><a href="#3-查看日志" class="table-of-contents__link toc-highlight">3. 查看日志</a></li></ul></li><li><a href="#-工作原理" class="table-of-contents__link toc-highlight">🔍 工作原理</a><ul><li><a href="#工作流程" class="table-of-contents__link toc-highlight">工作流程</a></li></ul></li><li><a href="#️-配置说明" class="table-of-contents__link toc-highlight">⚙️ 配置说明</a></li><li><a href="#-常见问题" class="table-of-contents__link toc-highlight">🆘 常见问题</a><ul><li><a href="#q1-脚本没有触发" class="table-of-contents__link toc-highlight">Q1: 脚本没有触发？</a></li><li><a href="#q2-token-抓取成功但未同步到车机" class="table-of-contents__link toc-highlight">Q2: Token 抓取成功但未同步到车机？</a></li><li><a href="#q3-如何手动查看当前-token" class="table-of-contents__link toc-highlight">Q3: 如何手动查看当前 Token？</a></li><li><a href="#q4-token-多久会过期" class="table-of-contents__link toc-highlight">Q4: Token 多久会过期？</a></li><li><a href="#q5-能否在多个车机上使用" class="table-of-contents__link toc-highlight">Q5: 能否在多个车机上使用？</a></li><li><a href="#q6-为什么需要-mitm-证书" class="table-of-contents__link toc-highlight">Q6: 为什么需要 MITM 证书？</a></li></ul></li><li><a href="#-使用技巧" class="table-of-contents__link toc-highlight">📝 使用技巧</a><ul><li><a href="#自动化程度最高的使用方式" class="table-of-contents__link toc-highlight">自动化程度最高的使用方式</a></li></ul></li><li><a href="#-相关链接" class="table-of-contents__link toc-highlight">📚 相关链接</a></li><li><a href="#-总结" class="table-of-contents__link toc-highlight">🎯 总结</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
