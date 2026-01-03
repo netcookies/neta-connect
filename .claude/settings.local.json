@@ -20,7 +20,11 @@
       "Bash(git stash:*)",
       "Bash(mkdir:*)",
       "Bash(mv:*)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:docs.boxjs.app)",
+      "Bash(test:*)",
+      "Bash(git describe:*)",
+      "Bash(npm start)"
     ],
     "deny": [],
     "ask": []
