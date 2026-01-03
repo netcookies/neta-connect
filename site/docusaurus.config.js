@@ -71,6 +71,12 @@ const config = {
           position: 'left',
         },
         {
+          to: '/boxjs-install',
+          label: 'BoxJS 安装',
+          position: 'left',
+          className: 'header-boxjs-link',
+        },
+        {
           to: '/docs/widget-store',
           label: '小组件商店',
           position: 'left',

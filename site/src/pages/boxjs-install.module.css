@@ -1,0 +1,306 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* 工具选择器 */
+.toolSelector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toolButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--ifm-font-color-base);
+}
+
+.toolButton:hover {
+  background: var(--ifm-color-primary-lightest);
+  border-color: var(--ifm-color-primary-light);
+}
+
+.toolButton.active {
+  background: var(--ifm-color-primary);
+  color: white;
+  border-color: var(--ifm-color-primary-dark);
+}
+
+.toolIcon {
+  font-size: 2rem;
+}
+
+/* 安装卡片 */
+.installCard {
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.cardHeader .icon {
+  font-size: 3rem;
+}
+
+.cardHeader h3 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.description {
+  margin: 0.3rem 0 0 0;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.95rem;
+}
+
+/* 安装步骤 */
+.installSection {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+}
+
+.installSection h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  color: var(--ifm-color-primary);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.installButton {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.installButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+.copyButton {
+  padding: 0.8rem 1.2rem;
+  background: var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.copyButton:hover {
+  background: var(--ifm-color-emphasis-400);
+}
+
+.visitButton {
+  padding: 0.8rem 1.5rem;
+  background: var(--ifm-color-success);
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.visitButton:hover {
+  background: var(--ifm-color-success-dark);
+  transform: translateY(-2px);
+}
+
+/* 步骤列表 */
+.steps {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.steps li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.steps code {
+  background: var(--ifm-code-background);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* 提示文本 */
+.hint {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* 代码块 */
+.codeBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background: var(--ifm-code-background);
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  overflow-x: auto;
+}
+
+.codeBlock code {
+  flex: 1;
+  background: transparent;
+  padding: 0;
+}
+
+/* 帮助区域 */
+.helpSection {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.helpSection h3 {
+  margin-bottom: 1rem;
+}
+
+.helpLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.helpLinks a {
+  padding: 0.6rem 1.2rem;
+  background: var(--ifm-color-primary);
+  color: white !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.helpLinks a:hover {
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .toolSelector {
+    gap: 0.3rem;
+  }
+
+  .toolButton {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .toolIcon {
+    font-size: 1.5rem;
+  }
+
+  .installCard {
+    padding: 1.5rem;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .installButton {
+    min-width: 100%;
+  }
+
+  .helpLinks {
+    flex-direction: column;
+  }
+}

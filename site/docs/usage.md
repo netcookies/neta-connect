@@ -303,7 +303,39 @@ adb shell dumpsys window | grep mCurrentFocus
 
 ---
 
-## 📝 使用技巧
+## 📱 Token 自动同步（BoxJS）
+
+### 什么是 Token 自动同步？
+
+通过 BoxJS + 代理工具（Surge/Quantumult X/Loon 等），可以自动从哪吒汽车 App 抓取 Token 并同步到车机，无需手动复制粘贴。
+
+### 快速开始
+
+1. **一键安装页面**
+   - 👉 [点击前往一键安装页面](/boxjs-install)
+   - 选择你使用的代理工具
+   - 按照步骤完成安装
+
+2. **详细教程**
+   - 👉 [查看完整 BoxJS 使用教程](/docs/boxjs-guide)
+   - 包含详细的安装、配置和使用说明
+
+### 主要功能
+
+- ✅ 自动抓取哪吒汽车 App 的 Token
+- ✅ 自动同步 Token 到车机
+- ✅ 可视化配置管理
+- ✅ 无需手动复制粘贴
+
+### 支持的工具
+
+- 🌊 Surge
+- ❌ Quantumult X
+- 🎈 Loon
+- 📦 Stash
+- 🚀 Shadowrocket
+
+---
 
 ### 仪表盘技巧
 
@@ -349,3 +381,4 @@ adb shell dumpsys window | grep mCurrentFocus
 - [核心特性](/docs/features) - 详细功能介绍
 - [插件开发](/docs/plugin-development) - 开发自定义小组件
 - [小组件商店](/docs/widget-store) - 小组件商店使用指南
+- [BoxJS 使用教程](/docs/boxjs-guide) - Token 自动同步教程

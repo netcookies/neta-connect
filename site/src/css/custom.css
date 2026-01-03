@@ -147,3 +147,20 @@
   text-decoration: none;
 }
 
+/* BoxJS 链接高亮样式 */
+.header-boxjs-link {
+  font-weight: 600;
+  color: #667eea !important;
+  position: relative;
+}
+
+.header-boxjs-link::after {
+  content: '🔥';
+  margin-left: 4px;
+  font-size: 0.85rem;
+}
+
+.header-boxjs-link:hover {
+  color: #764ba2 !important;
+}
+
