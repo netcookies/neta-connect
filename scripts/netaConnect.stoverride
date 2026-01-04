@@ -12,11 +12,11 @@ http:
   script:
     - match: ^https:\/\/appapi-pki\.chehezhi\.cn:18443\/pivot\/veh-status\/vehicle-status-control\/1\.0\/getAppVehicleData
       type: request
-      name: NetaApp
+      name: NetaConnect
       timeout: 120
 
 script-providers:
-  NetaApp:
+  NetaConnect:
     url: https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/netaConnect.js
     interval: 86400
 
