@@ -1,8 +1,8 @@
-name: "哪吒汽车 [获取Token]"
+name: "哪吒汽车 [获取签到Token]"
 desc: "获取Token用。打开哪吒汽车App。"
 author: "netcookies"
-homepage: "https://github.com/netcookies/Neta-Vehicle"
-manual: "https://github.com/netcookies/Neta-Vehicle"
+homepage: "https://github.com/netcookies/neta-connect"
+manual: "https://github.com/netcookies/neta-connect"
 icon: "https://brands.home-assistant.io/neta_vehicle/icon.png"
 category: "tools"
 
@@ -17,6 +17,6 @@ http:
 
 script-providers:
   NetaApp:
-    url: https://raw.githubusercontent.com/netcookies/Neta-Vehicle/refs/heads/main/scripts/netaConnect.js
+    url: https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/netaConnect.js
     interval: 86400
 
