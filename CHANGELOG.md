@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v2.0.6 (2026-01-04)
+
+### Feature
+- 实现 CDN 配置系统和对话框优化 [`997aaea8`](https://github.com/netcookies/isulewTools/commit/997aaea8)
+- 支持哪吒美式版本选择安装 [`66ae85ec`](https://github.com/netcookies/isulewTools/commit/66ae85ec)
+
+### Bug Fixes
+- CDN 系统初始化和 DashboardPage 集成 [`159206da`](https://github.com/netcookies/isulewTools/commit/159206da)
+
+### Chore
+- 添加应用更新系统混淆白名单 [`053491db`](https://github.com/netcookies/isulewTools/commit/053491db)
+
 ## v2.0.5 (2026-01-04)
 
 ### Feature
