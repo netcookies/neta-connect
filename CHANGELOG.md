@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v2.0.4 (2026-01-04)
+
+### Feature
+- 添加 BoxJS 安装二维码和修复 IP 获取逻辑 [`e7258342`](https://github.com/netcookies/isulewTools/commit/e7258342)
+- 支持远程输入 POST API 和模式切换 [`46806dc3`](https://github.com/netcookies/isulewTools/commit/46806dc3)
+- 实现远程输入功能 [`af58434b`](https://github.com/netcookies/isulewTools/commit/af58434b)
+- 支持 CompactInputFieldSetting 自定义输入框宽度 [`02da3e80`](https://github.com/netcookies/isulewTools/commit/02da3e80)
+
+### Bug Fixes
+- 修复广播接收器重复注册和全屏状态恢复问题 [`94bdd740`](https://github.com/netcookies/isulewTools/commit/94bdd740)
+
+### Other
+
 ## v2.0.3 (2026-01-02)
 
 ### Feature
