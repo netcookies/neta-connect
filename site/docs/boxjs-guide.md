@@ -120,7 +120,7 @@ stash://install-override?url=https://raw.githubusercontent.com/chavyleung/script
 
 **一键安装：**
 ```
-surge://install-module?url=https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.sgmodule
+surge://install-module?url=https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaConnect.sgmodule
 ```
 
 **手动安装：**
@@ -128,7 +128,7 @@ surge://install-module?url=https://raw.githubusercontent.com/netcookies/neta-con
 2. 点击右上角 "+" 添加模块
 3. 粘贴地址：
    ```
-   https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.sgmodule
+   https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaConnect.sgmodule
    ```
 
 ---
@@ -140,7 +140,7 @@ surge://install-module?url=https://raw.githubusercontent.com/netcookies/neta-con
 2. 点击右上角 "+" 添加引用
 3. 粘贴地址：
    ```
-   https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.conf
+   https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaConnect.conf
    ```
 
 ---
@@ -152,7 +152,7 @@ surge://install-module?url=https://raw.githubusercontent.com/netcookies/neta-con
 2. 点击右上角 "+" 添加插件
 3. 粘贴地址：
    ```
-   https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.plugin
+   https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaConnect.plugin
    ```
 
 ---
@@ -161,7 +161,7 @@ surge://install-module?url=https://raw.githubusercontent.com/netcookies/neta-con
 
 **一键安装：**
 ```
-stash://install-override?url=https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaVehicle.stoverride
+stash://install-override?url=https://raw.githubusercontent.com/netcookies/neta-connect/main/scripts/netaConnect.stoverride
 ```
 
 ---
@@ -295,7 +295,7 @@ appapi-pki.chehezhi.cn:18443
       ↓ ②拦截请求
 ┌──────────────┐
 │  代理工具脚本  │
-│ (netaVehicle) │
+│ (netaConnect) │
 └──────────────┘
       ↓ ③提取Token
 ┌──────────────┐
@@ -421,7 +421,7 @@ MITM（中间人攻击）是代理工具拦截 HTTPS 请求的必要技术。通
 - **BoxJS 官方文档**: [https://docs.boxjs.app](https://docs.boxjs.app)
 - **BoxJS GitHub**: [https://github.com/chavyleung/scripts](https://github.com/chavyleung/scripts)
 - **哪吒互联项目**: [https://github.com/netcookies/neta-connect](https://github.com/netcookies/neta-connect)
-- **脚本源码**: [netaVehicle.js](https://github.com/netcookies/neta-connect/blob/main/scripts/netaVehicle.js)
+- **脚本源码**: [netaConnect.js](https://github.com/netcookies/neta-connect/blob/main/scripts/netaConnect.js)
 
 ---
 

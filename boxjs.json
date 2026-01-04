@@ -19,7 +19,7 @@
                 "<p>2. 扫描车机应用二维码完成配对</p>",
                 "<p>3. 之后 Token 将自动同步到车机</p>",
                 "<br>",
-                "<p>详细配置请查看<a href=\"https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/netaVehicle.js\">脚本注释</a></p>"
+                "<p>详细配置请查看<a href=\"https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/netaConnect.js\">脚本注释</a></p>"
             ],
             "settings": [
                 {
@@ -39,7 +39,7 @@
                     "rows": 3
                 }
             ],
-            "script": "https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/netaVehicle.js",
+            "script": "https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/netaConnect.js",
             "author": "@netcookies",
             "repo": "https://github.com/netcookies/neta-connect",
             "icons": [

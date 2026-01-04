@@ -1,4 +1,4 @@
-const $ = new Env("netavehicle", { logLevel: 'info' }); // 初始化 BoxJs
+const $ = new Env("netaconnect", { logLevel: 'info' }); // 初始化 BoxJs
 const version = '0.2.0';
 
 !(async () => {
@@ -7,11 +7,11 @@ const version = '0.2.0';
         let result = await updateToken();
         await $.wait('1000');
         if (result) {
-            $.msg("NetaVehicle 更新成功", "✅ Token 已更新并同步到车机");
+            $.msg("NetaConnect 更新成功", "✅ Token 已更新并同步到车机");
         }
     } catch (e) {
         $.error(`API 请求失败: ${e}`);
-        $.msg("NetaVehicle 更新失败", "❌ API 请求错误", e);
+        $.msg("NetaConnect 更新失败", "❌ API 请求错误", e);
     } finally {
         $.done();
     }
@@ -20,7 +20,7 @@ const version = '0.2.0';
 async function updateToken() {
     const car_ip = $.getdata("@netaconnect.car_ip");
     const oldTokenVal = $.getdata("@netaconnect.token");
-    const tokenName = "NetaVehicle";
+    const tokenName = "NetaConnect";
     const authHeaderKey = $request.headers
         ? Object.keys($request.headers).find(k => k.toLowerCase() === "authorization")
         : null;
@@ -40,7 +40,7 @@ async function updateToken() {
         if (car_ip) {
             return await sendToCarApp(car_ip, tokenVal);
         } else {
-            $.msg("NetaVehicle 更新成功", "✅ Token 已保存", "请扫描车机二维码完成配对");
+            $.msg("NetaConnect 更新成功", "✅ Token 已保存", "请扫描车机二维码完成配对");
             return true;
         }
     }
