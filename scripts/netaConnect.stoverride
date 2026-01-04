@@ -17,6 +17,6 @@ http:
 
 script-providers:
   NetaApp:
-    url: https://raw.githubusercontent.com/netcookies/Neta-Vehicle/refs/heads/main/scripts/netaVehicle.js
+    url: https://raw.githubusercontent.com/netcookies/Neta-Vehicle/refs/heads/main/scripts/netaConnect.js
     interval: 86400
 
