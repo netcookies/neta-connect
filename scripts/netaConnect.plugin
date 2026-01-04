@@ -4,7 +4,7 @@
 #!tag=tools
 
 [Script]
-http-request ^https:\/\/appapi-pki\.chehezhi\.cn:18443\/pivot\/veh-status\/vehicle-status-control\/1\.0\/getAppVehicleData script-path=https://raw.githubusercontent.com/netcookies/Neta-Vehicle/refs/heads/main/scripts/netaVehicle.js, tag=哪吒汽车[获取Token]
+http-request ^https:\/\/appapi-pki\.chehezhi\.cn:18443\/pivot\/veh-status\/vehicle-status-control\/1\.0\/getAppVehicleData script-path=https://raw.githubusercontent.com/netcookies/Neta-Vehicle/refs/heads/main/scripts/netaConnect.js, tag=哪吒汽车[获取Token]
 
 [MITM]
 hostname = appapi-pki.chehezhi.cn:18443
