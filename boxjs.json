@@ -7,11 +7,11 @@
     "repo": "https://github.com/netcookies/neta-connect",
     "apps": [
         {
-            "id": "Neta Vehicle",
-            "name": "哪吒汽车",
+            "id": "Neta Connect",
+            "name": "哪吒互联",
             "keys": [
-                "@netavehicle.token",
-                "@netavehicle.car_ip"
+                "@netaconnect.token",
+                "@netaconnect.car_ip"
             ],
             "descs_html": [
                 "<h4 align=\"center\">使用说明</h4>",
@@ -23,14 +23,14 @@
             ],
             "settings": [
                 {
-                    "id": "@netavehicle.car_ip",
+                    "id": "@netaconnect.car_ip",
                     "name": "车机 IP 地址",
                     "val": "",
                     "type": "text",
                     "desc": "扫码配对后自动保存，无需手动填写"
                 },
                 {
-                    "id": "@netavehicle.token",
+                    "id": "@netaconnect.token",
                     "name": "当前 Token",
                     "val": "",
                     "type": "textarea",

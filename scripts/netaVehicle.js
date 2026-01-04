@@ -18,8 +18,8 @@ const version = '0.2.0';
 })();
 
 async function updateToken() {
-    const car_ip = $.getdata("@netavehicle.car_ip");
-    const oldTokenVal = $.getdata("@netavehicle.token");
+    const car_ip = $.getdata("@netaconnect.car_ip");
+    const oldTokenVal = $.getdata("@netaconnect.token");
     const tokenName = "NetaVehicle";
     const authHeaderKey = $request.headers
         ? Object.keys($request.headers).find(k => k.toLowerCase() === "authorization")
@@ -33,7 +33,7 @@ async function updateToken() {
     $.debug(`车机 IP: ${car_ip || "未配对"}`);
 
     if (tokenVal && tokenVal !== oldTokenVal) {
-        $.setdata(tokenVal, "@netavehicle.token");
+        $.setdata(tokenVal, "@netaconnect.token");
         $.info(tokenName, "Token 写入成功", `新 Token: ${tokenVal}`);
 
         // 如果已配对车机，自动同步
