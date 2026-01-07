@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import styles from './boxjs-install.module.css';
 
@@ -130,7 +130,82 @@ function InstallCard({ tool }) {
 
 export default function BoxJSInstall() {
   const [selectedTool, setSelectedTool] = useState('surge');
+  const [isAndroid, setIsAndroid] = useState(false);
   const currentTool = PROXY_TOOLS.find(t => t.id === selectedTool);
+
+  useEffect(() => {
+    // 检测是否为安卓设备
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const androidDetected = /android/i.test(userAgent);
+    setIsAndroid(androidDetected);
+  }, []);
+
+  // 如果是安卓设备，显示安卓专用页面
+  if (isAndroid) {
+    return (
+      <Layout
+        title="安卓用户指南"
+        description="安卓用户请下载修改版哪吒汽车 App">
+        <div className={styles.container}>
+          <header className={styles.header}>
+            <h1>🤖 安卓用户指南</h1>
+            <p>安卓用户请使用修改版哪吒汽车 App</p>
+          </header>
+
+          <div className={styles.installCard}>
+            <div className={styles.installSection}>
+              <h3>📱 安卓用户专属方案</h3>
+              <p className={styles.description}>
+                由于安卓系统的特殊性，我们为您准备了修改版的哪吒汽车 App。
+              </p>
+              <p className={styles.description}>
+                <strong>修改版 App 内置了抓包工具</strong>，无需额外配置代理和证书，即可直接使用。
+              </p>
+            </div>
+
+            <div className={styles.installSection}>
+              <h4>📥 下载修改版 App</h4>
+              <div className={styles.buttonGroup}>
+                <a
+                  href="https://www.123865.com/s/8yIYvd-DDrB?pwd=9339#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.installButton}>
+                  🚀 立即下载
+                </a>
+                <CopyButton text="https://www.123865.com/s/8yIYvd-DDrB?pwd=9339#" label="复制下载链接" />
+              </div>
+              <p className={styles.hint}>
+                提取码：<code>9339</code>
+              </p>
+            </div>
+
+            <div className={styles.installSection}>
+              <h4>⚠️ 安装说明</h4>
+              <ol className={styles.steps}>
+                <li>下载修改版 APK 文件</li>
+                <li>如已安装官方版，请先卸载</li>
+                <li>允许安装来自未知来源的应用</li>
+                <li>安装并打开修改版 App</li>
+                <li>按照 App 内提示完成配置</li>
+              </ol>
+            </div>
+          </div>
+
+          <div className={styles.helpSection}>
+            <h3>📚 需要帮助？</h3>
+            <div className={styles.helpLinks}>
+              <a href="/docs/boxjs-guide">查看完整教程</a>
+              <a href="/docs/faq">常见问题</a>
+              <a href="https://github.com/netcookies/neta-connect/issues" target="_blank" rel="noopener noreferrer">
+                提交问题
+              </a>
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout
