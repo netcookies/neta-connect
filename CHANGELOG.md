@@ -4,6 +4,35 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v2.0.7 (2026-01-08)
+
+### Feature
+- 优化 ADB root 升级流程，添加重试和自动重启机制 [`5be5ebd1`](https://github.com/netcookies/isulewTools/commit/5be5ebd1)
+- 前台应用检测准确度提升至 99% [`b100fa8f`](https://github.com/netcookies/isulewTools/commit/b100fa8f)
+
+### Bug Fixes
+- 修复 ADB root 服务命令协议格式错误 [`7dd8773e`](https://github.com/netcookies/isulewTools/commit/7dd8773e)
+- 修复 ADB 认证状态检查误判问题 [`4f45a1ec`](https://github.com/netcookies/isulewTools/commit/4f45a1ec)
+- 修复工作流成功时无法保存历史记录的问题 [`9c37b60c`](https://github.com/netcookies/isulewTools/commit/9c37b60c)
+- 修复红绿灯数据源 UI 切换和 ADAS 悬浮窗初始化问题 [`54bd6ff0`](https://github.com/netcookies/isulewTools/commit/54bd6ff0)
+- 直接发送 Float 类型，不转换为 Double [`c2d4db71`](https://github.com/netcookies/isulewTools/commit/c2d4db71)
+- 修正 API 字段名，添加 speed 和 heading [`4b963c93`](https://github.com/netcookies/isulewTools/commit/4b963c93)
+- 允许 localhost 的明文 HTTP 通信 [`d13e804a`](https://github.com/netcookies/isulewTools/commit/d13e804a)
+- 更新 HTTP 端口为 9449 [`b1a0c06e`](https://github.com/netcookies/isulewTools/commit/b1a0c06e)
+- 修复 import 语句，使用 HttpTrafficLightDataSource [`27104e2c`](https://github.com/netcookies/isulewTools/commit/27104e2c)
+
+### Documentation
+- 更新车辆属性 json 文件 [`757f3998`](https://github.com/netcookies/isulewTools/commit/757f3998)
+
+### Build
+- depends updated [`b6e00287`](https://github.com/netcookies/isulewTools/commit/b6e00287)
+
+### Refactor
+- killProcess 改用 ADB shell 避免特权服务自杀悖论 [`5f46c30d`](https://github.com/netcookies/isulewTools/commit/5f46c30d)
+- 优化前台应用检测器架构和环境适配 [`8bb5267f`](https://github.com/netcookies/isulewTools/commit/8bb5267f)
+- 更新 UI 适配新的 HTTP 红绿灯数据源 [`1ca7ccd3`](https://github.com/netcookies/isulewTools/commit/1ca7ccd3)
+- 重构红绿灯数据源架构，切换到 HTTP REST API [`085e6bde`](https://github.com/netcookies/isulewTools/commit/085e6bde)
+
 ## v2.0.6 (2026-01-04)
 
 ### Feature
