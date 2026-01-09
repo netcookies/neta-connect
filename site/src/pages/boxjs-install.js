@@ -187,6 +187,15 @@ export default function BoxJSInstall() {
                 <li>如已安装官方版，请先卸载</li>
                 <li>允许安装来自未知来源的应用</li>
                 <li>安装并打开修改版 App</li>
+                <li>
+                  <strong>⚠️ 开启悬浮窗权限（重要！）</strong>
+                  <ul style={{marginTop: '8px', marginLeft: '20px', listStyleType: 'circle'}}>
+                    <li>进入系统设置 → 应用管理 → 哪吒汽车</li>
+                    <li>找到并开启「悬浮窗权限」或「显示在其他应用上层」</li>
+                    <li>不同品牌手机设置路径可能略有差异（华为/小米/OPPO/vivo等）</li>
+                    <li><strong>未开启此权限将无法使用抓包功能</strong></li>
+                  </ul>
+                </li>
                 <li>按照 App 内提示完成配置</li>
               </ol>
             </div>
