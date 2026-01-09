@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v2.0.8 (2026-01-09)
+
+### Bug Fixes
+- 将防抖逻辑从聚合层移到 AccessibilityEventDataSource [`51e23a02`](https://github.com/netcookies/isulewTools/commit/51e23a02)
+
+### Refactor
+- 前台监控架构统一重构 [`79a2dea1`](https://github.com/netcookies/isulewTools/commit/79a2dea1)
+- TaskStackListenerServiceImpl 内部获取 ActivityTaskManager [`a227aec2`](https://github.com/netcookies/isulewTools/commit/a227aec2)
+- 创建前台检测数据源架构（阶段1） [`0fad9ba5`](https://github.com/netcookies/isulewTools/commit/0fad9ba5)
+- 实现 TaskStackListener 前台检测并清理旧代码 [`8aceab62`](https://github.com/netcookies/isulewTools/commit/8aceab62)
+
 ## v2.0.7 (2026-01-08)
 
 ### Feature
