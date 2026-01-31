@@ -4,12 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## Unreleased changes
+## v2.1.0 (2026-01-31)
+
+### Feature
+- 实现汽水音乐逐字歌词源（基于 PC 端 API） [`896e5108`](https://github.com/netcookies/isulewTools/commit/896e5108)
 
 ### Bug Fixes
+- 修复暂停时封面被覆盖为 null 的问题 & 清理调试日志 [`f637fbea`](https://github.com/netcookies/isulewTools/commit/f637fbea)
+- 修复汽水音乐封面解析和 KRC 超时问题 [`83fc0f18`](https://github.com/netcookies/isulewTools/commit/83fc0f18)
+- 修复汽水音乐 KRC 歌词解析失败问题 [`88a4de3d`](https://github.com/netcookies/isulewTools/commit/88a4de3d)
+- 修复 .gitignore 忽略 media-core jniLibs 的问题 [`295a0b86`](https://github.com/netcookies/isulewTools/commit/295a0b86)
 - 修复 AI release notes 生成时反引号导致的命令执行错误 [`77269e9c`](https://github.com/netcookies/isulewTools/commit/77269e9c)
 
+### Performance Improvements
+- 添加歌词请求去重机制，避免 2 秒内重复请求 [`54a1a5a9`](https://github.com/netcookies/isulewTools/commit/54a1a5a9)
+
 ### Other
+- debug: 添加歌词源选择和执行的详细日志 [`94aef86b`](https://github.com/netcookies/isulewTools/commit/94aef86b)
 - debug: 添加 AI release notes 生成内容的调试输出 [`6c88a33a`](https://github.com/netcookies/isulewTools/commit/6c88a33a)
 
 ## v2.0.9 (2026-01-30)
