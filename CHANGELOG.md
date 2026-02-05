@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v2.1.1 (2026-02-05)
+
+### Feature
+- 添加完整16个原车色系方案 [`3619bf79`](https://github.com/netcookies/isulewTools/commit/3619bf79)
+- 添加氛围灯音乐律动功能 [`2c7cf473`](https://github.com/netcookies/isulewTools/commit/2c7cf473)
+- 聚合多版本 release notes，显示完整更新历史 [`30d7b11d`](https://github.com/netcookies/isulewTools/commit/30d7b11d)
+
+### Bug Fixes
+- 修正FFT magnitude阈值并替换为单色系渐变方案 [`df318b75`](https://github.com/netcookies/isulewTools/commit/df318b75)
+- 移除不必要的安全调用警告 [`13c30d72`](https://github.com/netcookies/isulewTools/commit/13c30d72)
+
+### Performance Improvements
+- 完全重构氛围灯音乐律动算法，模仿原车系统实现 [`83de2091`](https://github.com/netcookies/isulewTools/commit/83de2091)
+- 网易云音乐本身不提供逐字歌词源，所以改用 qq 歌词源来作为默认适配。 [`40beee36`](https://github.com/netcookies/isulewTools/commit/40beee36)
+
+### Chore
+- 更新车辆属性翻译 [`d47c4f5a`](https://github.com/netcookies/isulewTools/commit/d47c4f5a)
+
+### Refactor
+- 使用原车精确数据，仅保留音乐律动7种色系 [`afb14be1`](https://github.com/netcookies/isulewTools/commit/afb14be1)
+- 使用OutlineSelectorDialog优化16色系选择UI [`38ecf8ed`](https://github.com/netcookies/isulewTools/commit/38ecf8ed)
+
 ## v2.1.0 (2026-01-31)
 
 ### Feature
