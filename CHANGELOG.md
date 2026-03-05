@@ -4,15 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## Unreleased changes
+## v2.1.3 (2026-03-05)
+
+### Feature
+- 新增亮屏恢复播放与歌词封面自适应颜色 [`5d139dae`](https://github.com/netcookies/isulewTools/commit/5d139dae)
+- 新增自定义操作与评分兜底支持 [`eeaea6f0`](https://github.com/netcookies/isulewTools/commit/eeaea6f0)
+- 实现歌词超长行布局期预分段换行（方案 B） [`d9e3c632`](https://github.com/netcookies/isulewTools/commit/d9e3c632)
 
 ### Bug Fixes
+- 修复电话会话覆盖音乐封面（电话过滤 + per-song 缓存） [`44e05645`](https://github.com/netcookies/isulewTools/commit/44e05645)
+- 修复 isTrackChanging 锁泄漏与封面降级缺失 [`a4df997e`](https://github.com/netcookies/isulewTools/commit/a4df997e)
+- 修复分段歌词第二段误高亮问题 [`f278f150`](https://github.com/netcookies/isulewTools/commit/f278f150)
+- 修复 VhalManager 日志过滤在应用启动阶段未生效的问题 [`0d81a57b`](https://github.com/netcookies/isulewTools/commit/0d81a57b)
+- 修复 netamade 全屏时悬浮窗线程崩溃及重启后重现问题 [`448b3ebf`](https://github.com/netcookies/isulewTools/commit/448b3ebf)
 - 修复 CI 编译错误 [`8c0c2fe8`](https://github.com/netcookies/isulewTools/commit/8c0c2fe8)
 
 ### Continuous Integration
 - 修复 release workflow 中的 shell 注入和 here-doc 安全问题 [`e782483a`](https://github.com/netcookies/isulewTools/commit/e782483a)
 - avoid here-doc in AI prompt (use jq --arg) [`814e8c7f`](https://github.com/netcookies/isulewTools/commit/814e8c7f)
 - escape AI prompt and build safe request [`4a020fdf`](https://github.com/netcookies/isulewTools/commit/4a020fdf)
+
+### Chore
+- 更新 .gitignore 并精简 CLAUDE.md [`31bdaa67`](https://github.com/netcookies/isulewTools/commit/31bdaa67)
 
 ### Other
 - Merge pull request #13 from netcookies/fix/escape-ai-prompt [`f9d7b7a2`](https://github.com/netcookies/isulewTools/commit/f9d7b7a2)
