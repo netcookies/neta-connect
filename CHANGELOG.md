@@ -4,6 +4,46 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## Unreleased changes
+
+## v2.1.4 (2026-03-09)
+
+### Feature
+- 实现代理自动切换功能 [`357ca942`](https://github.com/netcookies/isulewTools/commit/357ca942)
+- 支持 APK 分段下载的 CI/CD 流程 [`2bf627b2`](https://github.com/netcookies/isulewTools/commit/2bf627b2)
+- 实现基于 meta 文件的 APK 分段下载架构 [`ddda6009`](https://github.com/netcookies/isulewTools/commit/ddda6009)
+- add URL normalization and SHA256 generation [`c20a38ac`](https://github.com/netcookies/isulewTools/commit/c20a38ac)
+- add SHA256 checksum verification for update sources [`801c7867`](https://github.com/netcookies/isulewTools/commit/801c7867)
+- 增强更新源健壮性与多源下载支持 [`7c5b1782`](https://github.com/netcookies/isulewTools/commit/7c5b1782)
+- 新增蓝牙/Wi-Fi/热点特权管理器测试页面 [`52af8d72`](https://github.com/netcookies/isulewTools/commit/52af8d72)
+- 新增蓝牙/Wi-Fi/热点特权管理器 [`3d025d63`](https://github.com/netcookies/isulewTools/commit/3d025d63)
+
+### Bug Fixes
+- 修正 meta 文件格式以支持 index 和 filename 字段 [`848bb820`](https://github.com/netcookies/isulewTools/commit/848bb820)
+- use withContext instead of runBlocking for toast [`4b2f6dd9`](https://github.com/netcookies/isulewTools/commit/4b2f6dd9)
+- replace polling with completion broadcast [`a02dc2fa`](https://github.com/netcookies/isulewTools/commit/a02dc2fa)
+- 修复合并冲突导致的编译错误 [`d3fcefc5`](https://github.com/netcookies/isulewTools/commit/d3fcefc5)
+- harden update source fetching and version checks [`6cdb17ea`](https://github.com/netcookies/isulewTools/commit/6cdb17ea)
+- 热点状态读取改用 app 进程反射 API，移除死代码 privilegeGateway [`2b5444a0`](https://github.com/netcookies/isulewTools/commit/2b5444a0)
+- 蓝牙/Wi-Fi 启用状态读取改用 app 进程标准 API [`73bace41`](https://github.com/netcookies/isulewTools/commit/73bace41)
+- 为 IBluetoothManager 和 IWifiManager 添加 HiddenApiBypass 豁免 [`f8be0bb9`](https://github.com/netcookies/isulewTools/commit/f8be0bb9)
+
+### Chore
+- remove unused downloadFile method [`3f591b3a`](https://github.com/netcookies/isulewTools/commit/3f591b3a)
+
+### Refactor
+- 重构更新机制为 Parcelable 多源下载架构 [`50d99e6d`](https://github.com/netcookies/isulewTools/commit/50d99e6d)
+- remove duplicate update check in service [`38c6de5b`](https://github.com/netcookies/isulewTools/commit/38c6de5b)
+- 将 *PrivilegeManager 迁移至 manager 子包，优化空安全与冗余守卫 [`c76b6169`](https://github.com/netcookies/isulewTools/commit/c76b6169)
+- 清理废弃 API 调用，完成 Manager 层全量收口 [`eb234626`](https://github.com/netcookies/isulewTools/commit/eb234626)
+- 统一化特权管理层架构 [`0d905372`](https://github.com/netcookies/isulewTools/commit/0d905372)
+
+### Other
+- Merge queue QUE-20260307215315: Remove duplicate update check [`25935e2d`](https://github.com/netcookies/isulewTools/commit/25935e2d)
+- Merge queue QUE-20260307214543: Update module improvements [`ccbf31fe`](https://github.com/netcookies/isulewTools/commit/ccbf31fe)
+- Merge pull request #14 from netcookies/queue-exec-QUE-20260307181239 [`faa03344`](https://github.com/netcookies/isulewTools/commit/faa03344)
+- Merge branch 'main' into queue-exec-QUE-20260307181239 [`917d06f5`](https://github.com/netcookies/isulewTools/commit/917d06f5)
+
 ## v2.1.3 (2026-03-05)
 
 ### Feature
