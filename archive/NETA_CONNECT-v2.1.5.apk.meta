@@ -1,0 +1,21 @@
+{
+  "filename": "NETA_CONNECT-v2.1.5.apk",
+  "total_size": 32969014,
+  "total_sha256": "159b75786b7e44dc5d65dd9ff4d0bdd36fbef1e8e4d577b2884319987bf2e0e9",
+  "part_count": 2,
+  "part_size": 19922944,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "NETA_CONNECT-v2.1.5.apk.part000",
+      "size": 19922944,
+      "sha256": "95dc288c2c82df7aa417605f3aa774eb4cd329a4308b187411c291ab47f9a2bd"
+    },
+    {
+      "index": 2,
+      "filename": "NETA_CONNECT-v2.1.5.apk.part001",
+      "size": 13046070,
+      "sha256": "ae3bdbb35124ff07cbaa8f706f8d31f72901be0eab27a4d1f8648306190a39d2"
+    }
+  ]
+}
