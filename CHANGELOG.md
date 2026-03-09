@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.5 (2026-03-09)
+
+### Feature
+- 实现 CDN 多 URL 自动重试机制 [`d726ad13`](https://github.com/netcookies/isulewTools/commit/d726ad13)
+- 添加 CDN 代理默认排序列表 [`9ae2f6ea`](https://github.com/netcookies/isulewTools/commit/9ae2f6ea)
+
+### Refactor
+- 提取封面更新策略并移除重复的下载实现 [`ca91c6e3`](https://github.com/netcookies/isulewTools/commit/ca91c6e3)
+
 ## v2.1.4 (2026-03-09)
 
 ### Feature
