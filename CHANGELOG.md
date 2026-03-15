@@ -6,6 +6,63 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.6 (2026-03-15)
+
+### Feature
+- 语音助手架构改进与代码质量提升 [`8da3ec0f`](https://github.com/netcookies/isulewTools/commit/8da3ec0f)
+- loadDefaultTemplate 支持 jsdelivr + GitHub 代理多源自动切换 [`ab1cab64`](https://github.com/netcookies/isulewTools/commit/ab1cab64)
+- 重新设计语音助手设置页与模型商店 UI [`82a06ede`](https://github.com/netcookies/isulewTools/commit/82a06ede)
+- 改造语音助手设置页并新增云端模型商店 [`0d8acd7f`](https://github.com/netcookies/isulewTools/commit/0d8acd7f)
+- 实现语音助手 AudioRecord 功能与 UI 控制 [`289990c2`](https://github.com/netcookies/isulewTools/commit/289990c2)
+- 增强语音助手入口调度与编排能力 [`d68163c0`](https://github.com/netcookies/isulewTools/commit/d68163c0)
+- 实现通信架构治理层统一 [`4ed8924e`](https://github.com/netcookies/isulewTools/commit/4ed8924e)
+- 集成语音助手模块与方控触发机制 [`abd4034d`](https://github.com/netcookies/isulewTools/commit/abd4034d)
+- 支持哪吒美式全屏广播控制 [`a15ecd2e`](https://github.com/netcookies/isulewTools/commit/a15ecd2e)
+
+### Bug Fixes
+- 修复voice模块重构后的编译错误 [`991772a9`](https://github.com/netcookies/isulewTools/commit/991772a9)
+- 修复代码评审发现的三个问题 [`c7ca849e`](https://github.com/netcookies/isulewTools/commit/c7ca849e)
+- 修复 MediaControlData 数据源切换时的竞态条件 [`99f19ad2`](https://github.com/netcookies/isulewTools/commit/99f19ad2)
+- 修复小组件远程服务的多个关键缺陷 [`bcf7af56`](https://github.com/netcookies/isulewTools/commit/bcf7af56)
+- 补全 LyricRepository 协程取消异常放行 [`eb80925d`](https://github.com/netcookies/isulewTools/commit/eb80925d)
+- 修复 data class ByteArray 契约及 IDE 警告 [`c56b92b2`](https://github.com/netcookies/isulewTools/commit/c56b92b2)
+- 补全混淆规则并修复废弃 API 与 data class 契约 [`fea1cc2b`](https://github.com/netcookies/isulewTools/commit/fea1cc2b)
+- 修复语音模块代码审查发现的 16 个问题 [`8c292612`](https://github.com/netcookies/isulewTools/commit/8c292612)
+- eliminate TOCTOU race in audio recorder state [`54e1a161`](https://github.com/netcookies/isulewTools/commit/54e1a161)
+- eliminate command injection risk in daemon control [`0efb68f4`](https://github.com/netcookies/isulewTools/commit/0efb68f4)
+- 修复语音模块代码审查发现的问题 [`4c7ee7cd`](https://github.com/netcookies/isulewTools/commit/4c7ee7cd)
+- 配置 sharedUserId 并优化副屏安装逻辑 [`a3cd9ab1`](https://github.com/netcookies/isulewTools/commit/a3cd9ab1)
+
+### Performance Improvements
+- 优化远程服务性能与资源管理 [`1cf2914a`](https://github.com/netcookies/isulewTools/commit/1cf2914a)
+
+### Test
+- 移除与重构后不兼容的 BaseMediaSessionDataSource 测试 [`640b3a7e`](https://github.com/netcookies/isulewTools/commit/640b3a7e)
+
+### Chore
+- 添加 voice 模块混淆保护规则 [`d9c6d6a7`](https://github.com/netcookies/isulewTools/commit/d9c6d6a7)
+- 清理 carplay-jni 过时测试文件 [`6dfd9cae`](https://github.com/netcookies/isulewTools/commit/6dfd9cae)
+
+### Refactor
+- 移除测试代码兼容层 LegacyDecoderCompat [`1b787b13`](https://github.com/netcookies/isulewTools/commit/1b787b13)
+- 移除向后兼容设计，简化引擎提供者架构 [`9b445e1f`](https://github.com/netcookies/isulewTools/commit/9b445e1f)
+- 将文本获取逻辑迁移到 CdnManager.fetchText [`36836756`](https://github.com/netcookies/isulewTools/commit/36836756)
+- 将多源获取逻辑集中到 CdnManager [`b647e42a`](https://github.com/netcookies/isulewTools/commit/b647e42a)
+- 优化语音助手设置页文案与引擎卡片视觉样式 [`bb4763f4`](https://github.com/netcookies/isulewTools/commit/bb4763f4)
+- 将模型商店 Tab 改造为与 DrivingPage 一致的 AppSegmentedControl 架构 [`fd0d96a2`](https://github.com/netcookies/isulewTools/commit/fd0d96a2)
+- 将模型商店抽取为独立页面 [`fc89905a`](https://github.com/netcookies/isulewTools/commit/fc89905a)
+- 清理 import 并简化 MediaControlData 监听逻辑 [`fbb695d1`](https://github.com/netcookies/isulewTools/commit/fbb695d1)
+- 统一 Duration 归一化并修复协程异常处理 [`8823da4f`](https://github.com/netcookies/isulewTools/commit/8823da4f)
+- 重构路由数据处理为模板方法模式，修复并发安全缺陷 [`2ea3d4f3`](https://github.com/netcookies/isulewTools/commit/2ea3d4f3)
+- 清除剩余 Lyra 命名，统一为语音中间件 [`1bd1fb10`](https://github.com/netcookies/isulewTools/commit/1bd1fb10)
+- 将语音中间件命名从 Lyra 前缀统一为语义化名称 [`a09f5710`](https://github.com/netcookies/isulewTools/commit/a09f5710)
+- 将包状态查询路由到特权管理器 [`071bbea9`](https://github.com/netcookies/isulewTools/commit/071bbea9)
+- move AudioRecord operations to IO dispatcher [`b26e2827`](https://github.com/netcookies/isulewTools/commit/b26e2827)
+- 简化特权实现并添加 lyra.daemon 冻结功能 [`62c11325`](https://github.com/netcookies/isulewTools/commit/62c11325)
+
+### Other
+- revert(ipc): 移除 sharedUserId 配置并优化语音安全机制 [`8e41a85f`](https://github.com/netcookies/isulewTools/commit/8e41a85f)
+
 ## v2.1.5 (2026-03-09)
 
 ### Feature
