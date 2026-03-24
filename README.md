@@ -185,6 +185,47 @@ cd isulewTools
 ./gradlew installDebug
 ```
 
+#### Voice / MLC-LLM 打包
+
+`voice` 模块的 `mlc4j` 不是普通 Maven 依赖，而是由 `MLC-LLM` 工具链预生成的本地 Gradle 模块。
+
+当前仓库已经采用 vendored 方案：
+- 打包配置：[`voice/mlc-package-config.json`](voice/mlc-package-config.json)
+- 打包脚本：[`scripts/package_mlc4j.sh`](scripts/package_mlc4j.sh)
+- 生成产物：[`voice/dist/lib/mlc4j/`](voice/dist/lib/mlc4j/)
+
+重新生成 `mlc4j`：
+
+```bash
+./scripts/package_mlc4j.sh
+```
+
+脚本会自动处理：
+- Python venv 与 `mlc-llm` / `tvm` 依赖
+- `mlc-llm` 源码与子模块
+- Hugging Face 模型下载缓存
+- 本地 Rust / Android target
+- Android NDK / CMake / TVM 打包
+
+默认输出 ABI 为 `arm64-v8a`，适用于 8155 车机，以及 Apple Silicon 上的 ARM 模拟器。
+
+#### Voice / MLC-LLM 提交约定
+
+建议提交：
+- `voice/mlc-package-config.json`
+- `scripts/package_mlc4j.sh`
+- `voice/dist/lib/mlc4j/**`
+
+不要提交：
+- `voice/.venv/`
+- `voice/.mlc-cache/`
+- `voice/.mlc-tmp/`
+- `voice/.hf-cache/`
+- `voice/.cargo-home/`
+- `voice/.cargo-target/`
+- `voice/.rustup-home/`
+- `voice/.mlc-src/`
+
 **开发环境要求**:
 - Android Studio Ladybug (2024.2.1) 或更高版本
 - JDK 11 或更高版本
