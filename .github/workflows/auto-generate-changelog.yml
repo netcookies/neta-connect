@@ -48,12 +48,27 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Get latest release version
+      - name: Resolve release version
         id: get_version
         run: |
-          LATEST_VERSION=$(curl -s https://api.github.com/repos/netcookies/neta-connect/releases/latest | jq -r '.tag_name')
-          echo "version=$LATEST_VERSION" >> $GITHUB_OUTPUT
-          echo "Latest version: $LATEST_VERSION"
+          VERSION_FROM_COMMIT=""
+          if [ "${{ github.event_name }}" = "push" ]; then
+            VERSION_FROM_COMMIT=$(printf '%s' "${{ github.event.head_commit.message }}" | grep -oE 'v[0-9]+(\.[0-9]+){1,3}(-[0-9A-Za-z]+([.-][0-9A-Za-z]+)*)?' | head -1 || true)
+          fi
+
+          if [ -n "$VERSION_FROM_COMMIT" ]; then
+            TARGET_VERSION="$VERSION_FROM_COMMIT"
+            echo "Resolved version from commit message: $TARGET_VERSION"
+          else
+            TARGET_VERSION=$(curl -s https://api.github.com/repos/netcookies/neta-connect/releases | jq -r 'map(select(.draft == false)) | sort_by(.published_at) | last | .tag_name // empty')
+            if [ -z "$TARGET_VERSION" ]; then
+              echo "Failed to resolve release version from GitHub Releases" >&2
+              exit 1
+            fi
+            echo "Resolved version from latest published release: $TARGET_VERSION"
+          fi
+
+          echo "version=$TARGET_VERSION" >> $GITHUB_OUTPUT
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -82,4 +97,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: site/build
           cname: neta.nznd.org
-
