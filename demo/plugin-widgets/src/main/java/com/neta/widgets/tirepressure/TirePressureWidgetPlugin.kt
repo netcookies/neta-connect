@@ -16,10 +16,10 @@ class TirePressureWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-tire-pressure",
-            version = "1.1.1",
+            version = "1.1.2",
             author = "官方",
             description = "显示四轮胎压和温度的监测小组件",
-            minAppVersion = "1.8.9",
+            minAppVersion = "2.1.7",
             category = "车机"
         )
     }

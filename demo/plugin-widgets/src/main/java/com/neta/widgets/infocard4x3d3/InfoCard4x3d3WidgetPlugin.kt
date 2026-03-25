@@ -15,10 +15,10 @@ class InfoCard4x3d3WidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-info-card-4x3d3",
-            version = "1.0.3",
+            version = "1.0.4",
             author = "官方",
             description = "信息卡片(4x3)，显示1个大数值和2个小信息",
-            minAppVersion = "1.8.9",
+            minAppVersion = "2.1.7",
             category = "信息"
         )
     }

@@ -17,10 +17,10 @@ class BarChartWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-bar-chart",
-            version = "1.0.2",
+            version = "1.0.3",
             author = "官方",
             description = "柱状图，显示实时数据趋势，支持最多96个柱子",
-            minAppVersion = "1.8.9",
+            minAppVersion = "2.1.7",
             category = "图表"
         )
     }

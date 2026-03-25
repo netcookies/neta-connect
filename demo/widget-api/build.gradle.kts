@@ -6,21 +6,25 @@ plugins {
 
 android {
     namespace = "com.neta.isulewtools.widget"
-    compileSdk = 36
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 30
+        minSdk = libs.versions.minSdk.get().toInt()
         consumerProguardFiles("consumer-rules.pro")
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.get())
     }
 
     kotlin {
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+            jvmTarget.set(
+                org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(
+                    libs.versions.javaVersion.get()
+                )
+            )
         }
     }
 
@@ -41,4 +45,6 @@ dependencies {
 
     // Material Icons - 用于 MaterialIconsProvider
     api(libs.androidx.compose.material.icons.extended)
+
+    testImplementation(libs.junit)
 }

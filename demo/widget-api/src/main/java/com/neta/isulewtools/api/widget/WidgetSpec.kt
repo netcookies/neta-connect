@@ -207,11 +207,13 @@ val containerDescriptionMap = mapOf(
 enum class WidgetVisibilityMode {
     ALWAYS_SHOW,        // 总是显示
     SHOW_ON_PACKAGES,   // 按需显示（根据包名列表）
+    HIDE_ON_PACKAGES,   // 按需隐藏（根据包名列表）
     NEVER_SHOW          // 禁止显示
 }
 
 val visibilityModeNameMap = mapOf(
     WidgetVisibilityMode.ALWAYS_SHOW to "总是显示",
     WidgetVisibilityMode.SHOW_ON_PACKAGES to "按需显示",
+    WidgetVisibilityMode.HIDE_ON_PACKAGES to "按需隐藏",
     WidgetVisibilityMode.NEVER_SHOW to "禁止显示"
 )

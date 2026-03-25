@@ -15,10 +15,10 @@ class MiniCardWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-mini-card",
-            version = "1.0.2",
+            version = "1.0.3",
             author = "官方",
             description = "迷你数值卡片，紧凑显示单一指标，支持图标、数值、单位和进度条",
-            minAppVersion = "1.8.9",
+            minAppVersion = "2.1.7",
             category = "信息"
         )
     }
