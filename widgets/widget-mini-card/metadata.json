@@ -4,7 +4,7 @@
   "description": "迷你数值卡片，紧凑显示单一指标，支持图标、数值、单位和进度条",
   "author": "官方",
   "category": "信息",
-  "minAppVersion": "1.8.9",
+  "minAppVersion": "2.1.7",
   "permissions": [],
   "screenshots": [],
   "repository": "https://github.com/netcookies/neta-connect",
