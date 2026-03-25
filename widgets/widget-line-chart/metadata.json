@@ -4,7 +4,7 @@
   "description": "折线图，显示实时数据趋势，支持平滑曲线和区域填充",
   "author": "官方",
   "category": "图表",
-  "minAppVersion": "1.8.9",
+  "minAppVersion": "2.1.7",
   "permissions": [],
   "screenshots": [],
   "repository": "https://github.com/netcookies/neta-connect",
