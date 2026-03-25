@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-25T08:11:05Z",
+  "generatedAt": "2026-03-25T10:56:03Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -57,7 +57,7 @@
           "changelog": "版本 1.0.7",
           "minAppVersion": "2.1.7",
           "fileSize": 28869,
-          "sha256": "e0d6b466ee51c5335dba427fe539256fc866b56153601886b1484079491d242c"
+          "sha256": "1aee9d4667581dc135ba1d668a0872968b50970ce2568006f3d0614851f90e88"
         }
       ]
     },
@@ -107,7 +107,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
           "fileSize": 29614,
-          "sha256": "b0cfeb5e21db5ee316dd864c7d8568e445cf7a5a5fecbd6e06ba4724ea994ad0"
+          "sha256": "44db561ad5393dffb270e2d119847a4f158254d0947cb96f0f145ab3ff4217ab"
         }
       ]
     },
@@ -119,8 +119,8 @@
       "category": "通用",
       "icon": null,
       "color": null,
-      "minAppVersion": "1.8.9",
-      "latestVersion": "1.0.6",
+      "minAppVersion": "2.1.7",
+      "latestVersion": "1.0.7",
       "status": "STABLE",
       "versions": [
         {
@@ -128,7 +128,7 @@
           "releaseDate": "2025-11-10",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.0/widget-battery.jar",
           "changelog": "版本 1.0.0",
-          "minAppVersion": "1.8.9",
+          "minAppVersion": "2.1.7",
           "fileSize": 24110,
           "sha256": "4a75fe9fa245e798f1e4d17300d640ee66fea414d33d7dd959321f562cf41b2f"
         },
@@ -137,7 +137,7 @@
           "releaseDate": "2025-11-11",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.2/widget-battery.jar",
           "changelog": "版本 1.0.2",
-          "minAppVersion": "1.8.9",
+          "minAppVersion": "2.1.7",
           "fileSize": 24892,
           "sha256": "5e7e80426297cf4b92384797285964e31d89921fe87f645123de8e1fa1658c9e"
         },
@@ -146,7 +146,7 @@
           "releaseDate": "2025-12-04",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.4/widget-battery.jar",
           "changelog": "版本 1.0.4",
-          "minAppVersion": "1.8.9",
+          "minAppVersion": "2.1.7",
           "fileSize": 25119,
           "sha256": "5f772c25c7ef583fad9a95a340aa9ae1ecef974a0cd91426cbb85ed71f66a7c9"
         },
@@ -155,7 +155,7 @@
           "releaseDate": "2025-12-08",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.5/widget-battery.jar",
           "changelog": "版本 1.0.5",
-          "minAppVersion": "1.8.9",
+          "minAppVersion": "2.1.7",
           "fileSize": 28029,
           "sha256": "26299aee196a85d8f62bf0167cc177e6700d6389475d4925984485838d0fda72"
         },
@@ -164,9 +164,18 @@
           "releaseDate": "2025-12-08",
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.6/widget-battery.jar",
           "changelog": "版本 1.0.6",
-          "minAppVersion": "1.8.9",
+          "minAppVersion": "2.1.7",
           "fileSize": 27701,
           "sha256": "6f2da936bf42c6b34b9dbb9e894903d53330746efed37ed207e236384499a8d0"
+        },
+        {
+          "version": "1.0.7",
+          "releaseDate": "2026-03-25",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.7/widget-battery.jar",
+          "changelog": "版本 1.0.7",
+          "minAppVersion": "2.1.7",
+          "fileSize": 23088,
+          "sha256": "aae2bb8fc27109a50c6f1c4a0d420e951ce7ddf164f5f8b675e28ac53550cd3b"
         }
       ]
     },
@@ -324,7 +333,7 @@
           "changelog": "版本 1.1.7",
           "minAppVersion": "2.1.7",
           "fileSize": 13025,
-          "sha256": "dafd392f5cce8b9e11905d39bbbc4daa9220b785242c4d9bf691124c99848cfb"
+          "sha256": "2e9cef772b5cb49e3dce8dd7f9ac19cd5886a1635984b1a4abad5536342f9141"
         }
       ]
     },
@@ -365,7 +374,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
           "fileSize": 18024,
-          "sha256": "37e5cbaf1445a25c455acbbedab7275fa5bbb14324e6b5b59a68046dbb95a830"
+          "sha256": "99142105f6dfff0363cd6923011d7ef4f6e67ef45ff19c40ce5fdb85562ce611"
         }
       ]
     },
@@ -415,7 +424,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
           "fileSize": 22678,
-          "sha256": "69027feb99d85146cc250433058380adcf884bb70e415fb42f87a481843dc4e8"
+          "sha256": "dfc859c4933dc3ca16fee4970b3eccd5c4dda66d6e270e5fa0cd9cbd9800ef0f"
         }
       ]
     },
@@ -474,7 +483,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "2.1.7",
           "fileSize": 23592,
-          "sha256": "5f192614c7515d60f0a4e2c6ff65ed5fbb72695cf0554c57fe2bdd67fee35e8e"
+          "sha256": "7c3320a14acb15c499239cd02fc93d6e171150c71d30def968ae56a19a500e3b"
         }
       ]
     },
@@ -533,7 +542,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "2.1.7",
           "fileSize": 24931,
-          "sha256": "73314e2212a2101e79154d34f012b91a809afe40b788e26543dd60866752d64b"
+          "sha256": "d1004ce4a9aa0219648140a97bcdfd41eaf1a9fbf5efa542e66b3b1f6fc3ec4b"
         }
       ]
     },
@@ -592,7 +601,7 @@
           "changelog": "版本 1.0.4",
           "minAppVersion": "2.1.7",
           "fileSize": 30953,
-          "sha256": "69247427118b5ea8a40e2fbb7f04d1ffde814a90e7ad2f989a31906db19caa65"
+          "sha256": "c12fd168102b554ea96f48c113f2b5def2f0ef366e69fae1504a94c24e7db5c5"
         }
       ]
     },
@@ -642,7 +651,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
           "fileSize": 32713,
-          "sha256": "a9ed9c4b3c31d5af44208643808bdc6f1ea6ddf309a240633e5334fa8c363819"
+          "sha256": "b45dcaa40bb2293a80c7f2078b3a2bc2119919dc4aa1261dd7fc4ca6d3171648"
         }
       ]
     },
@@ -683,7 +692,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
           "fileSize": 21719,
-          "sha256": "7a2202ba4745e0685fb2086b31bf2e3a02163f103dc3bbee1df84fef7778486b"
+          "sha256": "a1cda3887ad1b35a3a830929124007ce79eb79a760f86d2909c538c9e97ec1da"
         }
       ]
     },
@@ -733,7 +742,7 @@
           "changelog": "版本 1.0.5",
           "minAppVersion": "2.1.7",
           "fileSize": 20689,
-          "sha256": "fb2376f1cd05a2eb444612eb508e99c6e34067faa33ed50f4e0a3e714f24b8d2"
+          "sha256": "f3befa4fb06fad9441d3236b2a1fd62f18560f64b2725b4f83215345b6663d05"
         }
       ]
     },
@@ -792,7 +801,7 @@
           "changelog": "版本 1.0.6",
           "minAppVersion": "2.1.7",
           "fileSize": 22094,
-          "sha256": "bd2d4e1fca6f57a6d049fac65e36cc2f7102791caf8ae69a26d87d601e8a9374"
+          "sha256": "959ce9b67c6f9a4dcc060fa512abc959531edaf201f5a1998ded9bc02b3f1ac4"
         }
       ]
     },
@@ -887,7 +896,7 @@
           "changelog": "版本 1.1.2",
           "minAppVersion": "2.1.7",
           "fileSize": 31100,
-          "sha256": "17398c96365c14687ce385882ab54517756b577073e83e480e7a7693c1ec591d"
+          "sha256": "c89978b296681ac291ee3aeec4fae3280c2a9df3d18910e7c8d4d394622fbf5f"
         }
       ]
     },
@@ -928,7 +937,7 @@
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
           "fileSize": 25281,
-          "sha256": "91be5497a2a19999bfb77ae84dda113fc3e6623bb7fcaea83e8d357752f4bed4"
+          "sha256": "3ae17dcf9b3564162024676708a36fe7bf3eb289f7cd818fe17605810580acdd"
         }
       ]
     }
