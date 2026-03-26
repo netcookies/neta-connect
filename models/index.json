@@ -1,0 +1,367 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-03-26T13:00:00Z",
+  "models": [
+    {
+      "id": "asr_whisper_tiny",
+      "displayName": "Whisper Tiny",
+      "description": "轻量语音识别模型，启动快，占用最低，来自 ggerganov 官方 whisper.cpp 模型仓库。",
+      "author": "ggerganov",
+      "category": "voice",
+      "modelType": "ASR",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-03-26",
+          "downloadUrl": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-tiny.bin",
+          "changelog": "首次接入官方 Whisper Tiny 模型。",
+          "sha256": "be07e048e1e599ad46341c8d2a135645097a538221678b7acdd1b1919c6e1b21"
+        }
+      ],
+      "status": "STABLE"
+    },
+    {
+      "id": "asr_whisper_base",
+      "displayName": "Whisper Base",
+      "description": "标准语音识别模型，速度与效果平衡，来自 ggerganov 官方 whisper.cpp 模型仓库。",
+      "author": "ggerganov",
+      "category": "voice",
+      "modelType": "ASR",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-03-26",
+          "downloadUrl": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin",
+          "changelog": "首次接入官方 Whisper Base 模型。",
+          "sha256": "60ed5bc3dd14eea856493d334349b405782ddcaf0028d4b5df4088345fba2efe"
+        }
+      ],
+      "status": "STABLE"
+    },
+    {
+      "id": "asr_whisper_small",
+      "displayName": "Whisper Small",
+      "description": "高精度语音识别模型，来自 ggerganov 官方 whisper.cpp 模型仓库。",
+      "author": "ggerganov",
+      "category": "voice",
+      "modelType": "ASR",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-03-26",
+          "downloadUrl": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin",
+          "changelog": "首次接入官方 Whisper Small 模型。",
+          "sha256": "1be3a9b2063867b937e64e2ec7483364a79917e157fa98c5d94b5c1fffea987b"
+        }
+      ],
+      "status": "STABLE"
+    },
+    {
+      "id": "tts_piper_zh_cn_huayan_x_low",
+      "displayName": "Piper 中文女声（Huayan X Low）",
+      "description": "轻量中文女声音色，占用更低，来自 rhasspy 官方 piper-voices 仓库。",
+      "author": "rhasspy",
+      "category": "voice",
+      "modelType": "TTS",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-03-26",
+          "downloadUrl": "https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/x_low/zh_CN-huayan-x_low.onnx",
+          "changelog": "首次接入官方 Piper Huayan X Low 音色。",
+          "sha256": "d30b143fac66d821a1285aa013295adf5cd129d3cc11d70334e51c7b20662c37"
+        }
+      ],
+      "status": "STABLE"
+    },
+    {
+      "id": "tts_piper_zh_cn_huayan_medium",
+      "displayName": "Piper 中文女声（Huayan Medium）",
+      "description": "中文语音播报模型，来自 rhasspy 官方 piper-voices 仓库。",
+      "author": "rhasspy",
+      "category": "voice",
+      "modelType": "TTS",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-03-26",
+          "downloadUrl": "https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx",
+          "changelog": "首次接入官方 Piper Huayan Medium 音色。",
+          "sha256": "9929917bf8cabb26fd528ea44d3a6699c11e87317a14765312420be230be0f3d"
+        }
+      ],
+      "status": "STABLE"
+    },
+    {
+      "id": "tts_piper_zh_cn_chaowen_medium",
+      "displayName": "Piper 中文女声（Chaowen Medium）",
+      "description": "中文语音播报模型，来自 rhasspy 官方 piper-voices 仓库。",
+      "author": "rhasspy",
+      "category": "voice",
+      "modelType": "TTS",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-03-26",
+          "downloadUrl": "https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/chaowen/medium/zh_CN-chaowen-medium.onnx",
+          "changelog": "首次接入官方 Piper Chaowen Medium 音色。",
+          "sha256": "820d64ac16048fbcf38dd0823d37fab5f5e0c2bd71b01ca5a50f553fac19e746"
+        }
+      ],
+      "status": "STABLE"
+    },
+    {
+      "id": "tts_piper_zh_cn_xiao_ya_medium",
+      "displayName": "Piper 中文女声（Xiao Ya Medium）",
+      "description": "中文语音播报模型，来自 rhasspy 官方 piper-voices 仓库。",
+      "author": "rhasspy",
+      "category": "voice",
+      "modelType": "TTS",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-03-26",
+          "downloadUrl": "https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/xiao_ya/medium/zh_CN-xiao_ya-medium.onnx",
+          "changelog": "首次接入官方 Piper Xiao Ya Medium 音色。",
+          "sha256": "cb2ce4ca1f5a36a7b23ae48f0651ce2c854c331ef7a804e5c5dc643d0f74f0e2"
+        }
+      ],
+      "status": "STABLE"
+    },
+    {
+      "id": "llm_qwen2_5_1_5b_instruct_q4f16_1_mlc",
+      "displayName": "Qwen2.5 1.5B Instruct",
+      "description": "本地对话模型目录包，来自 mlc-ai 官方 MLC 模型仓库。",
+      "author": "mlc-ai",
+      "category": "voice",
+      "modelType": "LLM",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-03-26",
+          "downloadUrl": "",
+          "runtimeEntryPath": "",
+          "changelog": "首次接入官方 Qwen2.5 1.5B MLC 目录包。",
+          "files": [
+            {
+              "relativePath": "merges.txt",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/merges.txt",
+              "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+            },
+            {
+              "relativePath": "mlc-chat-config.json",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/mlc-chat-config.json",
+              "sha256": "7da4954212d3f21a91cc3e693d179f63213fd57356796847f65d7f95478a1f9e"
+            },
+            {
+              "relativePath": "ndarray-cache.json",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/ndarray-cache.json",
+              "sha256": "6d16a8936b1c9f372305064c4688eae17a609b62693f6782454d4fa2055c6e94"
+            },
+            {
+              "relativePath": "params_shard_0.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_0.bin",
+              "sha256": "29e46841454786b2c36cbcfd1d9a0777f8cb2bb55fb7cdf9ebd3df6ea6aa61f6"
+            },
+            {
+              "relativePath": "params_shard_1.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_1.bin",
+              "sha256": "a99a03870f60127bdc3891f0bdc13a0f6e25efa984e9a5d6b188b5aae6f4fbae"
+            },
+            {
+              "relativePath": "params_shard_2.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_2.bin",
+              "sha256": "c67f6aff8524441396efaa09488ea4536437e35389e0843d87fda796be9d3412"
+            },
+            {
+              "relativePath": "params_shard_3.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_3.bin",
+              "sha256": "b14d44d720b45dbedd9c7786f1f9db1ce79392fcda0ecc8cbd6deddef6ca3ebd"
+            },
+            {
+              "relativePath": "params_shard_4.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_4.bin",
+              "sha256": "e96c7b30a24f581df1ee5758e1697a214187a89e9e9bc93529950e2f16beecbf"
+            },
+            {
+              "relativePath": "params_shard_5.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_5.bin",
+              "sha256": "8370ade73f96fe5cdb4a816da39703032ca5610699e9714790e6e9c49be5086e"
+            },
+            {
+              "relativePath": "params_shard_6.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_6.bin",
+              "sha256": "48e651ada394e162b0bb016d8b3e340a8d29b0b67e06121ecdc6c368eec1b96d"
+            },
+            {
+              "relativePath": "params_shard_7.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_7.bin",
+              "sha256": "9eb581bc89582d23c43f66197a63ca2e80291c32eefd66695f6b6eaedf3e24ab"
+            },
+            {
+              "relativePath": "params_shard_8.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_8.bin",
+              "sha256": "f8d5dfd8eaf86d361d20310d1d9aa7ba661156112d8524874aae78410cb3b663"
+            },
+            {
+              "relativePath": "params_shard_9.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_9.bin",
+              "sha256": "ace7a4a00e819481571e08ead14f031e3b014f6f8cef665142b6b6463045b493"
+            },
+            {
+              "relativePath": "params_shard_10.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_10.bin",
+              "sha256": "cbe9fa5eaff5463502bf9cc766b39081482e7df30ffc250d8f3e83c45d1700d1"
+            },
+            {
+              "relativePath": "params_shard_11.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_11.bin",
+              "sha256": "f99e7bfc14e17d88d905360dd1f0ecbaab98d5778acdd762e397254c293a2b42"
+            },
+            {
+              "relativePath": "params_shard_12.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_12.bin",
+              "sha256": "3ec7ea81f305fc10b5ed9958ae279486d113d2621029f5f4a4cb820bc803c2ca"
+            },
+            {
+              "relativePath": "params_shard_13.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_13.bin",
+              "sha256": "6eb032a6d30b5d2bbf4b0d16ecdfaf6fa295dffa676e828917d5f8fe4d4d7ef2"
+            },
+            {
+              "relativePath": "params_shard_14.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_14.bin",
+              "sha256": "e1a10d9e18641e9eab280e7c9cb4c7ee05b6dc3ab35b244ffe559da00b1fc950"
+            },
+            {
+              "relativePath": "params_shard_15.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_15.bin",
+              "sha256": "fe24b3ddc07e311556e6968bb62506ae8980ca1ec55393f12ae41de468d93067"
+            },
+            {
+              "relativePath": "params_shard_16.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_16.bin",
+              "sha256": "f86a010144bfae8748ac0abdd705d3d9c54bcb864bc51a4b7d3da8dab7d6c379"
+            },
+            {
+              "relativePath": "params_shard_17.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_17.bin",
+              "sha256": "b473e5c8b5c226c751a393d666066cb6e8b1bf7e61604691a31fea2f82abef66"
+            },
+            {
+              "relativePath": "params_shard_18.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_18.bin",
+              "sha256": "e36912a08ea82dfdcad4ebc288a6541d2112038e987d98f7f2f5cd8f8957cf2d"
+            },
+            {
+              "relativePath": "params_shard_19.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_19.bin",
+              "sha256": "795125e8c8eb20e28733df956ab32bb57ea2376ec99cd84b4d36f8f6f32b1f42"
+            },
+            {
+              "relativePath": "params_shard_20.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_20.bin",
+              "sha256": "ea919f0b2a79aa359eab6cc8003dfce9cf7c742fe254651211793eb56bfb3122"
+            },
+            {
+              "relativePath": "params_shard_21.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_21.bin",
+              "sha256": "221e4cef4c28ac298fd44678378e506188a537f2752e0aba2f45066fdee27a85"
+            },
+            {
+              "relativePath": "params_shard_22.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_22.bin",
+              "sha256": "13c31268f630b52a72c158f2b7d97a672d128e760540b318566cfd70fe5e62ee"
+            },
+            {
+              "relativePath": "params_shard_23.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_23.bin",
+              "sha256": "498c729548a5afbf07735b0183534867cad01dc57132ae1e8802041f193f6f23"
+            },
+            {
+              "relativePath": "params_shard_24.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_24.bin",
+              "sha256": "103fdc607fcb3dc31d0861999f1f692768a3e2edfa81ef2f53eefc6713caf8ae"
+            },
+            {
+              "relativePath": "params_shard_25.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_25.bin",
+              "sha256": "d60dffdf3c88f4990e04a18c343a0ce479b8f98960afb75154a1a835f29f6ea4"
+            },
+            {
+              "relativePath": "params_shard_26.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_26.bin",
+              "sha256": "086adb852f72e13c69f0cd06628375f4d5810d8fb8e00450fb1e1c964b510f77"
+            },
+            {
+              "relativePath": "params_shard_27.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_27.bin",
+              "sha256": "473be20481f3a4dcdb7128827edfe16e92c6d1b3019c330ff4dd05156a1f9a43"
+            },
+            {
+              "relativePath": "params_shard_28.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_28.bin",
+              "sha256": "a7f2c9235da81fce6230b160007449d8f000a1f8c57a68313dce91ca080f088f"
+            },
+            {
+              "relativePath": "params_shard_29.bin",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/params_shard_29.bin",
+              "sha256": "59a8497760bc9da56ce4619e082490c607b3f107bad7ec312fb33ce1a0d3dc71"
+            },
+            {
+              "relativePath": "tensor-cache.json",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/tensor-cache.json",
+              "sha256": "6d16a8936b1c9f372305064c4688eae17a609b62693f6782454d4fa2055c6e94"
+            },
+            {
+              "relativePath": "tokenizer.json",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/tokenizer.json",
+              "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+            },
+            {
+              "relativePath": "tokenizer_config.json",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/tokenizer_config.json",
+              "sha256": "5214600ee45ca2f887ce2eede8910378a0111ea99d657428bcbce94778e65a92"
+            },
+            {
+              "relativePath": "vocab.json",
+              "downloadUrl": "https://huggingface.co/mlc-ai/Qwen2.5-1.5B-Instruct-q4f16_1-MLC/resolve/main/vocab.json",
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          ]
+        }
+      ],
+      "status": "STABLE"
+    }
+  ],
+  "runtimes": {
+    "runners": [],
+    "models": [],
+    "mlc4js": [
+      {
+        "type": "MLC4J",
+        "version": "mlc4j-v1",
+        "files": [
+          {
+            "relativePath": "lib/arm64-v8a/libtvm4j_runtime_packed.so",
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so",
+            "sha256": "f63aace0c0667466f2fc41173ed6f16d567fb742638960b9132562a820856b7b"
+          },
+          {
+            "relativePath": "config/mlc-app-config.json",
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/config/mlc-app-config.json",
+            "sha256": "ef8d3c197bcea2a649637496a169b21c1f48ce2cd662c74e9833296f6345e457"
+          }
+        ]
+      }
+    ]
+  }
+}
