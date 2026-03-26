@@ -1,7 +1,7 @@
 {
   "version": 1,
   "filename": "libtvm4j_runtime_packed.so",
-  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/libtvm4j_runtime_packed.so",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so",
   "full_file_available": false,
   "total_size": 139603840,
   "total_sha256": "f63aace0c0667466f2fc41173ed6f16d567fb742638960b9132562a820856b7b",
@@ -11,56 +11,56 @@
     {
       "index": 1,
       "filename": "libtvm4j_runtime_packed.so.part000",
-      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/libtvm4j_runtime_packed.so.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so.part000",
       "size": 19922944,
       "sha256": "32f77100a3069762d07feebfffe5f2c59602061da66930d6a8268c80fcb2ea9b"
     },
     {
       "index": 2,
       "filename": "libtvm4j_runtime_packed.so.part001",
-      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/libtvm4j_runtime_packed.so.part001",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so.part001",
       "size": 19922944,
       "sha256": "5b85137468d28ce7aed0fab8d9e3789dfb4aed21cc406937f094c7f4130c9681"
     },
     {
       "index": 3,
       "filename": "libtvm4j_runtime_packed.so.part002",
-      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/libtvm4j_runtime_packed.so.part002",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so.part002",
       "size": 19922944,
       "sha256": "aa6d19ad85ae67cd7a43006ceff6f451254e00f1026c4ec624bf342f342f0c67"
     },
     {
       "index": 4,
       "filename": "libtvm4j_runtime_packed.so.part003",
-      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/libtvm4j_runtime_packed.so.part003",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so.part003",
       "size": 19922944,
       "sha256": "2f02caeabf76888c4a03f925c0f7594a7dea3ff2227acbaa980ab6ad344d1e7b"
     },
     {
       "index": 5,
       "filename": "libtvm4j_runtime_packed.so.part004",
-      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/libtvm4j_runtime_packed.so.part004",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so.part004",
       "size": 19922944,
       "sha256": "8666d48be7f204fa8243e619614a030008dda04e106240e51fa00ec41417f0ed"
     },
     {
       "index": 6,
       "filename": "libtvm4j_runtime_packed.so.part005",
-      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/libtvm4j_runtime_packed.so.part005",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so.part005",
       "size": 19922944,
       "sha256": "4fbf828dd44b2cba10acf80137e2c6dfc46ed3dc23523d12d2c64509b25e6c7f"
     },
     {
       "index": 7,
       "filename": "libtvm4j_runtime_packed.so.part006",
-      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/libtvm4j_runtime_packed.so.part006",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so.part006",
       "size": 19922944,
       "sha256": "5e486f0846e3c3f5a4d7987751e845553a9e784c139a7ee6cc20b36a0ba4aab1"
     },
     {
       "index": 8,
       "filename": "libtvm4j_runtime_packed.so.part007",
-      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/libtvm4j_runtime_packed.so.part007",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/lib/arm64-v8a/libtvm4j_runtime_packed.so.part007",
       "size": 143232,
       "sha256": "7e9b7f92dd1dc5ff42e0c95549a3eb6252141494f7a705bb97765eb9af4c4467"
     }
