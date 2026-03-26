@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.8-beta.2 (2026-03-27)
+
+### Feature
+- 统一下载准备态并跟踪批量入队进度 [`2dd0d5f8`](https://github.com/netcookies/isulewTools/commit/2dd0d5f8)
+
+### Bug Fixes
+- 修复并发槽位竞争与队列排空中断 [`5d201e5f`](https://github.com/netcookies/isulewTools/commit/5d201e5f)
+- 收口运行库目录来源并修复首屏占位 [`da49b13a`](https://github.com/netcookies/isulewTools/commit/da49b13a)
+- 修复运行时下载完成与模拟器中间件管理 [`cd5bac8d`](https://github.com/netcookies/isulewTools/commit/cd5bac8d)
+
+### Refactor
+- 统一加载占位符组件并优化状态消息 [`a670ed77`](https://github.com/netcookies/isulewTools/commit/a670ed77)
+- 提取音乐应用启动逻辑并增加单元测试 [`b1493089`](https://github.com/netcookies/isulewTools/commit/b1493089)
+- 提取 MarkdownContentCard 为独立组件并增强主题支持 [`9aa90993`](https://github.com/netcookies/isulewTools/commit/9aa90993)
+- 增强下载管理器与 GitHub 源解析 [`431f9d75`](https://github.com/netcookies/isulewTools/commit/431f9d75)
+
+### Other
+- Bump version to 2.1.8-beta.2 [`10292581`](https://github.com/netcookies/isulewTools/commit/10292581)
+
 ## v2.1.8-beta.1 (2026-03-26)
 
 ### Feature
