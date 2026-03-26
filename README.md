@@ -187,12 +187,14 @@ cd isulewTools
 
 #### Voice / MLC-LLM 打包
 
-`voice` 模块的 `mlc4j` 不是普通 Maven 依赖，而是由 `MLC-LLM` 工具链预生成的本地 Gradle 模块。
+`voice` 模块的 `mlc4j` 不是普通 Maven 依赖，而是由 `MLC-LLM` 工具链预生成桥接代码与运行时产物。
 
-当前仓库已经采用 vendored 方案：
+当前仓库采用“桥接层入库，重产物本地化”的方案：
 - 打包配置：[`voice/mlc-package-config.json`](voice/mlc-package-config.json)
 - 打包脚本：[`scripts/package_mlc4j.sh`](scripts/package_mlc4j.sh)
-- 生成产物：[`voice/dist/lib/mlc4j/`](voice/dist/lib/mlc4j/)
+- 轻量桥接源码：`voice/src/main/java/ai/mlc/mlcllm/**`、`voice/src/main/kotlin/ai/mlc/mlcllm/**`
+- 轻量核心 Jar：[`voice/libs/tvm4j_core.jar`](voice/libs/tvm4j_core.jar)
+- 本地中间产物：`voice/dist/lib/mlc4j/`（脚本生成，不提交）
 
 重新生成 `mlc4j`：
 
@@ -200,7 +202,7 @@ cd isulewTools
 ./scripts/package_mlc4j.sh
 ```
 
-脚本会自动处理：
+脚本会自动处理，并在完成后把桥接源码与 `tvm4j_core.jar` 同步回 `voice` 模块：
 - Python venv 与 `mlc-llm` / `tvm` 依赖
 - `mlc-llm` 源码与子模块
 - Hugging Face 模型下载缓存
@@ -214,9 +216,12 @@ cd isulewTools
 建议提交：
 - `voice/mlc-package-config.json`
 - `scripts/package_mlc4j.sh`
-- `voice/dist/lib/mlc4j/**`
+- `voice/src/main/java/ai/mlc/mlcllm/**`
+- `voice/src/main/kotlin/ai/mlc/mlcllm/**`
+- `voice/libs/tvm4j_core.jar`
 
 不要提交：
+- `voice/dist/`
 - `voice/.venv/`
 - `voice/.mlc-cache/`
 - `voice/.mlc-tmp/`
@@ -298,6 +303,7 @@ git commit -m "refactor(viewmodel): 统一ViewModel命名规范"
 | 文档 | 说明 |
 |------|------|
 | [CHANGELOG.md](CHANGELOG.md) | 版本更新日志 |
+| [BREAKING_NOTICE.md](BREAKING_NOTICE.md) | 版本 Breaking Change 公告能力说明 |
 | [plugin-widgets/README.md](plugin-widgets/README.md) | 小组件插件系统说明 |
 | [plugin-widgets/DEVELOPMENT_GUIDE.md](plugin-widgets/DEVELOPMENT_GUIDE.md) | 插件开发详细指南 |
 
