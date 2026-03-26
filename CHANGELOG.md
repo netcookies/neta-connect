@@ -6,6 +6,106 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.7 (2026-03-24)
+
+### Feature
+- 在侧边栏展示下载状态 [`f5fd8581`](https://github.com/netcookies/isulewTools/commit/f5fd8581)
+- 支持稳定版与测试通道更新 [`f63090fa`](https://github.com/netcookies/isulewTools/commit/f63090fa)
+- 增加位置 tick 通道并固化桥接契约 [`6ece32f2`](https://github.com/netcookies/isulewTools/commit/6ece32f2)
+- 对齐插件元数据并强化信任链 [`10d0012f`](https://github.com/netcookies/isulewTools/commit/10d0012f)
+- 优化副屏服务管理弹窗信息布局 [`2fa2681e`](https://github.com/netcookies/isulewTools/commit/2fa2681e)
+- 优化 CDN 排序展示与默认切换策略 [`64214149`](https://github.com/netcookies/isulewTools/commit/64214149)
+- 收口 bridge 健康状态与版本门控 [`f9995b96`](https://github.com/netcookies/isulewTools/commit/f9995b96)
+- 切换桥接协议到 v2 [`4a414263`](https://github.com/netcookies/isulewTools/commit/4a414263)
+- 引入 v2 双入口协商与退场门控 [`dee79a5a`](https://github.com/netcookies/isulewTools/commit/dee79a5a)
+- 抽象加载骨架并接入核心页面 [`b3ddc8b6`](https://github.com/netcookies/isulewTools/commit/b3ddc8b6)
+- 优化商店安装与更新状态 [`ed2d15d0`](https://github.com/netcookies/isulewTools/commit/ed2d15d0)
+- 按设计稿重构下载管理页与完成页 [`09b18f48`](https://github.com/netcookies/isulewTools/commit/09b18f48)
+- 按设计稿重构下载管理页与完成页 [`ca22be53`](https://github.com/netcookies/isulewTools/commit/ca22be53)
+- 将 CDN 管理整合进下载管理页 [`87b4ad5b`](https://github.com/netcookies/isulewTools/commit/87b4ad5b)
+- 拆分独立检查更新页并内联展示更新日志 [`501d6f76`](https://github.com/netcookies/isulewTools/commit/501d6f76)
+- 支持分片更新回退链与本地 meta 生成 [`afde749d`](https://github.com/netcookies/isulewTools/commit/afde749d)
+- 增加运行时存储迁移器 [`1d8b6845`](https://github.com/netcookies/isulewTools/commit/1d8b6845)
+- 新增统一下载管理入口 [`92a13e0a`](https://github.com/netcookies/isulewTools/commit/92a13e0a)
+- 迁移 VoiceEnginePipelineCard 至 WarmUpResult 状态流替换 isRunnerReady [`94a58a28`](https://github.com/netcookies/isulewTools/commit/94a58a28)
+- 注入四大 Provider SDK 工厂实现 DefaultPorcupine/ChatModule/OnnxSession Factory [`e631f9b7`](https://github.com/netcookies/isulewTools/commit/e631f9b7)
+- 添加 externalNativeBuild cmake 配置以编译 libvoice_jni.so [`2657daa7`](https://github.com/netcookies/isulewTools/commit/2657daa7)
+- 替换 ProcessBuilder runner 为 AAR/JNI 原生 SDK 集成 [`7f13a299`](https://github.com/netcookies/isulewTools/commit/7f13a299)
+- 完成 app 层语音 UI 集成（S-2 T2-T7 T10） [`c172a765`](https://github.com/netcookies/isulewTools/commit/c172a765)
+- 完成四大 Provider 真实实现并完成 Week 6 优化 [`bee12be3`](https://github.com/netcookies/isulewTools/commit/bee12be3)
+- 实现语音模型下载管理功能（MVP版本） [`1ba807c1`](https://github.com/netcookies/isulewTools/commit/1ba807c1)
+
+### Bug Fixes
+- 修复桥接回切与运行时恢复链路 [`a7a6d8a0`](https://github.com/netcookies/isulewTools/commit/a7a6d8a0)
+- 修复休眠恢复后后台主题不同步 [`78a13485`](https://github.com/netcookies/isulewTools/commit/78a13485)
+- 跳过 phoenix 进程初始化避免重启崩溃 [`71f01924`](https://github.com/netcookies/isulewTools/commit/71f01924)
+- 统一调试日志开关并过滤源探测噪音 [`eec99e36`](https://github.com/netcookies/isulewTools/commit/eec99e36)
+- 调整更新按钮文案 [`b3eed2e7`](https://github.com/netcookies/isulewTools/commit/b3eed2e7)
+- 将更新流程改为后台下载与前台观察 [`b6d6d281`](https://github.com/netcookies/isulewTools/commit/b6d6d281)
+- 修复更新源回退校验并补充下载日志 [`b16b2b11`](https://github.com/netcookies/isulewTools/commit/b16b2b11)
+- 修正商店页首帧加载占位 [`a3607870`](https://github.com/netcookies/isulewTools/commit/a3607870)
+- 修复更新链路回退与序列化崩溃 [`f6b36d02`](https://github.com/netcookies/isulewTools/commit/f6b36d02)
+- 统一 raw 回退链路并增强更新源容错 [`8ee754c7`](https://github.com/netcookies/isulewTools/commit/8ee754c7)
+- 改进更新日志加载容错 [`b393c801`](https://github.com/netcookies/isulewTools/commit/b393c801)
+- 修复启动崩溃并收敛 8155 release 包体 [`4892e7c8`](https://github.com/netcookies/isulewTools/commit/4892e7c8)
+- 收紧运行时边界并修正页面状态语义 [`5a196f33`](https://github.com/netcookies/isulewTools/commit/5a196f33)
+- 对齐迁移后的测试与歌词解析兼容性 [`433d8a50`](https://github.com/netcookies/isulewTools/commit/433d8a50)
+- 修复双重代理问题，补全 meta 分片解析链路 [`953101c5`](https://github.com/netcookies/isulewTools/commit/953101c5)
+- 对齐 GitHub 下载源 meta 与分片规则 [`a601387e`](https://github.com/netcookies/isulewTools/commit/a601387e)
+- 统一候选 URL 规划与更新源回退策略 [`bb011fbf`](https://github.com/netcookies/isulewTools/commit/bb011fbf)
+- 修复断点续传与小组件安装收尾 [`816e0460`](https://github.com/netcookies/isulewTools/commit/816e0460)
+- 修正下载完成处理与任务体验 [`6d56b259`](https://github.com/netcookies/isulewTools/commit/6d56b259)
+- 修正 VoiceServiceLocator 错误导入路径 core.AppDatabase → data.AppDatabase [`9d7fd449`](https://github.com/netcookies/isulewTools/commit/9d7fd449)
+- 删除 AudioRecordManager.kt 孤立代码（lines 317-535）消除编译失败 [`5653cd52`](https://github.com/netcookies/isulewTools/commit/5653cd52)
+- 修复 voice 模块安全漏洞并完成架构改进 [`7af4543a`](https://github.com/netcookies/isulewTools/commit/7af4543a)
+- 修复歌词和封面缓存的序列化/反序列化问题 [`b8ae2423`](https://github.com/netcookies/isulewTools/commit/b8ae2423)
+- 修复语音模型管理模块的关键问题 [`2c6138d3`](https://github.com/netcookies/isulewTools/commit/2c6138d3)
+- 修复 MediaSessionDataSource Flow 发射顺序竞态问题 [`36e0961a`](https://github.com/netcookies/isulewTools/commit/36e0961a)
+- 修复副屏桥接服务的 IPC 通信和客户端死亡处理 [`6f3ace36`](https://github.com/netcookies/isulewTools/commit/6f3ace36)
+- 修复更新对话框 Markdown 渲染触发无障碍事件风暴 [`94debeed`](https://github.com/netcookies/isulewTools/commit/94debeed)
+
+### Continuous Integration
+- 统一发布命令与测试版流程 [`4aabceab`](https://github.com/netcookies/isulewTools/commit/4aabceab)
+
+### Test
+- 调整 raw GitHub 候选链断言 [`a1d9649f`](https://github.com/netcookies/isulewTools/commit/a1d9649f)
+- 补齐下载管理核心测试 [`0ea7816a`](https://github.com/netcookies/isulewTools/commit/0ea7816a)
+
+### Build
+- 增加 mlc4j 打包脚本与 vendored 产物 [`3a9adff9`](https://github.com/netcookies/isulewTools/commit/3a9adff9)
+- 集成 whisper.cpp git 子模块并配置 mlc4j 本地 Gradle 模块 [`c7c41212`](https://github.com/netcookies/isulewTools/commit/c7c41212)
+
+### Chore
+- 升级 kotlin 与 tyme4kt 版本 [`d70cda4b`](https://github.com/netcookies/isulewTools/commit/d70cda4b)
+- 添加 runtime properties 占位文件 [`4ed98797`](https://github.com/netcookies/isulewTools/commit/4ed98797)
+- 删除无用的Gradle元数据生成任务 [`6beb5c35`](https://github.com/netcookies/isulewTools/commit/6beb5c35)
+- 清理调试日志并更新 gitignore [`d3e6a17c`](https://github.com/netcookies/isulewTools/commit/d3e6a17c)
+
+### Refactor
+- 收口运行时配置读取到网关 [`2faf6e79`](https://github.com/netcookies/isulewTools/commit/2faf6e79)
+- 收敛 bridge 版本门控 [`199b26e3`](https://github.com/netcookies/isulewTools/commit/199b26e3)
+- 收敛 legacy 桥接兼容层并补迁移说明 [`6e0f5b10`](https://github.com/netcookies/isulewTools/commit/6e0f5b10)
+- 闭环插件 trust policy 与迁移链路 [`23e078a1`](https://github.com/netcookies/isulewTools/commit/23e078a1)
+- 收紧语音装配并移除 AppServices 隐式回流 [`f3aee7db`](https://github.com/netcookies/isulewTools/commit/f3aee7db)
+- 下沉 feature 数据模型到所属模块 [`a77aaf46`](https://github.com/netcookies/isulewTools/commit/a77aaf46)
+- 下沉语音下载完成处理 [`7305d13c`](https://github.com/netcookies/isulewTools/commit/7305d13c)
+- 迁移模型商店组件并接入下载源解析 [`646b52d1`](https://github.com/netcookies/isulewTools/commit/646b52d1)
+- 统一下载源解析入口与 GitHub 规则 [`6f68ef47`](https://github.com/netcookies/isulewTools/commit/6f68ef47)
+- 将运行时下载逻辑收口至 ViewModel，优化 UI 布局 [`2a8f3d2b`](https://github.com/netcookies/isulewTools/commit/2a8f3d2b)
+- 统一下载请求构建命名，移除 WidgetDownloadService [`94b23bf3`](https://github.com/netcookies/isulewTools/commit/94b23bf3)
+- 统一下载管理收口，移除手写执行层残留 [`6070ca3b`](https://github.com/netcookies/isulewTools/commit/6070ca3b)
+- 收敛资源下载与商店状态流 [`d2d8b6d0`](https://github.com/netcookies/isulewTools/commit/d2d8b6d0)
+- 重构运行时安装与资源装配 [`2d782e07`](https://github.com/netcookies/isulewTools/commit/2d782e07)
+- 消除 VoiceServiceLocator 对 AppServices 的循环依赖 [`23570313`](https://github.com/netcookies/isulewTools/commit/23570313)
+- 提取Provider实现并修复测试套件 [`b9fc50a8`](https://github.com/netcookies/isulewTools/commit/b9fc50a8)
+- 系统性重构voice模块清理技术债务 [`ea0c80e4`](https://github.com/netcookies/isulewTools/commit/ea0c80e4)
+- 重构 MediaSessionDataSource 为单 emit 模式修复竞态条件 [`59aa967c`](https://github.com/netcookies/isulewTools/commit/59aa967c)
+
+### Other
+- Merge queue-exec-QUE-20260318001: voice 编译修复与 SDK 工厂注入 [`f5260a58`](https://github.com/netcookies/isulewTools/commit/f5260a58)
+- Merge queue-exec-QUE-20260317-003: voice Provider 迁移至 AAR/JNI 原生 SDK [`42f19f5f`](https://github.com/netcookies/isulewTools/commit/42f19f5f)
+- Merge queue-exec-QUE-20260317161900: voice 模块安全修复与 app 层集成 [`a5740d1a`](https://github.com/netcookies/isulewTools/commit/a5740d1a)
+
 ## v2.1.6 (2026-03-15)
 
 ### Feature

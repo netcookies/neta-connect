@@ -16,10 +16,10 @@ class GearWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-gear",
-            version = "1.0.2",
+            version = "1.0.3",
             author = "官方",
             description = "横向显示汽车档位(P/R/N/D/S)，当前档位高亮显示",
-            minAppVersion = "1.8.9",
+            minAppVersion = "2.1.7",
             category = "车辆信息"
         )
     }

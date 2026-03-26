@@ -90,9 +90,9 @@ include(":widget-speedometer")
 ```kotlin
 package com.neta.widgets.speedometer
 
-import com.neta.isulewtools.widget.WidgetSpec
-import com.neta.isulewtools.widget.plugin.WidgetPlugin
-import com.neta.isulewtools.widget.plugin.WidgetPluginMetadata
+import com.neta.isulewtools.api.widget.WidgetSpec
+import com.neta.isulewtools.api.widget.plugin.WidgetPlugin
+import com.neta.isulewtools.api.widget.plugin.WidgetPluginMetadata
 
 class SpeedometerWidgetPlugin : WidgetPlugin {
     override fun getSpec(): WidgetSpec {
@@ -105,7 +105,10 @@ class SpeedometerWidgetPlugin : WidgetPlugin {
             version = "1.0.0",                      // 版本号
             author = "你的名字",                     // 作者
             description = "显示车速的小组件",        // 描述
-            minAppVersion = "1.7.9"                 // 最低应用版本
+            minAppVersion = "2.1.7",                // 最低应用版本基线
+            category = "车机",                       // 分类
+            signer = null,                          // 可选：签名主体标识
+            certificateSha256 = null               // 可选：证书指纹
         )
     }
 }
@@ -119,7 +122,12 @@ class SpeedometerWidgetPlugin : WidgetPlugin {
 | `version`       | 版本号，遵循语义化版本                      | `1.0.0`                                                |
 | `author`        | 开发者名称                            | `官方` / `你的名字`                                          |
 | `description`   | 功能描述，显示在商店中                      | `显示车速的小组件`                                             |
-| `minAppVersion` | 最低支持的主应用版本                       | `1.7.9`                                                |
+| `minAppVersion` | 最低支持的主应用版本                       | `2.1.7`                                                |
+| `category`      | 小组件分类，用于商店展示与过滤                | `车机` / `信息` / `通用` / `示例`                           |
+| `signer`        | 可选：预留的签名主体标识                     | `release-key`                                          |
+| `certificateSha256` | 可选：预留的证书指纹                    | `ABCD...`                                              |
+
+`signer` 与 `certificateSha256` 当前保持可选，以兼容历史插件；如果填写，会沿着构建脚本写入 MANIFEST 并进入运行时校验链路。
 
 ---
 

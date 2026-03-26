@@ -27,7 +27,9 @@ data class WidgetPluginMetadata(
     val author: String,          // 作者
     val description: String,     // 描述
     val minAppVersion: String,   // 最低支持的 App 版本
-    val category: String = "车机" // 分类,如 "车机"、"示例" 等，默认为 "车机"
+    val category: String = "车机", // 分类,如 "车机"、"示例" 等，默认为 "车机"
+    val signer: String? = null,    // 预留：签名主体标识
+    val certificateSha256: String? = null // 预留：证书指纹
 ) {
     /**
      * 兼容旧版本（5 参数构造函数）
@@ -40,7 +42,21 @@ data class WidgetPluginMetadata(
         author: String,
         description: String,
         minAppVersion: String
-    ) : this(id, version, author, description, minAppVersion, "车机")
+    ) : this(id, version, author, description, minAppVersion, "车机", null, null)
+
+    /**
+     * 兼容旧版本（6 参数构造函数）
+     * 用于加载已带 category、但尚未声明 trust metadata 的历史插件
+     */
+    @Deprecated("Use primary constructor with optional trust metadata", level = DeprecationLevel.HIDDEN)
+    constructor(
+        id: String,
+        version: String,
+        author: String,
+        description: String,
+        minAppVersion: String,
+        category: String
+    ) : this(id, version, author, description, minAppVersion, category, null, null)
 }
 
 /**

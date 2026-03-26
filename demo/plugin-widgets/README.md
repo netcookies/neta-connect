@@ -44,15 +44,17 @@ class BatteryWidgetPlugin : WidgetPlugin {
         return SimpleBatteryWidgetSpec  // 返回小组件规格
     }
 
-    override fun getMetadata(): WidgetPluginMetadata {
-        return WidgetPluginMetadata(
-            id = "widget-battery-demo",              // 唯一标识
-            version = "1.0.0",                  // 版本号
-            author = "官方",                    // 作者
-            description = "显示电池电量的小组件(动态版)",
-            minAppVersion = "1.7.9"             // 最低应用版本
-        )
-    }
+override fun getMetadata(): WidgetPluginMetadata {
+    return WidgetPluginMetadata(
+        id = "widget-battery-demo",              // 唯一标识
+        version = "1.0.0",                  // 版本号
+        author = "官方",                    // 作者
+        description = "显示电池电量的小组件(动态版)",
+        minAppVersion = "2.1.7",            // 最低应用版本基线
+        signer = "release-key",             // 可选：预留 signer
+        certificateSha256 = "ABCD..."       // 可选：预留证书指纹
+    )
+}
 }
 ```
 
@@ -147,6 +149,9 @@ adb push plugin-widgets/build/outputs/widget/debug/widget-battery-demo.jar \
 ```
 Manifest-Version: 1.0
 Plugin-Class: com.neta.widgets.battery.BatteryWidgetPlugin
+Plugin-Category: 通用
+Plugin-Signer: release-key
+Plugin-Certificate-SHA256: ABCD...
 ```
 
 **优点：**
@@ -157,6 +162,14 @@ Plugin-Class: com.neta.widgets.battery.BatteryWidgetPlugin
 - ✅ **防出错**：不需要猜测类名或传递参数
 
 加载器（`WidgetLoader`）会自动读取 `Plugin-Class` 并加载对应的类，无需外部提供类名。
+
+### 信任元数据占位字段
+
+- `category`、`signer` 与 `certificateSha256` 会沿着 `WidgetPluginMetadata -> MANIFEST.MF -> WidgetLoader/VersionCompatibilityChecker` 链路透传。
+- `signer` 与 `certificateSha256` 目前仍是可选占位字段，用于为后续证书链校验预留 manifest/API 契约。
+- 构建脚本会在声明这些字段时，把它们写入 `Plugin-Signer` 与 `Plugin-Certificate-SHA256`。
+- 未声明时不会阻断现有插件，主应用仍按当前的 SHA256 或 TOFU 迁移策略处理。
+- 示例插件与文档当前统一要求 `minAppVersion = "2.1.7"`。
 
 ### 依赖管理
 

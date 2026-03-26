@@ -6,9 +6,9 @@ import java.util.jar.Manifest
 import java.util.zip.ZipFile
 
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.plugin.compose")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 abstract class CreateWidgetJarTask : DefaultTask() {
@@ -46,7 +46,10 @@ abstract class CreateWidgetJarTask : DefaultTask() {
         val version: String?,
         val author: String?,
         val description: String?,
-        val minAppVersion: String?
+        val minAppVersion: String?,
+        val category: String?,
+        val signer: String?,
+        val certificateSha256: String?
     )
 
     /**
@@ -90,6 +93,14 @@ abstract class CreateWidgetJarTask : DefaultTask() {
                             Regex("""minAppVersion\s*=\s*"([^"]+)"""").find(content)?.groupValues?.get(
                                 1
                             )
+                        val category =
+                            Regex("""category\s*=\s*"([^"]+)"""").find(content)?.groupValues?.get(1)
+                        val signer =
+                            Regex("""signer\s*=\s*"([^"]+)"""").find(content)?.groupValues?.get(1)
+                        val certificateSha256 =
+                            Regex("""certificateSha256\s*=\s*"([^"]+)"""").find(content)?.groupValues?.get(
+                                1
+                            )
 
                         return PluginInfo(
                             fullClassName = fullClassName,
@@ -97,7 +108,10 @@ abstract class CreateWidgetJarTask : DefaultTask() {
                             version = version,
                             author = author,
                             description = description,
-                            minAppVersion = minAppVersion
+                            minAppVersion = minAppVersion,
+                            category = category,
+                            signer = signer,
+                            certificateSha256 = certificateSha256
                         )
                     }
                 }
@@ -223,7 +237,8 @@ abstract class CreateWidgetJarTask : DefaultTask() {
                         .forEach { file ->
                             // 检查文件路径是否在目标 widget 的包下
                             val relativePath = file.relativeTo(dir).path
-                            val shouldInclude = relativePath.startsWith(targetPackagePath)
+                            val targetPackagePrefix = "$targetPackagePath/"
+                            val shouldInclude = relativePath.startsWith(targetPackagePrefix)
 
                             if (shouldInclude) {
                                 classFiles.add(file.absolutePath)
@@ -291,11 +306,20 @@ abstract class CreateWidgetJarTask : DefaultTask() {
             pluginInfo.author?.let {
                 manifest.mainAttributes[Attributes.Name("Plugin-Author")] = it
             }
+            pluginInfo.category?.let {
+                manifest.mainAttributes[Attributes.Name("Plugin-Category")] = it
+            }
             pluginInfo.description?.let {
                 manifest.mainAttributes[Attributes.Name("Plugin-Description")] = it
             }
             pluginInfo.minAppVersion?.let {
                 manifest.mainAttributes[Attributes.Name("Min-App-Version")] = it
+            }
+            pluginInfo.signer?.let {
+                manifest.mainAttributes[Attributes.Name("Plugin-Signer")] = it
+            }
+            pluginInfo.certificateSha256?.let {
+                manifest.mainAttributes[Attributes.Name("Plugin-Certificate-SHA256")] = it
             }
             
             // 打包到 JAR
@@ -315,21 +339,25 @@ abstract class CreateWidgetJarTask : DefaultTask() {
 }
 
 android {
-    namespace = "com.neta.widgets.battery"
-    compileSdk = 36
+    namespace = "com.neta.widgets"
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 30
+        minSdk = libs.versions.minSdk.get().toInt()
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.get())
     }
 
     kotlin {
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+            jvmTarget.set(
+                org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(
+                    libs.versions.javaVersion.get()
+                )
+            )
         }
     }
 
@@ -450,18 +478,22 @@ android.buildTypes.forEach { buildType ->
     }
 }
 
-//noinspection UseTomlInstead
 dependencies {
     // Widget API - 使用 compileOnly，运行时由主 App 提供
     compileOnly(project(":widget-api"))
 
     // Compose 依赖 - 支持预览，打包时会被过滤
-    implementation("androidx.compose.ui:ui:1.9.4")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.9.4")
-    implementation("androidx.compose.ui:ui-tooling:1.9.4")
-    implementation("androidx.compose.material3:material3:1.4.0")
-    implementation("androidx.compose.ui:ui-graphics:1.9.4")
-    implementation("androidx.compose.foundation:foundation:1.9.4")
-    implementation("androidx.compose.material:material-icons-extended:1.7.8")
-    implementation("androidx.core:core-ktx:1.17.0")
+    // 使用 BOM 确保版本一致
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.core.ktx)
+
+    testImplementation(project(":widget-api"))
+    testImplementation(libs.junit)
 }

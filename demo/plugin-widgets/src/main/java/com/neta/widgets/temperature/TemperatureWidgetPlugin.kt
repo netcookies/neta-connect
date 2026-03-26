@@ -16,10 +16,10 @@ class TemperatureWidgetPlugin : WidgetPlugin {
     override fun getMetadata(): WidgetPluginMetadata {
         return WidgetPluginMetadata(
             id = "widget-temperature",
-            version = "1.0.5",
+            version = "1.0.6",
             author = "官方",
             description = "温度计样式的数值显示小组件",
-            minAppVersion = "1.8.9",
+            minAppVersion = "2.1.7",
             category = "通用"
         )
     }
