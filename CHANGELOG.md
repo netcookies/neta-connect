@@ -6,6 +6,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.8-beta.1 (2026-03-26)
+
+### Feature
+- 重构语音模型管理，支持 ASR/LLM/TTS 模型独立选择 [`dd26a45f`](https://github.com/netcookies/isulewTools/commit/dd26a45f)
+- 实现 BreakingNotice 破坏性变更通知系统 [`7ed841ff`](https://github.com/netcookies/isulewTools/commit/7ed841ff)
+- 实现前台/后台 Snackbar 路由分发系统 [`d38b5ccc`](https://github.com/netcookies/isulewTools/commit/d38b5ccc)
+
+### Bug Fixes
+- 修复失效小组件处理与旧版本产物清理 [`fe297599`](https://github.com/netcookies/isulewTools/commit/fe297599)
+- 修复 HTTP 416 断点续传失效与协程取消传播 [`b3ed07be`](https://github.com/netcookies/isulewTools/commit/b3ed07be)
+- 优化无障碍告警与配置刷新提示 [`5d8e4678`](https://github.com/netcookies/isulewTools/commit/5d8e4678)
+- 避免默认模板跳转后误报协程异常 [`b4e6b89f`](https://github.com/netcookies/isulewTools/commit/b4e6b89f)
+
+### Continuous Integration
+- 部署前增加 plugin-widgets 单元测试验证步骤 [`e62b0efe`](https://github.com/netcookies/isulewTools/commit/e62b0efe)
+
+### Chore
+- 清理失效节点并更新默认 CDN 为捆仙绳 [`99e67127`](https://github.com/netcookies/isulewTools/commit/99e67127)
+- 删除废弃分析工具与死代码 [`eb6e5425`](https://github.com/netcookies/isulewTools/commit/eb6e5425)
+- 从 git 移除 vendored mlc4j，改由打包脚本同步 [`90a5968a`](https://github.com/netcookies/isulewTools/commit/90a5968a)
+- 批量更新所有 widget 插件版本号 [`bfae0a24`](https://github.com/netcookies/isulewTools/commit/bfae0a24)
+
+### Refactor
+- 模型目录可见性控制与配置精简 [`6ef8c67f`](https://github.com/netcookies/isulewTools/commit/6ef8c67f)
+- 精简运行时架构，仅保留 mlc4j 资产管理 [`df32ebb4`](https://github.com/netcookies/isulewTools/commit/df32ebb4)
+- 移除废弃 API、空文件和未使用的模板资源 [`eab0ad88`](https://github.com/netcookies/isulewTools/commit/eab0ad88)
+- 整合语音设置页并重构模型商店 UI [`bdb1d08d`](https://github.com/netcookies/isulewTools/commit/bdb1d08d)
+
+### Other
+- Bump version to 2.1.8-beta.1 [`684fba08`](https://github.com/netcookies/isulewTools/commit/684fba08)
+
 ## v2.1.7 (2026-03-24)
 
 ### Feature
