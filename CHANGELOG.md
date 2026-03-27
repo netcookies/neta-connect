@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.8-beta.3 (2026-03-27)
+
+### Feature
+- 增强 FAB 禁用态支持并优化页面刷新交互 [`979549ad`](https://github.com/netcookies/isulewTools/commit/979549ad)
+
+### Refactor
+- 重构更新日志加载机制并增强测试覆盖 [`9f5d6a04`](https://github.com/netcookies/isulewTools/commit/9f5d6a04)
+- 提取更新日志解析器并优化历史日志加载 [`e8e8bb88`](https://github.com/netcookies/isulewTools/commit/e8e8bb88)
+
+### Other
+- Bump version to 2.1.8-beta.3 [`d41eb68b`](https://github.com/netcookies/isulewTools/commit/d41eb68b)
+
 ## v2.1.8-beta.2 (2026-03-27)
 
 ### Feature
