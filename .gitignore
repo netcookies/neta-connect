@@ -33,3 +33,4 @@ site/.docusaurus/
 site/build/
 site/node_modules/
 site/package-lock.json
+.ace-tool/
