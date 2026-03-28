@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-info-card-4x3d3.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d3/1.0.3/widget-info-card-4x3d3.jar",
+  "full_file_available": true,
+  "total_size": 23705,
+  "total_sha256": "8f0a8a6c67c248a30410521643e0929abd41c3797c9ca740bdff7f0175838dc8",
+  "part_count": 1,
+  "part_size": 23705,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-info-card-4x3d3.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d3/1.0.3/widget-info-card-4x3d3.jar",
+      "size": 23705,
+      "sha256": "8f0a8a6c67c248a30410521643e0929abd41c3797c9ca740bdff7f0175838dc8"
+    }
+  ]
+}

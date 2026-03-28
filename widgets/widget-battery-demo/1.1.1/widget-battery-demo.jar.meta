@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-battery-demo.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.1.1/widget-battery-demo.jar",
+  "full_file_available": true,
+  "total_size": 12506,
+  "total_sha256": "6c9fb5f70b7ce465717ed6dcdd9dbfbaeee70374fa0f7f651eb84062740588b1",
+  "part_count": 1,
+  "part_size": 12506,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-battery-demo.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.1.1/widget-battery-demo.jar",
+      "size": 12506,
+      "sha256": "6c9fb5f70b7ce465717ed6dcdd9dbfbaeee70374fa0f7f651eb84062740588b1"
+    }
+  ]
+}

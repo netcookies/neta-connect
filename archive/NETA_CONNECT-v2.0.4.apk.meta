@@ -1,0 +1,24 @@
+{
+  "filename": "NETA_CONNECT-v2.0.4.apk",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.0.4.apk",
+  "total_size": 26625789,
+  "total_sha256": "b00726c7215a163f5d5794d0fd270e98b45c334914a1e1187ab273618b3b0c2b",
+  "part_count": 2,
+  "part_size": 19922944,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "NETA_CONNECT-v2.0.4.apk.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.0.4.apk.part000",
+      "size": 19922944,
+      "sha256": "b52d277c51c08b3efab0ea8251bba28af0368af2fc7168db203417cfc44dfaf4"
+    },
+    {
+      "index": 2,
+      "filename": "NETA_CONNECT-v2.0.4.apk.part001",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.0.4.apk.part001",
+      "size": 6702845,
+      "sha256": "95c21e3dc945cc2ddc0230a5e5c3a712ab6253cde9409bde6398561824cd2718"
+    }
+  ]
+}

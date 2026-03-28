@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-info-chart.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-chart/1.0.0/widget-info-chart.jar",
+  "full_file_available": true,
+  "total_size": 36753,
+  "total_sha256": "b2cd31e60c430604725d1bbb010a0fd60994d829ba460b30621e71b658bddad7",
+  "part_count": 1,
+  "part_size": 36753,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-info-chart.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-chart/1.0.0/widget-info-chart.jar",
+      "size": 36753,
+      "sha256": "b2cd31e60c430604725d1bbb010a0fd60994d829ba460b30621e71b658bddad7"
+    }
+  ]
+}

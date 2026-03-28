@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-gear.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-gear/1.0.3/widget-gear.jar",
+  "full_file_available": true,
+  "total_size": 18024,
+  "total_sha256": "99142105f6dfff0363cd6923011d7ef4f6e67ef45ff19c40ce5fdb85562ce611",
+  "part_count": 1,
+  "part_size": 18024,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-gear.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-gear/1.0.3/widget-gear.jar",
+      "size": 18024,
+      "sha256": "99142105f6dfff0363cd6923011d7ef4f6e67ef45ff19c40ce5fdb85562ce611"
+    }
+  ]
+}

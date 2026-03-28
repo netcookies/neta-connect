@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-bar-chart.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-bar-chart/1.0.0/widget-bar-chart.jar",
+  "full_file_available": true,
+  "total_size": 31608,
+  "total_sha256": "1fd95bc2375b3525bb5dd5541f6ce4aad86dd26d366814ad04982ecdff96de53",
+  "part_count": 1,
+  "part_size": 31608,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-bar-chart.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-bar-chart/1.0.0/widget-bar-chart.jar",
+      "size": 31608,
+      "sha256": "1fd95bc2375b3525bb5dd5541f6ce4aad86dd26d366814ad04982ecdff96de53"
+    }
+  ]
+}

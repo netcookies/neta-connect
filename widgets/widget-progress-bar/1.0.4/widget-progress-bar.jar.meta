@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-progress-bar.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-progress-bar/1.0.4/widget-progress-bar.jar",
+  "full_file_available": true,
+  "total_size": 20668,
+  "total_sha256": "200c7237519fce53596e903717b3162c6d359289fcc379e7df4209f500a548ad",
+  "part_count": 1,
+  "part_size": 20668,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-progress-bar.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-progress-bar/1.0.4/widget-progress-bar.jar",
+      "size": 20668,
+      "sha256": "200c7237519fce53596e903717b3162c6d359289fcc379e7df4209f500a548ad"
+    }
+  ]
+}
