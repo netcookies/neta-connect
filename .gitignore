@@ -34,3 +34,4 @@ site/build/
 site/node_modules/
 site/package-lock.json
 .ace-tool/
+.github/scripts/__pycache__/
