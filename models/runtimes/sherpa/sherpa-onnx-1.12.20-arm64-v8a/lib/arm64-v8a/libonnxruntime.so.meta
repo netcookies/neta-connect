@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "libonnxruntime.so",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20-arm64-v8a/lib/arm64-v8a/libonnxruntime.so",
+  "full_file_available": true,
+  "total_size": 15988232,
+  "total_sha256": "c7c0e6b0f9c364a4df4bfc9a3a3576b691899e96f4d9beb60f3b3a7ce4bf572c",
+  "part_count": 1,
+  "part_size": 15988232,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "libonnxruntime.so.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20-arm64-v8a/lib/arm64-v8a/libonnxruntime.so",
+      "size": 15988232,
+      "sha256": "c7c0e6b0f9c364a4df4bfc9a3a3576b691899e96f4d9beb60f3b3a7ce4bf572c"
+    }
+  ]
+}
