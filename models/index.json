@@ -311,26 +311,26 @@
     "runners": [
       {
         "type": "RUNNER",
-        "version": "sherpa-onnx-1.12.20-arm64-v8a",
+        "version": "sherpa-onnx-1.12.20",
         "files": [
           {
             "relativePath": "lib/arm64-v8a/libonnxruntime.so",
-            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20-arm64-v8a/lib/arm64-v8a/libonnxruntime.so",
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20/lib/arm64-v8a/libonnxruntime.so",
             "sha256": "c7c0e6b0f9c364a4df4bfc9a3a3576b691899e96f4d9beb60f3b3a7ce4bf572c"
           },
           {
             "relativePath": "lib/arm64-v8a/libsherpa-onnx-c-api.so",
-            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20-arm64-v8a/lib/arm64-v8a/libsherpa-onnx-c-api.so",
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20/lib/arm64-v8a/libsherpa-onnx-c-api.so",
             "sha256": "8321e04c9714662dbdea0ed77c1bb03cae6f77dc949ee43c9e8095142fdc6075"
           },
           {
             "relativePath": "lib/arm64-v8a/libsherpa-onnx-cxx-api.so",
-            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20-arm64-v8a/lib/arm64-v8a/libsherpa-onnx-cxx-api.so",
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20/lib/arm64-v8a/libsherpa-onnx-cxx-api.so",
             "sha256": "42d8b697d7654fcba904cfab936556cf6bf0f7b1011d31623ae04edebef12812"
           },
           {
             "relativePath": "lib/arm64-v8a/libsherpa-onnx-jni.so",
-            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20-arm64-v8a/lib/arm64-v8a/libsherpa-onnx-jni.so",
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20/lib/arm64-v8a/libsherpa-onnx-jni.so",
             "sha256": "59a978e43a1793678ce007c786931f21d4a5c7d5947b5a8d441e462741edc233"
           }
         ]
