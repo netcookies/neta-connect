@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Bug Fixes
+- 移除启动阶段自动预热 [`f9eb6be3`](https://github.com/netcookies/isulewTools/commit/f9eb6be3)
+
+### Other
+- Revert "Bump Version" [`be3b8bc4`](https://github.com/netcookies/isulewTools/commit/be3b8bc4)
+
+## v2.1.8-beta.6 (2026-03-31)
+
 ## v2.1.8-beta.5 (2026-03-31)
 
 ### Bug Fixes
