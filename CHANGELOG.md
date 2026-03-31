@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.8-beta.5 (2026-03-31)
+
+### Bug Fixes
+- 修正生产运行时装配链路 [`019cc24d`](https://github.com/netcookies/isulewTools/commit/019cc24d)
+
 ## v2.1.8-beta.4 (2026-03-31)
 
 ### Feature
