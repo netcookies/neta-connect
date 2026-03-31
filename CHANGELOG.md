@@ -6,6 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.8-beta.4 (2026-03-31)
+
+### Feature
+- 新增特权前端会话链与 typed DSP 路由 [`5c60782a`](https://github.com/netcookies/isulewTools/commit/5c60782a)
+- 支持云端 LLM 配置与安全存储 [`2006fcb6`](https://github.com/netcookies/isulewTools/commit/2006fcb6)
+- 切换 DSP 回调唤醒并移除 Porcupine [`33f2889d`](https://github.com/netcookies/isulewTools/commit/33f2889d)
+- 增加语音助手 DSP 模式切换 [`9a5a2d85`](https://github.com/netcookies/isulewTools/commit/9a5a2d85)
+- 新增语音测试与 DSP 调试入口页 [`9e98ea11`](https://github.com/netcookies/isulewTools/commit/9e98ea11)
+- 恢复语音前端与 DSP 接入链路 [`fd985e90`](https://github.com/netcookies/isulewTools/commit/fd985e90)
+
+### Bug Fixes
+- 修复前台检测、DSP fallback 与前端回调竞态 [`07fc759e`](https://github.com/netcookies/isulewTools/commit/07fc759e)
+- 增加 MLC4J 运行时兼容校验 [`0a5fe09f`](https://github.com/netcookies/isulewTools/commit/0a5fe09f)
+- 修复回归测试与后台通知 fallback 兼容 [`b1dce212`](https://github.com/netcookies/isulewTools/commit/b1dce212)
+- 调整 Snackbar 尺寸到 1.5 倍 [`a8613179`](https://github.com/netcookies/isulewTools/commit/a8613179)
+- 修复哪吒美式启动兼容竞态 [`ce6ba04d`](https://github.com/netcookies/isulewTools/commit/ce6ba04d)
+- 修复 DSP HIDL 回调桥接 [`50872a9a`](https://github.com/netcookies/isulewTools/commit/50872a9a)
+- 启动时清理旧 Chaowen TTS 配置 [`abd591ea`](https://github.com/netcookies/isulewTools/commit/abd591ea)
+- 展示 native 缓存状态并修正 TTS 文案 [`ae505dd9`](https://github.com/netcookies/isulewTools/commit/ae505dd9)
+- 补充 DSP 混淆保留规则 [`e469fd6d`](https://github.com/netcookies/isulewTools/commit/e469fd6d)
+- 修复 DSP 模式切换的并发与禁用态 [`0ba7f5fa`](https://github.com/netcookies/isulewTools/commit/0ba7f5fa)
+- 切换 Sherpa 依赖并校验 runtime root [`6ad37c53`](https://github.com/netcookies/isulewTools/commit/6ad37c53)
+- 回滚语音助手启用失败状态 [`010a895f`](https://github.com/netcookies/isulewTools/commit/010a895f)
+
+### Chore
+- 迁移 release 命令到 skills [`348c6e71`](https://github.com/netcookies/isulewTools/commit/348c6e71)
+
+### Refactor
+- 迁移 TTS 引擎从 Piper 到 Sherpa-ONNX [`dca73ff4`](https://github.com/netcookies/isulewTools/commit/dca73ff4)
+
+### Other
+
 ## v2.1.8-beta.3 (2026-03-27)
 
 ### Feature
