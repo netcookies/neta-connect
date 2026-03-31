@@ -6,8 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.8-beta.7 (2026-04-01)
+
+### Feature
+- 支持模型商店扫描本地模型 [`526127c5`](https://github.com/netcookies/isulewTools/commit/526127c5)
+- 增强语音测试页预热与输入朗读 [`92522d8a`](https://github.com/netcookies/isulewTools/commit/92522d8a)
+
 ### Bug Fixes
+- 修复 Sherpa 外部模型朗读与混淆保留 [`d042dfe9`](https://github.com/netcookies/isulewTools/commit/d042dfe9)
 - 移除启动阶段自动预热 [`f9eb6be3`](https://github.com/netcookies/isulewTools/commit/f9eb6be3)
+
+### Chore
+- 移除冗余 onnxruntime 依赖 [`5d1364e7`](https://github.com/netcookies/isulewTools/commit/5d1364e7)
 
 ### Other
 - Revert "Bump Version" [`be3b8bc4`](https://github.com/netcookies/isulewTools/commit/be3b8bc4)
