@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.8-beta.9 (2026-04-01)
+
+### Documentation
+- 补充 mlc4j 打包约束说明 [`87cafb8a`](https://github.com/netcookies/isulewTools/commit/87cafb8a)
+
+### Chore
+- 同步 mlc4j 构建链路并修正 ASR 预热 [`64168fcb`](https://github.com/netcookies/isulewTools/commit/64168fcb)
+
 ## v2.1.8-beta.8 (2026-04-01)
 
 ### Bug Fixes
