@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.8-beta.8 (2026-04-01)
+
+### Bug Fixes
+- 统一小组件悬浮窗广播协议 [`923eb7a7`](https://github.com/netcookies/isulewTools/commit/923eb7a7)
+- 调整小组件管理页删除提示交互 [`223f9c7e`](https://github.com/netcookies/isulewTools/commit/223f9c7e)
+
+### Refactor
+- 统一浮窗广播协议分层 [`fb1d45d0`](https://github.com/netcookies/isulewTools/commit/fb1d45d0)
+
 ## v2.1.8-beta.7 (2026-04-01)
 
 ### Feature
