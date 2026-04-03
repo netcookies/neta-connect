@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "mlc-app-config.json",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v2/config/mlc-app-config.json",
+  "full_file_available": true,
+  "total_size": 267,
+  "total_sha256": "382f6eb01bc9653b7823b8d82455abbc91aba191b4da6606e2fa33495c1d7c04",
+  "part_count": 1,
+  "part_size": 19922944,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "mlc-app-config.json.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v2/config/mlc-app-config.json.part000",
+      "size": 267,
+      "sha256": "382f6eb01bc9653b7823b8d82455abbc91aba191b4da6606e2fa33495c1d7c04"
+    }
+  ]
+}

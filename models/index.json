@@ -305,6 +305,107 @@
         }
       ],
       "status": "STABLE"
+    },
+    {
+      "id": "llm_qwen3_0_6b_q4f16_1_mlc",
+      "displayName": "Qwen3 0.6B",
+      "description": "轻量本地对话模型目录包，来自 mlc-ai 官方 MLC 模型仓库，更适合车机低内存场景。",
+      "author": "mlc-ai",
+      "category": "voice",
+      "modelType": "LLM",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-04-03",
+          "downloadUrl": "",
+          "runtimeEntryPath": "",
+          "changelog": "新增官方 Qwen3 0.6B q4f16_1 MLC 目录包，用于低内存车机场景。",
+          "files": [
+            {
+              "relativePath": "merges.txt",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/merges.txt",
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+            },
+            {
+              "relativePath": "mlc-chat-config.json",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/mlc-chat-config.json",
+              "sha256": "298bbe93068281a09866e7bebbd9f8810c1a41da7f68dbe8b3121ac04f7f4cb3"
+            },
+            {
+              "relativePath": "ndarray-cache.json",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/ndarray-cache.json",
+              "sha256": "f4647d617dc869d91fbd7851c65af0a2cf7dd615884ebe3b110013801b65d8c7"
+            },
+            {
+              "relativePath": "params_shard_0.bin",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/params_shard_0.bin",
+              "sha256": "61062e64b475309e648516c853c7bd949344f1ce5c0921e9b121f905953ce9e3"
+            },
+            {
+              "relativePath": "params_shard_1.bin",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/params_shard_1.bin",
+              "sha256": "a7d9e88e510636b34c850bf19c660c38cdacbe64bd128c6bb4dcc710455db81d"
+            },
+            {
+              "relativePath": "params_shard_2.bin",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/params_shard_2.bin",
+              "sha256": "eb5af136518c33abd7c2eb66e154b5504ce27f62728aafffd8fca26a3cab64a9"
+            },
+            {
+              "relativePath": "params_shard_3.bin",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/params_shard_3.bin",
+              "sha256": "482d32bfefe36ec9ee452d88c25cce42f31d8350e4abccc8f4727e4006ab2859"
+            },
+            {
+              "relativePath": "params_shard_4.bin",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/params_shard_4.bin",
+              "sha256": "b3d1ecb2553ae323c95b19e231dc74e1ef34d63094ccf0dd3e79a37f312663f3"
+            },
+            {
+              "relativePath": "params_shard_5.bin",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/params_shard_5.bin",
+              "sha256": "2c753a811fbea6e0292caf39d9f9ceeb8cb5ff74a183f7350be3f846f3013438"
+            },
+            {
+              "relativePath": "params_shard_6.bin",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/params_shard_6.bin",
+              "sha256": "52d543cee1e1d6526dae4a5a36a69c1bafa222d1e3e95c4ee46456d56f1aeab2"
+            },
+            {
+              "relativePath": "params_shard_7.bin",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/params_shard_7.bin",
+              "sha256": "3d9047c2603d24b4ca8e689bc924a7715224205ba591504238ff5910e8542c65"
+            },
+            {
+              "relativePath": "params_shard_8.bin",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/params_shard_8.bin",
+              "sha256": "13985d7899bf0188ff5a0d37fe6254a8b3e3bf7e4aba0d198de1469faa9ef9b4"
+            },
+            {
+              "relativePath": "tensor-cache.json",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/tensor-cache.json",
+              "sha256": "f4647d617dc869d91fbd7851c65af0a2cf7dd615884ebe3b110013801b65d8c7"
+            },
+            {
+              "relativePath": "tokenizer.json",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/tokenizer.json",
+              "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+            },
+            {
+              "relativePath": "tokenizer_config.json",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/tokenizer_config.json",
+              "sha256": "bbc2c089e3bef8753f63348c10595767be8998bc6ca7c7ebcaada346d401fba8"
+            },
+            {
+              "relativePath": "vocab.json",
+              "downloadUrl": "https://hf-mirror.com/mlc-ai/Qwen3-0.6B-q4f16_1-MLC/resolve/main/vocab.json",
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          ]
+        }
+      ],
+      "status": "STABLE"
     }
   ],
   "runtimes": {
@@ -351,6 +452,22 @@
             "relativePath": "config/mlc-app-config.json",
             "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v1/config/mlc-app-config.json",
             "sha256": "ef8d3c197bcea2a649637496a169b21c1f48ce2cd662c74e9833296f6345e457"
+          }
+        ]
+      },
+      {
+        "type": "MLC4J",
+        "version": "mlc4j-v2",
+        "files": [
+          {
+            "relativePath": "lib/arm64-v8a/libtvm4j_runtime_packed.so",
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v2/lib/arm64-v8a/libtvm4j_runtime_packed.so",
+            "sha256": "b5459f07315fe906f297a935e5359c264fa1ff39062c83d662973174547b3c9f"
+          },
+          {
+            "relativePath": "config/mlc-app-config.json",
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/mlc4j/mlc4j-v2/config/mlc-app-config.json",
+            "sha256": "382f6eb01bc9653b7823b8d82455abbc91aba191b4da6606e2fa33495c1d7c04"
           }
         ]
       }
