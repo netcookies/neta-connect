@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "libsherpa-onnx-cxx-api.so",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.35/lib/arm64-v8a/libsherpa-onnx-cxx-api.so",
+  "full_file_available": true,
+  "total_size": 419672,
+  "total_sha256": "664dfaf806273b662d62e350514fbf3e9f7bfbe8b17aa84582ef1aadb7c6c98f",
+  "part_count": 1,
+  "part_size": 419672,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "libsherpa-onnx-cxx-api.so.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.35/lib/arm64-v8a/libsherpa-onnx-cxx-api.so",
+      "size": 419672,
+      "sha256": "664dfaf806273b662d62e350514fbf3e9f7bfbe8b17aa84582ef1aadb7c6c98f"
+    }
+  ]
+}

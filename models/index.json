@@ -1,60 +1,69 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-04-04T12:30:51Z",
+  "generatedAt": "2026-04-07T07:34:39Z",
   "models": [
     {
-      "id": "asr_whisper_tiny",
-      "displayName": "Whisper Tiny",
-      "description": "轻量语音识别模型，启动快，占用最低，来自 ggerganov 官方 whisper.cpp 模型仓库。",
-      "author": "ggerganov",
+      "id": "asr_sherpa_sensevoice_multilingual",
+      "displayName": "Sherpa SenseVoice 多语种",
+      "description": "默认推荐的车载离线语音识别模型，基于 Sherpa-ONNX SenseVoice，覆盖中文、英文、日文、韩文与粤语，兼顾口语场景与噪声环境稳定性。",
+      "author": "csukuangfj",
       "category": "voice",
       "modelType": "ASR",
-      "latestVersion": "1.0.0",
+      "latestVersion": "2025.09.09",
       "versions": [
         {
-          "version": "1.0.0",
-          "releaseDate": "2026-03-26",
-          "downloadUrl": "https://hf-mirror.com/ggerganov/whisper.cpp/resolve/main/ggml-tiny.bin",
-          "changelog": "首次接入官方 Whisper Tiny 模型。",
-          "sha256": "be07e048e1e599ad46341c8d2a135645097a538221678b7acdd1b1919c6e1b21"
+          "version": "2025.09.09",
+          "releaseDate": "2025-09-09",
+          "downloadUrl": "",
+          "runtimeEntryPath": "",
+          "changelog": "升级到 sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2025-09-09，继续作为当前语音主链默认 ASR 档。",
+          "files": [
+            {
+              "relativePath": "model.int8.onnx",
+              "downloadUrl": "https://hf-mirror.com/csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2025-09-09/resolve/main/model.int8.onnx",
+              "fileSize": 237115547,
+              "sha256": "12ca1a2ae7ecf3e0019ef2822307ee0b5cadc9196569e379b4c4026f8205276d"
+            },
+            {
+              "relativePath": "tokens.txt",
+              "downloadUrl": "https://hf-mirror.com/csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2025-09-09/resolve/main/tokens.txt",
+              "fileSize": 315894,
+              "sha256": "f449eb28dc567533d7fa59be34e2abca8784f771850c78a47fb731a31429a1dc"
+            }
+          ]
         }
       ],
       "status": "STABLE"
     },
     {
-      "id": "asr_whisper_base",
-      "displayName": "Whisper Base",
-      "description": "标准语音识别模型，速度与效果平衡，来自 ggerganov 官方 whisper.cpp 模型仓库。",
-      "author": "ggerganov",
+      "id": "asr_sherpa_funasr_nano_multilingual",
+      "displayName": "Sherpa FunASR Nano 多语种",
+      "description": "基于 Fun-ASR-Nano-2512 转换的 sherpa-onnx 离线语音识别模型，强调远场高噪、中文方言和东亚/东南亚多语种场景。",
+      "author": "csukuangfj",
       "category": "voice",
       "modelType": "ASR",
-      "latestVersion": "1.0.0",
+      "latestVersion": "2025.12.17",
       "versions": [
         {
-          "version": "1.0.0",
-          "releaseDate": "2026-03-26",
-          "downloadUrl": "https://hf-mirror.com/ggerganov/whisper.cpp/resolve/main/ggml-base.bin",
-          "changelog": "首次接入官方 Whisper Base 模型。",
-          "sha256": "60ed5bc3dd14eea856493d334349b405782ddcaf0028d4b5df4088345fba2efe"
-        }
-      ],
-      "status": "STABLE"
-    },
-    {
-      "id": "asr_whisper_small",
-      "displayName": "Whisper Small",
-      "description": "高精度语音识别模型，来自 ggerganov 官方 whisper.cpp 模型仓库。",
-      "author": "ggerganov",
-      "category": "voice",
-      "modelType": "ASR",
-      "latestVersion": "1.0.0",
-      "versions": [
-        {
-          "version": "1.0.0",
-          "releaseDate": "2026-03-26",
-          "downloadUrl": "https://hf-mirror.com/ggerganov/whisper.cpp/resolve/main/ggml-small.bin",
-          "changelog": "首次接入官方 Whisper Small 模型。",
-          "sha256": "1be3a9b2063867b937e64e2ec7483364a79917e157fa98c5d94b5c1fffea987b"
+          "version": "2025.12.17",
+          "releaseDate": "2025-12-17",
+          "downloadUrl": "",
+          "runtimeEntryPath": "",
+          "changelog": "接入 sherpa-onnx-sense-voice-funasr-nano-int8-2025-12-17 converted 目录包，作为远场高噪与多语言备选档。",
+          "files": [
+            {
+              "relativePath": "model.int8.onnx",
+              "downloadUrl": "https://hf-mirror.com/csukuangfj/sherpa-onnx-sense-voice-funasr-nano-int8-2025-12-17/resolve/main/model.int8.onnx",
+              "fileSize": 263531902,
+              "sha256": "9dc6e72aa8bc6f5966cf2857a0ce3a425b1d72e91500e147d66329f407c017a1"
+            },
+            {
+              "relativePath": "tokens.txt",
+              "downloadUrl": "https://hf-mirror.com/csukuangfj/sherpa-onnx-sense-voice-funasr-nano-int8-2025-12-17/resolve/main/tokens.txt",
+              "fileSize": 939815,
+              "sha256": "2db4bb25d046e8849e336c9465e248e1694914d996c58c71bdeca18cfb722992"
+            }
+          ]
         }
       ],
       "status": "STABLE"
@@ -159,27 +168,27 @@
     "runners": [
       {
         "type": "RUNNER",
-        "version": "sherpa-onnx-1.12.20",
+        "version": "sherpa-onnx-1.12.35",
         "files": [
           {
             "relativePath": "lib/arm64-v8a/libonnxruntime.so",
-            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20/lib/arm64-v8a/libonnxruntime.so",
-            "sha256": "c7c0e6b0f9c364a4df4bfc9a3a3576b691899e96f4d9beb60f3b3a7ce4bf572c"
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.35/lib/arm64-v8a/libonnxruntime.so",
+            "sha256": "e40f09d07dc53726b8bfbf48a7907673b8f86718a057655a62790a39874a7302"
           },
           {
             "relativePath": "lib/arm64-v8a/libsherpa-onnx-c-api.so",
-            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20/lib/arm64-v8a/libsherpa-onnx-c-api.so",
-            "sha256": "8321e04c9714662dbdea0ed77c1bb03cae6f77dc949ee43c9e8095142fdc6075"
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.35/lib/arm64-v8a/libsherpa-onnx-c-api.so",
+            "sha256": "0a9bab5ff3cc3cf6c6b2c1487ce073eb2acc582734f5300688735df14165bd30"
           },
           {
             "relativePath": "lib/arm64-v8a/libsherpa-onnx-cxx-api.so",
-            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20/lib/arm64-v8a/libsherpa-onnx-cxx-api.so",
-            "sha256": "42d8b697d7654fcba904cfab936556cf6bf0f7b1011d31623ae04edebef12812"
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.35/lib/arm64-v8a/libsherpa-onnx-cxx-api.so",
+            "sha256": "664dfaf806273b662d62e350514fbf3e9f7bfbe8b17aa84582ef1aadb7c6c98f"
           },
           {
             "relativePath": "lib/arm64-v8a/libsherpa-onnx-jni.so",
-            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.20/lib/arm64-v8a/libsherpa-onnx-jni.so",
-            "sha256": "59a978e43a1793678ce007c786931f21d4a5c7d5947b5a8d441e462741edc233"
+            "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.35/lib/arm64-v8a/libsherpa-onnx-jni.so",
+            "sha256": "8c1e31ac0a0643f179b2a73d5b248c1ef56305e4e5dc6e5e003a0a624c310988"
           }
         ]
       }

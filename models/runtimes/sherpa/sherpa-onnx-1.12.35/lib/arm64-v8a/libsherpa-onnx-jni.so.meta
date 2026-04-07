@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "libsherpa-onnx-jni.so",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.35/lib/arm64-v8a/libsherpa-onnx-jni.so",
+  "full_file_available": true,
+  "total_size": 5275304,
+  "total_sha256": "8c1e31ac0a0643f179b2a73d5b248c1ef56305e4e5dc6e5e003a0a624c310988",
+  "part_count": 1,
+  "part_size": 5275304,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "libsherpa-onnx-jni.so.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/runtimes/sherpa/sherpa-onnx-1.12.35/lib/arm64-v8a/libsherpa-onnx-jni.so",
+      "size": 5275304,
+      "sha256": "8c1e31ac0a0643f179b2a73d5b248c1ef56305e4e5dc6e5e003a0a624c310988"
+    }
+  ]
+}

@@ -5,12 +5,18 @@
 ## 当前约定
 
 - `models[].modelType == "LLM"` 使用 GGUF 目录包发布，供应用内置 `llama.cpp` 直接加载。
+- `models[].modelType == "ASR"` 当前目录只保留 `Sherpa-ONNX` 兼容离线目录包，现阶段收敛为：
+  - `SenseVoice zh-en-ja-ko-yue`
+  - `FunASR Nano` 的 `sherpa-onnx` converted 包
 - LLM 目录包至少包含 1 个 `.gguf` 文件；`runtimeEntryPath` 为空时，客户端会把整个版本目录当作模型目录处理。
 - `runtimes.runners` 继续用于 Sherpa TTS / ASR 运行时发布。
 - `runtimes.mlc4js` 已保留为空列表，仅用于兼容旧 schema；新版本不再发布 MLC4J 运行时。
+- 如需保留历史模型条目，请将 `status` 标为 `HIDDEN`，避免客户端继续在模型商店中展示不可用资源。
 
 ## 发布建议
 
 - LLM 模型优先使用上游官方 GGUF 仓库。
+- ASR 模型优先使用能够被当前 `SherpaAsrModelSupport` 自动识别的目录结构：
+  - 当前两种目录包都采用 `model.onnx` / `model.int8.onnx` + `tokens.txt`
 - `index.json` 中的 `files[].sha256` 应填写上游文件内容哈希。
 - 如需新增 LLM 模型，推荐使用单个主 `.gguf` 文件，避免再引入 MLC 目录结构。
