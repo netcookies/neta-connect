@@ -1,3 +1,6 @@
+import CodeBlock from '@theme/CodeBlock';
+import releaseData from '../src/data/release-data.generated.json';
+
 # 安装指南
 
 本指南将帮助你在哪吒车机或其他 Android 设备上安装哪吒互联应用。
@@ -26,11 +29,12 @@
 
 ## 📥 下载应用
 
-### 方式 1: GitHub Releases（推荐）
+### 方式 1: 站内 Release 页面（推荐）
 
-1. 访问 [Releases 页面](https://github.com/netcookies/isulewTools/releases)
-2. 找到最新版本（例如 v1.9.2）
-3. 下载 `isulewTools-v1.9.2.apk` 文件
+1. 访问 [Release 页面](/release)
+2. 找到当前版本的完整 APK 下载卡片
+3. 下载 <code>{`NETA_CONNECT-${releaseData.version}.apk`}</code> 文件
+4. 如果网络不稳定，也可以下载对应分片文件
 
 ### 方式 2: 从源码构建
 
@@ -38,8 +42,8 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/netcookies/isulewTools.git
-cd isulewTools
+git clone https://github.com/netcookies/neta-connect.git
+cd neta-connect
 
 # 构建 Debug 版本
 ./gradlew assembleDebug
@@ -70,16 +74,14 @@ cd isulewTools
 ### 在 Android 设备上安装
 
 #### 通过 ADB 安装
-```bash
-# 连接设备
+<CodeBlock language="bash">{`# 连接设备
 adb devices
 
 # 安装 APK
-adb install isulewTools-v1.9.2.apk
+adb install NETA_CONNECT-${releaseData.version}.apk
 
 # 或者强制覆盖安装
-adb install -r isulewTools-v1.9.2.apk
-```
+adb install -r NETA_CONNECT-${releaseData.version}.apk`}</CodeBlock>
 
 #### 直接安装
 1. 将 APK 文件传输到 Android 设备
@@ -186,9 +188,10 @@ adb install -r isulewTools-v1.9.2.apk
 
 应用不会自动检查更新，需要手动检查：
 
-1. 访问 [Releases 页面](https://github.com/netcookies/isulewTools/releases)
+1. 访问 [Release 页面](/release)
 2. 查看最新版本号
 3. 对比当前安装的版本
+4. 或直接进入 [Release 页面](/release) 下载最新 APK
 
 ### 更新步骤
 
@@ -231,16 +234,14 @@ adb install -r isulewTools-v1.9.2.apk
 - APK 文件损坏
 
 **解决方法**:
-```bash
-# 检查设备存储空间
+<CodeBlock language="bash">{`# 检查设备存储空间
 adb shell df -h
 
 # 检查 APK 文件完整性
-md5sum isulewTools-v1.9.2.apk
+shasum -a 256 NETA_CONNECT-${releaseData.version}.apk
 
 # 清理缓存后重试
-adb shell pm clear com.android.packageinstaller
-```
+adb shell pm clear com.android.packageinstaller`}</CodeBlock>
 
 ### 问题 2: 安装后闪退
 
@@ -252,16 +253,14 @@ adb shell pm clear com.android.packageinstaller
 - 权限配置问题
 
 **解决方法**:
-```bash
-# 查看崩溃日志
+<CodeBlock language="bash">{`# 查看崩溃日志
 adb logcat | grep -E "AndroidRuntime|FATAL"
 
 # 清理应用数据
 adb shell pm clear com.neta.isulewtools
 
 # 重新安装
-adb install -r isulewTools-v1.9.2.apk
-```
+adb install -r NETA_CONNECT-${releaseData.version}.apk`}</CodeBlock>
 
 ### 问题 3: 无障碍服务无法开启
 
@@ -298,7 +297,7 @@ adb shell appops set com.neta.isulewtools SYSTEM_ALERT_WINDOW allow
 
 如果遇到安装问题，可以通过以下方式获取帮助：
 
-- **GitHub Issues**: [提交问题](https://github.com/netcookies/isulewTools/issues)
+- **GitHub Issues**: [提交问题](https://github.com/netcookies/neta-connect/issues)
 - **查看 FAQ**: [常见问题](/docs/faq)
 - **查看日志**: 应用内"日志"选项卡查看详细日志
 

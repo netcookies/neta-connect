@@ -78,19 +78,12 @@ jobs:
       - name: Build site with version replacement
         run: |
           cd site
-          # 复制changelog
-          cp ../CHANGELOG.md docs/changelog.md
-
-          # 替换版本号占位符
           VERSION="${{ steps.get_version.outputs.version }}"
-          echo "Replacing version with: $VERSION"
+          echo "Building site with version: $VERSION"
+          export RELEASE_VERSION="$VERSION"
 
-          # 递归替换所有文件中的 {{VERSION}} 占位符
-          find . -type f \( -name "*.js" -o -name "*.md" -o -name "*.json" \) -exec sed -i "s/{{VERSION}}/$VERSION/g" {} \;
-
-          npm install
+          npm ci
           npm run build
-          rm -f docs/changelog.md
 
       - uses: peaceiris/actions-gh-pages@v3
         with:

@@ -32,6 +32,7 @@ Gemfile.lock
 site/.docusaurus/
 site/build/
 site/node_modules/
-site/package-lock.json
+site/docs/changelog.md
 .ace-tool/
+.workflow/
 .github/scripts/__pycache__/

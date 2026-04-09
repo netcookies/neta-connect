@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const releaseData = require('./src/data/release-data.generated.json');
+
 const config = {
   title: '哪吒互联',
   tagline: '哪吒互联工具 - 适用于哪吒汽车的手车互联增强工具',
@@ -97,8 +99,8 @@ const config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/netcookies/neta-connect/releases',
-          label: '{{VERSION}}',
+          to: releaseData.releasePath,
+          label: releaseData.version,
           position: 'right',
           className: 'header-github-release',
         },

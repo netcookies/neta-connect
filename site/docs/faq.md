@@ -483,7 +483,7 @@ adb logcat | grep -E "WidgetLoader|WidgetManager"
 
 **A**: 手动检查更新：
 
-1. 访问 [GitHub Releases](https://github.com/netcookies/isulewTools/releases)
+1. 访问 [Release 页面](/release)
 2. 查看最新版本号
 3. 对比当前安装的版本
 4. 下载最新版本的 APK

@@ -1,0 +1,260 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.heroContent,
+.summaryCard,
+.assetCard,
+.mergeGuide {
+  border: 1px solid rgba(0, 77, 64, 0.12);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(236, 246, 244, 0.96));
+  box-shadow: 0 18px 40px rgba(0, 77, 64, 0.08);
+}
+
+.heroContent {
+  padding: 2rem;
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(0, 137, 123, 0.12);
+  color: #00695c;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.heroContent h1 {
+  margin: 1rem 0 0.75rem;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1;
+  color: #004d40;
+}
+
+.heroContent p {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.downloadButton,
+.docLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.primaryButton,
+.downloadButton {
+  background: linear-gradient(135deg, #00897b, #26a69a);
+  color: #fff !important;
+  box-shadow: 0 10px 20px rgba(0, 137, 123, 0.22);
+}
+
+.secondaryButton,
+.docLink {
+  background: rgba(0, 137, 123, 0.08);
+  color: #00695c !important;
+  border: 1px solid rgba(0, 137, 123, 0.14);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.downloadButton:hover,
+.docLink:hover {
+  transform: translateY(-1px);
+}
+
+.summaryCard {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.summaryCard div {
+  display: grid;
+  gap: 0.35rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 77, 64, 0.08);
+}
+
+.summaryCard div:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.summaryCard span,
+.assetMeta span,
+.mergeGuide span {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.85rem;
+}
+
+.summaryCard strong,
+.assetMeta strong {
+  color: #004d40;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.section {
+  margin-top: 2rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1rem;
+}
+
+.sectionHeader h2 {
+  margin-bottom: 0.35rem;
+  color: #004d40;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.assetList {
+  display: grid;
+  gap: 1rem;
+}
+
+.assetCard {
+  padding: 1.5rem;
+}
+
+.primaryAsset {
+  background: linear-gradient(180deg, rgba(228, 248, 244, 0.96), rgba(255, 255, 255, 0.98));
+}
+
+.assetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+
+.assetHeader h2 {
+  margin: 0.4rem 0 0;
+  font-size: 1.2rem;
+  color: #004d40;
+  word-break: break-word;
+}
+
+.assetLabel {
+  display: inline-flex;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(0, 137, 123, 0.12);
+  color: #00695c;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.assetMeta {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.assetMeta code {
+  display: block;
+  margin-top: 0.35rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: rgba(0, 77, 64, 0.05);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.mergeGuide {
+  margin-top: 1rem;
+  padding: 1.5rem;
+}
+
+.mergeGuide h3 {
+  margin-bottom: 1rem;
+  color: #004d40;
+}
+
+.codeGroup {
+  display: grid;
+  gap: 1rem;
+}
+
+.codeGroup pre {
+  margin: 0.5rem 0 0;
+  padding: 1rem;
+  border-radius: 16px;
+  background: #0d2824;
+  color: #d6fff8;
+  overflow-x: auto;
+}
+
+.linkRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 996px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding-top: 1.5rem;
+  }
+
+  .heroContent,
+  .summaryCard,
+  .assetCard,
+  .mergeGuide {
+    padding: 1.25rem;
+    border-radius: 18px;
+  }
+
+  .assetHeader {
+    flex-direction: column;
+  }
+
+  .downloadButton,
+  .primaryButton,
+  .secondaryButton,
+  .docLink {
+    width: 100%;
+  }
+}

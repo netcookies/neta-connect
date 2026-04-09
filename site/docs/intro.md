@@ -1,3 +1,5 @@
+import releaseData from '../src/data/release-data.generated.json';
+
 # 哪吒互联 isulewTools
 
 > 专为哪吒车机设计的高级工具集，兼容原生Android及其他车机系统。通过无障碍服务实现系统级功能增强，无需Root。
@@ -60,7 +62,7 @@
 
 ## 版本信息
 
-**当前版本**: {{VERSION}}
+**当前版本**: {releaseData.version}
 
 本版本进行了大规模架构重构，包括：
 - 仪表盘系统完全重写

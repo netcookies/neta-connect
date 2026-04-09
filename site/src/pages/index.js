@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
+import releaseData from '../data/release-data.generated.json';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -13,12 +14,9 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.versionBadge}>
-          <a href="https://github.com/netcookies/neta-connect/releases"
-             target="_blank"
-             rel="noopener noreferrer"
-             className={styles.badge}>
-            📦 Latest: {{VERSION}}
-          </a>
+          <Link className={styles.badge} to={releaseData.releasePath}>
+            📦 Latest: {releaseData.version}
+          </Link>
         </div>
         <div className={styles.buttons}>
           <Link
