@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "config.json",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/llm_qwen3_0_6b_ud_q5_k_xl_gguf/1.0.0/config.json",
+  "full_file_available": true,
+  "total_size": 94,
+  "total_sha256": "e2fbe7617cbf3fd025449242d41d303732c6d2d79396325ed8477cc35420c441",
+  "part_count": 1,
+  "part_size": 94,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "config.json.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/llm_qwen3_0_6b_ud_q5_k_xl_gguf/1.0.0/config.json",
+      "size": 94,
+      "sha256": "e2fbe7617cbf3fd025449242d41d303732c6d2d79396325ed8477cc35420c441"
+    }
+  ]
+}
