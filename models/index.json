@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-04-07T07:34:39Z",
+  "generatedAt": "2026-04-10T08:46:36Z",
   "models": [
     {
       "id": "asr_sherpa_sensevoice_multilingual",
@@ -110,26 +110,32 @@
       "status": "STABLE"
     },
     {
-      "id": "llm_qwen2_5_1_5b_instruct_q4_k_m_gguf",
-      "displayName": "Qwen2.5 1.5B Instruct",
-      "description": "本地对话模型 GGUF 目录包，来自 Qwen 官方 GGUF 仓库，面向 llama.cpp 本地推理。",
-      "author": "Qwen",
+      "id": "llm_qwen3_5_0_8b_ud_q4_k_xl_gguf",
+      "displayName": "Qwen3.5 0.8B · UD Q4_K_XL",
+      "description": "Unsloth UD Q4_K_XL 量化版。官方默认非思考模式，文本任务推荐温度 1.0、top_p 1.0、top_k 20。M1 Pro + llama-cli 实测生成约 76 tok/s；中文理解与事实约束在这批里最均衡。关闭 thinking 时延更稳，若手动开启 thinking，复杂问答更谨慎，但 0.8B 档存在思考循环风险。",
+      "author": "Qwen / Unsloth",
       "category": "voice",
       "modelType": "LLM",
       "latestVersion": "1.0.0",
       "versions": [
         {
           "version": "1.0.0",
-          "releaseDate": "2026-04-04",
+          "releaseDate": "2026-04-10",
           "downloadUrl": "",
           "runtimeEntryPath": "",
-          "changelog": "切换到官方 Qwen2.5 1.5B Instruct GGUF 目录包，供内置 llama.cpp 直接加载。",
+          "changelog": "首发版本，接入 Unsloth Qwen3.5-0.8B-UD-Q4_K_XL.gguf，并补充模型级 config.json；采样参数采用 Qwen 官方非思考文本任务推荐，默认输出上限收敛为 512 token。",
           "files": [
             {
-              "relativePath": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
-              "downloadUrl": "https://hf-mirror.com/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf",
-              "fileSize": 1117320736,
-              "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+              "relativePath": "Qwen3.5-0.8B-UD-Q4_K_XL.gguf",
+              "downloadUrl": "https://hf-mirror.com/unsloth/Qwen3.5-0.8B-GGUF/resolve/main/Qwen3.5-0.8B-UD-Q4_K_XL.gguf",
+              "fileSize": 558772480,
+              "sha256": "3177ebd67afe4438374da19e690bc1b98756f7e0fea9240e1be404336156a7b5"
+            },
+            {
+              "relativePath": "config.json",
+              "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/llm_qwen3_5_0_8b_ud_q4_k_xl_gguf/1.0.0/config.json",
+              "fileSize": 93,
+              "sha256": "e8a98f2d29d1e9d847aa79fb1b67d0dfd91fef947866cd84a9949fc9ad6cb3ad"
             }
           ]
         }
@@ -137,26 +143,98 @@
       "status": "STABLE"
     },
     {
-      "id": "llm_qwen3_0_6b_q8_0_gguf",
-      "displayName": "Qwen3 0.6B",
-      "description": "轻量本地对话模型 GGUF 目录包，来自 Qwen 官方 GGUF 仓库，适合作为 llama.cpp 端侧默认模型。",
-      "author": "Qwen",
+      "id": "llm_llama_3_2_1b_instruct_ud_q4_k_xl_gguf",
+      "displayName": "Llama 3.2 1B Instruct · UD Q4_K_XL",
+      "description": "Unsloth UD Q4_K_XL 量化版。官方 generation config 偏保守，推荐温度 0.6、top_p 0.9。M1 Pro + llama-cli 实测生成约 106 tok/s，是这批里速度最快之一，但中文自然度和事实精度明显弱于 Qwen / Gemma，适合作为速度优先备选，不建议做精度优先默认档。",
+      "author": "Meta / Unsloth",
       "category": "voice",
       "modelType": "LLM",
       "latestVersion": "1.0.0",
       "versions": [
         {
           "version": "1.0.0",
-          "releaseDate": "2026-04-04",
+          "releaseDate": "2026-04-10",
           "downloadUrl": "",
           "runtimeEntryPath": "",
-          "changelog": "切换到官方 Qwen3 0.6B GGUF 目录包，供内置 llama.cpp 直接加载。",
+          "changelog": "首发版本，接入 Unsloth Llama-3.2-1B-Instruct-UD-Q4_K_XL.gguf，并补充模型级 config.json；采样参数对齐官方 generation config，top_k 沿用应用默认值 20。",
           "files": [
             {
-              "relativePath": "Qwen3-0.6B-Q8_0.gguf",
-              "downloadUrl": "https://hf-mirror.com/Qwen/Qwen3-0.6B-GGUF/resolve/main/Qwen3-0.6B-Q8_0.gguf",
-              "fileSize": 639446688,
-              "sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031"
+              "relativePath": "Llama-3.2-1B-Instruct-UD-Q4_K_XL.gguf",
+              "downloadUrl": "https://hf-mirror.com/unsloth/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-UD-Q4_K_XL.gguf",
+              "fileSize": 834203680,
+              "sha256": "bb1e301352132cc8e804ccde1c024f78c060d2da64e260e2123e057cb0540094"
+            },
+            {
+              "relativePath": "config.json",
+              "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/llm_llama_3_2_1b_instruct_ud_q4_k_xl_gguf/1.0.0/config.json",
+              "fileSize": 93,
+              "sha256": "9357df7f10326f299bbac0f026ac5ed4efd050f694b25131b8d8f7e5419490ce"
+            }
+          ]
+        }
+      ],
+      "status": "STABLE"
+    },
+    {
+      "id": "llm_gemma_3_1b_it_ud_q4_k_xl_gguf",
+      "displayName": "Gemma 3 1B IT · UD Q4_K_XL",
+      "description": "Unsloth UD Q4_K_XL 量化版。官方 generation config 使用 top_k 64、top_p 0.95；1B 档官方为 32K 输入窗口。M1 Pro + llama-cli 实测生成约 75 tok/s，显存占用最低，中文闲聊较自然，但实时事实问题仍有幻觉，适合作为轻量中文对话备选。",
+      "author": "Google / Unsloth",
+      "category": "voice",
+      "modelType": "LLM",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-04-10",
+          "downloadUrl": "",
+          "runtimeEntryPath": "",
+          "changelog": "首发版本，接入 Unsloth gemma-3-1b-it-UD-Q4_K_XL.gguf，并补充模型级 config.json；采样参数对齐官方 generation config 镜像，温度采用采样默认值 1.0。",
+          "files": [
+            {
+              "relativePath": "gemma-3-1b-it-UD-Q4_K_XL.gguf",
+              "downloadUrl": "https://hf-mirror.com/unsloth/gemma-3-1b-it-GGUF/resolve/main/gemma-3-1b-it-UD-Q4_K_XL.gguf",
+              "fileSize": 807035168,
+              "sha256": "3174c6f22786abe1d6fc78cb9fdc3b22ab3b91daa826d2212c52255786a96c6b"
+            },
+            {
+              "relativePath": "config.json",
+              "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/llm_gemma_3_1b_it_ud_q4_k_xl_gguf/1.0.0/config.json",
+              "fileSize": 94,
+              "sha256": "87b6d48f241ca523ef65de6d826a1793a4bc90b17a1cbf122c0e3c47fe0d3870"
+            }
+          ]
+        }
+      ],
+      "status": "STABLE"
+    },
+    {
+      "id": "llm_qwen3_0_6b_ud_q5_k_xl_gguf",
+      "displayName": "Qwen3 0.6B · UD Q5_K_XL",
+      "description": "Unsloth UD Q5_K_XL 量化版。官方 generation config 为温度 0.6、top_p 0.95、top_k 20。M1 Pro + llama-cli 实测生成约 130 到 136 tok/s，是这批里最轻最快的一档，但事实精度和任务完成度弱于 Qwen3.5 / Gemma，更适合作为极低资源 fallback。",
+      "author": "Qwen / Unsloth",
+      "category": "voice",
+      "modelType": "LLM",
+      "latestVersion": "1.0.0",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-04-10",
+          "downloadUrl": "",
+          "runtimeEntryPath": "",
+          "changelog": "首发版本，接入 Unsloth Qwen3-0.6B-UD-Q5_K_XL.gguf，并补充模型级 config.json；采样参数采用 Qwen 官方 generation config，默认输出上限收敛为 512 token。",
+          "files": [
+            {
+              "relativePath": "Qwen3-0.6B-UD-Q5_K_XL.gguf",
+              "downloadUrl": "https://hf-mirror.com/unsloth/Qwen3-0.6B-GGUF/resolve/main/Qwen3-0.6B-UD-Q5_K_XL.gguf",
+              "fileSize": 446381760,
+              "sha256": "23604893990250423a7f1a08e9a8d16da71eaeb560352020f533c9e62e14badd"
+            },
+            {
+              "relativePath": "config.json",
+              "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/models/llm_qwen3_0_6b_ud_q5_k_xl_gguf/1.0.0/config.json",
+              "fileSize": 94,
+              "sha256": "e2fbe7617cbf3fd025449242d41d303732c6d2d79396325ed8477cc35420c441"
             }
           ]
         }
