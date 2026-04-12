@@ -6,6 +6,70 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Feature
+- 增加悬浮窗位置锁定开关 [`4adc6c69`](https://github.com/netcookies/isulewTools/commit/4adc6c69)
+- 支持播放时自动切换氛围灯音乐律动 [`a13377a1`](https://github.com/netcookies/isulewTools/commit/a13377a1)
+- 为 Snackbar 展示补充日志记录 [`2120c88b`](https://github.com/netcookies/isulewTools/commit/2120c88b)
+- 增强高级测试与语音模型目录校验 [`c2a5543e`](https://github.com/netcookies/isulewTools/commit/c2a5543e)
+- 增加语音助手工作台与运行时控制台 [`90a72c76`](https://github.com/netcookies/isulewTools/commit/90a72c76)
+- 完成语音运行时插件化与特权服务分层 [`f3e78665`](https://github.com/netcookies/isulewTools/commit/f3e78665)
+- 增强语音助手 LLM 配置与推理链路 [`133ef0c9`](https://github.com/netcookies/isulewTools/commit/133ef0c9)
+- 拆分模型管理并支持云端供应商配置 [`cab88ebb`](https://github.com/netcookies/isulewTools/commit/cab88ebb)
+- 增强 MLC 诊断并切换轻量运行时默认值 [`e344b832`](https://github.com/netcookies/isulewTools/commit/e344b832)
+
+### Bug Fixes
+- 修正任务诊断走 root 服务读取最近任务 [`94e14dc7`](https://github.com/netcookies/isulewTools/commit/94e14dc7)
+- 补齐前台监听快照链路并增加诊断页 [`987ad584`](https://github.com/netcookies/isulewTools/commit/987ad584)
+- 修正小组件编辑态交互与悬浮窗边界限制 [`3327e519`](https://github.com/netcookies/isulewTools/commit/3327e519)
+- 共享前台快照并按当前应用重算悬浮窗显示 [`75ac4be1`](https://github.com/netcookies/isulewTools/commit/75ac4be1)
+- 解冻后轮询并唤醒语音中间件服务 [`ac0bf52e`](https://github.com/netcookies/isulewTools/commit/ac0bf52e)
+- 限制 ADAS 和小组件悬浮窗越界 [`4c00bac6`](https://github.com/netcookies/isulewTools/commit/4c00bac6)
+- 修复本地 llama 并发与状态刷新问题 [`38578566`](https://github.com/netcookies/isulewTools/commit/38578566)
+- 修复云端供应商配置与密钥处理逻辑 [`601c99ff`](https://github.com/netcookies/isulewTools/commit/601c99ff)
+- 统一 LLM 运行时配置与持久化策略 [`33cfc2b8`](https://github.com/netcookies/isulewTools/commit/33cfc2b8)
+- 补回 voice-runtime 依赖的 sherpa classes jar [`a7936926`](https://github.com/netcookies/isulewTools/commit/a7936926)
+- 修正下载进度完成前的百分比显示 [`c36d59b6`](https://github.com/netcookies/isulewTools/commit/c36d59b6)
+- 修复语音模型与运行时下载错误处理 [`05f4f76a`](https://github.com/netcookies/isulewTools/commit/05f4f76a)
+- 修复 ASR 目录包安装与远端路径解析 [`395b1687`](https://github.com/netcookies/isulewTools/commit/395b1687)
+- 兼容无 applicationContext 的语音运行时上下文 [`cf3b1382`](https://github.com/netcookies/isulewTools/commit/cf3b1382)
+- 修正特权 MLC OpenCL 探测链路 [`0adaa45e`](https://github.com/netcookies/isulewTools/commit/0adaa45e)
+- 兼容 root 风格上下文访问运行时配置 [`17858065`](https://github.com/netcookies/isulewTools/commit/17858065)
+
+### Documentation
+- 更新 llama.cpp 接入说明 [`7b47a638`](https://github.com/netcookies/isulewTools/commit/7b47a638)
+
+### Test
+- 修复 AI 运行时迁移后的单测 [`a8852e45`](https://github.com/netcookies/isulewTools/commit/a8852e45)
+- 删除脆弱的 Snackbar 日志测试 [`2225d671`](https://github.com/netcookies/isulewTools/commit/2225d671)
+- 更新 privilege 运行时服务测试桩 [`c28e1bf7`](https://github.com/netcookies/isulewTools/commit/c28e1bf7)
+
+### Chore
+- 忽略 voice-orchestrator 本地缓存目录 [`177214fe`](https://github.com/netcookies/isulewTools/commit/177214fe)
+- 清理误提交的本地缓存目录 [`0ddaad48`](https://github.com/netcookies/isulewTools/commit/0ddaad48)
+- 引入 gguf-lib 与 llama.cpp 源码 [`b5b7249a`](https://github.com/netcookies/isulewTools/commit/b5b7249a)
+- 忽略本地 designs 目录 [`39f810c3`](https://github.com/netcookies/isulewTools/commit/39f810c3)
+- 引入 llama.cpp 子模块 [`f39c0083`](https://github.com/netcookies/isulewTools/commit/f39c0083)
+
+### Refactor
+- 将 ai-llm llama.cpp 迁移为子模块 [`29e9e3a9`](https://github.com/netcookies/isulewTools/commit/29e9e3a9)
+- 统一模块物理目录命名 [`a8115ad9`](https://github.com/netcookies/isulewTools/commit/a8115ad9)
+- 统一公开模块名与 app 侧 AI 运行时命名 [`d6bde78a`](https://github.com/netcookies/isulewTools/commit/d6bde78a)
+- 收敛 AI 与 Voice 模块命名边界 [`0f5d4e57`](https://github.com/netcookies/isulewTools/commit/0f5d4e57)
+- 解耦工具协议并统一提示词透传 [`abbbb556`](https://github.com/netcookies/isulewTools/commit/abbbb556)
+- 收敛语音运行时边界与工具注册中心 [`92613850`](https://github.com/netcookies/isulewTools/commit/92613850)
+- 删除语音兼容桥与兼容壳 [`97abcd09`](https://github.com/netcookies/isulewTools/commit/97abcd09)
+- 收缩语音特权宿主并切回主进程运行时 [`8e51f2ab`](https://github.com/netcookies/isulewTools/commit/8e51f2ab)
+- 重构 privilege 运行时上下文并统一命名 [`f7de6715`](https://github.com/netcookies/isulewTools/commit/f7de6715)
+- 迁移语音配置密钥存储并清理构建告警 [`8e72c3e9`](https://github.com/netcookies/isulewTools/commit/8e72c3e9)
+- 升级 Sherpa runtime 并移除 Whisper ASR 支持 [`dc721b84`](https://github.com/netcookies/isulewTools/commit/dc721b84)
+- 拆分语音引擎模块并切换 Sherpa ASR [`6b72644a`](https://github.com/netcookies/isulewTools/commit/6b72644a)
+- 移除应用侧 MLC4J 运行时管理 [`13d679d2`](https://github.com/netcookies/isulewTools/commit/13d679d2)
+- 将本地语音推理迁移到 llama.cpp [`df0aceca`](https://github.com/netcookies/isulewTools/commit/df0aceca)
+- 统一全限定名引用风格 [`42e549d4`](https://github.com/netcookies/isulewTools/commit/42e549d4)
+- 收紧特权前端与 MLC 探测边界 [`396265ba`](https://github.com/netcookies/isulewTools/commit/396265ba)
+
+### Other
+
 ## v2.1.8-beta.9 (2026-04-01)
 
 ### Documentation
@@ -111,12 +175,69 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## v2.1.8-beta.1 (2026-03-26)
 
+## v2.1.8 (2026-04-13)
+
 ### Feature
+- 增加悬浮窗位置锁定开关 [`4adc6c69`](https://github.com/netcookies/isulewTools/commit/4adc6c69)
+- 支持播放时自动切换氛围灯音乐律动 [`a13377a1`](https://github.com/netcookies/isulewTools/commit/a13377a1)
+- 为 Snackbar 展示补充日志记录 [`2120c88b`](https://github.com/netcookies/isulewTools/commit/2120c88b)
+- 增强高级测试与语音模型目录校验 [`c2a5543e`](https://github.com/netcookies/isulewTools/commit/c2a5543e)
+- 增加语音助手工作台与运行时控制台 [`90a72c76`](https://github.com/netcookies/isulewTools/commit/90a72c76)
+- 完成语音运行时插件化与特权服务分层 [`f3e78665`](https://github.com/netcookies/isulewTools/commit/f3e78665)
+- 增强语音助手 LLM 配置与推理链路 [`133ef0c9`](https://github.com/netcookies/isulewTools/commit/133ef0c9)
+- 拆分模型管理并支持云端供应商配置 [`cab88ebb`](https://github.com/netcookies/isulewTools/commit/cab88ebb)
+- 增强 MLC 诊断并切换轻量运行时默认值 [`e344b832`](https://github.com/netcookies/isulewTools/commit/e344b832)
+- 支持模型商店扫描本地模型 [`526127c5`](https://github.com/netcookies/isulewTools/commit/526127c5)
+- 增强语音测试页预热与输入朗读 [`92522d8a`](https://github.com/netcookies/isulewTools/commit/92522d8a)
+- 新增特权前端会话链与 typed DSP 路由 [`5c60782a`](https://github.com/netcookies/isulewTools/commit/5c60782a)
+- 支持云端 LLM 配置与安全存储 [`2006fcb6`](https://github.com/netcookies/isulewTools/commit/2006fcb6)
+- 切换 DSP 回调唤醒并移除 Porcupine [`33f2889d`](https://github.com/netcookies/isulewTools/commit/33f2889d)
+- 增加语音助手 DSP 模式切换 [`9a5a2d85`](https://github.com/netcookies/isulewTools/commit/9a5a2d85)
+- 新增语音测试与 DSP 调试入口页 [`9e98ea11`](https://github.com/netcookies/isulewTools/commit/9e98ea11)
+- 恢复语音前端与 DSP 接入链路 [`fd985e90`](https://github.com/netcookies/isulewTools/commit/fd985e90)
+- 增强 FAB 禁用态支持并优化页面刷新交互 [`979549ad`](https://github.com/netcookies/isulewTools/commit/979549ad)
+- 统一下载准备态并跟踪批量入队进度 [`2dd0d5f8`](https://github.com/netcookies/isulewTools/commit/2dd0d5f8)
 - 重构语音模型管理，支持 ASR/LLM/TTS 模型独立选择 [`dd26a45f`](https://github.com/netcookies/isulewTools/commit/dd26a45f)
 - 实现 BreakingNotice 破坏性变更通知系统 [`7ed841ff`](https://github.com/netcookies/isulewTools/commit/7ed841ff)
 - 实现前台/后台 Snackbar 路由分发系统 [`d38b5ccc`](https://github.com/netcookies/isulewTools/commit/d38b5ccc)
 
 ### Bug Fixes
+- 修正任务诊断走 root 服务读取最近任务 [`94e14dc7`](https://github.com/netcookies/isulewTools/commit/94e14dc7)
+- 补齐前台监听快照链路并增加诊断页 [`987ad584`](https://github.com/netcookies/isulewTools/commit/987ad584)
+- 修正小组件编辑态交互与悬浮窗边界限制 [`3327e519`](https://github.com/netcookies/isulewTools/commit/3327e519)
+- 共享前台快照并按当前应用重算悬浮窗显示 [`75ac4be1`](https://github.com/netcookies/isulewTools/commit/75ac4be1)
+- 解冻后轮询并唤醒语音中间件服务 [`ac0bf52e`](https://github.com/netcookies/isulewTools/commit/ac0bf52e)
+- 限制 ADAS 和小组件悬浮窗越界 [`4c00bac6`](https://github.com/netcookies/isulewTools/commit/4c00bac6)
+- 修复本地 llama 并发与状态刷新问题 [`38578566`](https://github.com/netcookies/isulewTools/commit/38578566)
+- 修复云端供应商配置与密钥处理逻辑 [`601c99ff`](https://github.com/netcookies/isulewTools/commit/601c99ff)
+- 统一 LLM 运行时配置与持久化策略 [`33cfc2b8`](https://github.com/netcookies/isulewTools/commit/33cfc2b8)
+- 补回 voice-runtime 依赖的 sherpa classes jar [`a7936926`](https://github.com/netcookies/isulewTools/commit/a7936926)
+- 修正下载进度完成前的百分比显示 [`c36d59b6`](https://github.com/netcookies/isulewTools/commit/c36d59b6)
+- 修复语音模型与运行时下载错误处理 [`05f4f76a`](https://github.com/netcookies/isulewTools/commit/05f4f76a)
+- 修复 ASR 目录包安装与远端路径解析 [`395b1687`](https://github.com/netcookies/isulewTools/commit/395b1687)
+- 兼容无 applicationContext 的语音运行时上下文 [`cf3b1382`](https://github.com/netcookies/isulewTools/commit/cf3b1382)
+- 修正特权 MLC OpenCL 探测链路 [`0adaa45e`](https://github.com/netcookies/isulewTools/commit/0adaa45e)
+- 兼容 root 风格上下文访问运行时配置 [`17858065`](https://github.com/netcookies/isulewTools/commit/17858065)
+- 统一小组件悬浮窗广播协议 [`923eb7a7`](https://github.com/netcookies/isulewTools/commit/923eb7a7)
+- 调整小组件管理页删除提示交互 [`223f9c7e`](https://github.com/netcookies/isulewTools/commit/223f9c7e)
+- 修复 Sherpa 外部模型朗读与混淆保留 [`d042dfe9`](https://github.com/netcookies/isulewTools/commit/d042dfe9)
+- 移除启动阶段自动预热 [`f9eb6be3`](https://github.com/netcookies/isulewTools/commit/f9eb6be3)
+- 修正生产运行时装配链路 [`019cc24d`](https://github.com/netcookies/isulewTools/commit/019cc24d)
+- 修复前台检测、DSP fallback 与前端回调竞态 [`07fc759e`](https://github.com/netcookies/isulewTools/commit/07fc759e)
+- 增加 MLC4J 运行时兼容校验 [`0a5fe09f`](https://github.com/netcookies/isulewTools/commit/0a5fe09f)
+- 修复回归测试与后台通知 fallback 兼容 [`b1dce212`](https://github.com/netcookies/isulewTools/commit/b1dce212)
+- 调整 Snackbar 尺寸到 1.5 倍 [`a8613179`](https://github.com/netcookies/isulewTools/commit/a8613179)
+- 修复哪吒美式启动兼容竞态 [`ce6ba04d`](https://github.com/netcookies/isulewTools/commit/ce6ba04d)
+- 修复 DSP HIDL 回调桥接 [`50872a9a`](https://github.com/netcookies/isulewTools/commit/50872a9a)
+- 启动时清理旧 Chaowen TTS 配置 [`abd591ea`](https://github.com/netcookies/isulewTools/commit/abd591ea)
+- 展示 native 缓存状态并修正 TTS 文案 [`ae505dd9`](https://github.com/netcookies/isulewTools/commit/ae505dd9)
+- 补充 DSP 混淆保留规则 [`e469fd6d`](https://github.com/netcookies/isulewTools/commit/e469fd6d)
+- 修复 DSP 模式切换的并发与禁用态 [`0ba7f5fa`](https://github.com/netcookies/isulewTools/commit/0ba7f5fa)
+- 切换 Sherpa 依赖并校验 runtime root [`6ad37c53`](https://github.com/netcookies/isulewTools/commit/6ad37c53)
+- 回滚语音助手启用失败状态 [`010a895f`](https://github.com/netcookies/isulewTools/commit/010a895f)
+- 修复并发槽位竞争与队列排空中断 [`5d201e5f`](https://github.com/netcookies/isulewTools/commit/5d201e5f)
+- 收口运行库目录来源并修复首屏占位 [`da49b13a`](https://github.com/netcookies/isulewTools/commit/da49b13a)
+- 修复运行时下载完成与模拟器中间件管理 [`cd5bac8d`](https://github.com/netcookies/isulewTools/commit/cd5bac8d)
 - 修复失效小组件处理与旧版本产物清理 [`fe297599`](https://github.com/netcookies/isulewTools/commit/fe297599)
 - 修复 HTTP 416 断点续传失效与协程取消传播 [`b3ed07be`](https://github.com/netcookies/isulewTools/commit/b3ed07be)
 - 优化无障碍告警与配置刷新提示 [`5d8e4678`](https://github.com/netcookies/isulewTools/commit/5d8e4678)
@@ -125,19 +246,62 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Continuous Integration
 - 部署前增加 plugin-widgets 单元测试验证步骤 [`e62b0efe`](https://github.com/netcookies/isulewTools/commit/e62b0efe)
 
+### Documentation
+- 更新 llama.cpp 接入说明 [`7b47a638`](https://github.com/netcookies/isulewTools/commit/7b47a638)
+- 补充 mlc4j 打包约束说明 [`87cafb8a`](https://github.com/netcookies/isulewTools/commit/87cafb8a)
+
+### Test
+- 修复 AI 运行时迁移后的单测 [`a8852e45`](https://github.com/netcookies/isulewTools/commit/a8852e45)
+- 删除脆弱的 Snackbar 日志测试 [`2225d671`](https://github.com/netcookies/isulewTools/commit/2225d671)
+- 更新 privilege 运行时服务测试桩 [`c28e1bf7`](https://github.com/netcookies/isulewTools/commit/c28e1bf7)
+
 ### Chore
+- 忽略 voice-orchestrator 本地缓存目录 [`177214fe`](https://github.com/netcookies/isulewTools/commit/177214fe)
+- 清理误提交的本地缓存目录 [`0ddaad48`](https://github.com/netcookies/isulewTools/commit/0ddaad48)
+- 引入 gguf-lib 与 llama.cpp 源码 [`b5b7249a`](https://github.com/netcookies/isulewTools/commit/b5b7249a)
+- 忽略本地 designs 目录 [`39f810c3`](https://github.com/netcookies/isulewTools/commit/39f810c3)
+- 引入 llama.cpp 子模块 [`f39c0083`](https://github.com/netcookies/isulewTools/commit/f39c0083)
+- 同步 mlc4j 构建链路并修正 ASR 预热 [`64168fcb`](https://github.com/netcookies/isulewTools/commit/64168fcb)
+- 移除冗余 onnxruntime 依赖 [`5d1364e7`](https://github.com/netcookies/isulewTools/commit/5d1364e7)
+- 迁移 release 命令到 skills [`348c6e71`](https://github.com/netcookies/isulewTools/commit/348c6e71)
 - 清理失效节点并更新默认 CDN 为捆仙绳 [`99e67127`](https://github.com/netcookies/isulewTools/commit/99e67127)
 - 删除废弃分析工具与死代码 [`eb6e5425`](https://github.com/netcookies/isulewTools/commit/eb6e5425)
 - 从 git 移除 vendored mlc4j，改由打包脚本同步 [`90a5968a`](https://github.com/netcookies/isulewTools/commit/90a5968a)
 - 批量更新所有 widget 插件版本号 [`bfae0a24`](https://github.com/netcookies/isulewTools/commit/bfae0a24)
 
 ### Refactor
+- 将 ai-llm llama.cpp 迁移为子模块 [`29e9e3a9`](https://github.com/netcookies/isulewTools/commit/29e9e3a9)
+- 统一模块物理目录命名 [`a8115ad9`](https://github.com/netcookies/isulewTools/commit/a8115ad9)
+- 统一公开模块名与 app 侧 AI 运行时命名 [`d6bde78a`](https://github.com/netcookies/isulewTools/commit/d6bde78a)
+- 收敛 AI 与 Voice 模块命名边界 [`0f5d4e57`](https://github.com/netcookies/isulewTools/commit/0f5d4e57)
+- 解耦工具协议并统一提示词透传 [`abbbb556`](https://github.com/netcookies/isulewTools/commit/abbbb556)
+- 收敛语音运行时边界与工具注册中心 [`92613850`](https://github.com/netcookies/isulewTools/commit/92613850)
+- 删除语音兼容桥与兼容壳 [`97abcd09`](https://github.com/netcookies/isulewTools/commit/97abcd09)
+- 收缩语音特权宿主并切回主进程运行时 [`8e51f2ab`](https://github.com/netcookies/isulewTools/commit/8e51f2ab)
+- 重构 privilege 运行时上下文并统一命名 [`f7de6715`](https://github.com/netcookies/isulewTools/commit/f7de6715)
+- 迁移语音配置密钥存储并清理构建告警 [`8e72c3e9`](https://github.com/netcookies/isulewTools/commit/8e72c3e9)
+- 升级 Sherpa runtime 并移除 Whisper ASR 支持 [`dc721b84`](https://github.com/netcookies/isulewTools/commit/dc721b84)
+- 拆分语音引擎模块并切换 Sherpa ASR [`6b72644a`](https://github.com/netcookies/isulewTools/commit/6b72644a)
+- 移除应用侧 MLC4J 运行时管理 [`13d679d2`](https://github.com/netcookies/isulewTools/commit/13d679d2)
+- 将本地语音推理迁移到 llama.cpp [`df0aceca`](https://github.com/netcookies/isulewTools/commit/df0aceca)
+- 统一全限定名引用风格 [`42e549d4`](https://github.com/netcookies/isulewTools/commit/42e549d4)
+- 收紧特权前端与 MLC 探测边界 [`396265ba`](https://github.com/netcookies/isulewTools/commit/396265ba)
+- 统一浮窗广播协议分层 [`fb1d45d0`](https://github.com/netcookies/isulewTools/commit/fb1d45d0)
+- 迁移 TTS 引擎从 Piper 到 Sherpa-ONNX [`dca73ff4`](https://github.com/netcookies/isulewTools/commit/dca73ff4)
+- 重构更新日志加载机制并增强测试覆盖 [`9f5d6a04`](https://github.com/netcookies/isulewTools/commit/9f5d6a04)
+- 提取更新日志解析器并优化历史日志加载 [`e8e8bb88`](https://github.com/netcookies/isulewTools/commit/e8e8bb88)
+- 统一加载占位符组件并优化状态消息 [`a670ed77`](https://github.com/netcookies/isulewTools/commit/a670ed77)
+- 提取音乐应用启动逻辑并增加单元测试 [`b1493089`](https://github.com/netcookies/isulewTools/commit/b1493089)
+- 提取 MarkdownContentCard 为独立组件并增强主题支持 [`9aa90993`](https://github.com/netcookies/isulewTools/commit/9aa90993)
+- 增强下载管理器与 GitHub 源解析 [`431f9d75`](https://github.com/netcookies/isulewTools/commit/431f9d75)
 - 模型目录可见性控制与配置精简 [`6ef8c67f`](https://github.com/netcookies/isulewTools/commit/6ef8c67f)
 - 精简运行时架构，仅保留 mlc4j 资产管理 [`df32ebb4`](https://github.com/netcookies/isulewTools/commit/df32ebb4)
 - 移除废弃 API、空文件和未使用的模板资源 [`eab0ad88`](https://github.com/netcookies/isulewTools/commit/eab0ad88)
 - 整合语音设置页并重构模型商店 UI [`bdb1d08d`](https://github.com/netcookies/isulewTools/commit/bdb1d08d)
 
 ### Other
+- Revert "Bump Version" [`be3b8bc4`](https://github.com/netcookies/isulewTools/commit/be3b8bc4)
+- Bump version to 2.1.8-beta.2 [`10292581`](https://github.com/netcookies/isulewTools/commit/10292581)
 - Bump version to 2.1.8-beta.1 [`684fba08`](https://github.com/netcookies/isulewTools/commit/684fba08)
 
 ## v2.1.7 (2026-03-24)
