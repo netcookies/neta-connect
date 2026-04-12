@@ -175,7 +175,7 @@
 #### 环境准备
 ```bash
 # 克隆仓库
-git clone https://github.com/netcookies/isulewTools.git
+git clone --recurse-submodules https://github.com/netcookies/isulewTools.git
 cd isulewTools
 
 # 构建项目
@@ -185,99 +185,23 @@ cd isulewTools
 ./gradlew installDebug
 ```
 
-#### Voice / MLC-LLM 打包
+#### Voice / llama.cpp
 
-`voice` 模块的 `mlc4j` 不是普通 Maven 依赖，而是由 `MLC-LLM` 工具链预生成桥接代码与运行时产物。
+当前本地 LLM 运行时位于 `ai-llm` 模块，通过上游 `llama.cpp` submodule 和本地 JNI 桥接层做本地推理；旧的 `whisper.cpp` 链路已经移除，不再参与当前 Android 构建。
 
-当前仓库采用“桥接层入库，重产物本地化”的方案：
-- 打包配置：[`voice/mlc-package-config.json`](voice/mlc-package-config.json)
-- 构建锁文件：[`voice/mlc-build-lock.json`](voice/mlc-build-lock.json)
-- 打包脚本：[`scripts/package_mlc4j.sh`](scripts/package_mlc4j.sh)
-- 轻量桥接源码：`voice/src/main/java/ai/mlc/mlcllm/**`、`voice/src/main/kotlin/ai/mlc/mlcllm/**`
-- 轻量核心 Jar：[`voice/libs/tvm4j_core.jar`](voice/libs/tvm4j_core.jar)
-- 构建产物清单：`voice/mlc-build-manifest.json`（脚本生成，建议随 bridge 更新一起提交）
-- 本地中间产物：`voice/dist/lib/mlc4j/`（脚本生成，不提交）
+当前约定：
+- `ai-llm/llama.cpp/` 是上游 `llama.cpp` submodule，作为 `ai-llm` 模块内的 native 构建源码根。
+- `ai-llm/src/main/cpp/llama_jni.cpp` 与 `ai-llm/src/main/kotlin/com/neta/isulewtools/ai/llm/runtime/LlamaJni.kt` 是项目内维护的 JNI 桥接层。
+- 本地 LLM 模型使用 GGUF 目录包，目录中至少需要 1 个 `.gguf` 文件。
+- 公共模型目录以 [`/Users/isulewli/Projects/neta-connect/models/index.json`](/Users/isulewli/Projects/neta-connect/models/index.json) 为准。
 
-约定说明：
-- `voice/mlc-build-lock.json` 里的 `huggingface.voice_model_index_path` 是维护者本地 / 发布环境的默认索引路径，用于约束模型源一致性；它不是跨机器通用路径。换机器或放到 CI 时，应通过 `VOICE_MODEL_INDEX_PATH` 显式覆盖。
-- `voice/mlc-build-manifest.json` 是 provenance（构建来源记录）文件，允许记录构建机上的绝对路径、工具链版本和产物 hash。这些路径字段仅用于追溯，不作为运行时输入，也不要求跨机器保持稳定。
+构建建议：
+- 首次克隆后执行 `git submodule update --init --recursive`，确保 `ai-llm/llama.cpp` 已就绪。
+- 常规开发直接执行 `./gradlew assembleDebug` 即可，当前 `llama.cpp` native 构建入口位于 `ai-llm` 模块。
 
-重新生成 `mlc4j`：
-
-```bash
-./scripts/package_mlc4j.sh
-```
-
-脚本会按锁文件固定的版本生成产物，并在完成后把 bridge 相关文件同步回 `voice` 模块：
-- 按 [`voice/mlc-build-lock.json`](voice/mlc-build-lock.json) 固定 `mlc-llm` 源码 ref、Python wheel、Rust toolchain、ABI / NDK / CMake / JIT 策略
-- 默认使用 `HF_ENDPOINT=https://hf-mirror.com`
-- 构建前校验 [`/Users/isulewli/Projects/neta-connect/models/index.json`](/Users/isulewli/Projects/neta-connect/models/index.json) 中的 LLM 文件源是否与 `voice/mlc-package-config.json` 对齐
-- 同步桥接源码与 `tvm4j_core.jar`
-- 生成 `voice/mlc-build-manifest.json`，记录本次构建的源码 ref、wheel 版本、toolchain 与产物 hash
-
-如果不是维护者本机环境，至少需要按实际环境覆盖：
-
-```bash
-VOICE_MODEL_INDEX_PATH=/path/to/models/index.json \
-./scripts/package_mlc4j.sh
-```
-
-当前项目**没有**直接把 `dist/lib/mlc4j` 作为 Gradle 子模块接入；实际接入方式是：
-- APK 内只保留轻量 bridge 源码与 `tvm4j_core.jar`
-- `libtvm4j_runtime_packed.so` 作为外部 runtime 下载并激活
-
-说明：
-- `mlc-llm-nightly-cpu` 与 `mlc-ai-nightly-cpu` 是**构建机侧**的 Python 打包 / 编译依赖，用来执行 `mlc_llm package`
-- 它们的 `cpu` 后缀不代表 Android 端最终以 CPU 推理
-- Android 端实际运行时仍由 `libtvm4j_runtime_packed.so` 决定；当前脚本通过上游 `prepare_libs.py` 传入 `-DUSE_OPENCL=ON`，目标是 Android 设备上的 OpenCL 后端，而不是 CPU 后端
-
-可选发布：
-- 默认只构建到 `voice/dist`
-- 若需要同时发布到 `neta-connect` runtime 仓库，可在执行时传入：
-
-```bash
-MLC_RUNTIME_PUBLISH=1 \
-MLC_RUNTIME_VERSION=mlc4j-v1 \
-./scripts/package_mlc4j.sh
-```
-
-- 发布目录默认是 `/Users/isulewli/Projects/neta-connect/models/runtimes/mlc4j/$MLC_RUNTIME_VERSION`
-- 发布时会：
-  - 复制 `config/mlc-app-config.json`
-  - 复制 `mlc-build-manifest.json`
-  - 调用 [`scripts/generate_segmented_meta.py`](scripts/generate_segmented_meta.py) 对 `libtvm4j_runtime_packed.so` 分片并生成 `.meta`
-- `mlc-app-config.json.meta` 仍由 CI 生成，脚本不会主动生成它
-
-默认输出 ABI 为 `arm64-v8a`，适用于 8155 车机，以及 Apple Silicon 上的 ARM 模拟器。
-
-#### Voice / MLC-LLM 构建建议
-
-- 日常开发、桥接同步、runtime 调试：建议在本地维护机执行 `scripts/package_mlc4j.sh`。
-- 常规 PR CI：**不建议**执行完整 `mlc4j` 打包。原因是它依赖完整 MLC / Rust / NDK 工具链、大体积产物、外部镜像和维护者约定的模型索引，成本高且不稳定。
-- CI 更适合做两类事情：一是消费仓库内已经同步好的 bridge 源码与 `tvm4j_core.jar` 做常规编译 / 测试；二是在专用发布流水线或手动触发的构建任务里执行完整打包。
-- 如果一定要放到 CI，建议使用专用 workflow 或 self-hosted runner，并显式注入 `VOICE_MODEL_INDEX_PATH`、`MLC_RUNTIME_PUBLISH_ROOT`、`JAVA_HOME` 等环境，不要依赖仓库里的本机默认路径。
-
-#### Voice / MLC-LLM 提交约定
-
-建议提交：
-- `voice/mlc-package-config.json`
-- `voice/mlc-build-lock.json`
-- `scripts/package_mlc4j.sh`
-- `voice/src/main/java/ai/mlc/mlcllm/**`
-- `voice/src/main/kotlin/ai/mlc/mlcllm/**`
-- `voice/libs/tvm4j_core.jar`
-- `voice/mlc-build-manifest.json`（允许因构建机不同而出现路径差异，重点关注版本与 hash）
-
-不要提交：
-- `voice/dist/`
-- `voice/.venv/`
-- `voice/.mlc-cache/`
-- `voice/.mlc-tmp/`
-- `voice/.hf-cache/`
-- `voice/.cargo-home/`
-- `voice/.cargo-target/`
-- `voice/.rustup-home/`
-- `voice/.mlc-src/`
+提交约定：
+- 建议提交 `ai-llm/llama.cpp` 的 submodule 指针、`ai-llm/src/main/cpp/llama_jni.cpp`、`ai-llm/src/main/kotlin/com/neta/isulewtools/ai/llm/runtime/LlamaJni.kt` 以及必要的构建适配代码。
+- 不要提交本地缓存、工具链或临时产物目录。
 
 **开发环境要求**:
 - Android Studio Ladybug (2024.2.1) 或更高版本
