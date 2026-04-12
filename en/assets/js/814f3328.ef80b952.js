@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkneta_connect_website=self.webpackChunkneta_connect_website||[]).push([[472],{5513(e){e.exports=JSON.parse('{"title":"Recent posts","items":[]}')}}]);
