@@ -6,7 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Bug Fixes
+- 使用热点配置快照修复 AIDL 兼容性 [`0b5dd619`](https://github.com/netcookies/isulewTools/commit/0b5dd619)
+
+## v2.1.9-beta.1 (2026-04-13)
+
 ### Feature
+- 优化语音助手默认配置与恢复控制 [`490a0f25`](https://github.com/netcookies/isulewTools/commit/490a0f25)
+- 新增特权包管理诊断页 [`d3140401`](https://github.com/netcookies/isulewTools/commit/d3140401)
 - 增加悬浮窗位置锁定开关 [`4adc6c69`](https://github.com/netcookies/isulewTools/commit/4adc6c69)
 - 支持播放时自动切换氛围灯音乐律动 [`a13377a1`](https://github.com/netcookies/isulewTools/commit/a13377a1)
 - 为 Snackbar 展示补充日志记录 [`2120c88b`](https://github.com/netcookies/isulewTools/commit/2120c88b)
@@ -18,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 增强 MLC 诊断并切换轻量运行时默认值 [`e344b832`](https://github.com/netcookies/isulewTools/commit/e344b832)
 
 ### Bug Fixes
+- 增加特权状态直读校验链路 [`7503436f`](https://github.com/netcookies/isulewTools/commit/7503436f)
 - 修正任务诊断走 root 服务读取最近任务 [`94e14dc7`](https://github.com/netcookies/isulewTools/commit/94e14dc7)
 - 补齐前台监听快照链路并增加诊断页 [`987ad584`](https://github.com/netcookies/isulewTools/commit/987ad584)
 - 修正小组件编辑态交互与悬浮窗边界限制 [`3327e519`](https://github.com/netcookies/isulewTools/commit/3327e519)
@@ -44,6 +52,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 更新 privilege 运行时服务测试桩 [`c28e1bf7`](https://github.com/netcookies/isulewTools/commit/c28e1bf7)
 
 ### Chore
+- 更新 Compose 与 Kotlin 相关依赖 [`d601f782`](https://github.com/netcookies/isulewTools/commit/d601f782)
 - 忽略 voice-orchestrator 本地缓存目录 [`177214fe`](https://github.com/netcookies/isulewTools/commit/177214fe)
 - 清理误提交的本地缓存目录 [`0ddaad48`](https://github.com/netcookies/isulewTools/commit/0ddaad48)
 - 引入 gguf-lib 与 llama.cpp 源码 [`b5b7249a`](https://github.com/netcookies/isulewTools/commit/b5b7249a)
@@ -51,6 +60,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 引入 llama.cpp 子模块 [`f39c0083`](https://github.com/netcookies/isulewTools/commit/f39c0083)
 
 ### Refactor
+- 为紧凑输入项增加占位提示 [`6117365c`](https://github.com/netcookies/isulewTools/commit/6117365c)
 - 将 ai-llm llama.cpp 迁移为子模块 [`29e9e3a9`](https://github.com/netcookies/isulewTools/commit/29e9e3a9)
 - 统一模块物理目录命名 [`a8115ad9`](https://github.com/netcookies/isulewTools/commit/a8115ad9)
 - 统一公开模块名与 app 侧 AI 运行时命名 [`d6bde78a`](https://github.com/netcookies/isulewTools/commit/d6bde78a)
