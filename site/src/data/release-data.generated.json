@@ -1,30 +1,68 @@
 {
-  "generatedAt": "2026-04-03T12:55:39.681Z",
-  "version": "v2.1.8-beta.9",
+  "generatedAt": "2026-04-13T15:07:20.416Z",
+  "version": "v2.1.9-beta.1",
   "repoSlug": "netcookies/neta-connect",
   "proxyPrefix": "https://cdn.gh-proxy.org/",
   "releasePath": "/release",
-  "githubReleaseUrl": "https://github.com/netcookies/neta-connect/releases/tag/v2.1.8-beta.9",
+  "githubReleaseUrl": "https://github.com/netcookies/neta-connect/releases/tag/v2.1.9-beta.1",
   "changelogPath": "/docs/changelog",
   "installGuidePath": "/docs/install",
   "summary": {
-    "filename": "NETA_CONNECT-v2.1.8-beta.9.apk",
-    "totalSize": 33849093,
-    "totalSha256": "504854a2d9a9d5ffc02b32e460d530585cfbfd11763b07f93d9a73c1f3f19f0d",
-    "releaseCount": 27
+    "filename": "NETA_CONNECT-v2.1.9-beta.1.apk",
+    "totalSize": 35626976,
+    "totalSha256": "1d0e6ff44a8d2c2f534db82cd0c01947e15a21896093ddb6a58ef7b5445c29fc",
+    "releaseCount": 29
   },
   "assets": [
     {
       "kind": "full",
       "label": "完整 APK",
-      "filename": "NETA_CONNECT-v2.1.8-beta.9.apk",
-      "originalUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.1.8-beta.9.apk",
-      "size": 33849093,
-      "sha256": "504854a2d9a9d5ffc02b32e460d530585cfbfd11763b07f93d9a73c1f3f19f0d",
-      "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.1.8-beta.9.apk"
+      "filename": "NETA_CONNECT-v2.1.9-beta.1.apk",
+      "originalUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.1.9-beta.1.apk",
+      "size": 35626976,
+      "sha256": "1d0e6ff44a8d2c2f534db82cd0c01947e15a21896093ddb6a58ef7b5445c29fc",
+      "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.1.9-beta.1.apk"
     }
   ],
   "releases": [
+    {
+      "version": "v2.1.9-beta.1",
+      "generatedAt": "2026-04-13T15:07:20.416Z",
+      "githubReleaseUrl": "https://github.com/netcookies/neta-connect/releases/tag/v2.1.9-beta.1",
+      "summary": {
+        "filename": "NETA_CONNECT-v2.1.9-beta.1.apk",
+        "totalSize": 35626976,
+        "totalSha256": "1d0e6ff44a8d2c2f534db82cd0c01947e15a21896093ddb6a58ef7b5445c29fc"
+      },
+      "asset": {
+        "kind": "full",
+        "label": "完整 APK",
+        "filename": "NETA_CONNECT-v2.1.9-beta.1.apk",
+        "originalUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.1.9-beta.1.apk",
+        "size": 35626976,
+        "sha256": "1d0e6ff44a8d2c2f534db82cd0c01947e15a21896093ddb6a58ef7b5445c29fc",
+        "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.1.9-beta.1.apk"
+      }
+    },
+    {
+      "version": "v2.1.8",
+      "generatedAt": "2026-04-13T15:07:20.323Z",
+      "githubReleaseUrl": "https://github.com/netcookies/neta-connect/releases/tag/v2.1.8",
+      "summary": {
+        "filename": "NETA_CONNECT-v2.1.8.apk",
+        "totalSize": 35536733,
+        "totalSha256": "37b662e299511a548ed4724c074bdc860e606184e1261187bd5b0eebd2041a63"
+      },
+      "asset": {
+        "kind": "full",
+        "label": "完整 APK",
+        "filename": "NETA_CONNECT-v2.1.8.apk",
+        "originalUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.1.8.apk",
+        "size": 35536733,
+        "sha256": "37b662e299511a548ed4724c074bdc860e606184e1261187bd5b0eebd2041a63",
+        "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/netcookies/neta-connect/main/archive/NETA_CONNECT-v2.1.8.apk"
+      }
+    },
     {
       "version": "v2.1.8-beta.9",
       "generatedAt": "2026-04-03T12:55:39.681Z",
