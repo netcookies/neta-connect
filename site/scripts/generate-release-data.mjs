@@ -10,6 +10,7 @@ const REPO_ROOT = path.resolve(SITE_ROOT, '..');
 const ARCHIVE_DIR = path.join(REPO_ROOT, 'archive');
 const OUTPUT_DIR = path.join(SITE_ROOT, 'src', 'data');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'release-data.generated.json');
+const SUMMARY_OUTPUT_FILE = path.join(OUTPUT_DIR, 'release-summary.generated.json');
 const CHANGELOG_SOURCE = path.join(REPO_ROOT, 'CHANGELOG.md');
 const CHANGELOG_TARGET = path.join(SITE_ROOT, 'docs', 'changelog.md');
 
@@ -99,7 +100,7 @@ function compareVersions(leftVersion, rightVersion) {
   return 0;
 }
 
-function resolveLatestVersion() {
+function listAvailableVersions() {
   const metaFiles = readdirSync(ARCHIVE_DIR)
     .filter((name) => name.startsWith('NETA_CONNECT-v') && name.endsWith('.apk.meta'))
     .map((name) => name
@@ -111,12 +112,16 @@ function resolveLatestVersion() {
     throw new Error('未找到任何 archive/*.apk.meta 文件，无法生成 release 数据。');
   }
 
-  return metaFiles[0];
+  return metaFiles;
 }
 
-function resolveVersion() {
+function resolveLatestVersion() {
+  return listAvailableVersions()[0];
+}
+
+function resolveVersion(versions) {
   const explicitVersion = (process.env.RELEASE_VERSION || process.argv[2] || '').trim();
-  return explicitVersion || resolveLatestVersion();
+  return explicitVersion || versions[0] || resolveLatestVersion();
 }
 
 function buildAsset(kind, payload) {
@@ -159,8 +164,7 @@ function validateMeta(meta, version) {
   });
 }
 
-function main() {
-  const version = resolveVersion();
+function readMeta(version) {
   const metaFileName = `NETA_CONNECT-${version}.apk.meta`;
   const metaFilePath = path.join(ARCHIVE_DIR, metaFileName);
 
@@ -170,53 +174,78 @@ function main() {
 
   const meta = JSON.parse(readFileSync(metaFilePath, 'utf8'));
   validateMeta(meta, version);
-  const metaMtime = statSync(metaFilePath).mtime.toISOString();
-  const partAssets = Array.isArray(meta.parts) && meta.parts.length > 1
-    ? meta.parts.map((part) => buildAsset('part', {
-        label: `分片 ${part.index}/${meta.parts.length}`,
-        filename: part.filename,
-        originalUrl: part.url,
-        size: part.size,
-        sha256: part.sha256,
-        partIndex: part.index,
-      }))
-    : [];
+  return {
+    meta,
+    metaMtime: statSync(metaFilePath).mtime.toISOString(),
+  };
+}
 
-  const data = {
-    generatedAt: metaMtime,
+function buildReleaseEntry(version) {
+  const {meta, metaMtime} = readMeta(version);
+  const asset = buildAsset('full', {
+    label: '完整 APK',
+    filename: meta.filename,
+    originalUrl: meta.url,
+    size: meta.total_size,
+    sha256: meta.total_sha256,
+  });
+
+  return {
     version,
-    repoSlug: REPO_SLUG,
-    proxyPrefix: PROXY_PREFIX,
-    releasePath: '/release',
+    generatedAt: metaMtime,
     githubReleaseUrl: `https://github.com/${REPO_SLUG}/releases/tag/${encodeURIComponent(version)}`,
-    changelogPath: '/docs/changelog',
-    installGuidePath: '/docs/install',
     summary: {
       filename: meta.filename,
       totalSize: meta.total_size,
       totalSha256: meta.total_sha256,
-      partCount: partAssets.length || 1,
     },
-    assets: [
-      buildAsset('full', {
-        label: '完整 APK',
-        filename: meta.filename,
-        originalUrl: meta.url,
-        size: meta.total_size,
-        sha256: meta.total_sha256,
-      }),
-      ...partAssets,
-    ],
+    asset,
+  };
+}
+
+function buildReleaseSummary(currentRelease, releaseCount, version) {
+  return {
+    generatedAt: currentRelease.generatedAt,
+    version,
+    repoSlug: REPO_SLUG,
+    proxyPrefix: PROXY_PREFIX,
+    releasePath: '/release',
+    githubReleaseUrl: currentRelease.githubReleaseUrl,
+    changelogPath: '/docs/changelog',
+    installGuidePath: '/docs/install',
+    summary: {
+      ...currentRelease.summary,
+      releaseCount,
+    },
+  };
+}
+
+function main() {
+  const versions = listAvailableVersions();
+  const version = resolveVersion(versions);
+  const releases = versions.map((item) => buildReleaseEntry(item));
+  const currentRelease = releases.find((item) => item.version === version);
+
+  if (!currentRelease) {
+    throw new Error(`未找到版本 ${version} 的 release 数据。`);
+  }
+
+  const summaryData = buildReleaseSummary(currentRelease, releases.length, version);
+  const data = {
+    ...summaryData,
+    assets: [currentRelease.asset],
+    releases,
   };
 
   mkdirSync(OUTPUT_DIR, {recursive: true});
   writeTextIfChanged(OUTPUT_FILE, `${JSON.stringify(data, null, 2)}\n`);
+  writeTextIfChanged(SUMMARY_OUTPUT_FILE, `${JSON.stringify(summaryData, null, 2)}\n`);
 
   if (existsSync(CHANGELOG_SOURCE)) {
     writeTextIfChanged(CHANGELOG_TARGET, readFileSync(CHANGELOG_SOURCE, 'utf8'));
   }
 
-  console.log(`已生成 release 数据：${path.relative(REPO_ROOT, OUTPUT_FILE)} -> ${version}`);
+  console.log(`已生成 release 数据：${path.relative(REPO_ROOT, OUTPUT_FILE)}，${path.relative(REPO_ROOT, SUMMARY_OUTPUT_FILE)} -> ${version}`);
 }
 
 main();

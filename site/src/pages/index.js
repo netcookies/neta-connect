@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
-import releaseData from '../data/release-data.generated.json';
+import releaseData from '../data/release-summary.generated.json';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();

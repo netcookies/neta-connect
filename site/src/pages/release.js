@@ -15,20 +15,27 @@ function formatBytes(bytes) {
   return `${value.toFixed(index === 0 ? 0 : 2)} ${units[index]}`;
 }
 
-function AssetCard({asset, primary = false}) {
+function formatDate(isoText) {
+  return isoText ? isoText.slice(0, 10) : '--';
+}
+
+function AssetCard({release, primary = false}) {
+  const {asset, summary, version} = release;
+
   return (
     <article className={`${styles.assetCard} ${primary ? styles.primaryAsset : ''}`}>
       <div className={styles.assetHeader}>
         <div>
-          <span className={styles.assetLabel}>{asset.label}</span>
-          <h2>{asset.filename}</h2>
+          <span className={styles.assetLabel}>主文件下载</span>
+          <h2>{version}</h2>
+          <p className={styles.assetFilename}>{summary.filename}</p>
         </div>
         <a
           className={styles.downloadButton}
           href={asset.url}
           target="_blank"
           rel="noopener noreferrer">
-          立即下载
+          下载 APK
         </a>
       </div>
       <div className={styles.assetMeta}>
@@ -45,8 +52,43 @@ function AssetCard({asset, primary = false}) {
   );
 }
 
+function VersionRow({release, latest = false}) {
+  return (
+    <article className={`${styles.versionRow} ${latest ? styles.latestVersionRow : ''}`}>
+      <div className={styles.versionInfo}>
+        <div className={styles.versionHeading}>
+          <div className={styles.versionTags}>
+            {latest && <span className={styles.assetLabel}>当前推荐</span>}
+            {release.version.includes('beta') && <span className={styles.versionTag}>Beta</span>}
+          </div>
+          <h3>{release.version}</h3>
+        </div>
+        <p className={styles.versionFilename}>{release.summary.filename}</p>
+        <dl className={styles.versionMeta}>
+          <div>
+            <dt>文件大小</dt>
+            <dd>{formatBytes(release.summary.totalSize)}</dd>
+          </div>
+          <div>
+            <dt>元数据更新</dt>
+            <dd>{formatDate(release.generatedAt)}</dd>
+          </div>
+        </dl>
+      </div>
+      <a
+        className={styles.downloadButton}
+        href={release.asset.url}
+        target="_blank"
+        rel="noopener noreferrer">
+        下载 APK
+      </a>
+    </article>
+  );
+}
+
 export default function ReleasePage() {
-  const [primaryAsset, ...partAssets] = releaseData.assets;
+  const currentRelease = releaseData.releases.find((release) => release.version === releaseData.version)
+    || releaseData.releases[0];
 
   return (
     <Layout
@@ -56,9 +98,10 @@ export default function ReleasePage() {
         <section className={styles.hero}>
           <div className={styles.heroContent}>
             <span className={styles.heroEyebrow}>Release</span>
-            <h1>{releaseData.version}</h1>
+            <h1>{currentRelease.version}</h1>
             <p>
-              当前版本的完整 APK 和分片文件已经整理到站内页面，所有下载链接统一加上
+              发布页现在只保留主 APK 下载，所有历史版本统一按列表展示在下方。
+              所有下载链接统一加上
               {' '}
               <code>{releaseData.proxyPrefix}</code>
               {' '}
@@ -67,14 +110,14 @@ export default function ReleasePage() {
             <div className={styles.heroActions}>
               <a
                 className={styles.primaryButton}
-                href={primaryAsset.url}
+                href={currentRelease.asset.url}
                 target="_blank"
                 rel="noopener noreferrer">
-                下载完整 APK
+                下载当前 APK
               </a>
               <a
                 className={styles.secondaryButton}
-                href={releaseData.githubReleaseUrl}
+                href={currentRelease.githubReleaseUrl}
                 target="_blank"
                 rel="noopener noreferrer">
                 打开 GitHub Release
@@ -84,57 +127,42 @@ export default function ReleasePage() {
           <div className={styles.summaryCard}>
             <div>
               <span>当前文件</span>
-              <strong>{releaseData.summary.filename}</strong>
+              <strong>{currentRelease.summary.filename}</strong>
             </div>
             <div>
               <span>完整包大小</span>
-              <strong>{formatBytes(releaseData.summary.totalSize)}</strong>
+              <strong>{formatBytes(currentRelease.summary.totalSize)}</strong>
             </div>
             <div>
-              <span>下载文件数</span>
-              <strong>{releaseData.assets.length}</strong>
+              <span>可选版本数</span>
+              <strong>{releaseData.releases.length}</strong>
             </div>
           </div>
         </section>
 
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2>主下载</h2>
-            <p>默认推荐下载完整 APK，代理前缀已内置，无需手工拼接。</p>
+            <h2>当前版本</h2>
+            <p>默认推荐下载最新版本的主 APK，页面不再展示分片文件。</p>
           </div>
-          <AssetCard asset={primaryAsset} primary />
+          <AssetCard release={currentRelease} primary />
         </section>
 
-        {partAssets.length > 0 && (
-          <section className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2>分片文件</h2>
-              <p>网络环境不稳定时，可以分别下载分片文件，再本地合并成完整 APK。</p>
-            </div>
-            <div className={styles.assetList}>
-              {partAssets.map((asset) => (
-                <AssetCard key={asset.filename} asset={asset} />
-              ))}
-            </div>
-            <div className={styles.mergeGuide}>
-              <h3>合并示例</h3>
-              <div className={styles.codeGroup}>
-                <div>
-                  <span>macOS / Linux</span>
-                  <pre>
-                    <code>{`cat ${partAssets.map((asset) => asset.filename).join(' ')} > ${releaseData.summary.filename}`}</code>
-                  </pre>
-                </div>
-                <div>
-                  <span>Windows</span>
-                  <pre>
-                    <code>{`copy /b ${partAssets.map((asset) => asset.filename).join('+')} ${releaseData.summary.filename}`}</code>
-                  </pre>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
+        <section className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h2>全部版本</h2>
+            <p>按版本从新到旧排列，适合直接浏览和下载指定 APK。</p>
+          </div>
+          <div className={styles.versionList}>
+            {releaseData.releases.map((release) => (
+              <VersionRow
+                key={release.version}
+                release={release}
+                latest={release.version === currentRelease.version}
+              />
+            ))}
+          </div>
+        </section>
 
         <section className={styles.section}>
           <div className={styles.sectionHeader}>

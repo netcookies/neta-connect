@@ -1,5 +1,5 @@
 import CodeBlock from '@theme/CodeBlock';
-import releaseData from '../src/data/release-data.generated.json';
+import releaseData from '../src/data/release-summary.generated.json';
 
 # 安装指南
 
@@ -34,7 +34,7 @@ import releaseData from '../src/data/release-data.generated.json';
 1. 访问 [Release 页面](/release)
 2. 找到当前版本的完整 APK 下载卡片
 3. 下载 <code>{`NETA_CONNECT-${releaseData.version}.apk`}</code> 文件
-4. 如果网络不稳定，也可以下载对应分片文件
+4. 如需旧版本，可在同一页面的版本列表中选择对应 APK
 
 ### 方式 2: 从源码构建
 

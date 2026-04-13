@@ -14,7 +14,7 @@
 .heroContent,
 .summaryCard,
 .assetCard,
-.mergeGuide {
+.versionRow {
   border: 1px solid rgba(0, 77, 64, 0.12);
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(236, 246, 244, 0.96));
@@ -114,13 +114,14 @@
 
 .summaryCard span,
 .assetMeta span,
-.mergeGuide span {
+.versionMeta dt {
   color: var(--ifm-color-emphasis-600);
   font-size: 0.85rem;
 }
 
 .summaryCard strong,
-.assetMeta strong {
+.assetMeta strong,
+.versionMeta dd {
   color: #004d40;
   font-size: 1rem;
   word-break: break-word;
@@ -171,6 +172,14 @@
   word-break: break-word;
 }
 
+.assetFilename,
+.versionFilename {
+  margin: 0.5rem 0 0;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  word-break: break-word;
+}
+
 .assetLabel {
   display: inline-flex;
   padding: 0.25rem 0.65rem;
@@ -198,28 +207,64 @@
   word-break: break-all;
 }
 
-.mergeGuide {
-  margin-top: 1rem;
-  padding: 1.5rem;
+.versionList {
+  display: grid;
+  gap: 0.9rem;
 }
 
-.mergeGuide h3 {
-  margin-bottom: 1rem;
+.versionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.latestVersionRow {
+  border-color: rgba(0, 137, 123, 0.2);
+  background: linear-gradient(180deg, rgba(228, 248, 244, 0.96), rgba(255, 255, 255, 0.98));
+}
+
+.versionInfo {
+  min-width: 0;
+  flex: 1;
+}
+
+.versionHeading h3 {
+  margin: 0.45rem 0 0;
   color: #004d40;
 }
 
-.codeGroup {
-  display: grid;
-  gap: 1rem;
+.versionTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.codeGroup pre {
-  margin: 0.5rem 0 0;
-  padding: 1rem;
-  border-radius: 16px;
-  background: #0d2824;
-  color: #d6fff8;
-  overflow-x: auto;
+.versionTag {
+  display: inline-flex;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(0, 77, 64, 0.07);
+  color: #0a5c52;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.versionMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.5rem;
+  margin: 0.75rem 0 0;
+}
+
+.versionMeta div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.versionMeta dd {
+  margin: 0;
 }
 
 .linkRow {
@@ -242,13 +287,18 @@
   .heroContent,
   .summaryCard,
   .assetCard,
-  .mergeGuide {
+  .versionRow {
     padding: 1.25rem;
     border-radius: 18px;
   }
 
-  .assetHeader {
+  .assetHeader,
+  .versionRow {
     flex-direction: column;
+  }
+
+  .versionRow {
+    align-items: stretch;
   }
 
   .downloadButton,

@@ -1,4 +1,4 @@
-import releaseData from '../src/data/release-data.generated.json';
+import releaseData from '../src/data/release-summary.generated.json';
 
 # 哪吒互联 isulewTools
 

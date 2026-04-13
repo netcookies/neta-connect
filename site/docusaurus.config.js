@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const releaseData = require('./src/data/release-data.generated.json');
+const releaseData = require('./src/data/release-summary.generated.json');
 
 const config = {
   title: '哪吒互联',
