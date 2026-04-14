@@ -6,8 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.2 (2026-04-14)
+
 ### Bug Fixes
+- 修复预览通道可见性与缓存迁移 [`d35aba23`](https://github.com/netcookies/isulewTools/commit/d35aba23)
 - 使用热点配置快照修复 AIDL 兼容性 [`0b5dd619`](https://github.com/netcookies/isulewTools/commit/0b5dd619)
+
+### Chore
+- 更新 llama.cpp 子模块 [`126b4d3d`](https://github.com/netcookies/isulewTools/commit/126b4d3d)
+
+### Other
 
 ## v2.1.9-beta.1 (2026-04-13)
 
