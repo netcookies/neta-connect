@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.3 (2026-04-16)
+
+### Feature
+- 迁移语音助手到 cbridge 原生主链 [`c9580a7c`](https://github.com/netcookies/isulewTools/commit/c9580a7c)
+- 支持自动下载更新与辅助编辑 [`7338e1b2`](https://github.com/netcookies/isulewTools/commit/7338e1b2)
+
+### Bug Fixes
+- 修复悬浮小组件启动恢复逻辑 [`0b163f8b`](https://github.com/netcookies/isulewTools/commit/0b163f8b)
+
 ## v2.1.9-beta.2 (2026-04-14)
 
 ### Bug Fixes
