@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.4 (2026-04-16)
+
+### Feature
+- 调整检查更新页自动下载入口 [`efff47c4`](https://github.com/netcookies/isulewTools/commit/efff47c4)
+- 增加 cbridge 音频文件解码测试入口 [`30f4278f`](https://github.com/netcookies/isulewTools/commit/30f4278f)
+
+### Bug Fixes
+- 修复媒体控制小组件尺寸迁移链路 [`ac87a3e0`](https://github.com/netcookies/isulewTools/commit/ac87a3e0)
+- 提前恢复 cbridge 主链 [`a34810f3`](https://github.com/netcookies/isulewTools/commit/a34810f3)
+- 修复语音助手 websocket 重启恢复时序 [`4de12fa9`](https://github.com/netcookies/isulewTools/commit/4de12fa9)
+- 跳过升级重启时的权限写后校验 [`3711b4ec`](https://github.com/netcookies/isulewTools/commit/3711b4ec)
+- 集成解码 so 并收敛 CarPlay ABI [`dddf566e`](https://github.com/netcookies/isulewTools/commit/dddf566e)
+
 ## v2.1.9-beta.3 (2026-04-16)
 
 ### Feature
