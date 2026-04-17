@@ -185,6 +185,12 @@ cd isulewTools
 ./gradlew installDebug
 ```
 
+#### CBridge 模拟器回放
+
+本地模拟 OEM WebSocket 回放与 `adb forward tcp:17880 tcp:17880` 联调说明见：
+
+- [scripts/cbridge/README.md](scripts/cbridge/README.md)
+
 #### Voice / llama.cpp
 
 当前本地 LLM 运行时位于 `ai-llm` 模块，通过上游 `llama.cpp` submodule 和本地 JNI 桥接层做本地推理；旧的 `whisper.cpp` 链路已经移除，不再参与当前 Android 构建。
