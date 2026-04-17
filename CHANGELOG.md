@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.5 (2026-04-17)
+
+### Bug Fixes
+- 修复更新下载进度并增强调试入口 [`462bcd4d`](https://github.com/netcookies/isulewTools/commit/462bcd4d)
+- 对齐 OEM 流式识别与输出时序 [`832ebda3`](https://github.com/netcookies/isulewTools/commit/832ebda3)
+
+### Refactor
+- 移除 OEM daemon 冻结逻辑 [`6e211f79`](https://github.com/netcookies/isulewTools/commit/6e211f79)
+
 ## v2.1.9-beta.4 (2026-04-16)
 
 ### Feature
