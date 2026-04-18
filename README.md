@@ -99,6 +99,8 @@
 | **mic-service** | 独立麦克风控制服务，支持细粒度权限管理 | Android Library |
 | **widget-api** | 小组件插件API定义，第三方插件开发接口 | Android Library |
 | **plugin-widgets** | 动态加载小组件插件示例（JAR插件） | Android Library |
+| **probe-api** | 通用探针 contract，第三方 probe 开发接口 | Android Library |
+| **probe-runtime** | 通用探针宿主运行时与 OEM 参考 probe | Android Library |
 
 ### 架构设计
 
@@ -247,6 +249,22 @@ class MyCustomWidget : AppWidget {
 - 👉 [插件系统概述](plugin-widgets/README.md)
 - 👉 [插件开发详细指南](plugin-widgets/DEVELOPMENT_GUIDE.md)
 
+#### Probe 开发
+
+本项目支持通过宿主 runtime 动态执行自定义 probe。推荐分层如下：
+
+1. `probe-api`
+   只包含 `ProbeEntry` / `ProbeContext` / `ProbeResult` / `ProbeErrorCode`
+2. `probe-runtime`
+   包含 `ProbeHostMain` / `ProbeHostExecutor` 和 OEM 参考 probe
+3. 自定义 probe 模块
+   只依赖 `probe-api`，编译成 APK 或 JAR 后交给宿主执行
+
+相关文档：
+- 👉 [probe-api/README.md](probe-api/README.md)
+- 👉 [probe-runtime/README.md](probe-runtime/README.md)
+- 👉 [scripts/oem/README.md](scripts/oem/README.md)
+
 #### 参与贡献
 
 欢迎任何形式的贡献！Fork本仓库并提交Pull Request。
@@ -284,6 +302,9 @@ git commit -m "refactor(viewmodel): 统一ViewModel命名规范"
 | [BREAKING_NOTICE.md](BREAKING_NOTICE.md) | 版本 Breaking Change 公告能力说明 |
 | [plugin-widgets/README.md](plugin-widgets/README.md) | 小组件插件系统说明 |
 | [plugin-widgets/DEVELOPMENT_GUIDE.md](plugin-widgets/DEVELOPMENT_GUIDE.md) | 插件开发详细指南 |
+| [probe-api/README.md](probe-api/README.md) | 通用探针 API 与独立工作区说明 |
+| [probe-runtime/README.md](probe-runtime/README.md) | 通用探针 runtime 与 OEM 参考实现说明 |
+| [scripts/oem/README.md](scripts/oem/README.md) | probe CLI 与设备执行说明 |
 
 *更多文档正在完善中...*
 
