@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.6 (2026-04-18)
+
+### Feature
+- 加固 probe runner 并补齐公开 demo [`6c5b57bf`](https://github.com/netcookies/isulewTools/commit/6c5b57bf)
+- 拆分 probe sdk 并新增公开同步流程 [`f514bc16`](https://github.com/netcookies/isulewTools/commit/f514bc16)
+
+### Bug Fixes
+- 修正副屏 release 资产打包链路 [`5b378eac`](https://github.com/netcookies/isulewTools/commit/5b378eac)
+
+### Other
+
 ## v2.1.9-beta.5 (2026-04-17)
 
 ### Bug Fixes
