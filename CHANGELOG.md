@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.7 (2026-04-19)
+
+### Bug Fixes
+- 修复执行器事件发射与取消传播 [`9c7c1f5c`](https://github.com/netcookies/isulewTools/commit/9c7c1f5c)
+- 收紧副屏桥接安装校验 [`bcab1549`](https://github.com/netcookies/isulewTools/commit/bcab1549)
+- 拆分测试包下载链路并固定 2.1.8 测试源 [`a3f6d44d`](https://github.com/netcookies/isulewTools/commit/a3f6d44d)
+
+### Chore
+- 忽略 Python 缓存目录 [`c51c2d2d`](https://github.com/netcookies/isulewTools/commit/c51c2d2d)
+
 ## v2.1.9-beta.6 (2026-04-18)
 
 ### Feature
