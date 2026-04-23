@@ -14,8 +14,8 @@ javaVersion = "11"
 # ============================================================
 # Application Versioning
 # ============================================================
-appVersionCode = "150"
-appVersionName = "2.1.7"
+appVersionCode = "154"
+appVersionName = "2.1.9-beta.7"
 minCompatibleBridgeVersion = "2.1.7"
 
 # ============================================================
@@ -34,20 +34,20 @@ appcompat = "1.7.1"
 lifecycle = "2.10.0"
 activityCompose = "1.13.0"
 savedstate = "1.4.0"
-annotation = "1.9.1"
+annotation = "1.10.0"
 json = "20251224"
 
 # ============================================================
 # Compose
 # ============================================================
-composeBom = "2026.03.00"
+composeBom = "2026.03.01"
 # 注意：所有 Compose 库版本由 BOM 统一管理
 
 # ============================================================
 # Kotlin Libraries
 # ============================================================
 kotlinxCoroutines = "1.10.2"
-kotlinxSerializationJson = "1.10.0"
+kotlinxSerializationJson = "1.11.0"
 
 # ============================================================
 # Database
@@ -95,12 +95,6 @@ perfetto = "1.0.1"
 # Audio
 # ============================================================
 oboe = "1.10.0"
-
-# ============================================================
-# ML & Voice
-# ============================================================
-porcupine = "4.0.0"
-onnxruntime = "1.24.3"
 
 # ============================================================
 # Testing
@@ -217,12 +211,6 @@ androidx-tracing-perfetto = { group = "androidx.tracing", name = "tracing-perfet
 # Audio
 # ------------------------------------------------------------
 oboe = { group = "com.google.oboe", name = "oboe", version.ref = "oboe" }
-
-# ------------------------------------------------------------
-# ML & Voice
-# ------------------------------------------------------------
-porcupine-android = { group = "ai.picovoice", name = "porcupine-android", version.ref = "porcupine" }
-onnxruntime-android = { group = "com.microsoft.onnxruntime", name = "onnxruntime-android", version.ref = "onnxruntime" }
 
 # ------------------------------------------------------------
 # Testing

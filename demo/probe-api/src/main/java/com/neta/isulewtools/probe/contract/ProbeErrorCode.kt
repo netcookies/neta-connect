@@ -1,0 +1,12 @@
+package com.neta.isulewtools.probe.contract
+
+enum class ProbeErrorCode {
+    INVALID_ARGUMENT,
+    SOURCE_VALIDATION_FAILED,
+    ENTRY_NOT_FOUND,
+    ENTRY_INVOKE_FAILED,
+    JAR_LOAD_FAILED,
+    EXECUTION_FAILED,
+    SERIALIZATION_FAILED,
+    OUTPUT_WRITE_FAILED
+}

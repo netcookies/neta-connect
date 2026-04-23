@@ -6,8 +6,68 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.7 (2026-04-19)
+
 ### Bug Fixes
+- 修复执行器事件发射与取消传播 [`9c7c1f5c`](https://github.com/netcookies/isulewTools/commit/9c7c1f5c)
+- 收紧副屏桥接安装校验 [`bcab1549`](https://github.com/netcookies/isulewTools/commit/bcab1549)
+- 拆分测试包下载链路并固定 2.1.8 测试源 [`a3f6d44d`](https://github.com/netcookies/isulewTools/commit/a3f6d44d)
+
+### Chore
+- 忽略 Python 缓存目录 [`c51c2d2d`](https://github.com/netcookies/isulewTools/commit/c51c2d2d)
+
+## v2.1.9-beta.6 (2026-04-18)
+
+### Feature
+- 加固 probe runner 并补齐公开 demo [`6c5b57bf`](https://github.com/netcookies/isulewTools/commit/6c5b57bf)
+- 拆分 probe sdk 并新增公开同步流程 [`f514bc16`](https://github.com/netcookies/isulewTools/commit/f514bc16)
+
+### Bug Fixes
+- 修正副屏 release 资产打包链路 [`5b378eac`](https://github.com/netcookies/isulewTools/commit/5b378eac)
+
+### Other
+
+## v2.1.9-beta.5 (2026-04-17)
+
+### Bug Fixes
+- 修复更新下载进度并增强调试入口 [`462bcd4d`](https://github.com/netcookies/isulewTools/commit/462bcd4d)
+- 对齐 OEM 流式识别与输出时序 [`832ebda3`](https://github.com/netcookies/isulewTools/commit/832ebda3)
+
+### Refactor
+- 移除 OEM daemon 冻结逻辑 [`6e211f79`](https://github.com/netcookies/isulewTools/commit/6e211f79)
+
+## v2.1.9-beta.4 (2026-04-16)
+
+### Feature
+- 调整检查更新页自动下载入口 [`efff47c4`](https://github.com/netcookies/isulewTools/commit/efff47c4)
+- 增加 cbridge 音频文件解码测试入口 [`30f4278f`](https://github.com/netcookies/isulewTools/commit/30f4278f)
+
+### Bug Fixes
+- 修复媒体控制小组件尺寸迁移链路 [`ac87a3e0`](https://github.com/netcookies/isulewTools/commit/ac87a3e0)
+- 提前恢复 cbridge 主链 [`a34810f3`](https://github.com/netcookies/isulewTools/commit/a34810f3)
+- 修复语音助手 websocket 重启恢复时序 [`4de12fa9`](https://github.com/netcookies/isulewTools/commit/4de12fa9)
+- 跳过升级重启时的权限写后校验 [`3711b4ec`](https://github.com/netcookies/isulewTools/commit/3711b4ec)
+- 集成解码 so 并收敛 CarPlay ABI [`dddf566e`](https://github.com/netcookies/isulewTools/commit/dddf566e)
+
+## v2.1.9-beta.3 (2026-04-16)
+
+### Feature
+- 迁移语音助手到 cbridge 原生主链 [`c9580a7c`](https://github.com/netcookies/isulewTools/commit/c9580a7c)
+- 支持自动下载更新与辅助编辑 [`7338e1b2`](https://github.com/netcookies/isulewTools/commit/7338e1b2)
+
+### Bug Fixes
+- 修复悬浮小组件启动恢复逻辑 [`0b163f8b`](https://github.com/netcookies/isulewTools/commit/0b163f8b)
+
+## v2.1.9-beta.2 (2026-04-14)
+
+### Bug Fixes
+- 修复预览通道可见性与缓存迁移 [`d35aba23`](https://github.com/netcookies/isulewTools/commit/d35aba23)
 - 使用热点配置快照修复 AIDL 兼容性 [`0b5dd619`](https://github.com/netcookies/isulewTools/commit/0b5dd619)
+
+### Chore
+- 更新 llama.cpp 子模块 [`126b4d3d`](https://github.com/netcookies/isulewTools/commit/126b4d3d)
+
+### Other
 
 ## v2.1.9-beta.1 (2026-04-13)
 
