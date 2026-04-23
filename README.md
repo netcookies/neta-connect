@@ -187,13 +187,13 @@ cd isulewTools
 
 #### Voice / llama.cpp
 
-当前本地 LLM 运行时位于 `ai-llm` 模块，通过上游 `llama.cpp` submodule 和本地 JNI 桥接层做本地推理；旧的 `whisper.cpp` 链路已经移除，不再参与当前 Android 构建。
+当前本地大模型运行时位于 `ai-llm` 模块，通过上游 `llama.cpp` submodule 和本地 JNI 桥接层做本地推理；旧的 `whisper.cpp` 链路已经移除，不再参与当前 Android 构建。
 
 当前约定：
 - `ai-llm/llama.cpp/` 是上游 `llama.cpp` submodule，作为 `ai-llm` 模块内的 native 构建源码根。
 - `ai-llm/src/main/cpp/llama_jni.cpp` 与 `ai-llm/src/main/kotlin/com/neta/isulewtools/ai/llm/runtime/LlamaJni.kt` 是项目内维护的 JNI 桥接层。
-- 本地 LLM 模型使用 GGUF 目录包，目录中至少需要 1 个 `.gguf` 文件。
-- 公共模型目录以 [`/Users/isulewli/Projects/neta-connect/models/index.json`](/Users/isulewli/Projects/neta-connect/models/index.json) 为准。
+- 本地大模型使用 GGUF 目录包，目录中至少需要 1 个 `.gguf` 文件。
+- 公共大模型目录以 [`models/index.json`](https://github.com/netcookies/neta-connect/blob/main/models/index.json) 为准。
 
 构建建议：
 - 首次克隆后执行 `git submodule update --init --recursive`，确保 `ai-llm/llama.cpp` 已就绪。
