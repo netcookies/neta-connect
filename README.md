@@ -187,21 +187,42 @@ cd isulewTools
 ./gradlew installDebug
 ```
 
-#### CBridge 模拟器回放
+#### CBridge L0 Harness / OEM WebSocket 回放
 
 本地模拟 OEM WebSocket 回放与 `adb forward tcp:17880 tcp:17880` 联调说明见：
 
 - [scripts/cbridge/README.md](scripts/cbridge/README.md)
 
+说明：
+- 当前 `cbridge` 实现优先定位为 **L0 harness / OEM 协议实验层**。
+- 它用于验证 OEM `ro_cbridge_addr` 指向本机后的最小兼容路径、回放链路和调试入口。
+- 它并不等价于“完整 OEM 主链兼容层”；如果目标是承接 OEM `CBRIDGE` 主链，需要继续补齐 requestType 分支、协议级状态机和 OEM-compatible 验收测试。
+
+#### 固定 ADB 调试端口
+
+当前项目已内建一个 **root daemon + native TCP forwarder** 调试能力，用于把设备侧动态 `adbd TLS` 端口稳定暴露为固定入口 `6666`。
+
+特点：
+
+- 不修改 `AdbController` 主链，应用内部仍直接连接真实动态端口。
+- 固定端口转发器运行在独立 root daemon 进程中，app 意外退出后仍可继续存活。
+- 入口位于应用 `实验性功能` 页面，可直接启动 / 停止 / 查看状态。
+
+实现位置：
+
+- root daemon 控制面：`app/src/main/java/com/neta/isulewtools/privilege/AdbPortForwardDaemonController.kt`
+- root service 入口：`app/src/main/java/com/neta/isulewtools/privilege/AdbPortForwardRootService.kt`
+- native 转发器：`app-privilege/src/main/jni/adb_port_forward_jni.cpp`
+
 #### Voice / llama.cpp
 
-当前本地大模型运行时位于 `ai-llm` 模块，通过上游 `llama.cpp` submodule 和本地 JNI 桥接层做本地推理；旧的 `whisper.cpp` 链路已经移除，不再参与当前 Android 构建。
+当前本地 LLM 运行时位于 `ai-llm` 模块，通过上游 `llama.cpp` submodule 和本地 JNI 桥接层做本地推理；旧的 `whisper.cpp` 链路已经移除，不再参与当前 Android 构建。
 
 当前约定：
 - `ai-llm/llama.cpp/` 是上游 `llama.cpp` submodule，作为 `ai-llm` 模块内的 native 构建源码根。
 - `ai-llm/src/main/cpp/llama_jni.cpp` 与 `ai-llm/src/main/kotlin/com/neta/isulewtools/ai/llm/runtime/LlamaJni.kt` 是项目内维护的 JNI 桥接层。
-- 本地大模型使用 GGUF 目录包，目录中至少需要 1 个 `.gguf` 文件。
-- 公共大模型目录以 [`models/index.json`](https://github.com/netcookies/neta-connect/blob/main/models/index.json) 为准。
+- 本地 LLM 模型使用 GGUF 目录包，目录中至少需要 1 个 `.gguf` 文件。
+- 公共模型目录以 [`models/index.json`](https://github.com/netcookies/neta-connect/blob/main/models/index.json) 为准。
 
 构建建议：
 - 首次克隆后执行 `git submodule update --init --recursive`，确保 `ai-llm/llama.cpp` 已就绪。
