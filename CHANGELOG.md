@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Continuous Integration
+- 修复发布说明脚本引号解析 [`75b165f6`](https://github.com/netcookies/isulewTools/commit/75b165f6)
+
+## v2.1.9-beta.9 (2026-05-30)
+
+### Bug Fixes
+- 修复 CarPlay 可用性触发时序 [`b408d69d`](https://github.com/netcookies/isulewTools/commit/b408d69d)
+- 延迟校验副屏 release 签名配置 [`4b3c1c87`](https://github.com/netcookies/isulewTools/commit/4b3c1c87)
+
+### Continuous Integration
+- 防止发布说明生成空内容 [`238e44a3`](https://github.com/netcookies/isulewTools/commit/238e44a3)
+
 ## v2.1.9-beta.8 (2026-05-29)
 
 ### Feature
