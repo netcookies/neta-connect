@@ -6,8 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.10 (2026-06-18)
+
 ### Continuous Integration
+- 修复 fdk-aac 子模块映射 [`c30c0323`](https://github.com/netcookies/isulewTools/commit/c30c0323)
 - 修复发布说明脚本引号解析 [`75b165f6`](https://github.com/netcookies/isulewTools/commit/75b165f6)
+
+### Chore
+- 清理 CarPlay 旧解码渲染链路 [`64e45ed0`](https://github.com/netcookies/isulewTools/commit/64e45ed0)
+- 移除 CarPlay FDK-AAC 残留 [`e551b4ac`](https://github.com/netcookies/isulewTools/commit/e551b4ac)
+- 记录历史清理收口流程 [`e45b75a5`](https://github.com/netcookies/isulewTools/commit/e45b75a5)
+- 清理运行产物并合入本地变更 [`866a2297`](https://github.com/netcookies/isulewTools/commit/866a2297)
 
 ## v2.1.9-beta.9 (2026-05-30)
 
