@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.11 (2026-06-21)
+
+### Feature
+- 完善投屏渲染配置与诊断 [`5cf2b6e0`](https://github.com/netcookies/isulewTools/commit/5cf2b6e0)
+
+### Bug Fixes
+- 修复无障碍保活恢复闪烁 [`3bdb820a`](https://github.com/netcookies/isulewTools/commit/3bdb820a)
+
+### Documentation
+- 更新 CarPlay 调试知识 [`3c69a7e5`](https://github.com/netcookies/isulewTools/commit/3c69a7e5)
+
 ## v2.1.9-beta.10 (2026-06-18)
 
 ### Continuous Integration
