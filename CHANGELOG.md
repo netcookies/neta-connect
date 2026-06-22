@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.12 (2026-06-22)
+
+### Bug Fixes
+- 增加视频渲染兼容兜底 [`a46a7b03`](https://github.com/netcookies/isulewTools/commit/a46a7b03)
+- 收口高通 AVC 硬解裁剪诊断 [`9090711a`](https://github.com/netcookies/isulewTools/commit/9090711a)
+- 规避高通 HEVC 非对齐裁剪花屏 [`29a39a0e`](https://github.com/netcookies/isulewTools/commit/29a39a0e)
+- 配置 CarPlay 返回键断开行为 [`34160965`](https://github.com/netcookies/isulewTools/commit/34160965)
+- 强制恢复 CarPlay 渲染 Surface [`fd60e12d`](https://github.com/netcookies/isulewTools/commit/fd60e12d)
+- 修复 CarPlay 渲染恢复与重启卡顿 [`d45720c0`](https://github.com/netcookies/isulewTools/commit/d45720c0)
+
+### Documentation
+- 记录 native Media3 兼容策略 [`fa8eb6f2`](https://github.com/netcookies/isulewTools/commit/fa8eb6f2)
+- 记录高通硬解裁剪设计边界 [`9cb62c6f`](https://github.com/netcookies/isulewTools/commit/9cb62c6f)
+- 补充高通 AVC 硬解排查边界 [`5bb8408a`](https://github.com/netcookies/isulewTools/commit/5bb8408a)
+- 记录 CarPlay 高通硬解排查经验 [`45daee29`](https://github.com/netcookies/isulewTools/commit/45daee29)
+
 ## v2.1.9-beta.11 (2026-06-21)
 
 ### Feature
