@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.13 (2026-06-24)
+
+### Feature
+- 优化 CarPlay 自动连接状态体验 [`5e447227`](https://github.com/netcookies/isulewTools/commit/5e447227)
+
+### Bug Fixes
+- 透传 CarPlay 视频色彩元数据 [`e82e07c9`](https://github.com/netcookies/isulewTools/commit/e82e07c9)
+- 完善 CarPlay 测试壳状态与退出断开 [`3e67d7b1`](https://github.com/netcookies/isulewTools/commit/3e67d7b1)
+- 收敛 CarPlay 重启与连接状态 [`b43a47ab`](https://github.com/netcookies/isulewTools/commit/b43a47ab)
+- 避免停止 adb daemon 时主线程自锁 [`d4cd3542`](https://github.com/netcookies/isulewTools/commit/d4cd3542)
+- 移除前台全屏监控配置 [`6732882f`](https://github.com/netcookies/isulewTools/commit/6732882f)
+- 保留视频就绪后的车机全屏请求 [`6f576848`](https://github.com/netcookies/isulewTools/commit/6f576848)
+- 收敛视频渲染稳定性 [`45560fcc`](https://github.com/netcookies/isulewTools/commit/45560fcc)
+- 调整哪吒 L CarPlay 状态栏有效高度 [`9640c872`](https://github.com/netcookies/isulewTools/commit/9640c872)
+
+### Documentation
+- 记录 CarPlay 调试经验 [`ef55f6c0`](https://github.com/netcookies/isulewTools/commit/ef55f6c0)
+
+### Refactor
+- 拆分用户服务生命周期协调器 [`ef848c05`](https://github.com/netcookies/isulewTools/commit/ef848c05)
+
 ## v2.1.9-beta.12 (2026-06-22)
 
 ### Bug Fixes
