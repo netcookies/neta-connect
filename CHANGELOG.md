@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.14 (2026-06-25)
+
+### Bug Fixes
+- 优化悬浮窗状态展示 [`26092bd3`](https://github.com/netcookies/isulewTools/commit/26092bd3)
+- 修复重连清理并统一 iAP2 backend 命名 [`25a59719`](https://github.com/netcookies/isulewTools/commit/25a59719)
+
 ## v2.1.9-beta.13 (2026-06-24)
 
 ### Feature
