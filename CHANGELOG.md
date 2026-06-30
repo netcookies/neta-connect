@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.15 (2026-06-29)
+
+### Feature
+- 统一投屏连接状态投影 [`dbe8f61c`](https://github.com/netcookies/isulewTools/commit/dbe8f61c)
+
+### Bug Fixes
+- 稳定重启与视频渲染诊断 [`ce8d891a`](https://github.com/netcookies/isulewTools/commit/ce8d891a)
+- 暴露 CarPlay MFi 认证失败状态 [`75fe2d74`](https://github.com/netcookies/isulewTools/commit/75fe2d74)
+- 修复 CarPlay 重连视频队列配置丢失 [`1929490b`](https://github.com/netcookies/isulewTools/commit/1929490b)
+- 返回时仅断开当前会话 [`70040436`](https://github.com/netcookies/isulewTools/commit/70040436)
+- 收敛生命周期与会话终止边界 [`bbd6f57b`](https://github.com/netcookies/isulewTools/commit/bbd6f57b)
+
+### Documentation
+- 记录 CarPlay 重连视频卡住判据 [`fd37ae29`](https://github.com/netcookies/isulewTools/commit/fd37ae29)
+
+### Chore
+- 记录 TextureView HEVC 花屏分析 [`4807c850`](https://github.com/netcookies/isulewTools/commit/4807c850)
+
 ## v2.1.9-beta.14 (2026-06-25)
 
 ### Bug Fixes
