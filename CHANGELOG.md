@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.16 (2026-06-30)
+
+### Bug Fixes
+- 修复 CarPlay 音频卡顿 [`27d30b36`](https://github.com/netcookies/isulewTools/commit/27d30b36)
+
 ## v2.1.9-beta.15 (2026-06-29)
 
 ### Feature
