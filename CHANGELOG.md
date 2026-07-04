@@ -6,6 +6,41 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.17 (2026-07-04)
+
+### Feature
+- 支持蓝牙回连与运行时配置 [`8f2edbaa`](https://github.com/netcookies/isulewTools/commit/8f2edbaa)
+- 支持 MFi 健康预检和主动蓝牙连接 [`2a9d70d7`](https://github.com/netcookies/isulewTools/commit/2a9d70d7)
+
+### Bug Fixes
+- 修复前台恢复黑屏 [`8e340ea2`](https://github.com/netcookies/isulewTools/commit/8e340ea2)
+- 收敛蓝牙重连与诊断清理 [`1185c9a9`](https://github.com/netcookies/isulewTools/commit/1185c9a9)
+- 完善 CarPlay 已知设备 RFCOMM 重连 [`01b347bf`](https://github.com/netcookies/isulewTools/commit/01b347bf)
+- 蓝牙重连前断开现有链路 [`5efe2ee6`](https://github.com/netcookies/isulewTools/commit/5efe2ee6)
+- 统一 CarPlay 蓝牙重连状态投影 [`a0bb70bb`](https://github.com/netcookies/isulewTools/commit/a0bb70bb)
+- 使用 raw Binder 触发蓝牙重连 [`6cca05bd`](https://github.com/netcookies/isulewTools/commit/6cca05bd)
+- 使用健康端点检查 MFi 服务 [`b36ab6a4`](https://github.com/netcookies/isulewTools/commit/b36ab6a4)
+- 保持投屏断开状态 [`c2db5338`](https://github.com/netcookies/isulewTools/commit/c2db5338)
+- 修复蓝牙重连与返回断开状态 [`6390c833`](https://github.com/netcookies/isulewTools/commit/6390c833)
+- 修复 CarPlay mDNS 回调重入死锁 [`4dfd86fc`](https://github.com/netcookies/isulewTools/commit/4dfd86fc)
+- FIX — 收敛 MFi native preflight 边界 [`f8012216`](https://github.com/netcookies/isulewTools/commit/f8012216)
+- 收口前后台恢复关键帧刷新 [`154a4761`](https://github.com/netcookies/isulewTools/commit/154a4761)
+- 支持点击关闭状态浮窗 [`d9f790d7`](https://github.com/netcookies/isulewTools/commit/d9f790d7)
+- 收口生产可用链路审查问题 [`58286a36`](https://github.com/netcookies/isulewTools/commit/58286a36)
+
+### Documentation
+- RECORD — 记录 MFi preflight 审查规则 [`b2165bbe`](https://github.com/netcookies/isulewTools/commit/b2165bbe)
+
+### Chore
+- GENERALIZE — 泛化 MFi preflight 边界模式 [`b457e354`](https://github.com/netcookies/isulewTools/commit/b457e354)
+- CONFIRM — 验证 MFi native preflight 修复 [`1569642e`](https://github.com/netcookies/isulewTools/commit/1569642e)
+- EXPLORE — 追踪 MFi native preflight 调用链 [`8ab01205`](https://github.com/netcookies/isulewTools/commit/8ab01205)
+- ARCHAEOLOGY — 梳理 MFi native preflight 历史 [`a4783d79`](https://github.com/netcookies/isulewTools/commit/a4783d79)
+- INTAKE — 初始化 MFi native preflight 审查 [`d2c97755`](https://github.com/netcookies/isulewTools/commit/d2c97755)
+
+### Refactor
+- 清理 Java MFi 证书探针 [`eed81dc3`](https://github.com/netcookies/isulewTools/commit/eed81dc3)
+
 ## v2.1.9-beta.16 (2026-06-30)
 
 ### Bug Fixes
