@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.18 (2026-07-04)
+
+### Feature
+- 优化 CarPlay 重连选择与诊断入口 [`d54f30a1`](https://github.com/netcookies/isulewTools/commit/d54f30a1)
+
+### Bug Fixes
+- 补齐 NativeInterface 内部类混淆保留 [`2fb427e7`](https://github.com/netcookies/isulewTools/commit/2fb427e7)
+
 ## v2.1.9-beta.17 (2026-07-04)
 
 ### Feature
