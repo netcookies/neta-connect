@@ -6,6 +6,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.20 (2026-07-07)
+
+### Feature
+- 支持 MFi auth 优选域名连接与直连 fallback [`9796072d`](https://github.com/netcookies/isulewTools/commit/9796072d)
+- 支持 TXT 下发 MFi TLS 路由元数据 [`9c66ecf8`](https://github.com/netcookies/isulewTools/commit/9c66ecf8)
+
+### Bug Fixes
+- 收敛关键帧恢复锁与重试窗口 [`b32bfaf1`](https://github.com/netcookies/isulewTools/commit/b32bfaf1)
+- 修复手动连接与视频关键帧恢复 [`5bc4a027`](https://github.com/netcookies/isulewTools/commit/5bc4a027)
+- 测试壳同步 TXT 驱动的 MFi 配置 [`c915ba54`](https://github.com/netcookies/isulewTools/commit/c915ba54)
+- 原生 MFi HTTPS 支持 TXT 路由与 no-SNI [`bc5132de`](https://github.com/netcookies/isulewTools/commit/bc5132de)
+- 同步特权服务已连接快路径状态 [`02b1e54a`](https://github.com/netcookies/isulewTools/commit/02b1e54a)
+
+### Documentation
+- 记录 MFi gateway no-SNI TXT 发布方案 [`f3368816`](https://github.com/netcookies/isulewTools/commit/f3368816)
+
+## v2.1.9-beta.19 (2026-07-06)
+
+### Feature
+- 接入 mfi auth gateway 并展示签名排队状态 [`c535357c`](https://github.com/netcookies/isulewTools/commit/c535357c)
+
+### Bug Fixes
+- 同步重连后的投屏状态 generation [`278d3cc9`](https://github.com/netcookies/isulewTools/commit/278d3cc9)
+- 收敛网络断线与渲染恢复 [`38147d45`](https://github.com/netcookies/isulewTools/commit/38147d45)
+- 收口 raw 协议诊断日志 gate [`fbfd597d`](https://github.com/netcookies/isulewTools/commit/fbfd597d)
+- 收口 deferred 运维与主题同步 [`4f0b490a`](https://github.com/netcookies/isulewTools/commit/4f0b490a)
+- 收口下载进度聚合与任务持久化 [`c2fe6494`](https://github.com/netcookies/isulewTools/commit/c2fe6494)
+- 收口 MFi auth TXT 动态发现 [`40b50c99`](https://github.com/netcookies/isulewTools/commit/40b50c99)
+
 ## v2.1.9-beta.18 (2026-07-04)
 
 ### Feature
