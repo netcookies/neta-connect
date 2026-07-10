@@ -6,6 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.21 (2026-07-10)
+
+### Feature
+- 支持 late-listener known peer 自动重连 [`e0294984`](https://github.com/netcookies/isulewTools/commit/e0294984)
+- 悬浮窗显示传输层 MFi 状态 [`b1ead038`](https://github.com/netcookies/isulewTools/commit/b1ead038)
+- 增强 CarPlay 重连与传输服务 [`9f987b30`](https://github.com/netcookies/isulewTools/commit/9f987b30)
+- 迁移远程安装到 Garage [`51809d51`](https://github.com/netcookies/isulewTools/commit/51809d51)
+- 增加 CarPlay 蓝牙分步诊断 [`1446f94c`](https://github.com/netcookies/isulewTools/commit/1446f94c)
+
+### Bug Fixes
+- 保留蓝牙设备完整名称 [`94b72127`](https://github.com/netcookies/isulewTools/commit/94b72127)
+- 修复 ADB 固定端口多连接转发 [`08ebc5e4`](https://github.com/netcookies/isulewTools/commit/08ebc5e4)
+- 收口 RAOP 媒体线程生命周期竞态 [`387c3ebb`](https://github.com/netcookies/isulewTools/commit/387c3ebb)
+- 校验 AP 配置并映射 native 网络模式 [`870d251f`](https://github.com/netcookies/isulewTools/commit/870d251f)
+- 完善蓝牙重连触发入口 [`29561853`](https://github.com/netcookies/isulewTools/commit/29561853)
+- 将 FAB 调整为断开重建后重连 [`011a74ee`](https://github.com/netcookies/isulewTools/commit/011a74ee)
+- 传递 iAP2 网络供给模式 [`e0fcbe22`](https://github.com/netcookies/isulewTools/commit/e0fcbe22)
+- 收紧混淆保留并脱敏 Wi-Fi 日志 [`b31f45ef`](https://github.com/netcookies/isulewTools/commit/b31f45ef)
+- 调整 RAOP teardown 销毁顺序 [`aaa6e10d`](https://github.com/netcookies/isulewTools/commit/aaa6e10d)
+- 抽共享 RFCOMM 监听并移除 EXT 入口 [`670dbd0b`](https://github.com/netcookies/isulewTools/commit/670dbd0b)
+- 收敛 iAP2 蓝牙包长与身份诊断 [`be547127`](https://github.com/netcookies/isulewTools/commit/be547127)
+- 透传 TaskStack 监听启动结果 [`c446ba44`](https://github.com/netcookies/isulewTools/commit/c446ba44)
+- 为 VHAL 手动重连接入防抖 [`719d4095`](https://github.com/netcookies/isulewTools/commit/719d4095)
+- 收敛蓝牙重连与 native start 失败反馈 [`6b321d73`](https://github.com/netcookies/isulewTools/commit/6b321d73)
+- 重发 decoder 重建后的关键帧请求 [`7e6a6b4b`](https://github.com/netcookies/isulewTools/commit/7e6a6b4b)
+- 增加 native MFi auth 重试窗口 [`30fbe570`](https://github.com/netcookies/isulewTools/commit/30fbe570)
+- 保留 MFi fallback endpoint 元数据 [`9ebc3a23`](https://github.com/netcookies/isulewTools/commit/9ebc3a23)
+
+### Documentation
+- 记录网络模式与 RFCOMM 方向调研 [`02e3cec0`](https://github.com/netcookies/isulewTools/commit/02e3cec0)
+- 精简 CarPlay 诊断知识条目 [`fd992fb4`](https://github.com/netcookies/isulewTools/commit/fd992fb4)
+
 ## v2.1.9-beta.20 (2026-07-07)
 
 ### Feature
