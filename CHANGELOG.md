@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.22 (2026-07-11)
+
+### Bug Fixes
+- 强化 CarPlay 诊断分享隐私与状态隔离 [`78b3c3d3`](https://github.com/netcookies/isulewTools/commit/78b3c3d3)
+
 ## v2.1.9-beta.21 (2026-07-10)
 
 ### Feature
