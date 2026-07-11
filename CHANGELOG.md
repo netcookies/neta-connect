@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.23 (2026-07-11)
+
+### Feature
+- 实现强制重连阶梯策略 [`15f3337f`](https://github.com/netcookies/isulewTools/commit/15f3337f)
+
+### Bug Fixes
+- 补齐热点 channel 解析和配置校验 [`67f48b41`](https://github.com/netcookies/isulewTools/commit/67f48b41)
+- 保留 iAP2 等待手机状态 [`41d44a75`](https://github.com/netcookies/isulewTools/commit/41d44a75)
+
 ## v2.1.9-beta.22 (2026-07-11)
 
 ### Bug Fixes
