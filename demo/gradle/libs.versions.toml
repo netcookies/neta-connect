@@ -15,7 +15,7 @@ javaVersion = "11"
 # Application Versioning
 # ============================================================
 appVersionCode = "158"
-appVersionName = "2.1.9-beta.23"
+appVersionName = "2.1.9-beta.24"
 minCompatibleBridgeVersion = "2.1.7"
 
 # ============================================================
