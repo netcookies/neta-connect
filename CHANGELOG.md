@@ -6,6 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.24 (2026-07-11)
+
+### Feature
+- 增加自动全屏开关 [`9991db0f`](https://github.com/netcookies/isulewTools/commit/9991db0f)
+- 增加屏幕分辨率诊断入口 [`a9259875`](https://github.com/netcookies/isulewTools/commit/a9259875)
+
+### Bug Fixes
+- 优化蓝牙诊断单步断开流程 [`a11c9cad`](https://github.com/netcookies/isulewTools/commit/a11c9cad)
+- 持久化自动全屏恢复状态 [`7f64f00e`](https://github.com/netcookies/isulewTools/commit/7f64f00e)
+- 优化重连反馈与心跳去重 [`37d77b4e`](https://github.com/netcookies/isulewTools/commit/37d77b4e)
+
+### Documentation
+- 记录 iOS15 等待投屏调研 [`54ed4cd4`](https://github.com/netcookies/isulewTools/commit/54ed4cd4)
+
+### Refactor
+- 统一一键重连文案 [`5db9fc04`](https://github.com/netcookies/isulewTools/commit/5db9fc04)
+
 ## v2.1.9-beta.23 (2026-07-11)
 
 ### Feature
