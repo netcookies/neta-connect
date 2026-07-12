@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.25 (2026-07-12)
+
+### Feature
+- 按车型配置自动分辨率 [`803de910`](https://github.com/netcookies/isulewTools/commit/803de910)
+- 增加 GT CarPlay 蓝牙诊断 [`edbd6e3b`](https://github.com/netcookies/isulewTools/commit/edbd6e3b)
+
+### Documentation
+- 记录车机设备视口矩阵 [`854f4671`](https://github.com/netcookies/isulewTools/commit/854f4671)
+
+### Refactor
+- 收起 GT 专用诊断入口 [`dca24cac`](https://github.com/netcookies/isulewTools/commit/dca24cac)
+
 ## v2.1.9-beta.24 (2026-07-11)
 
 ### Feature
