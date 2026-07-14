@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.27 (2026-07-14)
+
+### Feature
+- 上报设备硬件与车辆信息 [`c3eeedcf`](https://github.com/netcookies/isulewTools/commit/c3eeedcf)
+- 拆分 app 更新 bootstrap 授权 [`93478a18`](https://github.com/netcookies/isulewTools/commit/93478a18)
+- 接入 Garage App 更新分发链路 [`c498e184`](https://github.com/netcookies/isulewTools/commit/c498e184)
+- 提示 iPhone 热点误用风险 [`2967be68`](https://github.com/netcookies/isulewTools/commit/2967be68)
+
+### Bug Fixes
+- 脱敏蓝牙 peer 日志 [`28901863`](https://github.com/netcookies/isulewTools/commit/28901863)
+- 限定 active ACL 重连目标 [`563321ec`](https://github.com/netcookies/isulewTools/commit/563321ec)
+- 同步特权连接语义状态 [`b87dcebf`](https://github.com/netcookies/isulewTools/commit/b87dcebf)
+- 按可见栏动态计算自动分辨率 [`711d9c30`](https://github.com/netcookies/isulewTools/commit/711d9c30)
+
+### Chore
+- 统一 app-gateway 与 files 域名 [`2b73b5fc`](https://github.com/netcookies/isulewTools/commit/2b73b5fc)
+
+### Refactor
+- 清理 GT 专项蓝牙诊断入口 [`56bbe9ec`](https://github.com/netcookies/isulewTools/commit/56bbe9ec)
+- 调整检查更新卡片状态展示 [`b494c983`](https://github.com/netcookies/isulewTools/commit/b494c983)
+
 ## v2.1.9-beta.25 (2026-07-12)
 
 ### Feature
