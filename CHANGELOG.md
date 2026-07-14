@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Bug Fixes
+- 允许重复发布同步公开镜像 [`a137857d`](https://github.com/netcookies/isulewTools/commit/a137857d)
+- 直连上传 app 更新存储 [`b9c03972`](https://github.com/netcookies/isulewTools/commit/b9c03972)
+
 ## v2.1.9-beta.27 (2026-07-14)
 
 ### Feature
