@@ -6,9 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.28 (2026-07-14)
+
 ### Bug Fixes
+- 收口 CarPlay 协议模式与快照下发 [`38f584ab`](https://github.com/netcookies/isulewTools/commit/38f584ab)
+- 收口协议能力与投屏启动时序 [`584ce332`](https://github.com/netcookies/isulewTools/commit/584ce332)
+- 避免多 iPhone 场景盲连 [`146397d5`](https://github.com/netcookies/isulewTools/commit/146397d5)
 - 允许重复发布同步公开镜像 [`a137857d`](https://github.com/netcookies/isulewTools/commit/a137857d)
 - 直连上传 app 更新存储 [`b9c03972`](https://github.com/netcookies/isulewTools/commit/b9c03972)
+
+### Refactor
+- 下载与媒体链路接入 native HTTP [`062575b3`](https://github.com/netcookies/isulewTools/commit/062575b3)
 
 ## v2.1.9-beta.27 (2026-07-14)
 
