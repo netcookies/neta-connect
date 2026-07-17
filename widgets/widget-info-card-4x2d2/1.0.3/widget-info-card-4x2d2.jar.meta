@@ -3,17 +3,17 @@
   "filename": "widget-info-card-4x2d2.jar",
   "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x2d2/1.0.3/widget-info-card-4x2d2.jar",
   "full_file_available": true,
-  "total_size": 22678,
-  "total_sha256": "dfc859c4933dc3ca16fee4970b3eccd5c4dda66d6e270e5fa0cd9cbd9800ef0f",
+  "total_size": 22671,
+  "total_sha256": "1c770251e6862f46cfd46a9621b237c540273d318529755c17dbb179f0926167",
   "part_count": 1,
-  "part_size": 22678,
+  "part_size": 22671,
   "parts": [
     {
       "index": 1,
       "filename": "widget-info-card-4x2d2.jar.part000",
       "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x2d2/1.0.3/widget-info-card-4x2d2.jar",
-      "size": 22678,
-      "sha256": "dfc859c4933dc3ca16fee4970b3eccd5c4dda66d6e270e5fa0cd9cbd9800ef0f"
+      "size": 22671,
+      "sha256": "1c770251e6862f46cfd46a9621b237c540273d318529755c17dbb179f0926167"
     }
   ]
 }
