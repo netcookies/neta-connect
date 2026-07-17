@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.30 (2026-07-18)
+
+### Feature
+- 增加重连中的状态悬浮窗 [`d211a892`](https://github.com/netcookies/isulewTools/commit/d211a892)
+
+### Bug Fixes
+- 修复安装失败误判与 bridge 重启循环 [`471781a4`](https://github.com/netcookies/isulewTools/commit/471781a4)
+- 收敛小组件发布与 release gate [`5ac33ba5`](https://github.com/netcookies/isulewTools/commit/5ac33ba5)
+- 修复小组件发布漏检和 release gate [`173e2738`](https://github.com/netcookies/isulewTools/commit/173e2738)
+- 修复 Now Playing 状态导致方控失效 [`0e49fe25`](https://github.com/netcookies/isulewTools/commit/0e49fe25)
+- 修复静态测试音初始化误判 [`019e863e`](https://github.com/netcookies/isulewTools/commit/019e863e)
+
 ## v2.1.9-beta.29 (2026-07-17)
 
 ### Feature
