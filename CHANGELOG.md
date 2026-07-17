@@ -6,6 +6,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.29 (2026-07-17)
+
+### Feature
+- 更新应用与 CarPlay 图标 [`3ac40f81`](https://github.com/netcookies/isulewTools/commit/3ac40f81)
+- 增加独立桌面图标壳应用 [`a7bdf108`](https://github.com/netcookies/isulewTools/commit/a7bdf108)
+- 增加音频路由设备测试音 [`3c65d646`](https://github.com/netcookies/isulewTools/commit/3c65d646)
+- 完善媒体身份与多语义音频路由 [`d72df742`](https://github.com/netcookies/isulewTools/commit/d72df742)
+- 添加系统性能监控小组件 [`142fe160`](https://github.com/netcookies/isulewTools/commit/142fe160)
+- 增加独立图标与快速连接入口 [`5ee6818f`](https://github.com/netcookies/isulewTools/commit/5ee6818f)
+- 增加 decoder health 恢复信号 [`664849ff`](https://github.com/netcookies/isulewTools/commit/664849ff)
+
+### Bug Fixes
+- 瘦身 aux 诊断并保留 teardown 路由证据 [`1d564117`](https://github.com/netcookies/isulewTools/commit/1d564117)
+- 修复蓝牙权限与 Compose locale 检查 [`bb27c984`](https://github.com/netcookies/isulewTools/commit/bb27c984)
+- 为 aux 段尾增加安全淡出 [`4e4a913c`](https://github.com/netcookies/isulewTools/commit/4e4a913c)
+- 提升 HZEP32 远程安装回退可靠性 [`8950e7dc`](https://github.com/netcookies/isulewTools/commit/8950e7dc)
+- 收紧 6666 安装回执兜底 [`127d1abb`](https://github.com/netcookies/isulewTools/commit/127d1abb)
+- 暂停多窗口控件显隐广播 [`f6f55e88`](https://github.com/netcookies/isulewTools/commit/f6f55e88)
+- 修正响应体首字节丢失 [`1f3cb89f`](https://github.com/netcookies/isulewTools/commit/1f3cb89f)
+- 增加视频码流损坏关键帧恢复 [`9cc139bc`](https://github.com/netcookies/isulewTools/commit/9cc139bc)
+- 拆分 Dock 与导航栏系统栏恢复 [`575dc1b9`](https://github.com/netcookies/isulewTools/commit/575dc1b9)
+
+### Documentation
+- 记录头枕声道冲击声调查 [`af49149d`](https://github.com/netcookies/isulewTools/commit/af49149d)
+- 记录低分辨率增强研究结论 [`3bcbc11b`](https://github.com/netcookies/isulewTools/commit/3bcbc11b)
+
+### Refactor
+- 明确投屏显示模式文案 [`cefd8bc0`](https://github.com/netcookies/isulewTools/commit/cefd8bc0)
+
 ## v2.1.9-beta.28 (2026-07-14)
 
 ### Bug Fixes
