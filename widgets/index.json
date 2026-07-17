@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-25T10:56:03Z",
+  "generatedAt": "2026-07-17T15:16:54Z",
   "widgets": [
     {
       "id": "widget-arc-gauge",
@@ -56,8 +56,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-arc-gauge/1.0.7/widget-arc-gauge.jar",
           "changelog": "版本 1.0.7",
           "minAppVersion": "2.1.7",
-          "fileSize": 28869,
-          "sha256": "1aee9d4667581dc135ba1d668a0872968b50970ce2568006f3d0614851f90e88"
+          "fileSize": 28814,
+          "sha256": "eea8553de5e8ee9b6cb69a42cdc3b502b2090a1fabf26bf43da0958958412547"
         }
       ]
     },
@@ -106,8 +106,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-bar-chart/1.0.3/widget-bar-chart.jar",
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
-          "fileSize": 29614,
-          "sha256": "44db561ad5393dffb270e2d119847a4f158254d0947cb96f0f145ab3ff4217ab"
+          "fileSize": 29571,
+          "sha256": "642170c296b81f0f3bc76b7249067bbbb5fd3ab19f713dcd6e6ae01afbc4b243"
         }
       ]
     },
@@ -174,8 +174,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery/1.0.7/widget-battery.jar",
           "changelog": "版本 1.0.7",
           "minAppVersion": "2.1.7",
-          "fileSize": 23088,
-          "sha256": "aae2bb8fc27109a50c6f1c4a0d420e951ce7ddf164f5f8b675e28ac53550cd3b"
+          "fileSize": 23055,
+          "sha256": "ed69836e156bef1382480e93b6441a95cf4d270a4cecb79bf860e367550279e1"
         }
       ]
     },
@@ -332,8 +332,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-battery-demo/1.1.7/widget-battery-demo.jar",
           "changelog": "版本 1.1.7",
           "minAppVersion": "2.1.7",
-          "fileSize": 13025,
-          "sha256": "2e9cef772b5cb49e3dce8dd7f9ac19cd5886a1635984b1a4abad5536342f9141"
+          "fileSize": 13024,
+          "sha256": "db5599abdd1ad3147fb51c24d50953e4b9029fecd46e9dea1129c76c1d1d25a4"
         }
       ]
     },
@@ -373,8 +373,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-gear/1.0.3/widget-gear.jar",
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
-          "fileSize": 18024,
-          "sha256": "99142105f6dfff0363cd6923011d7ef4f6e67ef45ff19c40ce5fdb85562ce611"
+          "fileSize": 17983,
+          "sha256": "567c7d26ca249fc4b418deefe781586794d63d2846c335b3da86bce3aa3a733f"
         }
       ]
     },
@@ -423,8 +423,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x2d2/1.0.3/widget-info-card-4x2d2.jar",
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
-          "fileSize": 22678,
-          "sha256": "dfc859c4933dc3ca16fee4970b3eccd5c4dda66d6e270e5fa0cd9cbd9800ef0f"
+          "fileSize": 22671,
+          "sha256": "1c770251e6862f46cfd46a9621b237c540273d318529755c17dbb179f0926167"
         }
       ]
     },
@@ -482,8 +482,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d3/1.0.4/widget-info-card-4x3d3.jar",
           "changelog": "版本 1.0.4",
           "minAppVersion": "2.1.7",
-          "fileSize": 23592,
-          "sha256": "7c3320a14acb15c499239cd02fc93d6e171150c71d30def968ae56a19a500e3b"
+          "fileSize": 23552,
+          "sha256": "fb42e5171c0ace822f01bdd8da7f7f1cf851150a8e829400f9ee73f6375b3be7"
         }
       ]
     },
@@ -541,8 +541,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-card-4x3d4/1.0.4/widget-info-card-4x3d4.jar",
           "changelog": "版本 1.0.4",
           "minAppVersion": "2.1.7",
-          "fileSize": 24931,
-          "sha256": "d1004ce4a9aa0219648140a97bcdfd41eaf1a9fbf5efa542e66b3b1f6fc3ec4b"
+          "fileSize": 24892,
+          "sha256": "4de17feef65929d345c7e719e409b5727ad9c7d9f4ce72da47d4bf78de2cc441"
         }
       ]
     },
@@ -600,8 +600,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-info-chart/1.0.4/widget-info-chart.jar",
           "changelog": "版本 1.0.4",
           "minAppVersion": "2.1.7",
-          "fileSize": 30953,
-          "sha256": "c12fd168102b554ea96f48c113f2b5def2f0ef366e69fae1504a94c24e7db5c5"
+          "fileSize": 30915,
+          "sha256": "0025edefa98789cb4363f51c6267fd1bdeb471d91356c161e1c5168bae6f19e5"
         }
       ]
     },
@@ -650,8 +650,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-line-chart/1.0.3/widget-line-chart.jar",
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
-          "fileSize": 32713,
-          "sha256": "b45dcaa40bb2293a80c7f2078b3a2bc2119919dc4aa1261dd7fc4ca6d3171648"
+          "fileSize": 32634,
+          "sha256": "1b1723783ab02562b6c084a7e480f4172425ece36d3570195fddce5a1b1d1093"
         }
       ]
     },
@@ -691,8 +691,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-mini-card/1.0.3/widget-mini-card.jar",
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
-          "fileSize": 21719,
-          "sha256": "a1cda3887ad1b35a3a830929124007ce79eb79a760f86d2909c538c9e97ec1da"
+          "fileSize": 21714,
+          "sha256": "51692c8407c7030ac6d2a8ccdbe25cacdaccc8077beee4ddec85e88b82ec42bc"
         }
       ]
     },
@@ -741,8 +741,31 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-progress-bar/1.0.5/widget-progress-bar.jar",
           "changelog": "版本 1.0.5",
           "minAppVersion": "2.1.7",
-          "fileSize": 20689,
-          "sha256": "f3befa4fb06fad9441d3236b2a1fd62f18560f64b2725b4f83215345b6663d05"
+          "fileSize": 20643,
+          "sha256": "7466645ec63f3f3240a88230a8c9bb5160c2ad8566c081b390a8dd0c9b9aed86"
+        }
+      ]
+    },
+    {
+      "id": "widget-system-performance",
+      "displayName": "系统性能",
+      "description": "60dp 横向系统性能长条，显示 CPU、内存、磁盘 IO 和 U 盘 IO",
+      "author": "官方",
+      "category": "系统",
+      "icon": null,
+      "color": null,
+      "minAppVersion": "2.1.7",
+      "latestVersion": "1.0.0",
+      "status": "STABLE",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-07-17",
+          "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-system-performance/1.0.0/widget-system-performance.jar",
+          "changelog": "版本 1.0.0",
+          "minAppVersion": "2.1.7",
+          "fileSize": 22191,
+          "sha256": "8fe9f05647c2f97be4047ee4ec83dd0ba800d7131259dba081866bf2a1352f05"
         }
       ]
     },
@@ -800,8 +823,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-temperature/1.0.6/widget-temperature.jar",
           "changelog": "版本 1.0.6",
           "minAppVersion": "2.1.7",
-          "fileSize": 22094,
-          "sha256": "959ce9b67c6f9a4dcc060fa512abc959531edaf201f5a1998ded9bc02b3f1ac4"
+          "fileSize": 22069,
+          "sha256": "234e309548920878a74bc5c302bb8a3b1c13abc8af75dcdf76e15b90ca00fc20"
         }
       ]
     },
@@ -895,8 +918,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.1.2/widget-tire-pressure.jar",
           "changelog": "版本 1.1.2",
           "minAppVersion": "2.1.7",
-          "fileSize": 31100,
-          "sha256": "c89978b296681ac291ee3aeec4fae3280c2a9df3d18910e7c8d4d394622fbf5f"
+          "fileSize": 31057,
+          "sha256": "ada8cad3b83e00439c6496b7d9af6c4cf651128e18ae6b15bd4ae352f17f0d53"
         }
       ]
     },
@@ -936,8 +959,8 @@
           "downloadUrl": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-vehicle-lights/1.0.3/widget-vehicle-lights.jar",
           "changelog": "版本 1.0.3",
           "minAppVersion": "2.1.7",
-          "fileSize": 25281,
-          "sha256": "3ae17dcf9b3564162024676708a36fe7bf3eb289f7cd818fe17605810580acdd"
+          "fileSize": 25250,
+          "sha256": "d57a54d68c859b5bb945e3e3d490363c728d0e3a75d9e5aa90775d92b241afac"
         }
       ]
     }
