@@ -293,7 +293,7 @@ data class ThemeAwareColor(
  * ```
  *
  * @param key 参数键
- * @param isDarkTheme 是否为暗色主题（通常从 ServiceStateStore.isDarkTheme 或 LocalWidgetDarkTheme 获取）
+ * @param isDarkTheme 是否为暗色主题（通常从主题状态源或 `LocalWidgetDarkTheme` 获取）
  * @param defaultColor 默认颜色（当解析失败或值不存在时使用）
  * @return Color 对象（根据当前主题返回对应颜色）
  */

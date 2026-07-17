@@ -12,6 +12,7 @@ import com.neta.widgets.infocard4x3d4.InfoCard4x3d4WidgetPlugin
 import com.neta.widgets.linechart.LineChartWidgetPlugin
 import com.neta.widgets.minicard.MiniCardWidgetPlugin
 import com.neta.widgets.progressbar.ProgressBarWidgetPlugin
+import com.neta.widgets.systemperformance.SystemPerformanceWidgetPlugin
 import com.neta.widgets.temperature.TemperatureWidgetPlugin
 import com.neta.widgets.tirepressure.TirePressureWidgetPlugin
 import com.neta.widgets.vehiclelights.VehicleLightsWidgetPlugin
@@ -48,6 +49,7 @@ class BatteryWidgetPluginContractTest {
     private fun allPlugins(): List<WidgetPlugin> = listOf(
         BatteryWidgetPlugin(),
         ProgressBarWidgetPlugin(),
+        SystemPerformanceWidgetPlugin(),
         ArcGaugeWidgetPlugin(),
         BarChartWidgetPlugin(),
         BatteryDemoWidgetPlugin(),
