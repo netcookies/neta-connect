@@ -3,17 +3,17 @@
   "filename": "widget-line-chart.jar",
   "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-line-chart/1.0.3/widget-line-chart.jar",
   "full_file_available": true,
-  "total_size": 32713,
-  "total_sha256": "b45dcaa40bb2293a80c7f2078b3a2bc2119919dc4aa1261dd7fc4ca6d3171648",
+  "total_size": 32634,
+  "total_sha256": "1b1723783ab02562b6c084a7e480f4172425ece36d3570195fddce5a1b1d1093",
   "part_count": 1,
-  "part_size": 32713,
+  "part_size": 32634,
   "parts": [
     {
       "index": 1,
       "filename": "widget-line-chart.jar.part000",
       "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-line-chart/1.0.3/widget-line-chart.jar",
-      "size": 32713,
-      "sha256": "b45dcaa40bb2293a80c7f2078b3a2bc2119919dc4aa1261dd7fc4ca6d3171648"
+      "size": 32634,
+      "sha256": "1b1723783ab02562b6c084a7e480f4172425ece36d3570195fddce5a1b1d1093"
     }
   ]
 }
