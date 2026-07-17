@@ -1,0 +1,12 @@
+{
+  "id": "widget-system-performance",
+  "displayName": "系统性能",
+  "description": "60dp 横向系统性能长条，显示 CPU、内存、磁盘 IO 和 U 盘 IO",
+  "author": "官方",
+  "category": "系统",
+  "minAppVersion": "2.1.7",
+  "permissions": [],
+  "screenshots": [],
+  "repository": "https://github.com/netcookies/neta-connect",
+  "supportUrl": "https://github.com/netcookies/neta-connect/issues"
+}
