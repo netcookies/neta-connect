@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.31 (2026-07-22)
+
+### Feature
+- 支持 disableBluetooth 断开蓝牙链路 [`c8594f84`](https://github.com/netcookies/isulewTools/commit/c8594f84)
+- 添加画面修复轮询选项 [`9804d750`](https://github.com/netcookies/isulewTools/commit/9804d750)
+- 支持配置状态栏位置 [`85c08f00`](https://github.com/netcookies/isulewTools/commit/85c08f00)
+- 支持 CarPlay 自动日夜模式 [`af3ec821`](https://github.com/netcookies/isulewTools/commit/af3ec821)
+
+### Bug Fixes
+- 修复导航播报后主声道无声 [`04b74754`](https://github.com/netcookies/isulewTools/commit/04b74754)
+- 固化默认音频路由并收紧配置解析 [`47c79a2f`](https://github.com/netcookies/isulewTools/commit/47c79a2f)
+
 ## v2.1.9-beta.30 (2026-07-18)
 
 ### Feature
