@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.33 (2026-07-22)
+
+### Feature
+- 支持已下载 APK 静默安装 [`c806c70a`](https://github.com/netcookies/isulewTools/commit/c806c70a)
+
+### Bug Fixes
+- 恢复 360 返回后的投屏前台 [`a6162cc7`](https://github.com/netcookies/isulewTools/commit/a6162cc7)
+
 ## v2.1.9-beta.32 (2026-07-22)
 
 ### Bug Fixes
