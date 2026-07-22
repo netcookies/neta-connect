@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.32 (2026-07-22)
+
+### Bug Fixes
+- 解耦 forceKeyFrame 与投屏生命周期 [`4dd90c05`](https://github.com/netcookies/isulewTools/commit/4dd90c05)
+- 保持导航声道语义并禁用 duck 调用 [`59905c91`](https://github.com/netcookies/isulewTools/commit/59905c91)
+- 默认关闭 disableBluetooth [`25ba09ac`](https://github.com/netcookies/isulewTools/commit/25ba09ac)
+- 分离 forceKeyFrame 修复与全屏编排 [`7b26da0e`](https://github.com/netcookies/isulewTools/commit/7b26da0e)
+- 修正导航声道默认路由迁移 [`5126b798`](https://github.com/netcookies/isulewTools/commit/5126b798)
+
 ## v2.1.9-beta.31 (2026-07-22)
 
 ### Feature
