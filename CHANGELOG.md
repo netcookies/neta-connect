@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.1.9-beta.34 (2026-07-23)
+
+### Feature
+- 支持 Siri 输入路由配置与麦克风测试 [`b6b8462d`](https://github.com/netcookies/isulewTools/commit/b6b8462d)
+
+### Bug Fixes
+- 稳定音频焦点和 360 返回恢复 [`6a8c0564`](https://github.com/netcookies/isulewTools/commit/6a8c0564)
+
+### Documentation
+- 精简知识库上下文 [`83646f25`](https://github.com/netcookies/isulewTools/commit/83646f25)
+
 ## v2.1.9-beta.33 (2026-07-22)
 
 ### Feature
