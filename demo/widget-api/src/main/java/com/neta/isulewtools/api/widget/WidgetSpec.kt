@@ -1,0 +1,219 @@
+package com.neta.isulewtools.api.widget
+
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+
+/**
+ * Widget类型描述（静态元信息/注册）
+ *
+ * 注意：所有小组件自动强制支持 scale（缩放）和 alpha（透明度）参数
+ * 如果 paramSchema 中未包含这两个参数，构造函数会自动注入
+ */
+open class WidgetSpec @JvmOverloads constructor(
+    val type: String,                    // 类型唯一标识
+    val displayName: String,             // UI名称
+    paramSchema: List<WidgetParamDesc>,  // 参数schema，定义配置表单字段
+    val contentComposable: @Composable (WidgetConfig) -> Unit, // Widget内容渲染入口
+    val color: Color = Color(0xFF6200EE),        // Widget类型颜色（用于卡片背景）
+    val icon: ImageVector? = null,                 // Widget类型图标
+    val recommendedGrid: Pair<Int, Int>? = null  // 推荐网格大小: (gridWidth, gridHeight)，用于仪表盘默认网格
+) {
+    // 自动注入 scale 和 alpha 参数（如果不存在）
+    val paramSchema: List<WidgetParamDesc> = ensureRequiredParams(paramSchema)
+
+    companion object {
+        /**
+         * 确保参数列表包含必需的 scale 和 alpha 参数
+         */
+        private fun ensureRequiredParams(params: List<WidgetParamDesc>): List<WidgetParamDesc> {
+            val hasScale = params.any { it.key == "scale" && it.type == WidgetParamType.SCALE }
+            val hasAlpha = params.any { it.key == "alpha" && it.type == WidgetParamType.ALPHA }
+
+            // 如果都存在，直接返回
+            if (hasScale && hasAlpha) {
+                return params
+            }
+
+            // 准备要注入的参数
+            val requiredParams = mutableListOf<WidgetParamDesc>()
+
+            if (!hasScale) {
+                requiredParams.add(
+                    WidgetParamDesc(
+                        key = "scale",
+                        label = "缩放",
+                        type = WidgetParamType.SCALE,
+                        defaultValue = 1f,
+                        required = false,
+                        description = "小组件缩放比例（自动注入）"
+                    )
+                )
+            }
+
+            if (!hasAlpha) {
+                requiredParams.add(
+                    WidgetParamDesc(
+                        key = "alpha",
+                        label = "透明度",
+                        type = WidgetParamType.ALPHA,
+                        defaultValue = 1f,
+                        required = false,
+                        description = "小组件透明度（自动注入）"
+                    )
+                )
+            }
+
+            // 将必需参数添加到列表开头
+            return requiredParams + params
+        }
+    }
+}
+
+/**
+ * Widget参数描述/schema
+ */
+data class WidgetParamDesc(
+    val key: String,                     // 参数唯一key
+    val label: String,                   // 显示标签
+    val type: WidgetParamType,           // 类型
+    val defaultValue: Any? = null,       // 默认值
+    val options: List<Any>? = null,       // 可选项（下拉枚举等）
+    val required: Boolean = false, // 新增必填字段标识
+    val description: String? = null,
+    val visibleWhen: Pair<String, Any>? = null,  // 单条件显示：当指定参数等于指定值时才显示
+    val visibleWhenAll: List<Pair<String, Any>>? = null  // 多条件显示：当所有指定参数都等于对应值时才显示（AND逻辑）
+) {
+    /**
+     * 向后兼容的构造函数（不带 visibleWhenAll 参数）
+     */
+    @JvmOverloads
+    constructor(
+        key: String,
+        label: String,
+        type: WidgetParamType,
+        defaultValue: Any? = null,
+        options: List<Any>? = null,
+        required: Boolean = false,
+        description: String? = null,
+        visibleWhen: Pair<String, Any>? = null
+    ) : this(key, label, type, defaultValue, options, required, description, visibleWhen, null)
+    companion object {
+        /**
+         * 创建 DIVIDER 类型的参数描述
+         * DIVIDER 只用于 UI 分组显示,会自动生成唯一的 key
+         *
+         * 使用示例:
+         * ```
+         * WidgetParamDesc.divider("基础外观")
+         * ```
+         */
+        fun divider(label: String): WidgetParamDesc {
+            return WidgetParamDesc(
+                key = "divider_${label.hashCode()}", // 自动生成唯一 key
+                label = label,
+                type = WidgetParamType.DIVIDER
+            )
+        }
+
+        /**
+         * 使用 DSL 构建参数列表
+         *
+         * 使用示例:
+         * ```
+         * paramSchema = WidgetParamDesc.buildParams {
+         *     group("基础外观") {
+         *         +WidgetParamDesc(P.TEXT.key, "文字", WidgetParamType.STRING, P.TEXT.default)
+         *         +WidgetParamDesc(P.COLOR.key, "颜色", WidgetParamType.COLOR, P.COLOR.default.toHexString())
+         *     }
+         *
+         *     group("点击事件") {
+         *         +WidgetParamDesc(P.CLICK_PROPERTY, "车辆属性", WidgetParamType.VHAL_PROPERTY, null)
+         *     }
+         * }
+         * ```
+         */
+        fun buildParams(block: ParamListBuilder.() -> Unit): List<WidgetParamDesc> {
+            return ParamListBuilder().apply(block).build()
+        }
+    }
+}
+
+/**
+ * 参数列表构建器
+ * 提供语义化的 DSL 来构建 paramSchema
+ */
+class ParamListBuilder {
+    private val params = mutableListOf<WidgetParamDesc>()
+
+    /**
+     * 创建一个参数分组
+     * @param label 分组标题
+     * @param block 分组内的参数定义
+     */
+    fun group(label: String, block: ParamListBuilder.() -> Unit) {
+        params.add(WidgetParamDesc.divider(label))
+        block()
+    }
+
+    /**
+     * 添加参数的操作符重载
+     * 使用 +WidgetParamDesc(...) 的语法添加参数
+     */
+    operator fun WidgetParamDesc.unaryPlus() {
+        params.add(this)
+    }
+
+    internal fun build(): List<WidgetParamDesc> = params.toList()
+}
+
+enum class WidgetParamType {
+    COLOR, FLOAT, INT, STRING, ENUM, DATA_SOURCE, BOOL, SCALE, ALPHA, DIVIDER, ICON, VHAL_PROPERTY
+}
+
+/**
+ * Widget实例配置
+ */
+data class WidgetConfig(
+    val params: Map<String, Any?> = emptyMap()
+)
+
+/**
+ * VHAL 属性（包含属性ID和座舱ID）
+ */
+data class VhalProperty(
+    val propertyId: Int,
+    val areaId: Int
+)
+
+enum class ContainerType {
+    FLOATING_WINDOW, // 悬浮窗
+    DASHBOARD // 仪表盘
+}
+
+val containerNameMap = mapOf(
+    ContainerType.DASHBOARD to "仪表盘",
+    ContainerType.FLOATING_WINDOW to "悬浮窗"
+)
+
+val containerDescriptionMap = mapOf(
+    ContainerType.DASHBOARD to "网格布局的仪表盘容器",
+    ContainerType.FLOATING_WINDOW to "独立悬浮的窗口容器"
+)
+
+/**
+ * Widget显示模式
+ */
+enum class WidgetVisibilityMode {
+    ALWAYS_SHOW,        // 总是显示
+    SHOW_ON_PACKAGES,   // 按需显示（根据包名列表）
+    HIDE_ON_PACKAGES,   // 按需隐藏（根据包名列表）
+    NEVER_SHOW          // 禁止显示
+}
+
+val visibilityModeNameMap = mapOf(
+    WidgetVisibilityMode.ALWAYS_SHOW to "总是显示",
+    WidgetVisibilityMode.SHOW_ON_PACKAGES to "按需显示",
+    WidgetVisibilityMode.HIDE_ON_PACKAGES to "按需隐藏",
+    WidgetVisibilityMode.NEVER_SHOW to "禁止显示"
+)

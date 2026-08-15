@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-system-performance.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-system-performance/1.0.0/widget-system-performance.jar",
+  "full_file_available": true,
+  "total_size": 23892,
+  "total_sha256": "0027cf2cd31e1fd3f37a79be31014f43a2e4f50a2fc526ecf8bbb97ea79465d1",
+  "part_count": 1,
+  "part_size": 23892,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-system-performance.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-system-performance/1.0.0/widget-system-performance.jar",
+      "size": 23892,
+      "sha256": "0027cf2cd31e1fd3f37a79be31014f43a2e4f50a2fc526ecf8bbb97ea79465d1"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-arc-gauge.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-arc-gauge/1.0.7/widget-arc-gauge.jar",
+  "full_file_available": true,
+  "total_size": 28814,
+  "total_sha256": "7b7521de6c43d98691d6d0a9cb47de7bd58efdbbc9f93b4b83896abae9fd1af8",
+  "part_count": 1,
+  "part_size": 28814,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-arc-gauge.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-arc-gauge/1.0.7/widget-arc-gauge.jar",
+      "size": 28814,
+      "sha256": "7b7521de6c43d98691d6d0a9cb47de7bd58efdbbc9f93b4b83896abae9fd1af8"
+    }
+  ]
+}

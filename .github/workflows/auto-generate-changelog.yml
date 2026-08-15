@@ -1,0 +1,96 @@
+name: Auto generate changelog
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    if: "${{ (github.event_name == 'push' && contains(github.event.head_commit.message, 'ci: Bump Version')) || github.event_name == 'workflow_dispatch' }}"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+          repository: 'netcookies/isulewTools'
+      
+      - name: Generate Changelog
+        uses: smichard/conventional_changelog@2.0.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+      
+      - name: Checkout public repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+          repository: 'netcookies/neta-connect'
+          path: 'neta-connect'
+          
+      - name: Change Workdir && Config Git && Commit Changelog
+        run: |
+          cd "${{ github.workspace }}/neta-connect/"
+          cp -r "${{ github.workspace }}/CHANGELOG.md" "${{ github.workspace }}/neta-connect/"
+          perl -0777 -i -pe 's/^### Other[ \t]*\r?\n- Bump Version.*\r?\n[ \t]*\r?\n//mg' CHANGELOG.md
+          perl -i -pe 's/^- Bump Version.*\r?\n//mg' CHANGELOG.md
+          git config user.name 'GitHub Actions Bot'
+          git config user.email 'actions@github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/netcookies/neta-connect.git
+          git add CHANGELOG.md
+          git commit -m "docs: :robot: changelog file generated" || echo "No changes to commit"
+          git push origin
+
+  build-deploy:
+    runs-on: ubuntu-latest
+    # 站点随 main 任意变更重建部署（文档/菜单/发布均可），不再依赖 changelog job
+    if: >-
+      contains(github.event.head_commit.message, 'ci: Bump Version') ||
+      github.event_name == 'workflow_dispatch' ||
+      github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Resolve release version
+        id: get_version
+        run: |
+          VERSION_FROM_COMMIT=""
+          if [ "${{ github.event_name }}" = "push" ]; then
+            VERSION_FROM_COMMIT=$(printf '%s' "${{ github.event.head_commit.message }}" | grep -oE 'v[0-9]+(\.[0-9]+){1,3}(-[0-9A-Za-z]+([.-][0-9A-Za-z]+)*)?' | head -1 || true)
+          fi
+
+          if [ -n "$VERSION_FROM_COMMIT" ]; then
+            TARGET_VERSION="$VERSION_FROM_COMMIT"
+            echo "Resolved version from commit message: $TARGET_VERSION"
+          else
+            TARGET_VERSION=$(curl -s https://api.github.com/repos/netcookies/neta-connect/releases | jq -r 'map(select(.draft == false)) | sort_by(.published_at) | last | .tag_name // empty')
+            if [ -z "$TARGET_VERSION" ]; then
+              echo "Failed to resolve release version from GitHub Releases" >&2
+              exit 1
+            fi
+            echo "Resolved version from latest published release: $TARGET_VERSION"
+          fi
+
+          echo "version=$TARGET_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Build site with version replacement
+        run: |
+          cd site
+          VERSION="${{ steps.get_version.outputs.version }}"
+          echo "Building site with version: $VERSION"
+          export RELEASE_VERSION="$VERSION"
+
+          npm ci
+          npm run build
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site/build
+          cname: neta.nznd.org

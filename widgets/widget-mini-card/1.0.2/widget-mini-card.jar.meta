@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-mini-card.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-mini-card/1.0.2/widget-mini-card.jar",
+  "full_file_available": true,
+  "total_size": 21714,
+  "total_sha256": "4cce6c2ed0cab1ef568a83411a54815887b126e75937b4852aae794bc67741c2",
+  "part_count": 1,
+  "part_size": 21714,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-mini-card.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-mini-card/1.0.2/widget-mini-card.jar",
+      "size": 21714,
+      "sha256": "4cce6c2ed0cab1ef568a83411a54815887b126e75937b4852aae794bc67741c2"
+    }
+  ]
+}

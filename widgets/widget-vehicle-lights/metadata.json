@@ -1,0 +1,12 @@
+{
+  "id": "widget-vehicle-lights",
+  "displayName": "车辆灯光",
+  "description": "显示车辆各种灯光状态的小组件",
+  "author": "官方",
+  "category": "车辆",
+  "minAppVersion": "2.1.7",
+  "permissions": [],
+  "screenshots": [],
+  "repository": "https://github.com/netcookies/neta-connect",
+  "supportUrl": "https://github.com/netcookies/neta-connect/issues"
+}

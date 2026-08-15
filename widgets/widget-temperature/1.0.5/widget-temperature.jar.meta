@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-temperature.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-temperature/1.0.5/widget-temperature.jar",
+  "full_file_available": true,
+  "total_size": 22106,
+  "total_sha256": "790792e28eed3921f15cdd9b98b83cc3ed2c281b77cfea68035b033134903a3f",
+  "part_count": 1,
+  "part_size": 22106,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-temperature.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-temperature/1.0.5/widget-temperature.jar",
+      "size": 22106,
+      "sha256": "790792e28eed3921f15cdd9b98b83cc3ed2c281b77cfea68035b033134903a3f"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-08-08T05:08:07.896Z",
+  "version": "v2.2.1-beta.12",
+  "repoSlug": "netcookies/neta-connect",
+  "proxyPrefix": "https://cdn.gh-proxy.org/",
+  "releasePath": "/release",
+  "githubReleaseUrl": "https://github.com/netcookies/neta-connect/releases/tag/v2.2.1-beta.12",
+  "changelogPath": "/docs/changelog",
+  "installGuidePath": "/docs/install",
+  "summary": {
+    "filename": "NETA_CONNECT-v2.2.1-beta.12.apk",
+    "totalSize": 42465055,
+    "totalSha256": "1e0093555d3fa572a390868cb15de8e8451e0883c8e34c8d925c95325bb33ca6",
+    "releaseCount": 87
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "filename": "widget-tire-pressure.jar",
+  "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.0.2/widget-tire-pressure.jar",
+  "full_file_available": true,
+  "total_size": 29986,
+  "total_sha256": "2ce03d665d149f6bd4af1d788eef326232f3d3c4999391e77797e8afc1b7ed50",
+  "part_count": 1,
+  "part_size": 29986,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "widget-tire-pressure.jar.part000",
+      "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-tire-pressure/1.0.2/widget-tire-pressure.jar",
+      "size": 29986,
+      "sha256": "2ce03d665d149f6bd4af1d788eef326232f3d3c4999391e77797e8afc1b7ed50"
+    }
+  ]
+}

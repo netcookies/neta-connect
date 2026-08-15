@@ -1,0 +1,22 @@
+{
+  "name": "neta-connect-website",
+  "version": "0.0.1",
+  "scripts": {
+    "prestart": "node ./scripts/generate-release-data.mjs",
+    "start": "docusaurus start",
+    "prebuild": "node ./scripts/generate-release-data.mjs",
+    "build": "docusaurus build",
+    "predeploy": "node ./scripts/generate-release-data.mjs",
+    "deploy": "docusaurus deploy"
+  },
+  "overrides": {
+    "webpack": "5.105.0"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.10.0",
+    "@docusaurus/preset-classic": "3.10.0",
+    "clsx": "^2.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}

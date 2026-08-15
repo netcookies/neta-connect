@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(chmod:*)",
+      "Bash(bash:*)",
+      "Bash(git commit:*)",
+      "mcp__Android_Studio__list_directory_tree",
+      "Bash(tree:*)",
+      "Bash(cat:*)",
+      "WebFetch(domain:neta.nznd.org)",
+      "mcp__fetch__fetch",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(git add:*)",
+      "Bash(git rm:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "WebSearch",
+      "WebFetch(domain:docs.boxjs.app)",
+      "Bash(test:*)",
+      "Bash(git describe:*)",
+      "Bash(npm start)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

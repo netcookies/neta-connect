@@ -1,0 +1,12 @@
+{
+  "id": "widget-progress-bar",
+  "displayName": "进度条",
+  "description": "可横向或纵向显示的进度条小组件",
+  "author": "官方",
+  "category": "通用",
+  "minAppVersion": "2.1.7",
+  "permissions": [],
+  "screenshots": [],
+  "repository": "https://github.com/netcookies/neta-connect",
+  "supportUrl": "https://github.com/netcookies/neta-connect/issues"
+}

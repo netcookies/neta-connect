@@ -1,0 +1,12 @@
+{
+  "id": "widget-arc-gauge",
+  "displayName": "弧形仪表盘",
+  "description": "弧形仪表盘样式的数值显示小组件",
+  "author": "官方",
+  "category": "车机",
+  "minAppVersion": "2.1.7",
+  "permissions": [],
+  "screenshots": [],
+  "repository": "https://github.com/netcookies/neta-connect",
+  "supportUrl": "https://github.com/netcookies/neta-connect/issues"
+}

@@ -1,0 +1,22 @@
+name: "哪吒汽车 [获取签到Token]"
+desc: "获取Token用。打开哪吒汽车App。"
+author: "netcookies"
+homepage: "https://github.com/netcookies/neta-connect"
+manual: "https://github.com/netcookies/neta-connect"
+icon: "https://brands.home-assistant.io/neta_vehicle/icon.png"
+category: "tools"
+
+http:
+  mitm:
+      - "appapi-pki.chehezhi.cn:18443"
+  script:
+    - match: ^https:\/\/appapi-pki\.chehezhi\.cn:18443\/pivot\/veh-status\/vehicle-status-control\/1\.0\/getAppVehicleData
+      type: request
+      name: NetaConnect
+      timeout: 120
+
+script-providers:
+  NetaConnect:
+    url: https://raw.githubusercontent.com/netcookies/neta-connect/refs/heads/main/scripts/netaConnect.js
+    interval: 86400
+

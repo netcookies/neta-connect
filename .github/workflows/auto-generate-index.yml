@@ -1,0 +1,61 @@
+name: Auto Generate Widget Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'widgets/**/*.jar'
+      - 'widgets/**/metadata.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-generate-widget-index-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate and push index.json
+        run: |
+          set -euo pipefail
+
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          MAX_RETRIES=5
+          RETRY=0
+          while [ "$RETRY" -lt "$MAX_RETRIES" ]; do
+            git fetch origin main
+            git reset --hard origin/main
+            bash .github/scripts/generate-widget-index.sh
+
+            if git diff --quiet widgets/index.json; then
+              echo "📭 index.json 没有变化"
+              exit 0
+            fi
+
+            git add widgets/index.json
+            git commit -m "chore: auto-generate index.json from widgets directory"
+
+            if git push origin HEAD:main; then
+              echo "✅ index.json 已更新并推送"
+              exit 0
+            fi
+
+            RETRY=$((RETRY + 1))
+            echo "Push failed, regenerating from latest main... ($RETRY/$MAX_RETRIES)"
+            sleep $((RETRY * 2))
+          done
+
+          echo "❌ Failed to update index.json after $MAX_RETRIES retries"
+          exit 1

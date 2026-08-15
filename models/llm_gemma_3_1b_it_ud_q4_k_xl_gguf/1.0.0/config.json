@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "top_k": 64,
+  "max_tokens": 512,
+  "temperature": 1.0,
+  "top_p": 0.95
+}
