@@ -6,10 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.2.2 (2026-08-15)
+
 ### Feature
+- 乾坤守护退出后自动重启内核和应用 [`2de691b7`](https://github.com/netcookies/isulewTools/commit/2de691b7)
+- 模拟器兼容层——零准备零 root 测试环境 [`89bd191f`](https://github.com/netcookies/isulewTools/commit/89bd191f)
+- 下载进度悬浮窗 Mock 测试卡片 [`c2839b61`](https://github.com/netcookies/isulewTools/commit/c2839b61)
+- 悬浮窗通知基础设施 Mock 测试卡片 [`8c6462c4`](https://github.com/netcookies/isulewTools/commit/8c6462c4)
+- 下载进度悬浮窗——活跃下载时显示，点击跳转下载管理 [`3b292b14`](https://github.com/netcookies/isulewTools/commit/3b292b14)
+- 悬浮窗通知基础设施——语音播报、action 按钮、倒计时 [`7b38bb30`](https://github.com/netcookies/isulewTools/commit/7b38bb30)
 - Step 4b——binding handshake + ledger 新鲜度谓词接入（身份权威化） [`a726c2cc`](https://github.com/netcookies/isulewTools/commit/a726c2cc)
 
 ### Bug Fixes
+- 媒体会话证据驱动接管与互斥播放机制 [`535025f8`](https://github.com/netcookies/isulewTools/commit/535025f8)
+- 修复副屏 Bridge 负时长导致 MediaTimeline coerceIn 崩溃 [`3460c107`](https://github.com/netcookies/isulewTools/commit/3460c107)
 - Step 4b 第十七轮 review 2 项——完成 buffer cursor 独立/契约对齐 [`c80d4ff8`](https://github.com/netcookies/isulewTools/commit/c80d4ff8)
 - Step 4b 第十六轮 review——自递归修复/完成记录走 LatestEventBuffer [`996f96ea`](https://github.com/netcookies/isulewTools/commit/996f96ea)
 - Step 4b 第十五轮 review 4 项——fade 版本化迁移完整/记录状态机 [`6ab10248`](https://github.com/netcookies/isulewTools/commit/6ab10248)
@@ -28,11 +38,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Step 4b 第二轮 review 2 项——aux binding 重分配/restore 保留 [`73381942`](https://github.com/netcookies/isulewTools/commit/73381942)
 - Step 4b 首轮 review 5 项——回填时机/原子身份/aux rebind/ledger 锁 [`4ec10440`](https://github.com/netcookies/isulewTools/commit/4ec10440)
 
+### Documentation
+- 沉淀 CarPlay 媒体焦点知识（reducer 方向/形态约束/token 单调性） [`dd9d556f`](https://github.com/netcookies/isulewTools/commit/dd9d556f)
+- 晋升状态机命令终态守卫 spec + TIP 候选 [`6c6f32d4`](https://github.com/netcookies/isulewTools/commit/6c6f32d4)
+- 提交晋升的知识候选（parentTab 幂等 / 状态集合真源 / overlay 权限守卫 / badge 决策） [`3a674046`](https://github.com/netcookies/isulewTools/commit/3a674046)
+- 提交 Step 4b 晋升知识候选（无 quiescence 实时回调并发模式） [`44af7846`](https://github.com/netcookies/isulewTools/commit/44af7846)
+- 提交晋升的知识候选（helper 资源释放陷阱 + 异步事件状态机模式） [`9e8dfe09`](https://github.com/netcookies/isulewTools/commit/9e8dfe09)
+
 ### Test
 - Step 4b 第十八轮 LOW——worker 切片断言/cursor 容量断言 [`2cea240b`](https://github.com/netcookies/isulewTools/commit/2cea240b)
 
 ### Chore
+- bump version for local publish v2.2.2 [skip ci] [`a00070d0`](https://github.com/netcookies/isulewTools/commit/a00070d0)
+- 忽略知识系统自动备份目录 [`2db49fe5`](https://github.com/netcookies/isulewTools/commit/2db49fe5)
+- 忽略 .experts-mode.json 本地模式配置文件 [`336cade2`](https://github.com/netcookies/isulewTools/commit/336cade2)
 - bump version for local publish v2.2.1 [skip ci] [`58709372`](https://github.com/netcookies/isulewTools/commit/58709372)
+
+### Other
+- odyssey-review(experimental-mock-cards): FIX — 8 项审查发现修复 [`b90d5c89`](https://github.com/netcookies/isulewTools/commit/b90d5c89)
 
 ## v2.2.1-beta.16 (2026-08-11)
 
