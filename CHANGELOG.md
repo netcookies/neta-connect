@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.2.3 (2026-08-16)
+
+### Bug Fixes
+- 修复模拟器零 root 环境无障碍恢复与无限通知 [`5a234891`](https://github.com/netcookies/isulewTools/commit/5a234891)
+
+### Continuous Integration
+- 同步 CI 发布为 meta-only archive 流程 [`3ce7e853`](https://github.com/netcookies/isulewTools/commit/3ce7e853)
+
+### Chore
+- bump version for local publish v2.2.3 [skip ci] [`9d899243`](https://github.com/netcookies/isulewTools/commit/9d899243)
+- 收敛公开归档与发布资产 [`b72dd750`](https://github.com/netcookies/isulewTools/commit/b72dd750)
+
 ## v2.2.2 (2026-08-15)
 
 ### Feature
