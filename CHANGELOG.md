@@ -8,7 +8,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## v2.2.4-beta.1 (2026-08-17)
 
+## v2.2.4 (2026-08-17)
+
+### Feature
+- local_release_publish 支持 --branch 指定发布分支 [`78c75880`](https://github.com/netcookies/isulewTools/commit/78c75880)
+
+### Bug Fixes
+- 修复安装后自动重启 setsid 竞态，串行化 AdbClient 流操作 [`ab07dc95`](https://github.com/netcookies/isulewTools/commit/ab07dc95)
+- local_release_publish 分支检查加固，修复 review findings [`b9400030`](https://github.com/netcookies/isulewTools/commit/b9400030)
+
+### Documentation
+- SKILL 记录 --branch 传参，支持非 main 分支本地发布 [`7e364f41`](https://github.com/netcookies/isulewTools/commit/7e364f41)
+
 ### Chore
+- bump version for local publish v2.2.4 [skip ci] [`924bf216`](https://github.com/netcookies/isulewTools/commit/924bf216)
 - bump version for local publish v2.2.4-beta.1 [skip ci] [`569d41da`](https://github.com/netcookies/isulewTools/commit/569d41da)
 
 ### Refactor
