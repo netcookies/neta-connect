@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v2.2.4-beta.1 (2026-08-17)
+
+### Chore
+- bump version for local publish v2.2.4-beta.1 [skip ci] [`569d41da`](https://github.com/netcookies/isulewTools/commit/569d41da)
+
+### Refactor
+- 守护退出监听接入订阅池并以 ADB 链路重启内核和应用 [`c3c9f815`](https://github.com/netcookies/isulewTools/commit/c3c9f815)
+
 ## v2.2.3 (2026-08-16)
 
 ### Bug Fixes
