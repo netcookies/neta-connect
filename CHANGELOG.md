@@ -7,10 +7,53 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased changes
 
 ### Feature
+- miuix 组件原型逐页定稿 + 设置重排生产化 + 规范同步 [`08831a4d`](https://github.com/netcookies/isulewTools/commit/08831a4d)
+- sol 方案 A — 独立双估计器 + getFramesRead + 固定周期采样 [`6ec14914`](https://github.com/netcookies/isulewTools/commit/6ec14914)
+- B 根治 — sinc 带限重采样 + device 时钟估计 + 相位安全 [`009e368a`](https://github.com/netcookies/isulewTools/commit/009e368a)
+- ASRC 改 NetEq 式连续组合律 — 滤波时钟前馈 + 有界水位反馈 [`7ca77c1a`](https://github.com/netcookies/isulewTools/commit/7ca77c1a)
+- 自适应播放水位 — 动态目标(P95+margin) + 5s 物理容量 + 角色差异化 [`8e6cac5b`](https://github.com/netcookies/isulewTools/commit/8e6cac5b)
+- ingest drop/stale 打日志 + releaseMainAudio 契约测试更新 [`97d23b91`](https://github.com/netcookies/isulewTools/commit/97d23b91)
+- rtp_discontinuity provenance + ingest drop 日志（定位卡顿空洞来源） [`c9116915`](https://github.com/netcookies/isulewTools/commit/c9116915)
+- 协议无关 jitter 基础设施模块 + 设备验收载体 [`1407c531`](https://github.com/netcookies/isulewTools/commit/1407c531)
+- RTP sidecar 时间戳元数据贯通至 av-renderer [`de11fda3`](https://github.com/netcookies/isulewTools/commit/de11fda3)
+- B-only 主音频架构，66150 单 buffer + 双模式 ASRC [`6eea9bba`](https://github.com/netcookies/isulewTools/commit/6eea9bba)
+- 统一车机背景与二态设置控件 [`1fb1c141`](https://github.com/netcookies/isulewTools/commit/1fb1c141)
+- 声明式联动控制区/详细区模式 (LinkedHelp) + DrivingPage 高级分组试点 [`e72c9e46`](https://github.com/netcookies/isulewTools/commit/e72c9e46)
+- 车机顶栏重构为「标题｜Tab」单行 + 浮层语义色与 Portrait 二级导航修复 [`193fbe35`](https://github.com/netcookies/isulewTools/commit/193fbe35)
+- 客户端会员门禁 + TEE payload 硬化 (T1-T8 + review 修复) [`0844a771`](https://github.com/netcookies/isulewTools/commit/0844a771)
+- 导航栏 rail 扩容为 8 槽三部分布局并接入一级 flyout [`c63d17e4`](https://github.com/netcookies/isulewTools/commit/c63d17e4)
+- 三形态侧栏贴顶/贴底布局与二级导航显式接入 [`6a8271ac`](https://github.com/netcookies/isulewTools/commit/6a8271ac)
+- 车机 Compose 生产页面 Precision Instrument 逐页打磨 [`b60728d7`](https://github.com/netcookies/isulewTools/commit/b60728d7)
 - local_release_publish 支持 --branch 指定发布分支 [`b565b221`](https://github.com/netcookies/isulewTools/commit/b565b221)
 - 落地车机 Compose 自适应重构与原型预览 [`b66ed29d`](https://github.com/netcookies/isulewTools/commit/b66ed29d)
 
 ### Bug Fixes
+- deadband 改采样率无关 + 连续渐变（sol review 修正） [`12980068`](https://github.com/netcookies/isulewTools/commit/12980068)
+- water 反馈 deadband ±100ms — 消除 ratio 振荡 wow/flutter [`0985201a`](https://github.com/netcookies/isulewTools/commit/0985201a)
+- sol 复审 P2/P3 — arrival baseline 前向推进 + 删除无用变量 [`16f9f9b5`](https://github.com/netcookies/isulewTools/commit/16f9f9b5)
+- sol 复审 P1 修复 — device 分母同衰减 + 固定周期 EMA + 首 tick 钳制 [`d45cf2de`](https://github.com/netcookies/isulewTools/commit/d45cf2de)
+- sol 复审 P1 修复 — 固定周期采样 + device 真实墙钟差 + 独立 reset [`293fbe0b`](https://github.com/netcookies/isulewTools/commit/293fbe0b)
+- sol 复审 P0 修复 — sinc cursor rebase + device-pair burst + overflow 相位 [`c5293a91`](https://github.com/netcookies/isulewTools/commit/c5293a91)
+- ASRC 复审健壮性 — RTP 重排不误判 discontinuity + 诊断 accessor 单位 [`64172485`](https://github.com/netcookies/isulewTools/commit/64172485)
+- ASRC 复审 P0 修复 — clock 单位归一化 + discontinuity 重置接入 [`54c71e24`](https://github.com/netcookies/isulewTools/commit/54c71e24)
+- adaptive 统计字段（max/p95）随重置点同步清零 [`9d3f15f9`](https://github.com/netcookies/isulewTools/commit/9d3f15f9)
+- Max 保护真正实现 32s 时间窗口 + 上升期绕过 EMA [`ba4bd3ab`](https://github.com/netcookies/isulewTools/commit/ba4bd3ab)
+- sol review P0/P1 — 大洞 Max 保护 + rate-aware clamp + aux mix 覆盖硬件 quantum [`67689130`](https://github.com/netcookies/isulewTools/commit/67689130)
+- 音频队列缓冲 500ms→1000ms — 覆盖地库弱信号 1.08s 到达间隙 [`dd7eb764`](https://github.com/netcookies/isulewTools/commit/dd7eb764)
+- RTP discontinuity 阈值 200ms→500ms — iPhone burst 步进 209ms 误触窗口重置 [`d8b7b9fe`](https://github.com/netcookies/isulewTools/commit/d8b7b9fe)
+- 移除 payload 时间戳差误补静音 — iPhone 正常 burst 有 200ms RTP 时间戳步进而序列连续 [`cb82357f`](https://github.com/netcookies/isulewTools/commit/cb82357f)
+- PLC 纯函数按 sol 复审收敛 — decoded=0 合法回绕 + jump 语义入函 + 边界行为测试 [`9bb47b39`](https://github.com/netcookies/isulewTools/commit/9bb47b39)
+- sol 审核 P0/P1 修复 — PLC gap 收敛 + 有符号差 + flush 死锁 + PLC 基准跨 flush 泄漏 [`1cb1c51b`](https://github.com/netcookies/isulewTools/commit/1cb1c51b)
+- telemetry 语义修正 — sidecarEvict 重命名 + mapping 差值注释 [`8a7ea236`](https://github.com/netcookies/isulewTools/commit/8a7ea236)
+- empty-marker/RTP 空洞补 PLC 静音，修复音乐间歇卡顿 [`717a3f26`](https://github.com/netcookies/isulewTools/commit/717a3f26)
+- 放开 main sink 的 16kHz 支持，修复电话下行无声 [`9141d539`](https://github.com/netcookies/isulewTools/commit/9141d539)
+- 电话/语音类别启动门槛降至 100ms，消除接听首段无声 [`bb9a0397`](https://github.com/netcookies/isulewTools/commit/bb9a0397)
+- gpt-5.6-sol review 修复 — OPUS 交付/FLUSH 失活/死锁/队列单位 [`0ae5c0de`](https://github.com/netcookies/isulewTools/commit/0ae5c0de)
+- 主音频 codec/opus 配置后缺失 Oboe sink 导致无声 [`43e0f47d`](https://github.com/netcookies/isulewTools/commit/43e0f47d)
+- 逐包日志纳入性能诊断开关,消除 logd 日志风暴 [`8a18ba8d`](https://github.com/netcookies/isulewTools/commit/8a18ba8d)
+- 修正 rail chevron 样式与 flyout 垂直对齐 [`863af965`](https://github.com/netcookies/isulewTools/commit/863af965)
+- 导航栏 rail 改为顶对齐堆叠 + SystemTools 贴底 [`e668c3de`](https://github.com/netcookies/isulewTools/commit/e668c3de)
+- 导航栏改为不透明表面，去除阴影与半透明玻璃效果 [`ff80f4d0`](https://github.com/netcookies/isulewTools/commit/ff80f4d0)
 - 修复安装后自动重启 setsid 竞态，串行化 AdbClient 流操作 [`351039dd`](https://github.com/netcookies/isulewTools/commit/351039dd)
 - local_release_publish 分支检查加固，修复 review findings [`0670246f`](https://github.com/netcookies/isulewTools/commit/0670246f)
 - 模拟器 ADB 通道只选 emulator 设备，杜绝误写真机 [`7a8c2d32`](https://github.com/netcookies/isulewTools/commit/7a8c2d32)
@@ -18,8 +61,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Documentation
 - SKILL 记录 --branch 传参，支持非 main 分支本地发布 [`e9b4fd64`](https://github.com/netcookies/isulewTools/commit/e9b4fd64)
 
+### Test
+- 自适应水位 JVM mock 验证 — 6场景覆盖地面/地库/电话/切换/单突发 [`157efe35`](https://github.com/netcookies/isulewTools/commit/157efe35)
+- PLC gap 行为级 native harness — 提取纯函数 raop_rtp_gap_conceal_frames [`f2dd48b6`](https://github.com/netcookies/isulewTools/commit/f2dd48b6)
+- AAC 文件喂帧验证 codec 解码路径 [`4c7aa1b8`](https://github.com/netcookies/isulewTools/commit/4c7aa1b8)
+- 更新车机三形态侧栏/底栏 golden 基线 [`2c1f95c7`](https://github.com/netcookies/isulewTools/commit/2c1f95c7)
+
+### Chore
+- 诊断 UI 清理与主音频 jitter 放置契约测试 [`d3efd112`](https://github.com/netcookies/isulewTools/commit/d3efd112)
+- ignore workflow state file [`c913efe8`](https://github.com/netcookies/isulewTools/commit/c913efe8)
+
 ### Refactor
+- 音频/视频生命周期操作与 core mutex 全量解耦 [`71e22ad8`](https://github.com/netcookies/isulewTools/commit/71e22ad8)
+- 完全移除采样率白名单，架构真正率无关 [`11f072b4`](https://github.com/netcookies/isulewTools/commit/11f072b4)
+- 全页面对照设计决策表完成组件与 token 合规治理 [`405a6002`](https://github.com/netcookies/isulewTools/commit/405a6002)
 - 守护退出监听接入订阅池并以 ADB 链路重启内核和应用 [`862facde`](https://github.com/netcookies/isulewTools/commit/862facde)
+
+### Other
+- Merge branch 'wt/carplay-audio-jitter' into main — 音频修复全链路（B-only/解码器拆分/ASRC/sinc/双估计器/水位自适应） [`f94db61c`](https://github.com/netcookies/isulewTools/commit/f94db61c)
+- odyssey-review(carplay-audio): FIX — RV-001 PLC 基准 + review 发现落地 + 契约测试同步 [`7d4d4be5`](https://github.com/netcookies/isulewTools/commit/7d4d4be5)
+- odyssey-planex(decoder-split): FIX — review 发现修复（死锁/sample_format/flush opus） [`aac4c298`](https://github.com/netcookies/isulewTools/commit/aac4c298)
+- odyssey-planex(decoder-split): EXECUTE — renderer 切换至 media-decode 并删旧 codec 状态机 [`2d39358b`](https://github.com/netcookies/isulewTools/commit/2d39358b)
+- odyssey-planex(decoder-split): EXECUTE — media-decode 模块与 NativeAudioDecoder 抽取完成 [`bfdbc3cd`](https://github.com/netcookies/isulewTools/commit/bfdbc3cd)
+- odyssey-ui(settings-ui-refactor): FIX — settings pages adopt existing HMI layouts [`f668f433`](https://github.com/netcookies/isulewTools/commit/f668f433)
+- odyssey-review(membership-api): FIX — 跨语言证书 canonical 显式化 + 黄金样本 fixture 测试 [`acdf7097`](https://github.com/netcookies/isulewTools/commit/acdf7097)
+- odyssey-planex(membership-api): EXECUTE — M3 套娃完整性(APK 自校验+签名白名单+版本门禁) [`f056f740`](https://github.com/netcookies/isulewTools/commit/f056f740)
+- odyssey-planex(membership-api): EXECUTE — auth-core RootPayloadCipher 载荷解包(ED25519 同族闭环) [`5185d68c`](https://github.com/netcookies/isulewTools/commit/5185d68c)
+- odyssey-planex(membership-api): DESIGN — 会员运营管理后台三方向稿 + 定稿(版2交互×版3排版) [`4813792e`](https://github.com/netcookies/isulewTools/commit/4813792e)
+- odyssey-planex(membership-api): EXECUTE — auth-core 升级 Ed25519 证书验证(v2) + T7 root 明文盘点 [`ee4e1607`](https://github.com/netcookies/isulewTools/commit/ee4e1607)
+
+## v2.2.6 (2026-09-03)
+
+### Feature
+- add main PCM capture diagnostics [`345b7b19`](https://github.com/netcookies/isulewTools/commit/345b7b19)
 
 ## v2.2.5 (2026-09-01)
 
