@@ -90,6 +90,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - odyssey-planex(membership-api): DESIGN — 会员运营管理后台三方向稿 + 定稿(版2交互×版3排版) [`4813792e`](https://github.com/netcookies/isulewTools/commit/4813792e)
 - odyssey-planex(membership-api): EXECUTE — auth-core 升级 Ed25519 证书验证(v2) + T7 root 明文盘点 [`ee4e1607`](https://github.com/netcookies/isulewTools/commit/ee4e1607)
 
+## v2.2.7 (2026-09-03)
+
+### Bug Fixes
+- adaptive water level samples producer admit gap [`21ed9ab7`](https://github.com/netcookies/isulewTools/commit/21ed9ab7)
+
+### Chore
+- bump version for local publish v2.2.7 [skip ci] [`d44fad87`](https://github.com/netcookies/isulewTools/commit/d44fad87)
+
 ## v2.2.6 (2026-09-03)
 
 ### Feature
