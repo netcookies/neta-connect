@@ -6,7 +6,7 @@
 # ============================================================
 # SDK & Build Configuration
 # ============================================================
-compileSdk = "36"
+compileSdk = "37"
 minSdk = "30"
 targetSdk = "36"
 javaVersion = "11"
@@ -49,6 +49,7 @@ composeBom = "2026.05.01"
 # ============================================================
 kotlinxCoroutines = "1.11.0"
 kotlinxSerializationJson = "1.11.0"
+miuix = "0.9.3"
 
 # ============================================================
 # Database
@@ -162,6 +163,8 @@ richtext-ui-material3 = { group = "com.halilibo.compose-richtext", name = "richt
 # ------------------------------------------------------------
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+miuix-ui = { group = "top.yukonga.miuix.kmp", name = "miuix-ui", version.ref = "miuix" }
+miuix-preference = { group = "top.yukonga.miuix.kmp", name = "miuix-preference", version.ref = "miuix" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
