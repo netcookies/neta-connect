@@ -79,6 +79,7 @@ workmanager = "2.11.2"
 # ============================================================
 colorpicker = "0.7.0"
 richtextCompose = "1.0.0-alpha04"
+lottie = "6.7.1"
 
 # ============================================================
 # Utilities
@@ -157,6 +158,7 @@ mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockkAndroid" }
 richtext-commonmark = { group = "com.halilibo.compose-richtext", name = "richtext-commonmark", version.ref = "richtextCompose" }
 richtext-ui-material3 = { group = "com.halilibo.compose-richtext", name = "richtext-ui-material3", version.ref = "richtextCompose" }
+lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
 
 # ------------------------------------------------------------
 # Kotlin Libraries
