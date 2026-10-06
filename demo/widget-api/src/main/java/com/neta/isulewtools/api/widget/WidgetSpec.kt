@@ -17,7 +17,7 @@ open class WidgetSpec @JvmOverloads constructor(
     val contentComposable: @Composable (WidgetConfig) -> Unit, // Widget内容渲染入口
     val color: Color = Color(0xFF6200EE),        // Widget类型颜色（用于卡片背景）
     val icon: ImageVector? = null,                 // Widget类型图标
-    val recommendedGrid: Pair<Int, Int>? = null  // 推荐网格大小: (gridWidth, gridHeight)，用于仪表盘默认网格
+    val recommendedGrid: Pair<Int, Int>? = null  // 推荐网格大小: (gridWidth, gridHeight)，用于首页默认网格
 ) {
     // 自动注入 scale 和 alpha 参数（如果不存在）
     val paramSchema: List<WidgetParamDesc> = ensureRequiredParams(paramSchema)
@@ -82,7 +82,8 @@ data class WidgetParamDesc(
     val required: Boolean = false, // 新增必填字段标识
     val description: String? = null,
     val visibleWhen: Pair<String, Any>? = null,  // 单条件显示：当指定参数等于指定值时才显示
-    val visibleWhenAll: List<Pair<String, Any>>? = null  // 多条件显示：当所有指定参数都等于对应值时才显示（AND逻辑）
+    val visibleWhenAll: List<Pair<String, Any>>? = null,  // 多条件显示：当所有指定参数都等于对应值时才显示（AND逻辑）
+    val iconSelect: Boolean = false  // ENUM 参数：true 时以应用图标网格形式选择（选项格式为 “名称(包名)”）
 ) {
     /**
      * 向后兼容的构造函数（不带 visibleWhenAll 参数）
@@ -97,7 +98,7 @@ data class WidgetParamDesc(
         required: Boolean = false,
         description: String? = null,
         visibleWhen: Pair<String, Any>? = null
-    ) : this(key, label, type, defaultValue, options, required, description, visibleWhen, null)
+    ) : this(key, label, type, defaultValue, options, required, description, visibleWhen, null, false)
     companion object {
         /**
          * 创建 DIVIDER 类型的参数描述
@@ -188,16 +189,16 @@ data class VhalProperty(
 
 enum class ContainerType {
     FLOATING_WINDOW, // 悬浮窗
-    DASHBOARD // 仪表盘
+    HOME // 首页
 }
 
 val containerNameMap = mapOf(
-    ContainerType.DASHBOARD to "仪表盘",
+    ContainerType.HOME to "首页",
     ContainerType.FLOATING_WINDOW to "悬浮窗"
 )
 
 val containerDescriptionMap = mapOf(
-    ContainerType.DASHBOARD to "网格布局的仪表盘容器",
+    ContainerType.HOME to "网格布局的首页容器",
     ContainerType.FLOATING_WINDOW to "独立悬浮的窗口容器"
 )
 

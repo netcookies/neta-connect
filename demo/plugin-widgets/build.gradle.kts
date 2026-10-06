@@ -1,3 +1,4 @@
+import com.neta.build.AndroidPlatformJar
 import java.io.FileOutputStream
 import java.util.jar.Attributes
 import java.util.jar.JarEntry
@@ -423,12 +424,9 @@ android.buildTypes.forEach { buildType ->
             )
 
             val sdkDir = android.sdkDirectory.path
-            androidJar.set(
-                File(
-                    File(sdkDir, "platforms/android-${android.compileSdk}"),
-                    "android.jar"
-                )
-            )
+            val compileSdk = android.compileSdk
+                ?: error("compileSdk must be set to build the widget jar")
+            androidJar.set(AndroidPlatformJar.resolve(File(sdkDir), compileSdk))
 
             compileClasspath.from(
                 configurations.getByName("${variantName}CompileClasspath").incoming

@@ -270,7 +270,7 @@ object P {
 
 ### 推荐网格尺寸 (recommendedGrid)
 
-`recommendedGrid` 参数用于建议小组件在仪表盘网格中的默认占用空间。格式为 `Pair(宽度, 高度)`，单位为网格格子数。
+`recommendedGrid` 参数用于建议小组件在首页网格中的默认占用空间。格式为 `Pair(宽度, 高度)`，单位为网格格子数。
 
 **常见尺寸推荐：**
 
