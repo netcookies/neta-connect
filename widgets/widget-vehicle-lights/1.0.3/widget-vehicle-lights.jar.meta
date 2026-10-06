@@ -4,7 +4,7 @@
   "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-vehicle-lights/1.0.3/widget-vehicle-lights.jar",
   "full_file_available": true,
   "total_size": 25250,
-  "total_sha256": "ed45d73f3d4ef248b9b2506f5cf905a20ba190cb8b505fb84c9ec9de1bd6bcf0",
+  "total_sha256": "c10fd506b5c04a6544b648facdeac4dee438a11c548d438b853d437f0df9b86c",
   "part_count": 1,
   "part_size": 25250,
   "parts": [
@@ -13,7 +13,7 @@
       "filename": "widget-vehicle-lights.jar.part000",
       "url": "https://raw.githubusercontent.com/netcookies/neta-connect/main/widgets/widget-vehicle-lights/1.0.3/widget-vehicle-lights.jar",
       "size": 25250,
-      "sha256": "ed45d73f3d4ef248b9b2506f5cf905a20ba190cb8b505fb84c9ec9de1bd6bcf0"
+      "sha256": "c10fd506b5c04a6544b648facdeac4dee438a11c548d438b853d437f0df9b86c"
     }
   ]
 }
