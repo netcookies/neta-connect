@@ -1,0 +1,31 @@
+{
+  "filename": "NETA_CONNECT-v3.0.0-beta.1.apk",
+  "url": "https://github.com/netcookies/neta-connect/releases/download/v3.0.0-beta.1/NETA_CONNECT-v3.0.0-beta.1.apk",
+  "total_size": 47520237,
+  "total_sha256": "11a0837677acf0f3cf0838278cc2d9895a74c6741a257a1df43d9f50a91e0bdb",
+  "part_count": 3,
+  "part_size": 19922944,
+  "parts": [
+    {
+      "index": 1,
+      "filename": "NETA_CONNECT-v3.0.0-beta.1.apk.part000",
+      "url": "https://github.com/netcookies/neta-connect/releases/download/v3.0.0-beta.1/NETA_CONNECT-v3.0.0-beta.1.apk.part000",
+      "size": 19922944,
+      "sha256": "d30ebd0e267fb8965f46c901e45fde329b80c820f0662c239ad3a3d9808d0ebe"
+    },
+    {
+      "index": 2,
+      "filename": "NETA_CONNECT-v3.0.0-beta.1.apk.part001",
+      "url": "https://github.com/netcookies/neta-connect/releases/download/v3.0.0-beta.1/NETA_CONNECT-v3.0.0-beta.1.apk.part001",
+      "size": 19922944,
+      "sha256": "67cc55c8e071f4a0a3989d8fc8d5c137a2007ff09d76fd1f2247d84e2fe01d8e"
+    },
+    {
+      "index": 3,
+      "filename": "NETA_CONNECT-v3.0.0-beta.1.apk.part002",
+      "url": "https://github.com/netcookies/neta-connect/releases/download/v3.0.0-beta.1/NETA_CONNECT-v3.0.0-beta.1.apk.part002",
+      "size": 7674349,
+      "sha256": "6c2638076d449871da60f132c319df8b960203463f9ddea517d7004813af77f9"
+    }
+  ]
+}
