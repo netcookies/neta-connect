@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.2 (2026-10-08)
+
+### Bug Fixes
+- set frame repair default to 15 seconds [`92fd6e027`](https://github.com/netcookies/isulewTools/commit/92fd6e027)
+- refine dashboard editing and CarPlay overlay behavior [`71dcb8a60`](https://github.com/netcookies/isulewTools/commit/71dcb8a60)
+- repair offline identity upload and import [`75a362b12`](https://github.com/netcookies/isulewTools/commit/75a362b12)
+
+### Chore
+- bump version for local publish v3.0.0-beta.2 [skip ci] [`e8902cc29`](https://github.com/netcookies/isulewTools/commit/e8902cc29)
+
 ## v3.0.0-beta.1 (2026-10-08)
 
 ### Feature
