@@ -6,6 +6,63 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.3 (2026-10-14)
+
+### Feature
+- 完善 CarPlay 草稿工具栏原型 [`a4c265307`](https://github.com/netcookies/isulewTools/commit/a4c265307)
+- 完善 SN 迁移与错误码透传 [`747d37611`](https://github.com/netcookies/isulewTools/commit/747d37611)
+- 适配服务端 SN 身份统一与一次性重绑契约 [`46695f3ba`](https://github.com/netcookies/isulewTools/commit/46695f3ba)
+- complete global FTB persistence boundaries [`6bd7e2993`](https://github.com/netcookies/isulewTools/commit/6bd7e2993)
+- boxSerialNo 改用 ro.hozon.car.sn 并统一环境门控 [`a6d8d0092`](https://github.com/netcookies/isulewTools/commit/a6d8d0092)
+- implement global settings FTB drafts [`944e4be54`](https://github.com/netcookies/isulewTools/commit/944e4be54)
+- mount centered floating toolbar shell [`45a85ba29`](https://github.com/netcookies/isulewTools/commit/45a85ba29)
+- add typed draft commit and apply contracts [`edee7f3a3`](https://github.com/netcookies/isulewTools/commit/edee7f3a3)
+
+### Bug Fixes
+- gate pending SN rebind access [`bdc8a8750`](https://github.com/netcookies/isulewTools/commit/bdc8a8750)
+- reuse CarPlay launcher entry and copy blocks [`978c1d330`](https://github.com/netcookies/isulewTools/commit/978c1d330)
+- 加固语音配置与密钥持久化 [`8164377cc`](https://github.com/netcookies/isulewTools/commit/8164377cc)
+- correct CarPlay test dialog tokens [`9f28a1452`](https://github.com/netcookies/isulewTools/commit/9f28a1452)
+- refine CarPlay audio and advanced controls [`ccffe52e6`](https://github.com/netcookies/isulewTools/commit/ccffe52e6)
+- refine CarPlay audio control layout [`5e6fa15d6`](https://github.com/netcookies/isulewTools/commit/5e6fa15d6)
+- restore spacing between settings groups [`e0e6758c5`](https://github.com/netcookies/isulewTools/commit/e0e6758c5)
+- space connection actions below saved devices [`ab5ed6627`](https://github.com/netcookies/isulewTools/commit/ab5ed6627)
+- merge saved device selector and refresh on open [`83b106d69`](https://github.com/netcookies/isulewTools/commit/83b106d69)
+- preserve full scroll viewports around FTB [`1eb22cc40`](https://github.com/netcookies/isulewTools/commit/1eb22cc40)
+- correct FTB bounds and styling [`866d82410`](https://github.com/netcookies/isulewTools/commit/866d82410)
+- 403 不再默认归 attest mismatch，也不再自动 activate [`bfa60e0c8`](https://github.com/netcookies/isulewTools/commit/bfa60e0c8)
+- 409/403 分类改为状态码优先，并持久化迁移待授权 [`cd8e0ad60`](https://github.com/netcookies/isulewTools/commit/cd8e0ad60)
+- harden widget persistence receipts [`59d9d822d`](https://github.com/netcookies/isulewTools/commit/59d9d822d)
+- close remaining FTB persistence gaps [`3aa3702a6`](https://github.com/netcookies/isulewTools/commit/3aa3702a6)
+- close remaining settings persistence gaps [`b2083bf72`](https://github.com/netcookies/isulewTools/commit/b2083bf72)
+- address settings FTB review findings [`52b02d1ab`](https://github.com/netcookies/isulewTools/commit/52b02d1ab)
+- close settings runtime persistence gaps [`8994c405b`](https://github.com/netcookies/isulewTools/commit/8994c405b)
+- clean inline edit session transitions [`d204b80f6`](https://github.com/netcookies/isulewTools/commit/d204b80f6)
+- preserve settings drafts across section navigation [`8202f0b59`](https://github.com/netcookies/isulewTools/commit/8202f0b59)
+- remove legacy app update authorization flow [`0d1ef3b85`](https://github.com/netcookies/isulewTools/commit/0d1ef3b85)
+
+### Documentation
+- close workflow evidence gap [`4e8d50c07`](https://github.com/netcookies/isulewTools/commit/4e8d50c07)
+- sync voice prototype controls [`1e44563a9`](https://github.com/netcookies/isulewTools/commit/1e44563a9)
+- reconcile FTB inventory evidence [`a1029634a`](https://github.com/netcookies/isulewTools/commit/a1029634a)
+- record full FTB migration inventory [`8d9730a8c`](https://github.com/netcookies/isulewTools/commit/8d9730a8c)
+- add approved screen-centered settings toolbar prototype [`821f63b19`](https://github.com/netcookies/isulewTools/commit/821f63b19)
+
+### Test
+- tighten widget and song evidence [`b3f37975c`](https://github.com/netcookies/isulewTools/commit/b3f37975c)
+- 补模拟器身份激活与重绑风暴回归 [`d99a72023`](https://github.com/netcookies/isulewTools/commit/d99a72023)
+
+### Chore
+- bump version for local publish v3.0.0-beta.3 [skip ci] [`e753a7f66`](https://github.com/netcookies/isulewTools/commit/e753a7f66)
+- 忽略本地会员联调脚本 [`607e383cb`](https://github.com/netcookies/isulewTools/commit/607e383cb)
+
+### Refactor
+- reorganize CarPlay audio and preferences [`4e8415066`](https://github.com/netcookies/isulewTools/commit/4e8415066)
+- inline widget and workflow edit actions with session lock [`5b9f9eff9`](https://github.com/netcookies/isulewTools/commit/5b9f9eff9)
+
+### Other
+- 合并 settings-ftb-drafts 到 main [`b482188c0`](https://github.com/netcookies/isulewTools/commit/b482188c0)
+
 ## v3.0.0-beta.2 (2026-10-08)
 
 ### Bug Fixes
