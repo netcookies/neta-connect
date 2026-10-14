@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.4 (2026-10-14)
+
+### Feature
+- 支持授权后的 SN 迁移恢复 [`12e44455c`](https://github.com/netcookies/isulewTools/commit/12e44455c)
+
+### Bug Fixes
+- migrate SN through one-shot heartbeat CAS [`2d5aac997`](https://github.com/netcookies/isulewTools/commit/2d5aac997)
+
+### Chore
+- bump version for local publish v3.0.0-beta.4 [skip ci] [`43471966a`](https://github.com/netcookies/isulewTools/commit/43471966a)
+
 ## v3.0.0-beta.3 (2026-10-14)
 
 ### Feature
