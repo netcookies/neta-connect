@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.6 (2026-10-15)
+
+### Feature
+- 串联 beta5 membership manifest 发布链 [`2331d90f0`](https://github.com/netcookies/isulewTools/commit/2331d90f0)
+- 增加 CarPlay 权益动作门禁 [`195a9e4ac`](https://github.com/netcookies/isulewTools/commit/195a9e4ac)
+- 完成 beta5 attestation 与发布工具 [`b245fe4e0`](https://github.com/netcookies/isulewTools/commit/b245fe4e0)
+
+### Bug Fixes
+- 保留 skip-build 兼容参数 [`661436484`](https://github.com/netcookies/isulewTools/commit/661436484)
+- 复用正式 release APK 生成 manifest [`26d250319`](https://github.com/netcookies/isulewTools/commit/26d250319)
+- verify returned manifest hex signatures [`270bcbb70`](https://github.com/netcookies/isulewTools/commit/270bcbb70)
+- reuse registered membership manifest [`7959635f4`](https://github.com/netcookies/isulewTools/commit/7959635f4)
+- 支持幂等 manifest publish 响应 [`43993aa65`](https://github.com/netcookies/isulewTools/commit/43993aa65)
+- 修复下载悬浮窗图标动画 [`f9f777ad5`](https://github.com/netcookies/isulewTools/commit/f9f777ad5)
+
+### Chore
+- bump beta release to v3.0.0-beta.6 [`e4f88901d`](https://github.com/netcookies/isulewTools/commit/e4f88901d)
+
 ## v3.0.0-beta.4 (2026-10-14)
 
 ### Feature
