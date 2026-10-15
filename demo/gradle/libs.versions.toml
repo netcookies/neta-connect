@@ -14,8 +14,9 @@ javaVersion = "11"
 # ============================================================
 # Application Versioning
 # ============================================================
-appVersionCode = "169"
-appVersionName = "3.0.0-beta.1"
+# Membership beta5 carries the first manifest-gated client metadata contract.
+appVersionCode = "170"
+appVersionName = "3.0.0-beta.5"
 minCompatibleBridgeVersion = "2.1.7"
 
 # ============================================================
