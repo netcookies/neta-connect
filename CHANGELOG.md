@@ -6,6 +6,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.7 (2026-10-16)
+
+### Feature
+- 统一输入弹窗与常驻远程输入 [`cbec2c5ef`](https://github.com/netcookies/isulewTools/commit/cbec2c5ef)
+- 增加启用须知与停用确认 [`84e8a8ac0`](https://github.com/netcookies/isulewTools/commit/84e8a8ac0)
+- 替换连接页网络说明图 [`abbfc5dcb`](https://github.com/netcookies/isulewTools/commit/abbfc5dcb)
+
+### Bug Fixes
+- 隔离远程输入回调代际 [`55bad7e56`](https://github.com/netcookies/isulewTools/commit/55bad7e56)
+- 完善远程输入队列生命周期 [`4c0d32b9f`](https://github.com/netcookies/isulewTools/commit/4c0d32b9f)
+- 保证远程输入消息顺序 [`5486064d7`](https://github.com/netcookies/isulewTools/commit/5486064d7)
+- 修复首次运行时配置增量保存 [`05129210f`](https://github.com/netcookies/isulewTools/commit/05129210f)
+- 收窄远程输入并发临界区 [`855334269`](https://github.com/netcookies/isulewTools/commit/855334269)
+- 串行化远程输入 WebSocket 状态 [`e2422309b`](https://github.com/netcookies/isulewTools/commit/e2422309b)
+- 修复远程输入同步与服务恢复 [`5b0ed6e67`](https://github.com/netcookies/isulewTools/commit/5b0ed6e67)
+- 完善性能诊断快捷提交链路 [`5863037bf`](https://github.com/netcookies/isulewTools/commit/5863037bf)
+- 对齐证书门禁可用状态展示 [`b4d422ec2`](https://github.com/netcookies/isulewTools/commit/b4d422ec2)
+- 精确区分限流与证书拒绝 [`9b640fd63`](https://github.com/netcookies/isulewTools/commit/9b640fd63)
+- 补齐 root iAP2 会员认证头透传 [`1dfef42ac`](https://github.com/netcookies/isulewTools/commit/1dfef42ac)
+- 会员权益名称使用主题文字颜色 [`57451f1ff`](https://github.com/netcookies/isulewTools/commit/57451f1ff)
+- 对齐 membership manifest 幂等发布链 [`9dc43e53e`](https://github.com/netcookies/isulewTools/commit/9dc43e53e)
+
+### Chore
+- bump version for local publish v3.0.0-beta.7 [skip ci] [`7d4a7578a`](https://github.com/netcookies/isulewTools/commit/7d4a7578a)
+- 统一会员构建身份与发布校验 [`b34eb56d8`](https://github.com/netcookies/isulewTools/commit/b34eb56d8)
+
+### Refactor
+- 统一设置分组与控制区布局 [`b3308e601`](https://github.com/netcookies/isulewTools/commit/b3308e601)
+
 ## v3.0.0-beta.6 (2026-10-15)
 
 ### Feature
