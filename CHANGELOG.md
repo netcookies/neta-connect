@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.8 (2026-10-17)
+
+### Bug Fixes
+- prevent membership header truncation [`34f6d6336`](https://github.com/netcookies/isulewTools/commit/34f6d6336)
+- 移除 MFi API key 兼容 fallback [`a055eee5c`](https://github.com/netcookies/isulewTools/commit/a055eee5c)
+- 更新 TXT gateway fallback 配置 [`6de5f7798`](https://github.com/netcookies/isulewTools/commit/6de5f7798)
+- 自动获取 membership CAS revision [`5dfdf0bfd`](https://github.com/netcookies/isulewTools/commit/5dfdf0bfd)
+
+### Chore
+- bump version for local publish v3.0.0-beta.8 [skip ci] [`13b15b02d`](https://github.com/netcookies/isulewTools/commit/13b15b02d)
+
 ## v3.0.0-beta.7 (2026-10-16)
 
 ### Feature
