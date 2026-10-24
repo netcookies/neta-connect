@@ -16,7 +16,7 @@ javaVersion = "11"
 # ============================================================
 # Membership beta5 carries the first manifest-gated client metadata contract.
 appVersionCode = "171"
-appVersionName = "3.0.0-beta.6"
+appVersionName = "3.0.0-beta.8"
 minCompatibleBridgeVersion = "2.1.7"
 
 # ============================================================
@@ -45,8 +45,13 @@ json = "20260522"
 composeBom = "2026.05.01"
 # 注意：所有 Compose 库版本由 BOM 统一管理
 
+# Compose UI extensions
+telephoto = "0.19.0"
+
 # 拖拽库（2026-09-30 用户裁决）：提供 drop target 与条件放置，树的 INTO/BEFORE/AFTER 靠它
 composeDnd = "0.5.0"
+
+# 拖拽库（2026-09-30 用户裁决）：提供 drop target 与条件放置，树的 INTO/BEFORE/AFTER 靠它
 
 # ============================================================
 # Kotlin Libraries
@@ -95,6 +100,7 @@ nanohttpd = "2.3.1"
 tyme4kt = "1.4.5"
 tarsosdsp = "2.4.1"
 perfetto = "1.0.1"
+filekit = "0.16.0"
 
 # ============================================================
 # Audio
@@ -162,6 +168,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 # ------------------------------------------------------------
 compose-colorpicker = { group = "com.godaddy.android.colorpicker", name = "compose-color-picker", version.ref = "colorpicker" }
 compose-colorpicker-android = { group = "com.godaddy.android.colorpicker", name = "compose-color-picker-android", version.ref = "colorpicker" }
+telephoto-zoomable = { group = "me.saket.telephoto", name = "zoomable", version.ref = "telephoto" }
 json = { module = "org.json:json", version.ref = "json" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockkAndroid" }
@@ -217,6 +224,7 @@ nanohttpd-websocket = { group = "org.nanohttpd", name = "nanohttpd-websocket", v
 tyme4kt = { group = "cn.6tail", name = "tyme4kt", version.ref = "tyme4kt" }
 tarsosdsp = { group = "com.github.st-h", name = "TarsosDSP", version.ref = "tarsosdsp" }
 androidx-tracing-perfetto = { group = "androidx.tracing", name = "tracing-perfetto", version.ref = "perfetto" }
+filekit-core = { group = "io.github.vinceglb", name = "filekit-core", version.ref = "filekit" }
 
 # ------------------------------------------------------------
 # Audio
