@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.11 (2026-10-28)
+
+### Feature
+- integrate V3 provider behind an experimental toggle [`218a864dc`](https://github.com/netcookies/isulewTools/commit/218a864dc)
+- add standalone V3 diagnostic probe and adjust UI layout [`1ee3908ac`](https://github.com/netcookies/isulewTools/commit/1ee3908ac)
+- integrate V3 provider behind an experimental toggle [`cd61f1ee9`](https://github.com/netcookies/isulewTools/commit/cd61f1ee9)
+
+### Bug Fixes
+- guard debug diagnostics and scope probe credentials [`145f02fe8`](https://github.com/netcookies/isulewTools/commit/145f02fe8)
+- use vehicle SN and refresh login state [`8600bc0f4`](https://github.com/netcookies/isulewTools/commit/8600bc0f4)
+- consume ACL events by monotonic sequence instead of device identity [`59bf3aa01`](https://github.com/netcookies/isulewTools/commit/59bf3aa01)
+
+### Chore
+- bump version for local publish v3.0.0-beta.11 [skip ci] [`32ed08bcf`](https://github.com/netcookies/isulewTools/commit/32ed08bcf)
+
+### Other
+- ui(settings): promote V3 provider toggle and simplify tab layout [`b25e508e1`](https://github.com/netcookies/isulewTools/commit/b25e508e1)
+
 ## v3.0.0-beta.10 (2026-10-27)
 
 ### Bug Fixes
