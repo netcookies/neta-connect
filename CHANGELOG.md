@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.10 (2026-10-27)
+
+### Bug Fixes
+- allow empty mfiV2DeviceCredential in JNI config parsing [`34ee42de3`](https://github.com/netcookies/isulewTools/commit/34ee42de3)
+
+### Chore
+- bump version for local publish v3.0.0-beta.10 [skip ci] [`3ff0a1cd6`](https://github.com/netcookies/isulewTools/commit/3ff0a1cd6)
+
 ## v3.0.0-beta.9 (2026-10-27)
 
 ### Feature
