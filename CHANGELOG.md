@@ -6,6 +6,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.9 (2026-10-27)
+
+### Feature
+- gate publishing on the MFi v3 capability pin [`925af48d2`](https://github.com/netcookies/isulewTools/commit/925af48d2)
+- support fallback capability issuer pin [`2e607c854`](https://github.com/netcookies/isulewTools/commit/2e607c854)
+- 落地 v3 native provider 与设备密钥链路 [`bf6402b8f`](https://github.com/netcookies/isulewTools/commit/bf6402b8f)
+- 新增局域网传输服务与 sysstate 系统状态公共层 [`1031de455`](https://github.com/netcookies/isulewTools/commit/1031de455)
+- 注册文件管理生产路由 R27 / N53 [`d235d66eb`](https://github.com/netcookies/isulewTools/commit/d235d66eb)
+- 实现车机文件工作台页面与存储层 [`b74ef4dc9`](https://github.com/netcookies/isulewTools/commit/b74ef4dc9)
+- 单栏页面支持详情边缘贴合与文件管理尺寸 token [`d2aa1b1f6`](https://github.com/netcookies/isulewTools/commit/d2aa1b1f6)
+- 补充文件类型语义图标 [`e835820d3`](https://github.com/netcookies/isulewTools/commit/e835820d3)
+- 支持独立节点控制台、固定端口转发与节点管理 [`156cb798d`](https://github.com/netcookies/isulewTools/commit/156cb798d)
+- 支持 App 日夜主题模式与前台恢复 [`9252d0c10`](https://github.com/netcookies/isulewTools/commit/9252d0c10)
+- 接入原型视觉并修正 Dock 布局 [`b25d710eb`](https://github.com/netcookies/isulewTools/commit/b25d710eb)
+- 增加图片缩放查看并修复相关交互 [`648d6c1df`](https://github.com/netcookies/isulewTools/commit/648d6c1df)
+- 加固 Android 组件与 CarPlay 信任边界 [`1907f209b`](https://github.com/netcookies/isulewTools/commit/1907f209b)
+
+### Bug Fixes
+- prepare release native dependencies [`03abfdfdd`](https://github.com/netcookies/isulewTools/commit/03abfdfdd)
+- resolve capability issuer pins from local.properties [`0b096894c`](https://github.com/netcookies/isulewTools/commit/0b096894c)
+- 修复快速切换目录触发协程取消弹窗的问题 [`fe9a34dc9`](https://github.com/netcookies/isulewTools/commit/fe9a34dc9)
+- 目录卡片按具体路由图标渲染 [`7d9bb8481`](https://github.com/netcookies/isulewTools/commit/7d9bb8481)
+- 退出分屏全屏后形态判定按内容视口计算 [`32d6743c1`](https://github.com/netcookies/isulewTools/commit/32d6743c1)
+- 收紧会员与更新下载安全校验 [`9b183e4ee`](https://github.com/netcookies/isulewTools/commit/9b183e4ee)
+- complete credential recovery flow [`b1a163111`](https://github.com/netcookies/isulewTools/commit/b1a163111)
+
+### Documentation
+- 归档文件管理器五方向原型与共享样式 [`75b28c05f`](https://github.com/netcookies/isulewTools/commit/75b28c05f)
+
+### Chore
+- bump version for local publish v3.0.0-beta.9 [skip ci] [`70f23eacf`](https://github.com/netcookies/isulewTools/commit/70f23eacf)
+- 引入 FileKit 依赖与 SAF 验证入口 [`845cd72b0`](https://github.com/netcookies/isulewTools/commit/845cd72b0)
+
 ## v3.0.0-beta.8 (2026-10-17)
 
 ### Bug Fixes
