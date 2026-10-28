@@ -6,6 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.12 (2026-10-28)
+
+### Feature
+- expand native HTTP allowlist with V3 control-plane error codes [`8e3d2a399`](https://github.com/netcookies/isulewTools/commit/8e3d2a399)
+- wire metadata recovery into the diagnostic probe [`49d138cb0`](https://github.com/netcookies/isulewTools/commit/49d138cb0)
+- add the client half of the V3 metadata recovery protocol [`cd3a25ae1`](https://github.com/netcookies/isulewTools/commit/cd3a25ae1)
+
+### Bug Fixes
+- align V3 error code classification with gateway handlers [`49848c0d4`](https://github.com/netcookies/isulewTools/commit/49848c0d4)
+- narrow conflict mapping and validate resume identity [`2375b7714`](https://github.com/netcookies/isulewTools/commit/2375b7714)
+- recover instead of deadlocking when a committed enrollment loses its binding [`94b0d9550`](https://github.com/netcookies/isulewTools/commit/94b0d9550)
+
+### Test
+- assert X-Membership-Error-Code header propagation in native HTTP layer [`1eaacd193`](https://github.com/netcookies/isulewTools/commit/1eaacd193)
+- account for emulator clock drift in recovery negative matrix [`1104e811a`](https://github.com/netcookies/isulewTools/commit/1104e811a)
+- cover the client-constructible recovery negative matrix [`36a7ce71a`](https://github.com/netcookies/isulewTools/commit/36a7ce71a)
+- prove metadata recovery end to end against staging [`644f8766c`](https://github.com/netcookies/isulewTools/commit/644f8766c)
+- pin the shared metadata recovery golden vector [`bcd83647e`](https://github.com/netcookies/isulewTools/commit/bcd83647e)
+
+### Chore
+- bump version for local publish v3.0.0-beta.12 [skip ci] [`ceb5ac214`](https://github.com/netcookies/isulewTools/commit/ceb5ac214)
+
 ## v3.0.0-beta.11 (2026-10-28)
 
 ### Feature
