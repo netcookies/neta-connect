@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.13 (2026-10-29)
+
+### Feature
+- 为 V3 签名回调补齐分类日志与 native 服务未启动提示 [`cd8f06eb1`](https://github.com/netcookies/isulewTools/commit/cd8f06eb1)
+
+### Documentation
+- 记录 MFi V3 staging 与 Beta.12 发布状态 [`73320c528`](https://github.com/netcookies/isulewTools/commit/73320c528)
+
+### Chore
+- bump version for local publish v3.0.0-beta.13 [skip ci] [`6b18919ba`](https://github.com/netcookies/isulewTools/commit/6b18919ba)
+
 ## v3.0.0-beta.12 (2026-10-28)
 
 ### Feature
