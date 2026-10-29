@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.17 (2026-10-30)
+
+### Bug Fixes
+- requestMfiSigner deadline 校验改用 bootstrap 预算并钉住四层窗口一致 [`3f770e171`](https://github.com/netcookies/isulewTools/commit/3f770e171)
+
+### Chore
+- bump version for local publish v3.0.0-beta.17 [skip ci] [`61d8a0726`](https://github.com/netcookies/isulewTools/commit/61d8a0726)
+
 ## v3.0.0-beta.16 (2026-10-30)
 
 ### Bug Fixes
