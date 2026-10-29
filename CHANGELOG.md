@@ -6,8 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.16 (2026-10-30)
+
+### Bug Fixes
+- 放宽 MFi V3 重新注册版本断言并调整签名窗口对齐 bootstrap 预算 [`2e4d4c3ab`](https://github.com/netcookies/isulewTools/commit/2e4d4c3ab)
+
 ### Documentation
+- rename CLAUDE.md to AGENTS.md across modules and update internal links [`0f45e707e`](https://github.com/netcookies/isulewTools/commit/0f45e707e)
+- 发布协作任务强制读取三方规范并接入 Maestro [`d8202d43f`](https://github.com/netcookies/isulewTools/commit/d8202d43f)
+- 更新三方协作规范至 gateway 31e4f47（采纳 staging 3 条校准） [`91a0bdf7c`](https://github.com/netcookies/isulewTools/commit/91a0bdf7c)
 - 同步三方发布协作规范（与 gateway cec3550 内容一致） [`4a04dc561`](https://github.com/netcookies/isulewTools/commit/4a04dc561)
+
+### Chore
+- bump version for local publish v3.0.0-beta.16 [skip ci] [`e96ee5916`](https://github.com/netcookies/isulewTools/commit/e96ee5916)
 
 ## v3.0.0-beta.15 (2026-10-29)
 
