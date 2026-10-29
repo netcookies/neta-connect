@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.18 (2026-10-30)
+
+### Chore
+- bump version for local publish v3.0.0-beta.18 [skip ci] [`d445f2409`](https://github.com/netcookies/isulewTools/commit/d445f2409)
+
+### Other
+- diag(carplay): 补 MFi V3 签名链 begin/wait/stale-id 全链路打点 [`eae38466c`](https://github.com/netcookies/isulewTools/commit/eae38466c)
+
 ## v3.0.0-beta.17 (2026-10-30)
 
 ### Bug Fixes
