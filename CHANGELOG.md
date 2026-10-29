@@ -6,6 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.14 (2026-10-29)
+
+### Feature
+- 呈现 recoveryRequestId 并增加 recovery_disabled 专用置灰文案 [`2005b1cc7`](https://github.com/netcookies/isulewTools/commit/2005b1cc7)
+
+### Bug Fixes
+- 修复 review P2——重启回填工单号与置灰状态跨重建保持 [`328f4eea1`](https://github.com/netcookies/isulewTools/commit/328f4eea1)
+- 补齐 recovery_rate_limited 与 ownership_unverified 错误码透传 [`b34dd3dc0`](https://github.com/netcookies/isulewTools/commit/b34dd3dc0)
+- native 透传 credential_recovery_required 以进入人工恢复流程 [`2f111664a`](https://github.com/netcookies/isulewTools/commit/2f111664a)
+- 对齐服务端 canonical 错误码，透传并归类 tombstoned/sn_conflict 等 [`e4bf9d199`](https://github.com/netcookies/isulewTools/commit/e4bf9d199)
+
+### Documentation
+- 记录 credential-recovery-v1 联调收口与生产 flag 待办 [`105796183`](https://github.com/netcookies/isulewTools/commit/105796183)
+
+### Chore
+- bump version for local publish v3.0.0-beta.14 [skip ci] [`007c117a8`](https://github.com/netcookies/isulewTools/commit/007c117a8)
+
 ## v3.0.0-beta.13 (2026-10-29)
 
 ### Feature
