@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Documentation
+- 同步三方发布协作规范（与 gateway cec3550 内容一致） [`4a04dc561`](https://github.com/netcookies/isulewTools/commit/4a04dc561)
+
+## v3.0.0-beta.15 (2026-10-29)
+
+### Bug Fixes
+- 修复 review 两项高优先级缺陷（404 not_found 清理、consumed 保留重放材料） [`a27289933`](https://github.com/netcookies/isulewTools/commit/a27289933)
+- recovery 终态码落到可重申请 phase，修复申请过期后无法重新提交 [`63258479b`](https://github.com/netcookies/isulewTools/commit/63258479b)
+
+### Documentation
+- 更新 credential-recovery-v1 生产启用与 beta.14 收口记录 [`f79c461d6`](https://github.com/netcookies/isulewTools/commit/f79c461d6)
+
+### Chore
+- bump version for local publish v3.0.0-beta.15 [skip ci] [`0a747fb8f`](https://github.com/netcookies/isulewTools/commit/0a747fb8f)
+
 ## v3.0.0-beta.14 (2026-10-29)
 
 ### Feature
