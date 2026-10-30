@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.21 (2026-10-30)
+
+### Bug Fixes
+- iap2_ctrl_mfi_v3_provider_call 对 placeholder capability_jti 解析已安装真实 JTI [`e6aa6e7ae`](https://github.com/netcookies/isulewTools/commit/e6aa6e7ae)
+
+### Chore
+- bump version for local publish v3.0.0-beta.21 [skip ci] [`db47e1d7b`](https://github.com/netcookies/isulewTools/commit/db47e1d7b)
+
 ## v3.0.0-beta.20 (2026-10-30)
 
 ### Bug Fixes
