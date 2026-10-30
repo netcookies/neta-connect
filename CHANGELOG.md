@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.19 (2026-10-30)
+
+### Bug Fixes
+- 修复 MFi V3 签名回调与 bootstrap 的锁序死锁 [`6c74a5aa2`](https://github.com/netcookies/isulewTools/commit/6c74a5aa2)
+
+### Chore
+- bump version for local publish v3.0.0-beta.19 [skip ci] [`ecc97a038`](https://github.com/netcookies/isulewTools/commit/ecc97a038)
+
 ## v3.0.0-beta.18 (2026-10-30)
 
 ### Chore
