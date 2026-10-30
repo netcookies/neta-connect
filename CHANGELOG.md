@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.23 (2026-10-30)
+
+### Bug Fixes
+- 修复真实握手两条 V3 认证路径的 runtime 锁自死锁 [`3ceadf561`](https://github.com/netcookies/isulewTools/commit/3ceadf561)
+
+### Chore
+- bump version for local publish v3.0.0-beta.23 [skip ci] [`96adcaaa4`](https://github.com/netcookies/isulewTools/commit/96adcaaa4)
+- 清理诊断日志，降级成功链路并脱敏内部时序与常量 [`d0039602d`](https://github.com/netcookies/isulewTools/commit/d0039602d)
+
 ## v3.0.0-beta.22 (2026-10-30)
 
 ### Bug Fixes
