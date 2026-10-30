@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.22 (2026-10-30)
+
+### Bug Fixes
+- 去掉 provider call 入口对 mfi_v3.lock 的重复加锁（自死锁） [`6f6c187cd`](https://github.com/netcookies/isulewTools/commit/6f6c187cd)
+
+### Chore
+- bump version for local publish v3.0.0-beta.22 [skip ci] [`3f9153d20`](https://github.com/netcookies/isulewTools/commit/3f9153d20)
+
 ## v3.0.0-beta.21 (2026-10-30)
 
 ### Bug Fixes
