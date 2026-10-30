@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.20 (2026-10-30)
+
+### Bug Fixes
+- bootstrap 改为锁外调用 native，彻底解除 V3 签名回调死锁 [`384bc2a45`](https://github.com/netcookies/isulewTools/commit/384bc2a45)
+
+### Chore
+- bump version for local publish v3.0.0-beta.20 [skip ci] [`edf4f58e3`](https://github.com/netcookies/isulewTools/commit/edf4f58e3)
+
 ## v3.0.0-beta.19 (2026-10-30)
 
 ### Bug Fixes
