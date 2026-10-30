@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.24 (2026-10-30)
+
+### Bug Fixes
+- 闭环真实 iPhone 连车全链路（过期就地刷新 + 启动就绪门控 + 解除 V2 预检硬依赖） [`488c92221`](https://github.com/netcookies/isulewTools/commit/488c92221)
+
+### Chore
+- bump version for local publish v3.0.0-beta.24 [skip ci] [`96282733f`](https://github.com/netcookies/isulewTools/commit/96282733f)
+
 ## v3.0.0-beta.23 (2026-10-30)
 
 ### Bug Fixes
