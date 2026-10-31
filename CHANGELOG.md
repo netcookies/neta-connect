@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.25 (2026-10-31)
+
+### Bug Fixes
+- RV-006/RV-008 readiness deadline 绑定到实际 bootstrap 起点 [`77898ce57`](https://github.com/netcookies/isulewTools/commit/77898ce57)
+- 整改 sol review 的 4 项发布阻断（native lease + 单槽 pending + 代次绑定） [`2ea814dc2`](https://github.com/netcookies/isulewTools/commit/2ea814dc2)
+- A1-A4 闭环（禁用 SNI-off + 取消 /health 硬门禁 + V3 readiness 状态机与 pending 队列） [`34ccf163b`](https://github.com/netcookies/isulewTools/commit/34ccf163b)
+- 修正 V3 认证描述符缺失 request_id 与 V2 预检误门禁 [`68f772a11`](https://github.com/netcookies/isulewTools/commit/68f772a11)
+
+### Chore
+- bump version for local publish v3.0.0-beta.25 [skip ci] [`ec919050e`](https://github.com/netcookies/isulewTools/commit/ec919050e)
+
 ## v3.0.0-beta.24 (2026-10-30)
 
 ### Bug Fixes
