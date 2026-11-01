@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.26 (2026-11-01)
+
+### Feature
+- integrate native DNS and CarPlay deadline updates [`f9e8a3ae7`](https://github.com/netcookies/isulewTools/commit/f9e8a3ae7)
+
+### Chore
+- bump version for local publish v3.0.0-beta.26 [skip ci] [`e7e5cb63e`](https://github.com/netcookies/isulewTools/commit/e7e5cb63e)
+
 ## v3.0.0-beta.25 (2026-10-31)
 
 ### Bug Fixes
