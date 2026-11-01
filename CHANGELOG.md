@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.27 (2026-11-01)
+
+### Bug Fixes
+- initialize privilege DNS through root context service [`994696e3b`](https://github.com/netcookies/isulewTools/commit/994696e3b)
+
+### Chore
+- bump version for local publish v3.0.0-beta.27 [skip ci] [`e62fc2e81`](https://github.com/netcookies/isulewTools/commit/e62fc2e81)
+
 ## v3.0.0-beta.26 (2026-11-01)
 
 ### Feature
