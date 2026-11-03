@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.28 (2026-11-03)
+
+### Feature
+- add advanced CarPlay diagnostics [`1c06227de`](https://github.com/netcookies/isulewTools/commit/1c06227de)
+- publish app updates through Gateway [`9b7872708`](https://github.com/netcookies/isulewTools/commit/9b7872708)
+
+### Bug Fixes
+- align local publish preflight sources [`9bd0a8a00`](https://github.com/netcookies/isulewTools/commit/9bd0a8a00)
+- keep root context on package context boundary [`756aa5c88`](https://github.com/netcookies/isulewTools/commit/756aa5c88)
+
+### Chore
+- remove CarPlay test app module [`7462c97aa`](https://github.com/netcookies/isulewTools/commit/7462c97aa)
+
+### Refactor
+- retire MFi v2 and unify native HTTP transport [`85d0ae8f9`](https://github.com/netcookies/isulewTools/commit/85d0ae8f9)
+
+### Other
+- Merge commit '9bd0a8a00e2b79763d13b239b1628dc8efc5570e' [`ad25a4e3b`](https://github.com/netcookies/isulewTools/commit/ad25a4e3b)
+
 ## v3.0.0-beta.27 (2026-11-01)
 
 ### Bug Fixes
