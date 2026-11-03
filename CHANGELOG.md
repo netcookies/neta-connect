@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.29 (2026-11-03)
+
+### Bug Fixes
+- restore CarPlay MFi auth and Tailscale settings [`ddc719fd9`](https://github.com/netcookies/isulewTools/commit/ddc719fd9)
+
+### Chore
+- bump version for local publish v3.0.0-beta.29 [skip ci] [`f5299f253`](https://github.com/netcookies/isulewTools/commit/f5299f253)
+
 ## v3.0.0-beta.28 (2026-11-03)
 
 ### Feature
