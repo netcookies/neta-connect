@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.32 (2026-11-05)
+
+### Bug Fixes
+- serialize reconnect attempts and fence stale callbacks [`b780ecfb2`](https://github.com/netcookies/isulewTools/commit/b780ecfb2)
+
+### Documentation
+- record CarPlay reconnect attempt fencing [`be55270fd`](https://github.com/netcookies/isulewTools/commit/be55270fd)
+
+### Chore
+- bump version for local publish v3.0.0-beta.32 [skip ci] [`0f2bea990`](https://github.com/netcookies/isulewTools/commit/0f2bea990)
+
 ## v3.0.0-beta.31 (2026-11-04)
 
 ### Bug Fixes
