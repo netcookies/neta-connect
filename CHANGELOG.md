@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.31 (2026-11-04)
+
+### Bug Fixes
+- refresh payload before manual download [`1f7215dc4`](https://github.com/netcookies/isulewTools/commit/1f7215dc4)
+- rearm closed iAP2 sessions and add MFi diagnostics [`e145e2913`](https://github.com/netcookies/isulewTools/commit/e145e2913)
+- recover node on network changes [`3cc5ec900`](https://github.com/netcookies/isulewTools/commit/3cc5ec900)
+
+### Chore
+- bump version for local publish v3.0.0-beta.31 [skip ci] [`5bc945949`](https://github.com/netcookies/isulewTools/commit/5bc945949)
+
 ## v3.0.0-beta.30 (2026-11-03)
 
 ### Bug Fixes
