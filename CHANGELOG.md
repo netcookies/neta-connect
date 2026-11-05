@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.34 (2026-11-05)
+
+### Bug Fixes
+- fence renderer activation against rearm callbacks [`29dfbba2a`](https://github.com/netcookies/isulewTools/commit/29dfbba2a)
+- preserve CarPlay transport and callback state [`79a2ba4f9`](https://github.com/netcookies/isulewTools/commit/79a2ba4f9)
+- reset stale transport readiness on restart [`773ea980c`](https://github.com/netcookies/isulewTools/commit/773ea980c)
+- break QuickConnect readiness cycle [`98dd60a52`](https://github.com/netcookies/isulewTools/commit/98dd60a52)
+
+### Test
+- cover renderer rearm interleavings [`17e49a074`](https://github.com/netcookies/isulewTools/commit/17e49a074)
+- cover late listener recovery cooldown [`94f32ce19`](https://github.com/netcookies/isulewTools/commit/94f32ce19)
+
+### Chore
+- bump version for local publish v3.0.0-beta.34 [skip ci] [`5c8eb8cb4`](https://github.com/netcookies/isulewTools/commit/5c8eb8cb4)
+
 ## v3.0.0-beta.33 (2026-11-05)
 
 ### Bug Fixes
