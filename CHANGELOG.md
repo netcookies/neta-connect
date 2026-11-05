@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.33 (2026-11-05)
+
+### Bug Fixes
+- restart unhealthy runtime before readiness wait [`08ff91dfb`](https://github.com/netcookies/isulewTools/commit/08ff91dfb)
+
+### Chore
+- bump version for local publish v3.0.0-beta.33 [skip ci] [`692e96cc3`](https://github.com/netcookies/isulewTools/commit/692e96cc3)
+
 ## v3.0.0-beta.32 (2026-11-05)
 
 ### Bug Fixes
