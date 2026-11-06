@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.35 (2026-11-06)
+
+### Bug Fixes
+- complete typed V3 failure and close lifecycle [`2a3c38970`](https://github.com/netcookies/isulewTools/commit/2a3c38970)
+
+### Chore
+- bump version for local publish v3.0.0-beta.35 [skip ci] [`1f2c482a1`](https://github.com/netcookies/isulewTools/commit/1f2c482a1)
+
 ## v3.0.0-beta.34 (2026-11-05)
 
 ### Bug Fixes
