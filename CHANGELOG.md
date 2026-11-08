@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.37 (2026-11-08)
+
+### Bug Fixes
+- preload device runtime before RootService [`0ae392200`](https://github.com/netcookies/isulewTools/commit/0ae392200)
+- cache MFi v3 certificates per identity [`83950a574`](https://github.com/netcookies/isulewTools/commit/83950a574)
+
+### Chore
+- bump version for local publish v3.0.0-beta.37 [skip ci] [`9c4a3b640`](https://github.com/netcookies/isulewTools/commit/9c4a3b640)
+
 ## v3.0.0-beta.36 (2026-11-08)
 
 ### Feature
@@ -631,7 +640,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 权益行套用 rowCardMinHeight + 补 heightIn import（用户反馈那一排不齐） [`acf2ff864`](https://github.com/netcookies/isulewTools/commit/acf2ff864)
 - 补「会员权益」副标题，三栏标题块对齐 [`a5f3e43ee`](https://github.com/netcookies/isulewTools/commit/a5f3e43ee)
 - 补 Ed25519 JNI 混淆边界 + 源码级回归断言 [`9e42d3a03`](https://github.com/netcookies/isulewTools/commit/9e42d3a03)
-- 证书 Ed25519 验签下沉 native（OpenSSL），修好 API<33 门禁恒拒 [`3061ae4e2`](https://github.com/netcookies/isulewTools/commit/3061ae4e2)
+- 证书 Ed25519 验签下沉 native（OpenSSL），修好 API&lt;33 门禁恒拒 [`3061ae4e2`](https://github.com/netcookies/isulewTools/commit/3061ae4e2)
 - 持久化快照诊断 message + 补服务端待转达清单（§十） [`909dc3413`](https://github.com/netcookies/isulewTools/commit/909dc3413)
 - 证书被服务端拒绝时不再静默放行（门禁拒绝 + 页面可见） [`bf59a1d39`](https://github.com/netcookies/isulewTools/commit/bf59a1d39)
 - 补 NONE 态文案缺口——待审批用服务端 message，未开通不再承诺「刷新即激活」 [`3096a12f4`](https://github.com/netcookies/isulewTools/commit/3096a12f4)
