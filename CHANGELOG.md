@@ -6,6 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.36 (2026-11-08)
+
+### Feature
+- replace reflective client with native JNI [`90cf8aca4`](https://github.com/netcookies/isulewTools/commit/90cf8aca4)
+
+### Bug Fixes
+- finish launcher before quick reconnect [`7ae5995a5`](https://github.com/netcookies/isulewTools/commit/7ae5995a5)
+- sanitize MFi failure diagnostics [`ac9fa1adb`](https://github.com/netcookies/isulewTools/commit/ac9fa1adb)
+- align SRP public key proof encoding [`3e275e21b`](https://github.com/netcookies/isulewTools/commit/3e275e21b)
+
+### Documentation
+- document Baidu CarLife HU protocol from 0.2.10 APK [`f515ae06e`](https://github.com/netcookies/isulewTools/commit/f515ae06e)
+- add log collection privacy guidance [`42e2183f9`](https://github.com/netcookies/isulewTools/commit/42e2183f9)
+
+### Chore
+- bump version for local publish v3.0.0-beta.36 [skip ci] [`f6f9870f6`](https://github.com/netcookies/isulewTools/commit/f6f9870f6)
+
 ## v3.0.0-beta.35 (2026-11-06)
 
 ### Bug Fixes
