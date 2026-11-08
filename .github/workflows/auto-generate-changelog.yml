@@ -46,14 +46,23 @@ jobs:
           git push origin
 
   build-deploy:
+    needs: changelog
     runs-on: ubuntu-latest
-    # 站点随 main 任意变更重建部署（文档/菜单/发布均可），不再依赖 changelog job
     if: >-
-      contains(github.event.head_commit.message, 'ci: Bump Version') ||
-      github.event_name == 'workflow_dispatch' ||
-      github.ref == 'refs/heads/main'
+      always() &&
+      (
+        contains(github.event.head_commit.message, 'ci: Bump Version') ||
+        github.event_name == 'workflow_dispatch' ||
+        github.ref == 'refs/heads/main'
+      ) &&
+      (
+        needs.changelog.result == 'success' ||
+        needs.changelog.result == 'skipped'
+      )
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && 'main' || github.sha }}
 
       - name: Resolve release version
         id: get_version

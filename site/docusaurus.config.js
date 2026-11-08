@@ -105,7 +105,7 @@ const config = {
         },
         {
           to: releaseData.releasePath,
-          label: releaseData.version,
+          label: releaseData.version || 'Release',
           position: 'right',
           className: 'header-github-release',
         },

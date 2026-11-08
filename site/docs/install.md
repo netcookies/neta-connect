@@ -1,5 +1,4 @@
 import CodeBlock from '@theme/CodeBlock';
-import releaseData from '../src/data/release-summary.generated.json';
 
 # 安装指南
 
@@ -29,14 +28,9 @@ import releaseData from '../src/data/release-summary.generated.json';
 
 ## 📥 下载应用
 
-### 方式 1: 站内 Release 页面（推荐）
+历史 APK 已全部停止提供，新的加固版本发布后将在 [Release 页面](/release) 提供下载。
 
-1. 访问 [Release 页面](/release)
-2. 找到当前版本的完整 APK 下载卡片
-3. 下载 <code>{`NETA_CONNECT-${releaseData.version}.apk`}</code> 文件
-4. 如需旧版本，可在同一页面的版本列表中选择对应 APK
-
-### 方式 2: 从源码构建
+### 从源码构建
 
 如果你想从源码构建应用：
 
@@ -78,10 +72,10 @@ cd neta-connect
 adb devices
 
 # 安装 APK
-adb install NETA_CONNECT-${releaseData.version}.apk
+adb install app/build/outputs/apk/debug/app-debug.apk
 
 # 或者强制覆盖安装
-adb install -r NETA_CONNECT-${releaseData.version}.apk`}</CodeBlock>
+adb install -r app/build/outputs/apk/debug/app-debug.apk`}</CodeBlock>
 
 #### 直接安装
 1. 将 APK 文件传输到 Android 设备
@@ -238,7 +232,7 @@ adb install -r NETA_CONNECT-${releaseData.version}.apk`}</CodeBlock>
 adb shell df -h
 
 # 检查 APK 文件完整性
-shasum -a 256 NETA_CONNECT-${releaseData.version}.apk
+shasum -a 256 app/build/outputs/apk/debug/app-debug.apk
 
 # 清理缓存后重试
 adb shell pm clear com.android.packageinstaller`}</CodeBlock>
@@ -260,7 +254,7 @@ adb logcat | grep -E "AndroidRuntime|FATAL"
 adb shell pm clear com.neta.isulewtools
 
 # 重新安装
-adb install -r NETA_CONNECT-${releaseData.version}.apk`}</CodeBlock>
+adb install -r app/build/outputs/apk/debug/app-debug.apk`}</CodeBlock>
 
 ### 问题 3: 无障碍服务无法开启
 

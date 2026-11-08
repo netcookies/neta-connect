@@ -90,6 +90,24 @@ export default function ReleasePage() {
   const currentRelease = releaseData.releases.find((release) => release.version === releaseData.version)
     || releaseData.releases[0];
 
+  if (!currentRelease) {
+    return (
+      <Layout
+        title="暂无可用版本"
+        description="历史 APK 已停止提供，新的加固版本准备中。">
+        <main className={styles.page}>
+          <section className={styles.hero}>
+            <div className={styles.heroContent}>
+              <span className={styles.heroEyebrow}>Release</span>
+              <h1>暂无可用版本</h1>
+              <p>历史 APK 已全部停止提供，新的加固版本发布后将在此页面提供下载。</p>
+            </div>
+          </section>
+        </main>
+      </Layout>
+    );
+  }
+
   return (
     <Layout
       title={`Release ${releaseData.version}`}
