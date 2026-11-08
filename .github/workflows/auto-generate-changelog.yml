@@ -33,6 +33,9 @@ jobs:
         run: |
           cd "${{ github.workspace }}/neta-connect/"
           cp -r "${{ github.workspace }}/CHANGELOG.md" "${{ github.workspace }}/neta-connect/"
+          # CHANGELOG 会被复制到 site/docs/changelog.md，并按 MDX 解析。
+          # 避免 commit subject 中的 API<33 被识别为非法 JSX。
+          perl -pi -e 's/<(?=[0-9])/&lt;/g' CHANGELOG.md
           perl -0777 -i -pe 's/^### Other[ \t]*\r?\n- Bump Version.*\r?\n[ \t]*\r?\n//mg' CHANGELOG.md
           perl -i -pe 's/^- Bump Version.*\r?\n//mg' CHANGELOG.md
           git config user.name 'GitHub Actions Bot'
