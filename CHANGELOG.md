@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.39 (2026-11-10)
+
+### Feature
+- 添加 VIN 重入校验与锁定界面 [`57c8d302f`](https://github.com/netcookies/isulewTools/commit/57c8d302f)
+
+### Chore
+- bump version for local publish v3.0.0-beta.39 [skip ci] [`710356fb2`](https://github.com/netcookies/isulewTools/commit/710356fb2)
+
 ## v3.0.0-beta.38 (2026-11-10)
 
 ### Feature
