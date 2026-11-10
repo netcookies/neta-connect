@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.38 (2026-11-10)
+
+### Feature
+- 收敛发布授权与 native 启动边界 [`452fca879`](https://github.com/netcookies/isulewTools/commit/452fca879)
+
+### Bug Fixes
+- 异步执行只读 VIN 探测并隔离句柄生命周期 [`2bebf86e8`](https://github.com/netcookies/isulewTools/commit/2bebf86e8)
+- 修正重新取证与解锁后的业务恢复 [`e581301ac`](https://github.com/netcookies/isulewTools/commit/e581301ac)
+
+### Continuous Integration
+- 停止向公开仓库发布 APK [`6a3056aa4`](https://github.com/netcookies/isulewTools/commit/6a3056aa4)
+
+### Chore
+- bump version for local publish v3.0.0-beta.38 [skip ci] [`ee067eb68`](https://github.com/netcookies/isulewTools/commit/ee067eb68)
+- 更新本地模型选择配置 [`d05aa4c4b`](https://github.com/netcookies/isulewTools/commit/d05aa4c4b)
+
+### Refactor
+- 收敛 MFi HTTPS transport 并移除旧 API [`a38e8afbd`](https://github.com/netcookies/isulewTools/commit/a38e8afbd)
+
 ## v3.0.0-beta.37 (2026-11-08)
 
 ### Bug Fixes
