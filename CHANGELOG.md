@@ -6,6 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.41 (2026-11-11)
+
+### Feature
+- 接入 BLA 与 Xop 加固并修复特权进程启动 [`c52f41917`](https://github.com/netcookies/isulewTools/commit/c52f41917)
+- 加固车辆身份与 Native 完整性校验 [`2bbe70ba9`](https://github.com/netcookies/isulewTools/commit/2bbe70ba9)
+
+### Bug Fixes
+- 修复启用状态显示与网络恢复 [`48bdaef52`](https://github.com/netcookies/isulewTools/commit/48bdaef52)
+- Release 授权失败时拒绝离线快照 [`2d506531e`](https://github.com/netcookies/isulewTools/commit/2d506531e)
+- require server heartbeat for release authorization [`6917f1318`](https://github.com/netcookies/isulewTools/commit/6917f1318)
+- require server heartbeat for release authorization [`df48a041c`](https://github.com/netcookies/isulewTools/commit/df48a041c)
+- 将车辆身份校验迁入 native 并修复失败边界 [`d7afaf7b4`](https://github.com/netcookies/isulewTools/commit/d7afaf7b4)
+- 修复本地发布构建的运行时导入路径 [`d7bee0515`](https://github.com/netcookies/isulewTools/commit/d7bee0515)
+
+### Documentation
+- 同步发布分发与当前版本说明 [`f3838c0ad`](https://github.com/netcookies/isulewTools/commit/f3838c0ad)
+
+### Chore
+- bump version for local publish v3.0.0-beta.41 [skip ci] [`d4db98486`](https://github.com/netcookies/isulewTools/commit/d4db98486)
+
+### Other
+- merge(security): integrate native vehicle identity hardening [`06cbe52c0`](https://github.com/netcookies/isulewTools/commit/06cbe52c0)
+
 ## v3.0.0-beta.40 (2026-11-10)
 
 ### Bug Fixes
