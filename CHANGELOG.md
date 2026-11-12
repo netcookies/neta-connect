@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.44 (2026-11-12)
+
+### Bug Fixes
+- 修正 429 冷却的端点范围与恢复闭环（review 反馈） [`684053dca`](https://github.com/netcookies/isulewTools/commit/684053dca)
+- 429 冷却持久化，避免重启刷新限流窗口导致永久锁死 [`681ca5b96`](https://github.com/netcookies/isulewTools/commit/681ca5b96)
+
+### Documentation
+- 更正 snapshot_exp 判断并补充权益真源说明 [`3a3e136b4`](https://github.com/netcookies/isulewTools/commit/3a3e136b4)
+- 记录会员激活失败与无障碍失效排查结论 [`c135582a6`](https://github.com/netcookies/isulewTools/commit/c135582a6)
+
+### Test
+- 补 429 冷却的授权入口闭环单测 [`cea8362ee`](https://github.com/netcookies/isulewTools/commit/cea8362ee)
+
+### Chore
+- bump version for local publish v3.0.0-beta.44 [skip ci] [`adf1868c4`](https://github.com/netcookies/isulewTools/commit/adf1868c4)
+
 ## v3.0.0-beta.43 (2026-11-12)
 
 ### Bug Fixes
