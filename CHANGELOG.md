@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.43 (2026-11-12)
+
+### Bug Fixes
+- 无障碍恢复不再依赖 Release gate 解锁 [`923af2e39`](https://github.com/netcookies/isulewTools/commit/923af2e39)
+- 激活后落 attest 基线，避免首次心跳误报凭据丢失 [`ffd4b5bf4`](https://github.com/netcookies/isulewTools/commit/ffd4b5bf4)
+
+### Chore
+- bump version for local publish v3.0.0-beta.43 [skip ci] [`7eaa76957`](https://github.com/netcookies/isulewTools/commit/7eaa76957)
+
 ## v3.0.0-beta.42 (2026-11-12)
 
 ### Bug Fixes
