@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.42 (2026-11-12)
+
+### Bug Fixes
+- prepare 容忍旧 manifest 中残留的嵌套 npm .bin 条目 [`0e5710f5a`](https://github.com/netcookies/isulewTools/commit/0e5710f5a)
+- 加固工具链兼容旧缓存的嵌套 npm .bin 条目 [`e77b69d7e`](https://github.com/netcookies/isulewTools/commit/e77b69d7e)
+- 加固工具链允许嵌套依赖树的 npm .bin launcher [`e1c5186bd`](https://github.com/netcookies/isulewTools/commit/e1c5186bd)
+- 门禁页支持设备凭据人工恢复 [`6948f353f`](https://github.com/netcookies/isulewTools/commit/6948f353f)
+- 收紧 RASP 策略并扩展 native pin [`0d61ef132`](https://github.com/netcookies/isulewTools/commit/0d61ef132)
+
+### Documentation
+- 更新 beta.41 发布说明 [`b5a7d26d5`](https://github.com/netcookies/isulewTools/commit/b5a7d26d5)
+
+### Chore
+- bump version for local publish v3.0.0-beta.42 [skip ci] [`5845f8bda`](https://github.com/netcookies/isulewTools/commit/5845f8bda)
+
 ## v3.0.0-beta.41 (2026-11-11)
 
 ### Feature
