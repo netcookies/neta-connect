@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.45 (2026-11-13)
+
+### Feature
+- 启用 SO 加密，pin 改为从 APK 内条目计算 [`08be476d4`](https://github.com/netcookies/isulewTools/commit/08be476d4)
+
+### Chore
+- bump version for local publish v3.0.0-beta.45 [skip ci] [`a219ccdec`](https://github.com/netcookies/isulewTools/commit/a219ccdec)
+
 ## v3.0.0-beta.44 (2026-11-12)
 
 ### Bug Fixes
