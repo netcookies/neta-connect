@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.46 (2026-11-13)
+
+### Bug Fixes
+- DT_NEEDED 依赖库必须保持明文，修复 CarPlay 启动崩溃 [`f4f775056`](https://github.com/netcookies/isulewTools/commit/f4f775056)
+
+### Documentation
+- 补 SO 加固必须真机验证、APK SHA 与 nativeHash 分域等约束 [`1145c0313`](https://github.com/netcookies/isulewTools/commit/1145c0313)
+- 记录 SO 加密启用、L1 publish 绕行与 pin 来源迁移 [`20348b937`](https://github.com/netcookies/isulewTools/commit/20348b937)
+
+### Chore
+- bump version for local publish v3.0.0-beta.46 [skip ci] [`f47e9019a`](https://github.com/netcookies/isulewTools/commit/f47e9019a)
+
 ## v3.0.0-beta.45 (2026-11-13)
 
 ### Feature
