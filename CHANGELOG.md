@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.47 (2026-11-13)
+
+### Performance Improvements
+- 复用进程级 SSL_CTX，避免每次 TLS 连接重载 138 个系统 CA [`4c11773bd`](https://github.com/netcookies/isulewTools/commit/4c11773bd)
+
+### Chore
+- bump version for local publish v3.0.0-beta.47 [skip ci] [`43e990b85`](https://github.com/netcookies/isulewTools/commit/43e990b85)
+
 ## v3.0.0-beta.46 (2026-11-13)
 
 ### Bug Fixes
