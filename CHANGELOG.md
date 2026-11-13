@@ -6,6 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.50 (2026-11-13)
+
+### Feature
+- 产物记录构建 commit；修复发布脚本测试替身不完整 [`e0cca014e`](https://github.com/netcookies/isulewTools/commit/e0cca014e)
+
+### Bug Fixes
+- 修复启动锁竞争与制品来源证明 [`0d4b67bb7`](https://github.com/netcookies/isulewTools/commit/0d4b67bb7)
+- gh 网络瞬时错误重试，避免"发布成功但退出码 1" [`16cbd52fe`](https://github.com/netcookies/isulewTools/commit/16cbd52fe)
+
+### Performance Improvements
+- 消除 iap2/DoH 的 CA 重载；砍掉 V2 假 fallback [`6c9c74280`](https://github.com/netcookies/isulewTools/commit/6c9c74280)
+- bootstrap 移出主线程；预热加密 prefs [`7060249f7`](https://github.com/netcookies/isulewTools/commit/7060249f7)
+
+### Chore
+- bump version for local publish v3.0.0-beta.50 [skip ci] [`ba0e2a433`](https://github.com/netcookies/isulewTools/commit/ba0e2a433)
+- bump version for local publish v3.0.0-beta.49 [skip ci] [`eaf46beb0`](https://github.com/netcookies/isulewTools/commit/eaf46beb0)
+
+### Refactor
+- 彻底移除 V2 MFi endpoint 概念 [`995e0cb9f`](https://github.com/netcookies/isulewTools/commit/995e0cb9f)
+
 ## v3.0.0-beta.48 (2026-11-13)
 
 ### Feature
