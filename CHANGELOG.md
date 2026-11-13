@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.48 (2026-11-13)
+
+### Feature
+- resume 时保持解锁、后台复检，不再阻塞主线程与闪门禁页 [`6c9102414`](https://github.com/netcookies/isulewTools/commit/6c9102414)
+
+### Bug Fixes
+- 补齐 certificateRevoked 的状态生命周期（快照/单调/持久化） [`7703c5af0`](https://github.com/netcookies/isulewTools/commit/7703c5af0)
+- 历史 pin 域改为显式开关，默认严格只认当前域 [`25de0d45c`](https://github.com/netcookies/isulewTools/commit/25de0d45c)
+- 证书撤销改为精确信号，同时保住历史 pin 域与真实撤权能力 [`7830172e9`](https://github.com/netcookies/isulewTools/commit/7830172e9)
+- 撤回把 certificateRejected 当撤权信号的误锁逻辑 [`2b5060a8e`](https://github.com/netcookies/isulewTools/commit/2b5060a8e)
+- pin 覆盖完整性门禁自身、release 禁止 pin 来源回退、锁定 dex_scan_compat [`9c3487044`](https://github.com/netcookies/isulewTools/commit/9c3487044)
+- 修复第三轮复核的发布阻断与撤权缺口 [`4d64166c2`](https://github.com/netcookies/isulewTools/commit/4d64166c2)
+- 修复第二轮独立复核的剩余阻塞项 [`2112a8a48`](https://github.com/netcookies/isulewTools/commit/2112a8a48)
+- 修复独立 review 发现的发布门禁缺陷 [`e6b21a7fc`](https://github.com/netcookies/isulewTools/commit/e6b21a7fc)
+
+### Performance Improvements
+- 摘要校验改为 seek 读取并合并重复计算 [`a4c1594d2`](https://github.com/netcookies/isulewTools/commit/a4c1594d2)
+
+### Documentation
+- R10 v2 修订自引用循环与 commit 分类 [`eef202232`](https://github.com/netcookies/isulewTools/commit/eef202232)
+- require independent pre-release review [`17ac8c7b3`](https://github.com/netcookies/isulewTools/commit/17ac8c7b3)
+- 起草 R10 统一 patch 与已知风险记录 [`c1c92b081`](https://github.com/netcookies/isulewTools/commit/c1c92b081)
+- 记录 KR-001（SN 迁移路径）为接受风险 [`5e10a2e58`](https://github.com/netcookies/isulewTools/commit/5e10a2e58)
+- 发布前必须独立 reviewer 复核 [`e11d26db1`](https://github.com/netcookies/isulewTools/commit/e11d26db1)
+
+### Chore
+- bump version for local publish v3.0.0-beta.48 [skip ci] [`72727a797`](https://github.com/netcookies/isulewTools/commit/72727a797)
+
 ## v3.0.0-beta.47 (2026-11-13)
 
 ### Performance Improvements
