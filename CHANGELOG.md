@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.51 (2026-11-15)
+
+### Feature
+- 将握手快照并入运行时统一投影 [`794add4d5`](https://github.com/netcookies/isulewTools/commit/794add4d5)
+
+### Chore
+- bump version for local publish v3.0.0-beta.51 [skip ci] [`f3c756e62`](https://github.com/netcookies/isulewTools/commit/f3c756e62)
+
+### Refactor
+- 收敛启动事务并接入握手协调器 [`e2008fec8`](https://github.com/netcookies/isulewTools/commit/e2008fec8)
+- 保存双 iAP2 与 RFCOMM 迁移进度 [`30219bd76`](https://github.com/netcookies/isulewTools/commit/30219bd76)
+
 ## v3.0.0-beta.50 (2026-11-13)
 
 ### Feature
