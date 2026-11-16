@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.53 (2026-11-16)
+
+### Bug Fixes
+- retain verified process state during privilege recovery [skip ci] [`c9f20eaa8`](https://github.com/netcookies/isulewTools/commit/c9f20eaa8)
+- serialize restart and await cleanup settlement [skip ci] [`810ff1f9b`](https://github.com/netcookies/isulewTools/commit/810ff1f9b)
+- restore Bluetooth iAP2 timer drive [skip ci] [`b03addef7`](https://github.com/netcookies/isulewTools/commit/b03addef7)
+
+### Chore
+- bump version for local publish v3.0.0-beta.53 [skip ci] [`82f3fd7d6`](https://github.com/netcookies/isulewTools/commit/82f3fd7d6)
+
 ## v3.0.0-beta.52 (2026-11-16)
 
 ### Feature
