@@ -6,6 +6,47 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.52 (2026-11-16)
+
+### Feature
+- finish the App-side boundary for peers, readiness and rearm [`61a5de07e`](https://github.com/netcookies/isulewTools/commit/61a5de07e)
+- move RFCOMM transport ownership from Root to App [`fcec43279`](https://github.com/netcookies/isulewTools/commit/fcec43279)
+
+### Bug Fixes
+- restore Root broker ownership and fence listener readiness [skip ci] [`c1da23593`](https://github.com/netcookies/isulewTools/commit/c1da23593)
+- close the fd on rejection and keep terminal delivery reliable [`6b1624f4c`](https://github.com/netcookies/isulewTools/commit/6b1624f4c)
+- release the framework socket only after native teardown [`c58c9cc1e`](https://github.com/netcookies/isulewTools/commit/c58c9cc1e)
+- keep the accepted socket alive and narrow Root reconnect [`394025464`](https://github.com/netcookies/isulewTools/commit/394025464)
+- keep the PFD owned when detachment fails [`57d8f74b3`](https://github.com/netcookies/isulewTools/commit/57d8f74b3)
+- release the accepted socket and drive direct rearm locally [`629d03d08`](https://github.com/netcookies/isulewTools/commit/629d03d08)
+- correct fd ownership, rearm and clean-close evidence [`951d5ecf2`](https://github.com/netcookies/isulewTools/commit/951d5ecf2)
+- 排除迁移后的 CarPlay Root 原生库 [`a5830e517`](https://github.com/netcookies/isulewTools/commit/a5830e517)
+
+### Continuous Integration
+- 收窄 Root 路径触发到 broker 文件 [`d0bcb22b9`](https://github.com/netcookies/isulewTools/commit/d0bcb22b9)
+
+### Documentation
+- align migration governance with direction C [skip ci] [`e652246e6`](https://github.com/netcookies/isulewTools/commit/e652246e6)
+- record the direction evaluation and its attribution caveat [`542de7548`](https://github.com/netcookies/isulewTools/commit/542de7548)
+- reject the synchronous simplification and stop designing [`cd37de34d`](https://github.com/netcookies/isulewTools/commit/cd37de34d)
+- add the implementable ownership contract draft [`e174231a0`](https://github.com/netcookies/isulewTools/commit/e174231a0)
+- draft the cross-layer RFCOMM peer ownership protocol [`fbaff5c5b`](https://github.com/netcookies/isulewTools/commit/fbaff5c5b)
+- align owner-boundary text with the App-owned RFCOMM state [`9fd04bb61`](https://github.com/netcookies/isulewTools/commit/9fd04bb61)
+- 修正 Root 目录说明中的过期布局 [`f8a61cfa5`](https://github.com/netcookies/isulewTools/commit/f8a61cfa5)
+- 同步 iAP2 协议归属到 App shared core [`ca08a9053`](https://github.com/netcookies/isulewTools/commit/ca08a9053)
+
+### Test
+- 修正 host 测试中的过期源码路径 [`09d3abcc9`](https://github.com/netcookies/isulewTools/commit/09d3abcc9)
+- 覆盖 rearm 提交后超时的隔离与解封时序 [`4945f247c`](https://github.com/netcookies/isulewTools/commit/4945f247c)
+
+### Chore
+- bump version for local publish v3.0.0-beta.52 [skip ci] [`c5498e92a`](https://github.com/netcookies/isulewTools/commit/c5498e92a)
+
+### Refactor
+- move Bluetooth transport ownership into App [skip ci] [`2d15192e7`](https://github.com/netcookies/isulewTools/commit/2d15192e7)
+- make the accepted peer a single-owner lease [`f6d92d0e9`](https://github.com/netcookies/isulewTools/commit/f6d92d0e9)
+- 将协议源码迁出 Root 模块并补齐诊断投影 [`b4a88beb9`](https://github.com/netcookies/isulewTools/commit/b4a88beb9)
+
 ## v3.0.0-beta.51 (2026-11-15)
 
 ### Feature
