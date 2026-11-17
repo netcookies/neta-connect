@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.55 (2026-11-17)
+
+### Feature
+- share card motion across foreground and overlay [skip ci] [`4da8e7d49`](https://github.com/netcookies/isulewTools/commit/4da8e7d49)
+- refine input dialog keyboard and remote controls [skip ci] [`310b29c2a`](https://github.com/netcookies/isulewTools/commit/310b29c2a)
+
+### Chore
+- bump version for local publish v3.0.0-beta.55 [skip ci] [`3512ed0c3`](https://github.com/netcookies/isulewTools/commit/3512ed0c3)
+
 ## v3.0.0-beta.54 (2026-11-17)
 
 ### Feature
