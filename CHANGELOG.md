@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.54 (2026-11-17)
+
+### Feature
+- auto open 5G accessory hotspot or Wi-Fi per network mode [`08fc73be1`](https://github.com/netcookies/isulewTools/commit/08fc73be1)
+
+### Bug Fixes
+- close second-round review findings [skip ci] [`65403d836`](https://github.com/netcookies/isulewTools/commit/65403d836)
+- close beta.54 review findings RV-001/002/003 [skip ci] [`56868bb57`](https://github.com/netcookies/isulewTools/commit/56868bb57)
+- resolve LAN IP in accessory hotspot mode and allow switching [`9af8e5f7f`](https://github.com/netcookies/isulewTools/commit/9af8e5f7f)
+
+### Documentation
+- correct best-effort comment on settings-driven readiness resolution [skip ci] [`5e91d9a64`](https://github.com/netcookies/isulewTools/commit/5e91d9a64)
+
+### Chore
+- bump version for local publish v3.0.0-beta.54 [skip ci] [`4a547d104`](https://github.com/netcookies/isulewTools/commit/4a547d104)
+
 ## v3.0.0-beta.53 (2026-11-16)
 
 ### Bug Fixes
