@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.56 (2026-11-19)
+
+### Feature
+- publish GitHub assets through Gateway jobs [skip ci] [`6c22d8552`](https://github.com/netcookies/isulewTools/commit/6c22d8552)
+
+### Bug Fixes
+- remove Xop background SO mutex reentry [skip ci] [`426f7e84b`](https://github.com/netcookies/isulewTools/commit/426f7e84b)
+
+### Documentation
+- update Gateway publishing guidance [skip ci] [`74da907de`](https://github.com/netcookies/isulewTools/commit/74da907de)
+
+### Chore
+- bump version for local publish v3.0.0-beta.56 [skip ci] [`f6cfacf29`](https://github.com/netcookies/isulewTools/commit/f6cfacf29)
+
 ## v3.0.0-beta.55 (2026-11-17)
 
 ### Feature
