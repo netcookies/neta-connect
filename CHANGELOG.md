@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.57 (2026-11-19)
+
+### Bug Fixes
+- preserve delayed hotspot recovery [skip ci] [`7a5726718`](https://github.com/netcookies/isulewTools/commit/7a5726718)
+- recheck delayed SoftAP channel readiness [skip ci] [`4a70c7487`](https://github.com/netcookies/isulewTools/commit/4a70c7487)
+- defer vehicle verification until core is ready [skip ci] [`ef8e3f561`](https://github.com/netcookies/isulewTools/commit/ef8e3f561)
+
+### Chore
+- bump version for local publish v3.0.0-beta.57 [skip ci] [`459ba780a`](https://github.com/netcookies/isulewTools/commit/459ba780a)
+
 ## v3.0.0-beta.56 (2026-11-19)
 
 ### Feature
