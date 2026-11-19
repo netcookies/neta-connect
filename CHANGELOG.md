@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.58 (2026-11-19)
+
+### Chore
+- bump version for local publish v3.0.0-beta.58 [skip ci] [`3845bfe87`](https://github.com/netcookies/isulewTools/commit/3845bfe87)
+- trace RFCOMM accept and native adoption [skip ci] [`8cddd330f`](https://github.com/netcookies/isulewTools/commit/8cddd330f)
+
 ## v3.0.0-beta.57 (2026-11-19)
 
 ### Bug Fixes
