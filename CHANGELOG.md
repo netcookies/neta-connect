@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.61 (2026-11-20)
+
+### Feature
+- render all notifications through the overlay [skip ci] [`b50a64250`](https://github.com/netcookies/isulewTools/commit/b50a64250)
+
+### Bug Fixes
+- stop renderer bind recursion tearing down projection [skip ci] [`aff7b6d53`](https://github.com/netcookies/isulewTools/commit/aff7b6d53)
+
+### Chore
+- bump version for local publish v3.0.0-beta.61 [skip ci] [`10c30a573`](https://github.com/netcookies/isulewTools/commit/10c30a573)
+
 ## v3.0.0-beta.60 (2026-11-20)
 
 ### Feature
