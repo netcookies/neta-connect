@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.59 (2026-11-20)
+
+### Bug Fixes
+- 串行恢复失败连接并补齐脱敏诊断 [skip ci] [`d6a7687fb`](https://github.com/netcookies/isulewTools/commit/d6a7687fb)
+- keep the editor visible and connected [skip ci] [`52d8657cd`](https://github.com/netcookies/isulewTools/commit/52d8657cd)
+
+### Chore
+- bump version for local publish v3.0.0-beta.59 [skip ci] [`bee0a2283`](https://github.com/netcookies/isulewTools/commit/bee0a2283)
+- trace RFCOMM accept and native adoption [skip ci] [`1708b4775`](https://github.com/netcookies/isulewTools/commit/1708b4775)
+
+### Other
+- Merge origin/main before beta.59 local release [skip ci] [`6cb5d7862`](https://github.com/netcookies/isulewTools/commit/6cb5d7862)
+
 ## v3.0.0-beta.58 (2026-11-19)
 
 ### Chore
