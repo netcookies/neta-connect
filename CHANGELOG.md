@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.60 (2026-11-20)
+
+### Feature
+- improve car overlay readability [skip ci] [`cbf79e35c`](https://github.com/netcookies/isulewTools/commit/cbf79e35c)
+
+### Bug Fixes
+- skip renderer metrics during teardown [skip ci] [`fb06302c6`](https://github.com/netcookies/isulewTools/commit/fb06302c6)
+
+### Chore
+- bump version for local publish v3.0.0-beta.60 [skip ci] [`7bfd702b5`](https://github.com/netcookies/isulewTools/commit/7bfd702b5)
+
 ## v3.0.0-beta.59 (2026-11-20)
 
 ### Bug Fixes
