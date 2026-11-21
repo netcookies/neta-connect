@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+## v3.0.0-beta.62 (2026-11-21)
+
+### Feature
+- add gated OEM and native vehicle positioning [skip ci] [`04e698913`](https://github.com/netcookies/isulewTools/commit/04e698913)
+
+### Chore
+- bump version for local publish v3.0.0-beta.62 [skip ci] [`78c42336a`](https://github.com/netcookies/isulewTools/commit/78c42336a)
+
 ## v3.0.0-beta.61 (2026-11-20)
 
 ### Feature
